@@ -265,7 +265,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535219557423" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535220068879" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -291,7 +291,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.springmvc_helloworld_server">
+  <component name="RunManager" selected="Application._02_Asynchronous_HTTP_Exchange_with_Content_Streaming">
     <configuration name="_01_Asynchronous_HTTP_Exchange" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ruyi.HttpDmeo._01_Asynchronous_HTTP_Exchange" />
       <module name="HttpDemo" />
@@ -311,6 +311,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.apress.prospring4.ch2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="_02_Asynchronous_HTTP_Exchange_with_Content_Streaming" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ruyi.HttpDmeo._02_Asynchronous_HTTP_Exchange_with_Content_Streaming" />
+      <module name="HttpDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ruyi.HttpDmeo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -408,12 +421,14 @@
       <item itemvalue="Application._01_Asynchronous_HTTP_Exchange" />
       <item itemvalue="Application._01_HelloWorldDecoupled" />
       <item itemvalue="Application._03_HelloWorldDecoupledWithFactory" />
+      <item itemvalue="Application._02_Asynchronous_HTTP_Exchange_with_Content_Streaming" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application._02_Asynchronous_HTTP_Exchange_with_Content_Streaming" />
+        <item itemvalue="Application._01_Asynchronous_HTTP_Exchange" />
         <item itemvalue="Application._03_HelloWorldDecoupledWithFactory" />
         <item itemvalue="Application._01_HelloWorldDecoupled" />
-        <item itemvalue="Application._01_Asynchronous_HTTP_Exchange" />
       </list>
     </recent_temporary>
   </component>
