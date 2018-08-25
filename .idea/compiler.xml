@@ -8,12 +8,18 @@
         <outputRelativeToContentRoot value="true" />
         <module name="hello-world" />
         <module name="HttpDemo" />
+        <module name="springframeworkdemo" />
+        <module name="springframeworkdemo_consuming_webservice" />
+        <module name="springframeworkdemo_webservice" />
         <module name="springmvc_helloworld" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="hello-world" target="1.5" />
       <module name="HttpDemo" target="1.5" />
+      <module name="springframeworkdemo" target="1.5" />
+      <module name="springframeworkdemo_consuming_webservice" target="1.8" />
+      <module name="springframeworkdemo_webservice" target="1.8" />
       <module name="springmvc_helloworld" target="1.5" />
     </bytecodeTargetLevel>
   </component>

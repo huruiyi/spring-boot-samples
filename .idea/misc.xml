@@ -13,6 +13,9 @@
         <option value="$PROJECT_DIR$/hello-world/pom.xml" />
         <option value="$PROJECT_DIR$/springmvc_helloworld/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMvc_HelloWorld/pom.xml" />
+        <option value="$PROJECT_DIR$/springframeworkdemo/pom.xml" />
+        <option value="$PROJECT_DIR$/springframeworkdemo_consuming_webservice/pom.xml" />
+        <option value="$PROJECT_DIR$/springframeworkdemo_webservice/pom.xml" />
       </list>
     </option>
   </component>
