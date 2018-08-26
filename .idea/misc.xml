@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Copy" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMvc_HelloWorld" />
   </component>
   <component name="JavaScriptSettings">
@@ -16,6 +17,7 @@
         <option value="$PROJECT_DIR$/springframeworkdemo/pom.xml" />
         <option value="$PROJECT_DIR$/springframeworkdemo_consuming_webservice/pom.xml" />
         <option value="$PROJECT_DIR$/springframeworkdemo_webservice/pom.xml" />
+        <option value="$PROJECT_DIR$/Copy/pom.xml" />
       </list>
     </option>
   </component>

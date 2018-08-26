@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Copy/Copy.iml" filepath="$PROJECT_DIR$/Copy/Copy.iml" />
       <module fileurl="file://$PROJECT_DIR$/HttpDemo/HttpDemo.iml" filepath="$PROJECT_DIR$/HttpDemo/HttpDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Java201808.iml" filepath="$PROJECT_DIR$/.idea/Java201808.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hello-world/hello-world.iml" filepath="$PROJECT_DIR$/Hello-world/hello-world.iml" />

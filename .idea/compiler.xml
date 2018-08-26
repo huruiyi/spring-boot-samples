@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Copy" />
         <module name="hello-world" />
         <module name="HttpDemo" />
         <module name="springframeworkdemo" />
@@ -15,6 +16,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Copy" target="1.6" />
       <module name="hello-world" target="1.5" />
       <module name="HttpDemo" target="1.5" />
       <module name="springframeworkdemo" target="1.5" />
