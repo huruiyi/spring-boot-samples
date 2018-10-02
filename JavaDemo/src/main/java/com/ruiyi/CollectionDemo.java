@@ -1,4 +1,4 @@
-package com.ruiyi.demo;
+package com.ruiyi;
 
 import com.alibaba.fastjson.JSONArray;
 import com.ruiyi.model.Person;

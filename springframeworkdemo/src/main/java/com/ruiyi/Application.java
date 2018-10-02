@@ -1,5 +1,7 @@
-package hello;
+package com.ruiyi;
 
+import com.ruiyi.service.MessagePrinter;
+import com.ruiyi.service.MessageService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
 

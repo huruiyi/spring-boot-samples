@@ -1,4 +1,4 @@
-package hello;
+package com.ruiyi.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
