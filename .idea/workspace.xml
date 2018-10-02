@@ -7,20 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d7461ae-bab4-44c2-b65c-ca638c47ffe3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_31.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDemo/JavaDemo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDemo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/demo/CollectionDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/model/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/model/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Java201808.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Java201808.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMvc_HelloWorld/src/main/java/com/ruiyi/springmvc/controller/HelloworldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMvc_HelloWorld/src/main/java/com/ruiyi/springmvc/controller/HelloworldController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/HttpDemo/target/" />
     <ignored path="$PROJECT_DIR$/hello-world/target/" />
@@ -62,9 +50,9 @@
           <entry key="class" value="2" />
           <entry key="gitignore" value="2" />
           <entry key="iml" value="10" />
-          <entry key="java" value="64" />
+          <entry key="java" value="65" />
           <entry key="jsp" value="6" />
-          <entry key="md" value="2" />
+          <entry key="md" value="3" />
           <entry key="properties" value="2" />
           <entry key="xml" value="27" />
           <entry key="xsd" value="2" />
@@ -74,10 +62,10 @@
         <counts>
           <entry key="CLASS" value="2" />
           <entry key="IDEA_MODULE" value="10" />
-          <entry key="JAVA" value="64" />
+          <entry key="JAVA" value="65" />
           <entry key="JSP" value="6" />
           <entry key="Manifest" value="1" />
-          <entry key="Markdown" value="2" />
+          <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Properties" value="2" />
           <entry key="XML" value="29" />
@@ -85,16 +73,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2210" />
-          <entry key="md" value="12" />
+          <entry key="java" value="2253" />
+          <entry key="md" value="127" />
           <entry key="txt" value="6" />
           <entry key="xml" value="115" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2210" />
-          <entry key="Markdown" value="12" />
+          <entry key="JAVA" value="2253" />
+          <entry key="Markdown" value="127" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="XML" value="115" />
         </counts>
@@ -116,28 +104,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HttpDemo/src/main/java/com/ruyi/HttpDmeo/_01_Asynchronous_HTTP_Exchange.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Hello-world/src/main/java/com/apress/prospring4/ch2/_01_HelloWorldDecoupled.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+            <state relative-caret-position="361">
+              <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -145,17 +115,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Copy/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+            <state relative-caret-position="95">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Copy/src/main/resources/mapper/UserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+            <state relative-caret-position="95">
+              <caret line="5" column="26" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -176,12 +146,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="114">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="e#340#341#0" expanded="true" />
                 <element signature="e#402#403#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="97">
+                <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -198,21 +180,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="152">
+              <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+              <folding>
+                <element signature="e#121#122#0" expanded="true" />
+                <element signature="e#146#147#0" expanded="true" />
+                <element signature="e#182#183#0" expanded="true" />
+                <element signature="e#210#211#0" expanded="true" />
+                <element signature="e#241#242#0" expanded="true" />
+                <element signature="e#268#269#0" expanded="true" />
+                <element signature="e#308#309#0" expanded="true" />
+                <element signature="e#340#341#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/service/Impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="e#396#397#0" expanded="true" />
-                <element signature="e#444#445#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="342">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -265,10 +262,8 @@
         <option value="$PROJECT_DIR$/SpringMvc_HelloWorld/src/main/resources/spring/spring-servlet.xml" />
         <option value="$PROJECT_DIR$/SpringMvc_HelloWorld/pom.xml" />
         <option value="$PROJECT_DIR$/springframeworkdemo_webservice/src/main/java/hello/GreetingController.java" />
-        <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/controller/UserController.java" />
         <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/model/User.java" />
-        <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/service/Impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/service/UserService.java" />
         <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/Application.java" />
         <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/ServletInitializer.java" />
@@ -286,8 +281,10 @@
         <option value="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/demo/CollecctionDemo.java" />
         <option value="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/model/Teacher.java" />
         <option value="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/demo/CollectionDemo.java" />
-        <option value="$PROJECT_DIR$/Readme.md" />
         <option value="$PROJECT_DIR$/SpringMvc_HelloWorld/src/main/java/com/ruiyi/springmvc/controller/HelloworldController.java" />
+        <option value="$PROJECT_DIR$/Readme.md" />
+        <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/service/Impl/UserServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -472,18 +469,20 @@
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538450239610" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538455477668" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="spring" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -502,7 +501,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Hello-world">
+  <component name="RunManager" selected="Spring Boot.Copy">
     <configuration name="Hello-world" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.apress.prospring4.ch2._01_HelloWorldDecoupled" />
       <module name="hello-world" />
@@ -602,15 +601,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="springframeworkdemo_consuming_webservice" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
-      <module name="springframeworkdemo_consuming_webservice" />
+    <configuration name="Copy" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="Copy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="hello.*" />
+          <option name="PATTERN" value="cn.copy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="hello.Application" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.copy.Application" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -694,15 +693,15 @@
       <item itemvalue="Application.JavaDemo" />
       <item itemvalue="Application.HttpDemo" />
       <item itemvalue="Application.Hello-world" />
-      <item itemvalue="Spring Boot.springframeworkdemo_consuming_webservice" />
+      <item itemvalue="Spring Boot.Copy" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.Copy" />
         <item itemvalue="Application.Hello-world" />
         <item itemvalue="Application.HttpDemo" />
         <item itemvalue="Application.JavaDemo" />
         <item itemvalue="Application.springframeworkdemo" />
-        <item itemvalue="Spring Boot.springframeworkdemo_consuming_webservice" />
       </list>
     </recent_temporary>
   </component>
@@ -727,7 +726,7 @@
       <workItem from="1538019088623" duration="28000" />
       <workItem from="1538392908677" duration="176000" />
       <workItem from="1538393159015" duration="4152000" />
-      <workItem from="1538405539057" duration="6078000" />
+      <workItem from="1538405539057" duration="8152000" />
     </task>
     <task id="LOCAL-00001" summary="readme">
       <created>1535220139093</created>
@@ -740,7 +739,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18506000" />
+    <option name="totallyTimeSpent" value="20580000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -755,7 +754,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967811" visible="true" weight="0.19829424" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4967811" visible="true" weight="0.19829424" />
       <window_info id="Structure" order="1" sideWeight="0.50247115" side_tool="true" weight="0.25746268" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -766,7 +765,7 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49253732" visible="true" weight="0.3165236" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49253732" visible="true" weight="0.2915327" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -777,7 +776,7 @@
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4946695" weight="0.32939914" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" sideWeight="0.49946696" weight="0.32939914" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32939914" />
+      <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" weight="0.32939914" />
       <window_info anchor="bottom" id="Application Servers" order="14" weight="0.222103" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.17857143" />
@@ -799,6 +798,11 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/Hello-world" />
+      <path value="$PROJECT_DIR$/HttpDemo" />
+    </ignored-roots>
     <MESSAGE value="readme" />
     <option name="LAST_COMMIT_MESSAGE" value="readme" />
   </component>
@@ -893,13 +897,6 @@
             <element signature="e#7027#7028#0" expanded="true" />
             <element signature="e#7080#7081#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -1008,16 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="95" column="17" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="399">
-            <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1146,17 +1133,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+    <entry file="file://$PROJECT_DIR$/Readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="97">
+            <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/Copy/src/main/resources/mapper/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+        <state relative-caret-position="95">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1171,14 +1161,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/Application.java">
+    <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Copy/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="e#340#341#0" expanded="true" />
             <element signature="e#402#403#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1191,26 +1202,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="152">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding>
+            <element signature="e#121#122#0" expanded="true" />
+            <element signature="e#146#147#0" expanded="true" />
+            <element signature="e#182#183#0" expanded="true" />
+            <element signature="e#210#211#0" expanded="true" />
+            <element signature="e#241#242#0" expanded="true" />
+            <element signature="e#268#269#0" expanded="true" />
+            <element signature="e#308#309#0" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/service/Impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#396#397#0" expanded="true" />
-            <element signature="e#444#445#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        <state relative-caret-position="342">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>

@@ -1,11 +1,28 @@
  [HttpAsyncClient Examples](http://hc.apache.org/httpcomponents-asyncclient-dev/examples.html)
  #`BasicAsyncRequestProducer`
  #`HttpAsyncRequestConsumer`
- 
  [httpcomponents](http://svn.apache.org/repos/asf/httpcomponents/)
+
+***
+# `修改字符集编码`
  
+### 显示编码: `show variables like 'ch%'`
  
- #特点
+| Variable_name | value |
+|------|------|
+|character_set_client	|utf8
+|character_set_connection	|utf8
+|character_set_database	|utf8
+|character_set_filesystem	|utf8
+|character_set_results	|utf8
+|character_set_server	|utf8
+|character_set_system	|utf8
+|character_sets_dir	|C:\Program Files\MySQL\MySQLServer5.7\share\charsets\
+|check_proxy_users	|OFF
+
+### 修改编码:`set character_set_server=utf8`
+***
+ #TreeSet特点
  TreeSet是用来排序的, 可以指定一个顺序, 对象存入之后会按照指定的顺序排列
  使用方式
  ##a.自然顺序(Comparable)

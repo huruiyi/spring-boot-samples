@@ -22,6 +22,9 @@ public class UserController {
     }
 
 
+    /*
+    http://localhost:8080/get?id=1
+     */
     @RequestMapping("/get")
     @ResponseBody
     public String get(User user) {
