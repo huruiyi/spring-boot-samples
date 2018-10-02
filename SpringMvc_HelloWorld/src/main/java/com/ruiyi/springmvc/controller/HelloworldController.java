@@ -14,9 +14,9 @@ public class HelloworldController {
     }
 
     @RequestMapping(value = "/springmvc/helloworld", method = RequestMethod.GET)
-    public String helloworld(Model model) {
+    public String HelloWorld(Model model) {
 
-        model.addAttribute("msg", "springmvc helloworld例子演示成功啦...");
+        model.addAttribute("msg", "SpringMvc HelloWorld例子演示成功啦...");
         return "helloworld";
     }
 }

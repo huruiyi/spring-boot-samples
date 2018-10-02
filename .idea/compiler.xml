@@ -9,6 +9,7 @@
         <module name="Copy" />
         <module name="hello-world" />
         <module name="HttpDemo" />
+        <module name="JavaDemo" />
         <module name="springframeworkdemo" />
         <module name="springframeworkdemo_consuming_webservice" />
         <module name="springframeworkdemo_webservice" />
@@ -19,6 +20,8 @@
       <module name="Copy" target="1.6" />
       <module name="hello-world" target="1.5" />
       <module name="HttpDemo" target="1.5" />
+      <module name="IDDemo" target="1.5" />
+      <module name="JavaDemo" target="1.5" />
       <module name="springframeworkdemo" target="1.5" />
       <module name="springframeworkdemo_consuming_webservice" target="1.8" />
       <module name="springframeworkdemo_webservice" target="1.8" />
