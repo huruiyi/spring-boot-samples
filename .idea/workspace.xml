@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="springmvc_helloworld:war exploded" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d7461ae-bab4-44c2-b65c-ca638c47ffe3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-    </list>
-    <ignored path="$PROJECT_DIR$/HttpDemo/target/" />
-    <ignored path="$PROJECT_DIR$/hello-world/target/" />
-    <ignored path="$PROJECT_DIR$/springmvc_helloworld/src/main/webapp/WEB-INF/classes/" />
-    <ignored path="$PROJECT_DIR$/springmvc_helloworld/target/" />
-    <ignored path="$PROJECT_DIR$/springframeworkdemo/target/" />
-    <ignored path="$PROJECT_DIR$/springframeworkdemo_consuming_webservice/target/" />
+    <list default="true" id="0265a641-4abd-41ad-894a-05a4801183b1" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/Hello-world/target/" />
     <ignored path="$PROJECT_DIR$/springframeworkdemo_webservice/target/" />
-    <ignored path="$PROJECT_DIR$/Copy/target/" />
-    <ignored path="$PROJECT_DIR$/IDDemo/target/" />
-    <ignored path="$PROJECT_DIR$/JavaDemo/target/" />
-    <ignored path="$PROJECT_DIR$/RestDemo/target/" />
+    <ignored path="$PROJECT_DIR$/SpringMvcHelloWorld/target/" />
     <ignored path="$PROJECT_DIR$/SpringBootDemo/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <ignored path="$PROJECT_DIR$/springframeworkdemo_consuming_webservice/target/" />
+    <ignored path="$PROJECT_DIR$/HttpDemo/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/JavaDemo/target/" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,79 +19,9 @@
     <session id="-2065758523">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="4" />
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.26" value="1" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.42" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.closed" value="1" />
         </counts>
       </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="LICENSE" value="1" />
-          <entry key="MF" value="4" />
-          <entry key="class" value="4" />
-          <entry key="cmd" value="1" />
-          <entry key="gitignore" value="3" />
-          <entry key="iml" value="14" />
-          <entry key="java" value="102" />
-          <entry key="jsp" value="12" />
-          <entry key="md" value="3" />
-          <entry key="properties" value="6" />
-          <entry key="xml" value="35" />
-          <entry key="xsd" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="4" />
-          <entry key="Cmd" value="1" />
-          <entry key="IDEA_MODULE" value="14" />
-          <entry key="JAVA" value="102" />
-          <entry key="JSP" value="12" />
-          <entry key="Manifest" value="4" />
-          <entry key="Markdown" value="3" />
-          <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Properties" value="6" />
-          <entry key="XML" value="38" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="2429" />
-          <entry key="md" value="127" />
-          <entry key="properties" value="69" />
-          <entry key="txt" value="6" />
-          <entry key="xml" value="188" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="2429" />
-          <entry key="Markdown" value="127" />
-          <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Properties" value="69" />
-          <entry key="XML" value="188" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts" />
-      <usages-collector id="statistics.spring.boot.mvc.usages" />
-      <usages-collector id="statistics.spring.boot.run.usages" />
-      <usages-collector id="statistics.spring.core.usages.trigger">
-        <counts>
-          <entry key="fixes.SpringFacetInspection.AddFacetFix" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
   <component name="FavoritesManager">
@@ -115,7 +32,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/1.4.1.RELEASE/spring-boot-autoconfigure-1.4.1.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/web/ServerProperties.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5263">
+            <state relative-caret-position="4199">
               <caret line="305" column="16" selection-start-line="305" selection-start-column="16" selection-end-line="305" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -129,7 +46,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo/src/main/java/hello/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
+            <state relative-caret-position="380">
               <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
             </state>
           </provider>
@@ -144,11 +61,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo/src/main/java/hello/MessageService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="76">
               <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/java/com/ruiyi/controller/HelloWorld.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SpringBootDemo/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -163,82 +98,8 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>D:\Work\Java\JavaStudy\Java201808\springmvc_helloworld</find>
-      <find>springVersion</find>
-      <find>org.springframework</find>
-      <find>springframework</find>
-      <find>spring-webmvc</find>
-      <find>hasNext</find>
-      <find>Comparable</find>
-      <find>compareTo</find>
-      <find>TreeSet</find>
-      <find>h2database</find>
-      <find>spring-cloud</find>
-      <find>driver</find>
-      <find>com.mysql.jdbc.Driver</find>
-      <find>starter</find>
-      <find>org.mybatis</find>
-      <find>spring-boot-starter-tomcat</find>
-    </findStrings>
-    <dirStrings>
-      <dir>D:\Work\Java\JavaStudy\Java201808</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="projectSyncType">
-      <map>
-        <entry key="D:/Apress/git_Apress_Spring/pro-spring-5" value="PREVIEW" />
-        <entry key="D:/Apress/git_Apress_Spring/spring-recipes-14/springrecipes-master" value="PREVIEW" />
-        <entry key="D:/Apress/git_Apress_Spring/spring-recipes-14/springrecipes-master/Ch1" value="PREVIEW" />
-      </map>
-    </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Hello-world/src/main/java/com/apress/prospring4/ch2/StandardOutMessageRenderer.java" />
-        <option value="$PROJECT_DIR$/springmvc_helloworld/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringMvc_HelloWorld/src/main/webapp/WEB-INF/classes/spring/spring-servlet.xml" />
-        <option value="$PROJECT_DIR$/SpringMvc_HelloWorld/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/SpringMvc_HelloWorld/src/main/resources/spring/spring-servlet.xml" />
-        <option value="$PROJECT_DIR$/SpringMvc_HelloWorld/pom.xml" />
-        <option value="$PROJECT_DIR$/springframeworkdemo_webservice/src/main/java/hello/GreetingController.java" />
-        <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/model/User.java" />
-        <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/service/UserService.java" />
-        <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/Application.java" />
-        <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/ServletInitializer.java" />
-        <option value="$PROJECT_DIR$/Copy/src/main/resources/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/Copy/src/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/Copy/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/untitled/src/com/ruiyi/demo/IODemo.java" />
-        <option value="$PROJECT_DIR$/IDDemo/pom.xml" />
-        <option value="$PROJECT_DIR$/IDDemo/src/main/java/Demo.java" />
-        <option value="$PROJECT_DIR$/IDDemo/src/main/java/com/ruiyi/model/Person.java" />
-        <option value="$PROJECT_DIR$/IDDemo/src/main/java/com/ruiyi/demo/Demo.java" />
-        <option value="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/demo/Demo.java" />
-        <option value="$PROJECT_DIR$/JavaDemo/pom.xml" />
-        <option value="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/model/Person.java" />
-        <option value="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/demo/CollecctionDemo.java" />
-        <option value="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/model/Teacher.java" />
-        <option value="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/demo/CollectionDemo.java" />
-        <option value="$PROJECT_DIR$/SpringMvc_HelloWorld/src/main/java/com/ruiyi/springmvc/controller/HelloworldController.java" />
-        <option value="$PROJECT_DIR$/Readme.md" />
-        <option value="$PROJECT_DIR$/RestDemo/src/main/java/com/example/restdemo/HelloController.java" />
-        <option value="$PROJECT_DIR$/SpringBootDemo/src/main/java/com/example/springdemo/controller/HelloController.java" />
-        <option value="$PROJECT_DIR$/SpringBootDemo/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringBootDemo/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/springbootdemo/controller/HelloController.java" />
-        <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/Copy/pom.xml" />
-        <option value="$PROJECT_DIR$/Copy/src/main/java/cn/copy/service/Impl/UserServiceImpl.java" />
-      </list>
-    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -246,48 +107,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="LogFilters">
-    <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
-    <option name="CUSTOM_FILTER" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="732" />
     <option name="y" value="44" />
     <option name="width" value="1564" />
     <option name="height" value="1000" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State />
-          <State>
-            <id>CodeSpring CoreSpring</id>
-          </State>
-          <State>
-            <id>Spring</id>
-          </State>
-          <State>
-            <id>Spring CoreSpring</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>SpringJavaInjectionPointsAutowiringInspection</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -338,35 +162,16 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelOrder2" value="2" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538503190656" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringMvcHelloWorld" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538503872942" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Work\Java\JavaStudy\Java201808\SpringMvc_HelloWorld\src\main\webapp" />
-    </key>
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="SpringBootApplicationConfigurationType" />
-      </set>
-    </option>
     <option name="ruleStates">
       <list>
         <RuleState>
@@ -377,23 +182,9 @@
         </RuleState>
       </list>
     </option>
-    <option name="contentProportion" value="0.18019481" />
   </component>
-  <component name="RunManager">
-    <configuration name="Hello-world" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.apress.prospring4.ch2._01_HelloWorldDecoupled" />
-      <module name="hello-world" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.apress.prospring4.ch2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HttpDemo" type="Application" factoryName="Application" temporary="true">
+  <component name="RunManager" selected="Application._01_Asynchronous_HTTP_Exchange">
+    <configuration name="_01_Asynchronous_HTTP_Exchange" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ruyi.HttpDmeo._01_Asynchronous_HTTP_Exchange" />
       <module name="HttpDemo" />
       <extension name="coverage">
@@ -406,169 +197,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JavaDemo" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.ruiyi.demo.CollectionDemo" />
-      <module name="JavaDemo" />
+    <configuration name="_02_Asynchronous_HTTP_Exchange_with_Content_Streaming" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ruyi.HttpDmeo._02_Asynchronous_HTTP_Exchange_with_Content_Streaming" />
+      <module name="HttpDemo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ruiyi.demo.*" />
+          <option name="PATTERN" value="com.ruyi.HttpDmeo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="springframeworkdemo" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="hello.Application" />
-      <module name="SpringFrameworkDemo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hello.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="HttpDemo" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="HttpDemo" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="springmvc_helloworld_server" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.8" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="springmvc_helloworld:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Java201808" />
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="Tomcat Catalina" enabled="true" />
-      <predefined_log_file id="Tomcat Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="23577" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="springmvc_helloworld:war exploded" />
-        </option>
       </method>
     </configuration>
     <list>
-      <item itemvalue="Tomcat Server.springmvc_helloworld_server" />
-      <item itemvalue="Application.springframeworkdemo" />
-      <item itemvalue="Application.JavaDemo" />
-      <item itemvalue="Application.HttpDemo" />
-      <item itemvalue="Application.Hello-world" />
+      <item itemvalue="Application._02_Asynchronous_HTTP_Exchange_with_Content_Streaming" />
+      <item itemvalue="Application._01_Asynchronous_HTTP_Exchange" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Hello-world" />
-        <item itemvalue="Application.HttpDemo" />
-        <item itemvalue="Application.JavaDemo" />
-        <item itemvalue="Application.springframeworkdemo" />
+        <item itemvalue="Application._01_Asynchronous_HTTP_Exchange" />
+        <item itemvalue="Application._02_Asynchronous_HTTP_Exchange_with_Content_Streaming" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SpringBeansView">
-    <option name="showModules" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -596,6 +247,7 @@
       <workItem from="1538502727079" duration="179000" />
       <workItem from="1538502918736" duration="15000" />
       <workItem from="1538502946488" duration="80000" />
+      <workItem from="1538503074671" duration="562000" />
     </task>
     <task id="LOCAL-00001" summary="readme">
       <created>1535220139093</created>
@@ -604,25 +256,15 @@
       <option name="project" value="LOCAL" />
       <updated>1535220139093</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33902000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="6000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967811" visible="true" weight="0.20682302" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967811" visible="true" weight="0.3097015" />
       <window_info id="Structure" order="1" sideWeight="0.50247115" side_tool="true" weight="0.25746268" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -639,7 +281,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.32939914" />
       <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.4989339" weight="0.32939914" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4989339" visible="true" weight="0.06538049" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4989339" visible="true" weight="0.065450646" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5074627" side_tool="true" weight="0.020386266" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4946695" weight="0.3290461" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" sideWeight="0.49946696" weight="0.32939914" />
@@ -660,12 +302,6 @@
       <window_info anchor="right" id="Bean Validation" order="10" />
     </layout>
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
@@ -675,193 +311,8 @@
     <MESSAGE value="readme" />
     <option name="LAST_COMMIT_MESSAGE" value="readme" />
   </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HttpDemo/src/main/java/com/ruyi/HttpDmeo/_01_Asynchronous_HTTP_Exchange.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="97">
-            <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RestDemo/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/RestDemo/src/main/resources/application.properties" />
-    <entry file="file://$PROJECT_DIR$/Hello-world/src/main/java/com/apress/prospring4/ch2/_01_HelloWorldDecoupled.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hello-world/src/main/java/com/apress/prospring4/ch2/_02_HelloWorldSpringDI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RestDemo/src/test/java/com/example/restdemo/RestdemoApplicationTests.java" />
-    <entry file="file://$PROJECT_DIR$/RestDemo/src/main/java/com/example/restdemo/HelloController.java" />
-    <entry file="file://$PROJECT_DIR$/RestDemo/src/main/java/com/example/restdemo/RestdemoApplication.java" />
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/SpringBootDemo.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/h2database/h2/1.4.197/h2-1.4.197.jar!/org/h2/Driver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/h2database/h2/1.4.197/h2-1.4.197.jar!/org/h2/JdbcDriverBackwardsCompat.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/h2database/h2/1.4.197/h2-1.4.197-sources.jar!/org/h2/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/example/springdemo/SpringdemoApplication.java" />
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/.gitignore" />
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/mvnw.cmd" />
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/example/springdemo/controller/HelloController.java" />
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/test/java/com/example/springdemo/SpringdemoApplicationTests.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.9.RELEASE/spring-beans-5.0.9.RELEASE-sources.jar!/org/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22002">
-          <caret line="1256" column="29" selection-start-line="1256" selection-start-column="29" selection-end-line="1256" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/h2database/h2/1.4.197/h2-1.4.197-sources.jar!/org/h2/JdbcDriverBackwardsCompat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Copy/pom.xsd" />
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hello-world/hello-world.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Copy/src/webapp/META-INF/MANIFEST.MF" />
-    <entry file="file://$PROJECT_DIR$/Copy/src/webapp/index.jsp" />
-    <entry file="file://$PROJECT_DIR$/SpringMvc_HelloWorld/src/main/java/com/ruiyi/springmvc/controller/HelloworldController.java" />
-    <entry file="file://$PROJECT_DIR$/SpringMvc_HelloWorld/src/main/webapp/views/helloworld.jsp" />
-    <entry file="file://$PROJECT_DIR$/SpringMvc_HelloWorld/src/main/webapp/views/index.jsp" />
-    <entry file="file://$PROJECT_DIR$/SpringMvc_HelloWorld/src/main/resources/spring/spring-servlet.xml" />
-    <entry file="file://$PROJECT_DIR$/SpringMvc_HelloWorld/src/main/webapp/WEB-INF/web.xml" />
-    <entry file="file://$PROJECT_DIR$/Copy/Copy.iml" />
-    <entry file="file://$PROJECT_DIR$/Copy/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/dao/UserDao.java" />
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/model/User.java" />
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/service/Impl/UserServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/service/UserService.java" />
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/Application.java" />
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/ServletInitializer.java" />
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/resources/mapper/UserMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/webapp/WEB-INF/views/index.jsp" />
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/webapp/META-INF/MANIFEST.MF" />
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/resources/application.properties" />
-    <entry file="file://$PROJECT_DIR$/Copy/src/main/java/cn/copy/controller/UserController.java" />
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/springbootdemo/controller/HelloController.java" />
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/springbootdemo/SpringbootdemoApplication.java" />
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/test/java/com/ruiyi/springbootdemo/SpringbootdemoApplicationTests.java" />
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1083">
-          <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/1.4.1.RELEASE/spring-boot-autoconfigure-1.4.1.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/web/ServerProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5263">
-          <caret line="305" column="16" selection-start-line="305" selection-start-column="16" selection-end-line="305" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#9546#9547#0" expanded="true" />
-            <element signature="e#9601#9602#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo/src/main/java/hello/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo/src/main/java/hello/MessagePrinter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo/src/main/java/hello/MessageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-  </component>
   <component name="masterDetails">
     <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>springmvc_helloworld:war</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Spring</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <splitter-proportions>
@@ -875,6 +326,18 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
+          <last-edited>JDK_1.8.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
           <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
@@ -885,22 +348,8 @@
           </splitter-proportions>
         </settings>
       </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>hello-world</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Spring-4.3.18.RELEASE</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
