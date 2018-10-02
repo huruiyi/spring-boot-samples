@@ -5,8 +5,11 @@
       <module fileurl="file://$PROJECT_DIR$/HttpDemo/HttpDemo.iml" filepath="$PROJECT_DIR$/HttpDemo/HttpDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Java201808.iml" filepath="$PROJECT_DIR$/.idea/Java201808.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaDemo/JavaDemo.iml" filepath="$PROJECT_DIR$/JavaDemo/JavaDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBootDemo/SpringBootDemo.iml" filepath="$PROJECT_DIR$/SpringBootDemo/SpringBootDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringFrameworkDemo/SpringFrameworkDemo.iml" filepath="$PROJECT_DIR$/SpringFrameworkDemo/SpringFrameworkDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMvcHelloWorld/SpringMvcHelloWorld.iml" filepath="$PROJECT_DIR$/SpringMvcHelloWorld/SpringMvcHelloWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hello-world/hello-world.iml" filepath="$PROJECT_DIR$/Hello-world/hello-world.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBootDemo/src/main/main.iml" filepath="$PROJECT_DIR$/SpringBootDemo/src/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/springframeworkdemo_consuming_webservice/springframeworkdemo_consuming_webservice.iml" filepath="$PROJECT_DIR$/springframeworkdemo_consuming_webservice/springframeworkdemo_consuming_webservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/springframeworkdemo_webservice/springframeworkdemo_webservice.iml" filepath="$PROJECT_DIR$/springframeworkdemo_webservice/springframeworkdemo_webservice.iml" />
     </modules>
