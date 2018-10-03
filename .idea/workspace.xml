@@ -7,17 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0265a641-4abd-41ad-894a-05a4801183b1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springframeworkdemo_consuming_webservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springframeworkdemo_consuming_webservice/src/main/java/hello/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/hello/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springframeworkdemo_consuming_webservice/src/main/java/hello/Quote.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/hello/Quote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springframeworkdemo_consuming_webservice/src/main/java/hello/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/hello/Value.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springframeworkdemo_webservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringFrameworkDemo_Webservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springframeworkdemo_webservice/src/main/java/hello/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringFrameworkDemo_Webservice/src/main/java/hello/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springframeworkdemo_webservice/src/main/java/hello/Greeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringFrameworkDemo_Webservice/src/main/java/hello/Greeting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springframeworkdemo_webservice/src/main/java/hello/GreetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringFrameworkDemo_Webservice/src/main/java/hello/GreetingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/hello/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/hello/Value.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvcHelloWorld/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMvcHelloWorld/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvcHelloWorld/src/main/java/com/ruiyi/controller/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMvcHelloWorld/src/main/java/com/ruiyi/controller/HelloWorld.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/Hello-world/target/" />
     <ignored path="$PROJECT_DIR$/springframeworkdemo_webservice/target/" />
@@ -37,27 +30,46 @@
     <session id="-2065758523">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
-          <entry key="project.open.time.13" value="1" />
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.34" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.35" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="gitignore" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="10" />
-          <entry key="jsp" value="2" />
+          <entry key="java" value="15" />
+          <entry key="jsp" value="4" />
+          <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="10" />
-          <entry key="JSP" value="2" />
+          <entry key="JAVA" value="15" />
+          <entry key="JSP" value="4" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="XML" value="3" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.spring.boot.run.usages" />
+      <usages-collector id="statistics.spring.boot.mvc.usages" />
+      <usages-collector id="statistics.js.language.service.starts" />
     </session>
   </component>
   <component name="FavoritesManager">
@@ -66,46 +78,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Hello-world/src/main/java/com/apress/prospring4/ch2/_01_HelloWorldDecoupled.java">
+        <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Hello-world/src/main/java/com/apress/prospring4/ch2/_02_HelloWorldSpringDI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/hello/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/hello/Quote.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/hello/Value.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="304">
+              <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -113,40 +89,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/java/com/ruiyi/controller/HelloWorld.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="152">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/webapp/views/helloworld.jsp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/webapp/views/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
               <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HttpDemo/src/main/java/com/ruyi/HttpDmeo/_01_Asynchronous_HTTP_Exchange.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HttpDemo/src/main/java/com/ruyi/HttpDmeo/_02_Asynchronous_HTTP_Exchange_with_Content_Streaming.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -164,6 +120,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/hello/Value.java" />
+        <option value="$PROJECT_DIR$/SpringMvcHelloWorld/src/main/java/com/ruiyi/controller/HelloWorld.java" />
+      </list>
+    </option>
+  </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
@@ -176,6 +140,13 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="732" />
@@ -191,23 +162,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Default Changelist'; set:Default Changelist; class com.intellij.packageDependencies.ChangeListScope">
           <expand>
             <path>
               <item name="Java201808" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="Java201808" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -234,7 +205,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538538230876" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538571359918" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HelloSpringMVC" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -253,7 +225,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Tomcat Server.SpringBootDemo">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ruiyi.Application" />
       <module name="SpringFrameworkDemo" />
@@ -306,8 +278,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="_02_Asynchronous_HTTP_Exchange_with_Content_Streaming" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ruyi.HttpDmeo._02_Asynchronous_HTTP_Exchange_with_Content_Streaming" />
+    <configuration name="_04_Pipelined_HTTP_Exchanges" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ruyi.HttpDmeo._04_Pipelined_HTTP_Exchanges" />
       <module name="HttpDemo" />
       <extension name="coverage">
         <pattern>
@@ -466,19 +438,19 @@
     <list>
       <item itemvalue="Tomcat Server.SpringBootDemo" />
       <item itemvalue="Tomcat Server.SpringMvcHelloWorld" />
-      <item itemvalue="Application._02_Asynchronous_HTTP_Exchange_with_Content_Streaming" />
       <item itemvalue="Application._01_Asynchronous_HTTP_Exchange" />
       <item itemvalue="Application.CollectionDemo" />
       <item itemvalue="Application.SpringFrameworkDemo" />
       <item itemvalue="Application.Application" />
+      <item itemvalue="Application._04_Pipelined_HTTP_Exchanges" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application._04_Pipelined_HTTP_Exchanges" />
         <item itemvalue="Application.Application" />
         <item itemvalue="Application.CollectionDemo" />
         <item itemvalue="Application.SpringFrameworkDemo" />
         <item itemvalue="Application._01_Asynchronous_HTTP_Exchange" />
-        <item itemvalue="Application._02_Asynchronous_HTTP_Exchange_with_Content_Streaming" />
       </list>
     </recent_temporary>
   </component>
@@ -512,6 +484,8 @@
       <workItem from="1538503700487" duration="280000" />
       <workItem from="1538536434837" duration="888000" />
       <workItem from="1538537446540" duration="728000" />
+      <workItem from="1538538407170" duration="205000" />
+      <workItem from="1538558729366" duration="2297000" />
     </task>
     <task id="LOCAL-00001" summary="readme">
       <created>1535220139093</created>
@@ -523,13 +497,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1902000" />
+    <option name="totallyTimeSpent" value="4404000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967811" visible="true" weight="0.3192964" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967811" visible="true" weight="0.32675907" />
       <window_info id="Structure" order="1" sideWeight="0.50247115" side_tool="true" weight="0.25746268" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -540,14 +513,14 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49253732" weight="0.44635195" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49253732" weight="0.2414163" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.32939914" />
       <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.4989339" weight="0.32939914" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4989339" weight="0.06538049" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5074627" side_tool="true" weight="0.020386266" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5074627" side_tool="true" visible="true" weight="0.2918455" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4946695" weight="0.32832617" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" sideWeight="0.49946696" weight="0.32939914" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
@@ -611,52 +584,10 @@
     <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/main.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#404#405#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Hello-world/src/main/java/com/apress/prospring4/ch2/_01_HelloWorldDecoupled.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/java/com/ruiyi/controller/HelloWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/webapp/views/helloworld.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/webapp/views/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HttpDemo/src/main/java/com/ruyi/HttpDmeo/_01_Asynchronous_HTTP_Exchange.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HttpDemo/src/main/java/com/ruyi/HttpDmeo/_02_Asynchronous_HTTP_Exchange_with_Content_Streaming.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
@@ -683,8 +614,112 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/hello/Value.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="437">
+          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+          <folding>
+            <element signature="e#524#525#0" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/CollectionDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2451">
+          <caret line="136" column="42" selection-start-line="136" selection-start-column="42" selection-end-line="136" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HttpDemo/src/main/java/com/ruyi/HttpDmeo/_04_Pipelined_HTTP_Exchanges.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/webapp/views/helloworld.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HttpDemo/src/main/java/com/ruyi/HttpDmeo/_01_Asynchronous_HTTP_Exchange.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HttpDemo/src/main/java/com/ruyi/HttpDmeo/_02_Asynchronous_HTTP_Exchange_with_Content_Streaming.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/webapp/WEB-INF/views/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hello-world/src/main/resources/META-INF/spring/app-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.7.RELEASE/spring-web-5.0.7.RELEASE-sources.jar!/org/springframework/web/filter/CharacterEncodingFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/java/com/ruiyi/controller/HelloWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/webapp/views/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
         </state>
       </provider>
     </entry>
