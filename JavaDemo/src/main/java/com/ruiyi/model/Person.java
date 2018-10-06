@@ -1,15 +1,35 @@
 package com.ruiyi.model;
 
+import java.util.Date;
+
 public class Person implements Comparable<Person> {
     Integer Id;
     String Name;
     Integer Age;
+    Date BirthDay;
 
+    public Person() {
+    }
 
     public Person(Integer id, String name, int age) {
         Id = id;
         Name = name;
         Age = age;
+    }
+
+    public Person(Integer id, String name, Integer age, Date birthDay) {
+        Id = id;
+        Name = name;
+        Age = age;
+        BirthDay = birthDay;
+    }
+
+    public Date getBirthDay() {
+        return BirthDay;
+    }
+
+    public void setBirthDay(Date birthDay) {
+        BirthDay = birthDay;
     }
 
     public Integer getId() {
@@ -36,15 +56,20 @@ public class Person implements Comparable<Person> {
         Age = age;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" + "Id=" + Id + ", Name='" + Name + ", Age=" + Age + '}';
-    }
-
     /*
     按照姓名排序
      */
     public int compareTo(Person person) {
         return this.getAge().compareTo(person.getAge());
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "Id=" + Id +
+                ", Name='" + Name + '\'' +
+                ", Age=" + Age +
+                ", BirthDay=" + BirthDay +
+                '}';
     }
 }

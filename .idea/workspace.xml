@@ -6,7 +6,42 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0265a641-4abd-41ad-894a-05a4801183b1" name="Default Changelist" comment="" />
+    <list default="true" id="0265a641-4abd-41ad-894a-05a4801183b1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/JsonDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/jquery/js/jquery-3.3.1-vsdoc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/jquery/js/jquery-3.3.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/jquery/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/jquery/js/jquery-3.3.1.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/jquery/js/jquery-3.3.1.slim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/jquery/js/jquery-3.3.1.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/jquery/js/jquery-3.3.1.slim.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/webapp/WEB-INF/views/student/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootDemo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootDemo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootDemo/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/Hello-world/target/" />
     <ignored path="$PROJECT_DIR$/springframeworkdemo_webservice/target/" />
     <ignored path="$PROJECT_DIR$/SpringMvcHelloWorld/target/" />
@@ -25,40 +60,56 @@
     <session id="-2065758523">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.13" value="3" />
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.13" value="4" />
           <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.35" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
+          <entry key="html" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="18" />
-          <entry key="jsp" value="4" />
-          <entry key="xml" value="3" />
+          <entry key="java" value="42" />
+          <entry key="js" value="1" />
+          <entry key="jsp" value="5" />
+          <entry key="properties" value="1" />
+          <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="HTML" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="18" />
-          <entry key="JSP" value="4" />
+          <entry key="JAVA" value="42" />
+          <entry key="JSP" value="5" />
+          <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="XML" value="3" />
+          <entry key="Properties" value="1" />
+          <entry key="XML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="11" />
+          <entry key="html" value="3" />
+          <entry key="java" value="1421" />
+          <entry key="jsp" value="17" />
+          <entry key="properties" value="82" />
+          <entry key="xml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11" />
+          <entry key="HTML" value="3" />
+          <entry key="JAVA" value="1421" />
+          <entry key="JSP" value="17" />
+          <entry key="Properties" value="82" />
+          <entry key="XML" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -73,58 +124,147 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/webapp/WEB-INF/web.xml">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/ArrayStoreException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/java/com/ruiyi/controller/HelloWorld.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="203">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#856#857#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/webapp/views/index.jsp">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/Thread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo/src/main/java/com/ruiyi/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo/src/main/java/com/ruiyi/service/MessagePrinter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="169">
+              <caret line="1916" selection-start-line="1916" selection-end-line="1916" />
+              <folding>
+                <element signature="e#74339#74340#0" expanded="true" />
+                <element signature="e#76018#76019#0" expanded="true" />
+                <element signature="e#76090#76091#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo/src/main/java/com/ruiyi/service/MessageService.java">
+        <entry file="file://$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/JsonDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            <state relative-caret-position="418">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#327#328#0" expanded="true" />
+                <element signature="e#355#356#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/model/Person.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="e#351#352#0" expanded="true" />
+                <element signature="e#382#383#0" expanded="true" />
+                <element signature="e#428#429#0" expanded="true" />
+                <element signature="e#463#464#0" expanded="true" />
+                <element signature="e#304#305#0" expanded="true" />
+                <element signature="e#329#330#0" expanded="true" />
+                <element signature="e#360#361#0" expanded="true" />
+                <element signature="e#387#388#0" expanded="true" />
+                <element signature="e#418#419#0" expanded="true" />
+                <element signature="e#444#445#0" expanded="true" />
+                <element signature="e#481#482#0" expanded="true" />
+                <element signature="e#504#505#0" expanded="true" />
+                <element signature="e#544#545#0" expanded="true" />
+                <element signature="e#571#572#0" expanded="true" />
+                <element signature="e#610#611#0" expanded="true" />
+                <element signature="e#635#636#0" expanded="true" />
+                <element signature="e#838#839#0" expanded="true" />
+                <element signature="e#901#902#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.31/fastjson-1.2.31-sources.jar!/com/alibaba/fastjson/JSON.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="137" column="25" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
+              <folding>
+                <element signature="e#5511#5512#0" expanded="true" />
+                <element signature="e#5569#5570#0" expanded="true" />
+                <element signature="e#30904#30905#0" expanded="true" />
+                <element signature="e#30977#30978#0" expanded="true" />
+                <element signature="e#33793#33794#0" expanded="true" />
+                <element signature="e#33877#33878#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.31/fastjson-1.2.31-sources.jar!/com/alibaba/fastjson/JSONArray.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="108" column="33" selection-start-line="108" selection-start-column="11" selection-end-line="108" selection-end-column="33" />
+              <folding>
+                <element signature="e#3241#3242#0" expanded="true" />
+                <element signature="e#3278#3279#0" expanded="true" />
+                <element signature="e#3315#3316#0" expanded="true" />
+                <element signature="e#3353#3354#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/ThreadGroup.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="1058" selection-start-line="1058" selection-end-line="1058" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/StringBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="88" selection-start-line="88" selection-end-line="88" />
+              <folding>
+                <element signature="e#2896#2897#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/RuntimeException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
+              <folding>
+                <element signature="e#1175#1176#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/Exception.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
+              <folding>
+                <element signature="e#1247#1248#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,9 +275,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>thymeleaf</find>
+      <find>iterator</find>
+      <find>toJavaObject</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -147,6 +295,13 @@
       <list>
         <option value="$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/hello/Value.java" />
         <option value="$PROJECT_DIR$/SpringMvcHelloWorld/src/main/java/com/ruiyi/controller/HelloWorld.java" />
+        <option value="$PROJECT_DIR$/SpringBootDemo/src/main/webapp/WEB-INF/views/student/index.html" />
+        <option value="$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/controller/StudentController.java" />
+        <option value="$PROJECT_DIR$/SpringBootDemo/src/main/webapp/WEB-INF/views/student/index.jsp" />
+        <option value="$PROJECT_DIR$/SpringBootDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBootDemo/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/model/Person.java" />
+        <option value="$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/JsonDemo.java" />
       </list>
     </option>
   </component>
@@ -200,6 +355,52 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaDemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ruiyi" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Default Changelist'; set:Default Changelist; class com.intellij.packageDependencies.ChangeListScope">
           <expand>
@@ -211,74 +412,28 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringFrameworkDemo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringFrameworkDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringFrameworkDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringFrameworkDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringFrameworkDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ruiyi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringFrameworkDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ruiyi" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538571359918" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538796418556" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../HelloSpringMVC2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\Java\JavaStudy\Java201808\SpringBootDemo\src\main\resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -292,7 +447,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.SpringBootDemo">
+  <component name="RunManager" selected="Application.JsonDemo">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ruiyi.Application" />
       <module name="SpringFrameworkDemo" />
@@ -319,25 +474,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpringFrameworkDemo" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.ruiyi.Application" />
-      <module name="SpringFrameworkDemo" />
+    <configuration name="JsonDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ruiyi.JsonDemo" />
+      <module name="JavaDemo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ruiyi.demo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="_01_Asynchronous_HTTP_Exchange" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ruyi.HttpDmeo._01_Asynchronous_HTTP_Exchange" />
-      <module name="HttpDemo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ruyi.HttpDmeo.*" />
+          <option name="PATTERN" value="com.ruiyi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -354,6 +496,19 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="SpringBootDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ruiyi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ruiyi.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -505,19 +660,19 @@
     <list>
       <item itemvalue="Tomcat Server.SpringBootDemo" />
       <item itemvalue="Tomcat Server.SpringMvcHelloWorld" />
-      <item itemvalue="Application._01_Asynchronous_HTTP_Exchange" />
       <item itemvalue="Application.CollectionDemo" />
-      <item itemvalue="Application.SpringFrameworkDemo" />
       <item itemvalue="Application.Application" />
       <item itemvalue="Application._04_Pipelined_HTTP_Exchanges" />
+      <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="Application.JsonDemo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.JsonDemo" />
+        <item itemvalue="Spring Boot.Application" />
         <item itemvalue="Application._04_Pipelined_HTTP_Exchanges" />
         <item itemvalue="Application.Application" />
         <item itemvalue="Application.CollectionDemo" />
-        <item itemvalue="Application.SpringFrameworkDemo" />
-        <item itemvalue="Application._01_Asynchronous_HTTP_Exchange" />
       </list>
     </recent_temporary>
   </component>
@@ -554,6 +709,9 @@
       <workItem from="1538538407170" duration="205000" />
       <workItem from="1538558729366" duration="2297000" />
       <workItem from="1538571860676" duration="84000" />
+      <workItem from="1538739992716" duration="6004000" />
+      <workItem from="1538758465720" duration="949000" />
+      <workItem from="1538790902130" duration="4922000" />
     </task>
     <task id="LOCAL-00001" summary="readme">
       <created>1535220139093</created>
@@ -565,12 +723,22 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4488000" />
+    <option name="totallyTimeSpent" value="16363000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967811" visible="true" weight="0.3304904" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4967811" visible="true" weight="0.21801706" />
       <window_info id="Structure" order="1" sideWeight="0.50247115" side_tool="true" weight="0.25746268" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -581,15 +749,15 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49253732" weight="0.2414163" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.77665246" visible="true" weight="0.3583691" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.65191895" weight="0.39914164" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.32939914" />
-      <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.4989339" weight="0.32939914" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4989339" weight="0.06538049" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5074627" side_tool="true" visible="true" weight="0.2918455" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4946695" weight="0.32832617" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4989339" weight="0.32939914" />
+      <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.49840087" weight="0.32939914" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4978678" weight="0.06437768" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.22334754" side_tool="true" visible="true" weight="0.3583691" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49253732" weight="0.32832617" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" sideWeight="0.49946696" weight="0.32939914" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" weight="0.32939914" />
@@ -623,6 +791,75 @@
     <MESSAGE value="readme" />
     <option name="LAST_COMMIT_MESSAGE" value="readme" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/JsonDemo.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="(( JSONObject ) obj).get(&quot;id&quot;)" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>(( JSONObject ) obj).get(&quot;id&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(( JSONObject ) obj).size()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>persons[0][0]</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>persons[0]</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(( Object[] ) persons).length</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>persons</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(( JSONArray ) obj).size()</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>com.alibaba.fastjson.JSONArray</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>obj[0]</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>persons</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo/src/main/java/hello/Application.java" />
     <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo/src/main/java/hello/MessagePrinter.java" />
@@ -632,13 +869,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
           <caret line="268" column="9" selection-start-line="268" selection-start-column="9" selection-end-line="268" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -680,24 +910,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/CollectionDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2451">
-          <caret line="136" column="42" selection-start-line="136" selection-start-column="42" selection-end-line="136" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HttpDemo/src/main/java/com/ruyi/HttpDmeo/_04_Pipelined_HTTP_Exchanges.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -715,13 +931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/webapp/WEB-INF/views/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -760,9 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -791,6 +997,242 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/webapp/WEB-INF/views/student/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1197">
+          <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/webapp/WEB-INF/views/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/controller/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="27" />
+          <folding>
+            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#654#655#0" expanded="true" />
+            <element signature="e#713#714#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/resources/static/jquery/js/jquery-3.3.1.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/javax/swing/text/html/HTMLDocument.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="272" column="13" selection-start-line="272" selection-start-column="13" selection-end-line="272" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/CollectionDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="63" column="50" lean-forward="true" selection-start-line="63" selection-start-column="50" selection-end-line="63" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="210" column="12" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="411" selection-start-line="411" selection-end-line="411" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/Throwable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="250" selection-start-line="250" selection-end-line="250" />
+          <folding>
+            <element signature="e#10280#10281#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/Exception.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="e#1247#1248#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/RuntimeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="e#1175#1176#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/ArrayStoreException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="e#856#857#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="1916" selection-start-line="1916" selection-end-line="1916" />
+          <folding>
+            <element signature="e#74339#74340#0" expanded="true" />
+            <element signature="e#76018#76019#0" expanded="true" />
+            <element signature="e#76090#76091#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/ThreadGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="1058" selection-start-line="1058" selection-end-line="1058" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/StringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="e#2896#2897#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.31/fastjson-1.2.31-sources.jar!/com/alibaba/fastjson/JSONArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="108" column="33" selection-start-line="108" selection-start-column="11" selection-end-line="108" selection-end-column="33" />
+          <folding>
+            <element signature="e#3241#3242#0" expanded="true" />
+            <element signature="e#3278#3279#0" expanded="true" />
+            <element signature="e#3315#3316#0" expanded="true" />
+            <element signature="e#3353#3354#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.31/fastjson-1.2.31-sources.jar!/com/alibaba/fastjson/JSON.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="137" column="25" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
+          <folding>
+            <element signature="e#5511#5512#0" expanded="true" />
+            <element signature="e#5569#5570#0" expanded="true" />
+            <element signature="e#30904#30905#0" expanded="true" />
+            <element signature="e#30977#30978#0" expanded="true" />
+            <element signature="e#33793#33794#0" expanded="true" />
+            <element signature="e#33877#33878#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/model/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#463#464#0" expanded="true" />
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#360#361#0" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+            <element signature="e#504#505#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#610#611#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+            <element signature="e#838#839#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaDemo/src/main/java/com/ruiyi/JsonDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#327#328#0" expanded="true" />
+            <element signature="e#355#356#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -848,11 +1290,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring|SpringFrameworkDemo</last-edited>
+          <last-edited>JavaDemo</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
