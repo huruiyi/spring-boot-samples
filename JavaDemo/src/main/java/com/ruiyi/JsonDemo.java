@@ -4,23 +4,34 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.ruiyi.model.Person;
+import com.ruiyi.model.User;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 //HTMLDocument
+//SimpleDateFormat
 
 public class JsonDemo {
     private List<Person> list;
 
     public static void main(String[] args) {
-        JsonToObj();
+
+
     }
 
     static void ObjToJson() {
-        Person person = new Person(1, "小云儿", 26);
+        Date date = new Date();
+        System.out.println(date.getTime());
+        System.out.println(date.getYear() + 1900);
+        System.out.println(date.getMonth() + 1);
+        System.out.println(date.getDay());
 
+        Calendar calendar = Calendar.getInstance();
+
+
+        Person person = new Person(1, "小云儿", 26);
         String json = JSON.toJSON(person).toString();
         System.out.println(json);
     }
@@ -45,7 +56,6 @@ public class JsonDemo {
         System.out.println((( JSONObject ) obj).getString("name"));
         System.out.println((( JSONObject ) obj).get("age"));
     }
-
 
     static void ListToJson() {
         List<Person> list = new ArrayList<Person>();
@@ -81,14 +91,42 @@ public class JsonDemo {
 
         System.out.println("3:*************************************************************");
 
-        List<Person> list = jsonArray.toJavaList(Person.class);
-        for (Person person : list) {
+        List<Person> list1 = jsonArray.toJavaList(Person.class);
+        for (Person person : list1) {
             System.out.println(person);
         }
 
         System.out.println("4:*************************************************************");
 
+        List<JSONObject> list2 = JSON.toJavaObject(jsonArray, List.class);
+        for (JSONObject person : list2) {
+            System.out.format("%s-%s-%d\n", person.get("id"), person.get("name"), person.get("age"));
+        }
+
+        System.out.println("5:*************************************************************");
+        List<Person> list3 = JSON.toJavaObject(jsonArray, List.class);
+        System.out.println(list3.size());
+        System.out.println(list3.get(0));
+        System.out.println(list3.toString());
+
         //Object[] toArray()
         //<T> T[] toArray(T[] a)
+    }
+
+    static void JsonDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+        Date date = null;
+        try {
+            date = sdf.parse("2018-10-06");
+        }
+        catch (ParseException e) {
+            e.printStackTrace();
+        }
+        User user = new User(1, "小王", date);
+        JSONObject jsonObject = ( JSONObject ) JSON.toJSON(user);
+        System.out.println(jsonObject);
+
+        User user2 = JSON.toJavaObject(jsonObject, User.class);
+        System.out.println(user2.getName() + " " + user2.getDate());
     }
 }

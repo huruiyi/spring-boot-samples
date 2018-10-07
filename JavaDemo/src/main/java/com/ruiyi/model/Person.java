@@ -1,11 +1,15 @@
 package com.ruiyi.model;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.util.Date;
 
 public class Person implements Comparable<Person> {
     Integer Id;
     String Name;
     Integer Age;
+
+    @JSONField(format = "yyyy-mm-dd")
     Date BirthDay;
 
     public Person() {
