@@ -8,14 +8,19 @@
         <outputRelativeToContentRoot value="true" />
         <module name="hello-world" />
         <module name="HttpDemo" />
-        <module name="Java201808" />
         <module name="JavaDemo" />
         <module name="SpringBootDemo" />
         <module name="SpringFrameworkDemo" />
         <module name="SpringFrameworkDemo_Consuming_Webservice" />
         <module name="SpringFrameworkDemo_Webservice" />
+        <module name="SpringMvc1" />
+        <module name="SpringMvc2" />
         <module name="SpringMvcHelloWorld" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="HelloSpringMVC1" target="1.5" />
+      <module name="HelloSpringMVC2" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
