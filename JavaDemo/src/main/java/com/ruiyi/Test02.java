@@ -7,7 +7,6 @@ public class Test02 {
         int month = 10;
         int week = getWeek(year, month, 1);
 
-
         System.out.println("日	一	二	三	四	五	六");
         System.out.println();
         int count = 0;
@@ -35,7 +34,6 @@ public class Test02 {
         return week;
     }
 
-
     /**
      * 给定年月日，求这个日子是这一年的第多少天
      */
@@ -44,7 +42,7 @@ public class Test02 {
         int totalDays = 0;
         //从1月循环到当前月-1, 把这每一个月的天数求和，加上当前的月的号
         for (int i = 1; i < month; i++) {
-        //求每一个月的天数
+            //求每一个月的天数
             int mdays = getDays(year, i);
             totalDays += mdays;
         }
@@ -52,7 +50,6 @@ public class Test02 {
         totalDays += days;
         return totalDays;
     }
-
 
     public static int getDays(int year, int month) {
         //定义一个月的天数的变量
@@ -85,6 +82,5 @@ public class Test02 {
         }
 
         return mdays;
-
     }
 }
