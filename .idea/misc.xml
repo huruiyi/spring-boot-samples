@@ -4,8 +4,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/HelloSpringMVC1" />
     <file type="web" url="file://$PROJECT_DIR$/HelloSpringMVC2" />
-    <file type="web" url="file://$PROJECT_DIR$/SpringBootDemo" />
-    <file type="web" url="file://$PROJECT_DIR$/SpringBootDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringBootDemo-jsp" />
     <file type="web" url="file://$PROJECT_DIR$/SpringBootDemo2/src/test/java" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMvc1" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMvc2" />

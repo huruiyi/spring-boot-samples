@@ -18,7 +18,7 @@
         <module name="mybatis-spring-basic" />
         <module name="mybatis-spring-pro" />
         <module name="mybatis01" />
-        <module name="SpringBootDemo" />
+        <module name="SpringBootDemo-jsp" />
         <module name="SpringFrameworkDemo" />
         <module name="SpringFrameworkDemo_Consuming_Webservice" />
         <module name="SpringFrameworkDemo_Webservice" />
