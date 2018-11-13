@@ -34,19 +34,25 @@ public class MybatisDemo0 {
 
     @Test
 // 测试自动映射以及下划线自动转化驼峰
-    public void quickStart() {
+    public void quickStart() throws IOException {
+
         SqlSession sqlSession = sqlSessionFactory.openSession();
+// 3.获取对应 mapper
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
+
         TUser user = mapper.selectByPrimaryKey(2);
+
         System.out.println(user.toString());
     }
 
     @Test
 // 测试插入数据自动生成id
-    public void testInsertGenerateId1() {
+    public void testInsertGenerateId1() throws IOException {
+
         SqlSession sqlSession = sqlSessionFactory.openSession();
+
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
-// 4.执行查询语句并返回结果
+
         TUser user1 = new TUser();
         user1.setUserName("test1---");
         user1.setRealName("realname1---");
@@ -60,9 +66,11 @@ public class MybatisDemo0 {
 
     @Test
 // 测试插入数据自动生成id
-    public void testInsertGenerateId2() {
+    public void testInsertGenerateId2() throws IOException {
+
         SqlSession sqlSession = sqlSessionFactory.openSession();
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
+
         TUser user2 = new TUser();
         user2.setUserName("test2");
         user2.setRealName("realname2");
@@ -74,9 +82,12 @@ public class MybatisDemo0 {
 
     @Test
 // 测试自动映射
-    public void testAutoMapping() {
+    public void testAutoMapping() throws IOException {
+
         SqlSession sqlSession = sqlSessionFactory.openSession();
+
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
+
         TUser user = mapper.selectByPrimaryKey(1);
         System.out.println(user.getId());
     }
@@ -84,7 +95,9 @@ public class MybatisDemo0 {
     // 多参数查询
     @Test
     public void testManyParamQuery() {
+
         SqlSession sqlSession = sqlSessionFactory.openSession();
+
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
 
         String email = "qq.com";
@@ -112,7 +125,9 @@ public class MybatisDemo0 {
     @Test
 // 参数#和参数$区别测试(动态sql 入门)
     public void testSymbol() {
+
         SqlSession sqlSession = sqlSessionFactory.openSession();
+
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
 
         String inCol = "id, user_name, real_name, sex, mobile, email, note";
@@ -122,12 +137,15 @@ public class MybatisDemo0 {
 
         List<TUser> list = mapper.selectBySymbol(tableName, inCol, orderStr, sex);
         System.out.println(list.size());
+
     }
 
     @Test
 // 注解测试
     public void testAnno() {
+
         SqlSession sqlSession = sqlSessionFactory.openSession();
+
         TJobHistoryAnnoMapper mapper = sqlSession.getMapper(TJobHistoryAnnoMapper.class);
 
         List<TJobHistory> list = mapper.selectByUserId(1);
@@ -141,8 +159,8 @@ public class MybatisDemo0 {
         job.setUserId(1);
         job.setCompName("美团");
         job.setYears(3);
-        mapper.insert(job);
 
+        mapper.insert(job);
         System.out.println(job.getId());
     }
 
@@ -151,7 +169,9 @@ public class MybatisDemo0 {
     @Test
 // if用于select，并与where配合
     public void testSelectIfOper() {
+
         SqlSession sqlSession = sqlSessionFactory.openSession();
+
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
 
         String email = "qq.com";
@@ -164,7 +184,9 @@ public class MybatisDemo0 {
     @Test
 // if用于update，并与set配合
     public void testUpdateIfOper() {
+
         SqlSession sqlSession = sqlSessionFactory.openSession();
+
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
 
         TUser user = new TUser();
@@ -183,7 +205,9 @@ public class MybatisDemo0 {
     @Test
 // if用于insert，并与trim配合
     public void testInsertIfOper() {
+
         SqlSession sqlSession = sqlSessionFactory.openSession();
+
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
 
         TUser user = new TUser();
@@ -201,7 +225,9 @@ public class MybatisDemo0 {
     @Test
 // Foreach用于in查询
     public void testForeach4In() {
+
         SqlSession sqlSession = sqlSessionFactory.openSession();
+
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
 
         String[] names = new String[]{"lison", "james"};
@@ -212,7 +238,9 @@ public class MybatisDemo0 {
     @Test
 // Foreach用于批量插入
     public void testForeach4Insert() {
+
         SqlSession sqlSession = sqlSessionFactory.openSession();
+
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
 
         TUser user1 = new TUser();
@@ -239,8 +267,10 @@ public class MybatisDemo0 {
     @Test
 // 批量更新
     public void testBatchExcutor() {
+
         SqlSession sqlSession = sqlSessionFactory.openSession(true);
 //		SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.BATCH, false);
+
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
 
         TUser user = new TUser();
@@ -270,9 +300,11 @@ public class MybatisDemo0 {
     }
 
     @Test
-    // 测试两种关联方式
+// 测试两种关联方式
     public void testAssociation() {
+
         SqlSession sqlSession = sqlSessionFactory.openSession();
+
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
         List<TUser> selectUserJobs1 = mapper.selectUserJobs1();
         List<TUser> selectUserJobs2 = mapper.selectUserJobs2();
@@ -283,4 +315,5 @@ public class MybatisDemo0 {
             System.out.println(tUser.getJobs().size());
         }
     }
+
 }

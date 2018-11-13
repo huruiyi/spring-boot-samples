@@ -5,6 +5,8 @@
     <file type="web" url="file://$PROJECT_DIR$/HelloSpringMVC1" />
     <file type="web" url="file://$PROJECT_DIR$/HelloSpringMVC2" />
     <file type="web" url="file://$PROJECT_DIR$/SpringBootDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringBootDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringBootDemo2/src/test/java" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMvc1" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMvc2" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMvcHelloWorld" />
@@ -28,6 +30,8 @@
         <option value="$PROJECT_DIR$/mybatis-quick-start/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-spring/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-demo0/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-spring-pro/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-spring-basic/pom.xml" />
       </list>
     </option>
   </component>

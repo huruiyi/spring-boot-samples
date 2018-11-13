@@ -11,7 +11,7 @@
     <modules>
         <module>SpringMvc1</module>
         <module>SpringMvc2</module>
+        <module>module_one</module>
+        <module>module_two</module>
     </modules>
-
-
 </project>

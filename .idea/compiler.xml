@@ -9,11 +9,14 @@
         <module name="hello-world" />
         <module name="HttpDemo" />
         <module name="JavaDemo" />
+        <module name="Module_One" />
+        <module name="Module_Two" />
         <module name="mybatis-demo0" />
         <module name="mybatis-demo1" />
         <module name="mybatis-demo2" />
         <module name="mybatis-quick-start" />
-        <module name="mybatis-spring" />
+        <module name="mybatis-spring-basic" />
+        <module name="mybatis-spring-pro" />
         <module name="mybatis01" />
         <module name="SpringBootDemo" />
         <module name="SpringFrameworkDemo" />
@@ -27,6 +30,7 @@
     <bytecodeTargetLevel>
       <module name="HelloSpringMVC1" target="1.5" />
       <module name="HelloSpringMVC2" target="1.5" />
+      <module name="SpringBootDemo1" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

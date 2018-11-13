@@ -2,8 +2,9 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/Hello-world" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/HelloSpringMVC1/src/main/java/com/springmvc/controller/HelloController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/SpringBootDemo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBootDemo0" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBootDemo2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringFrameworkDemo_Webservice" charset="UTF-8" />
   </component>

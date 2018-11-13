@@ -44,7 +44,7 @@
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
-			<version>3.4.0</version>
+			<version>3.4.6</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -58,6 +58,7 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.mybatis.generator</groupId>
 				<artifactId>mybatis-generator-maven-plugin</artifactId>
@@ -67,6 +68,10 @@
 					<overwrite>true</overwrite>
 				</configuration>
 			</plugin>
+
+
 		</plugins>
 	</build>
+
+
 </project>
