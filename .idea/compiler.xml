@@ -19,7 +19,7 @@
         <module name="mybatis-spring-pro" />
         <module name="mybatis01" />
         <module name="SpringBootDemo-jsp" />
-        <module name="SpringFrameworkDemo" />
+        <module name="SpringBootDemo-thymeleaf" />
         <module name="SpringFrameworkDemo_Consuming_Webservice" />
         <module name="SpringFrameworkDemo_Webservice" />
         <module name="SpringMvc1" />
@@ -28,10 +28,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="dedmoxyz" target="1.8" />
       <module name="HelloSpringMVC1" target="1.5" />
       <module name="HelloSpringMVC2" target="1.5" />
-      <module name="SpringBootDemo-thymeleaf" target="1.8" />
       <module name="SpringBootDemo1" target="1.8" />
+      <module name="SpringFrameworkDemo" target="1.5" />
+      <module name="XYZ" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

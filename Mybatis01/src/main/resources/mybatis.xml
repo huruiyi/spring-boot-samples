@@ -6,7 +6,7 @@
     <properties resource="jdbc.properties"/>
     <typeAliases>
         <!-- mapper.xml 中的 resultType 不需要配置全名 -->
-        <package name="com.ruiyi.demo.entity"/>
+        <package name="com.example.demo.entity"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -20,6 +20,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper class="com.ruiyi.demo.mapper.TUserMapper"/>
+        <mapper class="com.example.mapper.TUserMapper"/>
     </mappers>
 </configuration>

@@ -4,10 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ruiyi</groupId>
+    <groupId>com.example</groupId>
     <artifactId>SpringBootDemo-jsp</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
+
+    <name>SpringBootDemo-jsp</name>
+    <description>Demo project for Spring Boot JSP Template engine;</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

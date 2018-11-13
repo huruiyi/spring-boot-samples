@@ -7,8 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.ruiyi.demo.entity.TUser;
-import com.ruiyi.demo.mapper.TUserMapper;
+import com.example.entity.TUser;
+import com.example.mapper.TUserMapper;
 
 public class Demo {
 

@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/HelloSpringMVC1" />
     <file type="web" url="file://$PROJECT_DIR$/HelloSpringMVC2" />
     <file type="web" url="file://$PROJECT_DIR$/SpringBootDemo-jsp" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringBootDemo-thymeleaf" />
     <file type="web" url="file://$PROJECT_DIR$/SpringBootDemo2/src/test/java" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMvc1" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMvc2" />
@@ -31,7 +32,14 @@
         <option value="$PROJECT_DIR$/mybatis-demo0/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-spring-pro/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-spring-basic/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBootDemo-thymeleaf/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBootDemo-jsp/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/XYZ/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">

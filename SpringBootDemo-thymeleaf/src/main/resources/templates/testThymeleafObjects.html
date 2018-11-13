@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" />
+<link th:href="@{/bootstrap/css/bootstrap-theme.css}" rel="stylesheet" />
+<script th:src="@{/jquery/js/jquery-3.3.1.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<div class="panel panel-primary">
+					<div class="panel-heading text-center">
+						<span class="panel-title">测试Thymeleaf对象</span>
+					</div>
+					<div class="panel-body">
+						#ctx.#vars：
+						<br />
+						<textarea th:text="${#ctx.#vars}" rows="10" cols="150"></textarea>
+						<br />
+						喜欢看的书：<span th:text="${#vars.book}"></span>
+						<br />
+						喜欢的城市：<span th:text="${#httpSession.getAttribute('city')}"></span>
+						<br />
+						你的国家：<span th:text="${#locale.country}+'-'+${#locale.getDisplayCountry()}"></span>
+						<br />
+						你的母语：<span th:text="${#locale.language}+'-'+${#locale.getDisplayLanguage()}"></span>
+						<br />
+						<hr />
+						时间：<span th:text="${#dates.format(#dates.createNow())}"></span>
+						<br />
+						收入：<span th:text="'￥'+${#numbers.formatDecimal(2345.5645345, 3, 2)}"></span>
+						<br />
+					</div>
+					<div class="panel-footer text-right">
+						<span class="panel-title">胡睿毅@20181005</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
