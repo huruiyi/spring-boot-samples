@@ -2,127 +2,20 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="SpringBootDemo:war" />
+      <artifact name="SpringBootDemo-jsp:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0265a641-4abd-41ad-894a-05a4801183b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Module_One/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Module_One/src/main/java/com/ruiyi/module_one/BaseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Module_Two/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Module_Two/src/main/java/com/ruiyi/module_two/CController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Module_Two/src/test/java/com/ruiyi/demo/Demo01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-basic/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/resources/sqlmapper/THealthReportFemaleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/resources/sqlmapper/THealthReportMaleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/resources/sqlmapper/TJobHistoryMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/resources/sqlmapper/TPositionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/resources/sqlmapper/TRoleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/resources/sqlmapper/TRolePermissionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/resources/sqlmapper/TUserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/resources/sqlmapper/TUserRoleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/test/java/com/enjoylearning/mybatis/Demo1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/Items.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/ItemsExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/Orderdetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/OrderdetailExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/Orders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/OrdersExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/THealthReportFemale.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/THealthReportFemaleExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/THealthReportMale.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/THealthReportMaleExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/TJobHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/TJobHistoryExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/TPosition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/TPositionExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/TRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/TRoleExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/TRolePermission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/TRolePermissionExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/TUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/TUserExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/TUserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/TUserRoleExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/entity/UserExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/mapper/ItemsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/mapper/OrderdetailMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/mapper/OrdersMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/mapper/THealthReportFemaleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/mapper/THealthReportMaleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/mapper/TPositionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/mapper/TRoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/mapper/TRolePermissionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/mapper/TUserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/java/com/enjoylearning/mybatis/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/db.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/sqlmapper/ItemsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/sqlmapper/OrderdetailMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/sqlmapper/OrdersMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/sqlmapper/THealthReportFemaleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/sqlmapper/THealthReportMaleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/sqlmapper/TJobHistoryMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/sqlmapper/TPositionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/sqlmapper/TRoleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/sqlmapper/TRolePermissionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/sqlmapper/TUserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/sqlmapper/TUserRoleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/sqlmapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/test/java/com/enjoylearning/mybatis/Demo0.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/test/java/com/enjoylearning/mybatis/Demo2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ant.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo0/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo0/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo0/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo0/src/main/resources/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo0/src/test/java/com/enjoylearning/mybatis/MybatisDemo0.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo0/src/test/java/com/enjoylearning/mybatis/MybatisDemo0.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/entity/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/entity/THealthReportFemale.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/entity/THealthReportFemale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/entity/THealthReportMale.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/entity/THealthReportMale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/entity/TJobHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/entity/TJobHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/entity/TPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/entity/TPosition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/entity/TRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/entity/TRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/entity/TRolePermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/entity/TRolePermission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/entity/TUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/entity/TUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/entity/TUserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/entity/TUserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/mapper/THealthReportFemaleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/mapper/THealthReportFemaleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/mapper/THealthReportMaleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/mapper/THealthReportMaleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/mapper/TPositionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/mapper/TPositionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/mapper/TRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/mapper/TRoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/mapper/TRolePermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/mapper/TRolePermissionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/mapper/TUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/mapper/TUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/resources/applicationContext.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-basic/src/main/resources/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/resources/generatorConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-pro/src/main/resources/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/resources/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/resources/sqlmapper/THealthReportFemaleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/resources/sqlmapper/THealthReportMaleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/resources/sqlmapper/TJobHistoryMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/resources/sqlmapper/TPositionMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/resources/sqlmapper/TRoleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/resources/sqlmapper/TRolePermissionMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/resources/sqlmapper/TUserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/main/resources/sqlmapper/TUserRoleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-spring/src/test/java/com/enjoylearning/mybatis/MybatisSpringTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootDemo-jsp/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootDemo-jsp/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootDemo-jsp/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootDemo-jsp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootDemo-jsp/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootDemo-jsp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootDemo-jsp/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/Hello-world/target/" />
     <ignored path="$PROJECT_DIR$/springframeworkdemo_webservice/target/" />
@@ -149,6 +42,8 @@
     <ignored path="$PROJECT_DIR$/module_two/target/" />
     <ignored path="$PROJECT_DIR$/SpringBootDemo1/target/" />
     <ignored path="$PROJECT_DIR$/SpringBootDemo0/target/" />
+    <ignored path="$PROJECT_DIR$/SpringBootDemo-jsp/target/" />
+    <ignored path="$PROJECT_DIR$/SpringBootDemo-thymeleaf/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,14 +96,14 @@
           <entry key="gitignore" value="1" />
           <entry key="html" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="164" />
+          <entry key="java" value="168" />
           <entry key="js" value="2" />
           <entry key="jsp" value="19" />
           <entry key="md" value="1" />
           <entry key="mvnw" value="1" />
           <entry key="pom" value="1" />
           <entry key="properties" value="8" />
-          <entry key="xml" value="68" />
+          <entry key="xml" value="70" />
           <entry key="xsd" value="2" />
         </counts>
       </usages-collector>
@@ -219,13 +114,13 @@
           <entry key="Cmd" value="1" />
           <entry key="HTML" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="164" />
+          <entry key="JAVA" value="168" />
           <entry key="JSP" value="19" />
           <entry key="JavaScript" value="2" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="8" />
-          <entry key="XML" value="71" />
+          <entry key="XML" value="73" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -260,33 +155,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Module_Two/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TUserMapper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -309,11 +177,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/test/java/com/enjoylearning/mybatis/MybatisDemo0.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1577">
-              <caret line="202" selection-start-line="202" selection-end-line="202" />
+            <state relative-caret-position="209">
+              <caret line="296" column="28" selection-start-line="296" selection-start-column="28" selection-end-line="296" selection-end-column="28" />
               <folding>
                 <element signature="e#1166#1222#1" expanded="true" />
                 <element signature="e#1248#1309#1" expanded="true" />
@@ -513,35 +381,124 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Module_One/src/main/java/com/ruiyi/module_one/BaseController.java">
+        <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/test/java/com/enjoylearning/mybatis/MybatisDemo1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Module_Two/src/main/java/com/ruiyi/module_two/CController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="8" column="74" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
+            <state relative-caret-position="228">
+              <caret line="165" column="38" selection-start-line="165" selection-start-column="38" selection-end-line="165" selection-end-column="38" />
               <folding>
-                <element signature="e#155#156#0" expanded="true" />
-                <element signature="e#238#239#0" expanded="true" />
+                <element signature="e#847#886#1" expanded="true" />
+                <element signature="e#895#961#1" expanded="true" />
+                <element signature="e#1160#1216#1" expanded="true" />
+                <element signature="e#1225#1286#1" expanded="true" />
+                <element signature="e#1295#1337#1" expanded="true" />
+                <element signature="e#1449#1505#1" expanded="true" />
+                <element signature="e#1514#1575#1" expanded="true" />
+                <element signature="e#1585#1609#1" expanded="true" />
+                <element signature="e#1618#1631#1" expanded="true" />
+                <element signature="e#1655#1714#1" expanded="true" />
+                <element signature="e#1914#1974#1" expanded="true" />
+                <element signature="e#2038#2076#1" expanded="true" />
+                <element signature="e#2139#2192#1" expanded="true" />
+                <element signature="e#2337#2393#1" expanded="true" />
+                <element signature="e#2402#2463#1" expanded="true" />
+                <element signature="e#2472#2498#1" expanded="true" />
+                <element signature="e#2816#2872#1" expanded="true" />
+                <element signature="e#2881#2942#1" expanded="true" />
+                <element signature="e#2951#2977#1" expanded="true" />
+                <element signature="e#3278#3334#1" expanded="true" />
+                <element signature="e#3343#3404#1" expanded="true" />
+                <element signature="e#3414#3482#1" expanded="true" />
+                <element signature="e#3491#3519#1" expanded="true" />
+                <element signature="e#3528#3541#1" expanded="true" />
+                <element signature="e#3550#3584#1" expanded="true" />
+                <element signature="e#3594#3668#1" expanded="true" />
+                <element signature="e#3790#3846#1" expanded="true" />
+                <element signature="e#3871#3952#1" expanded="true" />
+                <element signature="e#3962#4012#1" expanded="true" />
+                <element signature="e#4063#4110#1" expanded="true" />
+                <element signature="e#4164#4200#1" expanded="true" />
+                <element signature="e#4568#4624#1" expanded="true" />
+                <element signature="e#4649#4710#1" expanded="true" />
+                <element signature="e#4720#4744#1" expanded="true" />
+                <element signature="e#4753#4769#1" expanded="true" />
+                <element signature="e#4778#4829#1" expanded="true" />
+                <element signature="e#5019#5075#1" expanded="true" />
+                <element signature="e#5084#5145#1" expanded="true" />
+                <element signature="e#5155#5180#1" expanded="true" />
+                <element signature="e#5649#5705#1" expanded="true" />
+                <element signature="e#5714#5775#1" expanded="true" />
+                <element signature="e#5785#5810#1" expanded="true" />
+                <element signature="e#6242#6298#1" expanded="true" />
+                <element signature="e#6307#6368#1" expanded="true" />
+                <element signature="e#6378#6426#1" expanded="true" />
+                <element signature="e#6435#6486#1" expanded="true" />
+                <element signature="e#6610#6666#1" expanded="true" />
+                <element signature="e#6675#6736#1" expanded="true" />
+                <element signature="e#6746#6772#1" expanded="true" />
+                <element signature="e#7503#7563#1" expanded="true" />
+                <element signature="e#7658#7719#1" expanded="true" />
+                <element signature="e#7729#7754#1" expanded="true" />
+                <element signature="e#8067#8093#1" expanded="true" />
+                <element signature="e#8580#8636#1" expanded="true" />
+                <element signature="e#8645#8706#1" expanded="true" />
+                <element signature="e#8716#8771#1" expanded="true" />
+                <element signature="e#8780#8866#0" expanded="true" />
+                <element signature="e#8785#8796#0" expanded="true" />
+                <element signature="e#8780#8866#0" expanded="true" />
+                <element signature="e#8876#8931#1" expanded="true" />
+                <element signature="e#8940#9043#0" expanded="true" />
+                <element signature="e#8945#8956#0" expanded="true" />
+                <element signature="e#8940#9043#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Module_Two/src/test/java/com/ruiyi/demo/Demo01.java">
+        <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="342">
+              <caret line="18" column="71" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/src/main/java/com/ruiyi/controller/StudentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/src/main/java/com/ruiyi/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="538">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#606#607#0" expanded="true" />
+                <element signature="e#654#655#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SpringBootDemo-thymeleaf/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -571,6 +528,7 @@
       <find>mybatis-generator</find>
       <find>XMLParserException</find>
       <find>redisson</find>
+      <find>获取sqlSession.*</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -579,8 +537,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mybatis-demo2/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java" />
-        <option value="$PROJECT_DIR$/mybatis-spring/src/main/resources/sqlmapper/TUserRoleMapper.xml" />
         <option value="$PROJECT_DIR$/mybatis-spring/src/main/resources/sqlmapper/TRolePermissionMapper.xml" />
         <option value="$PROJECT_DIR$/mybatis-spring/src/main/resources/sqlmapper/TUserMapper.xml" />
         <option value="$PROJECT_DIR$/mybatis-spring/src/main/resources/sqlmapper/TRoleMapper.xml" />
@@ -630,6 +586,8 @@
         <option value="$PROJECT_DIR$/mybatis-demo0/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-demo0/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java" />
         <option value="$PROJECT_DIR$/mybatis-demo0/src/test/java/com/enjoylearning/mybatis/MybatisDemo0.java" />
+        <option value="$PROJECT_DIR$/SpringBootDemo-jsp/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBootDemo-thymeleaf/pom.xml" />
       </list>
     </option>
   </component>
@@ -653,7 +611,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="177" />
     <option name="y" value="26" />
     <option name="width" value="1564" />
@@ -677,44 +635,13 @@
             <path>
               <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis-demo0" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringBootDemo-thymeleaf" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis-demo0" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringBootDemo-thymeleaf" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis-demo0" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis-demo0" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis-demo0" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis-demo0" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -757,7 +684,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542095687353" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542096195962" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -786,7 +713,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.SpringBootDemo0">
+  <component name="RunManager" selected="Tomcat Server.SpringBootDemo-jsp">
     <configuration name="Demo1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mybatis-spring-basic" />
       <extension name="coverage">
@@ -824,10 +751,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpringBootDemo0" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.8" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8086/" />
+    <configuration name="SpringBootDemo-jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.8" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment />
+      <deployment>
+        <artifact name="SpringBootDemo-jsp:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_Java201808_8" />
         <option name="HTTP_PORT" value="8086" />
@@ -886,8 +818,73 @@
         </SHUTDOWN>
       </ConfigurationWrapper>
       <method v="2">
-        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="SpringBootDemo-jsp:war" />
+        </option>
       </method>
+    </configuration>
+    <configuration name="SpringBootDemo-thymeleaf" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.8" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8087/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Java201808_9" />
+        <option name="HTTP_PORT" value="8087" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="22214" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2" />
     </configuration>
     <configuration name="SpringMvc1" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.8" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/" />
@@ -1108,13 +1105,14 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Tomcat Server.SpringBootDemo0" />
+      <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="Tomcat Server.SpringBootDemo-jsp" />
+      <item itemvalue="Tomcat Server.SpringBootDemo-thymeleaf" />
       <item itemvalue="Tomcat Server.SpringMvc2" />
       <item itemvalue="Tomcat Server.SpringMvc1" />
       <item itemvalue="Tomcat Server.SpringMvcHelloWorld" />
       <item itemvalue="JUnit.Demo1" />
       <item itemvalue="JUnit.Demo1.mybatisGeneratorTest" />
-      <item itemvalue="Spring Boot.Application" />
     </list>
     <recent_temporary>
       <list>
@@ -1184,7 +1182,7 @@
       <workItem from="1542078672355" duration="1731000" />
       <workItem from="1542085594761" duration="836000" />
       <workItem from="1542086468221" duration="8023000" />
-      <workItem from="1542094888748" duration="582000" />
+      <workItem from="1542094888748" duration="1167000" />
     </task>
     <task id="LOCAL-00001" summary="readme">
       <created>1535220139093</created>
@@ -1228,7 +1226,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56345000" />
+    <option name="totallyTimeSpent" value="56930000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1254,16 +1252,16 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7553305" weight="0.2693133" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.75479746" visible="true" weight="0.2693133" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6497868" weight="0.39914164" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4989339" weight="0.32939914" />
       <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.49840087" weight="0.32939914" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49733475" weight="0.06437768" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.53198296" side_tool="true" visible="true" weight="0.32832617" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.46801707" visible="true" weight="0.32832617" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" sideWeight="0.49946696" weight="0.32939914" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.24520256" side_tool="true" visible="true" weight="0.2693133" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.46801707" weight="0.32832617" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" sideWeight="0.4989339" weight="0.32939914" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" weight="0.32939914" />
       <window_info anchor="bottom" id="Application Servers" order="14" weight="0.222103" />
@@ -1388,22 +1386,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mybatis-spring-pro/src/test/java/com/enjoylearning/mybatis/Teset.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-spring-basic/src/main/resources/db.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybatis-spring-basic/src/test/java/com/enjoylearning/mybatis/Demo1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2268#2335#0" expanded="true" />
-            <element signature="e#2268#2335#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mybatis-spring-pro/src/test/java/com/enjoylearning/mybatis/Demo0.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -1469,24 +1451,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/ServletInitializer.java">
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/src/main/java/com/ruiyi/ServletInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/webapp/WEB-INF/views/index.jsp">
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/src/main/webapp/WEB-INF/views/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="82" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="82" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/webapp/static/bootstrap/css/bootstrap.css">
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/src/main/webapp/static/bootstrap/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/webapp/WEB-INF/views/student/index.jsp">
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/src/main/webapp/WEB-INF/views/student/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="15" column="53" lean-forward="true" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
@@ -1535,64 +1517,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/dao/UserDao.java">
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/src/main/java/com/ruiyi/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/src/main/java/com/ruiyi/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/service/Impl/UserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/src/main/java/com/ruiyi/service/Impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/resources/mapper/UserMapper.xml">
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/src/main/resources/mapper/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/controller/StudentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#475#476#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SpringBootDemo/mvnw.cmd" />
     <entry file="file://$PROJECT_DIR$/SpringBootDemo/mvnw" />
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-678">
-          <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpringBootDemo2/src/main/java/com/ruiyi/demo/controller/StudentController.java" />
     <entry file="file://$PROJECT_DIR$/SpringBootDemo2/pom.xml" />
     <entry file="file://$PROJECT_DIR$/SpringBootDemo2/src/main/java/com/ruiyi/demo/SpringBootDemoApplication.java" />
@@ -1606,7 +1563,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootDemo/src/main/java/com/ruiyi/Application.java">
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/src/main/java/com/ruiyi/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
@@ -1688,8 +1645,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/test/java/com/enjoylearning/mybatis/MybatisDemo0.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1577">
-          <caret line="202" selection-start-line="202" selection-end-line="202" />
+        <state relative-caret-position="209">
+          <caret line="296" column="28" selection-start-line="296" selection-start-column="28" selection-end-line="296" selection-end-column="28" />
           <folding>
             <element signature="e#1166#1222#1" expanded="true" />
             <element signature="e#1248#1309#1" expanded="true" />
@@ -1884,6 +1841,117 @@
             <element signature="e#8970#9026#1" expanded="true" />
             <element signature="e#9036#9097#1" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/test/java/com/enjoylearning/mybatis/MybatisDemo1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="165" column="38" selection-start-line="165" selection-start-column="38" selection-end-line="165" selection-end-column="38" />
+          <folding>
+            <element signature="e#847#886#1" expanded="true" />
+            <element signature="e#895#961#1" expanded="true" />
+            <element signature="e#1160#1216#1" expanded="true" />
+            <element signature="e#1225#1286#1" expanded="true" />
+            <element signature="e#1295#1337#1" expanded="true" />
+            <element signature="e#1449#1505#1" expanded="true" />
+            <element signature="e#1514#1575#1" expanded="true" />
+            <element signature="e#1585#1609#1" expanded="true" />
+            <element signature="e#1618#1631#1" expanded="true" />
+            <element signature="e#1655#1714#1" expanded="true" />
+            <element signature="e#1914#1974#1" expanded="true" />
+            <element signature="e#2038#2076#1" expanded="true" />
+            <element signature="e#2139#2192#1" expanded="true" />
+            <element signature="e#2337#2393#1" expanded="true" />
+            <element signature="e#2402#2463#1" expanded="true" />
+            <element signature="e#2472#2498#1" expanded="true" />
+            <element signature="e#2816#2872#1" expanded="true" />
+            <element signature="e#2881#2942#1" expanded="true" />
+            <element signature="e#2951#2977#1" expanded="true" />
+            <element signature="e#3278#3334#1" expanded="true" />
+            <element signature="e#3343#3404#1" expanded="true" />
+            <element signature="e#3414#3482#1" expanded="true" />
+            <element signature="e#3491#3519#1" expanded="true" />
+            <element signature="e#3528#3541#1" expanded="true" />
+            <element signature="e#3550#3584#1" expanded="true" />
+            <element signature="e#3594#3668#1" expanded="true" />
+            <element signature="e#3790#3846#1" expanded="true" />
+            <element signature="e#3871#3952#1" expanded="true" />
+            <element signature="e#3962#4012#1" expanded="true" />
+            <element signature="e#4063#4110#1" expanded="true" />
+            <element signature="e#4164#4200#1" expanded="true" />
+            <element signature="e#4568#4624#1" expanded="true" />
+            <element signature="e#4649#4710#1" expanded="true" />
+            <element signature="e#4720#4744#1" expanded="true" />
+            <element signature="e#4753#4769#1" expanded="true" />
+            <element signature="e#4778#4829#1" expanded="true" />
+            <element signature="e#5019#5075#1" expanded="true" />
+            <element signature="e#5084#5145#1" expanded="true" />
+            <element signature="e#5155#5180#1" expanded="true" />
+            <element signature="e#5649#5705#1" expanded="true" />
+            <element signature="e#5714#5775#1" expanded="true" />
+            <element signature="e#5785#5810#1" expanded="true" />
+            <element signature="e#6242#6298#1" expanded="true" />
+            <element signature="e#6307#6368#1" expanded="true" />
+            <element signature="e#6378#6426#1" expanded="true" />
+            <element signature="e#6435#6486#1" expanded="true" />
+            <element signature="e#6610#6666#1" expanded="true" />
+            <element signature="e#6675#6736#1" expanded="true" />
+            <element signature="e#6746#6772#1" expanded="true" />
+            <element signature="e#7503#7563#1" expanded="true" />
+            <element signature="e#7658#7719#1" expanded="true" />
+            <element signature="e#7729#7754#1" expanded="true" />
+            <element signature="e#8067#8093#1" expanded="true" />
+            <element signature="e#8580#8636#1" expanded="true" />
+            <element signature="e#8645#8706#1" expanded="true" />
+            <element signature="e#8716#8771#1" expanded="true" />
+            <element signature="e#8780#8866#0" expanded="true" />
+            <element signature="e#8785#8796#0" expanded="true" />
+            <element signature="e#8780#8866#0" expanded="true" />
+            <element signature="e#8876#8931#1" expanded="true" />
+            <element signature="e#8940#9043#0" expanded="true" />
+            <element signature="e#8945#8956#0" expanded="true" />
+            <element signature="e#8940#9043#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="71" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/src/main/java/com/ruiyi/controller/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo-jsp/src/main/java/com/ruiyi/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#654#655#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootDemo-thymeleaf/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
         </state>
       </provider>
     </entry>

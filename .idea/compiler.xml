@@ -30,6 +30,7 @@
     <bytecodeTargetLevel>
       <module name="HelloSpringMVC1" target="1.5" />
       <module name="HelloSpringMVC2" target="1.5" />
+      <module name="SpringBootDemo-thymeleaf" target="1.8" />
       <module name="SpringBootDemo1" target="1.8" />
     </bytecodeTargetLevel>
   </component>
