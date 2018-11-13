@@ -9,6 +9,12 @@
         <module name="hello-world" />
         <module name="HttpDemo" />
         <module name="JavaDemo" />
+        <module name="mybatis-demo0" />
+        <module name="mybatis-demo1" />
+        <module name="mybatis-demo2" />
+        <module name="mybatis-quick-start" />
+        <module name="mybatis-spring" />
+        <module name="mybatis01" />
         <module name="SpringBootDemo" />
         <module name="SpringFrameworkDemo" />
         <module name="SpringFrameworkDemo_Consuming_Webservice" />
