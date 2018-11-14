@@ -4,9 +4,9 @@ import com.enjoylearning.mybatis.entity.TUserRoleKey;
 
 public interface TUserRoleMapper {
 
-	int deleteByPrimaryKey(TUserRoleKey key);
+    int deleteByPrimaryKey(TUserRoleKey key);
 
-	int insert(TUserRoleKey record);
+    int insert(TUserRoleKey record);
 
-	int insertSelective(TUserRoleKey record);
+    int insertSelective(TUserRoleKey record);
 }

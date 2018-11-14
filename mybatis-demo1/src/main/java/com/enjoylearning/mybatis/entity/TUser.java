@@ -28,7 +28,6 @@ public class TUser {
         this.userName = userName;
     }*/
 
-
     public Integer getId() {
         return id;
     }

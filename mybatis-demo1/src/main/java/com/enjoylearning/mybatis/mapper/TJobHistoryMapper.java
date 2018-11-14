@@ -6,17 +6,17 @@ import com.enjoylearning.mybatis.entity.TJobHistory;
 
 public interface TJobHistoryMapper {
 
-	int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Integer id);
 
-	int insert(TJobHistory record);
+    int insert(TJobHistory record);
 
-	int insertSelective(TJobHistory record);
+    int insertSelective(TJobHistory record);
 
-	TJobHistory selectByPrimaryKey(Integer id);
+    TJobHistory selectByPrimaryKey(Integer id);
 
-	int updateByPrimaryKeySelective(TJobHistory record);
+    int updateByPrimaryKeySelective(TJobHistory record);
 
-	int updateByPrimaryKey(TJobHistory record);
+    int updateByPrimaryKey(TJobHistory record);
 
-	List<TJobHistory> selectByUserId(int userId);
+    List<TJobHistory> selectByUserId(int userId);
 }

@@ -11,7 +11,6 @@
         <module name="JavaDemo" />
         <module name="Module_One" />
         <module name="Module_Two" />
-        <module name="mybatis-demo0" />
         <module name="mybatis-demo1" />
         <module name="mybatis-demo2" />
         <module name="mybatis-quick-start" />
@@ -29,6 +28,7 @@
       <module name="dedmoxyz" target="1.8" />
       <module name="HelloSpringMVC1" target="1.5" />
       <module name="HelloSpringMVC2" target="1.5" />
+      <module name="mybatis-demo0" target="1.7" />
       <module name="SpringBootDemo1" target="1.8" />
       <module name="SpringFrameworkDemo" target="1.5" />
       <module name="SpringFrameworkDemo_Consuming_Webservice" target="1.8" />

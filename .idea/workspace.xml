@@ -7,19 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0265a641-4abd-41ad-894a-05a4801183b1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mybatis-demo0/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo0/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/entity/TUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/entity/TUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryAnnoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryAnnoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo0/src/test/java/com/enjoylearning/mybatis/MybatisDemo0.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo0/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo0/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo0/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo0/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo0/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo0/src/main/resources/mybatis-config-all.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo0/src/main/resources/mybatis-config-all.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo0/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo0/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo0/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo0/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/entity/TUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/entity/TUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryAnnoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryAnnoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/test/java/com/enjoylearning/mybatis/MybatisDemo1.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/mybatis-config-all.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/mybatis-config-all.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/Hello-world/target/" />
     <ignored path="$PROJECT_DIR$/springframeworkdemo_webservice/target/" />
@@ -112,8 +115,8 @@
           <entry key="md" value="2" />
           <entry key="mvnw" value="1" />
           <entry key="pom" value="1" />
-          <entry key="properties" value="17" />
-          <entry key="xml" value="90" />
+          <entry key="properties" value="18" />
+          <entry key="xml" value="100" />
           <entry key="xsd" value="2" />
           <entry key="yaml" value="1" />
         </counts>
@@ -130,8 +133,8 @@
           <entry key="JavaScript" value="2" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Properties" value="17" />
-          <entry key="XML" value="93" />
+          <entry key="Properties" value="18" />
+          <entry key="XML" value="103" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -139,20 +142,20 @@
         <counts>
           <entry key="dummy" value="79" />
           <entry key="html" value="3" />
-          <entry key="java" value="4864" />
+          <entry key="java" value="4935" />
           <entry key="jsp" value="24" />
-          <entry key="properties" value="133" />
-          <entry key="xml" value="469" />
+          <entry key="properties" value="137" />
+          <entry key="xml" value="573" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="3" />
-          <entry key="JAVA" value="4864" />
+          <entry key="JAVA" value="4935" />
           <entry key="JSP" value="24" />
           <entry key="PLAIN_TEXT" value="79" />
-          <entry key="Properties" value="133" />
-          <entry key="XML" value="469" />
+          <entry key="Properties" value="137" />
+          <entry key="XML" value="573" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -167,112 +170,91 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java">
+        <entry file="file://$PROJECT_DIR$/mybatis-demo0/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="558">
+              <caret line="63" column="31" lean-forward="true" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java">
+        <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/resources/generatorConfig.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryAnnoMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/entity/TUser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="e#1805#2009#0" expanded="true" />
-                <element signature="e#1805#2009#0" expanded="true" />
-                <element signature="e#1805#2009#0" expanded="true" />
-                <element signature="e#1805#2009#0" expanded="true" />
-                <element signature="e#1805#2009#0" expanded="true" />
-                <element signature="e#1805#2009#0" expanded="true" />
-                <element signature="e#1805#2009#0" expanded="true" />
-                <element signature="e#1805#2009#0" expanded="true" />
-                <element signature="e#1805#2009#0" expanded="true" />
-                <element signature="e#1805#2009#0" expanded="true" />
-                <element signature="e#1805#2009#0" expanded="true" />
-                <element signature="e#1805#2009#0" expanded="true" />
-                <element signature="e#1805#2009#0" expanded="true" />
-                <element signature="e#1805#2009#0" expanded="true" />
-                <element signature="e#1805#2009#0" expanded="true" />
-                <element signature="e#1805#2009#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="665">
+              <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/entity/TUser.java">
+        <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/resources/db.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1159">
-              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+            <state relative-caret-position="57">
+              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryAnnoMapper.java">
+        <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/resources/mybatis-config-all.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="-1053">
+              <caret line="41" column="30" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/resources/mybatis-config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="665">
+              <caret line="35" column="80" selection-start-line="35" selection-start-column="80" selection-end-line="35" selection-end-column="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/resources/mybatis-config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="665">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/resources/logback.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-435">
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/resources/generatorConfig.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="703">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/resources/logback.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="665">
+              <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/resources/mybatis-config-all.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="559">
+              <caret line="114" column="44" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -304,6 +286,22 @@
       <find>redisson</find>
       <find>获取sqlSession.*</find>
       <find>org.springframework.boot</find>
+      <find>testForeach4In</find>
+      <find>testAutoMapping</find>
+      <find>testAnno</find>
+      <find>testSelectIfOper</find>
+      <find>testUpdateIfOper</find>
+      <find>testBatchExcutor</find>
+      <find>testAssociation</find>
+      <find>quickStart</find>
+      <find>realname1---</find>
+      <find>testInsertGenerateId1</find>
+      <find>testSymbol</find>
+      <find>testInsertGenerateId2</find>
+      <find>测试插入数据自动生成id</find>
+      <find>个对象的方法触发一次延迟加载</find>
+      <find>60 seconds</find>
+      <find>映射失败，抛出异常和详细信息</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -312,18 +310,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SpringFrameworkDemo_Webservice/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringFrameworkDemo_Webservice/src/main/java/hello/Application.java" />
-        <option value="$PROJECT_DIR$/SpringFrameworkDemo_Webservice/src/main/java/com/example/Application.java" />
-        <option value="$PROJECT_DIR$/SpringFrameworkDemo_Webservice/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/SpringBootDemo-jsp/src/main/java/com/example/model/Greeting.java" />
-        <option value="$PROJECT_DIR$/SpringBootDemo-jsp/src/main/java/com/example/controller/GreetingController.java" />
-        <option value="$PROJECT_DIR$/SpringBootDemo-jsp/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/SpringBootDemo-thymeleaf/src/main/java/com/example/controller/RestConsumeController.java" />
-        <option value="$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/com/example/Value.java" />
-        <option value="$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/com/example/Quote.java" />
-        <option value="$PROJECT_DIR$/JavaDemo/src/main/java/com/example/RestTemplateConfig.java" />
         <option value="$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/com/example/model/Quote.java" />
         <option value="$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/com/example/model/Greeting.java" />
         <option value="$PROJECT_DIR$/JavaDemo/src/main/java/com/example/model/Greeting.java" />
@@ -353,16 +339,28 @@
         <option value="$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/entity/HealthReport.java" />
         <option value="$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/mapper/THealthReportFemaleMapper.java" />
         <option value="$PROJECT_DIR$/mybatis-demo1/pom.xml" />
-        <option value="$PROJECT_DIR$/mybatis-demo0/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TUserMapper.java" />
         <option value="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TUserMapper.java" />
-        <option value="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java" />
-        <option value="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java" />
         <option value="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryAnnoMapper.java" />
         <option value="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryAnnoMapper.java" />
-        <option value="$PROJECT_DIR$/mybatis-demo0/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java" />
-        <option value="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/entity/TUser.java" />
+        <option value="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java" />
+        <option value="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java" />
+        <option value="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java" />
+        <option value="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java" />
         <option value="$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/entity/TUser.java" />
+        <option value="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/entity/TUser.java" />
+        <option value="$PROJECT_DIR$/mybatis-demo1/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java" />
+        <option value="$PROJECT_DIR$/mybatis-demo0/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java" />
+        <option value="$PROJECT_DIR$/mybatis-demo0/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-demo1/src/main/resources/mybatis-config-all.xml" />
+        <option value="$PROJECT_DIR$/mybatis-demo0/src/main/resources/mybatis-config-all.xml" />
+        <option value="$PROJECT_DIR$/mybatis-demo1/src/main/resources/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/mybatis-demo0/src/main/resources/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/mybatis-demo1/src/main/resources/logback.xml" />
+        <option value="$PROJECT_DIR$/mybatis-demo0/src/main/resources/logback.xml" />
+        <option value="$PROJECT_DIR$/mybatis-demo1/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/mybatis-demo0/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/mybatis-demo1/src/main/resources/db.properties" />
       </list>
     </option>
   </component>
@@ -467,6 +465,14 @@
               <item name="Java201808" type="462c0819:PsiDirectoryNode" />
               <item name="mybatis-demo0" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
+              <item name="mybatis-demo0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -546,6 +552,14 @@
               <item name="Java201808" type="462c0819:PsiDirectoryNode" />
               <item name="mybatis-demo1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
+              <item name="mybatis-demo1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -606,7 +620,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542185681908" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542187531409" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -1376,7 +1390,7 @@
       <workItem from="1542162670894" duration="1163000" />
       <workItem from="1542163880572" duration="139000" />
       <workItem from="1542164280146" duration="4348000" />
-      <workItem from="1542177575398" duration="7658000" />
+      <workItem from="1542177575398" duration="9504000" />
     </task>
     <task id="LOCAL-00001" summary="readme">
       <created>1535220139093</created>
@@ -1420,7 +1434,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77576000" />
+    <option name="totallyTimeSpent" value="79422000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1435,8 +1449,8 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.74767596" visible="true" weight="0.20842217" />
-      <window_info id="Structure" order="1" sideWeight="0.25232404" side_tool="true" weight="0.22441365" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7465596" visible="true" weight="0.20842217" />
+      <window_info id="Structure" order="1" sideWeight="0.25344038" side_tool="true" visible="true" weight="0.20842217" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -1446,13 +1460,13 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8288913" visible="true" weight="0.36695278" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8288913" weight="0.36695278" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6487207" weight="0.39914164" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4989339" weight="0.32939914" />
       <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.49840087" weight="0.32939914" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49733475" weight="0.06437768" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49733475" visible="true" weight="0.06437768" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.17110874" side_tool="true" weight="0.41523606" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.46695095" weight="0.32832617" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" sideWeight="0.49840087" weight="0.32939914" />
@@ -1607,76 +1621,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/JavaDemo/src/main/java/com/example/ShapeSample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaDemo/src/main/java/com/example/model/Value.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaDemo/src/main/java/com/example/model/Quote.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaDemo/src/main/java/com/example/model/Greeting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaDemo/src/main/java/com/example/RestDemo1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#364#411#1" expanded="true" />
-            <element signature="e#415#518#1" expanded="true" />
-            <element signature="e#570#666#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaDemo/src/main/java/com/example/RestDemo2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#984#1087#1" expanded="true" />
-            <element signature="e#1212#1259#1" expanded="true" />
-            <element signature="e#1268#1359#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/com/example/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/com/example/model/Value.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/com/example/model/Quote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/com/example/model/Greeting.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -1893,20 +1837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mybatis-demo1/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybatis-demo0/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TUserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -1918,37 +1848,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1966,24 +1865,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java">
+    <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+        <state relative-caret-position="209">
+          <caret line="11" column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java">
+    <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        <state relative-caret-position="209">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="21" column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/entity/TUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/entity/TUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="570">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="e#1805#2009#0" expanded="true" />
             <element signature="e#1805#2009#0" expanded="true" />
@@ -2005,10 +1928,249 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/entity/TUser.java">
+    <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1159">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        <state relative-caret-position="255">
+          <caret line="100" column="37" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#846#885#1" expanded="true" />
+            <element signature="e#894#960#1" expanded="true" />
+            <element signature="e#1169#1225#1" expanded="true" />
+            <element signature="e#1251#1312#1" expanded="true" />
+            <element signature="e#1322#1364#1" expanded="true" />
+            <element signature="e#1159#1215#1" expanded="true" />
+            <element signature="e#1224#1285#1" expanded="true" />
+            <element signature="e#1294#1336#1" expanded="true" />
+            <element signature="e#1364#1376#0" expanded="true" />
+            <element signature="e#1448#1504#1" expanded="true" />
+            <element signature="e#1513#1574#1" expanded="true" />
+            <element signature="e#1584#1608#1" expanded="true" />
+            <element signature="e#1617#1630#1" expanded="true" />
+            <element signature="e#1654#1713#1" expanded="true" />
+            <element signature="e#1790#1846#1" expanded="true" />
+            <element signature="e#1913#1973#1" expanded="true" />
+            <element signature="e#2037#2075#1" expanded="true" />
+            <element signature="e#2138#2191#1" expanded="true" />
+            <element signature="e#2336#2392#1" expanded="true" />
+            <element signature="e#2401#2462#1" expanded="true" />
+            <element signature="e#2471#2497#1" expanded="true" />
+            <element signature="e#2963#2989#0" expanded="true" />
+            <element signature="e#2963#2989#0" expanded="true" />
+            <element signature="e#2999#3028#0" expanded="true" />
+            <element signature="e#2999#3028#0" expanded="true" />
+            <element signature="e#2815#2871#1" expanded="true" />
+            <element signature="e#2880#2941#1" expanded="true" />
+            <element signature="e#2950#2976#1" expanded="true" />
+            <element signature="e#3693#3749#1" expanded="true" />
+            <element signature="e#3758#3819#1" expanded="true" />
+            <element signature="e#3829#3897#1" expanded="true" />
+            <element signature="e#3906#3934#1" expanded="true" />
+            <element signature="e#3943#3956#1" expanded="true" />
+            <element signature="e#3965#3999#1" expanded="true" />
+            <element signature="e#4009#4083#1" expanded="true" />
+            <element signature="e#3789#3845#1" expanded="true" />
+            <element signature="e#3870#3951#1" expanded="true" />
+            <element signature="e#3961#4011#1" expanded="true" />
+            <element signature="e#4062#4109#1" expanded="true" />
+            <element signature="e#4163#4199#1" expanded="true" />
+            <element signature="e#4567#4623#1" expanded="true" />
+            <element signature="e#4648#4709#1" expanded="true" />
+            <element signature="e#4719#4743#1" expanded="true" />
+            <element signature="e#4752#4768#1" expanded="true" />
+            <element signature="e#4777#4828#1" expanded="true" />
+            <element signature="e#5018#5074#1" expanded="true" />
+            <element signature="e#5083#5144#1" expanded="true" />
+            <element signature="e#5154#5179#1" expanded="true" />
+            <element signature="e#5648#5704#1" expanded="true" />
+            <element signature="e#5713#5774#1" expanded="true" />
+            <element signature="e#5784#5809#1" expanded="true" />
+            <element signature="e#6241#6297#1" expanded="true" />
+            <element signature="e#6306#6367#1" expanded="true" />
+            <element signature="e#6377#6425#1" expanded="true" />
+            <element signature="e#6434#6485#1" expanded="true" />
+            <element signature="e#6609#6665#1" expanded="true" />
+            <element signature="e#6674#6735#1" expanded="true" />
+            <element signature="e#6745#6771#1" expanded="true" />
+            <element signature="e#6998#7024#1" expanded="true" />
+            <element signature="e#7254#7318#1" expanded="true" />
+            <element signature="e#7502#7562#1" expanded="true" />
+            <element signature="e#7657#7718#1" expanded="true" />
+            <element signature="e#7728#7753#1" expanded="true" />
+            <element signature="e#8066#8092#1" expanded="true" />
+            <element signature="e#8579#8635#1" expanded="true" />
+            <element signature="e#8644#8705#1" expanded="true" />
+            <element signature="e#8715#8770#1" expanded="true" />
+            <element signature="e#9125#9211#0" expanded="true" />
+            <element signature="e#8784#8795#0" expanded="true" />
+            <element signature="e#9125#9211#0" expanded="true" />
+            <element signature="e#8875#8930#1" expanded="true" />
+            <element signature="e#9284#9387#0" expanded="true" />
+            <element signature="e#8944#8955#0" expanded="true" />
+            <element signature="e#9284#9387#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/test/java/com/enjoylearning/mybatis/MybatisDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#847#886#1" expanded="true" />
+            <element signature="e#895#961#1" expanded="true" />
+            <element signature="e#1167#1223#1" expanded="true" />
+            <element signature="e#1249#1310#1" expanded="true" />
+            <element signature="e#1320#1362#1" expanded="true" />
+            <element signature="e#2547#2603#1" expanded="true" />
+            <element signature="e#2613#2674#1" expanded="true" />
+            <element signature="e#2684#2726#1" expanded="true" />
+            <element signature="e#2847#2903#1" expanded="true" />
+            <element signature="e#2913#2974#1" expanded="true" />
+            <element signature="e#2984#3008#1" expanded="true" />
+            <element signature="e#3017#3030#1" expanded="true" />
+            <element signature="e#3054#3113#1" expanded="true" />
+            <element signature="e#3190#3246#1" expanded="true" />
+            <element signature="e#3313#3373#1" expanded="true" />
+            <element signature="e#3437#3475#1" expanded="true" />
+            <element signature="e#3538#3591#1" expanded="true" />
+            <element signature="e#3165#3221#1" expanded="true" />
+            <element signature="e#3231#3292#1" expanded="true" />
+            <element signature="e#3302#3328#1" expanded="true" />
+            <element signature="e#3241#3297#1" expanded="true" />
+            <element signature="e#3306#3367#1" expanded="true" />
+            <element signature="e#3377#3403#1" expanded="true" />
+            <element signature="e#3406#3432#0" expanded="true" />
+            <element signature="e#3406#3432#0" expanded="true" />
+            <element signature="e#3442#3472#0" expanded="true" />
+            <element signature="e#3442#3472#0" expanded="true" />
+            <element signature="e#3482#3508#0" expanded="true" />
+            <element signature="e#3482#3508#0" expanded="true" />
+            <element signature="e#3603#3616#0" expanded="true" />
+            <element signature="e#3716#3772#1" expanded="true" />
+            <element signature="e#3782#3843#1" expanded="true" />
+            <element signature="e#3853#3921#1" expanded="true" />
+            <element signature="e#3930#3958#1" expanded="true" />
+            <element signature="e#3967#3980#1" expanded="true" />
+            <element signature="e#3989#4023#1" expanded="true" />
+            <element signature="e#4033#4107#1" expanded="true" />
+            <element signature="e#4213#4269#1" expanded="true" />
+            <element signature="e#4279#4360#1" expanded="true" />
+            <element signature="e#4370#4420#1" expanded="true" />
+            <element signature="e#4471#4518#1" expanded="true" />
+            <element signature="e#4572#4608#1" expanded="true" />
+            <element signature="e#4959#5015#1" expanded="true" />
+            <element signature="e#5025#5086#1" expanded="true" />
+            <element signature="e#5096#5120#1" expanded="true" />
+            <element signature="e#5129#5145#1" expanded="true" />
+            <element signature="e#5154#5205#1" expanded="true" />
+            <element signature="e#5396#5452#1" expanded="true" />
+            <element signature="e#5462#5523#1" expanded="true" />
+            <element signature="e#5533#5558#1" expanded="true" />
+            <element signature="e#6028#6084#1" expanded="true" />
+            <element signature="e#6094#6155#1" expanded="true" />
+            <element signature="e#6165#6190#1" expanded="true" />
+            <element signature="e#6623#6679#1" expanded="true" />
+            <element signature="e#6689#6750#1" expanded="true" />
+            <element signature="e#6760#6808#1" expanded="true" />
+            <element signature="e#6817#6868#1" expanded="true" />
+            <element signature="e#6993#7049#1" expanded="true" />
+            <element signature="e#7059#7120#1" expanded="true" />
+            <element signature="e#7130#7156#1" expanded="true" />
+            <element signature="e#7383#7409#1" expanded="true" />
+            <element signature="e#7639#7703#1" expanded="true" />
+            <element signature="e#7888#7948#1" expanded="true" />
+            <element signature="e#8044#8105#1" expanded="true" />
+            <element signature="e#8115#8140#1" expanded="true" />
+            <element signature="e#8453#8479#1" expanded="true" />
+            <element signature="e#8968#9024#1" expanded="true" />
+            <element signature="e#9034#9095#1" expanded="true" />
+            <element signature="e#9104#9159#1" expanded="true" />
+            <element signature="e#9126#9212#0" expanded="true" />
+            <element signature="e#9237#9248#0" expanded="true" />
+            <element signature="e#9126#9212#0" expanded="true" />
+            <element signature="e#9256#9311#1" expanded="true" />
+            <element signature="e#9285#9388#0" expanded="true" />
+            <element signature="e#9332#9343#0" expanded="true" />
+            <element signature="e#9285#9388#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo1/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-354">
+          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo0/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="63" column="31" lean-forward="true" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/resources/mybatis-config-all.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="114" column="44" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/resources/mybatis-config-all.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1053">
+          <caret line="41" column="30" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="35" column="80" selection-start-line="35" selection-start-column="80" selection-end-line="35" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-435">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/resources/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
         </state>
       </provider>
     </entry>

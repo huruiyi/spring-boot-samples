@@ -33,12 +33,24 @@ public class MybatisDemo {
     }
 
     @Test
+// 测试自动映射以及下划线自动转化驼峰
+    public void quickStart() throws IOException {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+// 3.获取对应 mapper
+        TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
+
+        TUser user = mapper.selectByPrimaryKey(2);
+
+        System.out.println(user.toString());
+    }
+
+    @Test
 // 测试自动映射
     public void testAutoMapping() throws IOException {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
         TUser user = mapper.selectByPrimaryKey(1);
-        System.out.println(user);
+        System.out.println(user.getId());
     }
 
     // 多参数查询
@@ -46,7 +58,6 @@ public class MybatisDemo {
     public void testManyParamQuery() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
-
         String email = "qq.com";
         Byte sex = 1;
 
@@ -78,6 +89,8 @@ public class MybatisDemo {
         user1.setUserName("test1");
         user1.setRealName("realname1");
         user1.setEmail("myemail1");
+        user1.setNote("note.....");
+        user1.setMobile("mobile....");
         mapper.insert1(user1);
         sqlSession.commit();
         System.out.println(user1.getId());
@@ -98,7 +111,7 @@ public class MybatisDemo {
     }
 
     @Test
-    // 参数#和参数$区别测试(动态sql 入门)
+// 参数#和参数$区别测试(动态sql 入门)
     public void testSymbol() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
@@ -115,9 +128,7 @@ public class MybatisDemo {
     @Test
 // 注解测试
     public void testAnno() {
-// 2.获取sqlSession
         SqlSession sqlSession = sqlSessionFactory.openSession();
-// 3.获取对应mapper
         TJobHistoryAnnoMapper mapper = sqlSession.getMapper(TJobHistoryAnnoMapper.class);
 
         List<TJobHistory> list = mapper.selectByUserId(1);
@@ -141,9 +152,7 @@ public class MybatisDemo {
     @Test
 // if用于select，并与where配合
     public void testSelectIfOper() {
-// 2.获取sqlSession
         SqlSession sqlSession = sqlSessionFactory.openSession();
-// 3.获取对应mapper
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
 
         String email = "qq.com";
@@ -232,7 +241,7 @@ public class MybatisDemo {
 // 批量更新
     public void testBatchExcutor() {
         SqlSession sqlSession = sqlSessionFactory.openSession(true);
-//		SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.BATCH, false);
+//SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.BATCH, false);
         TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
 
         TUser user = new TUser();
@@ -264,17 +273,15 @@ public class MybatisDemo {
 // 测试两种关联方式
     public void testAssociation() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
 
+        TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
         List<TUser> selectUserJobs1 = mapper.selectUserJobs1();
         for (TUser tUser : selectUserJobs1) {
             System.out.println(tUser);
         }
-
         List<TUser> selectUserJobs2 = mapper.selectUserJobs2();
         for (TUser tUser : selectUserJobs2) {
             System.out.println(tUser.getJobs().size());
         }
     }
-
 }
