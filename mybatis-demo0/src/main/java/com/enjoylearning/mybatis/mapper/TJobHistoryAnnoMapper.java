@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
-
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Results;
@@ -14,34 +13,33 @@ import com.enjoylearning.mybatis.entity.TJobHistory;
 
 public interface TJobHistoryAnnoMapper {
 
-	int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Integer id);
 
-	int insertSelective(TJobHistory record);
+    int insertSelective(TJobHistory record);
 
-	TJobHistory selectByPrimaryKey(Integer id);
+    TJobHistory selectByPrimaryKey(Integer id);
 
-	int updateByPrimaryKeySelective(TJobHistory record);
+    int updateByPrimaryKeySelective(TJobHistory record);
 
-	int updateByPrimaryKey(TJobHistory record);
+    int updateByPrimaryKey(TJobHistory record);
 
-	//org.mybatis 3.4.1 版本中已经移除了id 属性
-	@Results(id = "", value = { 
-			@Result(property = "id", column = "id", id = true),
-			@Result(property = "userId", column = "user_id"), 
-			@Result(property = "compName", column = "comp_name"),
-			@Result(property = "years", column = "years"), 
-			@Result(property = "title", column = "title") })
-	@Select("select id, user_id, comp_name, years, title from t_job_history" + "	where user_id = #{userId}")
-	List<TJobHistory> selectByUserId(int userId);
+    //org.mybatis 3.4.1 版本中已经移除了id 属性
+    @Results(id = "", value = {
+            @Result(property = "id", column = "id", id = true),
+            @Result(property = "userId", column = "user_id"),
+            @Result(property = "compName", column = "comp_name"),
+            @Result(property = "years", column = "years"),
+            @Result(property = "title", column = "title")})
+    @Select("select id, user_id, comp_name, years, title from t_job_history" + "	where user_id = #{userId}")
+    List<TJobHistory> selectByUserId(int userId);
 
-	@ResultMap("jobInfo")
-	@Select("select id, user_id, comp_name, years, title from t_job_history")
-	List<TJobHistory> selectAll();
+    @ResultMap("jobInfo")
+    @Select("select id, user_id, comp_name, years, title from t_job_history")
+    List<TJobHistory> selectAll();
 
-	@Insert("insert into t_job_history (id, user_id, comp_name,	years, title)"
-			+ "	values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}," + "#{compName,jdbcType=VARCHAR},"
-			+ "#{years,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR})")
-	@Options(useGeneratedKeys = true, keyProperty = "id")
-
-	int insert(TJobHistory record);
+    @Insert("insert into t_job_history (id, user_id, comp_name,	years, title)"
+            + "	values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}," + "#{compName,jdbcType=VARCHAR},"
+            + "#{years,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR})")
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    int insert(TJobHistory record);
 }

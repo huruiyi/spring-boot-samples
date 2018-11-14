@@ -3,105 +3,108 @@ package com.enjoylearning.mybatis.entity;
 import java.util.List;
 
 public class TUser {
-	private Integer id;
 
-	private String userName;
+    private Integer id;
 
-	private String realName;
+    private String userName;
 
-	private Byte sex;
+    private String realName;
 
-	private String mobile;
+    private Byte sex;
 
-	private String email;
+    private String mobile;
 
-	private String note;
+    private String email;
 
-	private Integer positionId;
+    private String note;
 
-	private List<TJobHistory> jobs;
+    private Integer positionId;
 
-	/*
-	 * public TUser(Integer id, String userName) { super(); this.id = id;
-	 * this.userName = userName; }
-	 */
+    private List<TJobHistory> jobs;
 
-	public Integer getId() {
-		return id;
-	}
+/*    public TUser(Integer id, String userName) {
+        super();
+        this.id = id;
+        this.userName = userName;
+    }*/
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
-	public String getUserName() {
-		return userName;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getRealName() {
-		return realName;
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	public void setRealName(String realName) {
-		this.realName = realName;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-	public Byte getSex() {
-		return sex;
-	}
+    public String getRealName() {
+        return realName;
+    }
 
-	public void setSex(Byte sex) {
-		this.sex = sex;
-	}
+    public void setRealName(String realName) {
+        this.realName = realName;
+    }
 
-	public String getMobile() {
-		return mobile;
-	}
+    public Byte getSex() {
+        return sex;
+    }
 
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
+    public void setSex(Byte sex) {
+        this.sex = sex;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getMobile() {
+        return mobile;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
 
-	public String getNote() {
-		return note;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setNote(String note) {
-		this.note = note;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public Integer getPositionId() {
-		return positionId;
-	}
+    public String getNote() {
+        return note;
+    }
 
-	public void setPositionId(Integer positionId) {
-		this.positionId = positionId;
-	}
+    public void setNote(String note) {
+        this.note = note;
+    }
 
-	public List<TJobHistory> getJobs() {
-		return jobs;
-	}
+    public Integer getPositionId() {
+        return positionId;
+    }
 
-	public void setJobs(List<TJobHistory> jobs) {
-		this.jobs = jobs;
-	}
+    public void setPositionId(Integer positionId) {
+        this.positionId = positionId;
+    }
 
-	@Override
-	public String toString() {
-		return "TUser [id=" + id + ", userName=" + userName + ", realName=" + realName + ", sex=" + sex + ", mobile="
-				+ mobile + ", email=" + email + ", note=" + note + ", positionId=" + positionId + "]";
-	}
+    public List<TJobHistory> getJobs() {
+        return jobs;
+    }
+
+    public void setJobs(List<TJobHistory> jobs) {
+        this.jobs = jobs;
+    }
+
+    @Override
+    public String toString() {
+        return "TUser [id=" + id + ", userName=" + userName + ", realName=" + realName + ", sex=" + sex + ", mobile="
+                + mobile + ", email=" + email + ", note=" + note + ", positionId=" + positionId + "]";
+    }
 
 }

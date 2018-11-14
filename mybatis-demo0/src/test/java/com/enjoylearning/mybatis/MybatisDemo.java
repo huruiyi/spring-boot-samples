@@ -20,7 +20,7 @@ import com.enjoylearning.mybatis.entity.TUser;
 import com.enjoylearning.mybatis.mapper.TJobHistoryAnnoMapper;
 import com.enjoylearning.mybatis.mapper.TUserMapper;
 
-public class MybatisDemo0 {
+public class MybatisDemo {
 
     private SqlSessionFactory sqlSessionFactory;
 

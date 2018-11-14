@@ -5,17 +5,18 @@ import java.util.List;
 import com.enjoylearning.mybatis.entity.TJobHistory;
 
 public interface TJobHistoryMapper {
-	int deleteByPrimaryKey(Integer id);
 
-	int insert(TJobHistory record);
+    int deleteByPrimaryKey(Integer id);
 
-	int insertSelective(TJobHistory record);
+    int insert(TJobHistory record);
 
-	TJobHistory selectByPrimaryKey(Integer id);
+    int insertSelective(TJobHistory record);
 
-	int updateByPrimaryKeySelective(TJobHistory record);
+    TJobHistory selectByPrimaryKey(Integer id);
 
-	int updateByPrimaryKey(TJobHistory record);
+    int updateByPrimaryKeySelective(TJobHistory record);
 
-	List<TJobHistory> selectByUserId(int userId);
+    int updateByPrimaryKey(TJobHistory record);
+
+    List<TJobHistory> selectByUserId(int userId);
 }
