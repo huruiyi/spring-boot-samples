@@ -20,8 +20,6 @@
         <module name="mybatis01" />
         <module name="SpringBootDemo-jsp" />
         <module name="SpringBootDemo-thymeleaf" />
-        <module name="SpringFrameworkDemo_Consuming_Webservice" />
-        <module name="SpringFrameworkDemo_Webservice" />
         <module name="SpringMvc1" />
         <module name="SpringMvc2" />
         <module name="SpringMvcHelloWorld" />
@@ -33,6 +31,8 @@
       <module name="HelloSpringMVC2" target="1.5" />
       <module name="SpringBootDemo1" target="1.8" />
       <module name="SpringFrameworkDemo" target="1.5" />
+      <module name="SpringFrameworkDemo_Consuming_Webservice" target="1.8" />
+      <module name="SpringFrameworkDemo_Webservice" target="1.8" />
       <module name="XYZ" target="1.5" />
     </bytecodeTargetLevel>
   </component>
