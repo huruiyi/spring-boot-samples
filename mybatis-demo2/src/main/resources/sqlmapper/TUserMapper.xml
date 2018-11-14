@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.enjoylearning.mybatis.basic.mapper.TUserMapper">
+<mapper namespace="com.enjoylearning.mybatis.mapper.TUserMapper">
 
 	<!-- <cache></cache> -->
 
@@ -16,7 +16,7 @@
 	</resultMap>
 
 	<resultMap id="userAndPosition1" extends="BaseResultMap" type="TUser">
-		<association property="position" javaType="com.enjoylearning.mybatis.basic.entity.TPosition" columnPrefix="post_">
+		<association property="position" javaType="com.enjoylearning.mybatis.entity.TPosition" columnPrefix="post_">
 			<id column="id" property="id" />
 			<result column="name" property="postName" />
 			<result column="note" property="note" />
@@ -24,7 +24,7 @@
 	</resultMap>
 
 	<resultMap id="userAndPosition2" extends="BaseResultMap" type="TUser">
-		<association property="position" column="position_id" select="com.enjoylearning.mybatis.basic.mapper.TPositionMapper.selectByPrimaryKey" />
+		<association property="position" column="position_id" select="com.enjoylearning.mybatis.mapper.TPositionMapper.selectByPrimaryKey" />
 	</resultMap>
 
 	<select id="selectUserPosition1" resultMap="userAndPosition1">
@@ -55,7 +55,7 @@
 	</select>
 
 	<resultMap id="userAndJobs1" extends="BaseResultMap" type="TUser">
-		<collection property="jobs" ofType="com.enjoylearning.mybatis.basic.entity.TJobHistory">
+		<collection property="jobs" ofType="com.enjoylearning.mybatis.entity.TJobHistory">
 			<result column="comp_name" property="compName" jdbcType="VARCHAR" />
 			<result column="years" property="years" jdbcType="INTEGER" />
 			<result column="title" property="title" jdbcType="VARCHAR" />
@@ -63,7 +63,7 @@
 	</resultMap>
 
 	<resultMap id="userAndJobs2" extends="BaseResultMap" type="TUser">
-		<collection property="jobs" fetchType="lazy" column="id" select="com.enjoylearning.mybatis.basic.mapper.TJobHistoryMapper.selectByUserId" />
+		<collection property="jobs" fetchType="lazy" column="id" select="com.enjoylearning.mybatis.mapper.TJobHistoryMapper.selectByUserId" />
 	</resultMap>
 
 	<select id="selectUserJobs1" resultMap="userAndJobs1">
@@ -93,11 +93,11 @@
 	</select>
 
 	<resultMap id="userAndHealthReportMale" extends="userAndHealthReport" type="TUser">
-		<collection property="healthReports" column="id" select="com.enjoylearning.mybatis.basic.mapper.THealthReportMaleMapper.selectByUserId"></collection>
+		<collection property="healthReports" column="id" select="com.enjoylearning.mybatis.mapper.THealthReportMaleMapper.selectByUserId"></collection>
 	</resultMap>
 
 	<resultMap id="userAndHealthReportFemale" extends="userAndHealthReport" type="TUser">
-		<collection property="healthReports" column="id" select="com.enjoylearning.mybatis.basic.mapper.THealthReportFemaleMapper.selectByUserId"></collection>
+		<collection property="healthReports" column="id" select="com.enjoylearning.mybatis.mapper.THealthReportFemaleMapper.selectByUserId"></collection>
 	</resultMap>
 
 	<resultMap id="userAndHealthReport" extends="BaseResultMap" type="TUser">
@@ -156,7 +156,7 @@
 		#{sex}
 	</select>
 
-	<select id="selectByEmailAndSex3" resultMap="BaseResultMap" parameterType="com.enjoylearning.mybatis.basic.entity.EmailSexBean">
+	<select id="selectByEmailAndSex3" resultMap="BaseResultMap" parameterType="com.enjoylearning.mybatis.entity.EmailSexBean">
 		select
 		<include refid="Base_Column_List" />
 		from t_user a

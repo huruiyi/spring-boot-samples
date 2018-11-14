@@ -42,7 +42,7 @@
 		<mapper resource="sqlmapper/TUserMapper.xml" />
 <!-- 		<mapper resource="sqlmapper/TJobHistoryMapper.xml" /> 
  -->		
- <mapper class="com.enjoylearning.mybatis.basic.mapper.TJobHistoryAnnoMapper"/>
+ <mapper class="com.enjoylearning.mybatis.mapper.TJobHistoryAnnoMapper"/> 
 	</mappers>
 
 </configuration>  
