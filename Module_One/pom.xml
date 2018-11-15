@@ -9,7 +9,5 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>module_one</artifactId>
-
-
+    <artifactId>Module_One</artifactId>
 </project>
