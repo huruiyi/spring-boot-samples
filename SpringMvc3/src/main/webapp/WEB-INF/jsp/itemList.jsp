@@ -15,7 +15,7 @@
 		action="${pageContext.request.contextPath }/item/queryitem.action"
 		method="post">
 		商品列表：
-		<table class="table">
+		<table class="table table-bordered text-center">
 			<tr>
 				<td>商品名称</td>
 				<td>商品价格</td>

@@ -9,10 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>SpringMvc1</module>
-        <module>SpringMvc2</module>
         <module>Module_One</module>
         <module>Module_Two</module>
+        <module>SpringMvc1</module>
+        <module>SpringMvc2</module>
         <module>SpringMvc3</module>
     </modules>
 </project>
