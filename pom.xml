@@ -13,5 +13,6 @@
         <module>SpringMvc2</module>
         <module>Module_One</module>
         <module>Module_Two</module>
+        <module>SpringMvc3</module>
     </modules>
 </project>

@@ -21,6 +21,7 @@
         <module name="SpringBootDemo-thymeleaf" />
         <module name="SpringMvc1" />
         <module name="SpringMvc2" />
+        <module name="SpringMvc3" />
         <module name="SpringMvcHelloWorld" />
       </profile>
     </annotationProcessing>

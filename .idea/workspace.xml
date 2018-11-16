@@ -2,15 +2,41 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="SpringMvc2:war" />
+      <artifact name="SpringMvc3:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0265a641-4abd-41ad-894a-05a4801183b1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/java/com/example/springmvc/controller/ItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/java/com/example/springmvc/pojo/Items.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/java/com/example/springmvc/pojo/ItemsExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/java/com/example/springmvc/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/java/com/example/springmvc/pojo/UserExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/resources/springmvc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/jsp/editItem.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/jsp/itemList.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/commons-logging-1.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/jstl-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/spring-aop-4.1.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/spring-aspects-4.1.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/spring-beans-4.1.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/spring-context-4.1.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/spring-context-support-4.1.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/spring-core-4.1.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/spring-expression-4.1.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/spring-jdbc-4.1.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/spring-jms-4.1.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/spring-messaging-4.1.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/spring-tx-4.1.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/spring-web-4.1.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/spring-webmvc-4.1.3.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/lib/spring-webmvc-4.1.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMvc3/src/main/webapp/static/bootstrap.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_One/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Module_One/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_Two/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Module_Two/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/Hello-world/target/" />
@@ -42,6 +68,7 @@
     <ignored path="$PROJECT_DIR$/SpringBootDemo-thymeleaf/target/" />
     <ignored path="$PROJECT_DIR$/XYZ/target/" />
     <ignored path="$PROJECT_DIR$/dedmoxyz/target/" />
+    <ignored path="$PROJECT_DIR$/SpringMvc3/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,30 +182,47 @@
     <session id="610043235">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.64" value="1" />
+          <entry key="project.open.time.81" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="xml" value="3" />
+          <entry key="java" value="10" />
+          <entry key="jsp" value="2" />
+          <entry key="properties" value="2" />
+          <entry key="xml" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="XML" value="3" />
+          <entry key="JAVA" value="10" />
+          <entry key="JSP" value="2" />
+          <entry key="Properties" value="2" />
+          <entry key="XML" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="xml" value="8" />
+          <entry key="java" value="254" />
+          <entry key="jsp" value="57" />
+          <entry key="xml" value="73" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="XML" value="8" />
+          <entry key="JAVA" value="254" />
+          <entry key="JSP" value="57" />
+          <entry key="XML" value="73" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.spring.boot.run.usages" />
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.spring.boot.mvc.usages" />
     </session>
   </component>
   <component name="FavoritesManager">
@@ -189,8 +233,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpringMvc1/src/main/java/com/example/controller/HelloController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="209">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -199,76 +243,105 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringMvc1/src/main/webapp/WEB-INF/view/HelloWorld.jsp">
+        <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/java/com/example/controller/HelloWorld.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            <state relative-caret-position="342">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringMvc1/src/main/webapp/WEB-INF/spring-mvc-servlet.xml">
+        <entry file="file://$PROJECT_DIR$/SpringMvc3/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            <state relative-caret-position="294">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringMvc3/src/main/java/com/example/springmvc/pojo/User.java">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/SpringMvc3/src/main/java/com/example/springmvc/controller/ItemController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            <state relative-caret-position="459">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#443#465#0" expanded="true" />
+                <element signature="e#531#592#0" expanded="true" />
+                <element signature="e#531#592#0" expanded="true" />
+                <element signature="e#602#663#0" expanded="true" />
+                <element signature="e#602#663#0" expanded="true" />
+                <element signature="e#673#734#0" expanded="true" />
+                <element signature="e#673#734#0" expanded="true" />
+                <element signature="e#744#805#0" expanded="true" />
+                <element signature="e#744#805#0" expanded="true" />
+                <element signature="e#815#876#0" expanded="true" />
+                <element signature="e#815#876#0" expanded="true" />
+                <element signature="e#886#947#0" expanded="true" />
+                <element signature="e#886#947#0" expanded="true" />
+                <element signature="e#947#985#1" expanded="true" />
+                <element signature="e#1307#1325#1" expanded="true" />
+                <element signature="e#1335#1454#0" expanded="true" />
+                <element signature="e#1339#1350#0" expanded="true" />
+                <element signature="e#1335#1454#0" expanded="true" />
+                <element signature="e#1374#1444#0" expanded="true" />
+                <element signature="e#1374#1386#0" expanded="true" />
+                <element signature="e#1374#1444#0" expanded="true" />
+                <element signature="e#1346#1384#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Module_Two/pom.xml">
+        <entry file="file://$PROJECT_DIR$/SpringMvc3/src/main/java/com/example/springmvc/pojo/Items.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="26" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="26" />
+            <state relative-caret-position="114">
+              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Module_One/pom.xml">
+        <entry file="file://$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/jsp/editItem.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="26" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="26" />
+            <state relative-caret-position="456">
+              <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringMvc1/src/main/webapp/WEB-INF/web.xml">
+        <entry file="file://$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/jsp/itemList.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+            <state relative-caret-position="369">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringMvc1/src/main/webapp/index.jsp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringMvc2/src/main/java/com/example/controller/HelloController.java">
+        <entry file="file://$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="399">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringMvc2/pom.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/SpringMvc3/src/main/resources/springmvc.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="18" column="111" selection-start-line="18" selection-start-column="111" selection-end-line="18" selection-end-column="111" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -284,7 +357,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>thymeleaf</find>
       <find>iterator</find>
       <find>toJSON</find>
       <find>toJavaObject</find>
@@ -314,6 +386,7 @@
       <find>个对象的方法触发一次延迟加载</find>
       <find>60 seconds</find>
       <find>映射失败，抛出异常和详细信息</find>
+      <find>jstl</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -322,12 +395,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/JavaDemo/src/main/java/com/example/RestDemo.java" />
-        <option value="$PROJECT_DIR$/SpringFrameworkDemo_Consuming_Webservice/src/main/java/com/example/Application.java" />
-        <option value="$PROJECT_DIR$/JavaDemo/src/main/java/com/example/RestDemo2.java" />
-        <option value="$PROJECT_DIR$/mybatis-spring-basic/src/test/java/com/enjoylearning/mybatis/basic/Demo1.java" />
-        <option value="$PROJECT_DIR$/mybatis-demo2/src/test/java/com/enjoylearning/mybatis2/AssociationQueryTest.java" />
-        <option value="$PROJECT_DIR$/mybatis-demo2/src/test/java/com/enjoylearning/mybatis2/MybatisCacheTest.java" />
         <option value="$PROJECT_DIR$/mybatis-demo2/src/test/java/com/enjoylearning/mybatis2/MybatisDemo.java" />
         <option value="$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/entity/THealthReportMale.java" />
         <option value="$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/entity/THealthReportFemale.java" />
@@ -369,10 +436,16 @@
         <option value="$PROJECT_DIR$/mybatis-demo1/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/mybatis-demo0/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/mybatis-demo1/src/main/resources/db.properties" />
-        <option value="$PROJECT_DIR$/SpringMvc1/src/main/java/com/example/controller/HelloController.java" />
         <option value="$PROJECT_DIR$/Module_One/pom.xml" />
         <option value="$PROJECT_DIR$/Module_Two/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMvcHelloWorld/src/main/resources/spring/spring-servlet.xml" />
+        <option value="$PROJECT_DIR$/SpringMvc1/src/main/java/com/example/controller/HelloController.java" />
+        <option value="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/jsp/editItem.jsp" />
+        <option value="$PROJECT_DIR$/SpringMvc3/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/jsp/itemList.jsp" />
+        <option value="$PROJECT_DIR$/SpringMvc3/src/main/java/com/example/springmvc/pojo/Items.java" />
+        <option value="$PROJECT_DIR$/SpringMvc3/src/main/java/com/example/springmvc/controller/ItemController.java" />
       </list>
     </option>
   </component>
@@ -397,8 +470,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="177" />
-    <option name="y" value="26" />
+    <option name="x" value="732" />
+    <option name="y" value="44" />
     <option name="width" value="1564" />
     <option name="height" value="1000" />
   </component>
@@ -420,12 +493,28 @@
             <path>
               <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-              <item name="Module_One" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMvc3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java201808" type="462c0819:PsiDirectoryNode" />
-              <item name="Module_Two" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMvc3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMvc3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java201808" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java201808" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMvc3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -468,28 +557,29 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542251331965" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542335862421" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Lib/spring-framework-release/source/spring-framework-5.0.4.RELEASE" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17932032" />
     <property name="project.structure.side.proportion" value="0.3356828" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Work\Java\JavaStudy\Java201808\JavaDemo\src\main\java\com\example\model" />
-      <recent name="D:\Work\Java\JavaStudy\Java201808\mybatis-spring\src\test\java\com\enjoylearning\mybatis" />
-      <recent name="D:\Work\Java\JavaStudy\Java201808\SpringMvc2\src\main\resources" />
-      <recent name="D:\Work\Java\JavaStudy\Java201808\SpringMvc1\src\main\webapp\assets\bootstrap\css" />
-      <recent name="D:\Work\Java\JavaStudy\Java201808\SpringBootDemo\src\main\resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\Java\JavaStudy\dev.tencent\Java201808\SpringMvc3\src\main\resources" />
+      <recent name="D:\Work\Java\JavaStudy\Java201808\SpringFrameworkDemo_Webservice\src\main\java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.model" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Work\Java\JavaStudy\Java201808\SpringFrameworkDemo_Webservice\src\main\java" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\Java\JavaStudy\dev.tencent\Java201808\SpringMvc3\src\main\webapp" />
+      <recent name="D:\Work\Java\JavaStudy\dev.tencent\Java201808\SpringMvc3\src\main\java" />
+      <recent name="D:\Work\Java\JavaStudy\Java201808\JavaDemo\src\main\java\com\example\model" />
+      <recent name="D:\Work\Java\JavaStudy\Java201808\mybatis-spring\src\test\java\com\enjoylearning\mybatis" />
+      <recent name="D:\Work\Java\JavaStudy\Java201808\SpringMvc2\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -504,7 +594,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.SpringMvc2">
+  <component name="RunManager" selected="Tomcat Server.SpringMvc3">
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <module name="mybatis-demo1" />
       <option name="VM_PARAMETERS" />
@@ -934,6 +1024,81 @@
         </option>
       </method>
     </configuration>
+    <configuration name="SpringMvc3" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.8" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="HOT_SWAP_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <deployment>
+        <artifact name="SpringMvc3:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Java201808_14" />
+        <option name="HTTP_PORT" value="8094" />
+        <option name="JNDI_PORT" value="1399" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="3316" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="SpringMvc3:war" />
+        </option>
+      </method>
+    </configuration>
     <configuration name="SpringMvcHelloWorld" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.8" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -1155,16 +1320,17 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Spring Boot.SpringBootDemoApplication" />
+      <item itemvalue="Spring Boot.Application" />
       <item itemvalue="Tomcat Server.springframeworkdemo_webservice" />
       <item itemvalue="Tomcat Server.springframeworkdemo_consuming_webservice" />
       <item itemvalue="Tomcat Server.SpringBootDemo-jsp" />
       <item itemvalue="Tomcat Server.SpringBootDemo-thymeleaf" />
       <item itemvalue="Tomcat Server.SpringMvc1" />
       <item itemvalue="Tomcat Server.SpringMvc2" />
+      <item itemvalue="Tomcat Server.SpringMvc3" />
       <item itemvalue="Tomcat Server.SpringMvcHelloWorld" />
       <item itemvalue="Spring Boot.RestDemo2" />
-      <item itemvalue="Spring Boot.SpringBootDemoApplication" />
-      <item itemvalue="Spring Boot.Application" />
     </list>
     <recent_temporary>
       <list>
@@ -1245,7 +1411,9 @@
       <workItem from="1542164280146" duration="4348000" />
       <workItem from="1542177575398" duration="9775000" />
       <workItem from="1542249271398" duration="1117000" />
-      <workItem from="1542251077792" duration="251000" />
+      <workItem from="1542251077792" duration="3658000" />
+      <workItem from="1542300603202" duration="599000" />
+      <workItem from="1542332372627" duration="3462000" />
     </task>
     <task id="LOCAL-00001" summary="readme">
       <created>1535220139093</created>
@@ -1289,7 +1457,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81061000" />
+    <option name="totallyTimeSpent" value="88529000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1304,8 +1472,8 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.74463516" visible="true" weight="0.21268657" />
-      <window_info id="Structure" order="1" sideWeight="0.2553648" side_tool="true" visible="true" weight="0.21268657" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.74121404" visible="true" weight="0.22921109" />
+      <window_info id="Structure" order="1" sideWeight="0.25878593" side_tool="true" visible="true" weight="0.22921109" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -1323,14 +1491,14 @@
       <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.49840087" weight="0.32939914" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49733475" weight="0.06430868" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.17110874" side_tool="true" weight="0.41523606" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.46695095" weight="0.32832617" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" sideWeight="0.46695095" visible="true" weight="0.32832617" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" sideWeight="0.49840087" weight="0.32939914" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" weight="0.32939914" />
       <window_info anchor="bottom" id="Application Servers" order="14" weight="0.222103" />
       <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.34405145" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" visible="true" weight="0.14818764" />
+      <window_info anchor="right" id="Ant Build" order="1" visible="true" weight="0.118336886" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -1476,49 +1644,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/mapper/THealthReportMaleMapper.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/mapper/TJobHistoryAnnoMapper.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/mapper/TJobHistoryMapper.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/mapper/TPositionMapper.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/mapper/TRoleMapper.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/mapper/TUserMapper.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/mapper/TUserRoleMapper.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/entity/EmailSexBean.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/entity/HealthReport.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/entity/THealthReportMale.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/entity/TJobHistory.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/entity/THealthReportFemale.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/main/java/com/enjoylearning/mybatis2/mapper/THealthReportFemaleMapper.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-demo2/src/main/resources/sqlmapper/THealthReportFemaleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TUserMapper.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TUserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryAnnoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryAnnoMapper.java" />
-    <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mybatis-demo0/src/main/java/com/enjoylearning/mybatis/mapper/TUserRoleMapper.java" />
     <entry file="file://$PROJECT_DIR$/mybatis-demo1/src/main/java/com/enjoylearning/mybatis/mapper/TJobHistoryMapper.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1688,16 +1813,6 @@
     <entry file="file://$PROJECT_DIR$/SpringMvc2/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMvc1/src/main/java/com/example/controller/HelloController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpringMvc1/src/main/webapp/WEB-INF/view/HelloWorld.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -1714,13 +1829,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SpringMvc1/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMvc2/src/main/java/com/example/controller/HelloController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SpringMvc2/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1748,8 +1856,159 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state relative-caret-position="304">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mybatis01/src/main/java/Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.7.RELEASE/spring-webmvc-5.0.7.RELEASE-sources.jar!/org/springframework/web/servlet/handler/SimpleUrlHandlerMapping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mybatis01/src/main/java/com/example/entity/TUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mybatis01/src/main/java/com/example/mapper/TUserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mybatis01/src/main/java/com/example/mapper/TUserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mybatis01/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mybatis01/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mybatis01/src/main/resources/mybatis.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/resources/spring/spring-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvc2/src/main/java/com/example/controller/HelloController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvc1/src/main/java/com/example/controller/HelloController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvcHelloWorld/src/main/java/com/example/controller/HelloWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvc3/src/main/java/com/example/springmvc/pojo/User.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvc3/src/main/resources/springmvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="111" selection-start-line="18" selection-start-column="111" selection-end-line="18" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/jsp/editItem.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvc3/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvc3/src/main/webapp/WEB-INF/jsp/itemList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvc3/src/main/java/com/example/springmvc/pojo/Items.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMvc3/src/main/java/com/example/springmvc/controller/ItemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#443#465#0" expanded="true" />
+            <element signature="e#531#592#0" expanded="true" />
+            <element signature="e#531#592#0" expanded="true" />
+            <element signature="e#602#663#0" expanded="true" />
+            <element signature="e#602#663#0" expanded="true" />
+            <element signature="e#673#734#0" expanded="true" />
+            <element signature="e#673#734#0" expanded="true" />
+            <element signature="e#744#805#0" expanded="true" />
+            <element signature="e#744#805#0" expanded="true" />
+            <element signature="e#815#876#0" expanded="true" />
+            <element signature="e#815#876#0" expanded="true" />
+            <element signature="e#886#947#0" expanded="true" />
+            <element signature="e#886#947#0" expanded="true" />
+            <element signature="e#947#985#1" expanded="true" />
+            <element signature="e#1307#1325#1" expanded="true" />
+            <element signature="e#1335#1454#0" expanded="true" />
+            <element signature="e#1339#1350#0" expanded="true" />
+            <element signature="e#1335#1454#0" expanded="true" />
+            <element signature="e#1374#1444#0" expanded="true" />
+            <element signature="e#1374#1386#0" expanded="true" />
+            <element signature="e#1374#1444#0" expanded="true" />
+            <element signature="e#1346#1384#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1759,7 +2018,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>SpringBootDemo:war</last-edited>
+          <last-edited>SpringBootDemo-jsp:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1795,11 +2054,11 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>Android API 21 Platform</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3356828" />
               </list>
             </option>
           </splitter-proportions>
@@ -1807,11 +2066,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring|mybatis-spring-basic</last-edited>
+          <last-edited>SpringMvc3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3356828" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1835,7 +2095,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3356828" />
               </list>
             </option>
           </splitter-proportions>
