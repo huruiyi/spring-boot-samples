@@ -23,7 +23,7 @@ public class UserController {
         return new ModelAndView("index");
     }
 
-    @RequestMapping("/hello")
+    @RequestMapping("/helloworld")
     public String index() {
         return "Hello World";
     }

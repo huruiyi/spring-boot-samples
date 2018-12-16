@@ -4,11 +4,11 @@
   <groupId>com.apress.prospring4.ch2</groupId>
   <artifactId>hello-world</artifactId>
   <packaging>jar</packaging>
-  <version>4.0-SNAPSHOT</version>
+  <version>5.0.7-SNAPSHOT</version>
   <name>hello-world</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring.version>4.0.2.RELEASE</spring.version>
+    <spring.version>5.0.7.RELEASE</spring.version>
   </properties>
   <dependencies>
       <dependency>

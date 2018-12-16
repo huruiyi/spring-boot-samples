@@ -32,53 +32,53 @@ import com.example.properties.ServerHostProperties;
 @RequestMapping(value = "/demo")
 public class HelloController {
 
-	@Autowired
-	private ServerHostProperties serverHostProperties;
+    @Autowired
+    private ServerHostProperties serverHostProperties;
 
-	@ResponseBody
-	@RequestMapping(value = "/hello")
-	public String Hello() {
-		return "Hello World,世界你好! ! !";
-	}
+    @ResponseBody
+    @RequestMapping(value = "/hello")
+    public String Hello() {
+        return "Hello World,世界你好! ! !";
+    }
 
-	@RequestMapping(value = "/welcome")
-	public String welcome(Model model) {
-		model.addAttribute("name", "小祖宗");
-		return "welcome";
-	}
+    @RequestMapping(value = "/welcome")
+    public String welcome(Model model) {
+        model.addAttribute("name", "小祖宗");
+        return "welcome";
+    }
 
-	@RequestMapping(value = "/test")
-	public String test(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
-		WebContext ctx = new WebContext(request, response, request.getServletContext());
-		ctx.setVariable("book", "福尔摩斯探案集");
-		session.setAttribute("city", "上海松江区");
-		return "testThymeleafObjects";
-	}
+    @RequestMapping(value = "/test")
+    public String test(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+        WebContext ctx = new WebContext(request, response, request.getServletContext());
+        ctx.setVariable("book", "福尔摩斯探案集");
+        session.setAttribute("city", "上海松江区");
+        return "testThymeleafObjects";
+    }
 
-	@RequestMapping("/showServerHost")
-	public String serverHost(Model model) {
-		List<ServerHostProperties.InetAddress> inetAddresses = new ArrayList<ServerHostProperties.InetAddress>();
-		inetAddresses.add(serverHostProperties.getInetAddressA());
-		inetAddresses.add(serverHostProperties.getInetAddressB());
-		inetAddresses.add(serverHostProperties.getInetAddressC());
-		model.addAttribute("inetAddresses", inetAddresses);
-		return "showServerHost";
-	}
+    @RequestMapping("/showServerHost")
+    public String serverHost(Model model) {
+        List<ServerHostProperties.InetAddress> inetAddresses = new ArrayList<ServerHostProperties.InetAddress>();
+        inetAddresses.add(serverHostProperties.getInetAddressA());
+        inetAddresses.add(serverHostProperties.getInetAddressB());
+        inetAddresses.add(serverHostProperties.getInetAddressC());
+        model.addAttribute("inetAddresses", inetAddresses);
+        return "showServerHost";
+    }
 
-	@RequestMapping("person")
-	public String index(Model model) {
-		List<Person> people = new ArrayList<Person>();
-		Person p1 = new Person("bb", 2);
-		Person p2 = new Person("cc", 3);
-		Person p3 = new Person("dd", 4);
-		people.add(p1);
-		people.add(p2);
-		people.add(p3);
-		model.addAttribute("people", people);
+    @RequestMapping("person")
+    public String index(Model model) {
+        List<Person> people = new ArrayList<Person>();
+        Person p1 = new Person("bb", 2);
+        Person p2 = new Person("cc", 3);
+        Person p3 = new Person("dd", 4);
+        people.add(p1);
+        people.add(p2);
+        people.add(p3);
+        model.addAttribute("people", people);
 
-		Person single = new Person("aa", 1);
-		model.addAttribute("singlePerson", single);
-		return "person";
-	}
+        Person single = new Person("aa", 1);
+        model.addAttribute("singlePerson", single);
+        return "person";
+    }
 
 }

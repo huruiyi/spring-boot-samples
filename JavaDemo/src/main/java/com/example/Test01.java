@@ -1,10 +1,33 @@
 package com.example;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Test01 {
-    public static void main(String[] args) {
-        Demo05();
+    public static void main(String[] args) throws ParseException {
+
+        String str0="";
+        String str1="a";
+        String strb="b";
+        String strc="c";
+        String str = str0.concat(",").concat(str1).concat(",").concat(strb).concat(",").concat(strc).concat(",");
+
+
+        System.out.println(str);
+        System.out.println(str.substring(1,str.length()-1));
+
+        Calendar calendar = Calendar.getInstance();
+        System.out.println(calendar.getTime());
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateStr = simpleDateFormat.format(calendar.getTime());
+        System.out.println(dateStr);
+
+        Date date = simpleDateFormat.parse(dateStr);
+        System.out.println(date);
     }
 
     static void Demo00() {
