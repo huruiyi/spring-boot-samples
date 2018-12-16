@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 import org.thymeleaf.context.WebContext;
 
 import com.example.properties.ServerHostProperties;
@@ -28,23 +29,38 @@ import com.example.properties.ServerHostProperties;
  */
 
 //template might not exist or might not be accessible by any of the configured Template Resolvers
-@RestController
-@RequestMapping(value = "/demo")
-public class HelloController {
+@Controller
+@RequestMapping(value = "/default")
+public class StudentV1Controller {
 
     @Autowired
     private ServerHostProperties serverHostProperties;
 
+    /*
+        返回字符串
+    */
     @ResponseBody
     @RequestMapping(value = "/hello")
     public String Hello() {
         return "Hello World,世界你好! ! !";
     }
 
+
+    /*
+         返回视图页
+    */
+    @RequestMapping(value = "/index")
+    public ModelAndView index() {
+        ModelAndView model = new ModelAndView();
+        model.setViewName("/student/index");
+        return model;
+    }
+
+
     @RequestMapping(value = "/welcome")
     public String welcome(Model model) {
         model.addAttribute("name", "小祖宗");
-        return "welcome";
+        return "/default/welcome";
     }
 
     @RequestMapping(value = "/test")
@@ -52,7 +68,7 @@ public class HelloController {
         WebContext ctx = new WebContext(request, response, request.getServletContext());
         ctx.setVariable("book", "福尔摩斯探案集");
         session.setAttribute("city", "上海松江区");
-        return "testThymeleafObjects";
+        return "/default/testThymeleafObjects";
     }
 
     @RequestMapping("/showServerHost")
@@ -62,7 +78,7 @@ public class HelloController {
         inetAddresses.add(serverHostProperties.getInetAddressB());
         inetAddresses.add(serverHostProperties.getInetAddressC());
         model.addAttribute("inetAddresses", inetAddresses);
-        return "showServerHost";
+        return "/default/showServerHost";
     }
 
     @RequestMapping("person")
@@ -78,7 +94,7 @@ public class HelloController {
 
         Person single = new Person("aa", 1);
         model.addAttribute("singlePerson", single);
-        return "person";
+        return "/default/person";
     }
 
 }
