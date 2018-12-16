@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HttpDemo/HttpDemo.iml" filepath="$PROJECT_DIR$/HttpDemo/HttpDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java201808.iml" filepath="$PROJECT_DIR$/Java201808.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaDemo/JavaDemo.iml" filepath="$PROJECT_DIR$/JavaDemo/JavaDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBootDemo-jsp/SpringBootDemo-jsp.iml" filepath="$PROJECT_DIR$/SpringBootDemo-jsp/SpringBootDemo-jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBootDemo-thymeleaf/SpringBootDemo-thymeleaf.iml" filepath="$PROJECT_DIR$/SpringBootDemo-thymeleaf/SpringBootDemo-thymeleaf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMvc1/SpringMvc1.iml" filepath="$PROJECT_DIR$/SpringMvc1/SpringMvc1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMvc2/SpringMvc2.iml" filepath="$PROJECT_DIR$/SpringMvc2/SpringMvc2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMvc3/SpringMvc3.iml" filepath="$PROJECT_DIR$/SpringMvc3/SpringMvc3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hello-world/hello-world.iml" filepath="$PROJECT_DIR$/Hello-world/hello-world.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-demo0/mybatis-demo0.iml" filepath="$PROJECT_DIR$/mybatis-demo0/mybatis-demo0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-demo1/mybatis-demo1.iml" filepath="$PROJECT_DIR$/mybatis-demo1/mybatis-demo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-demo2/mybatis-demo2.iml" filepath="$PROJECT_DIR$/mybatis-demo2/mybatis-demo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-quick-start/mybatis-quick-start.iml" filepath="$PROJECT_DIR$/mybatis-quick-start/mybatis-quick-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-spring-basic/mybatis-spring-basic.iml" filepath="$PROJECT_DIR$/mybatis-spring-basic/mybatis-spring-basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-spring-pro/mybatis-spring-pro.iml" filepath="$PROJECT_DIR$/mybatis-spring-pro/mybatis-spring-pro.iml" />
+    </modules>
+  </component>
+</project>
