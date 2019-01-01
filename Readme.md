@@ -37,3 +37,11 @@
  ##c.两种方式的区别
  TreeSet构造函数什么都不传, 默认按照类中Comparable的顺序(没有就报错ClassCastException)
  TreeSet如果传入Comparator, 就优先按照Comparator
+ 
+ # [characterEncoding编码](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-charsets.html)
+    MySQL Character Set Name	
+        For 8.0.12 and earlier: utf8    
+        For 8.0.13 and later: utf8mb4
+    Java-Style Character Encoding Name
+        UTF-8
+
