@@ -29,7 +29,7 @@
       <module name="mybatis-spring" target="1.7" />
       <module name="mybatis-spring-basic" target="1.7" />
       <module name="mybatis-spring-pro" target="1.7" />
-      <module name="MyBatisOneByOne" target="1.8" />
+      <module name="MyBatisOneByOne" target="1.5" />
       <module name="SpringBootDemo-jsp" target="1.8" />
       <module name="SpringBootDemo-thymeleaf" target="1.8" />
       <module name="SpringMvc1" target="1.5" />
