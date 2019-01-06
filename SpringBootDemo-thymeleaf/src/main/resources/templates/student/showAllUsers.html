@@ -20,7 +20,13 @@
 					</div>
 					<div class="panel-body">
 						<ul class="list-group">
-							<li class="list-group-item" th:each="user:${users}">编号： <span th:text="${user.id}"></span> <br /> 用户名：<span th:text="${user.username}"></span> <br /> 密码：<span th:text="${user.password}"></span> <br /> 电话：<span th:text="${user.telephone}"></span> <br /> 注册时间：<span th:text="${#dates.format(user.registerTime, 'yyyy-MM-dd hh:mm:ss')}"></span> <br /> 权限：<span th:text="${user.popedom==0?'管理员':'普通用户'}"></span> <br />
+							<li class="list-group-item" th:each="user:${users}">编号：
+								<span th:text="${user.id}"></span> <br />
+								用户名：<span th:text="${user.username}"></span> <br />
+								密码：<span th:text="${user.password}"></span> <br />
+								电话：<span th:text="${user.telephone}"></span> <br />
+								注册时间：<span th:text="${#dates.format(user.registerTime, 'yyyy-MM-dd hh:mm:ss')}"></span> <br />
+								权限：<span th:text="${user.popedom==0?'管理员':'普通用户'}"></span> <br />
 							</li>
 						</ul>
 					</div>
