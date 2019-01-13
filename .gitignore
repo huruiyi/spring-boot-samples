@@ -74,3 +74,4 @@ local.properties
 *.log
 *.class
 target
+.idea/

@@ -35,11 +35,12 @@ public class UserMapperTest {
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
         System.err.println("查询Id<100的用户！！！");
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i < 10; i++) {
             User user = mapper.selectByPrimaryKey(i);
             if (user != null) {
                 System.out.println(user.toString());
             }
+            System.out.println("********************************************************");
         }
     }
 
