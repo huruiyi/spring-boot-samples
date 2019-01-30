@@ -1,8 +1,13 @@
 package com.example.zk;
 
+import org.apache.zookeeper.*;
+import org.apache.zookeeper.data.Stat;
 import org.apache.zookeeper.server.auth.DigestAuthenticationProvider;
 
+import java.io.IOException;
+import java.nio.file.attribute.AclEntryFlag;
 import java.security.NoSuchAlgorithmException;
+import java.util.concurrent.CountDownLatch;
 
 
 public class DigestDemo {
@@ -22,7 +27,58 @@ public class DigestDemo {
      * 6:权限控制
      * 7:watch
      * */
-    public static void main(String[] args) throws NoSuchAlgorithmException {
+    private final static String CONNECTIONStr = "192.168.88.133:2181";
+    private static CountDownLatch countDownLatch = new CountDownLatch(1);
+
+    public static void main(String[] args) throws NoSuchAlgorithmException, IOException, InterruptedException, KeeperException {
+        ZooKeeper zooKeeper = new ZooKeeper(CONNECTIONStr, 5000, new Watcher() {
+            @Override
+            public void process(WatchedEvent event) {
+                if (event.getState().equals(Event.KeeperState.SyncConnected)) {
+                    countDownLatch.countDown();
+                    System.out.println(event.getState());
+                }
+                if (event.getType().equals(Event.EventType.NodeDataChanged)) {
+                    System.out.println("节点发生变化");
+                }
+            }
+        });
+
+        countDownLatch.await();
+        Stat stat = new Stat();
+        String path = "/country";
+        //Watcher事件只会触发一次,每次要触发事件时都要重新设置监听:zooKeeper.getData(path, true, stat);
+        byte[] data = zooKeeper.getData(path, true, stat);
+        if (data.length == 0) {
+            String res = zooKeeper.create(path, "china".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+            System.out.println(res);
+        } else {
+            Stat newStat = zooKeeper.setData(path, "世界你好".getBytes(), stat.getVersion());
+
+        }
+
+
+        zooKeeper.getData(path, true, null);
+        // version: -1 忽略版本的变化
+        zooKeeper.setData( path, "china 2017".getBytes(), -1);
+
+        zooKeeper.getData(path, true, stat);
+        zooKeeper.setData( path, "china 2018".getBytes(), -1);
+
+
+        byte[] data1 = zooKeeper.getData(path, new Watcher() {
+            @Override
+            public void process(WatchedEvent event) {
+                if (event.getType().equals(Event.EventType.NodeDataChanged)) {
+                    System.out.println("节点发生变化............");
+                }
+            }
+        }, stat);
+        zooKeeper.setData( path, "china 2019".getBytes(), -1);
+        zooKeeper.setData( path, "china 2020".getBytes(), -1);
+
+        System.out.println(new String(data1));
+        //zooKeeper.delete("/country", 0);
 
 
     }
