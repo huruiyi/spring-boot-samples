@@ -7,9 +7,7 @@
     <link th:href="@{/static/bootstrap/css/bootstrap.css}" rel="stylesheet"/>
 </head>
 <body class="container">
-<form class="col-lg-offset-4 col-lg-4" th:action="@{/logout}" method="post">
-    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-    <input class="btn btn-lg btn-danger btn-block" type="submit" value="Sign Out"/>
-</form>
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<h1>Click <a th:href="@{/hello}">here</a> to see a greeting.</h1>
 </body>
 </html>
