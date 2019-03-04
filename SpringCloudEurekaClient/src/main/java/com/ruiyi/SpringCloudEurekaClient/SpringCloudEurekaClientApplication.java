@@ -9,7 +9,8 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class Application {
+public class SpringCloudEurekaClientApplication {
+
 
     @Bean(value = "restTemplate")
     @LoadBalanced
@@ -18,7 +19,7 @@ public class Application {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(SpringCloudEurekaClientApplication.class, args);
     }
 
 }
