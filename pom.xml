@@ -20,6 +20,9 @@
         <module>SpringBootMybatis</module>
         <module>SpringMvcHelloWorld</module>
         <module>SpringBeans</module>
+        <module>SpringCloudEurekaServer</module>
+        <module>SpringCloudEurekaClient</module>
+        <module>SpringJPA</module>
         <module>SpringMultiDataSource</module>
     </modules>
 </project>
