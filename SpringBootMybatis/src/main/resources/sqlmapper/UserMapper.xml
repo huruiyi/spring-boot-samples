@@ -12,9 +12,9 @@
         <result column="position_id" jdbcType="INTEGER" property="positionId"/>
     </resultMap>
     <select id="selectByPrimaryKey" resultMap="UserResultMap" parameterType="java.lang.Integer">
-      select id,user_name ,real_name ,sex,mobile,email,note,position_id positionId from t_user where id = #{id,jdbcType=INTEGER}
+      select id,user_name ,real_name ,sex,mobile,email,note,position_id positionId from user where id = #{id,jdbcType=INTEGER}
     </select>
     <select id="selectAllUsers" resultMap="UserResultMap">
-      select id, user_name , real_name , sex, mobile, email, note, position_id  from t_user
+      select id, user_name , real_name , sex, mobile, email, note, position_id  from user
     </select>
 </mapper>
