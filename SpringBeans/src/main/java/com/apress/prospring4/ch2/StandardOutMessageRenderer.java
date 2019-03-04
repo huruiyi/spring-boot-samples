@@ -13,12 +13,10 @@ public class StandardOutMessageRenderer implements MessageRenderer {
     }
 
     public void setMessageProvider(MessageProvider provider) {
-
         this.messageProvider = provider;
     }
 
     public MessageProvider getMessageProvider() {
-
         return this.messageProvider;
     }
 }

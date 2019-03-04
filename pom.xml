@@ -20,5 +20,6 @@
         <module>MyBatisOneByOne</module>
         <module>SpringBootMybatis</module>
         <module>SpringMvcHelloWorld</module>
+        <module>SpringBeans</module>
     </modules>
 </project>
