@@ -18,11 +18,13 @@
         <module>SpringMvc3</module>
         <module>MyBatisOneByOne</module>
         <module>SpringBootMybatis</module>
+        <module>SpringBootNoSql</module>
         <module>SpringMvcHelloWorld</module>
         <module>SpringBeans</module>
         <module>SpringCloudEurekaServer</module>
         <module>SpringCloudEurekaClient</module>
         <module>SpringJPA</module>
         <module>SpringMultiDataSource</module>
+        <module>MyBatisPlus</module>
     </modules>
 </project>

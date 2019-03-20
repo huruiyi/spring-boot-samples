@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
@@ -48,5 +50,12 @@ public class GreetingController {
         return "Hello World";
     }
 
+    @RequestMapping("/test")
+    @ResponseBody
+    public Map<String, String> test() {
+        Map<String, String> map = new HashMap<>();
+        map.put("key1", "value1");
+        return map;
+    }
 
 }

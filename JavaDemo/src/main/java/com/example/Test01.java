@@ -1,7 +1,9 @@
 package com.example;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.DateTimeException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
@@ -9,16 +11,31 @@ import java.util.Scanner;
 public class Test01 {
     public static void main(String[] args) throws ParseException {
 
-        String str0="";
-        String str1="a";
-        String strb="b";
-        String strc="c";
-        String str = str0.concat(",").concat(str1).concat(",").concat(strb).concat(",").concat(strc).concat(",");
+
+    }
+
+    static void equ() {
+
+    }
+
+    static void DateDemo_02() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        Date start = calendar.getTime();
 
 
-        System.out.println(str);
-        System.out.println(str.substring(1,str.length()-1));
+        calendar.add(Calendar.DAY_OF_MONTH, 1);
+        calendar.add(Calendar.SECOND, -1);
+        Date end = calendar.getTime();
 
+        System.out.println("start======" + start);
+
+        System.out.println("end========" + end);
+    }
+
+    static void DateDemo_01() throws ParseException {
         Calendar calendar = Calendar.getInstance();
         System.out.println(calendar.getTime());
 
@@ -27,6 +44,7 @@ public class Test01 {
         System.out.println(dateStr);
 
         Date date = simpleDateFormat.parse(dateStr);
+
         System.out.println(date);
     }
 
