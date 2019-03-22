@@ -82,7 +82,7 @@ public class SpringbootmybatisplusApplicationTests {
         // 自定义配置会被优先输出
 
 
-         focList.add(new FileOutConfig(templatePath) {
+        focList.add(new FileOutConfig(templatePath) {
 
             public String outputFile(com.baomidou.mybatisplus.generator.config.po.TableInfo tableInfo) {
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
@@ -121,7 +121,7 @@ public class SpringbootmybatisplusApplicationTests {
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);
-         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
+        mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
 
 
