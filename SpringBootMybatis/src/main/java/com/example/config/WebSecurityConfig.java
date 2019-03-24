@@ -35,9 +35,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public UserDetailsService userDetailsService() {
         UserDetails user =
-                User.withDefaultPasswordEncoder()
-                        .username("admin")
-                        .password("admin")
+                //User.withDefaultPasswordEncoder()
+                User.withUsername("admin")
+                        .password("{bcrypt}$2a$10$o/Md1h0E4qZEuYYEY6wmuuvoj13RQQAsuZCD21HNAvT1CYEn1b3Ou")
                         .roles("USER")
                         .build();
 
