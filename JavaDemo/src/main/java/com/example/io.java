@@ -7,6 +7,9 @@ import java.util.Properties;
 public class io {
     public static void main(String[] args) {
 
+        // 分支测试
+
+
         Properties properties = System.getProperties();
         System.out.println(properties.size());
         Enumeration<Object> keys = properties.keys();
