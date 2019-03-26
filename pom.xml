@@ -23,8 +23,8 @@
         <module>SpringBeans</module>
         <module>SpringCloudEurekaServer</module>
         <module>SpringCloudEurekaClient</module>
+        <module>SpringCloudConfigServer</module>
         <module>SpringJPA</module>
         <module>SpringMultiDataSource</module>
-        <module>MyBatisPlus</module>
     </modules>
 </project>
