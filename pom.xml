@@ -18,6 +18,7 @@
         <module>SpringMvc3</module>
         <module>MyBatisOneByOne</module>
         <module>SpringBootMybatis</module>
+        <module>SpringBootMybatisPlus</module>
         <module>SpringBootNoSql</module>
         <module>SpringMvcHelloWorld</module>
         <module>SpringBeans</module>
