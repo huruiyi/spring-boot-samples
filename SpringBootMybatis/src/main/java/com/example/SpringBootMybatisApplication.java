@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import java.util.Arrays;
 
 @SpringBootApplication
-public class Application {
+public class SpringBootMybatisApplication {
 
     /*
         https://spring.io/guides/gs/spring-boot/
@@ -18,7 +18,7 @@ public class Application {
     */
 
     public static void main(String[] args) {
-        final ConfigurableApplicationContext ctx = SpringApplication.run(Application.class, args);
+        final ConfigurableApplicationContext ctx = SpringApplication.run(SpringBootMybatisApplication.class, args);
 
         System.out.println("# Beans: " + ctx.getBeanDefinitionCount());
         String[] names = ctx.getBeanDefinitionNames();
