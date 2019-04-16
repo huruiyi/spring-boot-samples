@@ -15,35 +15,31 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = "com.example.SpringMultiDataSource.memberPro.mapper", sqlSessionFactoryRef = "dataSourceProSqlSessionFactory")
+@MapperScan(basePackages = "com.example.SpringMultiDataSource.memberPro.mapper", sqlSessionFactoryRef = "dataSource_Pro_SqlSessionFactory")
 public class DataSourePro {
 
-    private final static String Pro_DataSourceBeanName = "dataSourcePro";
-    private final static String Pro_SqlSessionFactory = "dataSourceProSqlSessionFactory";
-    private final static String Pro_DataSourceTransactionManager = "dataSourceProTransactionManager";
-    private final static String Pro_SqlSessionTemplate = "dataSourceProSqlSessionTemplate";
 
-    @Bean(Pro_DataSourceBeanName)
+    @Bean("dataSource_Pro")
     @ConfigurationProperties(prefix = "pro.spring.datasource")
     public DataSource testDataSource() {
         return DataSourceBuilder.create().build();
     }
 
-    @Bean(name = Pro_SqlSessionFactory)
-    public SqlSessionFactory testSqlSessionFactory(@Qualifier(Pro_DataSourceBeanName) DataSource dataSource) throws Exception {
+    @Bean(name = "dataSource_Pro_SqlSessionFactory")
+    public SqlSessionFactory testSqlSessionFactory(@Qualifier("dataSource_Pro") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mybatis/memberPro/*.xml"));
         return bean.getObject();
     }
 
-    @Bean(name = Pro_DataSourceTransactionManager)
-    public DataSourceTransactionManager testTransactionManager(@Qualifier(Pro_DataSourceBeanName) DataSource dataSource) {
+    @Bean(name = "dataSource_Pro_TransactionManager")
+    public DataSourceTransactionManager testTransactionManager(@Qualifier("dataSource_Pro") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
 
-    @Bean(name = Pro_SqlSessionTemplate)
-    public SqlSessionTemplate testSqlSessionTemplate(@Qualifier(Pro_SqlSessionFactory) SqlSessionFactory sqlSessionFactory) throws Exception {
+    @Bean(name = "dataSource_Pro_SqlSessionTemplate")
+    public SqlSessionTemplate testSqlSessionTemplate(@Qualifier("dataSource_Pro_SqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 }

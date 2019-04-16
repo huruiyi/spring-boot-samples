@@ -1,5 +1,6 @@
 package com.example.web;
 
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HelloController {
 
     @RequestMapping(value = "/mvc", method = RequestMethod.GET)
-    public String HelloWorld(Model model) {
+    public String HelloWorld(Model model, HttpRequest request) {
         model.addAttribute("message", "Hello Spring MVC !!!~~~~~~~SpringMvc1");
         return "HelloWorld";
     }

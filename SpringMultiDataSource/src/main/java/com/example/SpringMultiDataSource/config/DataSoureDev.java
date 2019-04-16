@@ -16,39 +16,35 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = "com.example.SpringMultiDataSource.memberDev.mapper", sqlSessionFactoryRef = "dataSourceDevSqlSessionFactory")
+@MapperScan(basePackages = "com.example.SpringMultiDataSource.memberDev.mapper", sqlSessionFactoryRef = "dataSource_Dev_SqlSessionFactory")
 public class DataSoureDev {
 
-    private final static String Dev_DataSourceBeanName = "dataSourceDev";
-    private final static String Dev_SqlSessionFactory = "dataSourceDevSqlSessionFactory";
-    private final static String Dev_DataSourceTransactionManager = "dataSourceDevTransactionManager";
-    private final static String Dev_SqlSessionTemplate = "dataSourceDevSqlSessionTemplate";
 
-    @Bean(Dev_DataSourceBeanName)
+    @Bean("dataSource_Dev")
     @ConfigurationProperties(prefix = "dev.spring.datasource")
     @Primary
     public DataSource testDataSource() {
         return DataSourceBuilder.create().build();
     }
 
-    @Bean(name = Dev_SqlSessionFactory)
+    @Bean(name = "dataSource_Dev_SqlSessionFactory")
     @Primary
-    public SqlSessionFactory testSqlSessionFactory(@Qualifier(Dev_DataSourceBeanName) DataSource dataSource) throws Exception {
+    public SqlSessionFactory testSqlSessionFactory(@Qualifier("dataSource_Dev") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mybatis/memberDev/*.xml"));
         return bean.getObject();
     }
 
-    @Bean(name = Dev_DataSourceTransactionManager)
+    @Bean(name = "dataSource_Dev_TransactionManager")
     @Primary
-    public DataSourceTransactionManager testTransactionManager(@Qualifier(Dev_DataSourceBeanName) DataSource dataSource) {
+    public DataSourceTransactionManager testTransactionManager(@Qualifier("dataSource_Dev") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
 
-    @Bean(name = Dev_SqlSessionTemplate)
+    @Bean(name = "dataSource_Dev_SqlSessionTemplate")
     @Primary
-    public SqlSessionTemplate testSqlSessionTemplate(@Qualifier(Dev_SqlSessionFactory) SqlSessionFactory sqlSessionFactory) throws Exception {
+    public SqlSessionTemplate testSqlSessionTemplate(@Qualifier("dataSource_Dev_SqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 }
