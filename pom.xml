@@ -25,6 +25,7 @@
         <module>SpringCloudEurekaServer</module>
         <module>SpringCloudEurekaClient</module>
         <module>SpringCloudConfigServer</module>
+        <module>SpringDemo</module>
         <module>SpringJPA</module>
         <module>SpringMultiDataSource</module>
     </modules>
