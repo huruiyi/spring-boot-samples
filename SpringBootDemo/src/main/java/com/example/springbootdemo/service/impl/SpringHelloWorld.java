@@ -1,6 +1,6 @@
-package springdemo.hello.impl;
+package com.example.springbootdemo.service.impl;
 
-import springdemo.hello.HelloWorld;
+import com.example.springbootdemo.service.HelloWorld;
 
 public class SpringHelloWorld implements HelloWorld {
 

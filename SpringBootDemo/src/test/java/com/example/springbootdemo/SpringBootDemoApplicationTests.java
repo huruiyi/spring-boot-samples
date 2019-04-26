@@ -1,16 +1,21 @@
-package springdemo;
+package com.example.springbootdemo;
 
+import com.example.springbootdemo.service.HelloWorld;
+import com.example.springbootdemo.service.HelloWorldService;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.junit4.SpringRunner;
 
-import springdemo.hello.HelloWorld;
-import springdemo.hello.HelloWorldService;
-
-public class App {
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class SpringBootDemoApplicationTests {
     private static ApplicationContext context;
 
-    public static void main(String[] args) {
-
+    @Test
+    public void contextLoads() {
         context = new ClassPathXmlApplicationContext("beans.xml");
 
         HelloWorldService springService = (HelloWorldService) context.getBean("helloWorldSpringService");
@@ -21,4 +26,5 @@ public class App {
         HelloWorld servicehw = strutsservice.getHelloWorld();
         servicehw.sayHello();
     }
+
 }
