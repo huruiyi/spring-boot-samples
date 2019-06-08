@@ -1,9 +1,7 @@
 package com.example;
 
-import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.DateTimeException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
@@ -14,9 +12,7 @@ public class Test01 {
 
     }
 
-    static void equ() {
 
-    }
 
     static void DateDemo_02() {
         Calendar calendar = Calendar.getInstance();
