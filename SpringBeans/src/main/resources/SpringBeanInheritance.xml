@@ -3,18 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--
-        <bean id="indianEmployee" abstract="true">
-            <property name="country" value="India"></property>
-        </bean>
-    -->
-
-
-    <bean id="indianEmployee" class="com.apress.prospring4.ch2.BeanDefinitionTemplate.Employee">
+    <bean id="indianEmployee"
+          class="com.apress.prospring4.ch2.SpringBeanInheritance.Employee">
         <property name="country" value="India"></property>
     </bean>
 
-    <bean id="employeeBean" class="com.apress.prospring4.ch2.BeanDefinitionTemplate.Employee" parent="indianEmployee">
+
+    <bean id="employeeBean" parent="indianEmployee">
         <property name="employeeId" value="1065"></property>
         <property name="employeeName" value="Ravi Kant Soni"></property>
     </bean>
