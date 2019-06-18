@@ -33,5 +33,7 @@
         <module>SpringJPA</module>
         <module>SpringMultiDataSource</module>
         <module>SpringMultiDataSourceAop</module>
+
+        <module>Workflow/HolidayRequest</module>
     </modules>
 </project>
