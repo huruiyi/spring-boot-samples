@@ -1,23 +1,16 @@
-package com.example.springbootdemo.web;
+package com.example.spring.web;
 
-import com.example.springbootdemo.service.HelloService;
-import com.example.springbootdemo.utils.ExcelUtils;
-import org.apache.poi.ss.usermodel.Font;
-import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import com.example.spring.service.HelloService;
+import com.example.spring.utils.ExcelUtils;
 import org.apache.poi.xssf.usermodel.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.DefaultResourceLoader;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.math.BigDecimal;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -54,6 +47,13 @@ public class HelloController {
         return res;
     }
 
+    @RequestMapping("/test")
+    @ResponseBody
+    public Map<String, String> test() {
+        Map<String, String> map = new HashMap<>();
+        map.put("key1", "value1");
+        return map;
+    }
 
     @RequestMapping(value = "/exportExcel")
     public void test(HttpServletResponse response) throws UnsupportedEncodingException {

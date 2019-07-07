@@ -1,7 +1,7 @@
-package com.example.springbootdemo;
+package com.example.spring;
 
-import com.example.springbootdemo.service.HelloWorld;
-import com.example.springbootdemo.service.HelloWorldService;
+import com.example.spring.service.HelloWorld;
+import com.example.spring.service.HelloWorldService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.example.springbootdemo.service;
+package com.example.spring.service;
 
 public class HelloWorldService {
 	private HelloWorld helloWorld;

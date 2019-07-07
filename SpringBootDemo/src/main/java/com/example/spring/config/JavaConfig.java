@@ -1,6 +1,6 @@
-package com.example.springbootdemo.config;
+package com.example.spring.config;
 
-import com.example.springbootdemo.service.HelloService;
+import com.example.spring.service.HelloService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -1,6 +1,6 @@
-package com.example.springbootdemo.service.impl;
+package com.example.spring.service.impl;
 
-import com.example.springbootdemo.service.HelloWorld;
+import com.example.spring.service.HelloWorld;
 
 public class StrutsHelloWorld implements HelloWorld {
 
