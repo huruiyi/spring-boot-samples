@@ -1,22 +1,19 @@
 package com.example.springbootmybatisplus.user.entity;
 
-import com.example.springbootmybatisplus.base.BaseEntity;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author jobob
  * @since 2019-03-20
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-public class AppUser extends BaseEntity {
+public class AppUser {
 
     private static final long serialVersionUID = 1L;
 

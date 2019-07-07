@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @since 2018-08-10
  */
 @Configuration
-@MapperScan(basePackages = "com.example.springbootmybatisplus.dao")
+@MapperScan(basePackages = "com.example.springbootmybatisplus.user.mapper")
 public class MybatisPlusConfig {
 
     /**

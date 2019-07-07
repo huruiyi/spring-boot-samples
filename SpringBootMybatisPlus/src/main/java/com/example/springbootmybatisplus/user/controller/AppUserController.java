@@ -1,14 +1,17 @@
 package com.example.springbootmybatisplus.user.controller;
 
 
+import com.example.springbootmybatisplus.user.entity.AppUser;
+import com.example.springbootmybatisplus.user.service.IAppUserService;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RestController;
-import com.example.springbootmybatisplus.base.BaseController;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author jobob
@@ -16,6 +19,15 @@ import com.example.springbootmybatisplus.base.BaseController;
  */
 @RestController
 @RequestMapping("/user/app-user")
-public class AppUserController extends BaseController {
+public class AppUserController {
 
+    @Resource
+    IAppUserService appUserService;
+
+    @RequestMapping(value = "hello")
+    public String hello() {
+        List<AppUser> list = appUserService.list();
+
+        return "Hello World";
+    }
 }
