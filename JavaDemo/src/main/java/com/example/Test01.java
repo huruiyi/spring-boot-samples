@@ -13,7 +13,6 @@ public class Test01 {
     }
 
 
-
     static void DateDemo_02() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 0);
@@ -278,6 +277,19 @@ public class Test01 {
         }
 
         return mdays;
+    }
 
+
+    static void CastDemo() {
+        int a = (int) 5.4, b = 2;
+        double c = 12, d = 15;
+
+        int result = a / (int) d;
+        System.out.println(result);
+
+        double result2 = c / a;
+        System.out.println(result2);
+
+        System.out.println(1.0 / 5);
     }
 }

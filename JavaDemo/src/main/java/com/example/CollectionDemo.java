@@ -7,8 +7,40 @@ import java.util.*;
 
 public class CollectionDemo {
     public static void main(String[] argv) {
-        TreeSetStringDemo();
+        addALL();
     }
+
+
+    static void addALL(){
+        List<Person> list1=new ArrayList<>();
+        List<Person> list2=new ArrayList<>();
+        List<Person> list3=new ArrayList<>();
+        List<Person> list4=new ArrayList<>();
+
+        list1.add(new Person(2, "小明", 23));
+        list1.add(new Person(4, "小红", 14));
+        list1.add(new Person(6, "小雪", 43));
+
+        list2.add(new Person(8, "小云", 12));
+        list2.add(new Person(0, "小王", 23));
+        list2.add(new Person(1, "小胡", 38));
+
+        list3.add(new Person(3, "小周", 23));
+        list3.add(new Person(5, "小青", 20));
+        list3.add(new Person(7, "小马", 15));
+
+
+        list4.add((new Person(71, "小马", 15)));
+        List<Person> list=new ArrayList<>();
+
+        list.addAll(list1);
+        list.addAll(list2);
+        list.addAll(list3);
+        list.addAll(list4);
+
+        System.out.println(list.size());
+    }
+
 
     static void UUIDDemo() {
         System.out.println(UUID.randomUUID());
