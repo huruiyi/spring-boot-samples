@@ -1,6 +1,5 @@
-package com.example.mq;
+package com.example.mq.RabbitMq;
 
-import com.example.mq.impl.RabbitMqReturnListener;
 import com.rabbitmq.client.*;
 import org.apache.commons.lang3.SerializationUtils;
 

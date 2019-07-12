@@ -1,4 +1,4 @@
-package com.example.mq.impl;
+package com.example.mq.RabbitMq;
 
 import com.rabbitmq.client.ConfirmListener;
 

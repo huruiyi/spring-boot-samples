@@ -1,6 +1,5 @@
-package com.example.mq;
+package com.example.mq.RabbitMq;
 
-import com.example.mq.impl.RabbitMqConfirmListener;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;

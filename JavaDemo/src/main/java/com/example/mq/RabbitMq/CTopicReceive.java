@@ -1,4 +1,4 @@
-package com.example.mq;
+package com.example.mq.RabbitMq;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -27,6 +27,7 @@ public class CTopicReceive {
             String message = new String(delivery.getBody(), "UTF-8");
             System.out.println(" [x] Received '" + delivery.getEnvelope().getRoutingKey() + "':'" + message + "'");
         };
-        channel.basicConsume(queueName, true, deliverCallback, consumerTag -> {        });
+        channel.basicConsume(queueName, true, deliverCallback, consumerTag -> {
+        });
     }
 }

@@ -1,6 +1,5 @@
-package com.example.mq;
+package com.example.mq.RabbitMq;
 
-import com.example.mq.impl.RabbitMqReturnListener;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;

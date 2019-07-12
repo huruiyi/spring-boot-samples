@@ -1,4 +1,4 @@
-package com.example.mq;
+package com.example.mq.ActiveMq;
 
 public class ActiveMqProducerTest {
     public static void main(String[] args) {
