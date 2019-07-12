@@ -1,6 +1,6 @@
 package com.example.mapper;
 
-import com.example.model.Country;
+import com.example.Model.Country;
 
 import java.util.List;
 

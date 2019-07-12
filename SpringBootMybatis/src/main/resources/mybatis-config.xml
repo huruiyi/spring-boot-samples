@@ -8,7 +8,7 @@
     </settings>
 
     <typeAliases>
-        <package name="com.example.model"/>
+        <package name="com.example.Model"/>
     </typeAliases>
 
     <mappers>

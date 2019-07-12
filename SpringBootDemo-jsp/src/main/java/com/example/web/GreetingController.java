@@ -1,8 +1,8 @@
 package com.example.web;
 
 import com.alibaba.fastjson.JSONObject;
-import com.example.model.Greeting;
-import com.example.model.User;
+import com.example.Model.Greeting;
+import com.example.Model.User;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

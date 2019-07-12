@@ -13,12 +13,12 @@
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <!-- Service配置 -->
-    <bean id="accountService" class="com.example.spring.tx.demoH.AccountServiceImpl">
+    <bean id="accountService" class="com.example.Spring.tx.demoH.AccountServiceImpl">
         <property name="accountDao" ref="accountDao"/>
     </bean>
 
     <!-- Dao配置 -->
-    <bean id="accountDao" class="com.example.spring.tx.demoH.AccountDaoImpl">
+    <bean id="accountDao" class="com.example.Spring.tx.demoH.AccountDaoImpl">
         <!-- 直接指定数据源,SPRING自动创建JdbcTemplate, 无需自己配置 jdbcTemplate_c3p0 -->
         <property name="dataSource" ref="c3poDataSource"/>
     </bean>
@@ -63,7 +63,7 @@
 
     <!-- AOP的配置 -->
     <aop:config>
-        <aop:pointcut expression="execution(* com.example.spring.tx.demoH.AccountServiceImpl.*(..))" id="pointcut1"/>
+        <aop:pointcut expression="execution(* com.example.Spring.tx.demoH.AccountServiceImpl.*(..))" id="pointcut1"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut1"/>
     </aop:config>
 </beans>
