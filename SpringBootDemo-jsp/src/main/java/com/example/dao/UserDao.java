@@ -1,6 +1,6 @@
 package com.example.dao;
 
-import com.example.Model.User;
+import com.example.model.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

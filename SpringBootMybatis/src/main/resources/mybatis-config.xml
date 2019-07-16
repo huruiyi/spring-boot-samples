@@ -8,8 +8,12 @@
     </settings>
 
     <typeAliases>
-        <package name="com.example.Model"/>
+        <package name="com.example.model"/>
     </typeAliases>
+
+    <typeHandlers>
+        <typeHandler handler="com.example.typeHandler.SexTypeHandler"/>
+    </typeHandlers>
 
     <mappers>
         <mapper resource="sqlmapper/CountryMapper.xml"/>

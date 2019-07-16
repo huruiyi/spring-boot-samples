@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.mapper.UserMapper">
-    <resultMap id="UserResultMap" type="com.example.Model.User">
+    <resultMap id="UserResultMap" type="com.example.model.User">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="user_name" jdbcType="VARCHAR" property="userName"/>
         <result column="real_name" jdbcType="VARCHAR" property="realName"/>
@@ -12,9 +12,9 @@
         <result column="position_id" jdbcType="INTEGER" property="positionId"/>
     </resultMap>
     <select id="selectByPrimaryKey" resultMap="UserResultMap" parameterType="java.lang.Integer">
-      select id,user_name ,real_name ,sex,mobile,email,note,position_id positionId from user where id = #{id,jdbcType=INTEGER}
+      select id,user_name ,real_name ,sex,mobile,email,note,position_id positionId from t_user where id = #{id}
     </select>
     <select id="selectAllUsers" resultMap="UserResultMap">
-      select id, user_name , real_name , sex, mobile, email, note, position_id  from user
+      select id, user_name , real_name , sex, mobile, email, note, position_id  from t_user
     </select>
 </mapper>

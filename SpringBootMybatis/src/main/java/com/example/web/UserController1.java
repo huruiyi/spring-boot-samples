@@ -1,7 +1,6 @@
 package com.example.web;
 
-import com.example.mapper.UserMapper;
-import com.example.Model.User;
+import com.example.model.User;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,14 +14,11 @@ import java.util.List;
 public class UserController1 {
 
     @Autowired
-    private UserMapper userMapper;
-
-    @Autowired
     private UserService userService;
 
     @RequestMapping(value = "/list")
     public List<User> users() {
-        return userMapper.selectAllUsers();
+        return userService.findAll();
     }
 
     @RequestMapping(value = "/showAllUsers")
@@ -34,6 +30,6 @@ public class UserController1 {
             System.out.println(user);
         }
         System.out.println("********************************************");
-        return userMapper.selectAllUsers();
+        return userService.findAll();
     }
 }
