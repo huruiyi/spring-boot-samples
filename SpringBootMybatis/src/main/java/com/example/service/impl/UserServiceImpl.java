@@ -19,4 +19,14 @@ public class UserServiceImpl implements UserService {
         return userMapper.selectAllUsers();
     }
 
+    @Override
+    public Boolean add(User user) {
+        return userMapper.insertUser(user) > 0;
+    }
+
+    @Override
+    public User selectById(Integer id) {
+        return userMapper.selectByPrimaryKey(id);
+    }
+
 }

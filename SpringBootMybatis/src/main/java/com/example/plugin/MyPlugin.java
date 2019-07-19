@@ -6,9 +6,14 @@ import org.apache.ibatis.plugin.*;
 import java.sql.Connection;
 import java.util.Properties;
 
-@Intercepts({@Signature(type = StatementHandler.class, method = "prepare", args = {Connection.class, Integer.class})})
+//v2-chapter5
+@Intercepts({@Signature(
+        type = StatementHandler.class,
+        method = "prepare",
+        args = {Connection.class, Integer.class})})
 public class MyPlugin implements Interceptor {
 
+    //HandlerInterceptor
     Properties properties = null;
 
     // 拦截方法逻辑

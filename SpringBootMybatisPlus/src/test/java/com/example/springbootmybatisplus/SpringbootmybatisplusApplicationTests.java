@@ -37,8 +37,6 @@ public class SpringbootmybatisplusApplicationTests {
 
     @Test
     public void contextLoads() {
-
-        // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
 
         // 全局配置
@@ -85,7 +83,6 @@ public class SpringbootmybatisplusApplicationTests {
         focList.add(new FileOutConfig(templatePath) {
 
             public String outputFile(com.baomidou.mybatisplus.generator.config.po.TableInfo tableInfo) {
-                // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
                 return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }

@@ -3,14 +3,11 @@ package com.example.model;
 
 import com.example.enums.SexEnum;
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
 
 import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 
-
-//@Entity(name = "user")
-//@Table(name = "t_user")
-//@Alias(value = "user")// MyBatis指定别名
 @Data
 public class User {
 
@@ -37,4 +34,7 @@ public class User {
 
     private Integer positionId;
 
+    private List<String> hobbies;
+
+    private Date loginTime;
 }

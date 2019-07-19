@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface UserService {
     List<User> findAll();
+
+    Boolean add(User user);
+
+    User selectById(Integer id);
 }
