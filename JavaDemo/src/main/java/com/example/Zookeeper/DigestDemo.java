@@ -11,11 +11,7 @@ import java.util.concurrent.CountDownLatch;
 
 public class DigestDemo {
 
-    public static void Demo01() throws NoSuchAlgorithmException {
-        String digest = DigestAuthenticationProvider.generateDigest("admin:123456");
-        System.out.println(digest);
 
-    }
 
     /*
      * 1:创建回话
@@ -26,10 +22,20 @@ public class DigestDemo {
      * 6:权限控制
      * 7:watch
      * */
-    private final static String CONNECTIONStr = "192.168.88.133:2181";
+    private final static String CONNECTIONStr = "192.168.70.133:2181";
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
-    public static void main(String[] args) throws NoSuchAlgorithmException, IOException, InterruptedException, KeeperException {
+    public static void main(String[] args) throws InterruptedException, IOException, KeeperException {
+        Demo2();
+    }
+
+    static void Demo1() throws NoSuchAlgorithmException {
+        String digest = DigestAuthenticationProvider.generateDigest("admin:123456");
+        System.out.println(digest);
+    }
+
+    static void Demo2() throws IOException, InterruptedException, KeeperException {
+
         ZooKeeper zooKeeper = new ZooKeeper(CONNECTIONStr, 5000, new Watcher() {
             @Override
             public void process(WatchedEvent event) {
@@ -53,16 +59,16 @@ public class DigestDemo {
             System.out.println(res);
         } else {
             Stat newStat = zooKeeper.setData(path, "世界你好".getBytes(), stat.getVersion());
-
+            System.out.println(newStat);
         }
 
+        byte[] data2 = zooKeeper.getData(path, true, null);
 
-        zooKeeper.getData(path, true, null);
         // version: -1 忽略版本的变化
-        zooKeeper.setData( path, "china 2017".getBytes(), -1);
+        zooKeeper.setData(path, "china 2017".getBytes(), -1);
 
         zooKeeper.getData(path, true, stat);
-        zooKeeper.setData( path, "china 2018".getBytes(), -1);
+        zooKeeper.setData(path, "china 2018".getBytes(), -1);
 
 
         byte[] data1 = zooKeeper.getData(path, new Watcher() {
@@ -73,8 +79,8 @@ public class DigestDemo {
                 }
             }
         }, stat);
-        zooKeeper.setData( path, "china 2019".getBytes(), -1);
-        zooKeeper.setData( path, "china 2020".getBytes(), -1);
+        zooKeeper.setData(path, "china 2019".getBytes(), -1);
+        zooKeeper.setData(path, "china 2020".getBytes(), -1);
 
         System.out.println(new String(data1));
         //zooKeeper.delete("/country", 0);
