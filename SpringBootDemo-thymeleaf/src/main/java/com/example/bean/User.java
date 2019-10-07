@@ -1,5 +1,8 @@
 package com.example.bean;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonFilter;
+
 import java.util.Date;
 
 public class User {
@@ -26,6 +29,7 @@ public class User {
 	/*
 	 * 注册时间
 	 */
+	@JSONField(format="yyyy-MM-dd HH:mm")
 	private Date registerTime;
 
 	/*

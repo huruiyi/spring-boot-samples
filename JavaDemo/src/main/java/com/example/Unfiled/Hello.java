@@ -9,8 +9,9 @@ import java.util.Scanner;
 // Ctrl + D  				删除一行
 // Ctrl + /					注释或取消注释
 // Ctrl + Alt + ↑或↓			复制当前行向上或向下
-// Ctrl + Shift + L  		查看所有注释
+// Ctrl + Shift + L  		查看所有注释,查看引用,查看文件内容
 // Ctrl + Shift + X  		选中单词 转换 大写
+// Ctrl + Shift + R  		查看文件
 // Ctrl + Shift + Y  		选中单词 转换 小写
 // Ctrl + Shift + A  		块编辑
 // Ctrl + Shift + F  		代码格式化

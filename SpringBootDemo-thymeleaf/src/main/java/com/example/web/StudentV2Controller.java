@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(value = "/student")
-public class    StudentV2Controller {
+public class StudentV2Controller {
 
     private static final Logger log = LoggerFactory.getLogger(StudentV2Controller.class);
 
@@ -22,20 +22,22 @@ public class    StudentV2Controller {
     public UserService userService;
 
 
-    /*
-         返回字符串
-    */
-
+    /**
+     * 返回字符串
+     *
+     * @return
+     */
     @RequestMapping(value = "/hello")
     @ResponseBody
     public String greet() {
         return "Hello World";
     }
 
-
-    /*
-         返回视图页
-    */
+    /**
+     * 返回视图页
+     *
+     * @return
+     */
     @RequestMapping(value = "/index")
     public String index() {
         return "/student/index";
@@ -44,6 +46,13 @@ public class    StudentV2Controller {
 
     @RequestMapping(value = "/showOneUser")
     public User showOneUser() {
+        User user = userService.findOneUser();
+        return user;
+    }
+
+    @RequestMapping(value = "/showUser")
+    @ResponseBody
+    public User showUser() {
         User user = userService.findOneUser();
         return user;
     }
