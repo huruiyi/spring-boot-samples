@@ -2,12 +2,6 @@ package com.example.JavaConcurrency;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * 公司：TBK
- * 作者：胡睿毅
- * 文件名：AtomicIntegerTest
- * 日期：2019/5/26 15:01
- **/
 class AtomicIntegerTest {
     static AtomicInteger ai = new AtomicInteger(10);
 

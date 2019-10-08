@@ -4,7 +4,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
- * 公司：TBK
+
  * 作者：胡睿毅
  * 文件名：CyclicBarrierTest
  * 日期：2019/5/26 14:56

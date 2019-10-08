@@ -19,12 +19,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * 公司：TBK
- * 作者：胡睿毅
- * 文件名：HelloController
- * 日期：2019/4/26 8:44
- **/
 @RestController
 public class HelloController {
 
@@ -91,4 +85,11 @@ public class HelloController {
             }
         }
     }
+
+    @RequestMapping(value = "/devtools")
+    @ResponseBody
+    public String dev() {
+        return "Hello World v2.1.1";
+    }
+
 }

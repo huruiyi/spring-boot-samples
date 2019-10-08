@@ -3,12 +3,6 @@ package com.example.Time;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-/**
- * 公司：TBK
- * 作者：胡睿毅
- * 文件名：CustomTimePatterns
- * 日期：2019/5/26 14:08
- **/
 // Using examples, illustrates how to use "pattern strings" for creating custom time formats
 class CustomTimePatterns {
     public static void main(String[] args) {

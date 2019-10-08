@@ -3,7 +3,7 @@ package com.example.JavaConcurrency;
 import java.util.concurrent.ForkJoinPool;
 
 /**
- * 公司：TBK
+
  * 作者：胡睿毅
  * 文件名：Parallelism
  * 日期：2019/5/26 15:00

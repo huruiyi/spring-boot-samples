@@ -3,12 +3,6 @@ package com.example.Time;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-/**
- * 公司：TBK
- * 作者：胡睿毅
- * 文件名：CustomDatePatterns
- * 日期：2019/5/26 14:07
- **/
 public class CustomDatePatterns {
     public static void main(String []args) {
         // patterns from simple to complex ones

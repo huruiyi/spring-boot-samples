@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Optional;
 
 /**
- * 公司：TBK
+
  * 作者：胡睿毅
  * 文件名：CorrectStringSplitAndConcatenate
  * 日期：2019/5/26 15:00

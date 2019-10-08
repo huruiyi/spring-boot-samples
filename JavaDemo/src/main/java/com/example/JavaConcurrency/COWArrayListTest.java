@@ -6,7 +6,6 @@ import java.util.*;
 
 
 /**
- * 公司：TBK
  * 作者：胡睿毅
  * 文件名：COWArrayListTest
  * 日期：2019/5/26 15:01

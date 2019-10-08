@@ -10,12 +10,6 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * 公司：TBK
- * 作者：胡睿毅
- * 文件名：PdfDemo2
- * 日期：2019/4/26 16:16
- **/
 public class PdfDemo2 {
     public static void main(String[] args) throws IOException, DocumentException {
         PdfReader reader = new PdfReader("Personal-Info.pdf");

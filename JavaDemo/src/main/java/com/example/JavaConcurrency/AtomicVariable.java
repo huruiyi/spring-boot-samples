@@ -3,7 +3,7 @@ package com.example.JavaConcurrency;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 公司：TBK
+
  * 作者：胡睿毅
  * 文件名：AtomicVariable
  * 日期：2019/5/26 14:54

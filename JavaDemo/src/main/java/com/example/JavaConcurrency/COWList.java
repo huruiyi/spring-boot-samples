@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * 公司：TBK
+
  * 作者：胡睿毅
  * 文件名：COWList
  * 日期：2019/5/26 14:57

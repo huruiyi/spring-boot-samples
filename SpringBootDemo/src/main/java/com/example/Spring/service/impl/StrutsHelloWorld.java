@@ -4,8 +4,8 @@ import com.example.Spring.service.HelloWorld;
 
 public class StrutsHelloWorld implements HelloWorld {
 
-	public void sayHello() {
-		System.out.println("Struts Say Hello!!");
-	}
+    public void sayHello() {
+        System.out.println("Struts Say Hello!!");
+    }
 
 }

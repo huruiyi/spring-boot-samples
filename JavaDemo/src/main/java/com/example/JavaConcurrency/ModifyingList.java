@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * 公司：TBK
+
  * 作者：胡睿毅
  * 文件名：ModifyingList
  * 日期：2019/5/26 14:56

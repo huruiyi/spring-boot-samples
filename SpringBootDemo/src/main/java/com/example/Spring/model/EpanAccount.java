@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /**
- * 公司：TBK
+
  * 作者：胡睿毅
  * 文件名：EpanAccount
  * 日期：2019/4/26 8:45

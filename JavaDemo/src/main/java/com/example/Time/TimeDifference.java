@@ -5,12 +5,6 @@ import org.apache.commons.lang3.StringUtils;
 import java.time.*;
 import java.util.Set;
 
-/**
- * 公司：TBK
- * 作者：胡睿毅
- * 文件名：TimeDifference
- * 日期：2019/5/26 12:53
- **/
 public class TimeDifference {
     public static void main(String[] args) {
         Set<String> zones = ZoneId.getAvailableZoneIds();

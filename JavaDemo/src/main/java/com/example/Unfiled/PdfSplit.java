@@ -10,12 +10,6 @@ import com.itextpdf.text.pdf.PdfCopy;
 import com.itextpdf.text.pdf.PdfImportedPage;
 import com.itextpdf.text.pdf.PdfReader;
 
-/**
- * 公司：TBK
- * 作者：vic
- * 文件名：PdfSplit
- * 日期：2019/4/22 16:02
- **/
 public class PdfSplit {
     public static void main(String[] args) throws IOException, DocumentException {
 

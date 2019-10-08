@@ -1,12 +1,5 @@
 package com.example.JavaConcurrency;
 
-/**
- * 公司：TBK
- * 作者：胡睿毅
- * 文件名：RaceCondition
- * 日期：2019/5/26 14:46
- **/
-
 // This class exposes a publicly accessible counter
 // to help demonstrate race condition problem
 class CounterRunnable {
