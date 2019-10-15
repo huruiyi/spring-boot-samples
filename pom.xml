@@ -34,5 +34,7 @@
         <module>SpringMultiDataSourceAop</module>
 
         <module>Workflow/HolidayRequest</module>
+        <module>SpringOAuth/AuthorizationServer</module>
+        <module>SpringOAuth/Redis-Server</module>
     </modules>
 </project>
