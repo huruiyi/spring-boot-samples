@@ -1,12 +1,6 @@
 package com.example.Exceptions_Assertions.Listing_7_16;
 
-/*------------------------------------------------------------------------------
- * Oracle Certified Professional Java SE 8 Programmer Exam 1Z0-809 
- * A Comprehensive OCPJP 8 Certification Guide
- * by SG Ganesh, Hari Kiran and Tushar Sharma
-------------------------------------------------------------------------------*/
-
-// a custom �unchecked exception� that is meant to be thrown 
+// a custom unchecked exception that is meant to be thrown
 // when the input provided by the user is invalid 
 class InvalidInputException extends RuntimeException {
     // default constructor 

@@ -1,8 +1,4 @@
-package com.example.AdvancedClassDesign.QuestionTime_10;/*------------------------------------------------------------------------------
- * Oracle Certified Professional Java SE 8 Programmer Exam 1Z0-809 
- * A Comprehensive OCPJP 8 Certification Guide
- * by SG Ganesh, Hari Kiran and Tushar Sharma
-------------------------------------------------------------------------------*/
+package com.example.AdvancedClassDesign.QuestionTime_10;
 
 class LambdaFunctionTest {
     @FunctionalInterface
@@ -13,7 +9,7 @@ class LambdaFunctionTest {
     }
 
     public static void main(String[] args) {
-        LambdaFunction lambdaFunction = i -> i * i;    // #1
+        LambdaFunction lambdaFunction = i -> i * i;
         System.out.println(lambdaFunction.apply(10));
     }
 }

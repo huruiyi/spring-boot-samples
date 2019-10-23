@@ -1,8 +1,4 @@
-package com.example.AdvancedClassDesign.QuestionTime_05;/*------------------------------------------------------------------------------
- * Oracle Certified Professional Java SE 8 Programmer Exam 1Z0-809 
- * A Comprehensive OCPJP 8 Certification Guide
- * by SG Ganesh, Hari Kiran and Tushar Sharma
-------------------------------------------------------------------------------*/
+package com.example.AdvancedClassDesign.QuestionTime_05;
 
 public class EnumTest {
     PrinterType printerType;
@@ -17,9 +13,6 @@ public class EnumTest {
     }
 
     public static void main(String[] args) {
-/*
-        PrinterType pType = new PrinterType();
-*/
         EnumTest enumTest = new EnumTest(PrinterType.LASER);
     }
 }

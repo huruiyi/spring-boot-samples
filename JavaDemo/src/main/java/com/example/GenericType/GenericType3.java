@@ -10,19 +10,14 @@ public class GenericType3 {
 
         ArrayList<String> n = new ArrayList<>();
 
-
         n.add(name);
         n.add(name2);
 
-
         String firstName = n.get(0);
-
         System.out.println(firstName);
 
         Box<String> box = new Box<>();
         Box<Employee> box2 = new Box<>();
-
-
     }
 }
 

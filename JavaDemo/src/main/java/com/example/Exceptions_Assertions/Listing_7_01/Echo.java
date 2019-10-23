@@ -10,7 +10,6 @@ package com.example.Exceptions_Assertions.Listing_7_01;
 class Echo {
     public static void main(String[] args) {
         if (args.length == 0) {
-            // no arguments passed � display an error to the user
             System.out.println("Error: No input passed to echo command... ");
             System.exit(-1);
         } else {

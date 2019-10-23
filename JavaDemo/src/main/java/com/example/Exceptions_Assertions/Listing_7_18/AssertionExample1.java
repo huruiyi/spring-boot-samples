@@ -1,16 +1,9 @@
 package com.example.Exceptions_Assertions.Listing_7_18;
 
-/*------------------------------------------------------------------------------
- * Oracle Certified Professional Java SE 8 Programmer Exam 1Z0-809 
- * A Comprehensive OCPJP 8 Certification Guide
- * by SG Ganesh, Hari Kiran and Tushar Sharma
-------------------------------------------------------------------------------*/
-
 class AssertionExample1 {
     public static void main(String[] args) {
         int i = -10;
         if (i < 0) {
-            // if negative value, convert into positive value 
             i = -i;
         }
         System.out.println("the value of i is: " + i);

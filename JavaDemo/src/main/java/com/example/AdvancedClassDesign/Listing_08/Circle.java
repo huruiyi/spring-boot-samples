@@ -1,8 +1,4 @@
-package com.example.AdvancedClassDesign.Listing_08;/*------------------------------------------------------------------------------
- * Oracle Certified Professional Java SE 8 Programmer Exam 1Z0-809 
- * A Comprehensive OCPJP 8 Certification Guide
- * by SG Ganesh, Hari Kiran and Tushar Sharma
-------------------------------------------------------------------------------*/
+package com.example.AdvancedClassDesign.Listing_08;
 
 // Shape is the base class for all shape objects; shape objects that are associated with 
 // a parent shape object is remembered in the parentShape field 

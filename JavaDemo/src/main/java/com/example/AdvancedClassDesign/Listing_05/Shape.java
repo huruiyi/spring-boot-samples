@@ -1,8 +1,4 @@
-package com.example.AdvancedClassDesign.Listing_05;/*------------------------------------------------------------------------------
- * Oracle Certified Professional Java SE 8 Programmer Exam 1Z0-809 
- * A Comprehensive OCPJP 8 Certification Guide
- * by SG Ganesh, Hari Kiran and Tushar Sharma
-------------------------------------------------------------------------------*/
+package com.example.AdvancedClassDesign.Listing_05;
 
 abstract class Shape {
     public static class Color {
@@ -22,7 +18,5 @@ abstract class Shape {
         public String toString() {
             return " red = " + m_red + " green = " + m_green + " blue = " + m_blue;
         }
-        // other color members elided
     }
-    // other Shape members elided 
 }

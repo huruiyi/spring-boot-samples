@@ -1,4 +1,4 @@
-package com.example.GenericType.LamdaFormula;
+package com.example.GenericType;
 
 public class LamdaFormula {
 
