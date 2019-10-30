@@ -1,14 +1,9 @@
-package com.example.JavaClassDesign.Listing_03;/*------------------------------------------------------------------------------
- * Oracle Certified Professional Java SE 8 Programmer Exam 1Z0-809 
- * A Comprehensive OCPJP 8 Certification Guide
- * by SG Ganesh, Hari Kiran and Tushar Sharma
-------------------------------------------------------------------------------*/
+package com.example.JavaClassDesign.Listing_03;
 
 class Shape {
     public double area() {
         return 0;
-    } // default implementation
-    // other members
+    }
 }
 
 class Circle extends Shape {
@@ -18,11 +13,9 @@ class Circle extends Shape {
         radius = r;
     }
 
-    // other constructors
     public double area() {
         return Math.PI * radius * radius;
     }
-    // other declarations
 }
 
 class Square extends Shape {
@@ -35,7 +28,6 @@ class Square extends Shape {
     public double area() {
         return side * side;
     }
-    // other declarations
 }
 
 public class TestShape {

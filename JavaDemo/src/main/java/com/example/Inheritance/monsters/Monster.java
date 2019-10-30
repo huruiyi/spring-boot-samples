@@ -2,8 +2,7 @@
 package com.example.Inheritance.monsters;
 
 
-public abstract class Monster //base Class, super Class, parent class
-{
+public abstract class Monster {
     private double hitPoints;
     private double speed;
 
@@ -19,8 +18,6 @@ public abstract class Monster //base Class, super Class, parent class
         System.out.println("I'm attacking from Monster class");
     }
 
-    abstract protected void description();
-
     public Monster() {
         System.out.println("I'm DEFAULT constructor from Monster class");
     }
@@ -30,4 +27,7 @@ public abstract class Monster //base Class, super Class, parent class
         this.speed = speed;
         System.out.println("I'm constructor from Monster class with 2 arguments");
     }
+
+    protected abstract void description();
+
 }

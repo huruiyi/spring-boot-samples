@@ -1,4 +1,4 @@
-package com.example.Inheritance.inheritance;
+package com.example.Inheritance.monsters;
 
 import com.example.Inheritance.monsters.Monster;
 
@@ -13,6 +13,6 @@ public class Spider extends Monster {
 
     @Override
     protected void description() {
-
+        System.out.println("Spider...........");
     }
 }

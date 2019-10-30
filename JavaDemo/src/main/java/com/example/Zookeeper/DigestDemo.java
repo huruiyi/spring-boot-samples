@@ -8,11 +8,7 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.CountDownLatch;
 
-
 public class DigestDemo {
-
-
-
     /*
      * 1:创建回话
      * 2:创建节点

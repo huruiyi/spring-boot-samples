@@ -31,6 +31,6 @@ public class Skeleton extends Monster {
 
     @Override
     protected void description() {
-
+        System.out.println("Skeleton............");
     }
 }
