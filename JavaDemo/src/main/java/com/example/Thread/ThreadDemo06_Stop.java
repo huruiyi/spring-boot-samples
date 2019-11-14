@@ -1,6 +1,4 @@
-
 package com.example.Thread;
-
 
 class StopDemoThread extends Thread {
     volatile boolean flag = true;
@@ -12,7 +10,6 @@ class StopDemoThread extends Thread {
                 this.sleep(1000);
                 wait();
             } catch (Exception e) {
-                //e.printStackTrace();
                 stopThread();
             }
             System.out.println("run.....");
@@ -38,7 +35,7 @@ public class ThreadDemo06_Stop {
             try {
                 Thread.sleep(300);
             } catch (Exception e) {
-                // TODO: handle exception
+                System.out.println(e.getMessage());
             }
 
             System.out.println("main i:" + i);

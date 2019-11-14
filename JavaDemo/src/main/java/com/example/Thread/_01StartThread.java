@@ -24,11 +24,7 @@ public class _01StartThread {
 			@Override
 			public void run() {
 				for (int i = 1; i <= 50; i++) {
-					if (i % 5 == 0) {
-						System.out.println();
-					} else {
-						System.out.print(i + "__" + Thread.currentThread() + "" + i + "\t");
-					}
+					System.out.println(i + "__" + Thread.currentThread() + "" + i + "\t");
 				}
 			}
 		};
@@ -56,7 +52,6 @@ public class _01StartThread {
 
 	public static void main(String[] args) {
 		Demo1();
-		Demo2();
 	}
 
 }

@@ -9,9 +9,7 @@ class CreateThreadDemo02 implements Runnable {
         for (int i = 0; i < 30; i++) {
             System.out.println("----子线程 run,i:" + i);
         }
-
     }
-
 }
 
 class ThreadDemo2 {

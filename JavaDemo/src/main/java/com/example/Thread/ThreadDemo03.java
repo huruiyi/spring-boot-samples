@@ -5,7 +5,6 @@ abstract class Panret {
     public abstract void add();
 }
 
-
 class CreateThreadDemo03 implements Runnable {
 
     @Override
@@ -13,7 +12,6 @@ class CreateThreadDemo03 implements Runnable {
         for (int i = 0; i < 30; i++) {
             System.out.println("子线程 run,i:" + i);
         }
-
     }
 
 }
@@ -36,7 +34,6 @@ class ThreadDemo3 {
         };
         panret.add();
 
-
         Thread t1 = new Thread(new Runnable() {
 
             @Override
@@ -51,7 +48,6 @@ class ThreadDemo3 {
         for (int i = 0; i < 30; i++) {
             System.out.println("主线程，i:" + i);
         }
-
     }
 
 }
