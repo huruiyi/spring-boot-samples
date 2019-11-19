@@ -10,12 +10,12 @@ import redis.clients.jedis.Jedis;
 public class Redis {
 	private static Jedis jedis;
 	static {
-		jedis = new Jedis("localhost");
+		jedis = new Jedis("192.168.146.128");
 		//jedis.auth("807776962");
 	}
 
 	public static void main(String[] args) {
-		Redis_Lsit1();
+		Redis_Set_Get();
 	}
 
 	public static void Redis_Set_Get() {
