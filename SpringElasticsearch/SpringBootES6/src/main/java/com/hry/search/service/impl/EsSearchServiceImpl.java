@@ -1,6 +1,6 @@
 package com.hry.search.service.impl;
 
-import com.hry.search.document.ProductDocument;
+import com.hry.search.mapping.ProductDocument;
 import com.hry.search.repository.ProductDocumentRepository;
 import com.hry.search.service.EsSearchService;
 import org.slf4j.Logger;
@@ -15,10 +15,6 @@ import java.util.List;
 
 /**
  * elasticsearch 搜索引擎 service实现
- *
- * @author zhoudong
- * @version 0.1
- * @date 2018/12/13 15:33
  */
 @Service
 public class EsSearchServiceImpl extends BaseSearchServiceImpl<ProductDocument> implements EsSearchService {

@@ -1,4 +1,4 @@
-package com.hry.search.document;
+package com.hry.search.mapping;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -10,10 +10,6 @@ import java.util.Date;
 
 /**
  * 产品实体
- *
- * @author zhoudong
- * @version 0.1
- * @date 2018/12/13 15:22
  */
 @Document(indexName = "orders", type = "product")
 @Mapping(mappingPath = "esmapping/productIndex.json") // 解决IK分词不能使用问题

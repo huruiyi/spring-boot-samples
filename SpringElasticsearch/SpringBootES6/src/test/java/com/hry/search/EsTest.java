@@ -1,9 +1,9 @@
 package com.hry.search;
 
 import com.alibaba.fastjson.JSON;
-import com.hry.search.document.ProductDocument;
-import com.hry.search.document.ProductDocumentBuilder;
-import com.hry.search.page.Page;
+import com.hry.search.mapping.ProductDocument;
+import com.hry.search.mapping.ProductDocumentBuilder;
+import com.hry.search.model.Page;
 import com.hry.search.service.EsSearchService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

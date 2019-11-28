@@ -1,8 +1,8 @@
 package com.hry.search.web;
 
-import com.hry.search.document.ProductDocument;
-import com.hry.search.document.ProductDocumentBuilder;
-import com.hry.search.page.Page;
+import com.hry.search.mapping.ProductDocument;
+import com.hry.search.mapping.ProductDocumentBuilder;
+import com.hry.search.model.Page;
 import com.hry.search.service.EsSearchService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,10 +15,6 @@ import java.util.Map;
 
 /**
  * elasticsearch 搜索
- *
- * @author zhoudong
- * @version 0.1
- * @date 2018/12/13 15:09
  */
 @RestController
 public class SearchController {
@@ -27,32 +23,37 @@ public class SearchController {
     @Resource
     private EsSearchService esSearchService;
 
-
     @RequestMapping(value = "/init")
-    public String init() {
-        ProductDocument productDocument = ProductDocumentBuilder.create()
-                .addId(System.currentTimeMillis() + "01")
-                .addProductName("无印良品 MUJI 基础润肤化妆水")
-                .addProductDesc("无印良品 MUJI 基础润肤化妆水 高保湿型 200ml")
-                .addCreateTime(new Date()).addUpdateTime(new Date())
-                .builder();
+    public String init() throws InterruptedException {
+        log.info("历史数据清理,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,");
+        esSearchService.deleteAll();
+        log.info("数据初始化开始.");
+        for (int i = 1; i < 6; i++) {
+            Integer id = (i - 1) * 3;
 
-        ProductDocument productDocument1 = ProductDocumentBuilder.create()
-                .addId(System.currentTimeMillis() + "02")
-                .addProductName("荣耀 V10 尊享版")
-                .addProductDesc("荣耀 V10 尊享版 6GB+128GB 幻夜黑 移动联通电信4G全面屏游戏手机 双卡双待")
-                .addCreateTime(new Date()).addUpdateTime(new Date())
-                .builder();
+            Thread.sleep(1000);
+            id = id + 1;
+            ProductDocument productDocument = ProductDocumentBuilder.create().addId(String.format("%03d", id))
+                    .addProductName("无印良品 MUJI 基础润肤化妆水").addProductDesc("无印良品 MUJI 基础润肤化妆水 高保湿型 200ml")
+                    .addCreateTime(new Date()).addUpdateTime(new Date()).builder();
 
-        ProductDocument productDocument2 = ProductDocumentBuilder.create()
-                .addId(System.currentTimeMillis() + "03")
-                .addProductName("资生堂(SHISEIDO) 尿素红罐护手霜")
-                .addProductDesc("日本进口 资生堂(SHISEIDO) 尿素红罐护手霜 100g/罐 男女通用 深层滋养 改善粗糙")
-                .addCreateTime(new Date()).addUpdateTime(new Date())
-                .builder();
+            Thread.sleep(1000);
+            id = id + 1;
+            ProductDocument productDocument1 = ProductDocumentBuilder.create().addId(String.format("%03d", id))
+                    .addProductName("荣耀 V10 尊享版").addProductDesc("荣耀 V10 尊享版 6GB+128GB 幻夜黑 移动联通电信4G全面屏游戏手机 双卡双待")
+                    .addCreateTime(new Date()).addUpdateTime(new Date()).builder();
 
-        esSearchService.save(productDocument, productDocument1, productDocument2);
-        return "Ok....";
+            Thread.sleep(1000);
+            id = id + 1;
+            ProductDocument productDocument2 = ProductDocumentBuilder.create().addId(String.format("%03d", id))
+                    .addProductName("资生堂(SHISEIDO) 尿素红罐护手霜")
+                    .addProductDesc("日本进口 资生堂(SHISEIDO) 尿素红罐护手霜 100g/罐 男女通用 深层滋养 改善粗糙").addCreateTime(new Date())
+                    .addUpdateTime(new Date()).builder();
+            esSearchService.save(productDocument, productDocument1, productDocument2);
+        }
+        log.info("数据初始化结束,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,");
+
+        return "Hello Elasticsearch.........";
     }
 
     /**

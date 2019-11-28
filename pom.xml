@@ -37,5 +37,6 @@
         <module>SpringOAuth/Redis-Server</module>
 
         <module>SpringElasticsearch/SpringBootES7</module>
+        <module>SpringElasticsearch/SpringBootES6</module>
     </modules>
 </project>
