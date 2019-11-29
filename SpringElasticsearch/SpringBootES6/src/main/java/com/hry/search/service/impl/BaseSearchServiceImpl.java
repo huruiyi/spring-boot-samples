@@ -87,7 +87,7 @@ public class BaseSearchServiceImpl<T> implements BaseSearchService<T> {
                 .setQuery(matchQuery)
                 .highlighter(highlightBuilder)
                 .setFrom((pageNo - 1) * pageSize)
-                .setSize(pageNo * pageSize) // 设置一次返回的文档数量，最大值：10000
+                .setSize(pageSize) // 设置一次返回的文档数量，最大值：10000
                 .get();
 
         // 返回搜索结果
