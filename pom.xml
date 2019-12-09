@@ -4,39 +4,34 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ruiyi</groupId>
+    <groupId>com.example</groupId>
     <artifactId>Java201808</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>JavaDemo</module>
-        <module>HttpDemo</module>
-        <module>SpringBootDemo-jsp</module>
-        <module>SpringBootDemo-thymeleaf</module>
-        <module>SpringMvc1</module>
-        <module>SpringMvc2</module>
-        <module>SpringMvc3</module>
-        <module>MyBatisOneByOne</module>
-        <module>SpringBootMybatis</module>
-        <module>SpringBootMybatisPlus</module>
-        <module>SpringBootNoSql</module>
-        <module>SpringMvcHelloWorld</module>
-        <module>SpringBasic</module>
-        <module>SpringBeans</module>
-        <module>SpringCloudEurekaServer</module>
-        <module>SpringCloudEurekaClient</module>
-        <module>SpringCloudConfigServer</module>
-        <module>SpringBootDemo</module>
-        <module>SpringBootDemo-jsp</module>
-        <module>SpringBootDemo-thymeleaf</module>
-        <module>SpringJPA</module>
-        <module>SpringMultiDataSource</module>
-        <module>SpringMultiDataSourceAop</module>
-
-        <module>Workflow/HolidayRequest</module>
-        <module>SpringOAuth/Redis-Server</module>
-
-        <module>SpringElasticsearch/SpringBootES7</module>
-        <module>SpringElasticsearch/SpringBootES6</module>
+        <module>demo</module>
+        <module>mybatis-first</module>
+        <module>spring-basic</module>
+        <module>spring-beans</module>
+        <module>spring-boot</module>
+        <module>spring-boot-jsp</module>
+        <module>spring-boot-mybatis</module>
+        <module>spring-boot-mybatisplus</module>
+        <module>spring-boot-redis</module>
+        <module>spring-boot-redis-session</module>
+        <module>spring-boot-thymeleaf</module>
+        <module>spring-cloud-config</module>
+        <module>spring-cloud-eureka-client</module>
+        <module>spring-cloud-eureka-server</module>
+        <module>spring-elasticsearch/spring-boot-elasticsearch6</module>
+        <module>spring-elasticsearch/spring-boot-elasticsearch7</module>
+        <module>spring-jpa</module>
+        <module>spring-multi-datasource</module>
+        <module>spring-mvc1</module>
+        <module>spring-mvc2</module>
+        <module>spring-mvc3</module>
+        <module>spring-mvc-hello-world</module>
+        <module>spring-oauth2/oauth2-redis-server</module>
+        <module>spring-workflow/holiday-request</module>
     </modules>
 </project>
