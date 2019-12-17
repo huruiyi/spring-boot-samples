@@ -1,12 +1,12 @@
 package com.example.demo;
 
-import com.example.demo.model.TUser;
+import com.example.demo.model.User;
 import org.junit.Test;
 
 import java.sql.*;
 
 public class BasicJdbcTest {
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&useJDBCCompliantTimezoneShift=true&&serverTimezone=UTC";
 
     static final String USER = "root";
@@ -22,7 +22,7 @@ public class BasicJdbcTest {
         ResultSet rs = stmt.executeQuery(sql);
 
         while (rs.next()) {
-            TUser user = new TUser();
+            User user = new User();
             user.setId(rs.getInt("id"));
             user.setUserName(rs.getString("user_name"));
             user.setRealName(rs.getString("real_name"));
@@ -53,7 +53,7 @@ public class BasicJdbcTest {
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                TUser user = new TUser();
+                User user = new User();
                 user.setId(rs.getInt("id"));
                 user.setUserName(rs.getString("user_name"));
                 user.setRealName(rs.getString("real_name"));

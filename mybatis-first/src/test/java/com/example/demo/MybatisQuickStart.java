@@ -1,7 +1,7 @@
 package com.example.demo;
 
-import com.example.demo.mapper.TUserMapper;
-import com.example.demo.model.TUser;
+import com.example.demo.mapper.UserMapper;
+import com.example.demo.model.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -33,9 +33,9 @@ public class MybatisQuickStart {
         System.out.println(sqlSession.getConnection().toString());
 
         // 3.获取对应mapper
-        TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         // 4.执行查询语句并返回结果
-        TUser user = mapper.selectByPrimaryKey(1);
+        User user = mapper.selectByPrimaryKey(1);
         System.out.println(user.toString());
     }
 }

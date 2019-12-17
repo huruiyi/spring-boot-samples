@@ -33,5 +33,6 @@
         <module>spring-mvc-hello-world</module>
         <module>spring-oauth2/oauth2-redis-server</module>
         <module>spring-workflow/holiday-request</module>
+        <module>mybatis-first</module>
     </modules>
 </project>

@@ -44,7 +44,7 @@ public class UserMapperTest {
     }
 
     @Test
-    public  void selectAllUsers(){
+    public void selectAllUsers() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 

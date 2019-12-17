@@ -28,6 +28,5 @@
     <mappers>
         <mapper resource="sqlmapper/CountryMapper.xml"/>
         <mapper resource="sqlmapper/UserMapper.xml"/>
-        <mapper resource="sqlmapper/TUserMapper.xml"/>
     </mappers>
 </configuration>

@@ -1,7 +1,6 @@
 package com.example.demo.model;
 
 
-
 public class User {
     private Integer id;
 
@@ -85,8 +84,15 @@ public class User {
 
     @Override
     public String toString() {
-        return "TUser [id=" + id + ", userName=" + userName + ", realName=" + realName + ", sex=" + sex + ", mobile="
-                + mobile + ", email=" + email + ", note=" + note + ", positionId=" + positionId + "]";
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", realName='" + realName + '\'' +
+                ", sex=" + sex +
+                ", mobile='" + mobile + '\'' +
+                ", email='" + email + '\'' +
+                ", note='" + note + '\'' +
+                ", positionId=" + positionId +
+                '}';
     }
-
 }
