@@ -2,12 +2,37 @@ package com.example.OOP;
 
 public class Encapsulation {
 
-    public static void main(String[] args) {
+    static class BankAccount {
 
-        /*
-         * Encapsulation - packing properties that way, so there is no direct access to
-         * them from other classes
-         */
+        public BankAccount() {
+            balance = 1000;
+        }
+
+        private int balance;
+
+        int getBalance() {
+            return balance;
+        }
+
+        private void setBalance(int amount) {
+            balance = amount;
+        }
+
+        boolean withdraw(int amount) {
+            if (balance > amount)
+                setBalance(balance - amount);
+            else
+                return false;
+            return true;
+        }
+
+        boolean deposit(int amount) {
+            setBalance(balance + amount);
+            return true;
+        }
+    }
+
+    public static void main(String[] args) {
 
         BankAccount a = new BankAccount();
 
@@ -24,32 +49,3 @@ public class Encapsulation {
 
 }
 
-class BankAccount {
-
-    public BankAccount() {
-        balance = 1000;
-    }
-
-    private int balance;
-
-    int getBalance() {
-        return balance;
-    }
-
-    private void setBalance(int amount) {
-        balance = amount;
-    }
-
-    boolean withdraw(int amount) {
-        if (balance > amount)
-            setBalance(balance - amount);
-        else
-            return false;
-        return true;
-    }
-
-    boolean deposit(int amount) {
-        setBalance(balance + amount);
-        return true;
-    }
-}

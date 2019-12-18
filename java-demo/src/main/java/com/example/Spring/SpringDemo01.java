@@ -11,15 +11,10 @@ import java.util.Arrays;
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
-
 public class SpringDemo01 {
 
-
     public static void main(String[] args) {
-
-
         ConfigurableApplicationContext ctx = SpringApplication.run(SpringDemo01.class, args);
-
         System.out.println("# Beans: " + ctx.getBeanDefinitionCount());
 
         String[] names = ctx.getBeanDefinitionNames();
@@ -31,6 +26,8 @@ public class SpringDemo01 {
                 System.out.println(name);
             }
         }
-        //Arrays.asList(names).forEach(System.out::println);
+
+        System.out.println();
+        Arrays.asList(names).forEach(System.out::println);
     }
 }

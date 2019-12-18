@@ -1,40 +1,41 @@
 package com.example.OOP;
 
 
-class Bottle {
-    private double waterAmount;
-
-    double getWaterAmount() {
-        return waterAmount;
-    }
-
-    Bottle(double waterAmount) {
-        this.waterAmount = waterAmount;
-    }
-
-    void fill(double amount) {
-        this.waterAmount += amount;
-    }
-
-    boolean pour(double amount) {
-        if (this.waterAmount > amount)
-            this.waterAmount -= amount;
-        else
-            return false;
-
-        return true;
-    }
-
-    void transferWater(double amount, Bottle transferToBottle) {
-        if (this.pour(amount)) {
-            transferToBottle.fill(amount);
-        } else
-            System.out.println("Tere is not enough water to transfer");
-
-    }
-}
-
 public class BottleDemo {
+
+    static class Bottle {
+        private double waterAmount;
+
+        double getWaterAmount() {
+            return waterAmount;
+        }
+
+        Bottle(double waterAmount) {
+            this.waterAmount = waterAmount;
+        }
+
+        void fill(double amount) {
+            this.waterAmount += amount;
+        }
+
+        boolean pour(double amount) {
+            if (this.waterAmount > amount)
+                this.waterAmount -= amount;
+            else
+                return false;
+
+            return true;
+        }
+
+        void transferWater(double amount, Bottle transferToBottle) {
+            if (this.pour(amount)) {
+                transferToBottle.fill(amount);
+            } else
+                System.out.println("Tere is not enough water to transfer");
+
+        }
+    }
+
     public static void main(String[] args) {
         Bottle[] bottle = new Bottle[3]; // NULL
 

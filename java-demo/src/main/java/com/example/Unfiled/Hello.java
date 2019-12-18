@@ -1,10 +1,17 @@
 package com.example.Unfiled;
 
+import org.junit.Test;
+import redis.clients.jedis.Tuple;
+
+import javax.swing.*;
+import java.util.Enumeration;
+import java.util.HashSet;
+import java.util.Properties;
 import java.util.Scanner;
-/*
- * 
- * Eclipse 快捷键
- * */
+
+import static org.junit.Assert.*;
+
+// Eclipse 快捷键
 // Ctrl + F11 			 	运行
 // Ctrl + D  				删除一行
 // Ctrl + /					注释或取消注释
@@ -24,58 +31,216 @@ import java.util.Scanner;
 // Ctrl + 1					导入包
 // Ctrl + O					预览方法签名
 // Ctrl + /					代码折叠或展开(小键盘上的 / )
-// Alt  + Shift +J 			代码参数说明
+// Alt  + Shift + J 		代码参数说明
 
 public class Hello {
-	private static Scanner input;
+    private static Scanner input;
 
-	public static void main(String[] args) {
-		
-		PerfectNumber();
-	}
+    @Test
+    public void PerfectNumber() {
+        int i, m = 0, s;
+        for (m = 1; m < 10000; m++) {
+            s = 0;
+            for (i = 1; i < m; i++) {
+                if (m % i == 0) {
+                    s += i;
+                }
+            }
 
-	static void PerfectNumber() {
-		int i, m = 0, s;
-		for (m = 1; m < 10000; m++) {
-			s = 0;
-			for (i = 1; i < m; i++) {
-				if (m % i == 0) {
-					s += i;
-				}
-			}
+            if (s == m) {
+                System.out.print(m + "是完数，其因子是：");
+                for (i = 1; i < m; i++) {
+                    if (m % i == 0) {
+                        System.out.print(i + ",");
+                    }
+                }
+                System.out.println();
+            }
+        }
+    }
 
-			if (s == m) {
-				System.out.print(m + "是完数，其因子是：");
-				for (i = 1; i < m; i++) {
-					if (m % i == 0) {
-						System.out.print(i + ",");
-					}
-				}
-				System.out.println();
-			}
-		}
-	}
+    @Test
+    public boolean IsPrimer(int n) {
+        int m = (int) Math.sqrt(n);
+        for (int i = 2; i <= m; i++) {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
 
-	static boolean IsPrimer(int n) {
-		int m = (int) Math.sqrt(n);
-		for (int i = 2; i <= m; i++) {
-			if (n % i == 0)
-				return false;
-		}
-		return true;
-	}
+    @Test
+    // 普通年（不能被100整除的年份）能被4整除的为闰年。（如2004年就是闰年,1999年不是闰年）；
+    // 世纪年（能被100整除的年份）能被400整除的是闰年。(如2000年是闰年，1900年不是闰年)；
+    public void LeapYear() {
+        input = new Scanner(System.in);
+        System.out.print("请输入年份：");
+        int year = input.nextInt();
 
-	// 普通年（不能被100整除的年份）能被4整除的为闰年。（如2004年就是闰年,1999年不是闰年）；
-	// 世纪年（能被100整除的年份）能被400整除的是闰年。(如2000年是闰年，1900年不是闰年)；
-	static void LeapYear() {
-		input = new Scanner(System.in);
-		System.out.print("请输入年份：");
-		int year = input.nextInt();
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            System.out.print(year + "年是闰年。");
+        } else {
+            System.out.print(year + "年不是闰年。");
+        }
+    }
 
-		if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-			System.out.print(year + "年是闰年。");
-		} else {
-			System.out.print(year + "年不是闰年。");
-		}
-	}
+    //region Switch
+    @Test
+    public void SwitchDemo1() {
+        int read = 1;
+
+        switch (read) {
+            case 1:
+                System.out.println("星期一");
+                break;
+            case 2:
+                System.out.println("星期二");
+                break;
+            case 3:
+                System.out.println("星期三");
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Test
+    public void SwitchDemo2() {
+        int i;
+        for (i = 0; i <= 5; i++) {
+            switch (i) {
+                case 1:
+                case 2:
+                case 3:
+                    System.out.println("i is 1, 2 or 3");
+                    break;
+                case 4:
+                    System.out.println("i is 4");
+                    break;
+            }
+            System.out.println();
+        }
+    }
+
+    @Test
+    public void CalcDemo() {
+        String flag = JOptionPane.showInputDialog("input the flag:");
+        String numX = JOptionPane.showInputDialog("input the numX:");
+        String numY = JOptionPane.showInputDialog("input the numY:");
+        int x1 = Integer.parseInt(numX), y1 = Integer.parseInt(numY), numZ = 0;
+        System.out.println(flag.getClass().toString());
+
+        switch (flag) {
+            case "+":
+                numZ = x1 + y1;
+                break;
+            case "-":
+                numZ = x1 - y1;
+                break;
+            case "*":
+                numZ = x1 * y1;
+                break;
+            case "/":
+                numZ = x1 / y1;
+                break;
+            default:
+                System.out.println("输入的操作符号错误！");
+        }
+
+        System.out.printf("%d %s %d = %d\n", x1, flag, y1, numZ);
+    }
+    //endregion
+
+    //region SystemInfo
+    @Test
+    public void exec01() {
+        Runtime r = Runtime.getRuntime();
+        Process p = null;
+        try {
+            String s = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe D:\\Oauth.txt -T png -o resultxxxxxxxxxxxx.png";
+            p = r.exec(s);
+        } catch (Exception e) {
+            System.out.println("错误:" + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void exec02() {
+        Properties properties = System.getProperties();
+        System.out.println(properties.size());
+        Enumeration<Object> keys = properties.keys();
+        int i = 0;
+        while (keys.hasMoreElements()) {
+            Object key = keys.nextElement();
+            Object value = properties.get(key);
+            System.out.println(++i + ":" + key + ":" + value);
+        }
+    }
+    //endregion
+
+    //region Tuple
+    @Test
+    public void compareEqual() {
+        Tuple t1 = new Tuple("foo", 1d);
+        Tuple t2 = new Tuple("foo", 1d);
+
+        assertEquals(0, t1.compareTo(t2));
+        assertEquals(0, t2.compareTo(t1));
+        assertTrue(t1.equals(t2));
+        assertTrue(t2.equals(t1));
+    }
+
+    @Test
+    public void compareSameScoreObject() {
+        Double score = 1d;
+        Tuple t1 = new Tuple("foo", score);
+        Tuple t2 = new Tuple("bar", score);
+
+        assertEquals(1, t1.compareTo(t2));
+        assertEquals(-1, t2.compareTo(t1));
+        assertFalse(t1.equals(t2));
+        assertFalse(t2.equals(t1));
+    }
+
+    @Test
+    public void compareSameScore() {
+        Tuple t1 = new Tuple("foo", 1d);
+        Tuple t2 = new Tuple("bar", 1d);
+
+        assertEquals(1, t1.compareTo(t2));
+        assertEquals(-1, t2.compareTo(t1));
+        assertFalse(t1.equals(t2));
+        assertFalse(t2.equals(t1));
+    }
+
+    @Test
+    public void compareNoMatch() {
+        Tuple t1 = new Tuple("foo", 1d);
+        Tuple t2 = new Tuple("bar", 2d);
+
+        assertEquals(-1, t1.compareTo(t2));
+        assertEquals(1, t2.compareTo(t1));
+        assertFalse(t1.equals(t2));
+        assertFalse(t2.equals(t1));
+    }
+
+    @Test
+    public void testSameElement() {
+        Tuple t1 = new Tuple("user1", 10.0);
+        Tuple t2 = new Tuple("user1", 5.0);
+
+        // Intentionally skipping compareTo.
+        assertFalse(t1.equals(t2));
+        assertFalse(t2.equals(t1));
+
+        HashSet<Tuple> hashSet = new HashSet<Tuple>();
+        hashSet.add(t1);
+        hashSet.add(t2);
+        assertEquals(2, hashSet.size());
+    }
+    //endregion Tuple
+
+    //region String
+
+    //endregion
 }

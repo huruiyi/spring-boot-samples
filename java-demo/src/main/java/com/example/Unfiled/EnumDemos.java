@@ -16,15 +16,12 @@ public class EnumDemos {
         System.out.println(BaseDataEnum.BM_COUNTRY.toString());
 
 
-        BaseDataEnum cEnum=BaseDataEnum.valueOf("BM_COUNTRY");
+        BaseDataEnum cEnum = BaseDataEnum.valueOf("BM_COUNTRY");
         System.out.println(cEnum.getText());
         System.out.println(cEnum.getValue());
 
     }
 
-    public static void Demo2() {
-
-    }
 
     public static void Demo1() {
         System.out.println(StatusEnum.Draf);
