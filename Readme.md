@@ -4,11 +4,8 @@
 [![HitCount](http://hits.dwyl.io/996icu/996.ICU.svg)](http://hits.dwyl.io/996icu/996.ICU)
 
 
- [HttpAsyncClient Examples](http://hc.apache.org/httpcomponents-asyncclient-dev/examples.html)
- #`BasicAsyncRequestProducer`
- #`HttpAsyncRequestConsumer`
- [httpcomponents](http://svn.apache.org/repos/asf/httpcomponents/)
-
+ [HttpAsyncClient Examples](http://hc.apache.org/httpcomponents-asyncclient-dev/examples.html)  [httpcomponents](http://svn.apache.org/repos/asf/httpcomponents/)
+ `BasicAsyncRequestProducer，HttpAsyncRequestConsumer`
 ***
 # `修改字符集编码`
  
