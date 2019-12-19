@@ -59,7 +59,6 @@ public class Hello {
         }
     }
 
-    @Test
     public boolean IsPrimer(int n) {
         int m = (int) Math.sqrt(n);
         for (int i = 2; i <= m; i++) {
@@ -164,6 +163,7 @@ public class Hello {
             e.printStackTrace();
         }
     }
+
     @Test
     public void exec02() {
         Properties properties = System.getProperties();

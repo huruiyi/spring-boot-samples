@@ -17,7 +17,7 @@ import java.util.*;
 public class Test_Json {
 
     @Test
-    static void ObjToJson() {
+    public void ObjToJson() {
         //Date date = new Date();
         //System.out.println(date.getTime());
         //System.out.println(date.getYear() + 1900);
@@ -32,7 +32,7 @@ public class Test_Json {
         System.out.println(json);
     }
 
-    static void JsonToObj() {
+    public void JsonToObj() {
         String json = "{\"name\":\"小云儿\",\"id\":1,\"age\":26}";
         Person person = JSON.parseObject(json, Person.class);
         System.out.println(person);
@@ -53,7 +53,7 @@ public class Test_Json {
         System.out.println(((JSONObject) obj).get("age"));
     }
 
-    static void ListToJson() {
+    public void ListToJson() {
         List<Person> list = new ArrayList<Person>();
         list.add(new Person(2, "小明", 23));
         list.add(new Person(4, "小红", 14));
@@ -68,7 +68,7 @@ public class Test_Json {
         System.out.println(json);
     }
 
-    static void JsonToList() {
+    public void JsonToList() {
         String strJson = "[{\"name\":\"小明\",\"id\":2,\"age\":23},{\"name\":\"小红\",\"id\":4,\"age\":14},{\"name\":\"小雪\",\"id\":6,\"age\":43},{\"name\":\"小云\",\"id\":8,\"age\":12},{\"name\":\"小王\",\"id\":0,\"age\":23},{\"name\":\"小胡\",\"id\":1,\"age\":38},{\"name\":\"小周\",\"id\":3,\"age\":23},{\"name\":\"小青\",\"id\":5,\"age\":20},{\"name\":\"小马\",\"id\":7,\"age\":15}]";
 
         JSONArray jsonArray = (JSONArray) JSON.parse(strJson);
@@ -109,7 +109,7 @@ public class Test_Json {
         //<T> T[] toArray(T[] a)
     }
 
-    static void JsonDate() {
+    public void JsonDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
         Date date = null;
         try {

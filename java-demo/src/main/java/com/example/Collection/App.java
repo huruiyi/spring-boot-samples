@@ -137,7 +137,6 @@ public class App {
         }
     }
 
-    @Test
     public int[] SetToInt(Set<Integer> allSet) {
         Integer[] temp = allSet.toArray(new Integer[]{});
         int[] intArray = new int[temp.length];

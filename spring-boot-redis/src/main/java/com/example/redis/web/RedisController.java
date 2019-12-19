@@ -34,10 +34,9 @@ public class RedisController {
         stringRedisTemplate.opsForValue().increment("int", 1);
 
         // 获取底层Jedis连接
-        Jedis jedis = (Jedis) stringRedisTemplate.getConnectionFactory().getConnection().getNativeConnection();
-
         // 减一操作,这个命令RedisTemplate不支持，所以笔者先获取底层的连接再操作
-        jedis.decr("int");
+        // Jedis jedis = (Jedis) stringRedisTemplate.getConnectionFactory().getConnection().getNativeConnection();
+        // jedis.decr("int");
 
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("success", true);
@@ -45,8 +44,8 @@ public class RedisController {
     }
 
     @RequestMapping("/hash")
-
-    public void hashOp() {
+    @ResponseBody
+    public String hashOp() {
 
         Map<String, String> hash = new HashMap<String, String>();
         hash.put("field1", "value1");
@@ -57,5 +56,6 @@ public class RedisController {
         BoundHashOperations hashOps = stringRedisTemplate.boundHashOps("hash");
         hashOps.delete("field1", "field2");
         hashOps.put("filed4", "value5");
+        return "ok";
     }
 }
