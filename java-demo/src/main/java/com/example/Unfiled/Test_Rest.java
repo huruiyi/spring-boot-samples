@@ -1,8 +1,10 @@
 package com.example.Unfiled;
 
 
+import com.example.Model.CusResult;
 import com.example.Model.Greeting;
 import com.example.Model.Quote;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,5 +25,16 @@ public class Test_Rest {
         RestTemplate restTemplate = new RestTemplate();
         Greeting greeting = restTemplate.getForObject("http://localhost:8086/greeting", Greeting.class);
         log.info(greeting.toString());
+    }
+
+
+    @Test
+    @DisplayName("并发限制测试")
+    public void Test3() {
+        RestTemplate restTemplate = new RestTemplate();
+        for (int i = 0; i < 20; i++) {
+            String result = restTemplate.getForObject("http://localhost:9102/testLimit", String.class);
+            System.out.println(result);
+        }
     }
 }

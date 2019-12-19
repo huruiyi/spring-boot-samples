@@ -1,30 +1,35 @@
 package com.example.Spring;
 
+import com.example.Spring.model.CusResult;
 import com.example.Spring.service.HelloWorld;
 import com.example.Spring.service.HelloWorldService;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.client.RestTemplate;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringBootDemoApplicationTests {
     private static ApplicationContext context;
 
     @Test
-    public void contextLoads() {
+    public void Test1() {
         context = new ClassPathXmlApplicationContext("beans.xml");
 
         HelloWorldService springService = (HelloWorldService) context.getBean("helloWorldSpringService");
         HelloWorld springhw = springService.getHelloWorld();
         springhw.sayHello();
 
-        HelloWorldService strutsservice = (HelloWorldService) context.getBean("helloWorldStrutsService");
-        HelloWorld servicehw = strutsservice.getHelloWorld();
-        servicehw.sayHello();
+    }
+
+    @Test
+    public void Test2() {
+        RestTemplate restTemplate = new RestTemplate();
+        for (int i = 0; i < 20; i++) {
+            CusResult result = restTemplate.getForObject("http://localhost:9102/limit3", CusResult.class);
+            System.out.println(result);
+        }
     }
 
 }
