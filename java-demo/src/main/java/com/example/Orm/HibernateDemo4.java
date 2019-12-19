@@ -1,18 +1,13 @@
 package com.example.Orm;
 
-import java.io.Serializable;
-import java.util.List;
-
-import org.hibernate.Criteria;
-import org.hibernate.Query;
-import org.hibernate.SQLQuery;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import com.example.utils.HibernateUtils;
+import org.hibernate.*;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import com.example.utils.HibernateUtils;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author hurui

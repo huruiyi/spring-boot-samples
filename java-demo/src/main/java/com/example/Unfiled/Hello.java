@@ -1,6 +1,6 @@
 package com.example.Unfiled;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import redis.clients.jedis.Tuple;
 
 import javax.swing.*;
@@ -9,7 +9,8 @@ import java.util.HashSet;
 import java.util.Properties;
 import java.util.Scanner;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 // Eclipse 快捷键
 // Ctrl + F11 			 	运行

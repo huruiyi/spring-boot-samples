@@ -2,7 +2,7 @@ package com.example.Collection;
 
 import com.alibaba.fastjson.JSONArray;
 import com.example.Model.Person;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 

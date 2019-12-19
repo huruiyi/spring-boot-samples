@@ -19,7 +19,6 @@
         <module>spring-boot-jsp</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-mybatisplus</module>
-        <module>spring-boot-redis</module>
         <module>spring-boot-redis-session</module>
         <module>spring-boot-thymeleaf</module>
         <module>spring-cloud-config</module>

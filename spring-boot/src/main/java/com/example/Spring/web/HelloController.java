@@ -1,6 +1,6 @@
 package com.example.Spring.web;
 
-import com.example.Spring.service.HelloService;
+import com.example.Spring.service.SingleService;
 import com.example.Spring.utils.ExcelUtils;
 import org.apache.poi.xssf.usermodel.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class HelloController {
     private String env;
 
     @Autowired
-    HelloService helloService;
+    SingleService helloService;
 
     @ResponseBody
     @RequestMapping(value = "/env")

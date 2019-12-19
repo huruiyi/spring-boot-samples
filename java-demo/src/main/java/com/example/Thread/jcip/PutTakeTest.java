@@ -1,9 +1,13 @@
 package com.example.Thread.jcip;
 
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.*;
+import org.junit.jupiter.api.Test;
 
-import junit.framework.TestCase;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * PutTakeTest
@@ -12,7 +16,7 @@ import junit.framework.TestCase;
  *
  * @author Brian Goetz and Tim Peierls
  */
-public class PutTakeTest extends TestCase {
+public class PutTakeTest {
     protected static final ExecutorService pool = Executors.newCachedThreadPool();
     protected CyclicBarrier barrier;
     protected final SemaphoreBoundedBuffer<Integer> bb;
@@ -32,7 +36,7 @@ public class PutTakeTest extends TestCase {
         this.barrier = new CyclicBarrier(npairs * 2 + 1);
     }
 
-    void test() {
+    public void test() {
         try {
             for (int i = 0; i < nPairs; i++) {
                 pool.execute(new Producer());

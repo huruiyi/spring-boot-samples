@@ -1,15 +1,14 @@
 package com.example.Orm;
 
-import java.io.Serializable;
-import java.util.Arrays;
-import java.util.List;
-
+import com.example.utils.HibernateUtils;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import com.example.utils.HibernateUtils;
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Hibernate的工具类的测试

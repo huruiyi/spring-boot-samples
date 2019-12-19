@@ -1,10 +1,9 @@
 package com.example.Orm;
 
+import com.example.utils.HibernateUtils;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.junit.Test;
-
-import com.example.utils.HibernateUtils;
+import org.junit.jupiter.api.Test;
 
 public class HibernateDemo3 {
 

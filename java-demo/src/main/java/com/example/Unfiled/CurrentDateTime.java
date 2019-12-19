@@ -1,4 +1,4 @@
-package com.example.Time;
+package com.example.Unfiled;
 
 import java.util.Calendar;
 
@@ -17,8 +17,7 @@ public class CurrentDateTime {
     }
 
     public static String getDate() {
-        String s = y + "年" + m + "月" + d + "日";
-        return s;
+        return y + "年" + m + "月" + d + "日";
     }
 
     public static String getTime() {

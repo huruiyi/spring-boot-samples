@@ -1,7 +1,7 @@
 package com.example.MQ.ActiveMq;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import javax.jms.*;
 import java.io.IOException;

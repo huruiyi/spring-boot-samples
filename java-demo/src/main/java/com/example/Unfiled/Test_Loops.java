@@ -1,8 +1,8 @@
 package com.example.Unfiled;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class Test_Loops {
 

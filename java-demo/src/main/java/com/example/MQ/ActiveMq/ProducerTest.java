@@ -2,7 +2,7 @@ package com.example.MQ.ActiveMq;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQTextMessage;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import javax.jms.*;
 

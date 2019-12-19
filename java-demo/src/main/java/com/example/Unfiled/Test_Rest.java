@@ -2,9 +2,8 @@ package com.example.Unfiled;
 
 
 import com.example.Model.Greeting;
-
 import com.example.Model.Quote;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.client.RestTemplate;

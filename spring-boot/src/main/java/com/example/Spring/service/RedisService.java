@@ -10,8 +10,12 @@ import java.util.concurrent.TimeUnit;
 
 @Service
 public class RedisService {
-    @Autowired
-    private StringRedisTemplate stringRedisTemplate;
+
+    private final StringRedisTemplate stringRedisTemplate;
+
+    public RedisService(StringRedisTemplate stringRedisTemplate) {
+        this.stringRedisTemplate = stringRedisTemplate;
+    }
 
     public void setObject(String key, Object value) {
         this.setObject(key, value, null);
@@ -30,7 +34,6 @@ public class RedisService {
             } else {
                 stringRedisTemplate.opsForValue().set(key, stringValue, time, TimeUnit.SECONDS);
             }
-
             return;
         }
         if (value instanceof List) {
@@ -49,5 +52,4 @@ public class RedisService {
     public String getString(String key) {
         return stringRedisTemplate.opsForValue().get(key);
     }
-
 }

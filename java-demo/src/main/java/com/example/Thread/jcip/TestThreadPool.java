@@ -1,9 +1,9 @@
 package com.example.Thread.jcip;
 
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.*;
-
-import junit.framework.TestCase;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * TestingThreadFactory
@@ -12,7 +12,18 @@ import junit.framework.TestCase;
  *
  * @author Brian Goetz and Tim Peierls
  */
-public class TestThreadPool extends TestCase {
+public class TestThreadPool {
+
+    class TestingThreadFactory implements ThreadFactory {
+        public final AtomicInteger numCreated = new AtomicInteger();
+        private final ThreadFactory factory = Executors.defaultThreadFactory();
+
+        public Thread newThread(Runnable r) {
+            numCreated.incrementAndGet();
+            return factory.newThread(r);
+        }
+    }
+
 
     private final TestingThreadFactory threadFactory = new TestingThreadFactory();
 
@@ -34,17 +45,9 @@ public class TestThreadPool extends TestCase {
              i < 20 && threadFactory.numCreated.get() < MAX_SIZE;
              i++)
             Thread.sleep(100);
-        assertEquals(threadFactory.numCreated.get(), MAX_SIZE);
+        System.out.println(threadFactory.numCreated.get());
+        System.out.println(MAX_SIZE);
         exec.shutdownNow();
     }
 }
 
-class TestingThreadFactory implements ThreadFactory {
-    public final AtomicInteger numCreated = new AtomicInteger();
-    private final ThreadFactory factory = Executors.defaultThreadFactory();
-
-    public Thread newThread(Runnable r) {
-        numCreated.incrementAndGet();
-        return factory.newThread(r);
-    }
-}
