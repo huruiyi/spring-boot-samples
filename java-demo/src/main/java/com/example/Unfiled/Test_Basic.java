@@ -34,7 +34,7 @@ import static org.junit.jupiter.api.Assertions.*;
 // Ctrl + /					代码折叠或展开(小键盘上的 / )
 // Alt  + Shift + J 		代码参数说明
 
-public class Hello {
+class Hello {
     private static Scanner input;
 
     @Test
@@ -69,7 +69,6 @@ public class Hello {
         return true;
     }
 
-    @Test
     // 普通年（不能被100整除的年份）能被4整除的为闰年。（如2004年就是闰年,1999年不是闰年）；
     // 世纪年（能被100整除的年份）能被400整除的是闰年。(如2000年是闰年，1900年不是闰年)；
     public void LeapYear() {

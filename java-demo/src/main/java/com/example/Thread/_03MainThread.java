@@ -8,6 +8,7 @@ public class _03MainThread {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
+                    System.out.println("..............");
                     e.printStackTrace();
                 }
                 System.out.println("A");
@@ -16,6 +17,7 @@ public class _03MainThread {
         thread.start();
         Thread.sleep(100);
         thread.stop();
+        thread.interrupt();
         System.out.println("B");
     }
 }

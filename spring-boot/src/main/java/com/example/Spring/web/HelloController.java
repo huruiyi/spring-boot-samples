@@ -8,6 +8,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.actuate.beans.BeansEndpoint;
+import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -32,13 +35,17 @@ import java.util.Map;
 @Slf4j
 public class HelloController {
 
+    final SingleService singleService;
+
+    public HelloController(SingleService singleService) {
+        this.singleService = singleService;
+    }
+
+
     @Value("${spring.profiles.active}")
     private String env;
-
-    @Autowired
-    SingleService helloService;
-
     private RateLimiter rateLimiter = RateLimiter.create(2);
+
 
     @ResponseBody
     @RequestMapping(value = "/limit")
@@ -79,7 +86,7 @@ public class HelloController {
 
     @RequestMapping(value = "/hello")
     public String hello() {
-        String res = helloService.sayHello();
+        String res = singleService.sayHello();
         return res;
     }
 
@@ -128,6 +135,13 @@ public class HelloController {
     @ResponseBody
     public String dev() {
         return "Hello World v2.1.1";
+    }
+
+    @RequestMapping(value = "/beans")
+    @ResponseBody
+    public String[] bean() {
+        String[] beans = singleService.getBeans();
+        return beans;
     }
 
 }

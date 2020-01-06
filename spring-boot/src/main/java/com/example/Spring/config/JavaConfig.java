@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class JavaConfig {
     @Bean
-    public SingleService getHelloService() {
+    public SingleService singleService() {
         return new SingleService();
     }
 }

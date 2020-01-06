@@ -1,14 +1,15 @@
-package com.example.Zookeeper;
+package com.example.Unfiled;
 
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
 import org.apache.zookeeper.server.auth.DigestAuthenticationProvider;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.CountDownLatch;
 
-public class DigestDemo {
+public class Test_Zookeeper {
     /*
      * 1:创建回话
      * 2:创建节点
@@ -21,15 +22,14 @@ public class DigestDemo {
     private final static String CONNECTIONStr = "192.168.70.133:2181";
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
-    public static void main(String[] args) throws InterruptedException, IOException, KeeperException {
-        Demo2();
-    }
 
+    @Test
     static void Demo1() throws NoSuchAlgorithmException {
         String digest = DigestAuthenticationProvider.generateDigest("admin:123456");
         System.out.println(digest);
     }
 
+    @Test
     static void Demo2() throws IOException, InterruptedException, KeeperException {
 
         ZooKeeper zooKeeper = new ZooKeeper(CONNECTIONStr, 5000, new Watcher() {
@@ -46,6 +46,7 @@ public class DigestDemo {
         });
 
         countDownLatch.await();
+
         Stat stat = new Stat();
         String path = "/country";
         //Watcher事件只会触发一次,每次要触发事件时都要重新设置监听:zooKeeper.getData(path, true, stat);
@@ -59,6 +60,7 @@ public class DigestDemo {
         }
 
         byte[] data2 = zooKeeper.getData(path, true, null);
+        System.out.println(new String(data2));
 
         // version: -1 忽略版本的变化
         zooKeeper.setData(path, "china 2017".getBytes(), -1);
@@ -79,6 +81,6 @@ public class DigestDemo {
         zooKeeper.setData(path, "china 2020".getBytes(), -1);
 
         System.out.println(new String(data1));
-        //zooKeeper.delete("/country", 0);
+        zooKeeper.delete("/country", 0);
     }
 }
