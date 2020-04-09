@@ -6,11 +6,11 @@ import org.springframework.context.ApplicationContextAware;
 
 public class SingleService implements ApplicationContextAware {
 
-    private ApplicationContext applicationContext;
-
     public String sayHello() {
         return "Hello Spring Boot!";
     }
+
+    private ApplicationContext applicationContext;
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
