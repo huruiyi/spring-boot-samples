@@ -1,5 +1,6 @@
 package com.example.Spring.aspect;
 
+import com.example.Spring.web.RateController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.util.concurrent.RateLimiter;
 import lombok.extern.slf4j.Slf4j;
@@ -7,6 +8,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.slf4j.Logger;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -22,6 +24,9 @@ import java.io.IOException;
 @Aspect
 @Slf4j
 public class LimitAspectV1 {
+
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(LimitAspectV1.class);
+
     //每秒只发出指定个令牌(这里方便测试用5个)，此处是单进程服务的限流,内部采用令牌捅算法实现
     private static RateLimiter rateLimiter = RateLimiter.create(5.0);
 

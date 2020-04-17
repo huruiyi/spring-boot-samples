@@ -6,6 +6,8 @@ import com.example.Spring.utils.ExcelUtils;
 import com.google.common.util.concurrent.RateLimiter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,38 +31,33 @@ import java.util.Map;
 @Slf4j
 public class HelloController {
 
+    //1：构造函数注入
     final SingleService singleService;
 
     public HelloController(SingleService singleService) {
         this.singleService = singleService;
     }
 
+    //2:属性注入
+    @Autowired
+    private SingleService singleService2;
 
     @Value("${spring.profiles.active}")
     private String env;
-    private RateLimiter rateLimiter = RateLimiter.create(2);
 
+    @RequestMapping(value = "/hello")
+    public String hello() {
+        String res = singleService.sayHello();
+        return res;
+    }
 
+    @RequestMapping("/test")
     @ResponseBody
-    @RequestMapping(value = "/limit")
-    private String guavaLimit() {
-        if (rateLimiter.tryAcquire()) {
-            System.out.println(Instant.now());
-            return "Acquire 。。。";
-        } else {
-            System.out.println("false:" + Instant.now());
-            return "Hello World";
-        }
+    public Map<String, String> test() {
+        Map<String, String> map = new HashMap<>();
+        map.put("key1", "value1");
+        return map;
     }
-
-
-    @GetMapping(value = "/testLimit")
-    @RequestLimit
-    public String testLimit() {
-        log.info("开始测试限流");
-        return "success";
-    }
-
 
     @ResponseBody
     @RequestMapping(value = "/env")
@@ -78,30 +75,12 @@ public class HelloController {
     }
 
 
-    @RequestMapping(value = "/hello")
-    public String hello() {
-        String res = singleService.sayHello();
-        return res;
-    }
-
-
-    @RequestMapping("/test")
-    @ResponseBody
-    public Map<String, String> test() {
-        Map<String, String> map = new HashMap<>();
-        map.put("key1", "value1");
-        return map;
-    }
-
-
     @RequestMapping(value = "/exportExcel")
     public void test(HttpServletResponse response) throws UnsupportedEncodingException {
-
         Map<String, String> params = new HashMap<>();
         params.put("userId", "1");
 
         XSSFWorkbook xssfWorkbook = ExcelUtils.getOutputStream();
-
         try {
             SimpleDateFormat sd = new SimpleDateFormat("yyyyMMddhhmmss");
             String fileName = sd.format(new Date()) + "预付款明细.xlsx";
@@ -123,7 +102,6 @@ public class HelloController {
             }
         }
     }
-
 
     @RequestMapping(value = "/devtools")
     @ResponseBody
