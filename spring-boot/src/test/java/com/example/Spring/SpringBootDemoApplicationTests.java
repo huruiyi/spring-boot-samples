@@ -25,11 +25,11 @@ public class SpringBootDemoApplicationTests {
 
     @Test
     public void Test2() {
-        RestTemplate restTemplate = new RestTemplate();
-        for (int i = 0; i < 20; i++) {
-            CusResult result = restTemplate.getForObject("http://localhost:9102/limit3", CusResult.class);
-            System.out.println(result);
-        }
+//        RestTemplate restTemplate = new RestTemplate();
+//        for (int i = 0; i < 5; i++) {
+//            CusResult result = restTemplate.getForObject("http://localhost:9102/limit3", CusResult.class);
+//            System.out.println(result);
+//        }
     }
 
 }

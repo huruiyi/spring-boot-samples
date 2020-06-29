@@ -8,6 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableAdminServer
 public class SpringBootDemoApplication {
 
+    // nginx.conf redis-session测试
+    // java -jar demo1.jar --server.port=8012
+    // java -jar demo2.jar --server.port=8013
+
     public static void main(String[] args) {
         SpringApplication.run(SpringBootDemoApplication.class, args);
     }

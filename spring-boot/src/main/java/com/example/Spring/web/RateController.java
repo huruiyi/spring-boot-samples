@@ -17,7 +17,7 @@ public class RateController {
 
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(RateController.class);
 
-    private RateLimiter rateLimiter = RateLimiter.create(2);
+    private RateLimiter rateLimiter = RateLimiter.create(10);
 
     @ResponseBody
     @RequestMapping(value = "/limit")
