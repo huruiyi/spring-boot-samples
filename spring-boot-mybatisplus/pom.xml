@@ -71,13 +71,6 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>com.coscon</groupId>
-            <artifactId>ojdbc6_Oracle_Database_11_2_0_4_JDBC_Driver</artifactId>
-            <version>11.2.0.4-SNAPSHOT</version>
-        </dependency>
-
     </dependencies>
 
     <build>
