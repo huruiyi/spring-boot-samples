@@ -32,10 +32,10 @@ import java.util.Map;
 public class HelloController {
 
     //1：构造函数注入
-    final SingleService singleService;
+    final SingleService singleService1;
 
     public HelloController(SingleService singleService) {
-        this.singleService = singleService;
+        this.singleService1 = singleService;
     }
 
     //2:属性注入
@@ -47,7 +47,7 @@ public class HelloController {
 
     @RequestMapping(value = "/hello")
     public String hello() {
-        String res = singleService.sayHello();
+        String res = singleService1.sayHello();
         return res;
     }
 
@@ -112,7 +112,7 @@ public class HelloController {
     @RequestMapping(value = "/beans")
     @ResponseBody
     public String[] bean() {
-        String[] beans = singleService.getBeans();
+        String[] beans = singleService1.getBeans();
         return beans;
     }
 

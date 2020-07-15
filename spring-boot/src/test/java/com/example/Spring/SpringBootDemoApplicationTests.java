@@ -1,13 +1,11 @@
 package com.example.Spring;
 
-import com.example.Spring.model.CusResult;
 import com.example.Spring.service.HelloWorld;
 import com.example.Spring.service.HelloWorldService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.web.client.RestTemplate;
 
 @SpringBootTest
 public class SpringBootDemoApplicationTests {
@@ -17,7 +15,7 @@ public class SpringBootDemoApplicationTests {
     public void Test1() {
         context = new ClassPathXmlApplicationContext("beans.xml");
 
-        HelloWorldService springService = (HelloWorldService) context.getBean("helloWorldSpringService");
+        HelloWorldService springService = ( HelloWorldService ) context.getBean("helloWorldSpringService");
         HelloWorld springhw = springService.getHelloWorld();
         springhw.sayHello();
 
