@@ -7,7 +7,14 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.thymeleaf.context.Context;
+import org.thymeleaf.spring5.SpringTemplateEngine;
+
+import java.util.Collections;
 
 @SpringBootApplication
 @EnableAdminServer
@@ -30,5 +37,31 @@ public class SpringBootDemoApplication {
             bookService.create(new Book("9780451524935", "1984", "George Orwell"));
             bookService.create(new Book("9780618260300", "The Hobbit", "J.R.R. Tolkien"));
         };
+    }
+
+    @Bean
+    public ApplicationRunner startupMailSender1(JavaMailSender javaMailSender) {
+        return (args) -> javaMailSender.send((msg) ->
+        {
+            MimeMessageHelper helper = new MimeMessageHelper(msg);
+            helper.setTo("38761770@qq.com");
+            helper.setFrom("807776962@qq.com");
+            helper.setSubject("Status message-1");
+            helper.setText("All is well.");
+        });
+    }
+
+    @Bean
+    public ApplicationRunner startupMailSender2(JavaMailSender javaMailSender, SpringTemplateEngine templateEngine) {
+        return (args) -> javaMailSender.send((msg) -> {
+            MimeMessageHelper helper = new MimeMessageHelper(msg);
+            helper.setTo("38761770@qq.com");
+            helper.setFrom("807776962@qq.com");
+            helper.setSubject("Status message-2");
+
+            Context context = new Context(LocaleContextHolder.getLocale(), Collections.singletonMap("msg", "All is well!"));
+            String body = templateEngine.process("email.html", context);
+            helper.setText(body, true);
+        });
     }
 }

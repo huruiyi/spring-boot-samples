@@ -13,6 +13,7 @@ import java.time.Instant;
 
 @RestController
 @Slf4j
+@RequestMapping("/rate")
 public class RateController {
 
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(RateController.class);

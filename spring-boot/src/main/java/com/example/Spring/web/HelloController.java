@@ -29,6 +29,7 @@ import java.util.Map;
 
 @RestController
 @Slf4j
+@RequestMapping("/hello")
 public class HelloController {
 
     //1：构造函数注入
