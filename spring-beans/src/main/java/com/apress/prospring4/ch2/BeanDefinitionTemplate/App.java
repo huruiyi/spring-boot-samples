@@ -3,7 +3,9 @@ package com.apress.prospring4.ch2.BeanDefinitionTemplate;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class MainApp {
+import java.util.List;
+
+public class App {
 
     public static void main(String[] args) {
 
@@ -15,6 +17,9 @@ public class MainApp {
         Employee employeeB = (Employee) context.getBean("indianEmployee");
         System.out.println(employeeB);
 
+        HelloWorld helloWorld = ( HelloWorld ) context.getBean("helloWorld");
+        List<Holiday> holidays = helloWorld.getHolidays();
+        helloWorld.hello();
     }
 
 }

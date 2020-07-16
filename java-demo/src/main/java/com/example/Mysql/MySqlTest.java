@@ -80,7 +80,6 @@ public class MySqlTest {
 
     @Test
     public void UserJdbcUtils() throws SQLException {
-
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -97,6 +96,5 @@ public class MySqlTest {
         } finally {
             JdbcUtils.closeResource(connection, preparedStatement, resultSet);
         }
-
     }
 }

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--
         <bean id="indianEmployee" abstract="true">
@@ -17,6 +18,29 @@
     <bean id="employeeBean" class="com.apress.prospring4.ch2.BeanDefinitionTemplate.Employee" parent="indianEmployee">
         <property name="employeeId" value="1065"></property>
         <property name="employeeName" value="Ravi Kant Soni"></property>
+    </bean>
+
+
+    <bean id="christmas" class="com.apress.prospring4.ch2.BeanDefinitionTemplate.Holiday">
+        <property name="month" value="12"/>
+        <property name="day" value="25"/>
+        <property name="greeting" value="Merry Christmas!"/>
+    </bean>
+
+    <bean id="newYear" class="com.apress.prospring4.ch2.BeanDefinitionTemplate.Holiday">
+        <property name="month" value="1"/>
+        <property name="day" value="1"/>
+        <property name="greeting" value="Happy New Year!"/>
+    </bean>
+
+    <bean id="helloWorld" class="com.apress.prospring4.ch2.BeanDefinitionTemplate.HelloWorld">
+        <property name="message" value="How are you?"/>
+        <property name="holidays">
+            <list>
+                <ref bean="christmas"/>
+                <ref bean="newYear"/>
+            </list>
+        </property>
     </bean>
 
 </beans>
