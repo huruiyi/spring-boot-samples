@@ -29,9 +29,9 @@
         <module>spring-boot-mybatis</module>
         <module>spring-boot-mybatisplus</module>
         <module>spring-boot-thymeleaf</module>
-        <module>spring-cloud-config</module>
-        <module>spring-cloud-eureka-client</module>
-        <module>spring-cloud-eureka-server</module>
+        <module>spring-cloud/config-server</module>
+        <module>spring-cloud/eureka-client</module>
+        <module>spring-cloud/eureka-server</module>
         <module>spring-jpa</module>
         <module>spring-multi-datasource</module>
         <module>spring-mvc1</module>
