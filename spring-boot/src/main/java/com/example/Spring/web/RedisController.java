@@ -1,6 +1,6 @@
 package com.example.Spring.web;
 
-import com.example.Spring.service.RedisService;
+import com.example.Spring.service.unclassified.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.RedisTemplate;

@@ -17,10 +17,6 @@ public class BookController {
     private BookService bookService;
 
 
-    @GetMapping("/hello")
-    public String book() {
-        return "Hello World, from Spring Boot 2!";
-    }
 
     @GetMapping
     public Iterable<Book> all() {
@@ -30,7 +26,6 @@ public class BookController {
     @GetMapping("/{isbn}")
     public ResponseEntity<Book> get(@PathVariable("isbn") String isbn) {
         return bookService.find(isbn).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
-
     }
 
     /*

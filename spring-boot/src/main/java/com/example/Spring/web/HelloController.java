@@ -1,12 +1,9 @@
 package com.example.Spring.web;
 
-import com.example.Spring.annotation.RequestLimit;
-import com.example.Spring.service.SingleService;
+import com.example.Spring.service.unclassified.SingleService;
 import com.example.Spring.utils.ExcelUtils;
-import com.google.common.util.concurrent.RateLimiter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +19,6 @@ import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -46,11 +42,20 @@ public class HelloController {
     @Value("${spring.profiles.active}")
     private String env;
 
-    @RequestMapping(value = "/hello")
+
+    @RequestMapping(value = "/hello1")
     public String hello() {
         String res = singleService1.sayHello();
         return res;
     }
+
+
+    @GetMapping("/hello2")
+    public String book() {
+        String res = singleService2.sayHello();
+        return res;
+    }
+
 
     @RequestMapping("/test")
     @ResponseBody

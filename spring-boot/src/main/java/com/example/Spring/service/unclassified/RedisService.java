@@ -1,4 +1,4 @@
-package com.example.Spring.service;
+package com.example.Spring.service.unclassified;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

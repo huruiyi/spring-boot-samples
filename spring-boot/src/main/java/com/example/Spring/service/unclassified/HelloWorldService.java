@@ -1,4 +1,6 @@
-package com.example.Spring.service;
+package com.example.Spring.service.unclassified;
+
+import com.example.Spring.service.HelloWorld;
 
 public class HelloWorldService {
 

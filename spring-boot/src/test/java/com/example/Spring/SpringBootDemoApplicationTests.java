@@ -1,7 +1,7 @@
 package com.example.Spring;
 
 import com.example.Spring.service.HelloWorld;
-import com.example.Spring.service.HelloWorldService;
+import com.example.Spring.service.unclassified.HelloWorldService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;

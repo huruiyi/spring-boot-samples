@@ -1,4 +1,4 @@
-package com.example.Spring.service;
+package com.example.Spring.service.unclassified;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
