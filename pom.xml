@@ -25,7 +25,6 @@
         <module>spring-boot</module>
         <module>spring-boot-elasticsearch/spring-boot-elasticsearch6</module>
         <module>spring-boot-elasticsearch/spring-boot-elasticsearch7</module>
-        <module>spring-boot-jsp</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-mybatisplus</module>
         <module>spring-boot-thymeleaf</module>
