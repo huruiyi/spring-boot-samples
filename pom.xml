@@ -23,8 +23,8 @@
         <module>spring-basic</module>
         <module>spring-beans</module>
         <module>spring-boot</module>
-        <module>spring-boot-elasticsearch/spring-boot-elasticsearch6</module>
-        <module>spring-boot-elasticsearch/spring-boot-elasticsearch7</module>
+        <module>elasticsearch/spring-boot-elasticsearch6</module>
+        <module>elasticsearch/spring-boot-elasticsearch7</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-mybatisplus</module>
         <module>spring-boot-thymeleaf</module>
@@ -37,10 +37,10 @@
         <module>spring-mvc2</module>
         <module>spring-mvc3</module>
         <module>spring-mvc-hello-world</module>
-        <module>spring-oauth2/oauth2-redis-server</module>
-        <module>spring-workflow/holiday-request</module>
-        <module>spring-dubbo/dubbo-api</module>
-        <module>spring-dubbo/dubbo-consumer</module>
-        <module>spring-dubbo/dubbo-provider</module>
+        <module>oauth2/oauth2-redis-server</module>
+        <module>workflow/holiday-request</module>
+        <module>dubbo/dubbo-api</module>
+        <module>dubbo/dubbo-consumer</module>
+        <module>dubbo/dubbo-provider</module>
     </modules>
 </project>
