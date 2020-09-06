@@ -11,13 +11,18 @@ import org.springframework.stereotype.Component;
 public class HelloWorldSchedule implements SchedulingConfigurer {
     private static final Logger logger = LoggerFactory.getLogger(HelloWorldSchedule.class);
 
-    @Scheduled(fixedRate = 4000L)
+    @Scheduled(fixedRate = 1000 * 60L)
     public void printMessage() {
         logger.info("Hello World, from Spring Boot 2!");
     }
 
+    @Scheduled(cron="0 0 10,14,16 * * ?")
+    public void task() {
+        System.out.println("我执行了....");
+    }
+
     @Override
     public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
-        taskRegistrar.addFixedRateTask(() -> printMessage(), 4000);
+        taskRegistrar.addFixedRateTask(() -> printMessage(), 1000 * 60L);
     }
 }

@@ -29,32 +29,31 @@ import com.example.properties.ServerHostProperties;
 
 //template might not exist or might not be accessible by any of the configured Template Resolvers
 @Controller
-@RequestMapping(value = "/default")
+@RequestMapping(value = "/v1")
 public class StudentV1Controller {
 
     @Autowired
     private ServerHostProperties serverHostProperties;
 
-    /*
-        返回字符串
-    */
     @ResponseBody
     @RequestMapping(value = "/hello")
     public String Hello() {
         return "Hello World,世界你好! ! !";
     }
 
+    @RequestMapping("/helloworld")
+    public String helloWorld(Model model) throws Exception {
+        model.addAttribute("mav", "HelloWorldController ,Spring Boot!");
+        //视图(view)的位置和名称，视图位于example文件夹下，视图文件为hello.html。
+        return "example/hello";
+    }
 
-    /*
-         返回视图页
-    */
     @RequestMapping(value = "/index")
     public ModelAndView index() {
         ModelAndView model = new ModelAndView();
         model.setViewName("/student/index");
         return model;
     }
-
 
     @RequestMapping(value = "/welcome")
     public String welcome(Model model) {

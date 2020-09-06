@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping(value = "/student")
+@RequestMapping(value = "/v2")
 public class StudentV2Controller {
 
     private static final Logger log = LoggerFactory.getLogger(StudentV2Controller.class);

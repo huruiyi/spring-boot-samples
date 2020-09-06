@@ -7,6 +7,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -22,7 +24,12 @@ import java.util.Collections;
 @SpringBootApplication
 @EnableAdminServer
 @EnableScheduling
-public class SpringBootDemoApplication {
+public class SpringBootDemoApplication implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+
+    @Override
+    public void customize(ConfigurableServletWebServerFactory server) {
+        //server.setPort(9000);
+    }
 
     // nginx.conf redis-session测试
     // java -jar demo1.jar --server.port=8012
