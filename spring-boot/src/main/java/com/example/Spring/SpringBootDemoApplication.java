@@ -3,6 +3,7 @@ package com.example.Spring;
 import com.example.Spring.model.Book;
 import com.example.Spring.service.BookService;
 import de.codecentric.boot.admin.server.config.EnableAdminServer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,6 +26,9 @@ import java.util.Collections;
 @EnableAdminServer
 @EnableScheduling
 public class SpringBootDemoApplication implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+
+    @Value("${sendEmail.flag}")
+    public Boolean sendEmail;
 
     @Override
     public void customize(ConfigurableServletWebServerFactory server) {
@@ -66,27 +70,33 @@ public class SpringBootDemoApplication implements WebServerFactoryCustomizer<Con
 
     @Bean
     public ApplicationRunner startupMailSender1(JavaMailSender javaMailSender) {
-        return (args) -> javaMailSender.send((msg) ->
-        {
-            MimeMessageHelper helper = new MimeMessageHelper(msg);
-            helper.setTo("38761770@qq.com");
-            helper.setFrom("807776962@qq.com");
-            helper.setSubject("Status message-1");
-            helper.setText("All is well.");
-        });
+        if (sendEmail) {
+            return (args) -> javaMailSender.send((msg) ->
+            {
+                MimeMessageHelper helper = new MimeMessageHelper(msg);
+                helper.setTo("38761770@qq.com");
+                helper.setFrom("807776962@qq.com");
+                helper.setSubject("Status message-1");
+                helper.setText("All is well.");
+            });
+        }
+        return null;
     }
 
     @Bean
     public ApplicationRunner startupMailSender2(JavaMailSender javaMailSender, SpringTemplateEngine templateEngine) {
-        return (args) -> javaMailSender.send((msg) -> {
-            MimeMessageHelper helper = new MimeMessageHelper(msg);
-            helper.setTo("38761770@qq.com");
-            helper.setFrom("807776962@qq.com");
-            helper.setSubject("Status message-2");
+        if (sendEmail) {
+            return (args) -> javaMailSender.send((msg) -> {
+                MimeMessageHelper helper = new MimeMessageHelper(msg);
+                helper.setTo("38761770@qq.com");
+                helper.setFrom("807776962@qq.com");
+                helper.setSubject("Status message-2");
 
-            Context context = new Context(LocaleContextHolder.getLocale(), Collections.singletonMap("msg", "All is well!"));
-            String body = templateEngine.process("email.html", context);
-            helper.setText(body, true);
-        });
+                Context context = new Context(LocaleContextHolder.getLocale(), Collections.singletonMap("msg", "All is well!"));
+                String body = templateEngine.process("email.html", context);
+                helper.setText(body, true);
+            });
+        }
+        return null;
     }
 }

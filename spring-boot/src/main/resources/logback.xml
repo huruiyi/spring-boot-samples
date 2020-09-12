@@ -1,6 +1,9 @@
 <!-- Logback configuration. See http://logback.qos.ch/manual/index.html -->
 <configuration scan="true" scanPeriod="10 seconds">
+
+    <property name="LOG_PATH" value="./spring-samples-logs"></property>
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>

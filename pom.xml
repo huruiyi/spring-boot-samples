@@ -14,7 +14,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.2.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
 
     <modules>
@@ -23,8 +23,8 @@
         <module>spring-basic</module>
         <module>spring-beans</module>
         <module>spring-boot</module>
-        <module>elasticsearch/spring-boot-elasticsearch6</module>
-        <module>elasticsearch/spring-boot-elasticsearch7</module>
+        <module>spring-elasticsearch/spring-boot-elasticsearch6</module>
+        <module>spring-elasticsearch/spring-boot-elasticsearch7</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-mybatisplus</module>
         <module>spring-boot-thymeleaf</module>
@@ -37,7 +37,7 @@
         <module>spring-mvc2</module>
         <module>spring-mvc3</module>
         <module>spring-mvc-hello-world</module>
-        <module>oauth2/oauth2-redis-server</module>
+        <module>spring-oauth2/oauth2-redis-server</module>
         <module>workflow/holiday-request</module>
         <module>dubbo/dubbo-api</module>
         <module>dubbo/dubbo-consumer</module>

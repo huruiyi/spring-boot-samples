@@ -42,24 +42,36 @@ public class HelloController {
     @Value("${spring.profiles.active}")
     private String env;
 
-
-    @RequestMapping(value = "/hello1")
-    public String hello() {
-        String res = singleService1.sayHello();
-        return res;
+    @RequestMapping(value = "")
+    public String indexEmpty() {
+        return "Hello";
     }
 
+    @RequestMapping(value = "/")
+    public String index() {
+        return "Hello World";
+    }
 
-    @GetMapping("/hello2")
+    @GetMapping("/service")
     public String book() {
-        String res = singleService2.sayHello();
-        return res;
+        String res1 = singleService1.sayHello();
+        String res2 = singleService2.sayHello();
+        return res1 + "<br/> " + res2;
     }
 
 
     @RequestMapping("/test")
     @ResponseBody
     public Map<String, String> test() {
+        Map<String, String> map = new HashMap<>();
+        map.put("key1", "value1");
+        return map;
+    }
+
+
+    @RequestMapping("/p1/p2")
+    @ResponseBody
+    public Map<String, String> p1p2() {
         Map<String, String> map = new HashMap<>();
         map.put("key1", "value1");
         return map;
