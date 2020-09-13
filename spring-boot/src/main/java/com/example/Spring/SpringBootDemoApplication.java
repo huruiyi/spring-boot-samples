@@ -8,8 +8,10 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -25,10 +27,18 @@ import java.util.Collections;
 @SpringBootApplication
 @EnableAdminServer
 @EnableScheduling
-public class SpringBootDemoApplication implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+public class SpringBootDemoApplication extends SpringBootServletInitializer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 
     @Value("${sendEmail.flag}")
     public Boolean sendEmail;
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(SpringBootDemoApplication.class);
+    }
+
+//  jar包:   执行SpringBootApplication的run方法,启动IOC容器,然后创建嵌入式Servlet容器
+//　 war包:  先是启动Servlet服务器,服务器启动Springboot应用(springBootServletInitizer),然后启动IOC容器
 
     @Override
     public void customize(ConfigurableServletWebServerFactory server) {
