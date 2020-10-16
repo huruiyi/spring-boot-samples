@@ -26,8 +26,8 @@ public class ThreadPoolController {
     private AsyncTask asyncTask;
 
     @RequestMapping("/test1")
-    public @ResponseBody
-    String AsyncTaskTest() throws InterruptedException, ExecutionException {
+    @ResponseBody
+    public String AsyncTaskTest() throws InterruptedException, ExecutionException {
         Future<Long> future = asyncTask.doTask1(1);
         try {
             future.get(2, TimeUnit.SECONDS);
