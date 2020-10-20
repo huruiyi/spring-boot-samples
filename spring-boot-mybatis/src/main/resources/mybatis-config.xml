@@ -3,9 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <settings>
-        <setting name="logImpl" value="LOG4J"/>
-    </settings>
+<!--    <settings>-->
+<!--        <setting name="logImpl" value="LOG4J"/>-->
+<!--    </settings>-->
 
     <typeAliases>
         <package name="com.example.model"/>
@@ -13,13 +13,12 @@
 
     <typeHandlers>
         <package name="com.example.typeHandler.TimeOnlyTypeHandler"/>
-<!--        <typeHandler handler="com.example.typeHandler.SexTypeHandler"/>-->
-<!--        <typeHandler handler="com.example.typeHandler.ExampleTypeHandler"/>-->
     </typeHandlers>
 
     <plugins>
         <plugin interceptor="com.example.plugin.MyPlugin"></plugin>
     </plugins>
+
     <mappers>
         <mapper resource="sqlmapper/CountryMapper.xml"/>
         <mapper resource="sqlmapper/UserMapper.xml"/>

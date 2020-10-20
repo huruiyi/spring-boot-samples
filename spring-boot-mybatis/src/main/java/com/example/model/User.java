@@ -24,7 +24,7 @@ public class User {
 
     // 定义转换器
     @Convert(converter = SexEnum.class)
-    private SexEnum sex = null;
+    private SexEnum sex;
 
     private String mobile;
 
