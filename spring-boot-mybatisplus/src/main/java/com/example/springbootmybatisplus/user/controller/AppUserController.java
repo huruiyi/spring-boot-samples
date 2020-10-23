@@ -24,10 +24,9 @@ public class AppUserController {
     @Resource
     IAppUserService appUserService;
 
-    @RequestMapping(value = "hello")
-    public String hello() {
+    @RequestMapping(value = "list")
+    public List<AppUser> hello() {
         List<AppUser> list = appUserService.list();
-
-        return "Hello World";
+        return list;
     }
 }

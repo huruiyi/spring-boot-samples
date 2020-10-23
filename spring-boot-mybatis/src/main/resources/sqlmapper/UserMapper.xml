@@ -5,7 +5,6 @@
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="position_id" jdbcType="INTEGER" property="positionId"/>
         <result column="user_name" jdbcType="VARCHAR" property="userName"/>
-        <result column="real_name" jdbcType="VARCHAR" property="realName"/>
         <result column="mobile" jdbcType="VARCHAR" property="mobile"/>
         <result column="email" jdbcType="VARCHAR" property="email"/>
         <result column="note" jdbcType="VARCHAR" property="note"/>
@@ -15,11 +14,11 @@
     </resultMap>
 
     <select id="selectByPrimaryKey" resultMap="UserResultMap" parameterType="java.lang.Integer">
-      select id,user_name ,real_name ,sex,mobile,email,note,position_id positionId,hobbies,login_time from t_user where id = #{id}
+      select id,user_name,sex,mobile,email,note,position_id positionId,hobbies,login_time from t_user where id = #{id}
     </select>
 
     <select id="selectAllUsers" resultMap="UserResultMap">
-      select id, user_name , real_name , sex, mobile, email, note, position_id  from t_user
+      select id, user_name,sex,mobile, email, note, position_id  from t_user
     </select>
 
     <insert id="insertUser" parameterType="com.example.model.User">

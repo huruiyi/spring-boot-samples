@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/user1")
+@RequestMapping(value = "/user")
 public class UserController {
 
     /**
@@ -85,8 +85,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/getUser")
-    public void getUser(@RequestParam(value = "id", required = true) Integer id) {
+    public User getUser(@RequestParam(value = "id", required = true) Integer id) {
         User user = userService1.selectById(id);
         System.out.println(user.toString());
+        return user;
     }
 }

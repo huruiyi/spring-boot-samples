@@ -6,8 +6,6 @@ public class User {
 
     private String userName;
 
-    private String realName;
-
     private Byte sex;
 
     private String mobile;
@@ -32,14 +30,6 @@ public class User {
 
     public void setUserName(String userName) {
         this.userName = userName;
-    }
-
-    public String getRealName() {
-        return realName;
-    }
-
-    public void setRealName(String realName) {
-        this.realName = realName;
     }
 
     public Byte getSex() {

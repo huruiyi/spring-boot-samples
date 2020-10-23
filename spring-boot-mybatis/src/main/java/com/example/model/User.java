@@ -20,8 +20,6 @@ public class User {
     @Column(name = "user_name")
     private String userName;
 
-    private String realName;
-
     // 定义转换器
     @Convert(converter = SexEnum.class)
     private SexEnum sex;
