@@ -25,7 +25,8 @@ import java.io.IOException;
 @Slf4j
 public class LimitAspectV1 {
 
-    private static final Logger log = org.slf4j.LoggerFactory.getLogger(LimitAspectV1.class);
+    //Slf4j 会自动生成Logger字段的
+    //private static final Logger log = org.slf4j.LoggerFactory.getLogger(LimitAspectV1.class);
 
     //每秒只发出指定个令牌(这里方便测试用5个)，此处是单进程服务的限流,内部采用令牌捅算法实现
     private static RateLimiter rateLimiter = RateLimiter.create(5.0);
@@ -35,7 +36,6 @@ public class LimitAspectV1 {
     public void requestAspect() {
 
     }
-
 
     @Around("requestAspect()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {

@@ -12,9 +12,6 @@ public class JavaConfig {
         return new SingleService();
     }
 
-
-
-
 //    @Bean
 //    public JavaMailSenderImpl JavaMailSender(){
 //        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();

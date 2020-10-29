@@ -3,6 +3,7 @@ package com.example.Spring;
 import com.example.Spring.model.Book;
 import com.example.Spring.service.BookService;
 import de.codecentric.boot.admin.server.config.EnableAdminServer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
@@ -32,14 +33,16 @@ public class SpringBootDemoApplication extends SpringBootServletInitializer impl
     @Value("${sendEmail.flag}")
     public Boolean sendEmail;
 
+    @Autowired
+    private JavaMailSender javaMailSender;
+
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(SpringBootDemoApplication.class);
     }
 
-//  jar包:   执行SpringBootApplication的run方法,启动IOC容器,然后创建嵌入式Servlet容器
-//　 war包:  先是启动Servlet服务器,服务器启动Springboot应用(springBootServletInitizer),然后启动IOC容器
-
+    //jar包: 执行SpringBootApplication的run方法,启动IOC容器,然后创建嵌入式Servlet容器
+    //war包: 先是启动Servlet服务器,服务器启动Springboot应用(springBootServletInitizer),然后启动IOC容器
     @Override
     public void customize(ConfigurableServletWebServerFactory server) {
         //server.setPort(9000);
@@ -53,19 +56,11 @@ public class SpringBootDemoApplication extends SpringBootServletInitializer impl
         SpringApplication.run(SpringBootDemoApplication.class, args);
     }
 
-
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
-
-            System.out.println("Let's inspect the beans provided by Spring Boot:");
-
             String[] beanNames = ctx.getBeanDefinitionNames();
             Arrays.sort(beanNames);
-            for (String beanName : beanNames) {
-                System.out.println(beanName);
-            }
-
         };
     }
 
@@ -78,14 +73,17 @@ public class SpringBootDemoApplication extends SpringBootServletInitializer impl
         };
     }
 
+    //public ApplicationRunner startupMailSender1(JavaMailSender javaMailSender)
+
     @Bean
-    public ApplicationRunner startupMailSender1(JavaMailSender javaMailSender) {
+    public ApplicationRunner startupMailSender1() {
+        System.out.println(javaMailSender);
         if (sendEmail) {
             return (args) -> javaMailSender.send((msg) ->
             {
                 MimeMessageHelper helper = new MimeMessageHelper(msg);
-                helper.setTo("38761770@qq.com");
                 helper.setFrom("807776962@qq.com");
+                helper.setTo("38761770@qq.com");
                 helper.setSubject("Status message-1");
                 helper.setText("All is well.");
             });
@@ -94,12 +92,12 @@ public class SpringBootDemoApplication extends SpringBootServletInitializer impl
     }
 
     @Bean
-    public ApplicationRunner startupMailSender2(JavaMailSender javaMailSender, SpringTemplateEngine templateEngine) {
+    public ApplicationRunner startupMailSender2(SpringTemplateEngine templateEngine) {
         if (sendEmail) {
             return (args) -> javaMailSender.send((msg) -> {
                 MimeMessageHelper helper = new MimeMessageHelper(msg);
-                helper.setTo("38761770@qq.com");
                 helper.setFrom("807776962@qq.com");
+                helper.setTo("38761770@qq.com");
                 helper.setSubject("Status message-2");
 
                 Context context = new Context(LocaleContextHolder.getLocale(), Collections.singletonMap("msg", "All is well!"));
