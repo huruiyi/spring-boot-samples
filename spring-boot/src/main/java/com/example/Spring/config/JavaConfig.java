@@ -1,5 +1,6 @@
 package com.example.Spring.config;
 
+import com.example.Spring.model.Person;
 import com.example.Spring.service.unclassified.SingleService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +11,15 @@ public class JavaConfig {
     @Bean
     public SingleService singleService() {
         return new SingleService();
+    }
+
+    @Bean("configPerson")
+    public Person person() {
+        Person user = new Person();
+        user.setFirstName("San");
+        user.setLastName("Zhang");
+        user.setAge(18);
+        return user;
     }
 
 //    @Bean

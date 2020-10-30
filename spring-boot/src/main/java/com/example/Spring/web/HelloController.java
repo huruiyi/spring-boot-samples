@@ -1,15 +1,14 @@
 package com.example.Spring.web;
 
+import com.example.Spring.annotation.MyTestAnnotation;
 import com.example.Spring.service.unclassified.SingleService;
 import com.example.Spring.utils.ExcelUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,6 +24,7 @@ import java.util.Map;
 
 @RestController
 @Slf4j
+@EnableAspectJAutoProxy
 @RequestMapping("/hello")
 public class HelloController {
 
@@ -52,6 +52,11 @@ public class HelloController {
         return "Hello World";
     }
 
+    @RequestMapping("/sayHi")
+    public String hello(String name) {
+        return "hello " + name;
+    }
+
     @GetMapping("/service")
     public String book() {
         String res1 = singleService1.sayHello();
@@ -60,7 +65,7 @@ public class HelloController {
     }
 
 
-    @RequestMapping("/test")
+    @RequestMapping("/testMap")
     @ResponseBody
     public Map<String, String> test() {
         Map<String, String> map = new HashMap<>();
@@ -68,6 +73,12 @@ public class HelloController {
         return map;
     }
 
+    @RequestMapping("/testAnnotation")
+    @MyTestAnnotation("自定义Annotation测试")
+    public String testAnnotation(@RequestParam(name = "uName", defaultValue = "Li San") String name, Integer age) {
+        String result = "测试自定义注解,用户：" + name + "，年龄：" + age;
+        return result;
+    }
 
     @RequestMapping("/p1/p2")
     @ResponseBody
