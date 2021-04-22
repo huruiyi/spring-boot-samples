@@ -29,7 +29,6 @@ public class CTopicSend {
         new Thread(new Runner(channel, "key:admin.warn", basicProperties)).start();
         //消息不会被接受
         new Thread(new Runner(channel, "key:anonymous.error", basicProperties)).start();
-
     }
 
     public static class Runner implements Runnable {
@@ -52,24 +51,16 @@ public class CTopicSend {
         public void run() {
             try {
                 channel.exchangeDeclare(EXCHANGE_NAME, "topic");
-                for (int i = 0; i < 10000000; i++) {
-                    Thread.sleep(3000);
+                for (int i = 0; i < 100000; i++) {
+                    Thread.sleep(2000);
                     String message = "Hello World" + " " + i;
 
                     // example 1
                     // channel.basicPublish(EXCHANGE_NAME, routingKey, properties, message.getBytes("UTF-8"));
 
-
                     // example 2
-                    channel.basicPublish(EXCHANGE_NAME,
-                            routingKey,
-                            true,
-                            false,
-                            properties,
-                            message.getBytes("UTF-8"));
-
+                    channel.basicPublish(EXCHANGE_NAME, routingKey, true, false, properties, message.getBytes("UTF-8"));
                     System.out.println(" [x] Sent '" + routingKey + "':'" + message + "'");
-
                 }
             } catch (IOException e) {
                 e.printStackTrace();
