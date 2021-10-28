@@ -45,5 +45,8 @@
         <module>spring-mvc-hello-world</module>
         <module>spring-data</module>
         <module>pro-spring-5-ch02</module>
+        <module>pro-spring-5-ch03/dependency-pull</module>
+        <module>pro-spring-5-ch03/constructor-injection</module>
+        <module>pro-spring-5-ch03/setter-injection</module>
     </modules>
 </project>

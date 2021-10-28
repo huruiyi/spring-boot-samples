@@ -1,4 +1,6 @@
-package com.apress.prospring5.ch2.decoupled;
+package com.apress.prospring5.ch3.renderer;
+
+import com.apress.prospring5.ch3.provider.MessageProvider;
 
 public class StandardOutMessageRenderer implements MessageRenderer {
 
