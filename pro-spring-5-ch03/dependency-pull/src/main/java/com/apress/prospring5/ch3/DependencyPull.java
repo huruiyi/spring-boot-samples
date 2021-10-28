@@ -1,5 +1,6 @@
 package com.apress.prospring5.ch3;
 
+import com.apress.prospring5.ch3.renderer.MessageRenderer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

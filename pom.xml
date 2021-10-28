@@ -46,7 +46,10 @@
         <module>spring-data</module>
         <module>pro-spring-5-ch02</module>
         <module>pro-spring-5-ch03/dependency-pull</module>
-        <module>pro-spring-5-ch03/constructor-injection</module>
-        <module>pro-spring-5-ch03/setter-injection</module>
+        <module>pro-spring-5-ch03/injection/constructor-injection</module>
+        <module>pro-spring-5-ch03/injection/setter-injection</module>
+        <module>pro-spring-5-ch03/injection/method-injection</module>
+        <module>pro-spring-5-ch03/injection/injection</module>
+        <module>pro-spring-5-ch03/injection/field-injection</module>
     </modules>
 </project>
