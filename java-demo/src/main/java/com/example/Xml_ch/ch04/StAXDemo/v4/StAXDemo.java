@@ -23,13 +23,11 @@ public class StAXDemo {
 
     public static void main(String[] args) {
         try {
-            XMLOutputFactory xmlof =
-                    XMLOutputFactory.newFactory();
+            XMLOutputFactory xmlof = XMLOutputFactory.newFactory();
             FileWriter fw = new FileWriter("recipe.xml");
             XMLEventWriter xmlew;
             xmlew = xmlof.createXMLEventWriter(fw);
-            final XMLEventFactory xmlef =
-                    XMLEventFactory.newFactory();
+            final XMLEventFactory xmlef = XMLEventFactory.newFactory();
             XMLEvent event = xmlef.createStartDocument();
             xmlew.add(event);
             Iterator<Namespace> nsIter;
@@ -58,13 +56,11 @@ public class StAXDemo {
                     throw new UnsupportedOperationException();
                 }
             };
-            event = xmlef.createStartElement("h", NS1, "html",
-                    null, nsIter);
+            event = xmlef.createStartElement("h", NS1, "html", null, nsIter);
             xmlew.add(event);
             event = xmlef.createStartElement("h", NS2, "head");
             xmlew.add(event);
-            event = xmlef.createStartElement("h", NS1,
-                    "title");
+            event = xmlef.createStartElement("h", NS1, "title");
             xmlew.add(event);
             event = xmlef.createCharacters("Recipe");
             xmlew.add(event);
@@ -74,20 +70,15 @@ public class StAXDemo {
             xmlew.add(event);
             event = xmlef.createStartElement("h", NS1, "body");
             xmlew.add(event);
-            event = xmlef.createStartElement("r", NS2,
-                    "recipe");
+            event = xmlef.createStartElement("r", NS2, "recipe");
             xmlew.add(event);
-            event = xmlef.createStartElement("r", NS2,
-                    "title");
+            event = xmlef.createStartElement("r", NS2, "title");
             xmlew.add(event);
-            event = xmlef.createCharacters("Grilled Cheese " +
-                    "Sandwich");
+            event = xmlef.createCharacters("Grilled Cheese " + "Sandwich");
             xmlew.add(event);
-            event = xmlef.createEndElement("r", NS2,
-                    "title");
+            event = xmlef.createEndElement("r", NS2, "title");
             xmlew.add(event);
-            event = xmlef.createStartElement("r", NS2,
-                    "ingredients");
+            event = xmlef.createStartElement("r", NS2, "ingredients");
             xmlew.add(event);
             event = xmlef.createStartElement("h", NS1, "ul");
             xmlew.add(event);
@@ -118,21 +109,17 @@ public class StAXDemo {
                     throw new UnsupportedOperationException();
                 }
             };
-            event = xmlef.createStartElement("r", NS2,
-                    "ingredient",
-                    attrIter, null);
+            event = xmlef.createStartElement("r", NS2, "ingredient", attrIter, null);
             xmlew.add(event);
             event = xmlef.createCharacters("bread slice");
             xmlew.add(event);
-            event = xmlef.createEndElement("r", NS2,
-                    "ingredient");
+            event = xmlef.createEndElement("r", NS2, "ingredient");
             xmlew.add(event);
             event = xmlef.createEndElement("h", NS1, "li");
             xmlew.add(event);
             event = xmlef.createEndElement("h", NS1, "ul");
             xmlew.add(event);
-            event = xmlef.createEndElement("r", NS2,
-                    "ingredients");
+            event = xmlef.createEndElement("r", NS2, "ingredients");
             xmlew.add(event);
             event = xmlef.createEndElement("r", NS2, "recipe");
             xmlew.add(event);

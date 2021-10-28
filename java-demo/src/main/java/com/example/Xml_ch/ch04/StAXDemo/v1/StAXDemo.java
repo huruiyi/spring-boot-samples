@@ -17,22 +17,18 @@ public class StAXDemo {
             return;
         }
         try {
-            XMLInputFactory xmlif =
-                    XMLInputFactory.newFactory();
+            XMLInputFactory xmlif = XMLInputFactory.newFactory();
             FileReader fr = new FileReader(args[0]);
-            XMLStreamReader xmlsr =
-                    xmlif.createXMLStreamReader(fr);
+            XMLStreamReader xmlsr = xmlif.createXMLStreamReader(fr);
             while (xmlsr.hasNext()) {
                 switch (xmlsr.next()) {
                     case XMLStreamReader.START_ELEMENT:
                         out.println("START_ELEMENT");
-                        out.printf("  Qname = %s%n",
-                                xmlsr.getName());
+                        out.printf("  Qname = %s%n", xmlsr.getName());
                         break;
                     case XMLStreamReader.END_ELEMENT:
                         out.println("END_ELEMENT");
-                        out.printf("  Qname = %s%n",
-                                xmlsr.getName());
+                        out.printf("  Qname = %s%n", xmlsr.getName());
                 }
             }
         } catch (FactoryConfigurationError fce) {

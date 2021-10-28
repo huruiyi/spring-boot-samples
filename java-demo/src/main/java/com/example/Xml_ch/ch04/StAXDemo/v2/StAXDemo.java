@@ -31,15 +31,11 @@ public class StAXDemo {
                 switch (xmle.getEventType()) {
                     case XMLEvent.START_ELEMENT:
                         out.println("START_ELEMENT");
-                        out.printf("  Qname = %s%n",
-                                ((StartElement) xmle).
-                                        getName());
+                        out.printf("  Qname = %s%n", ((StartElement) xmle).getName());
                         break;
                     case XMLEvent.END_ELEMENT:
                         out.println("END_ELEMENT");
-                        out.printf("  Qname = %s%n",
-                                ((EndElement) xmle).
-                                        getName());
+                        out.printf("  Qname = %s%n", ((EndElement) xmle).getName());
                 }
             }
         } catch (FactoryConfigurationError fce) {

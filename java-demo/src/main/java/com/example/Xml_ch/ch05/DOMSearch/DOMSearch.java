@@ -22,25 +22,20 @@ import static java.lang.System.*;
 public class DOMSearch {
     public static void main(String[] args) {
         try {
-            DocumentBuilderFactory dbf =
-                    DocumentBuilderFactory.newInstance();
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document doc = db.parse("contacts.xml");
-            List<String> contactNames =
-                    new ArrayList<String>();
-            NodeList contacts =
-                    doc.getElementsByTagName("contact");
+            List<String> contactNames = new ArrayList<String>();
+            NodeList contacts = doc.getElementsByTagName("contact");
             for (int i = 0; i < contacts.getLength(); i++) {
                 Element contact = (Element) contacts.item(i);
-                NodeList cities =
-                        contact.getElementsByTagName("city");
+                NodeList cities = contact.getElementsByTagName("city");
                 boolean chicago = false;
                 for (int j = 0; j < cities.getLength(); j++) {
                     Element city = (Element) cities.item(j);
                     NodeList children = city.getChildNodes();
                     StringBuilder sb = new StringBuilder();
-                    for (int k = 0; k < children.getLength();
-                         k++) {
+                    for (int k = 0; k < children.getLength(); k++) {
                         Node child = children.item(k);
                         if (child.getNodeType() == Node.TEXT_NODE)
                             sb.append(child.getNodeValue());
@@ -51,11 +46,8 @@ public class DOMSearch {
                     }
                 }
                 if (chicago) {
-                    NodeList names =
-                            contact.getElementsByTagName("name");
-                    contactNames.add(names.item(0).
-                            getFirstChild().
-                            getNodeValue());
+                    NodeList names = contact.getElementsByTagName("name");
+                    contactNames.add(names.item(0).getFirstChild().getNodeValue());
                 }
             }
             for (String contactName : contactNames)

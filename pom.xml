@@ -18,30 +18,32 @@
     </parent>
 
     <modules>
+        <module>other-samples/spring-alibaba/nacos-config</module>
+        <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch6</module>
+        <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch7</module>
+        <module>other-samples/spring-cloud/config-server</module>
+        <module>other-samples/spring-cloud/eureka-client</module>
+        <module>other-samples/spring-cloud/eureka-server</module>
+        <module>other-samples/spring-oauth2/oauth2-redis-server</module>
+        <module>other-samples/workflow/holiday-request</module>
+        <module>other-samples/dubbo/dubbo-api</module>
+        <module>other-samples/dubbo/dubbo-consumer</module>
+        <module>other-samples/dubbo/dubbo-provider</module>
         <module>java-demo</module>
         <module>mybatis-first</module>
-        <module>spring-alibaba/nacos-config</module>
+        <module>pro-spring-5-ch02</module>
         <module>spring-basic</module>
         <module>spring-beans</module>
         <module>spring-boot</module>
-        <module>spring-elasticsearch/spring-boot-elasticsearch6</module>
-        <module>spring-elasticsearch/spring-boot-elasticsearch7</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-mybatisplus</module>
         <module>spring-boot-thymeleaf</module>
-        <module>spring-cloud/config-server</module>
-        <module>spring-cloud/eureka-client</module>
-        <module>spring-cloud/eureka-server</module>
         <module>spring-multi-datasource</module>
         <module>spring-mvc1</module>
         <module>spring-mvc2</module>
         <module>spring-mvc3</module>
         <module>spring-mvc-hello-world</module>
-        <module>spring-oauth2/oauth2-redis-server</module>
-        <module>workflow/holiday-request</module>
-        <module>dubbo/dubbo-api</module>
-        <module>dubbo/dubbo-consumer</module>
-        <module>dubbo/dubbo-provider</module>
         <module>spring-data</module>
+        <module>pro-spring-5-ch02</module>
     </modules>
 </project>

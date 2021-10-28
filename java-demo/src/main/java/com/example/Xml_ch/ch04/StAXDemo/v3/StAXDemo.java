@@ -16,11 +16,9 @@ public class StAXDemo {
 
     public static void main(String[] args) {
         try {
-            XMLOutputFactory xmlof =
-                    XMLOutputFactory.newFactory();
+            XMLOutputFactory xmlof = XMLOutputFactory.newFactory();
             FileWriter fw = new FileWriter("recipe.xml");
-            XMLStreamWriter xmlsw =
-                    xmlof.createXMLStreamWriter(fw);
+            XMLStreamWriter xmlsw = xmlof.createXMLStreamWriter(fw);
             xmlsw.writeStartDocument();
             xmlsw.setPrefix("h", NS1);
             xmlsw.writeStartElement(NS1, "html");
