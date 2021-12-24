@@ -39,9 +39,6 @@
         <module>spring-boot-mybatisplus</module>
         <module>spring-boot-thymeleaf</module>
         <module>spring-multi-datasource</module>
-        <module>spring-mvc1</module>
-        <module>spring-mvc2</module>
-        <module>spring-mvc3</module>
         <module>spring-mvc-hello-world</module>
         <module>spring-data</module>
         <module>pro-spring-5-ch02</module>
