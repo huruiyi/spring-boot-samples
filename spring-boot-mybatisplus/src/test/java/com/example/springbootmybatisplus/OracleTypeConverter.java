@@ -60,6 +60,5 @@ public class OracleTypeConverter implements ITypeConvert {
             }
         }
         return DbColumnType.STRING;
-
     }
 }

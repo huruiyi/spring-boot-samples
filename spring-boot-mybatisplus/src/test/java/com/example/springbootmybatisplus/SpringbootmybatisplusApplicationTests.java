@@ -83,8 +83,7 @@ public class SpringbootmybatisplusApplicationTests {
         focList.add(new FileOutConfig(templatePath) {
 
             public String outputFile(com.baomidou.mybatisplus.generator.config.po.TableInfo tableInfo) {
-                return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
-                        + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
+                return projectPath + "/src/main/resources/mapper/" + pc.getModuleName() + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
 
@@ -120,8 +119,6 @@ public class SpringbootmybatisplusApplicationTests {
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
-
-
     }
 
 }
