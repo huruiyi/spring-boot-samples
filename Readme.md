@@ -1,16 +1,11 @@
-[![Badge](https://img.shields.io/badge/link-996.icu-%23FF4D5B.svg)](https://996.icu/#/en_US)
-[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
-[![Slack](https://img.shields.io/badge/slack-996icu-green.svg)](https://join.slack.com/t/996icu/shared_invite/enQtNTg4MjA3MzA1MzgxLWQyYzM5M2IyZmIyMTVjMzU5NTE5MGI5Y2Y2YjgwMmJiMWMxMWMzNGU3NDJmOTdhNmRlYjJlNjk5ZWZhNWIwZGM)
-[![HitCount](http://hits.dwyl.io/996icu/996.ICU.svg)](http://hits.dwyl.io/996icu/996.ICU)
-
-
- [HttpAsyncClient Examples](http://hc.apache.org/httpcomponents-asyncclient-dev/examples.html)  [httpcomponents](http://svn.apache.org/repos/asf/httpcomponents/)
+[HttpAsyncClient Examples](http://hc.apache.org/httpcomponents-asyncclient-dev/examples.html)  [httpcomponents](http://svn.apache.org/repos/asf/httpcomponents/)
  `BasicAsyncRequestProducer，HttpAsyncRequestConsumer`
+
 ***
 # `修改字符集编码`
- 
+
 ### 显示编码: `show variables like 'ch%'`
- 
+
 | Variable_name | value |
 |------|------|
 |character_set_client	|utf8
@@ -40,7 +35,7 @@
  ##c.两种方式的区别
  TreeSet构造函数什么都不传, 默认按照类中Comparable的顺序(没有就报错ClassCastException)
  TreeSet如果传入Comparator, 就优先按照Comparator
- 
+
  # [characterEncoding编码](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-charsets.html)
     MySQL Character Set Name	
         For 8.0.12 and earlier: utf8    
