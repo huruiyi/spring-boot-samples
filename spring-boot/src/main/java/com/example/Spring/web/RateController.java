@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.Instant;
 
 @RestController
-@Slf4j
 @RequestMapping("/rate")
+//@Slf4j
 public class RateController {
 
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(RateController.class);
