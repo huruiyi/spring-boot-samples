@@ -106,13 +106,13 @@ public class SpringbootmybatisplusApplicationTests {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("com.example.springbootmybatisplus.base.BaseEntity");
+        //strategy.setSuperEntityClass("com.example.springbootmybatisplus.base.BaseEntity");
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
-        strategy.setSuperControllerClass("com.example.springbootmybatisplus.base.BaseController");
+        //strategy.setSuperControllerClass("com.example.springbootmybatisplus.base.BaseController");
 
         //表名
-        strategy.setInclude("app_user");
+        strategy.setInclude("t_user");
         strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");

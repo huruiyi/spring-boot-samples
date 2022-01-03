@@ -1,6 +1,6 @@
 package com.example.springbootmybatisplus.user.mapper;
 
-import com.example.springbootmybatisplus.user.entity.AppUser;
+import com.example.springbootmybatisplus.user.entity.TUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author jobob
- * @since 2019-03-20
+ * @since 2022-01-03
  */
-public interface AppUserMapper extends BaseMapper<AppUser> {
+public interface TUserMapper extends BaseMapper<TUser> {
 
 }

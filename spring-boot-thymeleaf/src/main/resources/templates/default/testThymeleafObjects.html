@@ -11,7 +11,7 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-10">
+			<div class="col-md-12">
 				<div class="panel panel-primary">
 					<div class="panel-heading text-center">
 						<span class="panel-title">测试Thymeleaf对象</span>
@@ -19,7 +19,7 @@
 					<div class="panel-body">
 						#ctx.#vars：
 						<br />
-						<textarea th:text="${#ctx.#vars}" rows="10" cols="150"></textarea>
+						<textarea th:text="${#ctx.#vars}" rows="30" cols="150"></textarea>
 						<br />
 						喜欢看的书：<span th:text="${#vars.book}"></span>
 						<br />

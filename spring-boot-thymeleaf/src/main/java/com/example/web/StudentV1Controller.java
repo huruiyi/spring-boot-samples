@@ -41,7 +41,7 @@ public class StudentV1Controller {
         return "Hello World,世界你好! ! !";
     }
 
-    @RequestMapping("/helloworld")
+    @RequestMapping("/sayHi")
     public String helloWorld(Model model) throws Exception {
         model.addAttribute("mav", "HelloWorldController ,Spring Boot!");
         //视图(view)的位置和名称，视图位于example文件夹下，视图文件为hello.html。

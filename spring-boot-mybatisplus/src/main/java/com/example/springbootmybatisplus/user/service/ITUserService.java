@@ -1,6 +1,6 @@
 package com.example.springbootmybatisplus.user.service;
 
-import com.example.springbootmybatisplus.user.entity.AppUser;
+import com.example.springbootmybatisplus.user.entity.TUser;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author jobob
- * @since 2019-03-20
+ * @since 2022-01-03
  */
-public interface IAppUserService extends IService<AppUser> {
+public interface ITUserService extends IService<TUser> {
 
 }
