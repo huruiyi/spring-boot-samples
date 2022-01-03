@@ -1,14 +1,17 @@
 package com.example.model;
 
 
+import com.example.converter.SexConverter;
 import com.example.enums.SexEnum;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
 @Data
+@Table(name = "t_user") //映射的表名称
 public class User {
 
     // 标明主键
@@ -21,7 +24,7 @@ public class User {
     private String userName;
 
     // 定义转换器
-    @Convert(converter = SexEnum.class)
+    @Convert(converter = SexConverter.class)
     private SexEnum sex;
 
     private String mobile;

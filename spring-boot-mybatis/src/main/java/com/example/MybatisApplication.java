@@ -23,21 +23,15 @@ public class MybatisApplication {
         System.out.println("# Beans: " + ctx.getBeanDefinitionCount());
         String[] names = ctx.getBeanDefinitionNames();
         Arrays.sort(names);
-        Arrays.asList(names).forEach(System.out::println);
+        //Arrays.asList(names).forEach(System.out::println);
     }
 
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
-
             System.out.println("Let's inspect the beans provided by Spring Boot:");
-
             String[] beanNames = ctx.getBeanDefinitionNames();
             Arrays.sort(beanNames);
-            for (String beanName : beanNames) {
-                System.out.println(beanName);
-            }
-
         };
     }
 }

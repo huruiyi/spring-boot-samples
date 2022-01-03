@@ -9,6 +9,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
 
 /**
  * * 使用@Before在切入点开始处切入内容
@@ -44,7 +45,7 @@ public class AopLog {
         logger.info("HTTP方法 : " + request.getMethod());
         logger.info("IP地址 : " + request.getRemoteAddr());
         logger.info("类的方法 : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
-        //logger.info("参数 : " + Arrays.toString(joinPoint.getArgs()));
+        logger.info("参数 : " + Arrays.toString(joinPoint.getArgs()));
         logger.info("参数 : " + request.getQueryString());
     }
 

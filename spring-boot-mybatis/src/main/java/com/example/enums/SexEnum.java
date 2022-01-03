@@ -1,8 +1,7 @@
 package com.example.enums;
 
 public enum SexEnum {
-    MALE(1, "男"),
-    FEMALE(2, "女");
+    MALE(1, "男"), FEMALE(2, "女");
 
     private int id;
     private String name;

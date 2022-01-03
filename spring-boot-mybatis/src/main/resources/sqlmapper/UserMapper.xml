@@ -14,24 +14,37 @@
     </resultMap>
 
     <select id="selectByPrimaryKey" resultMap="UserResultMap" parameterType="java.lang.Integer">
-      select id,user_name,sex,mobile,email,note,position_id positionId,hobbies,login_time from t_user where id = #{id}
+        select id,
+               user_name,
+               sex,
+               mobile,
+               email,
+               note,
+               position_id positionId,
+               hobbies,
+               login_time
+        from t_user
+        where id = #{id}
     </select>
 
     <select id="selectAllUsers" resultMap="UserResultMap">
-      select id, user_name,sex,mobile, email, note, position_id  from t_user
+        select id, user_name, sex, mobile, email, note, position_id
+        from t_user
     </select>
 
     <insert id="insertUser" parameterType="com.example.model.User">
         insert into t_user
-        (
-            user_name,hobbies,login_time,sex
-        )
+            (user_name, mobile, login_time, email, hobbies, sex, position_id,note)
             value
-        (
+            (
             #{userName},
-            #{hobbies,typeHandler=com.example.typeHandler.ListTypeHandler},
+            #{mobile},
             #{loginTime},
-            #{sex,typeHandler=com.example.typeHandler.SexTypeHandler}
-        )
+            #{email},
+            #{hobbies,typeHandler=com.example.typeHandler.ListTypeHandler},
+            #{sex,typeHandler=com.example.typeHandler.SexTypeHandler},
+            #{positionId},
+            #{note}
+            )
     </insert>
 </mapper>

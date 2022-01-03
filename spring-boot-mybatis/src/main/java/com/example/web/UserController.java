@@ -48,12 +48,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/list2")
-    public String list() {
-        List<User> users = userService2.findAll();
-        for (User user : users) {
-            System.out.println(user);
-        }
-        return "Hello World";
+    public List<User> list() {
+        return userService2.findAll();
     }
 
 
@@ -72,14 +68,17 @@ public class UserController {
     @RequestMapping(value = "/addUser")
     public void addUser() {
         User user = new User();
+        user.setEmail("110@qq.com");
         user.setSex(SexEnum.FEMALE);
         user.setUserName("hello");
         user.setLoginTime(new Date());
-
+        user.setNote("测试...");
+        user.setPositionId(110112);
         List<String> hobbies = new ArrayList<>();
         hobbies.add("play computer games");
         hobbies.add("listen to music");
         user.setHobbies(hobbies);
+
         Boolean ret = userService1.add(user);
         System.out.println(ret);
     }
