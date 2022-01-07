@@ -24,32 +24,40 @@ public class SearchController {
     private EsSearchService esSearchService;
 
     @RequestMapping(value = "/init")
-    public String init() throws InterruptedException {
+    public String init() {
         log.info("历史数据清理,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,");
         esSearchService.deleteAll();
         log.info("数据初始化开始.");
-        for (int i = 1; i < 6; i++) {
-            Integer id = (i - 1) * 3;
-
-            Thread.sleep(1000);
-            id = id + 1;
-            ProductDocument productDocument = ProductDocumentBuilder.create().addId(String.format("%03d", id))
-                    .addProductName("无印良品 MUJI 基础润肤化妆水").addProductDesc("无印良品 MUJI 基础润肤化妆水 高保湿型 200ml")
-                    .addCreateTime(new Date()).addUpdateTime(new Date()).builder();
-
-            Thread.sleep(1000);
-            id = id + 1;
-            ProductDocument productDocument1 = ProductDocumentBuilder.create().addId(String.format("%03d", id))
-                    .addProductName("荣耀 V10 尊享版").addProductDesc("荣耀 V10 尊享版 6GB+128GB 幻夜黑 移动联通电信4G全面屏游戏手机 双卡双待")
-                    .addCreateTime(new Date()).addUpdateTime(new Date()).builder();
-
-            Thread.sleep(1000);
-            id = id + 1;
-            ProductDocument productDocument2 = ProductDocumentBuilder.create().addId(String.format("%03d", id))
+        for (int i = 1; i <= 60; i++) {
+            ProductDocument productDocument = ProductDocumentBuilder.create()
+                    .addId(String.format("%03d", i))
+                    .addProductName("荣耀 V10 尊享版")
+                    .addProductDesc("荣耀 V10 尊享版 6GB+128GB 幻夜黑 移动联通电信4G全面屏游戏手机 双卡双待")
+                    .addCreateTime(new Date())
+                    .addUpdateTime(new Date())
+                    .builder();
+            esSearchService.save(productDocument);
+        }
+        for (int i = 61; i <= 120; i++) {
+            ProductDocument productDocument = ProductDocumentBuilder.create()
+                    .addId(String.format("%03d", i))
                     .addProductName("资生堂(SHISEIDO) 尿素红罐护手霜")
-                    .addProductDesc("日本进口 资生堂(SHISEIDO) 尿素红罐护手霜 100g/罐 男女通用 深层滋养 改善粗糙").addCreateTime(new Date())
-                    .addUpdateTime(new Date()).builder();
-            esSearchService.save(productDocument, productDocument1, productDocument2);
+                    .addProductDesc("日本进口 资生堂(SHISEIDO) 尿素红罐护手霜 100g/罐 男女通用 深层滋养 改善粗糙")
+                    .addCreateTime(new Date())
+                    .addUpdateTime(new Date())
+                    .builder();
+            esSearchService.save(productDocument);
+        }
+
+        for (int i = 121; i <= 180; i++) {
+            ProductDocument productDocument = ProductDocumentBuilder.create()
+                    .addId(String.format("%03d", i))
+                    .addProductName("无印良品 MUJI 基础润肤化妆水")
+                    .addProductDesc("无印良品 MUJI 基础润肤化妆水 高保湿型 200ml")
+                    .addCreateTime(new Date())
+                    .addUpdateTime(new Date())
+                    .builder();
+            esSearchService.save(productDocument);
         }
         log.info("数据初始化结束,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,");
 
@@ -122,7 +130,7 @@ public class SearchController {
 
     /**
      * 搜索，命中关键字高亮
-     * http://localhost:8080/query_hit?keyword=无印良品荣耀&indexName=orders&fields=productName,productDesc
+     * http://localhost:9000/query_hit?keyword=无印良品荣耀&indexName=orders&fields=productName,productDesc
      *
      * @param keyword   关键字
      * @param indexName 索引库名称
@@ -139,7 +147,7 @@ public class SearchController {
 
     /**
      * 搜索，命中关键字高亮
-     * http://localhost:8080/query_hit_page?keyword=无印良品荣耀&indexName=orders&fields=productName,productDesc&pageNo=1&pageSize=1
+     * http://localhost:9000/query_hit_page?keyword=无印良品荣耀&indexName=orders&fields=productName,productDesc&pageNo=1&pageSize=1
      *
      * @param pageNo    当前页
      * @param pageSize  每页显示的数据条数
@@ -149,8 +157,7 @@ public class SearchController {
      * @return
      */
     @RequestMapping("query_hit_page")
-    public Page<Map<String, Object>> queryHitByPage(@RequestParam int pageNo, @RequestParam int pageSize
-            , @RequestParam String keyword, @RequestParam String indexName, @RequestParam String fields) {
+    public Page<Map<String, Object>> queryHitByPage(@RequestParam int pageNo, @RequestParam int pageSize, @RequestParam String keyword, @RequestParam String indexName, @RequestParam String fields) {
         String[] fieldNames = {};
         if (fields.contains(",")) fieldNames = fields.split(",");
         else fieldNames[0] = fields;
