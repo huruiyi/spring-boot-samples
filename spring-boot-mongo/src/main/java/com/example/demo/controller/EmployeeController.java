@@ -23,13 +23,22 @@ public class EmployeeController {
 
     Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
-    @Autowired
-    @Qualifier("v1")
-    EmployeeService service1;
 
-    @Autowired
-    @Qualifier("v2")
+    private EmployeeService service1;
+
     private EmployeeService service2;
+
+    public EmployeeController(@Qualifier("v1") EmployeeService service1, @Qualifier("v2") EmployeeService service2) {
+        this.service1 = service1;
+        this.service2 = service2;
+    }
+
+    /**
+     * @Autowired
+     * @Qualifier("v1") EmployeeService service1;
+     * @Autowired
+     * @Qualifier("v2") private EmployeeService service2;
+     */
 
 
     @SneakyThrows
