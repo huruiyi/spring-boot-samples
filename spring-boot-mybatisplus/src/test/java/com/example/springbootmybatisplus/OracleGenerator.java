@@ -15,16 +15,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * <p>
- * SQLServerGenerator
- * </p>
- *
- * @author nieqiurong
- * @Date 2016/12/25
- */
 public class OracleGenerator {
-
 
     private String drivername = "oracle.jdbc.driver.OracleDriver";
     private String jdbcUrl = "jdbc:oracle:thin:@localhost:1521/orcl";
@@ -108,9 +99,7 @@ public class OracleGenerator {
 
     public static void main(String[] args) {
         //需要生产的表
-        String[] tables = new String[]{
-                "EPAN_ENTERPRISE"
-        };
+        String[] tables = new String[]{"EPAN_ENTERPRISE"};
         System.out.println("总表数：" + tables.length);
 
         OracleGenerator s = new OracleGenerator();

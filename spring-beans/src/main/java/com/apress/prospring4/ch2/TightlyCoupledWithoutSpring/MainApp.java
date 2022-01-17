@@ -6,7 +6,7 @@ public class MainApp {
 
 		EmployeeService employeeService = new EmployeeServiceImp();
 
-		System.out.println(employeeService.generateEployeeId());
+		System.out.println(employeeService.generateEmployeeId());
 
 	}
 

@@ -11,7 +11,7 @@ public class MainApp {
 
 		EmployeeService employeeService = (EmployeeService) context.getBean("employeeServiceBean");
 
-		System.out.println(employeeService.generateEployeeId());
+		System.out.println(employeeService.generateEmployeeId());
 
 		context.close();
 

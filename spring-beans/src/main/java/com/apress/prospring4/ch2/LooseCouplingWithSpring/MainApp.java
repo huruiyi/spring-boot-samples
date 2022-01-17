@@ -11,7 +11,7 @@ public class MainApp {
         ApplicationContext context = new ClassPathXmlApplicationContext("LooseCouplingWithSpring.xml");
 
         EmployeeService employeeService = (EmployeeService) context.getBean("employeeServiceBean");
-        System.out.println(employeeService.generateEployeeId());
+        System.out.println(employeeService.generateEmployeeId());
 
     }
 

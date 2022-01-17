@@ -6,8 +6,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Bean的实例化的方式
- *
- * @author jt
  */
 public class SpringDemo3 {
 

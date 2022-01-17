@@ -7,8 +7,6 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 /**
  * Spring的入门
- *
- * @author jt
  */
 public class SpringDemo1 {
 

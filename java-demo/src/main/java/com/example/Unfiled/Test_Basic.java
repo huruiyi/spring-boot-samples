@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import redis.clients.jedis.Tuple;
 
 import javax.swing.*;
+import java.math.BigDecimal;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Properties;
@@ -34,7 +35,7 @@ import static org.junit.jupiter.api.Assertions.*;
 // Ctrl + /					代码折叠或展开(小键盘上的 / )
 // Alt  + Shift + J 		代码参数说明
 
-class Hello {
+class Test_Basic {
     private static Scanner input;
 
     @Test
@@ -240,7 +241,14 @@ class Hello {
     }
     //endregion Tuple
 
-    //region String
+    //region BigDecimal.compareTo
 
+    @Test
+    public void bCompare() {
+        BigDecimal d1 = BigDecimal.valueOf(1);
+        BigDecimal d2 = BigDecimal.valueOf(3);
+        assertTrue(d1.compareTo(d2) < 0);
+        assertTrue(d1.equals(BigDecimal.ONE));
+    }
     //endregion
 }

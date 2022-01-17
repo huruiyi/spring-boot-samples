@@ -2,9 +2,6 @@ package com.example.Math;
 
 /**
  * 数学计算 -encoding UTF-8 -charset UTF-8
- *
- * @author levue
- *
  */
 public class Calc {
     /**

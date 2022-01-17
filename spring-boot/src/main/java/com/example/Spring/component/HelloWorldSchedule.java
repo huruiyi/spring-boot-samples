@@ -1,4 +1,4 @@
-package com.example.Spring.schedule;
+package com.example.Spring.component;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

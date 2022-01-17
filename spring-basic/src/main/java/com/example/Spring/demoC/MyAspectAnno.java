@@ -9,37 +9,19 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 
-/**
- * @author hurui
- */
 @Aspect
 public class MyAspectAnno {
 
-    /**
-     * 前置通知
-     */
     @Before(value = "execution(* com.example.Spring.demoC.OrderDao.save(..))")
     public void before() {
         System.out.println("前置增强......");
     }
 
-    /**
-     * 后置通知
-     *
-     * @param result
-     */
     @AfterReturning(value = "execution(* com.example.Spring.demoC.OrderDao.delete(..))", returning = "result")
     public void afterReturning(Object result) {
         System.out.println("后置增强......" + result);
     }
 
-    /**
-     * 环绕通知
-     *
-     * @param joinPoint
-     * @return
-     * @throws Throwable
-     */
     @Around(value = "execution(* com.example.Spring.demoC.OrderDao.update(..))")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         System.out.println("before update......");
@@ -48,19 +30,11 @@ public class MyAspectAnno {
         return proceed;
     }
 
-    /**
-     * 异常抛出通知
-     *
-     * @param errorMessage
-     */
     @AfterThrowing(value = "com.example.Spring.demoC.MyAspectAnno.pointCut1()", throwing = "errorMessage")
     public void afterThrowing(Throwable errorMessage) {
         System.out.println("异常抛出......" + errorMessage.getMessage());
     }
 
-    /**
-     * 最终通知
-     */
     @After(value = "com.example.Spring.demoC.MyAspectAnno.pointCut1()")
     public void after() {
         System.out.println("最终增强......");

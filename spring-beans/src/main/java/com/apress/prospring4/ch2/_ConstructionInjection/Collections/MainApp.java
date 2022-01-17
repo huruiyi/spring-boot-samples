@@ -3,10 +3,6 @@ package com.apress.prospring4.ch2._ConstructionInjection.Collections;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-/**
- * @author Ravi Kant Soni
- * @JRE 1.7
- */
 public class MainApp {
 
     public static void main(String[] args) {

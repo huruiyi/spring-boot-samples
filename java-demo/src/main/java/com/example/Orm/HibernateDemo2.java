@@ -12,8 +12,6 @@ import java.util.List;
 
 /**
  * Hibernate的工具类的测试
- * 
- * @author jt
  *
  */
 public class HibernateDemo2 {

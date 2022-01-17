@@ -6,8 +6,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * 属性注入的方式：
- *
- * @author jt
  */
 public class SpringDemo4 {
 

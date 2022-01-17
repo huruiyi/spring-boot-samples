@@ -5,9 +5,6 @@ import org.hibernate.cfg.Configuration;
 
 /**
  * Hibernate的工具类
- * 
- * @author jt
- *
  */
 public class HibernateUtils {
 

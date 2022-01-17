@@ -3,7 +3,7 @@ package com.example.Spring.demo8;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * @author hurui Bean和注解混合使用
+ * Bean和注解混合使用
  */
 public class OrderService {
 

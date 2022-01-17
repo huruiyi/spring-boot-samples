@@ -10,9 +10,8 @@ import org.springframework.stereotype.Repository;
 	import org.springframework.stereotype.Service;
 */
 
-/**
- * @author hurui 相当于 <bean name="userDAO" class=
- * "com.example.spring.demo6.UserDAOImpl"></bean>
+/*
+    相当于 <bean name="userDAO" class="com.example.spring.demo6.UserDAOImpl"></bean>
  */
 /* @Component("userDao") */
 /* @Controller("userDao") */

@@ -1,7 +1,6 @@
 package com.example.Spring.demo8;
 
 /**
- * @author hurui
  *	纯Bean
  */
 public class ProductService {

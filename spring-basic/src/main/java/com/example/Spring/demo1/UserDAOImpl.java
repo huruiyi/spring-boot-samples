@@ -2,8 +2,6 @@ package com.example.Spring.demo1;
 
 /**
  * 用户管理DAO层实现类
- *
- * @author jt
  */
 public class UserDAOImpl implements UserDAO {
     private String name;

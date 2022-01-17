@@ -2,8 +2,6 @@ package com.example.Spring.demo3;
 
 /**
  * Bean2的静态工厂
- *
- * @author jt
  */
 public class Bean2Factory {
 

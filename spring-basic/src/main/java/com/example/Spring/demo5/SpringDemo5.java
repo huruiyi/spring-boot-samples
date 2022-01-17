@@ -6,9 +6,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * 集合类型的属性注入
- * 
- * @author jt
- *
  */
 public class SpringDemo5 {
 

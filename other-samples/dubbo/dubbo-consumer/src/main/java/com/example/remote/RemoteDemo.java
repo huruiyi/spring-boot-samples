@@ -1,7 +1,7 @@
 package com.example.remote;
 
 import com.example.DubboRemoteService;
-import org.apache.dubbo.config.annotation.Reference;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import javax.annotation.PostConstruct;
 public class RemoteDemo {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Reference(version = "${dubbo.global.version}")
+    @DubboReference(version = "${dubbo.global.version}")
     private DubboRemoteService dubboRemoteService;
 
     @PostConstruct

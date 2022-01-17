@@ -2,8 +2,6 @@ package com.example.Spring.demo4;
 
 /**
  * set方法的属性注入
- *
- * @author jt
  */
 public class Car2 {
     private String name;

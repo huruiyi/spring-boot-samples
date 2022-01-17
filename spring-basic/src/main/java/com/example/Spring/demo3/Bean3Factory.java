@@ -2,8 +2,6 @@ package com.example.Spring.demo3;
 
 /**
  * Bean3的实例工厂
- *
- * @author jt
  */
 public class Bean3Factory {
 

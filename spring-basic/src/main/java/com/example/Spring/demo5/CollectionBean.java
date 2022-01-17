@@ -7,8 +7,6 @@ import java.util.Set;
 
 /**
  * 集合属性的注入：
- *
- * @author jt
  */
 public class CollectionBean {
     private String[] arrs;

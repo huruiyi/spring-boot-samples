@@ -2,8 +2,6 @@ package com.example.Spring.demo3;
 
 /**
  * 无参数构造方法方式
- *
- * @author jt
  */
 public class Bean1 {
 

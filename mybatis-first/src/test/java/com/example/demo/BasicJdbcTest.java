@@ -25,7 +25,6 @@ public class BasicJdbcTest {
             User user = new User();
             user.setId(rs.getInt("id"));
             user.setUserName(rs.getString("user_name"));
-            user.setRealName(rs.getString("real_name"));
             user.setSex(rs.getByte("sex"));
             user.setMobile(rs.getString("mobile"));
             user.setEmail(rs.getString("email"));
@@ -56,7 +55,6 @@ public class BasicJdbcTest {
                 User user = new User();
                 user.setId(rs.getInt("id"));
                 user.setUserName(rs.getString("user_name"));
-                user.setRealName(rs.getString("real_name"));
                 user.setSex(rs.getByte("sex"));
                 user.setMobile(rs.getString("mobile"));
                 user.setEmail(rs.getString("email"));
