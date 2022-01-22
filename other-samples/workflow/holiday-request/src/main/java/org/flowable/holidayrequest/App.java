@@ -36,7 +36,7 @@ public class App {
 
 
     public static void main(String[] args) {
-        getHistory();
+        start();
     }
 
     public static void start() {
