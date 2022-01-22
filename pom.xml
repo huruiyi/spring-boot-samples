@@ -26,9 +26,6 @@
         <module>other-samples/spring-cloud/eureka-server</module>
         <module>other-samples/spring-oauth2/oauth2-redis-server</module>
         <module>other-samples/workflow/holiday-request</module>
-        <module>other-samples/dubbo/dubbo-api</module>
-        <module>other-samples/dubbo/dubbo-consumer</module>
-        <module>other-samples/dubbo/dubbo-provider</module>
         <module>java-demo</module>
         <module>mybatis-first</module>
         <module>pro-spring-5-ch02</module>
