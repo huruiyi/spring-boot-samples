@@ -21,9 +21,6 @@
         <module>other-samples/spring-alibaba/nacos-config</module>
         <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch6</module>
         <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch7</module>
-        <module>other-samples/spring-cloud/config-server</module>
-        <module>other-samples/spring-cloud/eureka-client</module>
-        <module>other-samples/spring-cloud/eureka-server</module>
         <module>other-samples/spring-dubbo/dubbo-api</module>
         <module>other-samples/spring-dubbo/dubbo-consumer</module>
         <module>other-samples/spring-dubbo/dubbo-provider</module>
