@@ -1,7 +1,7 @@
 package com.example.Concurrent;
 
 public class AtomicIntegerTest2 {
-    private static final int THREADS_CONUT = 20;
+    private static final int THREAD_COUNT = 20;
     public static volatile int count = 0;
 
     public static void increase() {
@@ -9,8 +9,8 @@ public class AtomicIntegerTest2 {
     }
 
     public static void main(String[] args) {
-        Thread[] threads = new Thread[THREADS_CONUT];
-        for (int i = 0; i < THREADS_CONUT; i++) {
+        Thread[] threads = new Thread[THREAD_COUNT];
+        for (int i = 0; i < THREAD_COUNT; i++) {
             threads[i] = new Thread(new Runnable() {
                 @Override
                 public void run() {

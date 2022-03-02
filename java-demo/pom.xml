@@ -12,6 +12,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.1.RELEASE</version>
+        <relativePath/>
     </parent>
 
     <dependencies>
@@ -206,6 +207,16 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.8.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-api</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springboot.nacos</groupId>
+            <artifactId>nacos-naming</artifactId>
+            <version>2.0.4</version>
         </dependency>
     </dependencies>
     <repositories>
