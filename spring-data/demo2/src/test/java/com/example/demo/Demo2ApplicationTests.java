@@ -38,11 +38,10 @@ class Demo2ApplicationTests {
 
     @Test
     public void createUser() {
-        User user = new User(null, "Paul", "paul@gmail.com");
+        User user = new User(null, "Paul", "password", false);
         User savedUser = userRepository.save(user);
         User newUser = userRepository.findById(savedUser.getId()).get();
         assertEquals("Paul", newUser.getName());
-        assertEquals("paul@gmail.com", newUser.getEmail());
     }
 
     @Test

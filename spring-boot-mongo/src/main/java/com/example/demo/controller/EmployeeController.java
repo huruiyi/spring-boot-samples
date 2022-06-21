@@ -28,7 +28,8 @@ public class EmployeeController {
 
     private EmployeeService service2;
 
-    public EmployeeController(@Qualifier("v1") EmployeeService service1, @Qualifier("v2") EmployeeService service2) {
+    public EmployeeController(@Qualifier("v1") EmployeeService service1,
+                              @Qualifier("v2") EmployeeService service2) {
         this.service1 = service1;
         this.service2 = service2;
     }

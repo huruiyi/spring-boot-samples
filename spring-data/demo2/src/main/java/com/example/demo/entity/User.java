@@ -3,7 +3,7 @@ package com.example.demo.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "test005")
+@Table(name = "User")
 public class User {
 
     @Id
@@ -13,26 +13,30 @@ public class User {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
+    private String password;
+
+
+    private String sex;
+
     private String email;
+
+    private String telPhone;
+
+    private String pSign;
 
     private boolean disabled;
 
     public User() {
     }
 
-    public User(Integer id, String name, String email) {
+    public User(Integer id, String name, String password, boolean disabled) {
         this.id = id;
         this.name = name;
-        this.email = email;
-    }
-
-    public User(Integer id, String name, String email, boolean disabled) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
+        this.password = password;
         this.disabled = disabled;
     }
+
 
     public Integer getId() {
         return id;
@@ -50,13 +54,14 @@ public class User {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPassword() {
+        return password;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPassword(String password) {
+        this.password = password;
     }
+
 
     public boolean isDisabled() {
         return disabled;
@@ -66,8 +71,40 @@ public class User {
         this.disabled = disabled;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelPhone() {
+        return telPhone;
+    }
+
+    public void setTelPhone(String telPhone) {
+        this.telPhone = telPhone;
+    }
+
+    public String getpSign() {
+        return pSign;
+    }
+
+    public void setpSign(String pSign) {
+        this.pSign = pSign;
+    }
+
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", name='" + name + '\'' + ", email='" + email + '\'' + ", disabled=" + disabled + '}';
+        return "User{" + "id=" + id + ", name='" + name + '\'' + ", password='" + password + '\'' + ", disabled=" + disabled + '}';
     }
 }
