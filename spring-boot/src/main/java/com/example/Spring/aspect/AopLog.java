@@ -41,25 +41,31 @@ public class AopLog {
             return;
         }
         HttpServletRequest request = attributes.getRequest();
+        logger.info("\r\n");
         logger.info("URL : " + request.getRequestURL().toString());
         logger.info("HTTP方法 : " + request.getMethod());
         logger.info("IP地址 : " + request.getRemoteAddr());
         logger.info("类的方法 : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
         logger.info("参数 : " + Arrays.toString(joinPoint.getArgs()));
         logger.info("参数 : " + request.getQueryString());
+        logger.info("\r\n");
     }
 
     @AfterReturning(pointcut = "aopWebLog()", returning = "retObject")
     public void doAfterReturning(Object retObject) throws Throwable {
         // 处理完请求，返回内容
+        logger.info("\r\n");
         logger.info("应答值 : " + retObject);
         logger.info("费时: " + (System.currentTimeMillis() - startTime.get()));
+        logger.info("\r\n");
     }
 
     //抛出异常后通知（After throwing advice） ： 在方法抛出异常退出时执行的通知。
     @AfterThrowing(pointcut = "aopWebLog()", throwing = "ex")
     public void addAfterThrowingLogger(JoinPoint joinPoint, Exception ex) {
+        logger.info("\r\n");
         logger.error("执行 " + " 异常", ex);
+        logger.info("\r\n");
     }
 
 }

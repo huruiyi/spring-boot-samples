@@ -33,8 +33,11 @@ public class SpringBootDemoApplication extends SpringBootServletInitializer impl
     @Value("${sendEmail.flag}")
     public Boolean sendEmail;
 
-    @Autowired
-    private JavaMailSender javaMailSender;
+    private final JavaMailSender javaMailSender;
+
+    public SpringBootDemoApplication(JavaMailSender javaMailSender) {
+        this.javaMailSender = javaMailSender;
+    }
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
