@@ -13,8 +13,7 @@ public class _06 {
 
     public static void main(String[] args) throws Exception {
         if (args.length < 1) {
-            System.err.println(
-                    "usage: java PKCS12Import {pkcs12file} [newjksfile]");
+            System.err.println("usage: java PKCS12Import {pkcs12file} [newjksfile]");
             System.exit(1);
         }
 
@@ -27,14 +26,12 @@ public class _06 {
         }
 
         if (!fileIn.canRead()) {
-            System.err.println(
-                    "Unable to access input keystore: " + fileIn.getPath());
+            System.err.println("Unable to access input keystore: " + fileIn.getPath());
             System.exit(2);
         }
 
         if (fileOut.exists() && !fileOut.canWrite()) {
-            System.err.println(
-                    "Output file is not writable: " + fileOut.getPath());
+            System.err.println("Output file is not writable: " + fileOut.getPath());
             System.exit(2);
         }
 

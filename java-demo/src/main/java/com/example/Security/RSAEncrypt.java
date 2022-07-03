@@ -1,4 +1,4 @@
-package com.qian.encoded;
+package com.example.Security;
 
 import org.apache.commons.codec.binary.Base64;
 

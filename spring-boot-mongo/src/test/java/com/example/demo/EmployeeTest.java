@@ -10,8 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
-class EmployeeTests {
-
+class EmployeeTest {
 
     @Autowired
     @Qualifier("v1")
@@ -21,7 +20,6 @@ class EmployeeTests {
     void findAll() {
         Iterable<Employee> employees = service1.findAll();
         assertNotNull(employees);
-
         System.out.println(employees);
     }
 
