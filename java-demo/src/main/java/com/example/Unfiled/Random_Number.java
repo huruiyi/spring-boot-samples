@@ -5,6 +5,7 @@ public class Random_Number {
     public static void main(String[] args) {
         System.out.println(Character.MAX_RADIX);
         Test1();
+        System.out.println(36*36*36*36*36);
     }
 
     static void Test1() {
