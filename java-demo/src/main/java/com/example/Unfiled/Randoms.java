@@ -43,6 +43,25 @@ public class Randoms {
     }
 
     @Test
+    static void Test1() {
+        System.out.println(Character.MAX_RADIX);
+        System.out.println(36*36*36*36*36);
+
+        Integer max36 = Integer.valueOf("ZZZZZ", 36);
+        System.out.println(max36);    //36进制最大值
+        String item = Integer.toUnsignedString(max36, 36);
+        System.out.println(item);
+    }
+
+    @Test
+    static void Test2() {
+        for (int i = 0; i <= 60466175; i++) {
+            String item = Integer.toUnsignedString(i, 36);
+            System.out.println(item + "-" + Integer.valueOf(item, 36));
+        }
+    }
+
+    @Test
     public void RandomDemo1() {
         Random num = new Random();
         for (int i = 0; i < 10; i++) {
