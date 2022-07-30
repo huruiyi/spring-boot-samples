@@ -1,17 +1,8 @@
 package com.example.demo.entity;
 
+import java.io.Serializable;
 import javax.persistence.*;
 import java.io.Serializable;
-
-/**
- * Created by IntelliJ IDEA.
- * Project : Spring-Redis-Mysql
- * User: hendisantika
- * Email: hendisantika@gmail.com
- * Telegram : @hendisantika34
- * Date: 27/06/21
- * Time: 14.55
- */
 
 @Entity
 @Table(name = "country")

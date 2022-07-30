@@ -1,7 +1,7 @@
-package com.example.demo.web;
+package com.example.demo.contoller;
 
 import com.example.demo.entity.Country;
-import com.example.demo.service.CountryService;
+import com.example.demo.service.impl.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,15 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * Project : Spring-Redis-Mysql
- * User: hendisantika
- * Email: hendisantika@gmail.com
- * Telegram : @hendisantika34
- * Date: 27/06/21
- * Time: 15.05
- */
 @RestController
 @RequestMapping("/countries")
 public class CountryController {

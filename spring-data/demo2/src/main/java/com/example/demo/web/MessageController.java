@@ -35,6 +35,12 @@ public class MessageController {
         this.messageRepository = messageRepository;
     }
 
+    /**
+     * http://localhost:8090/message/list?type=1&currentPage=1
+     * @param type
+     * @param currentPage
+     * @return
+     */
     @GetMapping("list")
     public PageData<Message> list(int type, int currentPage) {
         PageRequest pageRequest = PageRequest.of(currentPage - 1, 5, Sort.by(Sort.Direction.DESC, "createDate"));

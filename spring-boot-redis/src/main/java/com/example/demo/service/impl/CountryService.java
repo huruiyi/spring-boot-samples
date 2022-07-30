@@ -1,7 +1,8 @@
-package com.example.demo.service;
+package com.example.demo.service.impl;
 
 import com.example.demo.entity.Country;
 import com.example.demo.repository.CountryRepository;
+import com.example.demo.service.ICountryService;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
@@ -11,7 +12,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class CountryService {
+public class CountryService implements ICountryService {
     private static final String REDIS_CACHE_VALUE = "country";
 
     @Resource

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>spring-samples</artifactId>
+        <artifactId>spring-boot-samples</artifactId>
         <version>0.0.1</version>
     </parent>
     <groupId>com.example</groupId>
