@@ -35,20 +35,6 @@ public class MessageController {
         this.messageRepository = messageRepository;
     }
 
-
-    public static Specification<Message> accountExpiresBefore() {
-
-
-        return (Specification<Message>) (root, query, cb) -> {
-
-            Root<Message> rootMessage = query.from(Message.class);
-            Predicate customerIsAccountOwner = cb.equal(rootMessage.<Message>get("message"), root);
-            Predicate accountExpiryDateBefore = cb.equal(rootMessage.<Date>get("type"), 1);
-
-            return cb.and(customerIsAccountOwner, accountExpiryDateBefore);
-        };
-    }
-
     @GetMapping("list")
     public PageData<Message> list(int type, int currentPage) {
         PageRequest pageRequest = PageRequest.of(currentPage - 1, 5, Sort.by(Sort.Direction.DESC, "createDate"));

@@ -6,6 +6,8 @@ public class Random_Number {
         System.out.println(Character.MAX_RADIX);
         Test1();
         System.out.println(36*36*36*36*36);
+        Integer max36 = Integer.valueOf("ZZZZZZ", 36);
+        System.out.println(max36);
     }
 
     static void Test1() {
