@@ -13,8 +13,11 @@ import java.util.List;
 @RequestMapping("/countries")
 public class CountryController {
 
-    @Autowired
-    private CountryService countryService;
+    private final CountryService countryService;
+
+    public CountryController(CountryService countryService) {
+        this.countryService = countryService;
+    }
 
     @PostMapping
     public ResponseEntity<Country> save(@RequestBody Country request) throws RuntimeException {

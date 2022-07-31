@@ -37,14 +37,25 @@ public class MessageController {
 
     /**
      * http://localhost:8090/message/list?type=1&currentPage=1
+     *
      * @param type
      * @param currentPage
      * @return
      */
     @GetMapping("list")
     public PageData<Message> list(int type, int currentPage) {
-        PageRequest pageRequest = PageRequest.of(currentPage - 1, 5, Sort.by(Sort.Direction.DESC, "createDate"));
-        Example<Message> example = Example.of(new Message(), matching().withMatcher("type", matcher -> matcher.transform(value -> Optional.of(type))));
+
+        Sort sort = Sort.by(Sort.Direction.DESC, "createDate");
+        sort = sort.and(Sort.by(Sort.Direction.DESC, "subject"));
+        PageRequest pageRequest = PageRequest.of(currentPage - 1, 5, sort);
+
+        ExampleMatcher exampleMatcher = matching().withMatcher("type", matcher -> matcher.transform(value -> Optional.of(type)));
+        Example<Message> example0 = Example.of(new Message(), exampleMatcher);
+
+        Message message = new Message();
+        message.setType(type);
+        Example<Message> example = Example.of(message);
+
         Page<Message> page = messageRepository.findAll(example, pageRequest);
         PageData<Message> res = new PageData<>();
         res.setData(page.getContent());

@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
@@ -23,8 +24,16 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @Configuration
 @EnableRedisRepositories
 public class RedisConfigV1 extends CachingConfigurerSupport {
+
     @Bean
-    public JedisConnectionFactory redisConnectionFactory() {
+    public RedisConnectionFactory lettuceConnectionFactory() {
+        return new LettuceConnectionFactory();
+    }
+
+    @Primary
+    @Bean
+    public RedisConnectionFactory redisConnectionFactory() {
+        //Jedis 4.0 移除了 JedisShardInfo，可使用 new LettuceConnectionFactory()
         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
         return jedisConnectionFactory;
     }
