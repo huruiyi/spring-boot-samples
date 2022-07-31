@@ -1,4 +1,4 @@
-package com.example.springbootmybatisplus;
+package com.example.demo;
 
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
@@ -19,7 +19,7 @@ import java.util.Scanner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringbootmybatisplusApplicationTests {
+public class ApplicationTests {
 
     public static String scanner(String tip) throws MybatisPlusException {
         Scanner scanner = new Scanner(System.in);
@@ -43,7 +43,7 @@ public class SpringbootmybatisplusApplicationTests {
         GlobalConfig gc = new GlobalConfig();
         final String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setAuthor("jobob");
+        gc.setAuthor("fairy.vip");
         gc.setOpen(false);
         mpg.setGlobalConfig(gc);
 
@@ -59,7 +59,7 @@ public class SpringbootmybatisplusApplicationTests {
         // 包配置
         final PackageConfig pc = new PackageConfig();
         pc.setModuleName("user");
-        pc.setParent("com.example.springbootmybatisplus");
+        pc.setParent("com.example.demo");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -106,13 +106,13 @@ public class SpringbootmybatisplusApplicationTests {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        //strategy.setSuperEntityClass("com.example.springbootmybatisplus.base.BaseEntity");
+        //strategy.setSuperEntityClass("com.example.demo.base.BaseEntity");
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
-        //strategy.setSuperControllerClass("com.example.springbootmybatisplus.base.BaseController");
+        //strategy.setSuperControllerClass("com.example.demo.base.BaseController");
 
         //表名
-        strategy.setInclude("t_user");
+        strategy.setInclude("message","user");
         strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");

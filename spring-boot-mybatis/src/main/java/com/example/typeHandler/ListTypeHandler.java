@@ -1,10 +1,10 @@
 package com.example.typeHandler;
 
-import com.sun.deploy.util.StringUtils;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedJdbcTypes;
 import org.apache.ibatis.type.MappedTypes;
 import org.apache.ibatis.type.TypeHandler;
+import org.thymeleaf.util.StringUtils;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;

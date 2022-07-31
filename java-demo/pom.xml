@@ -195,8 +195,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>29.0-android</version>
-            <scope>test</scope>
+            <version>31.1-jre</version>
         </dependency>
         <dependency>
             <groupId>org.awaitility</groupId>

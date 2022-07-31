@@ -7,14 +7,14 @@ import java.sql.*;
 
 public class BasicJdbcTest {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&useJDBCCompliantTimezoneShift=true&&serverTimezone=UTC";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&useJDBCCompliantTimezoneShift=true&&serverTimezone=UTC";
 
     static final String USER = "root";
     static final String PASS = "root";
 
     @Test
     public void QueryStatementDemo() throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
         Statement stmt = conn.createStatement();
         String userName = "lison";
@@ -43,7 +43,7 @@ public class BasicJdbcTest {
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             String sql = "SELECT * FROM t_user where user_name= ? ";
             stmt = conn.prepareStatement(sql);
@@ -90,7 +90,7 @@ public class BasicJdbcTest {
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             // 启动手动提交

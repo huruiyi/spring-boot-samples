@@ -1,10 +1,9 @@
-package com.example.springbootmybatisplus;
+package com.example.demo;
 
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.ITypeConvert;
 import com.baomidou.mybatisplus.generator.config.rules.DbColumnType;
 import com.baomidou.mybatisplus.generator.config.rules.IColumnType;
-
 
 public class OracleTypeConverter implements ITypeConvert {
     public OracleTypeConverter() {
