@@ -25,8 +25,9 @@
         <module>other-samples/spring-dubbo/dubbo-provider</module>
         <module>other-samples/spring-oauth2/oauth2-redis-server</module>
         <module>other-samples/workflow/holiday-request</module>
-        <module>java-demo</module>
-        <module>mybatis-first</module>
+        <module>other-samples/spring-boot-limit</module>
+        <module>other-samples/spring-boot-swagger-ui</module>
+
         <module>pro-spring-5-ch02</module>
         <module>pro-spring-5-ch03/dependency-pull</module>
         <module>pro-spring-5-ch03/injection/constructor-injection</module>
@@ -34,16 +35,19 @@
         <module>pro-spring-5-ch03/injection/method-injection</module>
         <module>pro-spring-5-ch03/injection/injection</module>
         <module>pro-spring-5-ch03/injection/field-injection</module>
+
+        <module>java-demo</module>
+        <module>mybatis-first</module>
+
         <module>spring-basic</module>
         <module>spring-beans</module>
         <module>spring-boot</module>
         <module>spring-boot-docker</module>
-        <module>spring-boot-limit</module>
+
         <module>spring-boot-mongo</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-mybatisplus</module>
         <module>spring-boot-redis</module>
-        <module>spring-boot-swagger-ui</module>
         <module>spring-boot-thymeleaf</module>
         <module>spring-multi-datasource</module>
         <module>spring-mvc-hello-world</module>

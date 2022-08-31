@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootLimitApplication {
+public class  SpringBootLimitApplication {
 
 	/**
 	 * 暂时支持到：2.1.18.RELEASE
