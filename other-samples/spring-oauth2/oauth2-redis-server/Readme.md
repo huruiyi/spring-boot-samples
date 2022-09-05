@@ -57,12 +57,9 @@ http://localhost:8080/oauth/token?username=user_1&password=123456&grant_type=pas
     "scope": "select"
 }
 ```
-http://localhost:8080/order/1?access_token=3df8a157-a3eb-42f7-aa08-a79dccdc3fc8
-
-
+http://localhost:8080/api/profile?access_token=DxqOpr2AGUnwqaEPAS1r5PyJlPA
 
 http://localhost:8080/oauth/token?grant_type=refresh_token&refresh_token=8d10466a-47ef-4bdd-9169-a4676f23751d&client_id=client_2&client_secret=123456
-
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 

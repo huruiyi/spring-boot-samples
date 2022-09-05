@@ -13,7 +13,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.2</version>
+        <version>2.7.3</version>
         <relativePath/>
     </parent>
 
@@ -28,22 +28,22 @@
         <module>other-samples/spring-boot-limit</module>
         <module>other-samples/spring-boot-swagger-ui</module>
 
-        <module>pro-spring-5-ch02</module>
-        <module>pro-spring-5-ch03/dependency-pull</module>
-        <module>pro-spring-5-ch03/injection/constructor-injection</module>
-        <module>pro-spring-5-ch03/injection/setter-injection</module>
-        <module>pro-spring-5-ch03/injection/method-injection</module>
-        <module>pro-spring-5-ch03/injection/injection</module>
-        <module>pro-spring-5-ch03/injection/field-injection</module>
+        <module>other-samples/pro-spring-5-ch02</module>
+        <module>other-samples/pro-spring-5-ch03/dependency-pull</module>
+        <module>other-samples/pro-spring-5-ch03/injection/constructor-injection</module>
+        <module>other-samples/pro-spring-5-ch03/injection/setter-injection</module>
+        <module>other-samples/pro-spring-5-ch03/injection/method-injection</module>
+        <module>other-samples/pro-spring-5-ch03/injection/injection</module>
+        <module>other-samples/pro-spring-5-ch03/injection/field-injection</module>
 
-        <module>java-demo</module>
-        <module>mybatis-first</module>
+        <module>other-samples/java-demo</module>
+        <module>other-samples/mybatis-first</module>
 
-        <module>spring-basic</module>
-        <module>spring-beans</module>
+        <module>other-samples/spring-basic</module>
+        <module>other-samples/spring-beans</module>
+
         <module>spring-boot</module>
         <module>spring-boot-docker</module>
-
         <module>spring-boot-mongo</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-mybatisplus</module>
@@ -52,5 +52,6 @@
         <module>spring-multi-datasource</module>
         <module>spring-mvc-hello-world</module>
         <module>spring-data</module>
+        <module>spring-oauth2</module>
     </modules>
 </project>
