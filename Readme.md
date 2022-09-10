@@ -43,3 +43,11 @@
     Java-Style Character Encoding Name
         UTF-8
 
+## spring-boot-thin
+```xml
+  <dependency>
+    <groupId>org.springframework.boot.experimental</groupId>
+    <artifactId>spring-boot-thin-layout</artifactId>
+    <version>1.0.28.RELEASE</version>
+ </dependency>
+```

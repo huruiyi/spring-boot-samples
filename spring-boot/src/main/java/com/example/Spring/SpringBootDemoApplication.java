@@ -30,15 +30,6 @@ import java.util.Collections;
 @EnableScheduling
 public class SpringBootDemoApplication extends SpringBootServletInitializer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 
-    @Value("${sendEmail.flag}")
-    public Boolean sendEmail;
-
-    private final JavaMailSender javaMailSender;
-
-    public SpringBootDemoApplication(JavaMailSender javaMailSender) {
-        this.javaMailSender = javaMailSender;
-    }
-
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(SpringBootDemoApplication.class);
@@ -80,34 +71,11 @@ public class SpringBootDemoApplication extends SpringBootServletInitializer impl
 
     @Bean
     public ApplicationRunner startupMailSender1() {
-        System.out.println(javaMailSender);
-        if (sendEmail) {
-            return (args) -> javaMailSender.send((msg) ->
-            {
-                MimeMessageHelper helper = new MimeMessageHelper(msg);
-                helper.setFrom("807776962@qq.com");
-                helper.setTo("38761770@qq.com");
-                helper.setSubject("Status message-1");
-                helper.setText("All is well.");
-            });
-        }
         return null;
     }
 
     @Bean
     public ApplicationRunner startupMailSender2(SpringTemplateEngine templateEngine) {
-        if (sendEmail) {
-            return (args) -> javaMailSender.send((msg) -> {
-                MimeMessageHelper helper = new MimeMessageHelper(msg);
-                helper.setFrom("807776962@qq.com");
-                helper.setTo("38761770@qq.com");
-                helper.setSubject("Status message-2");
-
-                Context context = new Context(LocaleContextHolder.getLocale(), Collections.singletonMap("msg", "All is well!"));
-                String body = templateEngine.process("email.html", context);
-                helper.setText(body, true);
-            });
-        }
         return null;
     }
 }

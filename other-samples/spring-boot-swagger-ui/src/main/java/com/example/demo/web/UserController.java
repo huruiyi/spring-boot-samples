@@ -7,7 +7,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@Api(tags = "用户操作api")
+@Api(tags = "用户操作")
 public class UserController {
 
     @PutMapping("user")

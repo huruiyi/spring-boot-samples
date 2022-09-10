@@ -82,9 +82,7 @@ public class BookControllerTest {
 
     @Test
     public void shouldReturn404WhenBookNotFound() throws Exception {
-
         when(mockBookService.find(anyString())).thenReturn(Optional.empty());
-
         mockMvc.perform(get("/books/123")).andExpect(status().isNotFound());
     }
 
@@ -102,12 +100,10 @@ public class BookControllerTest {
 
     @Test
     public void shouldAddBook() throws Exception {
-
         when(mockBookService.create(any(Book.class))).thenReturn(new Book("123456789", "Test Book Stored", "T. Author"));
-
         mockMvc.perform(post("/books")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content("{ \"isbn\" : \"123456789\"}, \"title\" : \"Test Book\", \"authors\" : [\"T. Author\"]"))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{ \"isbn\" : \"123456789\"}, \"title\" : \"Test Book\", \"authors\" : [\"T. Author\"]"))
                 .andExpect(status().isCreated())
                 .andExpect(header().string("Location", "http://localhost/books/123456789"));
     }
