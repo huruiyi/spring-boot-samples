@@ -20,7 +20,7 @@ import java.util.Arrays;
  */
 @Aspect
 @Component
-public class AopLog {
+public class LogAspectV1 {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 

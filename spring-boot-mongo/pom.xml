@@ -43,12 +43,10 @@
         <dependency>
             <groupId>io.projectreactor.netty</groupId>
             <artifactId>reactor-netty-core</artifactId>
-            <version>1.0.20</version>
         </dependency>
         <dependency>
             <groupId>io.projectreactor.netty</groupId>
             <artifactId>reactor-netty-http</artifactId>
-            <version>1.0.20</version>
         </dependency>
 
         <dependency>
@@ -60,7 +58,6 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>2.0.0</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>

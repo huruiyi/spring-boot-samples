@@ -9,6 +9,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Component
-public @interface MyTestAnnotation {
+public @interface ParamsAnnotation {
     String value();
 }

@@ -1,6 +1,7 @@
 package com.example.Spring.web;
 
-import com.example.Spring.annotation.MyTestAnnotation;
+import com.example.Spring.annotation.ParamsAnnotation;
+import com.example.Spring.annotation.SysLog;
 import com.example.Spring.service.unclassified.SingleService;
 import com.example.Spring.utils.ExcelUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -42,11 +43,13 @@ public class HelloController {
     @Value("${spring.profiles.active}")
     private String env;
 
+    @SysLog
     @RequestMapping(value = "")
     public String indexEmpty() {
         return "Hello";
     }
 
+    @SysLog
     @RequestMapping(value = "/")
     public String index() {
         return "Hello World";
@@ -74,7 +77,7 @@ public class HelloController {
     }
 
     @RequestMapping("/testAnnotation")
-    @MyTestAnnotation("自定义Annotation测试")
+    @ParamsAnnotation("自定义Annotation测试")
     public String testAnnotation(@RequestParam(name = "uName", defaultValue = "Li San") String name, Integer age) {
         String result = "测试自定义注解,用户：" + name + "，年龄：" + age;
         return result;

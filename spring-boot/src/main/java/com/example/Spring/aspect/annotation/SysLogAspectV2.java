@@ -1,6 +1,7 @@
-package com.example.Spring.aspect;
+package com.example.Spring.aspect.annotation;
 
-import com.example.Spring.annotation.MyTestAnnotation;
+import com.example.Spring.annotation.ParamsAnnotation;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -14,10 +15,11 @@ import java.lang.reflect.Parameter;
 
 @Aspect
 @Component
-public class TestAnnotationAspect {
+@Slf4j
+public class SysLogAspectV2 {
 
     //拦截被TestAnnotation注解的方法；如果需要拦截指定package指定规则名称的方法，可以使用表达式execution(...)
-    @Pointcut("@annotation(com.example.Spring.annotation.MyTestAnnotation)")
+    @Pointcut("@annotation(com.example.Spring.annotation.ParamsAnnotation)")
     public void myAnnotationPointCut() {
 
     }
@@ -35,11 +37,11 @@ public class TestAnnotationAspect {
             Parameter parameter = parameters[i];
             RequestParam requestParam = parameter.getAnnotation(RequestParam.class);
             if (requestParam != null) {
-                System.out.println("参数名：" + requestParam.name() + "，默认值：" + requestParam.defaultValue());
+                log.info("参数名：" + requestParam.name() + "，默认值：" + requestParam.defaultValue());
             }
-            System.out.println(parameter.getName() + " = " + args[i]);
+            log.info(parameter.getName() + " = " + args[i]);
         }
-        MyTestAnnotation annotation = method.getAnnotation(MyTestAnnotation.class);
+        ParamsAnnotation annotation = method.getAnnotation(ParamsAnnotation.class);
         System.out.print("打印TestAnnotation 参数：" + annotation.value());
     }
 }

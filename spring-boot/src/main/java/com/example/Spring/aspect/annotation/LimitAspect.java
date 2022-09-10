@@ -1,6 +1,5 @@
-package com.example.Spring.aspect;
+package com.example.Spring.aspect.annotation;
 
-import com.example.Spring.web.RateController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.util.concurrent.RateLimiter;
 import lombok.extern.slf4j.Slf4j;
@@ -8,7 +7,6 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
-import org.slf4j.Logger;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -23,7 +21,7 @@ import java.io.IOException;
 @Scope
 @Aspect
 @Slf4j
-public class LimitAspectV1 {
+public class LimitAspect {
 
     //Slf4j 会自动生成Logger字段的
     //private static final Logger log = org.slf4j.LoggerFactory.getLogger(LimitAspectV1.class);
