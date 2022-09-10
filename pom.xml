@@ -43,6 +43,8 @@
         <module>other-samples/spring-beans</module>
 
         <module>spring-boot</module>
+        <module>spring-boot-activemq</module>
+        <module>spring-boot-actuator</module>
         <module>spring-boot-docker</module>
         <module>spring-boot-mongo</module>
         <module>spring-boot-mybatis</module>
