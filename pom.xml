@@ -52,6 +52,7 @@
         <module>spring-boot-mybatis</module>
         <module>spring-boot-mybatisplus</module>
         <module>spring-boot-redis</module>
+        <module>spring-boot-shell</module>
         <module>spring-boot-thymeleaf</module>
         <module>spring-multi-datasource</module>
         <module>spring-mvc-hello-world</module>

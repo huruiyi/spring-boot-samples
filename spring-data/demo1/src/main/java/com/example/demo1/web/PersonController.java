@@ -3,6 +3,8 @@ package com.example.demo1.web;
 import com.example.demo1.model.Location;
 import com.example.demo1.model.Person;
 import com.example.demo1.repository.PersonRepository;
+import com.example.demo1.service.PersonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -10,14 +12,13 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * @author yangyueming
- */
 @RestController
 public class PersonController {
 
-    @Resource
-    PersonRepository personRepository;
+
+    @Autowired
+    PersonService personService;
+
 
     /**
      * http://localhost:8080/save
@@ -36,7 +37,7 @@ public class PersonController {
         locationSet.add(location4);
         person.setLocationSet(locationSet);
 
-        return personRepository.save(person);
+        return personService.save(person);
     }
 
     /**
@@ -44,7 +45,7 @@ public class PersonController {
      */
     @GetMapping("/findByName")
     public Person findByName(@RequestParam String name) {
-        return personRepository.findByName(name);
+        return personService.findByName(name);
     }
 
     /**
@@ -52,7 +53,7 @@ public class PersonController {
      */
     @GetMapping("/findAll")
     public List<Person> findAll() {
-        return personRepository.findAll();
+        return personService.findAll();
     }
 
     /**
@@ -60,7 +61,10 @@ public class PersonController {
      */
     @RequestMapping("/findByAge")
     public List<Person> findByAge(Integer age) {
-        return personRepository.withQueryFindByAge(age);
+        return personService.withQueryFindByAge(age);
     }
+
+
+
 
 }

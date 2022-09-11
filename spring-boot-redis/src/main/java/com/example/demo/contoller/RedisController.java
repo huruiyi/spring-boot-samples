@@ -1,9 +1,12 @@
 package com.example.demo.contoller;
 
+import com.example.demo.entity.Country;
 import com.example.demo.service.IRedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -38,14 +41,42 @@ public class RedisController {
     @Autowired
     private ListOperations<String, String> ListOperations;
 
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
+
+    @Resource
+    ValueOperations<String, String> valueOperations;
+
+    @Resource
+    RedisTemplate<Object, Object> redisTemplate;
+
 
     public void addLink(String userId, URL url) {
         listOps.leftPush(userId, url.toExternalForm());
     }
 
+
     @GetMapping
     @RequestMapping("/str")
     public String getSet() {
+
+        ValueOperations<String, String> opsForValue = stringRedisTemplate.opsForValue();
+        opsForValue.set("name", "your da ye");
+        System.out.println(opsForValue.get("name"));
+
+        valueOperations.set("name", "my da ye");
+        System.out.println(valueOperations.get("name"));
+
+        Country country = new Country();
+        country.setId(1);
+        country.setName("中国");
+        country.setCode("CN");
+        ValueOperations<Object, Object> objectValueOperations = redisTemplate.opsForValue();
+        objectValueOperations.set(String.valueOf(country.getId()),country);
+
+        Object o = objectValueOperations.get(String.valueOf(country.getId()));
+        System.out.println(o);
+
         template.opsForValue().set(KEY_REQUEST_TIME, LocalDateTime.now().toString());
         String now = template.opsForValue().get(KEY_REQUEST_TIME);
         return now;

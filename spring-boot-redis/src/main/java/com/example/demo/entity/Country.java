@@ -52,4 +52,14 @@ public class Country implements Serializable {
     public void setCapital(String capital) {
         this.capital = capital;
     }
+
+    @Override
+    public String toString() {
+        return "Country{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", code='" + code + '\'' +
+                ", capital='" + capital + '\'' +
+                '}';
+    }
 }

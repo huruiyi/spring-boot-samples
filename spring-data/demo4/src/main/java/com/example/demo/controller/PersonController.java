@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Person;
 import com.example.demo.repository.PersonRepository;
+import com.example.demo.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,11 +18,14 @@ import java.util.List;
 public class PersonController {
 
     @Autowired
-    PersonRepository personRepository;
+    PersonService personService;
 
+    /**
+     * http://localhost:7001/
+     */
     @RequestMapping("/")
     public List<Person> home() {
-        return personRepository.findAll();
+        return personService.findAll();
     }
 
 
@@ -31,7 +35,7 @@ public class PersonController {
      */
     @RequestMapping("/q1")
     public List<Person> q1(String address) {
-        return personRepository.findByAddress(address);
+        return personService.findByAddress(address);
     }
 
     /**
@@ -40,7 +44,7 @@ public class PersonController {
      */
     @RequestMapping("/q2")
     public Person q2(String name, String address) {
-        return personRepository.findByNameAndAddress(name, address);
+        return personService.findByNameAndAddress(name, address);
     }
 
 
@@ -50,7 +54,7 @@ public class PersonController {
      */
     @RequestMapping("/sort")
     public List<Person> sort() {
-        return personRepository.findAll(Sort.by(Direction.ASC, "age"));
+        return personService.findAll(Sort.by(Direction.ASC, "age"));
     }
 
     /**
@@ -59,16 +63,35 @@ public class PersonController {
      */
     @RequestMapping("/page")
     public Page<Person> page() {
-        return personRepository.findAll(PageRequest.of(1, 2));
+        return personService.findAll(PageRequest.of(1, 2));
     }
 
 
     /**
      * 测试分页
-     * http://localhost:7001/page
+     * http://localhost:7001/findByNameStartsWith
      */
     @RequestMapping("/findByNameStartsWith")
     public Person person() {
-        return personRepository.findByNameStartsWith("x");
+        return personService.findByNameStartsWith("x");
+    }
+
+
+    /**
+     * http://localhost:7001/rollback
+     */
+    @RequestMapping("/rollback")
+    public Person rollback(Person person) {
+        person.setName("fu");
+        return personService.savePersonWithRollBack(person);
+    }
+
+    /**
+     * http://localhost:7001/norollback
+     */
+    @RequestMapping("/norollback")
+    public Person noRollback(Person person) {
+        person.setName("fu");
+        return personService.savePersonWithoutRollBack(person);
     }
 }

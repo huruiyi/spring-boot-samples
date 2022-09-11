@@ -15,6 +15,7 @@ import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializer;
@@ -41,6 +42,13 @@ public class RedisConfigV1 extends CachingConfigurerSupport {
     @Bean
     public RedisSerializer redisSerializer() {
         Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
+
+        ObjectMapper om = new ObjectMapper();
+        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+        //om.activateDefaultTyping(om.getPolymorphicTypeValidator(), ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);
+        om.activateDefaultTyping(om.getPolymorphicTypeValidator(), ObjectMapper.DefaultTyping.NON_FINAL);
+        jackson2JsonRedisSerializer.setObjectMapper(om);
+
         return jackson2JsonRedisSerializer;
     }
 
@@ -54,9 +62,7 @@ public class RedisConfigV1 extends CachingConfigurerSupport {
         redisTemplate.setKeySerializer(stringRedisSerializer);
         redisTemplate.setHashKeySerializer(stringRedisSerializer);
 
-        //value序列化方式采用jackson
         redisTemplate.setValueSerializer(redisSerializer);
-        //hash的value序列化方式采用jackson
         redisTemplate.setHashValueSerializer(redisSerializer);
 
         return redisTemplate;
@@ -65,5 +71,10 @@ public class RedisConfigV1 extends CachingConfigurerSupport {
     @Bean
     public ListOperations<String, String> listOperations() {
         return redisTemplate(redisConnectionFactory(), redisSerializer()).opsForList();
+    }
+
+    @Bean
+    public ValueOperations<String, String> valueOperations() {
+        return redisTemplate(redisConnectionFactory(), redisSerializer()).opsForValue();
     }
 }
