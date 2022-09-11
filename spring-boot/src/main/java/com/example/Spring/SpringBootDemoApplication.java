@@ -12,12 +12,10 @@ import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerF
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import java.util.Arrays;
 
-@EnableScheduling
 @SpringBootApplication
 public class SpringBootDemoApplication extends SpringBootServletInitializer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 

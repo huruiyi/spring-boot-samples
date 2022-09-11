@@ -50,6 +50,6 @@ public class Scheduling {
      */
     @Scheduled(cron = "0/20 * * * * ?") // 每20秒执行一次
     public void scheduler() {
-        logger.info("excute Schedule");
+        logger.info("execute Schedule");
     }
 }
