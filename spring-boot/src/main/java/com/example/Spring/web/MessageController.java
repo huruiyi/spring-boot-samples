@@ -1,20 +1,26 @@
 package com.example.Spring.web;
 
+import com.example.Spring.component.AsyncService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
+import javax.annotation.Resource;
 import java.util.Collections;
 
 @RestController
 @Slf4j
 public class MessageController {
+
+    @Resource
+    AsyncService asyncService;
 
     @Autowired
     private JavaMailSender javaMailSender;
@@ -48,5 +54,7 @@ public class MessageController {
             helper.setText(body, true);
         });
     }
+
+
 }
 

@@ -4,7 +4,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-
 @Data
 @Table(name = "country") //映射的表名称
 public class Country {

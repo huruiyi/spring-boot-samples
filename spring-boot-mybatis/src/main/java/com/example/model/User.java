@@ -4,14 +4,15 @@ package com.example.model;
 import com.example.converter.SexConverter;
 import com.example.enums.SexEnum;
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
-
 @Data
 @Table(name = "t_user") //映射的表名称
+@ToString
 public class User {
 
     // 标明主键
@@ -35,6 +36,7 @@ public class User {
 
     private Integer positionId;
 
+    @Transient
     private List<String> hobbies;
 
     private Date loginTime;

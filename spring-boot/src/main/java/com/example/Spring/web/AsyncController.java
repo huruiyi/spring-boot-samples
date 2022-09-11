@@ -1,14 +1,12 @@
 package com.example.Spring.web;
 
-import com.example.Spring.component.AsyncTask;
-import org.junit.Test;
+import com.example.Spring.component.AsyncService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -19,19 +17,21 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 
+
+@Slf4j
 @Controller
-@RequestMapping("/pool")
-public class ThreadPoolController {
+@RequestMapping("/async")
+public class AsyncController {
 
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private AsyncTask asyncTask;
+    private AsyncService asyncService;
 
     @RequestMapping("/test1")
     @ResponseBody
     public String AsyncTaskTest() throws InterruptedException, ExecutionException {
-        Future<Long> future = asyncTask.doTask1(1);
+        Future<Long> future = asyncService.doTask1(1);
         try {
             future.get(2, TimeUnit.SECONDS);
         } catch (TimeoutException e) {
@@ -46,7 +46,7 @@ public class ThreadPoolController {
     public @ResponseBody
     String AsyncTaskTest1() throws InterruptedException, ExecutionException {
         for (int i = 0; i < 5000; i++) {
-            asyncTask.doTask1(1);
+            asyncService.doTask1(1);
         }
         logger.info("All tasks finished.");
         return "test2 ok";
@@ -54,23 +54,32 @@ public class ThreadPoolController {
 
     @GetMapping("test")
     public void test(HttpServletRequest request) {
-        asyncTask.i = new AtomicInteger(0);
+        asyncService.i = new AtomicInteger(0);
         for (int i = 0; i < 230; i++) {
             System.out.println("第" + (i + 1) + "个任务加入队列");
-            asyncTask.doTask3();
+            asyncService.doTask3();
         }
         System.out.println("已全部加入队列");
     }
 
     @GetMapping("test2")
     public void test2(HttpServletRequest request) throws ExecutionException, InterruptedException {
-        asyncTask.i = new AtomicInteger(0);
+        asyncService.i = new AtomicInteger(0);
         for (int i = 0; i < 230; i++) {
             System.out.println("第" + (i + 1) + "个任务加入队列");
-            Future<String> future = asyncTask.doTask4();
+            Future<String> future = asyncService.doTask4();
             System.out.println(future.get());
         }
         System.out.println("已全部加入队列");
+    }
+
+    @RequestMapping("/send")
+    @ResponseBody
+    public String index() {
+        log.info("before @Async");
+        asyncService.asyncSendMail();
+        log.info("after @Async");
+        return "send ok";
     }
 
 }

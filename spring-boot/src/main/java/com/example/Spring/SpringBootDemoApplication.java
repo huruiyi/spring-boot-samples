@@ -2,9 +2,6 @@ package com.example.Spring;
 
 import com.example.Spring.model.Book;
 import com.example.Spring.service.BookService;
-import de.codecentric.boot.admin.server.config.EnableAdminServer;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,19 +12,13 @@ import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerF
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.i18n.LocaleContextHolder;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import java.util.Arrays;
-import java.util.Collections;
 
-@SpringBootApplication
-@EnableAdminServer
 @EnableScheduling
+@SpringBootApplication
 public class SpringBootDemoApplication extends SpringBootServletInitializer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 
     @Override

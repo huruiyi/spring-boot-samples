@@ -1,7 +1,9 @@
 package com.example.web;
 
 import com.example.enums.SexEnum;
+import com.example.model.Country;
 import com.example.model.User;
+import com.example.service.CountryService;
 import com.example.service.UserService;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class UserController {
      */
     @Autowired
     private UserService userService1;
+
+    @Autowired
+    private   CountryService countryService;
 
 
     private UserService userService2;
@@ -84,9 +89,17 @@ public class UserController {
     }
 
     @RequestMapping(value = "/getUser")
-    public User getUser(@RequestParam(value = "id", required = true) Integer id) {
+    public User user(@RequestParam(value = "id", required = true) Integer id) {
         User user = userService1.selectById(id);
         System.out.println(user.toString());
         return user;
+    }
+
+
+
+    @RequestMapping(value = "/getCountry")
+    public Country country(@RequestParam(value = "id", required = true) Integer id) {
+        Country country = countryService.getById(id);
+        return country;
     }
 }

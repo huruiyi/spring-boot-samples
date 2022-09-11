@@ -1,18 +1,19 @@
 package com.example.Spring.component;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicInteger;
 
+
+@Slf4j
 @Component
-public class AsyncTask {
+public class AsyncService {
 
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
     public static volatile AtomicInteger i = new AtomicInteger(0);
@@ -64,6 +65,17 @@ public class AsyncTask {
             e.printStackTrace();
         }
         return new AsyncResult("当前第" + i.incrementAndGet() + "次执行");
+    }
+
+
+    @Async
+    public void asyncSendMail() {
+        try {
+            Thread.sleep(5 * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        log.info("测试@Async, 异步发送邮件等使用");
     }
 
 }
