@@ -13,7 +13,6 @@ public class RedisConfigV2 {
 
     @Autowired(required = false)
     public void setRedisTemplate(RedisTemplate redisTemplate) {
-
         //默认的JdkSerializationRedisSerializer 导key乱码
         //private boolean enableDefaultSerializer = true;
         //private RedisSerializer<?> defaultSerializer = new JdkSerializationRedisSerializer();

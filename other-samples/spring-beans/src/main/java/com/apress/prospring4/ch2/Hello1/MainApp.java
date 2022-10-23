@@ -1,4 +1,4 @@
-package com.apress.prospring4.ch2.HelloSpring;
+package com.apress.prospring4.ch2.Hello1;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

@@ -58,5 +58,6 @@
         <module>spring-mvc-hello-world</module>
         <module>spring-data</module>
         <module>spring-oauth2</module>
+        <module>spring-boot-websocket</module>
     </modules>
 </project>

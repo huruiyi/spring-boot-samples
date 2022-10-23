@@ -85,12 +85,13 @@ public class RedisController {
     @GetMapping
     @RequestMapping("/list")
     public String hello() {
-        ListOperations.leftPushAll(KEY_NUMS, "n1", "n2", "n3");
+        listOps.leftPushAll(KEY_NUMS, "n1", "n2", "n3");
 
         listOps.leftPush(KEY_NUMS, "n4");
         listOps.leftPush(KEY_NUMS, "n5");
         listOps.leftPush(KEY_NUMS, "n6");
         listOps.leftPush(KEY_NUMS, "n7");
+
 
         List<String> numbersLeftPop = listOps.leftPop(KEY_NUMS, 3);
         numbersLeftPop.forEach(number -> {
