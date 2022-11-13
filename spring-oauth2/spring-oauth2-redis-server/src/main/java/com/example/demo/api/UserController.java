@@ -1,6 +1,6 @@
-package com.example.redisserver.api;
+package com.example.demo.api;
 
-import com.example.redisserver.api.model.UserProfile;
+import com.example.demo.api.model.UserProfile;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;

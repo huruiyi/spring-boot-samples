@@ -1,4 +1,4 @@
-package com.example.redisserver;
+package com.example.demo;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

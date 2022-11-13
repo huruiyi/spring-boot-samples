@@ -23,7 +23,6 @@
         <module>other-samples/spring-dubbo/dubbo-api</module>
         <module>other-samples/spring-dubbo/dubbo-consumer</module>
         <module>other-samples/spring-dubbo/dubbo-provider</module>
-        <module>other-samples/spring-oauth2/oauth2-redis-server</module>
         <module>other-samples/workflow/holiday-request</module>
         <module>other-samples/spring-boot-limit</module>
         <module>other-samples/spring-boot-swagger-ui</module>

@@ -1,4 +1,4 @@
-package com.example.redisserver.api.model;
+package com.example.demo.api.model;
 
 
 public class UserProfile {
