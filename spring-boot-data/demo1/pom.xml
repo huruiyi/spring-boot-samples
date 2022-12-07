@@ -11,7 +11,7 @@
 
 
     <parent>
-        <artifactId>spring-data</artifactId>
+        <artifactId>spring-boot-data</artifactId>
         <groupId>com.example</groupId>
         <version>0.0.1</version>
     </parent>

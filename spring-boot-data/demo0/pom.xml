@@ -10,7 +10,7 @@
 	<description>Demo project for Spring Boot JPA</description>
 
 	<parent>
-		<artifactId>spring-data</artifactId>
+		<artifactId>spring-boot-data</artifactId>
 		<groupId>com.example</groupId>
 		<version>0.0.1</version>
 	</parent>
