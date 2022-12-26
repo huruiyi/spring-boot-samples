@@ -1,11 +1,11 @@
 package com.example.NoSql;
 
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.args.ListPosition;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
-import redis.clients.jedis.BinaryClient.LIST_POSITION;
-import redis.clients.jedis.Jedis;
 
 public class Redis {
 	private static Jedis jedis;
@@ -117,7 +117,7 @@ public class Redis {
 	public static void Redis_List4() {
 		// 在集合的指定位置插入指定元素
 		// 在元素 9 的前面插入元素99
-		jedis.linsert("list", LIST_POSITION.BEFORE, String.valueOf(9), String.valueOf(99));
+		jedis.linsert("list", ListPosition.BEFORE, String.valueOf(9), String.valueOf(99));
 		for (int i = 0; i < 10; i++) {
 			jedis.lpush("list", String.valueOf(i));
 		}

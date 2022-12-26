@@ -8,17 +8,12 @@ import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import io.micrometer.core.instrument.util.StringUtils;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
 public class ApplicationTests {
 
     public static String scanner(String tip) throws MybatisPlusException {
@@ -112,7 +107,7 @@ public class ApplicationTests {
         //strategy.setSuperControllerClass("com.example.demo.base.BaseController");
 
         //表名
-        strategy.setInclude("message","user");
+        strategy.setInclude("message", "user");
         strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");

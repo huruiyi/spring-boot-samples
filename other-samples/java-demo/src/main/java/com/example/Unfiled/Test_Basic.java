@@ -1,16 +1,15 @@
 package com.example.Unfiled;
 
 import org.junit.jupiter.api.Test;
-import redis.clients.jedis.Tuple;
 
 import javax.swing.*;
 import java.math.BigDecimal;
 import java.util.Enumeration;
-import java.util.HashSet;
 import java.util.Properties;
 import java.util.Scanner;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 // Eclipse 快捷键
@@ -178,68 +177,6 @@ class Test_Basic {
         }
     }
     //endregion
-
-    //region Tuple
-    @Test
-    public void compareEqual() {
-        Tuple t1 = new Tuple("foo", 1d);
-        Tuple t2 = new Tuple("foo", 1d);
-
-        assertEquals(0, t1.compareTo(t2));
-        assertEquals(0, t2.compareTo(t1));
-        assertTrue(t1.equals(t2));
-        assertTrue(t2.equals(t1));
-    }
-
-    @Test
-    public void compareSameScoreObject() {
-        Double score = 1d;
-        Tuple t1 = new Tuple("foo", score);
-        Tuple t2 = new Tuple("bar", score);
-
-        assertEquals(1, t1.compareTo(t2));
-        assertEquals(-1, t2.compareTo(t1));
-        assertFalse(t1.equals(t2));
-        assertFalse(t2.equals(t1));
-    }
-
-    @Test
-    public void compareSameScore() {
-        Tuple t1 = new Tuple("foo", 1d);
-        Tuple t2 = new Tuple("bar", 1d);
-
-        assertEquals(1, t1.compareTo(t2));
-        assertEquals(-1, t2.compareTo(t1));
-        assertFalse(t1.equals(t2));
-        assertFalse(t2.equals(t1));
-    }
-
-    @Test
-    public void compareNoMatch() {
-        Tuple t1 = new Tuple("foo", 1d);
-        Tuple t2 = new Tuple("bar", 2d);
-
-        assertEquals(-1, t1.compareTo(t2));
-        assertEquals(1, t2.compareTo(t1));
-        assertFalse(t1.equals(t2));
-        assertFalse(t2.equals(t1));
-    }
-
-    @Test
-    public void testSameElement() {
-        Tuple t1 = new Tuple("user1", 10.0);
-        Tuple t2 = new Tuple("user1", 5.0);
-
-        // Intentionally skipping compareTo.
-        assertFalse(t1.equals(t2));
-        assertFalse(t2.equals(t1));
-
-        HashSet<Tuple> hashSet = new HashSet<Tuple>();
-        hashSet.add(t1);
-        hashSet.add(t2);
-        assertEquals(2, hashSet.size());
-    }
-    //endregion Tuple
 
     //region BigDecimal.compareTo
 

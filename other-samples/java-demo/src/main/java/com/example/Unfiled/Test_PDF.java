@@ -55,7 +55,7 @@ public class Test_PDF {
         for (int i = 1; i <= pageCount; i++) {
 
             int length = reader.getPageContent(i).length;
-            ArrayList<Chunk> chunks = reader.getPageSize(i).getChunks();
+            ArrayList<Chunk> chunks = (ArrayList<Chunk>) reader.getPageSize(i).getChunks();
 
             System.out.println(length);
             totalSize += length;
@@ -102,7 +102,7 @@ public class Test_PDF {
             document.open();
             page = writer.getImportedPage(reader, i);
             writer.addPage(page);
-            int currentDocumentSize = writer.getCurrentDocumentSize();
+            int currentDocumentSize = (int) writer.getCurrentDocumentSize();
             if (currentDocumentSize > limit) {
                 System.out.println(currentDocumentSize + "，超出限制。。");
             } else {
