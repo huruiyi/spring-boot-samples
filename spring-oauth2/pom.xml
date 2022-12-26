@@ -52,6 +52,7 @@
     <modules>
         <module>spring-oauth2-jdbc</module>
         <module>spring-oauth2-memory</module>
+        <module>spring-oauth2-redis-server</module>
     </modules>
 
     <build>

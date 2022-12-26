@@ -20,9 +20,11 @@
     <modules>
         <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch6</module>
         <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch7</module>
+
         <module>other-samples/spring-dubbo/dubbo-api</module>
         <module>other-samples/spring-dubbo/dubbo-consumer</module>
         <module>other-samples/spring-dubbo/dubbo-provider</module>
+
         <module>other-samples/workflow/holiday-request</module>
         <module>other-samples/spring-boot-limit</module>
         <module>other-samples/spring-boot-swagger-ui</module>
@@ -59,5 +61,6 @@
         <module>spring-mvc-hello-world</module>
         <module>spring-oauth2</module>
         <module>spring-boot-websocket</module>
+        <module>spring-boot-dubbo</module>
     </modules>
 </project>
