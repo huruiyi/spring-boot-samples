@@ -26,6 +26,7 @@
         <module>other-samples/spring-dubbo/dubbo-provider</module>
 
         <module>other-samples/workflow/holiday-request</module>
+        <module>other-samples/spring-boot-knife4j</module>
         <module>other-samples/spring-boot-limit</module>
         <module>other-samples/spring-boot-swagger-ui</module>
 
