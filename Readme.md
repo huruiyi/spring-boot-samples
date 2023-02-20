@@ -45,3 +45,9 @@
     <version>1.0.28.RELEASE</version>
  </dependency>
 ```
+
+
+## spring-boot-redis
+```
+redis的应用，以及缓存的使用
+```
