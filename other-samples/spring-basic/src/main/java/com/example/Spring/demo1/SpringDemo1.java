@@ -10,6 +10,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  */
 public class SpringDemo1 {
 
+
     @Test
     /**
      * 传统方式的调用

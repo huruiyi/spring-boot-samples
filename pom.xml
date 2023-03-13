@@ -39,6 +39,7 @@
         <module>other-samples/pro-spring-5-ch03/injection/field-injection</module>
 
         <module>other-samples/java-demo</module>
+        <module>other-samples/kafka-demo</module>
         <module>other-samples/mybatis-first</module>
 
         <module>other-samples/spring-basic</module>
