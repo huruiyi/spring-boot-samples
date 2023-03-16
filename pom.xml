@@ -38,6 +38,9 @@
         <module>other-samples/pro-spring-5-ch03/injection/injection</module>
         <module>other-samples/pro-spring-5-ch03/injection/field-injection</module>
 
+        <module>other-samples/pro-spring-5-ch05/security</module>
+        <module>other-samples/pro-spring-5-ch05/static-pointcut</module>
+
         <module>other-samples/java-demo</module>
         <module>other-samples/kafka-demo</module>
         <module>other-samples/mybatis-first</module>
@@ -66,5 +69,6 @@
         <module>spring-boot-websocket</module>
         <module>spring-boot-dubbo</module>
         <module>spring-boot-openapi</module>
+        <module>other-samples/pro-spring-5-ch05/security</module>
     </modules>
 </project>
