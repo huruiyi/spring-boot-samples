@@ -6,7 +6,7 @@
     <parent>
         <artifactId>spring-boot-websocket</artifactId>
         <groupId>com.example</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
 
     <groupId>com.example</groupId>

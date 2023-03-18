@@ -10,11 +10,13 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-@Component // ApplicationContextAware会为Component组件调用setApplicationContext方法； 测试Myserver3时注释
-public class MyServer implements ApplicationContextAware {
-    @SuppressWarnings("resource")
+@Component
+// ApplicationContextAware会为Component组件调用setApplicationContext方法； 测试Myserver3时注释
+public class MyServer1 implements ApplicationContextAware {
+
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring2.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("SpringAnnotation.xml");
+        ctx.close();
     }
 
     public void setApplicationContext(ApplicationContext ctx) throws BeansException {
@@ -26,7 +28,7 @@ public class MyServer implements ApplicationContextAware {
                 System.out.println("注解上的value: " + value);
 
                 // 反射被注解类，并调用指定方法
-                Method method = serviceBean.getClass().getMethod("hello", new Class[]{String.class});
+                Method method = serviceBean.getClass().getMethod("hello", String.class);
                 Object invoke = method.invoke(serviceBean, "bbb");
                 System.out.println(invoke);
             } catch (Exception e) {

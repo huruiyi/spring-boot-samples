@@ -1,7 +1,5 @@
 package com.example.Model;
 
-import lombok.Data;
-
 import java.util.List;
 
 public class CusResult {

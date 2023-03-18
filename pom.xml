@@ -13,11 +13,27 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.3</version>
+        <version>2.7.9</version>
         <relativePath/>
     </parent>
 
     <modules>
+        <module>other-samples/java-demo</module>
+        <module>other-samples/kafka-demo</module>
+        <module>other-samples/mybatis-first</module>
+
+        <module>other-samples/pro-spring-5-ch02</module>
+
+        <module>other-samples/pro-spring-5-ch03/dependency-pull</module>
+        <module>other-samples/pro-spring-5-ch03/injection/constructor-injection</module>
+        <module>other-samples/pro-spring-5-ch03/injection/setter-injection</module>
+        <module>other-samples/pro-spring-5-ch03/injection/method-injection</module>
+        <module>other-samples/pro-spring-5-ch03/injection/injection</module>
+        <module>other-samples/pro-spring-5-ch03/injection/field-injection</module>
+
+        <module>other-samples/pro-spring-5-ch05/security</module>
+        <module>other-samples/pro-spring-5-ch05/static-pointcut</module>
+
         <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch6</module>
         <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch7</module>
 
@@ -29,21 +45,6 @@
         <module>other-samples/spring-boot-knife4j</module>
         <module>other-samples/spring-boot-limit</module>
         <module>other-samples/spring-boot-swagger-ui</module>
-
-        <module>other-samples/pro-spring-5-ch02</module>
-        <module>other-samples/pro-spring-5-ch03/dependency-pull</module>
-        <module>other-samples/pro-spring-5-ch03/injection/constructor-injection</module>
-        <module>other-samples/pro-spring-5-ch03/injection/setter-injection</module>
-        <module>other-samples/pro-spring-5-ch03/injection/method-injection</module>
-        <module>other-samples/pro-spring-5-ch03/injection/injection</module>
-        <module>other-samples/pro-spring-5-ch03/injection/field-injection</module>
-
-        <module>other-samples/pro-spring-5-ch05/security</module>
-        <module>other-samples/pro-spring-5-ch05/static-pointcut</module>
-
-        <module>other-samples/java-demo</module>
-        <module>other-samples/kafka-demo</module>
-        <module>other-samples/mybatis-first</module>
 
         <module>other-samples/spring-basic</module>
         <module>other-samples/spring-beans</module>
@@ -64,11 +65,9 @@
         <module>spring-boot-thymeleaf</module>
         <module>spring-multi-datasource</module>
         <module>spring-boot-websocket</module>
-        <module>spring-mvc-hello-world</module>
         <module>spring-oauth2</module>
         <module>spring-boot-websocket</module>
         <module>spring-boot-dubbo</module>
         <module>spring-boot-openapi</module>
-        <module>other-samples/pro-spring-5-ch05/security</module>
     </modules>
 </project>

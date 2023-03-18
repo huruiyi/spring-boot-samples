@@ -11,6 +11,7 @@ import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
@@ -28,7 +29,7 @@ public class SpringBootDemoApplication extends SpringBootServletInitializer impl
     //war包: 先是启动Servlet服务器,服务器启动Springboot应用(springBootServletInitizer),然后启动IOC容器
     @Override
     public void customize(ConfigurableServletWebServerFactory server) {
-        //server.setPort(9000);
+        server.setPort(9000);
     }
 
     // nginx.conf redis-session测试
@@ -36,7 +37,21 @@ public class SpringBootDemoApplication extends SpringBootServletInitializer impl
     // java -jar demo2.jar --server.port=8013
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoApplication.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(SpringBootDemoApplication.class, args);
+        System.out.println("# Beans: " + context.getBeanDefinitionCount());
+
+        String[] names = context.getBeanDefinitionNames();
+        Arrays.sort(names);
+        for (String name : names) {
+            if (SpringBootDemoApplication.class.getSimpleName().equalsIgnoreCase(name)) {
+                System.out.printf("***********************" + name + "*************************\n");
+            } else {
+                System.out.println(name);
+            }
+        }
+
+        System.out.println();
+        Arrays.asList(names).forEach(System.out::println);
     }
 
     @Bean

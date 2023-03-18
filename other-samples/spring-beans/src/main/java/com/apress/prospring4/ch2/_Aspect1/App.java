@@ -1,12 +1,12 @@
-package com.apress.prospring4.ch2._Aspect;
+package com.apress.prospring4.ch2._Aspect1;
 
-import com.apress.prospring4.ch2._Aspect.service.Animal;
-import com.apress.prospring4.ch2._Aspect.service.Person;
+import com.apress.prospring4.ch2._Aspect1.service.Animal;
+import com.apress.prospring4.ch2._Aspect1.service.Person;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * 来源:
- * https://blog.csdn.net/u010502101/article/details/76944753
+ * <a href="https://blog.csdn.net/u010502101/article/details/76944753">...</a>
  */
 public class App {
     public static void main(String[] args) {

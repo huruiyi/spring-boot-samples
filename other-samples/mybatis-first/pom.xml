@@ -7,9 +7,19 @@
         <groupId>com.example</groupId>
         <version>0.0.1</version>
     </parent>
+    <version>0.0.1</version>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.example.demo</groupId>
     <artifactId>mybatis-first</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -22,9 +32,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.29</version>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.32</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>

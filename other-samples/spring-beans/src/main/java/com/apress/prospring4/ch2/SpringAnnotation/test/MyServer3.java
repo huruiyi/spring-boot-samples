@@ -13,6 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = "classpath:SpringAnnotation.xml")
 @Component
 public class MyServer3 {
+
     @Autowired
     HelloService helloService;
 

@@ -2,12 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
-    <artifactId>spring-multi-datasource</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-
-    <name>spring-multi-datasource</name>
-    <description>Demo project for Spring Boot</description>
 
     <parent>
         <groupId>com.example</groupId>
@@ -15,9 +9,7 @@
         <version>0.0.1</version>
     </parent>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
+    <artifactId>spring-multi-datasource</artifactId>
 
     <dependencies>
         <dependency>
@@ -33,10 +25,9 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.0.0</version>
         </dependency>
-
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

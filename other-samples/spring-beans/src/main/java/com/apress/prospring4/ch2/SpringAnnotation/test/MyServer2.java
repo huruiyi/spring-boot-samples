@@ -14,9 +14,9 @@ import java.util.Map;
 //@ContextConfiguration(locations = "classpath:spring2.xml")
 //@Component
 public class MyServer2 implements ApplicationContextAware {
-    @SuppressWarnings("resource")
+
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring2.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("SpringAnnotation.xml");
         Map<String, Object> beans = ctx.getBeansWithAnnotation(RpcService.class);
         for (Object obj : beans.values()) {
             HelloService hello = (HelloService) obj;
@@ -30,7 +30,7 @@ public class MyServer2 implements ApplicationContextAware {
         Map<String, Object> serviceBeanMap = ctx.getBeansWithAnnotation(RpcService.class);
         for (Object serviceBean : serviceBeanMap.values()) {
             try {
-                Method method = serviceBean.getClass().getMethod("hello", new Class[]{String.class});
+                Method method = serviceBean.getClass().getMethod("hello", String.class);
                 Object invoke = method.invoke(serviceBean, "bbb");
                 System.out.println(invoke);
             } catch (Exception e) {
