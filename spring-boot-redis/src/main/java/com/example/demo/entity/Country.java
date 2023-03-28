@@ -4,12 +4,21 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.io.Serializable;
 
+/**
+     create table country (
+         id integer not null auto_increment,
+         capital varchar(255),
+         code varchar(255),
+         name varchar(255),
+         primary key (id)
+     ) engine=InnoDB
+ */
 @Entity
 @Table(name = "country")
 public class Country implements Serializable {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "name")
