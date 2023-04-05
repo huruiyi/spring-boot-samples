@@ -3,9 +3,6 @@ spring:
     name: admin-client
   boot:
     admin:
-      instance-auth:
-        default-user-name: ${spring.security.user.name}
-        default-password: ${spring.security.user.password}
       client:
         url: http://localhost:9999
         username: ${spring.security.user.name}

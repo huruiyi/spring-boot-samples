@@ -5,7 +5,6 @@ import com.example.Spring.service.BookService;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
@@ -17,19 +16,19 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import java.util.Arrays;
 
-@SpringBootApplication
-public class SpringBootDemoApplication extends SpringBootServletInitializer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+@org.springframework.boot.autoconfigure.SpringBootApplication
+public class SpringBootApplication extends SpringBootServletInitializer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(SpringBootDemoApplication.class);
+        return application.sources(SpringBootApplication.class);
     }
 
     //jar包: 执行SpringBootApplication的run方法,启动IOC容器,然后创建嵌入式Servlet容器
     //war包: 先是启动Servlet服务器,服务器启动Springboot应用(springBootServletInitizer),然后启动IOC容器
     @Override
     public void customize(ConfigurableServletWebServerFactory server) {
-        server.setPort(9000);
+        //server.setPort(9000);
     }
 
     // nginx.conf redis-session测试
@@ -37,13 +36,17 @@ public class SpringBootDemoApplication extends SpringBootServletInitializer impl
     // java -jar demo2.jar --server.port=8013
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(SpringBootDemoApplication.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(SpringBootApplication.class, args);
+        //printBeans(context);
+    }
+
+    private static void printBeans(ConfigurableApplicationContext context) {
         System.out.println("# Beans: " + context.getBeanDefinitionCount());
 
         String[] names = context.getBeanDefinitionNames();
         Arrays.sort(names);
         for (String name : names) {
-            if (SpringBootDemoApplication.class.getSimpleName().equalsIgnoreCase(name)) {
+            if (SpringBootApplication.class.getSimpleName().equalsIgnoreCase(name)) {
                 System.out.printf("***********************" + name + "*************************\n");
             } else {
                 System.out.println(name);

@@ -7,8 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringBootKnife4jApplication {
 
 	/**
-	 * http://localhost:8080/doc.html#/home
-	 * @param args
+	 * <a href="http://localhost:8080/doc.html#/home">...</a>
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootKnife4jApplication.class, args);

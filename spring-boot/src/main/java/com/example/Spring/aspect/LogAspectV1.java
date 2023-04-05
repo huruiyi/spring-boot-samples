@@ -22,7 +22,7 @@ import java.util.Arrays;
 @Component
 public class LogAspectV1 {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     //线程局部的变量,解决多线程中相同变量的访问冲突问题。
     ThreadLocal<Long> startTime = new ThreadLocal<>();

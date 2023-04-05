@@ -23,16 +23,15 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-@RestController
 @Slf4j
+@RestController
 @EnableAspectJAutoProxy
-@RequestMapping("/hello")
-public class HelloController {
+public class IndexController {
 
     //1：构造函数注入
     final SingleService singleService1;
 
-    public HelloController(SingleService singleService) {
+    public IndexController(SingleService singleService) {
         this.singleService1 = singleService;
     }
 
@@ -43,11 +42,6 @@ public class HelloController {
     @Value("${spring.profiles.active}")
     private String env;
 
-    @SysLog
-    @RequestMapping(value = "")
-    public String indexEmpty() {
-        return "Hello";
-    }
 
     @SysLog
     @RequestMapping(value = "/")
@@ -56,8 +50,10 @@ public class HelloController {
     }
 
     @RequestMapping("/sayHi")
-    public String hello(String name) {
-        return "hello " + name;
+    public Map<String, String> hello(String name) {
+        Map<String, String> map = new HashMap<>();
+        map.put("name", name);
+        return map;
     }
 
     @GetMapping("/service")
@@ -79,12 +75,11 @@ public class HelloController {
     @RequestMapping("/testAnnotation")
     @ParamsAnnotation("自定义Annotation测试")
     public String testAnnotation(@RequestParam(name = "uName", defaultValue = "Li San") String name, Integer age) {
-        String result = "测试自定义注解,用户：" + name + "，年龄：" + age;
-        return result;
+        return "测试自定义注解,用户：" + name + "，年龄：" + age;
     }
 
-    @RequestMapping("/p1/p2")
     @ResponseBody
+    @RequestMapping("/p1/p2")
     public Map<String, String> p1p2() {
         Map<String, String> map = new HashMap<>();
         map.put("key1", "value1");
@@ -98,8 +93,8 @@ public class HelloController {
     }
 
 
-    @RequestMapping("/session")
     @ResponseBody
+    @RequestMapping("/session")
     public String sessionTrack(HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.setAttribute("sessionKey", "sessionValue");
@@ -135,8 +130,8 @@ public class HelloController {
         }
     }
 
-    @RequestMapping(value = "/devtools")
     @ResponseBody
+    @RequestMapping(value = "/devtools")
     public String dev() {
         return "Hello World v2.1.1";
     }
@@ -144,8 +139,7 @@ public class HelloController {
     @RequestMapping(value = "/beans")
     @ResponseBody
     public String[] bean() {
-        String[] beans = singleService1.getBeans();
-        return beans;
+        return singleService1.getBeans();
     }
 
 }
