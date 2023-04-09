@@ -27,7 +27,7 @@ class Demo2ApplicationTests {
             System.err.println(user);
         }
         assertNotNull(users);
-        assertTrue(!users.isEmpty());
+        assertFalse(users.isEmpty());
     }
 
     @Test

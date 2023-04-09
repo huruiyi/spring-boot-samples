@@ -1,4 +1,4 @@
-package com.example.websocketsockjs;
+package com.example.websocketbasic.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Oauth2Application {
+public class Oauth2MemoryApplication {
 
 	/**
 	 * http://localhost:10300/oauth/token?username=user_1&password=user_1_pass&grant_type=password&scope=select&client_id=client_2&client_secret=client_2_pass
@@ -14,7 +14,7 @@ public class Oauth2Application {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(Oauth2Application.class, args);
+		SpringApplication.run(Oauth2MemoryApplication.class, args);
 	}
 
 }

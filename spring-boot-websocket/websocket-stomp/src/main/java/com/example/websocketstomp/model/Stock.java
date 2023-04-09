@@ -1,4 +1,4 @@
-package com.example.websocketstomp;
+package com.example.websocketstomp.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

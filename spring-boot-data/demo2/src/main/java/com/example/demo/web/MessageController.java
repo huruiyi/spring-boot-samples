@@ -1,25 +1,13 @@
 package com.example.demo.web;
 
 import com.example.demo.entity.Message;
-import com.example.demo.entity.User;
 import com.example.demo.repository.MessageRepository;
-import com.example.demo.repository.UserRepository;
 import com.example.demo.utils.PageData;
 import com.example.demo.utils.Response;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import java.util.Optional;
 
 import static org.springframework.data.domain.ExampleMatcher.matching;
@@ -49,7 +37,8 @@ public class MessageController {
         sort = sort.and(Sort.by(Sort.Direction.DESC, "subject"));
         PageRequest pageRequest = PageRequest.of(currentPage - 1, 5, sort);
 
-        ExampleMatcher exampleMatcher = matching().withMatcher("type", matcher -> matcher.transform(value -> Optional.of(type)));
+        ExampleMatcher exampleMatcher =
+                matching().withMatcher("type", matcher -> matcher.transform(value -> Optional.of(type)));
         Example<Message> example0 = Example.of(new Message(), exampleMatcher);
 
         Message message = new Message();

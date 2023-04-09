@@ -1,5 +1,6 @@
-package com.example.websocketchatroom;
+package com.example.websocketchatroom.web;
 
+import com.example.websocketchatroom.model.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.messaging.handler.annotation.MessageMapping;

@@ -1,4 +1,4 @@
-package com.example.websocketchatroom;
+package com.example.websocketchatroom.model;
 
 /*
  * The endpoint accepts messages containing the sender name

@@ -6,10 +6,10 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 @EnableAsync
 @SpringBootApplication
-public class WebsocketSockJsApplication {
+public class SockJsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(WebsocketSockJsApplication.class, args);
+        SpringApplication.run(SockJsApplication.class, args);
     }
 
 }
