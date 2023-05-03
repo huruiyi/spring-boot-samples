@@ -25,15 +25,16 @@ import java.util.List;
 public class SwaggerConfig {
 
 
-//    @Bean
-//    public Docket createRestApi2() {
-//        return new Docket(DocumentationType.SWAGGER_2)
-//                .apiInfo(apiInfo())
-//                .select()
-//                .apis(RequestHandlerSelectors.basePackage("com.example.demo.web"))
-//                .paths(PathSelectors.any())
-//                .build();
-//    }
+    @Bean
+    public Docket createRestApi2() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("用户接口")
+                .apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.example.demo.web.user"))
+                .paths(PathSelectors.any())
+                .build();
+    }
 
 
     /**
@@ -62,10 +63,10 @@ public class SwaggerConfig {
         pars.add(tokenPar.build());
         //添加head参数end
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("com.example")
+                .groupName("文件接口")
                 .select()
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class)) //有该注解的生成doc
-                .apis(RequestHandlerSelectors.basePackage("com.example.demo"))   // 自行修改为自己的包路径
+                .apis(RequestHandlerSelectors.basePackage("com.example.demo.web.file"))   // 自行修改为自己的包路径
                 .paths(PathSelectors.any())
                 .build()
                 .globalOperationParameters(pars) //set Header
