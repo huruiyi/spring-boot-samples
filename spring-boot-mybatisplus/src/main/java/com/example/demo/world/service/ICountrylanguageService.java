@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author fairy.vip
- * @since 2023-07-22
+ * @since 2023-07-23
  */
 public interface ICountrylanguageService extends IService<Countrylanguage> {
 

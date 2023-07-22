@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
 /**
  * <p>
@@ -14,59 +13,58 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author fairy.vip
- * @since 2023-07-22
+ * @since 2023-07-23
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
 public class Country implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId("Code")
-    private String Code;
+    private String code;
 
     @TableField("Name")
-    private String Name;
+    private String name;
 
     @TableField("Continent")
-    private String Continent;
+    private String continent;
 
     @TableField("Region")
-    private String Region;
+    private String region;
 
     @TableField("SurfaceArea")
-    private BigDecimal SurfaceArea;
+    private BigDecimal surfacearea;
 
     @TableField("IndepYear")
-    private Integer IndepYear;
+    private Integer indepyear;
 
     @TableField("Population")
-    private Integer Population;
+    private Integer population;
 
     @TableField("LifeExpectancy")
-    private BigDecimal LifeExpectancy;
+    private BigDecimal lifeexpectancy;
 
     @TableField("GNP")
     private BigDecimal gnp;
 
     @TableField("GNPOld")
-    private BigDecimal GNPOld;
+    private BigDecimal gnpold;
 
     @TableField("LocalName")
-    private String LocalName;
+    private String localname;
 
     @TableField("GovernmentForm")
-    private String GovernmentForm;
+    private String governmentform;
 
     @TableField("HeadOfState")
-    private String HeadOfState;
+    private String headofstate;
 
     @TableField("Capital")
-    private Integer Capital;
+    private Integer capital;
 
     @TableField("Code2")
-    private String Code2;
+    private String code2;
 
 
 }

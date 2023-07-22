@@ -10,13 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class CountryTest {
+class CountryTest {
 
   @Autowired
   ICountryService countryService;
 
   @Test
-  void test1(){
+  void list(){
     List<Country> list = countryService.list();
     list.forEach(System.out::println);
     Assertions.assertNotNull(list);

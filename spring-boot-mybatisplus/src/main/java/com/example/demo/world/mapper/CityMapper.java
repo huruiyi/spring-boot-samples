@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author fairy.vip
- * @since 2023-07-22
+ * @since 2023-07-23
  */
 public interface CityMapper extends BaseMapper<City> {
 

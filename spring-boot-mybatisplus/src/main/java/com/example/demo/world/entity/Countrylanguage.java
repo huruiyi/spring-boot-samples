@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
 /**
  * <p>
@@ -14,26 +13,25 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author fairy.vip
- * @since 2023-07-22
+ * @since 2023-07-23
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
 public class Countrylanguage implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId("CountryCode")
-    private String CountryCode;
+    private String countrycode;
 
     @TableField("Language")
-    private String Language;
+    private String language;
 
     @TableField("IsOfficial")
-    private String IsOfficial;
+    private String isofficial;
 
     @TableField("Percentage")
-    private BigDecimal Percentage;
+    private BigDecimal percentage;
 
 
 }

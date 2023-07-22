@@ -4,17 +4,23 @@ import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
-import com.baomidou.mybatisplus.generator.config.*;
+import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
+import com.baomidou.mybatisplus.generator.config.FileOutConfig;
+import com.baomidou.mybatisplus.generator.config.GlobalConfig;
+import com.baomidou.mybatisplus.generator.config.PackageConfig;
+import com.baomidou.mybatisplus.generator.config.StrategyConfig;
+import com.baomidou.mybatisplus.generator.config.TemplateConfig;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import io.micrometer.core.instrument.util.StringUtils;
-import org.junit.jupiter.api.Test;
-
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.Scanner;
 
-public class MysqlGenerator {
+ public class MysqlGenerator {
 
   public static String scanner(String tip) throws MybatisPlusException {
     Scanner scanner = new Scanner(System.in);
@@ -28,14 +34,14 @@ public class MysqlGenerator {
     throw new MybatisPlusException("请输入正确的" + tip + "！");
   }
 
-  @Test
-  void run() {
+  public static void main(String[] args) throws RuntimeException, IOException {
     AutoGenerator mpg = new AutoGenerator();
-
-    // 全局配置
     GlobalConfig gc = new GlobalConfig();
-    final String projectPath = System.getProperty("user.dir");
-    gc.setOutputDir(projectPath + "/src/main/java");
+
+    File directory = new File("spring-boot-mybatisplus");
+
+    String canonicalPath = directory.getCanonicalPath();
+    gc.setOutputDir(canonicalPath + "/src/main/java");
     gc.setAuthor("fairy.vip");
     gc.setOpen(false);
     mpg.setGlobalConfig(gc);
@@ -51,7 +57,8 @@ public class MysqlGenerator {
 
     // 包配置
     final PackageConfig pc = new PackageConfig();
-    pc.setModuleName("world");
+    pc.setModuleName(scanner("Module name"));
+    //pc.setModuleName("world");
     pc.setParent("com.example.demo");
     mpg.setPackageInfo(pc);
 
@@ -75,7 +82,7 @@ public class MysqlGenerator {
     focList.add(new FileOutConfig(templatePath) {
 
       public String outputFile(com.baomidou.mybatisplus.generator.config.po.TableInfo tableInfo) {
-        return projectPath + "/src/main/resources/mapper/" + pc.getModuleName() + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
+        return canonicalPath + "/src/main/resources/mapper/" + pc.getModuleName() + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
       }
     });
 

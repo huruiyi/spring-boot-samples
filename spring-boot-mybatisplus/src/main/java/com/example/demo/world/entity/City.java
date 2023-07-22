@@ -1,12 +1,9 @@
 package com.example.demo.world.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
 /**
  * <p>
@@ -14,29 +11,25 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author fairy.vip
- * @since 2023-07-22
+ * @since 2023-07-23
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
 public class City implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "ID", type = IdType.AUTO)
-    private Integer id;
-
     @TableField("Name")
-    private String Name;
+    private String name;
 
     @TableField("CountryCode")
-    private String CountryCode;
+    private String countrycode;
 
     @TableField("District")
-    private String District;
+    private String district;
 
     @TableField("Population")
-    private Integer Population;
+    private Integer population;
 
 
 }

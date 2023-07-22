@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author fairy.vip
- * @since 2023-07-22
+ * @since 2023-07-23
  */
 @Service
 public class CityServiceImpl extends ServiceImpl<CityMapper, City> implements ICityService {
