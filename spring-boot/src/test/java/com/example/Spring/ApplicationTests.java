@@ -11,25 +11,26 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootTest
 public class ApplicationTests {
-    private static ApplicationContext context;
 
-    @Test
-    public void Test1() {
-        context = new ClassPathXmlApplicationContext("beans.xml");
+  private static ApplicationContext context;
 
-        HelloWorldService springService = ( HelloWorldService ) context.getBean("helloWorldSpringService");
-        HelloWorld springhw = springService.getHelloWorld();
-        springhw.sayHello();
+  @Test
+  public void Test1() {
+    context = new ClassPathXmlApplicationContext("beans.xml");
 
+    HelloWorldService springService = (HelloWorldService) context.getBean("helloWorldSpringService");
+    HelloWorld springhw = springService.getHelloWorld();
+    springhw.sayHello();
+
+  }
+
+  @Test
+  public void Test2() {
+    RestTemplate restTemplate = new RestTemplate();
+    for (int i = 0; i < 5; i++) {
+      CusResult result = restTemplate.getForObject("http://localhost:9102/limit3", CusResult.class);
+      System.out.println(result);
     }
-
-    @Test
-    public void Test2() {
-        RestTemplate restTemplate = new RestTemplate();
-        for (int i = 0; i < 5; i++) {
-            CusResult result = restTemplate.getForObject("http://localhost:9102/limit3", CusResult.class);
-            System.out.println(result);
-        }
-    }
+  }
 
 }

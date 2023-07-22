@@ -14,47 +14,52 @@ import static com.example.Thread.jcip.LaunderThrowable.launderThrowable;
  * @author Brian Goetz and Tim Peierls
  */
 public abstract class FutureRenderer {
-    private final ExecutorService executor = Executors.newCachedThreadPool();
 
-    void renderPage(CharSequence source) {
-        final List<ImageInfo> imageInfos = scanForImageInfo(source);
-        Callable<List<ImageData>> task =
-                new Callable<List<ImageData>>() {
-                    public List<ImageData> call() {
-                        List<ImageData> result = new ArrayList<ImageData>();
-                        for (ImageInfo imageInfo : imageInfos)
-                            result.add(imageInfo.downloadImage());
-                        return result;
-                    }
-                };
+  private final ExecutorService executor = Executors.newCachedThreadPool();
 
-        Future<List<ImageData>> future = executor.submit(task);
-        renderText(source);
+  void renderPage(CharSequence source) {
+    final List<ImageInfo> imageInfos = scanForImageInfo(source);
+    Callable<List<ImageData>> task =
+        new Callable<List<ImageData>>() {
+          public List<ImageData> call() {
+            List<ImageData> result = new ArrayList<ImageData>();
+            for (ImageInfo imageInfo : imageInfos) {
+              result.add(imageInfo.downloadImage());
+            }
+            return result;
+          }
+        };
 
-        try {
-            List<ImageData> imageData = future.get();
-            for (ImageData data : imageData)
-                renderImage(data);
-        } catch (InterruptedException e) {
-            // Re-assert the thread's interrupted status
-            Thread.currentThread().interrupt();
-            // We don't need the result, so cancel the task too
-            future.cancel(true);
-        } catch (ExecutionException e) {
-            throw launderThrowable(e.getCause());
-        }
+    Future<List<ImageData>> future = executor.submit(task);
+    renderText(source);
+
+    try {
+      List<ImageData> imageData = future.get();
+      for (ImageData data : imageData) {
+        renderImage(data);
+      }
+    } catch (InterruptedException e) {
+      // Re-assert the thread's interrupted status
+      Thread.currentThread().interrupt();
+      // We don't need the result, so cancel the task too
+      future.cancel(true);
+    } catch (ExecutionException e) {
+      throw launderThrowable(e.getCause());
     }
+  }
 
-    interface ImageData {
-    }
+  abstract void renderText(CharSequence s);
 
-    interface ImageInfo {
-        ImageData downloadImage();
-    }
+  abstract List<ImageInfo> scanForImageInfo(CharSequence s);
 
-    abstract void renderText(CharSequence s);
+  abstract void renderImage(ImageData i);
 
-    abstract List<ImageInfo> scanForImageInfo(CharSequence s);
+  interface ImageData {
 
-    abstract void renderImage(ImageData i);
+  }
+
+  interface ImageInfo {
+
+    ImageData downloadImage();
+  }
 }

@@ -4,25 +4,25 @@ import java.util.List;
 
 public class HelloWorld {
 
-    private List<Holiday> holidays;
-    private String message;
-   
-    public void setMessage(String message) {
-        this.message = message;
-    }
+  private List<Holiday> holidays;
+  private String message;
 
-    public void setHolidays(List<Holiday> holidays) {
-        this.holidays = holidays;
-    }
+  public void setMessage(String message) {
+    this.message = message;
+  }
 
-    public List<Holiday> getHolidays() { 
-    	return holidays; 
+  public List<Holiday> getHolidays() {
+    return holidays;
+  }
+
+  public void setHolidays(List<Holiday> holidays) {
+    this.holidays = holidays;
+  }
+
+  public void hello() {
+    for (Holiday holiday : holidays) {
+      System.out.println(holiday.toString());
     }
-    
-    public void hello() {
-        for (Holiday holiday : holidays) {
-            System.out.println(holiday.toString());
-        }
-        System.out.println("Hello! " + message);
-    }
+    System.out.println("Hello! " + message);
+  }
 }

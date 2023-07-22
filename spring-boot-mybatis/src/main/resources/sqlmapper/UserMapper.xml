@@ -1,50 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.mapper.UserMapper">
-    <resultMap id="UserResultMap" type="com.example.model.User">
-        <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="position_id" jdbcType="INTEGER" property="positionId"/>
-        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
-        <result column="mobile" jdbcType="VARCHAR" property="mobile"/>
-        <result column="email" jdbcType="VARCHAR" property="email"/>
-        <result column="note" jdbcType="VARCHAR" property="note"/>
-        <result column="sex" jdbcType="INTEGER" property="sex" typeHandler="com.example.typeHandler.SexTypeHandler"/>
-        <result column="hobbies" property="hobbies" typeHandler="com.example.typeHandler.ListTypeHandler"/>
-        <result column="login_time" property="loginTime" typeHandler="com.example.typeHandler.TimeOnlyTypeHandler"/>
-    </resultMap>
+  <insert id="insertUser" parameterType="com.example.model.User">
+    insert into t_user
+      (user_name, mobile, login_time, email, hobbies, sex, position_id, note)
+      value
+      ( #{userName},
+      #{mobile},
+      #{loginTime},
+      #{email},
+      #{hobbies,typeHandler=com.example.typeHandler.ListTypeHandler},
+      #{sex,typeHandler=com.example.typeHandler.SexTypeHandler},
+      #{positionId},
+      #{note}
+      )
+  </insert>
 
-    <select id="selectByPrimaryKey" resultMap="UserResultMap" parameterType="java.lang.Integer">
-        select id,
-               user_name,
-               sex,
-               mobile,
-               email,
-               note,
-               position_id positionId,
-               hobbies,
-               login_time
-        from t_user
-        where id = #{id}
-    </select>
+  <resultMap id="UserResultMap" type="com.example.model.User">
+    <id column="id" jdbcType="INTEGER" property="id"/>
+    <result column="position_id" jdbcType="INTEGER" property="positionId"/>
+    <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+    <result column="mobile" jdbcType="VARCHAR" property="mobile"/>
+    <result column="email" jdbcType="VARCHAR" property="email"/>
+    <result column="note" jdbcType="VARCHAR" property="note"/>
+    <result column="sex" jdbcType="INTEGER" property="sex" typeHandler="com.example.typeHandler.SexTypeHandler"/>
+    <result column="hobbies" property="hobbies" typeHandler="com.example.typeHandler.ListTypeHandler"/>
+    <result column="login_time" property="loginTime" typeHandler="com.example.typeHandler.TimeOnlyTypeHandler"/>
+  </resultMap>
 
-    <select id="selectAllUsers" resultMap="UserResultMap">
-        select id, user_name, sex, mobile, email, note, position_id
-        from t_user
-    </select>
+  <select id="selectAllUsers" resultMap="UserResultMap">
+    select id, user_name, sex, mobile, email, note, position_id
+    from t_user
+  </select>
 
-    <insert id="insertUser" parameterType="com.example.model.User">
-        insert into t_user
-            (user_name, mobile, login_time, email, hobbies, sex, position_id,note)
-            value
-            (
-            #{userName},
-            #{mobile},
-            #{loginTime},
-            #{email},
-            #{hobbies,typeHandler=com.example.typeHandler.ListTypeHandler},
-            #{sex,typeHandler=com.example.typeHandler.SexTypeHandler},
-            #{positionId},
-            #{note}
-            )
-    </insert>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="UserResultMap">
+    select id,
+           user_name,
+           sex,
+           mobile,
+           email,
+           note,
+           position_id positionId,
+           hobbies,
+           login_time
+    from t_user
+    where id = #{id}
+  </select>
 </mapper>

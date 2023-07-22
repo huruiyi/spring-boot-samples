@@ -8,27 +8,31 @@ package com.example.Thread.jcip;
  * @author Brian Goetz and Tim Peierls
  */
 public class ThisEscape {
-    public ThisEscape(EventSource source) {
-        source.registerListener(new EventListener() {
-            public void onEvent(Event e) {
-                doSomething(e);
-            }
-        });
-    }
 
-    void doSomething(Event e) {
-    }
+  public ThisEscape(EventSource source) {
+    source.registerListener(new EventListener() {
+      public void onEvent(Event e) {
+        doSomething(e);
+      }
+    });
+  }
+
+  void doSomething(Event e) {
+  }
 
 
-    interface EventSource {
-        void registerListener(EventListener e);
-    }
+  interface EventSource {
 
-    interface EventListener {
-        void onEvent(Event e);
-    }
+    void registerListener(EventListener e);
+  }
 
-    interface Event {
-    }
+  interface EventListener {
+
+    void onEvent(Event e);
+  }
+
+  interface Event {
+
+  }
 }
 

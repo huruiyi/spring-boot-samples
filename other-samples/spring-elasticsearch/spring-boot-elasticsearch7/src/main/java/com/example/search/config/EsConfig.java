@@ -9,12 +9,12 @@ import org.springframework.data.elasticsearch.client.RestClients;
 @Configuration
 public class EsConfig {
 
-	@Bean
-	RestHighLevelClient client() {
+  @Bean
+  RestHighLevelClient client() {
 
-		ClientConfiguration clientConfiguration = ClientConfiguration.builder().connectedToLocalhost().build();
+    ClientConfiguration clientConfiguration = ClientConfiguration.builder().connectedToLocalhost().build();
 
-		return RestClients.create(clientConfiguration).rest();
-	}
+    return RestClients.create(clientConfiguration).rest();
+  }
 
 }

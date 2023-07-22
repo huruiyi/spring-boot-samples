@@ -8,111 +8,113 @@ import java.util.concurrent.BlockingQueue;
 
 public class MyThreadPool {
 
-	private int poolSize = 4;
+  private int poolSize = 4;
 
-	private int taskQueueSize = 20;
+  private int taskQueueSize = 20;
 
-	private BlockingQueue<Runnable> taskQueue;
+  private BlockingQueue<Runnable> taskQueue;
 
-	private List<Worker> workers;
+  private List<Worker> workers;
 
-	private boolean working = true;
+  private boolean working = true;
 
-	public MyThreadPool(int poolSize, int taskQueueSize) {
-		if (taskQueueSize > 0) {
-			this.taskQueueSize = taskQueueSize;
-		}
-		taskQueue = new ArrayBlockingQueue<>(this.taskQueueSize);
+  public MyThreadPool(int poolSize, int taskQueueSize) {
+    if (taskQueueSize > 0) {
+      this.taskQueueSize = taskQueueSize;
+    }
+    taskQueue = new ArrayBlockingQueue<>(this.taskQueueSize);
 
-		if (poolSize > 0) {
-			this.poolSize = poolSize;
-		}
-		workers = Collections.synchronizedList(new ArrayList<>());
+    if (poolSize > 0) {
+      this.poolSize = poolSize;
+    }
+    workers = Collections.synchronizedList(new ArrayList<>());
 
-		for (int i = 0; i < this.poolSize; i++) {
-			new Worker(taskQueue, this).start();
-		}
-	}
+    for (int i = 0; i < this.poolSize; i++) {
+      new Worker(taskQueue, this).start();
+    }
+  }
 
-	public boolean submit(Runnable task) {
-		if (this.working) {
-			return this.taskQueue.offer(task);
-		}
-		return false;
-	}
+  public static void main(String[] args) {
+    MyThreadPool pool = new MyThreadPool(5, 20);
+    for (int i = 0; i < 18; i++) {
+      pool.submit(new Runnable() {
 
-	public void shutdown() {
-		this.working = false;
-		for (Thread t : this.workers) {
-			if (t.getState().equals(Thread.State.BLOCKED)
-					|| t.getState().equals(Thread.State.WAITING)) {
-				t.interrupt();
-			}
-		}
-	}
+        @Override
+        public void run() {
+          try {
+            Thread.sleep(3000L);
+            System.out.println(
+                Thread.currentThread().getName() + "任务完成！");
+          } catch (InterruptedException e) {
+            e.printStackTrace();
+          }
+        }
+      });
+    }
 
-	private class Worker extends Thread {
-		private BlockingQueue<Runnable> taskQueue;
+    try {
+      Thread.sleep(2000L);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
 
-		private MyThreadPool pool;
+    pool.shutdown();
+  }
 
-		public Worker(BlockingQueue<Runnable> taskQueue, MyThreadPool pool) {
-			super();
-			this.taskQueue = taskQueue;
-			this.pool = pool;
-			pool.workers.add(this);
-		}
+  public boolean submit(Runnable task) {
+    if (this.working) {
+      return this.taskQueue.offer(task);
+    }
+    return false;
+  }
 
-		public void run() {
-			while (this.pool.working || taskQueue.size() > 0) {
-				Runnable task = null;
+  public void shutdown() {
+    this.working = false;
+    for (Thread t : this.workers) {
+      if (t.getState().equals(Thread.State.BLOCKED)
+          || t.getState().equals(Thread.State.WAITING)) {
+        t.interrupt();
+      }
+    }
+  }
 
-				try {
-					task = taskQueue.take();
-				} catch (InterruptedException e1) {
-					System.out.println(
-							Thread.currentThread().getName() + " 从等待任务中被中断。");
-				}
+  private class Worker extends Thread {
 
-				if (task != null) {
-					try {
-						task.run();
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
+    private BlockingQueue<Runnable> taskQueue;
 
-			}
+    private MyThreadPool pool;
 
-			pool.workers.remove(this);
-			System.out.println(Thread.currentThread().getName() + "---结束，池中剩余:"
-					+ pool.workers.size());
-		}
-	}
+    public Worker(BlockingQueue<Runnable> taskQueue, MyThreadPool pool) {
+      super();
+      this.taskQueue = taskQueue;
+      this.pool = pool;
+      pool.workers.add(this);
+    }
 
-	public static void main(String[] args) {
-		MyThreadPool pool = new MyThreadPool(5, 20);
-		for (int i = 0; i < 18; i++)
-			pool.submit(new Runnable() {
+    public void run() {
+      while (this.pool.working || taskQueue.size() > 0) {
+        Runnable task = null;
 
-				@Override
-				public void run() {
-					try {
-						Thread.sleep(3000L);
-						System.out.println(
-								Thread.currentThread().getName() + "任务完成！");
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-			});
+        try {
+          task = taskQueue.take();
+        } catch (InterruptedException e1) {
+          System.out.println(
+              Thread.currentThread().getName() + " 从等待任务中被中断。");
+        }
 
-		try {
-			Thread.sleep(2000L);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+        if (task != null) {
+          try {
+            task.run();
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
+        }
 
-		pool.shutdown();
-	}
+      }
+
+      pool.workers.remove(this);
+      System.out.println(Thread.currentThread().getName() + "---结束，池中剩余:"
+          + pool.workers.size());
+    }
+  }
 }

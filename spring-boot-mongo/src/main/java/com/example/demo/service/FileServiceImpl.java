@@ -17,29 +17,29 @@ import java.util.Optional;
 @Service
 public class FileServiceImpl implements FileService {
 
-    @Autowired
-    public FileRepository fileRepository;
+  @Autowired
+  public FileRepository fileRepository;
 
-    @Override
-    public File saveFile(File file) {
-        return fileRepository.save(file);
-    }
+  @Override
+  public File saveFile(File file) {
+    return fileRepository.save(file);
+  }
 
-    @Override
-    public void removeFile(String id) {
-        fileRepository.deleteById(id);
-    }
+  @Override
+  public void removeFile(String id) {
+    fileRepository.deleteById(id);
+  }
 
-    @Override
-    public Optional<File> getFileById(String id) {
-        return fileRepository.findById(id);
-    }
+  @Override
+  public Optional<File> getFileById(String id) {
+    return fileRepository.findById(id);
+  }
 
-    @Override
-    public List<File> listFilesByPage(int pageIndex, int pageSize) {
-        Pageable pageable = PageRequest.of(pageIndex, pageSize, Sort.by(Direction.DESC, "uploadDate"));
-        Page<File> page = fileRepository.findAll(pageable);
-        List<File> list = page.getContent();
-        return list;
-    }
+  @Override
+  public List<File> listFilesByPage(int pageIndex, int pageSize) {
+    Pageable pageable = PageRequest.of(pageIndex, pageSize, Sort.by(Direction.DESC, "uploadDate"));
+    Page<File> page = fileRepository.findAll(pageable);
+    List<File> list = page.getContent();
+    return list;
+  }
 }

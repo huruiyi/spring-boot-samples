@@ -6,9 +6,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class HelloWorldSpringMixed {
 
-    public static void main(String... args) {
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
-        MessageRenderer mr = ctx.getBean("renderer", MessageRenderer.class);
-        mr.render();
-    }
+  public static void main(String... args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
+    MessageRenderer mr = ctx.getBean("renderer", MessageRenderer.class);
+    mr.render();
+  }
 }

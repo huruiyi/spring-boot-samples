@@ -4,37 +4,38 @@ import java.util.Properties;
 
 public class MessageSupportFactory {
 
-	private static MessageSupportFactory instance;
-	private Properties props;
-	private MessageRenderer renderer;
-	private MessageProvider provider;
+  private static MessageSupportFactory instance;
 
-	private MessageSupportFactory() {
-		props = new Properties();
-		try {
-			props.load(this.getClass().getResourceAsStream("/msf.properties"));
-			String rendererClass = props.getProperty("renderer.class");
-			String providerClass = props.getProperty("provider.class");
-			renderer = (MessageRenderer) Class.forName(rendererClass).newInstance();
-			provider = (MessageProvider) Class.forName(providerClass).newInstance();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}
+  static {
+    instance = new MessageSupportFactory();
+  }
 
-	static {
-		instance = new MessageSupportFactory();
-	}
+  private Properties props;
+  private MessageRenderer renderer;
+  private MessageProvider provider;
 
-	public static MessageSupportFactory getInstance() {
-		return instance;
-	}
+  private MessageSupportFactory() {
+    props = new Properties();
+    try {
+      props.load(this.getClass().getResourceAsStream("/msf.properties"));
+      String rendererClass = props.getProperty("renderer.class");
+      String providerClass = props.getProperty("provider.class");
+      renderer = (MessageRenderer) Class.forName(rendererClass).newInstance();
+      provider = (MessageProvider) Class.forName(providerClass).newInstance();
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    }
+  }
 
-	public MessageRenderer getMessageRenderer() {
-		return renderer;
-	}
+  public static MessageSupportFactory getInstance() {
+    return instance;
+  }
 
-	public MessageProvider getMessageProvider() {
-		return provider;
-	}
+  public MessageRenderer getMessageRenderer() {
+    return renderer;
+  }
+
+  public MessageProvider getMessageProvider() {
+    return provider;
+  }
 }

@@ -5,70 +5,66 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
-     create table country (
-         id integer not null auto_increment,
-         capital varchar(255),
-         code varchar(255),
-         name varchar(255),
-         primary key (id)
-     ) engine=InnoDB
+ * create table country ( id integer not null auto_increment, capital varchar(255), code varchar(255), name varchar(255), primary key (id) )
+ * engine=InnoDB
  */
 @Entity
 @Table(name = "country")
 public class Country implements Serializable {
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
 
-    @Column(name = "name")
-    private String name;
+  @Id
+  @Column(name = "id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
 
-    @Column(name = "code")
-    private String code;
+  @Column(name = "name")
+  private String name;
 
-    @Column(name = "capital")
-    private String capital;
+  @Column(name = "code")
+  private String code;
 
-    public int getId() {
-        return id;
-    }
+  @Column(name = "capital")
+  private String capital;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getCode() {
-        return code;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
+  public String getCode() {
+    return code;
+  }
 
-    public String getCapital() {
-        return capital;
-    }
+  public void setCode(String code) {
+    this.code = code;
+  }
 
-    public void setCapital(String capital) {
-        this.capital = capital;
-    }
+  public String getCapital() {
+    return capital;
+  }
 
-    @Override
-    public String toString() {
-        return "Country{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", code='" + code + '\'' +
-                ", capital='" + capital + '\'' +
-                '}';
-    }
+  public void setCapital(String capital) {
+    this.capital = capital;
+  }
+
+  @Override
+  public String toString() {
+    return "Country{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        ", code='" + code + '\'' +
+        ", capital='" + capital + '\'' +
+        '}';
+  }
 }

@@ -15,16 +15,16 @@ import static org.hamcrest.CoreMatchers.is;
 @SpringBootTest
 public class PersonServiceTest {
 
-    @Autowired
-    private PersonService personService;
+  @Autowired
+  private PersonService personService;
 
-    @Test
-    public void getUserInfo() {
-        Person person = personService.getUserInfo();
-        //比较实际的值和用户预期的值是否一样
-        Assert.assertEquals(18, person.getAge());
-        Assert.assertThat(person.getLastName(), is("Zhang"));
+  @Test
+  public void getUserInfo() {
+    Person person = personService.getUserInfo();
+    //比较实际的值和用户预期的值是否一样
+    Assert.assertEquals(18, person.getAge());
+    Assert.assertThat(person.getLastName(), is("Zhang"));
 
-    }
+  }
 
 }

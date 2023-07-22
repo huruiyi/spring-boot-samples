@@ -11,22 +11,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class UserController {
 
-    @RequestMapping("/hello")
-    @ResponseBody
-    public String hello() {
-        return "Hello World";
-    }
+  @RequestMapping("/hello")
+  @ResponseBody
+  public String hello() {
+    return "Hello World";
+  }
 
-    @RequestMapping("/api/profile")
-    public ResponseEntity<UserProfile> profile() {
-        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String email = user.getUsername() + "@mailinator.com";
+  @RequestMapping("/api/profile")
+  public ResponseEntity<UserProfile> profile() {
+    User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    String email = user.getUsername() + "@mailinator.com";
 
-        UserProfile profile = new UserProfile();
-        profile.setName(user.getUsername());
-        profile.setEmail(email);
+    UserProfile profile = new UserProfile();
+    profile.setName(user.getUsername());
+    profile.setEmail(email);
 
-        return ResponseEntity.ok(profile);
-    }
+    return ResponseEntity.ok(profile);
+  }
 
 }

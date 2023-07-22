@@ -1,20 +1,21 @@
 package com.example.OOP.Demo7;
 
 public interface RemoteControl {
-	int min_sound = 0;
-	int max_sound = 100;
 
-	boolean powerOnorOff();
+  int min_sound = 0;
+  int max_sound = 100;
 
-	int soundUp(int increacement);
+  boolean powerOnorOff();
 
-	int soundDown(int decreasement);
+  int soundUp(int increacement);
 
-	void mute();
+  int soundDown(int decreasement);
 
-	int setChannel(int newChannel);
+  void mute();
 
-	int channelUp();
+  int setChannel(int newChannel);
 
-	int channelDown();
+  int channelUp();
+
+  int channelDown();
 }

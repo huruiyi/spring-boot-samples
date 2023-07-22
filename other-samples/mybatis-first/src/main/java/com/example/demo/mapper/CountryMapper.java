@@ -5,5 +5,6 @@ import com.example.demo.model.Country;
 import java.util.List;
 
 public interface CountryMapper {
-    List<Country> selectAll();
+
+  List<Country> selectAll();
 }

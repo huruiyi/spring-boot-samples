@@ -1,54 +1,56 @@
 package com.example.OOP;
 
 public class StaticContent {
-    int a;
 
-    void sample() {
-        this.a = 5;
-    }
+  int a;
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        double result = Math.add(5, 165);
+    double result = Math.add(5, 165);
 
-        System.out.println(result);
+    System.out.println(result);
 
-        StaticContent blabla = new StaticContent();
-        blabla.sample();
+    StaticContent blabla = new StaticContent();
+    blabla.sample();
 
-        Customer[] p = new Customer[3];
+    Customer[] p = new Customer[3];
 
-        p[0] = new Customer("Arkadiusz");
-        p[1] = new Customer("Viola");
-        p[2] = new Customer("Karol");
+    p[0] = new Customer("Arkadiusz");
+    p[1] = new Customer("Viola");
+    p[2] = new Customer("Karol");
 
-        System.out.println(p[0].id);
-        System.out.println(p[1].id);
-        System.out.println(p[2].id);
+    System.out.println(p[0].id);
+    System.out.println(p[1].id);
+    System.out.println(p[2].id);
 
-        System.out.println(Customer.nextId);
-    }
+    System.out.println(Customer.nextId);
+  }
+
+  void sample() {
+    this.a = 5;
+  }
 
 }
 
 class Math {
-    int test;
 
-    static double add(double a, double b) {
-        return a + b;
-    }
+  int test;
+
+  static double add(double a, double b) {
+    return a + b;
+  }
 }
 
 class Customer {
-    Customer(String name) {
-        this.name = name;
-        id = nextId;
 
-        nextId++;
-    }
+  static int nextId = 1;
+  String name;
+  int id = 0;
+  Customer(String name) {
+    this.name = name;
+    id = nextId;
 
-    String name;
-    int id = 0;
-    static int nextId = 1;
+    nextId++;
+  }
 
 }

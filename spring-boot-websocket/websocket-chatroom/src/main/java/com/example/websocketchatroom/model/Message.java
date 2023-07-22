@@ -8,22 +8,23 @@ package com.example.websocketchatroom.model;
  * our model object to and from JSON.
  */
 public class Message {
-    private String from;
-    private String text;
 
-    public String getFrom() {
-        return from;
-    }
+  private String from;
+  private String text;
 
-    public void setFrom(final String from) {
-        this.from = from;
-    }
+  public String getFrom() {
+    return from;
+  }
 
-    public String getText() {
-        return text;
-    }
+  public void setFrom(final String from) {
+    this.from = from;
+  }
 
-    public void setText(final String text) {
-        this.text = text;
-    }
+  public String getText() {
+    return text;
+  }
+
+  public void setText(final String text) {
+    this.text = text;
+  }
 }

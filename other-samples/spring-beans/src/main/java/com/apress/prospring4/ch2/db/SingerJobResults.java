@@ -13,32 +13,32 @@ import java.util.Map;
 
 public class SingerJobResults {
 
-    @Configuration
-    static class SingerConfig {
+  public static void main(String... args) {
+    GenericApplicationContext ctx = new AnnotationConfigApplicationContext(SingerConfig.class);
+    JdbcTemplate jdbcTemplate = ctx.getBean(JdbcTemplate.class);
+    List<Map<String, Object>> results = jdbcTemplate.queryForList("SELECT * FROM user");
+    for (Map<String, Object> result : results) {
+      System.out.println(result.toString());
+    }
+    ctx.close();
+  }
 
-        @Bean
-        JdbcTemplate jdbcTemplate(){
-            return new JdbcTemplate(dataSource());
-        }
+  @Configuration
+  static class SingerConfig {
 
-        @Bean
-        public DataSource dataSource() {
-            BasicDataSource dataSource = new BasicDataSource();
-            dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-            dataSource.setUrl("jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC");
-            dataSource.setUsername("root");
-            dataSource.setPassword("root");
-            return dataSource;
-        }
+    @Bean
+    JdbcTemplate jdbcTemplate() {
+      return new JdbcTemplate(dataSource());
     }
 
-    public static void main(String... args) {
-        GenericApplicationContext ctx = new AnnotationConfigApplicationContext(SingerConfig.class);
-        JdbcTemplate jdbcTemplate = ctx.getBean(JdbcTemplate.class);
-        List<Map<String, Object>> results = jdbcTemplate.queryForList("SELECT * FROM user");
-        for (Map<String, Object> result : results) {
-            System.out.println(result.toString());
-        }
-        ctx.close();
+    @Bean
+    public DataSource dataSource() {
+      BasicDataSource dataSource = new BasicDataSource();
+      dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+      dataSource.setUrl("jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC");
+      dataSource.setUsername("root");
+      dataSource.setPassword("root");
+      return dataSource;
     }
+  }
 }

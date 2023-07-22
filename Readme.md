@@ -1,7 +1,8 @@
 [HttpAsyncClient Examples](http://hc.apache.org/httpcomponents-asyncclient-dev/examples.html)  [httpcomponents](http://svn.apache.org/repos/asf/httpcomponents/)
- `BasicAsyncRequestProducer，HttpAsyncRequestConsumer`
+`BasicAsyncRequestProducer，HttpAsyncRequestConsumer`
 
-   # TreeSet特点
+# TreeSet特点
+
     TreeSet是用来排序的, 可以指定一个顺序, 对象存入之后会按照指定的顺序排列
     使用方式
        
@@ -20,34 +21,33 @@
     TreeSet构造函数什么都不传, 默认按照类中Comparable的顺序(没有就报错ClassCastException)
     TreeSet如果传入Comparator, 就优先按照Comparator
 
- # [characterEncoding编码](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-charsets.html)
+# [characterEncoding编码](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-charsets.html)
+
     SHOW VARIABLES LIKE '%character%'
     
     SET character_set_server = utf8mb4
 
-
-
 |     MySQL Character Set Name      | **Java-Style Character Encoding Name** |
-| :-------------------------------: | :------------------------------------: |
+|:---------------------------------:|:--------------------------------------:|
 | *For 8.0.12 and earlier*: `utf8`  |                 UTF-8                  |
 | *For 8.0.13 and later*: `utf8mb4` |                 UTF-8                  |
 |              gb2312               |                 EUC_CN                 |
 |                gbk                |                  GBK                   |
 |               ascii               |                US-ASCII                |
 
-
-
 ## spring-boot-thin
+
 ```xml
-  <dependency>
-    <groupId>org.springframework.boot.experimental</groupId>
-    <artifactId>spring-boot-thin-layout</artifactId>
-    <version>1.0.28.RELEASE</version>
- </dependency>
+
+<dependency>
+  <groupId>org.springframework.boot.experimental</groupId>
+  <artifactId>spring-boot-thin-layout</artifactId>
+  <version>1.0.28.RELEASE</version>
+</dependency>
 ```
 
-
 ## spring-boot-redis
+
 ```
 redis的应用，以及缓存的使用
 ```

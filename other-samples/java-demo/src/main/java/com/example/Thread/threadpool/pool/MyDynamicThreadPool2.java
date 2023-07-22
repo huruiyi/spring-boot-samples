@@ -9,206 +9,207 @@ import java.util.concurrent.TimeUnit;
 
 public class MyDynamicThreadPool2 {
 
-	private int maxThreadsSize = 4;
+  private int maxThreadsSize = 4;
 
-	private int coreThreadsSize = 4;
+  private int coreThreadsSize = 4;
 
-	private int taskQueueSize = 20;
+  private int taskQueueSize = 20;
 
-	private int currThreadSize = 0;
+  private int currThreadSize = 0;
 
-	private BlockingQueue<Runnable> taskQueue;
+  private BlockingQueue<Runnable> taskQueue;
 
-	private List<Worker> workers;
+  private List<Worker> workers;
 
-	private int kxThreadCount = 0;
+  private int kxThreadCount = 0;
 
-	private boolean working = true;
+  private boolean working = true;
 
-	public MyDynamicThreadPool2(int maxThreadsSize, int coreThreadsSize,
-			int taskQueueSize) {
-		super();
-		if (taskQueueSize > 0) {
-			this.taskQueueSize = taskQueueSize;
-		}
-		taskQueue = new ArrayBlockingQueue<>(this.taskQueueSize);
-		if (maxThreadsSize > 0) {
-			this.maxThreadsSize = maxThreadsSize;
-		}
-		if (coreThreadsSize > 0) {
-			this.coreThreadsSize = coreThreadsSize;
-			if (this.maxThreadsSize < this.coreThreadsSize) {
-				this.maxThreadsSize = this.coreThreadsSize;
-			}
-		}
+  public MyDynamicThreadPool2(int maxThreadsSize, int coreThreadsSize,
+      int taskQueueSize) {
+    super();
+    if (taskQueueSize > 0) {
+      this.taskQueueSize = taskQueueSize;
+    }
+    taskQueue = new ArrayBlockingQueue<>(this.taskQueueSize);
+    if (maxThreadsSize > 0) {
+      this.maxThreadsSize = maxThreadsSize;
+    }
+    if (coreThreadsSize > 0) {
+      this.coreThreadsSize = coreThreadsSize;
+      if (this.maxThreadsSize < this.coreThreadsSize) {
+        this.maxThreadsSize = this.coreThreadsSize;
+      }
+    }
 
-		this.workers = Collections.synchronizedList(new LinkedList<>());
+    this.workers = Collections.synchronizedList(new LinkedList<>());
 
-		for (int i = 0; i < this.coreThreadsSize; i++) {
-			new Worker(taskQueue, this, null).start();
-		}
-		this.currThreadSize = this.coreThreadsSize;
-	}
+    for (int i = 0; i < this.coreThreadsSize; i++) {
+      new Worker(taskQueue, this, null).start();
+    }
+    this.currThreadSize = this.coreThreadsSize;
+  }
 
-	public boolean submit(Runnable task) {
-		if (this.working) {
-			synchronized (this) {
-				if (this.kxThreadCount == 0) {
-					if (this.currThreadSize < this.maxThreadsSize) {
-						new Worker(taskQueue, this, task).start();
-						this.currThreadSize++;
+  public static void main(String[] args) {
+    MyDynamicThreadPool2 pool = new MyDynamicThreadPool2(10, 5, 10);
+    pool.printPoolInfo();
+    for (int i = 0; i < 18; i++) {
+      pool.submit(new Runnable() {
 
-						return true;
-					}
-				}
-			}
-			return this.taskQueue.offer(task);
-		}
-		return false;
-	}
+        @Override
+        public void run() {
+          try {
+            Thread.sleep(30000L);
+            System.out.println(
+                Thread.currentThread().getName() + "任务完成！");
+          } catch (InterruptedException e) {
+            e.printStackTrace();
+          }
+        }
+      });
+      System.out.println("------------- i=" + i);
+      pool.printPoolInfo();
+    }
 
-	public void shutdown() {
-		this.working = false;
-		for (Thread t : this.workers) {
-			if (t.getState().equals(Thread.State.BLOCKED)
-					|| t.getState().equals(Thread.State.WAITING)) {
-				t.interrupt();
-			}
-		}
-	}
+    try {
+      Thread.sleep(2000L);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
 
-	public synchronized void printPoolInfo() {
-		System.out.println("*******************线程池[" + this + "]当前状态:");
-		System.out.println("当前池中线程数：" + this.currThreadSize);
-		System.out.println("空闲线程数：" + this.kxThreadCount);
-		System.out.println("等待执行任务数：" + this.taskQueue.size());
-	}
+    pool.shutdown();
+  }
 
-	private class Worker extends Thread {
-		private BlockingQueue<Runnable> taskQueue;
+  public boolean submit(Runnable task) {
+    if (this.working) {
+      synchronized (this) {
+        if (this.kxThreadCount == 0) {
+          if (this.currThreadSize < this.maxThreadsSize) {
+            new Worker(taskQueue, this, task).start();
+            this.currThreadSize++;
 
-		private MyDynamicThreadPool2 pool;
+            return true;
+          }
+        }
+      }
+      return this.taskQueue.offer(task);
+    }
+    return false;
+  }
 
-		private boolean kx = true;
+  public void shutdown() {
+    this.working = false;
+    for (Thread t : this.workers) {
+      if (t.getState().equals(Thread.State.BLOCKED)
+          || t.getState().equals(Thread.State.WAITING)) {
+        t.interrupt();
+      }
+    }
+  }
 
-		private int doTaskCount = 0;
+  public synchronized void printPoolInfo() {
+    System.out.println("*******************线程池[" + this + "]当前状态:");
+    System.out.println("当前池中线程数：" + this.currThreadSize);
+    System.out.println("空闲线程数：" + this.kxThreadCount);
+    System.out.println("等待执行任务数：" + this.taskQueue.size());
+  }
 
-		private Runnable firstTask = null;
+  private class Worker extends Thread {
 
-		public Worker(BlockingQueue<Runnable> taskQueue,
-				MyDynamicThreadPool2 pool, Runnable firstTask) {
-			super();
-			this.taskQueue = taskQueue;
-			this.pool = pool;
-			pool.workers.add(this);
-			synchronized (pool) {
-				pool.kxThreadCount++;
-			}
-			this.firstTask = firstTask;
-		}
+    private BlockingQueue<Runnable> taskQueue;
 
-		public void run() {
-			while (this.pool.working || taskQueue.size() > 0) {
-				Runnable task = null;
-				if (this.firstTask != null) {
-					task = firstTask;
-					this.firstTask = null;
-				} else {
-					task = taskQueue.poll();
-				}
+    private MyDynamicThreadPool2 pool;
 
-				if (task == null) {
-					if (!this.kx) {
-						this.kx = true;
-						synchronized (this.pool) {
-							this.pool.kxThreadCount++;
-						}
-					}
-					// 等待60秒
-					try {
-						task = taskQueue.poll(60, TimeUnit.SECONDS);
-					} catch (InterruptedException e1) {
-						System.out.println(
-								Thread.currentThread().getName() + " 被中断。");
-					}
+    private boolean kx = true;
 
-					if (task == null) {
-						// 判断当前线程数是否大于核心线程数，是的则结束该线程
-						synchronized (this.pool) {
-							if (this.pool.currThreadSize > this.pool.coreThreadsSize) {
-								break;
-							}
-						}
+    private int doTaskCount = 0;
 
-						// 继续等待
-						try {
-							task = taskQueue.take();
-						} catch (InterruptedException e) {
-							System.out.println(Thread.currentThread().getName()
-									+ "从等待中被中断！");
-						}
-					}
+    private Runnable firstTask = null;
 
-				}
+    public Worker(BlockingQueue<Runnable> taskQueue,
+        MyDynamicThreadPool2 pool, Runnable firstTask) {
+      super();
+      this.taskQueue = taskQueue;
+      this.pool = pool;
+      pool.workers.add(this);
+      synchronized (pool) {
+        pool.kxThreadCount++;
+      }
+      this.firstTask = firstTask;
+    }
 
-				if (task != null) {
-					if (this.kx) {
-						this.kx = false;
-						synchronized (this.pool) {
-							this.pool.kxThreadCount--;
-						}
-					}
-					try {
-						task.run();
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
+    public void run() {
+      while (this.pool.working || taskQueue.size() > 0) {
+        Runnable task = null;
+        if (this.firstTask != null) {
+          task = firstTask;
+          this.firstTask = null;
+        } else {
+          task = taskQueue.poll();
+        }
 
-					System.out.println(Thread.currentThread().getName()
-							+ "累计完成第" + (++this.doTaskCount) + "个任务");
-				}
+        if (task == null) {
+          if (!this.kx) {
+            this.kx = true;
+            synchronized (this.pool) {
+              this.pool.kxThreadCount++;
+            }
+          }
+          // 等待60秒
+          try {
+            task = taskQueue.poll(60, TimeUnit.SECONDS);
+          } catch (InterruptedException e1) {
+            System.out.println(
+                Thread.currentThread().getName() + " 被中断。");
+          }
 
-			}
+          if (task == null) {
+            // 判断当前线程数是否大于核心线程数，是的则结束该线程
+            synchronized (this.pool) {
+              if (this.pool.currThreadSize > this.pool.coreThreadsSize) {
+                break;
+              }
+            }
 
-			pool.workers.remove(this);
-			synchronized (this.pool) {
-				this.pool.currThreadSize--;
-				if (this.kx) {
-					this.pool.kxThreadCount--;
-				}
-			}
-			System.out.println(Thread.currentThread().getName() + "---结束。池中剩余"
-					+ this.pool.currThreadSize);
-		}
-	}
+            // 继续等待
+            try {
+              task = taskQueue.take();
+            } catch (InterruptedException e) {
+              System.out.println(Thread.currentThread().getName()
+                  + "从等待中被中断！");
+            }
+          }
 
-	public static void main(String[] args) {
-		MyDynamicThreadPool2 pool = new MyDynamicThreadPool2(10, 5, 10);
-		pool.printPoolInfo();
-		for (int i = 0; i < 18; i++) {
-			pool.submit(new Runnable() {
+        }
 
-				@Override
-				public void run() {
-					try {
-						Thread.sleep(30000L);
-						System.out.println(
-								Thread.currentThread().getName() + "任务完成！");
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-			});
-			System.out.println("------------- i=" + i);
-			pool.printPoolInfo();
-		}
+        if (task != null) {
+          if (this.kx) {
+            this.kx = false;
+            synchronized (this.pool) {
+              this.pool.kxThreadCount--;
+            }
+          }
+          try {
+            task.run();
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
 
-		try {
-			Thread.sleep(2000L);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+          System.out.println(Thread.currentThread().getName()
+              + "累计完成第" + (++this.doTaskCount) + "个任务");
+        }
 
-		pool.shutdown();
-	}
+      }
+
+      pool.workers.remove(this);
+      synchronized (this.pool) {
+        this.pool.currThreadSize--;
+        if (this.kx) {
+          this.pool.kxThreadCount--;
+        }
+      }
+      System.out.println(Thread.currentThread().getName() + "---结束。池中剩余"
+          + this.pool.currThreadSize);
+    }
+  }
 }

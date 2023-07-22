@@ -7,10 +7,10 @@ import java.util.List;
 public interface InfoService {
 
 
-    List<Info> findAll();
+  List<Info> findAll();
 
-    int insert(Info info);
+  int insert(Info info);
 
-    int jdbcInsert(Info info);
+  int jdbcInsert(Info info);
 
 }

@@ -1,18 +1,19 @@
 package com.example.OOP.Demo2;
 
-public class Employee   {
-    String name;
-    Address  address; // aggregation
-    Job job; // composition
+public class Employee {
 
-    public Employee(String name, Address address) {
-        this.name = name;
-        this.address = address;
-    }
+  String name;
+  Address address; // aggregation
+  Job job; // composition
 
-    @Override
-    public String toString() {
-        return this.name + ": " + address.country;
-    }
+  public Employee(String name, Address address) {
+    this.name = name;
+    this.address = address;
+  }
+
+  @Override
+  public String toString() {
+    return this.name + ": " + address.country;
+  }
 
 }

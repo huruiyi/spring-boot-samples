@@ -4,17 +4,17 @@ import com.example.Spring.service.HelloWorld;
 
 public class HelloWorldService {
 
-    private HelloWorld helloWorld;
+  private HelloWorld helloWorld;
 
-    public HelloWorldService() {
+  public HelloWorldService() {
 
-    }
+  }
 
-    public void setHelloWorld(HelloWorld helloWorld) {
-        this.helloWorld = helloWorld;
-    }
+  public HelloWorld getHelloWorld() {
+    return this.helloWorld;
+  }
 
-    public HelloWorld getHelloWorld() {
-        return this.helloWorld;
-    }
+  public void setHelloWorld(HelloWorld helloWorld) {
+    this.helloWorld = helloWorld;
+  }
 }

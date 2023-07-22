@@ -2,14 +2,14 @@ package com.example.OOP.Decorator;
 
 public class Bmw implements Car {
 
-	@Override
-	public void Run() {
-		 System.out.println("Bmw Run");
-	}
+  @Override
+  public void Run() {
+    System.out.println("Bmw Run");
+  }
 
-	@Override
-	public void Stop() {
-		 System.out.println("Bmw Stop");
-	}
+  @Override
+  public void Stop() {
+    System.out.println("Bmw Stop");
+  }
 
 }

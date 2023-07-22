@@ -11,26 +11,27 @@ import java.util.stream.IntStream;
 
 class MaxConsumer implements IntConsumer {
 
-    @Override
-    public void accept(int value) {
+  @Override
+  public void accept(int value) {
 
-    }
+  }
 
-    @Override
-    public IntConsumer andThen(IntConsumer after) {
-        return null;
-    }
+  @Override
+  public IntConsumer andThen(IntConsumer after) {
+    return null;
+  }
 }
 
 public class FindMax {
-    public static void main(String args[]) {
-        maxMarks(IntStream.of(52, 60, 99, 80, 76)); // #1
-    }
 
-    public static void maxMarks(IntStream marks) {
-        OptionalInt max = marks.max();                // #2
+  public static void main(String args[]) {
+    maxMarks(IntStream.of(52, 60, 99, 80, 76)); // #1
+  }
+
+  public static void maxMarks(IntStream marks) {
+    OptionalInt max = marks.max();                // #2
 	/*	if (max.ifPresent()) { 						// #3
 			System.out.print(max.getAsInt());
 		}*/
-    }
+  }
 }

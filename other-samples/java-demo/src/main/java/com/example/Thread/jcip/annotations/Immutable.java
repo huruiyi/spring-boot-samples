@@ -1,4 +1,5 @@
 package com.example.Thread.jcip.annotations;
+
 import java.lang.annotation.*;
 
 /*
@@ -13,8 +14,7 @@ import java.lang.annotation.*;
 
 
 /**
- * The class to which this annotation is applied is immutable.  This means that
- * its state cannot be seen to change by callers, which implies that
+ * The class to which this annotation is applied is immutable.  This means that its state cannot be seen to change by callers, which implies that
  * <ul>
  * <li> all public fields are final, </li>
  * <li> all public final reference fields refer to other immutable objects, and </li>
@@ -32,4 +32,5 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Immutable {
+
 }

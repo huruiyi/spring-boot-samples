@@ -18,28 +18,28 @@ import java.util.Random;
 @RunWith(SpringRunner.class)
 public class RateLimitClientTest {
 
-    public static final Logger LOGGER = LoggerFactory.getLogger(RateLimitClientTest.class);
+  public static final Logger LOGGER = LoggerFactory.getLogger(RateLimitClientTest.class);
 
 
-    @Autowired
-    public RateLimitClient rateLimitClient;
+  @Autowired
+  public RateLimitClient rateLimitClient;
 
-    @Test
-    public void redisLuaScriptTest() throws Exception {
-        Random random = new Random();
-        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+  @Test
+  public void redisLuaScriptTest() throws Exception {
+    Random random = new Random();
+    ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
 
-        for (int i = 0; i < 100; i++) {
-            // 令牌桶的线程安全验证
-            executor.execute(() -> {
-                int requireToken = random.nextInt(1000);
-                LOGGER.info("requireToken:{}", requireToken);
+    for (int i = 0; i < 100; i++) {
+      // 令牌桶的线程安全验证
+      executor.execute(() -> {
+        int requireToken = random.nextInt(1000);
+        LOGGER.info("requireToken:{}", requireToken);
 
-                List<Long> intervalAndToken = rateLimitClient.acquireIntervalAndToken("RATE_1000", requireToken);
-                LOGGER.info("requireToken:{}, acquireToken:{} ", requireToken, intervalAndToken);
-            });
-        }
+        List<Long> intervalAndToken = rateLimitClient.acquireIntervalAndToken("RATE_1000", requireToken);
+        LOGGER.info("requireToken:{}, acquireToken:{} ", requireToken, intervalAndToken);
+      });
     }
+  }
 
 
 }

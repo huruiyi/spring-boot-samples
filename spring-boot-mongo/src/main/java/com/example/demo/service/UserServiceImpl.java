@@ -12,20 +12,21 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl {
-    @Autowired
-    private MongoTemplate mongoTemplate;
 
-    public List<User> getUsers() {
-        return mongoTemplate.findAll(User.class, "users");
-    }
+  @Autowired
+  private MongoTemplate mongoTemplate;
 
-    public User getUser(Integer id) {
-        Query query = Query.query(Criteria.where("id").is(id));
-        return mongoTemplate.findOne(query, User.class);
-    }
+  public List<User> getUsers() {
+    return mongoTemplate.findAll(User.class, "users");
+  }
 
-    public void createUser(User user) {
-        mongoTemplate.save(user, "users");
-    }
+  public User getUser(Integer id) {
+    Query query = Query.query(Criteria.where("id").is(id));
+    return mongoTemplate.findOne(query, User.class);
+  }
+
+  public void createUser(User user) {
+    mongoTemplate.save(user, "users");
+  }
 }
 

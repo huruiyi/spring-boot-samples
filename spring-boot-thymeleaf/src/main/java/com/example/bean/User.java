@@ -6,89 +6,90 @@ import com.fasterxml.jackson.annotation.JsonFilter;
 import java.util.Date;
 
 public class User {
-	/*
-	 * 用户标识符
-	 */
-	private int id;
 
-	/*
-	 * 用户名
-	 */
-	private String username;
+  /*
+   * 用户标识符
+   */
+  private int id;
 
-	/*
-	 * 密码
-	 */
-	private String password;
+  /*
+   * 用户名
+   */
+  private String username;
 
-	/*
-	 * 电话号码
-	 */
-	private String telephone;
+  /*
+   * 密码
+   */
+  private String password;
 
-	/*
-	 * 注册时间
-	 */
-	@JSONField(format="yyyy-MM-dd HH:mm")
-	private Date registerTime;
+  /*
+   * 电话号码
+   */
+  private String telephone;
 
-	/*
-	 * 权限（0：管理员；1：普通用户）
-	 */
-	private int popedom;
+  /*
+   * 注册时间
+   */
+  @JSONField(format = "yyyy-MM-dd HH:mm")
+  private Date registerTime;
 
-	public int getId() {
-		return id;
-	}
+  /*
+   * 权限（0：管理员；1：普通用户）
+   */
+  private int popedom;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+  public int getId() {
+    return id;
+  }
 
-	public String getUsername() {
-		return username;
-	}
+  public void setId(int id) {
+    this.id = id;
+  }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+  public String getUsername() {
+    return username;
+  }
 
-	public String getPassword() {
-		return password;
-	}
+  public void setUsername(String username) {
+    this.username = username;
+  }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+  public String getPassword() {
+    return password;
+  }
 
-	public String getTelephone() {
-		return telephone;
-	}
+  public void setPassword(String password) {
+    this.password = password;
+  }
 
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
+  public String getTelephone() {
+    return telephone;
+  }
 
-	public Date getRegisterTime() {
-		return registerTime;
-	}
+  public void setTelephone(String telephone) {
+    this.telephone = telephone;
+  }
 
-	public void setRegisterTime(Date registerTime) {
-		this.registerTime = registerTime;
-	}
+  public Date getRegisterTime() {
+    return registerTime;
+  }
 
-	public int getPopedom() {
-		return popedom;
-	}
+  public void setRegisterTime(Date registerTime) {
+    this.registerTime = registerTime;
+  }
 
-	public void setPopedom(int popedom) {
-		this.popedom = popedom;
-	}
+  public int getPopedom() {
+    return popedom;
+  }
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", telephone=" + telephone
-				+ ", registerTime=" + registerTime + ", popedom=" + popedom + "]";
-	}
+  public void setPopedom(int popedom) {
+    this.popedom = popedom;
+  }
+
+  @Override
+  public String toString() {
+    return "User [id=" + id + ", username=" + username + ", password=" + password + ", telephone=" + telephone
+        + ", registerTime=" + registerTime + ", popedom=" + popedom + "]";
+  }
 
 }

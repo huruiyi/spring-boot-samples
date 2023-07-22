@@ -7,12 +7,13 @@ package com.example.JavaNIO;/*--------------------------------------------------
 import java.nio.file.*;
 
 public class PathInfo0 {
-    public static void main(String[] args) {
-        Path aFilePath = Paths.get("D:\\directory\\file.txt");        // FILEPATH
 
-        while (aFilePath.iterator().hasNext()) {
-            System.out.println("path element: " + aFilePath.iterator().next());
-        }
+  public static void main(String[] args) {
+    Path aFilePath = Paths.get("D:\\directory\\file.txt");        // FILEPATH
+
+    while (aFilePath.iterator().hasNext()) {
+      System.out.println("path element: " + aFilePath.iterator().next());
     }
+  }
 }
 

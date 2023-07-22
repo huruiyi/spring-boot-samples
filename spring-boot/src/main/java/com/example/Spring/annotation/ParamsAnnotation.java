@@ -10,5 +10,6 @@ import java.lang.annotation.*;
 @Documented
 @Component
 public @interface ParamsAnnotation {
-    String value();
+
+  String value();
 }

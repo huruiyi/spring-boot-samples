@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-    private final UserService userService;
+  private final UserService userService;
 
-    @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+  @Autowired
+  public UserController(UserService userService) {
+    this.userService = userService;
+  }
 
-    @GetMapping(value = "/user")
-    @ResponseBody
-    public User get(@RequestParam int id) {
-        return userService.findById(id);
-    }
+  @GetMapping(value = "/user")
+  @ResponseBody
+  public User get(@RequestParam int id) {
+    return userService.findById(id);
+  }
 }

@@ -5,20 +5,21 @@ package com.example.JavaClassDesign.Listing_10;/*-------------------------------
 ------------------------------------------------------------------------------*/
 
 class Point {
-    private int xPos, yPos;
 
-    public Point(int x, int y) {
-        xPos = x;
-        yPos = y;
-    }
+  private int xPos, yPos;
 
-    // this toString method overrides the default toString method implementation
-    // provided in the Object base class
-    public String toString() {
-        return "x = " + xPos + ", y = " + yPos;
-    }
+  public Point(int x, int y) {
+    xPos = x;
+    yPos = y;
+  }
 
-    public static void main(String[] args) {
-        System.out.println(new Point(10, 20));
-    }
+  public static void main(String[] args) {
+    System.out.println(new Point(10, 20));
+  }
+
+  // this toString method overrides the default toString method implementation
+  // provided in the Object base class
+  public String toString() {
+    return "x = " + xPos + ", y = " + yPos;
+  }
 }

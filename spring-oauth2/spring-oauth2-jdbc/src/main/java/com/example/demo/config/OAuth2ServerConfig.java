@@ -9,23 +9,23 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 @Configuration
 public class OAuth2ServerConfig {
 
-    private static final String DEMO_RESOURCE_ID = "order";
+  private static final String DEMO_RESOURCE_ID = "order";
 
-    @Configuration
-    @EnableResourceServer
-    protected static class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
+  @Configuration
+  @EnableResourceServer
+  protected static class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
 
-        @Override
-        public void configure(ResourceServerSecurityConfigurer resources) {
-            resources.resourceId(DEMO_RESOURCE_ID).stateless(true);
-        }
-
-        @Override
-        public void configure(HttpSecurity http) throws Exception {
-            http.authorizeRequests().antMatchers("/order/**").authenticated();//配置order访问控制，必须认证过后才可以访问
-
-        }
+    @Override
+    public void configure(ResourceServerSecurityConfigurer resources) {
+      resources.resourceId(DEMO_RESOURCE_ID).stateless(true);
     }
+
+    @Override
+    public void configure(HttpSecurity http) throws Exception {
+      http.authorizeRequests().antMatchers("/order/**").authenticated();//配置order访问控制，必须认证过后才可以访问
+
+    }
+  }
 
 
 }

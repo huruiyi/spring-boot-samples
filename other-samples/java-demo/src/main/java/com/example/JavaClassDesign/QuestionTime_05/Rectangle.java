@@ -5,13 +5,17 @@ package com.example.JavaClassDesign.QuestionTime_05;/*--------------------------
 ------------------------------------------------------------------------------*/
 
 class Rectangle {
+
 }
 
 class ColoredRectangle extends Rectangle {
+
 }
 
 class RoundedRectangle extends Rectangle {
+
 }
 
 class ColoredRoundedRectangle extends ColoredRectangle {
+
 }

@@ -12,17 +12,17 @@ import org.springframework.stereotype.Service;
 @EnableDubbo
 public class ConsumerApplication {
 
-    @DubboReference
-    private DemoService demoService;
+  @DubboReference
+  private DemoService demoService;
 
-    public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(ConsumerApplication.class, args);
-        ConsumerApplication application = context.getBean(ConsumerApplication.class);
-        String result = application.doSayHello("world");
-        System.out.println("result: " + result);
-    }
+  public static void main(String[] args) {
+    ConfigurableApplicationContext context = SpringApplication.run(ConsumerApplication.class, args);
+    ConsumerApplication application = context.getBean(ConsumerApplication.class);
+    String result = application.doSayHello("world");
+    System.out.println("result: " + result);
+  }
 
-    public String doSayHello(String name) {
-        return demoService.sayHello(name);
-    }
+  public String doSayHello(String name) {
+    return demoService.sayHello(name);
+  }
 }

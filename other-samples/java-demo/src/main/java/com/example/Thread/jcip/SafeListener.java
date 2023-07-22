@@ -8,35 +8,39 @@ package com.example.Thread.jcip;
  * @author Brian Goetz and Tim Peierls
  */
 public class SafeListener {
-    private final EventListener listener;
 
-    private SafeListener() {
-        listener = new EventListener() {
-            public void onEvent(Event e) {
-                doSomething(e);
-            }
-        };
-    }
+  private final EventListener listener;
 
-    public static SafeListener newInstance(EventSource source) {
-        SafeListener safe = new SafeListener();
-        source.registerListener(safe.listener);
-        return safe;
-    }
+  private SafeListener() {
+    listener = new EventListener() {
+      public void onEvent(Event e) {
+        doSomething(e);
+      }
+    };
+  }
 
-    void doSomething(Event e) {
-    }
+  public static SafeListener newInstance(EventSource source) {
+    SafeListener safe = new SafeListener();
+    source.registerListener(safe.listener);
+    return safe;
+  }
+
+  void doSomething(Event e) {
+  }
 
 
-    interface EventSource {
-        void registerListener(EventListener e);
-    }
+  interface EventSource {
 
-    interface EventListener {
-        void onEvent(Event e);
-    }
+    void registerListener(EventListener e);
+  }
 
-    interface Event {
-    }
+  interface EventListener {
+
+    void onEvent(Event e);
+  }
+
+  interface Event {
+
+  }
 }
 

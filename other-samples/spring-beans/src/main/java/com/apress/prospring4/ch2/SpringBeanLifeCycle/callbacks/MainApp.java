@@ -5,16 +5,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApp {
 
-	public static void main(String[] args) {
+  public static void main(String[] args) {
 
-		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("SpringBeanLifeCycle.xml");
+    ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("SpringBeanLifeCycle.xml");
 
-		EmployeeService employeeService = (EmployeeService) context.getBean("employeeServiceBean");
+    EmployeeService employeeService = (EmployeeService) context.getBean("employeeServiceBean");
 
-		System.out.println(employeeService.generateEmployeeId());
+    System.out.println(employeeService.generateEmployeeId());
 
-		context.close();
+    context.close();
 
-	}
+  }
 
 }

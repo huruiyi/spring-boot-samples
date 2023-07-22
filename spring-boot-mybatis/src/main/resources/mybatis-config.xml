@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
-        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-<!--    <settings>-->
-<!--        <setting name="logImpl" value="LOG4J"/>-->
-<!--    </settings>-->
+  <!--    <settings>-->
+  <!--        <setting name="logImpl" value="LOG4J"/>-->
+  <!--    </settings>-->
 
-    <typeAliases>
-        <package name="com.example.model"/>
-    </typeAliases>
+  <mappers>
+    <mapper resource="sqlmapper/CountryMapper.xml"/>
+    <mapper resource="sqlmapper/UserMapper.xml"/>
+  </mappers>
 
-    <typeHandlers>
-        <package name="com.example.typeHandler.TimeOnlyTypeHandler"/>
-    </typeHandlers>
+  <plugins>
+    <plugin interceptor="com.example.plugin.MyPlugin"></plugin>
+  </plugins>
 
-    <plugins>
-        <plugin interceptor="com.example.plugin.MyPlugin"></plugin>
-    </plugins>
+  <typeAliases>
+    <package name="com.example.model"/>
+  </typeAliases>
 
-    <mappers>
-        <mapper resource="sqlmapper/CountryMapper.xml"/>
-        <mapper resource="sqlmapper/UserMapper.xml"/>
-    </mappers>
+  <typeHandlers>
+    <package name="com.example.typeHandler.TimeOnlyTypeHandler"/>
+  </typeHandlers>
 </configuration>

@@ -12,44 +12,44 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class ArticleTest {
 
-    @Autowired
-    private ArticleDao articleDao;
+  @Autowired
+  private ArticleDao articleDao;
 
-    @Test
-    public void saveDemoTest() {
-        Article demoEntity = new Article();
-        demoEntity.setId(MongoUtils.getId());
-        demoEntity.setTitle("Spring Boot 中使用 MongoDB");
-        demoEntity.setDescription("fairy.vip - spring-samples-spring-boot-mongo");
-        demoEntity.setBy("huruiyi");
-        demoEntity.setUrl("http://fairy.vip/");
-        articleDao.saveArticle(demoEntity);
+  @Test
+  public void saveDemoTest() {
+    Article demoEntity = new Article();
+    demoEntity.setId(MongoUtils.getId());
+    demoEntity.setTitle("Spring Boot 中使用 MongoDB");
+    demoEntity.setDescription("fairy.vip - spring-samples-spring-boot-mongo");
+    demoEntity.setBy("huruiyi");
+    demoEntity.setUrl("http://fairy.vip/");
+    articleDao.saveArticle(demoEntity);
 
-        demoEntity = new Article();
-        demoEntity.setId(MongoUtils.getId());
-        demoEntity.setTitle("Spring Boot 中使用 MongoDB");
-        demoEntity.setDescription("fairy.vip - spring-samples-spring-boot-mongo");
-        demoEntity.setBy("huruiyi");
-        demoEntity.setUrl("http://fairy.vip/");
-        articleDao.saveArticle(demoEntity);
-    }
+    demoEntity = new Article();
+    demoEntity.setId(MongoUtils.getId());
+    demoEntity.setTitle("Spring Boot 中使用 MongoDB");
+    demoEntity.setDescription("fairy.vip - spring-samples-spring-boot-mongo");
+    demoEntity.setBy("huruiyi");
+    demoEntity.setUrl("http://fairy.vip/");
+    articleDao.saveArticle(demoEntity);
+  }
 
 
-    @Test
-    public void updateDemoTest() {
-        Article demoEntity = new Article();
-        demoEntity.setId(MongoUtils.getId());
-        demoEntity.setTitle("Spring Boot 中使用 MongoDB 更新数据");
-        demoEntity.setDescription("fairy.vip - spring-samples-spring-boot-mongo");
-        demoEntity.setBy("huruiyi");
-        demoEntity.setUrl("http://fairy.vip/");
-        articleDao.updateArticle(demoEntity);
-    }
+  @Test
+  public void updateDemoTest() {
+    Article demoEntity = new Article();
+    demoEntity.setId(MongoUtils.getId());
+    demoEntity.setTitle("Spring Boot 中使用 MongoDB 更新数据");
+    demoEntity.setDescription("fairy.vip - spring-samples-spring-boot-mongo");
+    demoEntity.setBy("huruiyi");
+    demoEntity.setUrl("http://fairy.vip/");
+    articleDao.updateArticle(demoEntity);
+  }
 
-    @Test
-    public void findDemoByIdTest() {
-        Article article = articleDao.findArticleById("2bffb9271f1f49eda6cbbb4dbc4f9579");
-        System.out.println(JSONObject.toJSONString(article));
-    }
+  @Test
+  public void findDemoByIdTest() {
+    Article article = articleDao.findArticleById("2bffb9271f1f49eda6cbbb4dbc4f9579");
+    System.out.println(JSONObject.toJSONString(article));
+  }
 
 }

@@ -1,27 +1,28 @@
 package com.example.GenericType.OOP7;
 
 public class App {
-    public static void main(String[] args) {
-        ActionAfterClick x = () -> {
-            System.out.println("I'm action from anonymous class");
-        };
 
-        ActionAfterClick2 x2 = (a, b) -> a + b;
+  public static void main(String[] args) {
+    ActionAfterClick x = () -> {
+      System.out.println("I'm action from anonymous class");
+    };
 
-        Button p = new Button();
-        Button p2 = new Button();
+    ActionAfterClick2 x2 = (a, b) -> a + b;
 
-        p2.addAction(new ActionAfterClick() {
+    Button p = new Button();
+    Button p2 = new Button();
 
-            @Override
-            public void action() {
-                System.out.println("I'm action from anonymous class for button p2");
-            }
-        });
-        p.addAction(x);
+    p2.addAction(new ActionAfterClick() {
 
-        int result = p.addAction2(10, 15, x2);
+      @Override
+      public void action() {
+        System.out.println("I'm action from anonymous class for button p2");
+      }
+    });
+    p.addAction(x);
 
-        System.out.println(result);
-    }
+    int result = p.addAction2(10, 15, x2);
+
+    System.out.println(result);
+  }
 }

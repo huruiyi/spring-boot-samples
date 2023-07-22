@@ -14,28 +14,29 @@ import com.example.Thread.jcip.annotations.*;
  */
 @ThreadSafe
 public class VolatileCachedFactorizer extends GenericServlet implements Servlet {
-    private volatile OneValueCache cache = new OneValueCache(null, null);
 
-    public void service(ServletRequest req, ServletResponse resp) {
-        BigInteger i = extractFromRequest(req);
-        BigInteger[] factors = cache.getFactors(i);
-        if (factors == null) {
-            factors = factor(i);
-            cache = new OneValueCache(i, factors);
-        }
-        encodeIntoResponse(resp, factors);
-    }
+  private volatile OneValueCache cache = new OneValueCache(null, null);
 
-    void encodeIntoResponse(ServletResponse resp, BigInteger[] factors) {
+  public void service(ServletRequest req, ServletResponse resp) {
+    BigInteger i = extractFromRequest(req);
+    BigInteger[] factors = cache.getFactors(i);
+    if (factors == null) {
+      factors = factor(i);
+      cache = new OneValueCache(i, factors);
     }
+    encodeIntoResponse(resp, factors);
+  }
 
-    BigInteger extractFromRequest(ServletRequest req) {
-        return new BigInteger("7");
-    }
+  void encodeIntoResponse(ServletResponse resp, BigInteger[] factors) {
+  }
 
-    BigInteger[] factor(BigInteger i) {
-        // Doesn't really factor
-        return new BigInteger[]{i};
-    }
+  BigInteger extractFromRequest(ServletRequest req) {
+    return new BigInteger("7");
+  }
+
+  BigInteger[] factor(BigInteger i) {
+    // Doesn't really factor
+    return new BigInteger[]{i};
+  }
 }
 

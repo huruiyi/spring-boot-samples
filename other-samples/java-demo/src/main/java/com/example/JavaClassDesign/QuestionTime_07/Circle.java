@@ -8,16 +8,17 @@ package com.example.JavaClassDesign.QuestionTime_07;
 
 // Shape.java
 class Shape {
-    protected void display() {
-        System.out.println("Display-base");
-    }
+
+  protected void display() {
+    System.out.println("Display-base");
+  }
 }
 
 // Circle.java
 class Circle extends Shape {
 
 
-    public void display() {
-        System.out.println("Display-derived");
-    }
+  public void display() {
+    System.out.println("Display-derived");
+  }
 }

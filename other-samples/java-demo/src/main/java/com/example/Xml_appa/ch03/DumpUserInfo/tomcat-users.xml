@@ -3,6 +3,6 @@
 <tomcat-users>
   <role rolename="dbadmin"/>
   <role rolename="manager"/>
-  <user username="JohnD" password="password1" roles="dbadmin,manager"/>
-  <user username="JillD" password="password2" roles="manager"/>
+  <user password="password1" roles="dbadmin,manager" username="JohnD"/>
+  <user password="password2" roles="manager" username="JillD"/>
 </tomcat-users>

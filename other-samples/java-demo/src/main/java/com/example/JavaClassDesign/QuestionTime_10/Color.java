@@ -5,24 +5,25 @@ package com.example.JavaClassDesign.QuestionTime_10;/*--------------------------
 ------------------------------------------------------------------------------*/
 
 class Color {
-    int red, green, blue;
 
-    Color() {
-        this(10, 10, 10);
-    }
+  int red, green, blue;
 
-    Color(int r, int g, int b) {
-        red = r;
-        green = g;
-        blue = b;
-    }
+  Color() {
+    this(10, 10, 10);
+  }
 
-    public String toString() {
-        return "The color is: " + " red = " + red + " green = " + green + " blue = " + blue;
-    }
+  Color(int r, int g, int b) {
+    red = r;
+    green = g;
+    blue = b;
+  }
 
-    public static void main(String[] args) {
-        // implicitly invoke toString method
-        System.out.println(new Color());
-    }
+  public static void main(String[] args) {
+    // implicitly invoke toString method
+    System.out.println(new Color());
+  }
+
+  public String toString() {
+    return "The color is: " + " red = " + red + " green = " + green + " blue = " + blue;
+  }
 }

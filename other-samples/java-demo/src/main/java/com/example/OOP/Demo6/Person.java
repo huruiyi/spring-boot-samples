@@ -1,31 +1,32 @@
 package com.example.OOP.Demo6;
 
 public class Person {
-	String name;
-	int age;
-	String sex;
 
-	public String showName() {
-		return name;
-	}
+  String name;
+  int age;
+  String sex;
 
-	public void setName(String theName) {
-		name = theName;
-	}
+  public String showName() {
+    return name;
+  }
 
-	public int getAge() {
-		return age;
-	}
+  public void setName(String theName) {
+    name = theName;
+  }
 
-	public void setAge(int theAge) {
-		age = theAge;
-	}
+  public int getAge() {
+    return age;
+  }
 
-	public String getSex() {
-		return sex;
-	}
+  public void setAge(int theAge) {
+    age = theAge;
+  }
 
-	public void setSex(String theSex) {
-		sex = theSex;
-	}
+  public String getSex() {
+    return sex;
+  }
+
+  public void setSex(String theSex) {
+    sex = theSex;
+  }
 }

@@ -16,33 +16,34 @@ import com.example.Thread.jcip.annotations.*;
 
 @NotThreadSafe
 public class UnsafeCachingFactorizer extends GenericServlet implements Servlet {
-    private final AtomicReference<BigInteger> lastNumber
-            = new AtomicReference<BigInteger>();
-    private final AtomicReference<BigInteger[]> lastFactors
-            = new AtomicReference<BigInteger[]>();
 
-    public void service(ServletRequest req, ServletResponse resp) {
-        BigInteger i = extractFromRequest(req);
-        if (i.equals(lastNumber.get()))
-            encodeIntoResponse(resp, lastFactors.get());
-        else {
-            BigInteger[] factors = factor(i);
-            lastNumber.set(i);
-            lastFactors.set(factors);
-            encodeIntoResponse(resp, factors);
-        }
-    }
+  private final AtomicReference<BigInteger> lastNumber
+      = new AtomicReference<BigInteger>();
+  private final AtomicReference<BigInteger[]> lastFactors
+      = new AtomicReference<BigInteger[]>();
 
-    void encodeIntoResponse(ServletResponse resp, BigInteger[] factors) {
+  public void service(ServletRequest req, ServletResponse resp) {
+    BigInteger i = extractFromRequest(req);
+    if (i.equals(lastNumber.get())) {
+      encodeIntoResponse(resp, lastFactors.get());
+    } else {
+      BigInteger[] factors = factor(i);
+      lastNumber.set(i);
+      lastFactors.set(factors);
+      encodeIntoResponse(resp, factors);
     }
+  }
 
-    BigInteger extractFromRequest(ServletRequest req) {
-        return new BigInteger("7");
-    }
+  void encodeIntoResponse(ServletResponse resp, BigInteger[] factors) {
+  }
 
-    BigInteger[] factor(BigInteger i) {
-        // Doesn't really factor
-        return new BigInteger[]{i};
-    }
+  BigInteger extractFromRequest(ServletRequest req) {
+    return new BigInteger("7");
+  }
+
+  BigInteger[] factor(BigInteger i) {
+    // Doesn't really factor
+    return new BigInteger[]{i};
+  }
 }
 

@@ -5,15 +5,16 @@ package com.example.JavaClassDesign.Listing_07;/*-------------------------------
 ------------------------------------------------------------------------------*/
 
 class OverloadingError {
-    public static void aMethod(byte val) {
-        System.out.println("byte");
-    }
 
-    public static void aMethod(short val) {
-        System.out.println("short");
-    }
+  public static void aMethod(byte val) {
+    System.out.println("byte");
+  }
 
-    public static void main(String[] args) {
-        aMethod((byte) 1);
-    }
+  public static void aMethod(short val) {
+    System.out.println("short");
+  }
+
+  public static void main(String[] args) {
+    aMethod((byte) 1);
+  }
 }

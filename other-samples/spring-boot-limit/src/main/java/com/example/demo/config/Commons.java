@@ -15,31 +15,31 @@ import java.io.Serializable;
 @Component
 public class Commons {
 
-    /**
-     * 读取限流脚本
-     *
-     * @return
-     */
-    @Bean
-    public DefaultRedisScript<Number> redisluaScript() {
-        DefaultRedisScript<Number> redisScript = new DefaultRedisScript<>();
-        redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("rateLimit.lua")));
-        redisScript.setResultType(Number.class);
-        return redisScript;
-    }
+  /**
+   * 读取限流脚本
+   *
+   * @return
+   */
+  @Bean
+  public DefaultRedisScript<Number> redisluaScript() {
+    DefaultRedisScript<Number> redisScript = new DefaultRedisScript<>();
+    redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("rateLimit.lua")));
+    redisScript.setResultType(Number.class);
+    return redisScript;
+  }
 
-    /**
-     * RedisTemplate
-     *
-     * @return
-     */
-    @Bean
-    public RedisTemplate<String, Serializable> limitRedisTemplate(LettuceConnectionFactory redisConnectionFactory) {
-        RedisTemplate<String, Serializable> template = new RedisTemplate<String, Serializable>();
-        template.setKeySerializer(new StringRedisSerializer());
-        template.setValueSerializer(new GenericJackson2JsonRedisSerializer());
-        template.setConnectionFactory(redisConnectionFactory);
-        return template;
-    }
+  /**
+   * RedisTemplate
+   *
+   * @return
+   */
+  @Bean
+  public RedisTemplate<String, Serializable> limitRedisTemplate(LettuceConnectionFactory redisConnectionFactory) {
+    RedisTemplate<String, Serializable> template = new RedisTemplate<String, Serializable>();
+    template.setKeySerializer(new StringRedisSerializer());
+    template.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+    template.setConnectionFactory(redisConnectionFactory);
+    return template;
+  }
 
 }

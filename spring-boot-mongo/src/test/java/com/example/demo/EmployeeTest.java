@@ -12,15 +12,15 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @SpringBootTest
 class EmployeeTest {
 
-    @Autowired
-    @Qualifier("v1")
-    EmployeeService service1;
+  @Autowired
+  @Qualifier("v1")
+  EmployeeService service1;
 
-    @Test
-    void findAll() {
-        Iterable<Employee> employees = service1.findAll();
-        assertNotNull(employees);
-        System.out.println(employees);
-    }
+  @Test
+  void findAll() {
+    Iterable<Employee> employees = service1.findAll();
+    assertNotNull(employees);
+    System.out.println(employees);
+  }
 
 }

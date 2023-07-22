@@ -13,28 +13,29 @@ import java.util.List;
 
 @Service
 public class CountryService implements ICountryService {
-    private static final String REDIS_CACHE_VALUE = "country";
 
-    @Resource
-    private CountryRepository countryRepository;
+  private static final String REDIS_CACHE_VALUE = "country";
 
-    @CachePut(value = REDIS_CACHE_VALUE, key = "#country.id")
-    public Country save(Country country) {
-        return countryRepository.save(country);
-    }
+  @Resource
+  private CountryRepository countryRepository;
 
-    public List<Country> findAll() {
-        return countryRepository.findAll();
-    }
+  @CachePut(value = REDIS_CACHE_VALUE, key = "#country.id")
+  public Country save(Country country) {
+    return countryRepository.save(country);
+  }
 
-    @Cacheable(value = REDIS_CACHE_VALUE, key = "#id")
-    public Country findById(Integer id) {
-        return countryRepository.findFirstById(id);
-    }
+  public List<Country> findAll() {
+    return countryRepository.findAll();
+  }
 
-    @CacheEvict(value = REDIS_CACHE_VALUE, key = "#id")
-    public List<Country> delete(Integer id) {
-        countryRepository.deleteById(id);
-        return countryRepository.findAll();
-    }
+  @Cacheable(value = REDIS_CACHE_VALUE, key = "#id")
+  public Country findById(Integer id) {
+    return countryRepository.findFirstById(id);
+  }
+
+  @CacheEvict(value = REDIS_CACHE_VALUE, key = "#id")
+  public List<Country> delete(Integer id) {
+    countryRepository.deleteById(id);
+    return countryRepository.findAll();
+  }
 }

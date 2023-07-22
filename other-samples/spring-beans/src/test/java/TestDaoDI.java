@@ -1,4 +1,3 @@
-
 import com.apress.prospring4.ch2.beans.Person;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,16 +9,16 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = {"/beans.xml"})
 public class TestDaoDI {
 
-    @Autowired
-    protected Person chinese;
+  @Autowired
+  protected Person chinese;
 
-    @Autowired
-    protected Person american;
+  @Autowired
+  protected Person american;
 
-    @Test
-    public void saveDataCenter() throws Exception {
-        chinese.Speak();
-        american.Speak();
-    }
+  @Test
+  public void saveDataCenter() throws Exception {
+    chinese.Speak();
+    american.Speak();
+  }
 
 }

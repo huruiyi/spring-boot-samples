@@ -9,9 +9,10 @@ import com.rabbitmq.client.UnblockedCallback;
 import java.util.function.ObjIntConsumer;
 
 class ConsumerUse {
-    public static void main(String[] args) {
-        ObjIntConsumer<String> charAt = (str, i) -> str.charAt(i); // #1
-        UnblockedCallback java = () -> charAt.accept("java", 1);
-        System.out.println();          // #2
-    }
+
+  public static void main(String[] args) {
+    ObjIntConsumer<String> charAt = (str, i) -> str.charAt(i); // #1
+    UnblockedCallback java = () -> charAt.accept("java", 1);
+    System.out.println();          // #2
+  }
 }

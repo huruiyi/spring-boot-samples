@@ -11,12 +11,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class PersonIOCTest {
-    @Autowired
-    private ApplicationContext applicationContext;
 
-    @Test
-    public void testIoc() {
-        Person person = (Person) applicationContext.getBean("configPerson");
-        System.out.println(person.toString());
-    }
+  @Autowired
+  private ApplicationContext applicationContext;
+
+  @Test
+  public void testIoc() {
+    Person person = (Person) applicationContext.getBean("configPerson");
+    System.out.println(person.toString());
+  }
 }

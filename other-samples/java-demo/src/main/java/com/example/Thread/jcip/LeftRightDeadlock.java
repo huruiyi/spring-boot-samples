@@ -2,34 +2,35 @@ package com.example.Thread.jcip;
 
 /**
  * LeftRightDeadlock
- *
+ * <p>
  * Simple lock-ordering deadlock
  *
  * @author Brian Goetz and Tim Peierls
  */
 public class LeftRightDeadlock {
-    private final Object left = new Object();
-    private final Object right = new Object();
 
-    public void leftRight() {
-        synchronized (left) {
-            synchronized (right) {
-                doSomething();
-            }
-        }
-    }
+  private final Object left = new Object();
+  private final Object right = new Object();
 
-    public void rightLeft() {
-        synchronized (right) {
-            synchronized (left) {
-                doSomethingElse();
-            }
-        }
+  public void leftRight() {
+    synchronized (left) {
+      synchronized (right) {
+        doSomething();
+      }
     }
+  }
 
-    void doSomething() {
+  public void rightLeft() {
+    synchronized (right) {
+      synchronized (left) {
+        doSomethingElse();
+      }
     }
+  }
 
-    void doSomethingElse() {
-    }
+  void doSomething() {
+  }
+
+  void doSomethingElse() {
+  }
 }

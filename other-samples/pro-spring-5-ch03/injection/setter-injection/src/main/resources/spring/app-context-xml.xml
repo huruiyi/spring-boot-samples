@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:p="http://www.springframework.org/schema/p"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
+<beans xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
           http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="renderer"
-        class="com.apress.prospring5.ch3.renderer.StandardOutMessageRenderer"
-        p:messageProvider-ref="provider"/>
+  <bean class="com.apress.prospring5.ch3.renderer.StandardOutMessageRenderer"
+    id="renderer"
+    p:messageProvider-ref="provider"/>
 
-    <bean id="provider"
-        class="com.apress.prospring5.ch3.provider.HelloWorldMessageProvider"/>
+  <bean class="com.apress.prospring5.ch3.provider.HelloWorldMessageProvider"
+    id="provider"/>
 </beans>

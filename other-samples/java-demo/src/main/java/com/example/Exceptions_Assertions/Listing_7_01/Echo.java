@@ -8,16 +8,17 @@ package com.example.Exceptions_Assertions.Listing_7_01;
 
 // A simple program without exception handling code
 class Echo {
-    public static void main(String[] args) {
-        if (args.length == 0) {
-            System.out.println("Error: No input passed to echo command... ");
-            System.exit(-1);
-        } else {
-            for (String str : args) {
-                // command-line arguments are separated and passed as an array
-                // print them by adding a space between the array elements
-                System.out.print(str + " ");
-            }
-        }
+
+  public static void main(String[] args) {
+    if (args.length == 0) {
+      System.out.println("Error: No input passed to echo command... ");
+      System.exit(-1);
+    } else {
+      for (String str : args) {
+        // command-line arguments are separated and passed as an array
+        // print them by adding a space between the array elements
+        System.out.print(str + " ");
+      }
     }
+  }
 }

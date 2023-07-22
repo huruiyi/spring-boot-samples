@@ -11,65 +11,66 @@ import java.io.Serializable;
 @Entity
 @Table(name = "tbProduct")
 public class Product implements Serializable {
-    private static final long serialVersionUID = 1L;
 
-    // ========================================================================
-    // fields =================================================================
-    @Id
-    @GeneratedValue
-    /** 商品数据库主键 */
-    private Long id;
-    /**
-     * 商品名称
-     */
-    private String name;
-    /**
-     * 商品封面图片
-     */
-    private String coverImage;
-    /**
-     * 商品价格(分)
-     */
-    private int price;
+  private static final long serialVersionUID = 1L;
 
-    @Override
-    public String toString() {
-        return MoreObjects.toStringHelper(this)
-                .add("id", getId())
-                .add("name", getName()).toString();
-    }
+  // ========================================================================
+  // fields =================================================================
+  @Id
+  @GeneratedValue
+  /** 商品数据库主键 */
+  private Long id;
+  /**
+   * 商品名称
+   */
+  private String name;
+  /**
+   * 商品封面图片
+   */
+  private String coverImage;
+  /**
+   * 商品价格(分)
+   */
+  private int price;
 
-    // ========================================================================
-    // setter/getter ==========================================================
-    public Long getId() {
-        return id;
-    }
+  @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this)
+        .add("id", getId())
+        .add("name", getName()).toString();
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  // ========================================================================
+  // setter/getter ==========================================================
+  public Long getId() {
+    return id;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getCoverImage() {
-        return coverImage;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setCoverImage(String coverImage) {
-        this.coverImage = coverImage;
-    }
+  public String getCoverImage() {
+    return coverImage;
+  }
 
-    public int getPrice() {
-        return price;
-    }
+  public void setCoverImage(String coverImage) {
+    this.coverImage = coverImage;
+  }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
+  public int getPrice() {
+    return price;
+  }
+
+  public void setPrice(int price) {
+    this.price = price;
+  }
 }

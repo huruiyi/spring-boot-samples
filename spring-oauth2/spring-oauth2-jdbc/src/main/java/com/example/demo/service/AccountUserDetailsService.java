@@ -11,18 +11,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class AccountUserDetailsService implements UserDetailsService {
 
-    private AccountRepository accountRepository;
+  private AccountRepository accountRepository;
 
-    @Autowired
-    public AccountUserDetailsService(AccountRepository accountRepository) {
-        this.accountRepository = accountRepository;
-    }
+  @Autowired
+  public AccountUserDetailsService(AccountRepository accountRepository) {
+    this.accountRepository = accountRepository;
+  }
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return accountRepository
-                .findByUsername(username)
-                .map(account -> new User(account.getUsername(), account.getPassword(), AuthorityUtils.createAuthorityList("ROLE_USER")))
-                .orElseThrow(() -> new UsernameNotFoundException("Could not find " + username));
-    }
+  @Override
+  public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    return accountRepository
+        .findByUsername(username)
+        .map(account -> new User(account.getUsername(), account.getPassword(), AuthorityUtils.createAuthorityList("ROLE_USER")))
+        .orElseThrow(() -> new UsernameNotFoundException("Could not find " + username));
+  }
 }

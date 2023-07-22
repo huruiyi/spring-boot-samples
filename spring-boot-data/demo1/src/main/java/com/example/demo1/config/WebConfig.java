@@ -5,4 +5,5 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @Configuration
 public class WebConfig {
+
 }

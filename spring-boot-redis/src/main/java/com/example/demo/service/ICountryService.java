@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface ICountryService {
 
-    Country save(Country country);
+  Country save(Country country);
 
-    List<Country> findAll();
+  List<Country> findAll();
 
-    Country findById(Integer id);
+  Country findById(Integer id);
 
-    List<Country> delete(Integer id);
+  List<Country> delete(Integer id);
 }

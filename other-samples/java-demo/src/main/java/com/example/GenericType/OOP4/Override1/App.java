@@ -1,18 +1,19 @@
 package com.example.GenericType.OOP4.Override1;
 
 public class App {
-    public static void main(String[] args) {
-        Person[] people = new Person[400]; // null, null, null, null
-        people[0] = new Employee("Arkadiusz", "Włodarczyk", 100000000);
-        people[1] = new Student("asfasf", "fasf");
 
-        for (int i = 0; i < people.length; i++) {
-            if (people[i] instanceof Employee) {
-                Employee tmp = (Employee) people[i];
+  public static void main(String[] args) {
+    Person[] people = new Person[400]; // null, null, null, null
+    people[0] = new Employee("Arkadiusz", "Włodarczyk", 100000000);
+    people[1] = new Student("asfasf", "fasf");
 
-                tmp.work();
-            }
-        }
+    for (int i = 0; i < people.length; i++) {
+      if (people[i] instanceof Employee) {
+        Employee tmp = (Employee) people[i];
 
+        tmp.work();
+      }
     }
+
+  }
 }

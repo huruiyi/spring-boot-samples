@@ -6,4 +6,5 @@ import org.springframework.stereotype.Component;
 
 @Component
 public interface ProductDocumentRepository extends ElasticsearchRepository<ProductDocument, String> {
+
 }

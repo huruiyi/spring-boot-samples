@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UserMapper {
 
-    User selectByPrimaryKey(Integer id);
+  User selectByPrimaryKey(Integer id);
 
-    List<User> selectAllUsers();
+  List<User> selectAllUsers();
 }

@@ -1,19 +1,20 @@
 package com.example.GenericType;
 
 public class Color {
-    String color;
 
-    Color(String color) {
-        this.color = color;
-    }
+  String color;
 
-    String getColor() {
-        return this.color;
-    }
+  Color(String color) {
+    this.color = color;
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        return (((Color) o).color).equals(this.color);
-    }
+  String getColor() {
+    return this.color;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    return (((Color) o).color).equals(this.color);
+  }
 
 }

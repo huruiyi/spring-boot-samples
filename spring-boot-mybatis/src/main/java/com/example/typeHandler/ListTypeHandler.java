@@ -18,32 +18,31 @@ import java.util.List;
 @MappedTypes({List.class})
 public class ListTypeHandler implements TypeHandler<List<String>> {
 
-    @Override
-    public void setParameter(PreparedStatement ps, int i, List<String> parameter, JdbcType jdbcType) throws SQLException {
-        String hobbys = StringUtils.join(parameter, ",");
-        try {
-            ps.setString(i, hobbys);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+  @Override
+  public void setParameter(PreparedStatement ps, int i, List<String> parameter, JdbcType jdbcType) throws SQLException {
+    String hobbys = StringUtils.join(parameter, ",");
+    try {
+      ps.setString(i, hobbys);
+    } catch (Exception e) {
+      e.printStackTrace();
     }
+  }
 
-    @Override
-    public List<String> getResult(CallableStatement cs, int columnIndex) throws SQLException {
-        String hobbys = cs.getString(columnIndex);
-        return Arrays.asList(hobbys.split(","));
-    }
+  @Override
+  public List<String> getResult(CallableStatement cs, int columnIndex) throws SQLException {
+    String hobbys = cs.getString(columnIndex);
+    return Arrays.asList(hobbys.split(","));
+  }
 
-    @Override
-    public List<String> getResult(ResultSet rs, int columnIndex) throws SQLException {
-        return Arrays.asList(rs.getString(columnIndex).split(","));
-    }
+  @Override
+  public List<String> getResult(ResultSet rs, int columnIndex) throws SQLException {
+    return Arrays.asList(rs.getString(columnIndex).split(","));
+  }
 
-    @Override
-    public List<String> getResult(ResultSet rs, String columnName) throws SQLException {
-        return Arrays.asList(rs.getString(columnName).split(","));
-    }
-
+  @Override
+  public List<String> getResult(ResultSet rs, String columnName) throws SQLException {
+    return Arrays.asList(rs.getString(columnName).split(","));
+  }
 
 
 }

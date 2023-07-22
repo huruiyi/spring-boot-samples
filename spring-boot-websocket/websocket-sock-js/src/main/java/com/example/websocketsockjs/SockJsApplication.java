@@ -8,8 +8,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @SpringBootApplication
 public class SockJsApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(SockJsApplication.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(SockJsApplication.class, args);
+  }
 
 }

@@ -15,29 +15,30 @@ import java.util.List;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-    @Autowired
-    protected ProductRepository productRepository;
-    @Autowired
-    protected ProductCommentRepository productCommentRepository;
 
-    @Override
-    public Page<Product> getPage(Pageable pageable) {
-        return this.productRepository.findAll(pageable);
-    }
+  @Autowired
+  protected ProductRepository productRepository;
+  @Autowired
+  protected ProductCommentRepository productCommentRepository;
 
-    @Override
-    public Product load(Long id) {
-        return this.productRepository.findById(id).get();
-    }
+  @Override
+  public Page<Product> getPage(Pageable pageable) {
+    return this.productRepository.findAll(pageable);
+  }
 
-    @Override
-    public List<ProductComment> findAllByProduct(Long productId) {
+  @Override
+  public Product load(Long id) {
+    return this.productRepository.findById(id).get();
+  }
 
-        return this.productCommentRepository.findByProductIdOrderByCreated(productId);
-    }
+  @Override
+  public List<ProductComment> findAllByProduct(Long productId) {
 
-    @Override
-    public List<Product> findAll() {
-        return productRepository.findAll();
-    }
+    return this.productCommentRepository.findByProductIdOrderByCreated(productId);
+  }
+
+  @Override
+  public List<Product> findAll() {
+    return productRepository.findAll();
+  }
 }

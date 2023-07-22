@@ -13,47 +13,47 @@ import java.util.List;
 @Service
 public class PersonServiceImpl implements PersonService {
 
-    @Autowired
-    PersonRepository personRepository;
+  @Autowired
+  PersonRepository personRepository;
 
-    @Override
-    @Transactional(rollbackFor = {IllegalArgumentException.class})
-    public Person savePersonWithRollBack(Person person) {
-        Person p = personRepository.save(person);
+  @Override
+  @Transactional(rollbackFor = {IllegalArgumentException.class})
+  public Person savePersonWithRollBack(Person person) {
+    Person p = personRepository.save(person);
 
-        if (StringUtils.equals(person.getName(), "fun")) {
-            throw new IllegalArgumentException("已存在，数据将回滚");
-        }
-        return p;
+    if (StringUtils.equals(person.getName(), "fun")) {
+      throw new IllegalArgumentException("已存在，数据将回滚");
     }
+    return p;
+  }
 
-    @Override
-    @Transactional(noRollbackFor = {IllegalArgumentException.class})
-    public Person savePersonWithoutRollBack(Person person) {
-        Person p = personRepository.save(person);
-        if (StringUtils.equals(person.getName(), "fun")) {
-            throw new IllegalArgumentException("已存在，数据将不会回滚");
-        }
-        return p;
+  @Override
+  @Transactional(noRollbackFor = {IllegalArgumentException.class})
+  public Person savePersonWithoutRollBack(Person person) {
+    Person p = personRepository.save(person);
+    if (StringUtils.equals(person.getName(), "fun")) {
+      throw new IllegalArgumentException("已存在，数据将不会回滚");
     }
+    return p;
+  }
 
-    @Override
-    public Person save(Person person) {
-        return personRepository.save(person);
-    }
+  @Override
+  public Person save(Person person) {
+    return personRepository.save(person);
+  }
 
-    @Override
-    public Person findByName(String name) {
-        return personRepository.findByName(name);
-    }
+  @Override
+  public Person findByName(String name) {
+    return personRepository.findByName(name);
+  }
 
-    @Override
-    public List<Person> findAll() {
-        return personRepository.findAll();
-    }
+  @Override
+  public List<Person> findAll() {
+    return personRepository.findAll();
+  }
 
-    @Override
-    public List<Person> withQueryFindByAge(Integer age) {
-        return personRepository.withQueryFindByAge(age);
-    }
+  @Override
+  public List<Person> withQueryFindByAge(Integer age) {
+    return personRepository.withQueryFindByAge(age);
+  }
 }

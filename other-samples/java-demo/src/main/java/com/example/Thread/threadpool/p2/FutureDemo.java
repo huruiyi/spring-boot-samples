@@ -8,35 +8,35 @@ import java.util.concurrent.Future;
 
 public class FutureDemo {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        ExecutorService pool = Executors.newFixedThreadPool(3);
+    ExecutorService pool = Executors.newFixedThreadPool(3);
 
-        Future<String> fu = pool.submit(new Callable<String>() {
+    Future<String> fu = pool.submit(new Callable<String>() {
 
-            @Override
-            public String call() throws Exception {
-                Thread.sleep(10000L);
-                return "aaaaaaaaaaa";
-            }
+      @Override
+      public String call() throws Exception {
+        Thread.sleep(10000L);
+        return "aaaaaaaaaaa";
+      }
 
-        });
+    });
 
-        // 然后再看任务执行完了没，执行完了就去的结果，再接着干点活。。
-        System.out.println(fu.isDone());
+    // 然后再看任务执行完了没，执行完了就去的结果，再接着干点活。。
+    System.out.println(fu.isDone());
 
-        fu.cancel(true);
+    fu.cancel(true);
 
-        System.out.println(fu.isCancelled());
+    System.out.println(fu.isCancelled());
 
-        try {
-            String res = fu.get();
-            System.out.println(res);
-        } catch (InterruptedException | ExecutionException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        System.out.println("sssssssssssssssss");
+    try {
+      String res = fu.get();
+      System.out.println(res);
+    } catch (InterruptedException | ExecutionException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
     }
+
+    System.out.println("sssssssssssssssss");
+  }
 }

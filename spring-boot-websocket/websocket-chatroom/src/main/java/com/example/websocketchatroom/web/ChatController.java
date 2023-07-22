@@ -16,13 +16,14 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class ChatController {
-    private static final Logger log = LoggerFactory.getLogger(ChatController.class);
 
-    @MessageMapping("/chat")
-    @SendTo("/topic/messages")
-    public Message send(Message message) {
-        log.info("Received message {}", message);
-        log.info("Sending message {}", message);
-        return message;
-    }
+  private static final Logger log = LoggerFactory.getLogger(ChatController.class);
+
+  @MessageMapping("/chat")
+  @SendTo("/topic/messages")
+  public Message send(Message message) {
+    log.info("Received message {}", message);
+    log.info("Sending message {}", message);
+    return message;
+  }
 }

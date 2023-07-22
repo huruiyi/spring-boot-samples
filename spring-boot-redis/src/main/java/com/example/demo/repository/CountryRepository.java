@@ -8,11 +8,12 @@ import java.util.List;
 
 @Repository
 public interface CountryRepository extends CrudRepository<Country, Integer> {
-    Country findFirstById(Integer id);
 
-    @Override
-    List<Country> findAll();
+  Country findFirstById(Integer id);
 
-    @Override
-    void deleteById(Integer integer);
+  @Override
+  List<Country> findAll();
+
+  @Override
+  void deleteById(Integer integer);
 }

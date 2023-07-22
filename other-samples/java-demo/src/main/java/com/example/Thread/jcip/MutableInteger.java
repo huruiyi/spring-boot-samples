@@ -12,15 +12,16 @@ import com.example.Thread.jcip.annotations.*;
 
 @NotThreadSafe
 public class MutableInteger {
-    private int value;
 
-    public int get() {
-        return value;
-    }
+  private int value;
 
-    public void set(int value) {
-        this.value = value;
-    }
+  public int get() {
+    return value;
+  }
+
+  public void set(int value) {
+    this.value = value;
+  }
 }
 
 

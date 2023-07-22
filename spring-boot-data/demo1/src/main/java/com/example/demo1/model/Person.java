@@ -14,15 +14,15 @@ import java.util.Set;
 @Data
 public class Person {
 
-    @Id
-    private String id;
-    private String name;
-    private Integer age;
-    private Set<Location> locationSet = new LinkedHashSet<>();
+  @Id
+  private String id;
+  private String name;
+  private Integer age;
+  private Set<Location> locationSet = new LinkedHashSet<>();
 
-    public Person(String name, Integer age) {
-        super();
-        this.name = name;
-        this.age = age;
-    }
+  public Person(String name, Integer age) {
+    super();
+    this.name = name;
+    this.age = age;
+  }
 }

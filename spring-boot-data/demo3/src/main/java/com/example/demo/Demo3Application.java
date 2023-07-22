@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @NacosPropertySource(dataId = "mysql.properties")
 public class Demo3Application {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Demo3Application.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(Demo3Application.class, args);
+  }
 
 }

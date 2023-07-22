@@ -5,20 +5,20 @@ import org.springframework.beans.factory.InitializingBean;
 
 public class EmployeeServiceImp implements EmployeeService, InitializingBean, DisposableBean {
 
-    public Long generateEmployeeId() {
-        return System.currentTimeMillis();
-    }
+  public Long generateEmployeeId() {
+    return System.currentTimeMillis();
+  }
 
-    public void destroy() throws Exception {
+  public void destroy() throws Exception {
 
-        System.out.println("Employee destroy... ");
+    System.out.println("Employee destroy... ");
 
-    }
+  }
 
-    public void afterPropertiesSet() throws Exception {
+  public void afterPropertiesSet() throws Exception {
 
-        System.out.println("Employee afterPropertiesSet... ");
+    System.out.println("Employee afterPropertiesSet... ");
 
-    }
+  }
 
 }

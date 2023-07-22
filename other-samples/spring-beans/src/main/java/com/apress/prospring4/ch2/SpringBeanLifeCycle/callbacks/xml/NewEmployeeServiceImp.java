@@ -3,22 +3,22 @@ package com.apress.prospring4.ch2.SpringBeanLifeCycle.callbacks.xml;
 
 public class NewEmployeeServiceImp implements EmployeeService {
 
-    public Long generateEmployeeId() {
+  public Long generateEmployeeId() {
 
-        return System.currentTimeMillis();
+    return System.currentTimeMillis();
 
-    }
+  }
 
-    public void cleanUp() {
+  public void cleanUp() {
 
-        System.out.println("New Employee Cleanup... ");
+    System.out.println("New Employee Cleanup... ");
 
-    }
+  }
 
-    public void myInit() {
+  public void myInit() {
 
-        System.out.println("New Employee My Init... ");
+    System.out.println("New Employee My Init... ");
 
-    }
+  }
 
 }

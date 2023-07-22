@@ -5,13 +5,14 @@ import com.example.demo.entity.Article;
 import java.util.List;
 
 public interface ArticleDao {
-    void saveArticle(Article article);
 
-    void removeArticle(String id);
+  void saveArticle(Article article);
 
-    void updateArticle(Article article);
+  void removeArticle(String id);
 
-    Article findArticleById(String id);
+  void updateArticle(Article article);
 
-    List<Article> list();
+  Article findArticleById(String id);
+
+  List<Article> list();
 }

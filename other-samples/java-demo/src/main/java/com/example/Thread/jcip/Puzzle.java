@@ -9,12 +9,13 @@ import java.util.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-public interface Puzzle <P, M> {
-    P initialPosition();
+public interface Puzzle<P, M> {
 
-    boolean isGoal(P position);
+  P initialPosition();
 
-    Set<M> legalMoves(P position);
+  boolean isGoal(P position);
 
-    P move(P position, M move);
+  Set<M> legalMoves(P position);
+
+  P move(P position, M move);
 }

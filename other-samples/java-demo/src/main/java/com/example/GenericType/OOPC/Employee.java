@@ -1,19 +1,20 @@
 package com.example.GenericType.OOPC;
 
 class Employee implements nameOfInterface, someOtherInterface {
-    public Employee(double salary) {
-        this.salary = salary;
-    }
 
-    @Override
-    public void sample() {
+  private double salary;
 
-    }
+  public Employee(double salary) {
+    this.salary = salary;
+  }
 
-    private double salary;
+  @Override
+  public void sample() {
 
-    double getSalary() {
-        System.out.println(this.salary);
-        return this.salary;
-    }
+  }
+
+  double getSalary() {
+    System.out.println(this.salary);
+    return this.salary;
+  }
 }

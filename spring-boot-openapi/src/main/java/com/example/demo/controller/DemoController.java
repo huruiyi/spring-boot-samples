@@ -16,49 +16,49 @@ import java.util.HashMap;
 @RestController
 public class DemoController {
 
-    @Operation(summary = "getUserInfoById")
-    @ApiResponses(value =
-    {
-        @ApiResponse
-        (
-            responseCode = "200", description = "根据Id获取用户信息",
-            content =
-            {
-                @Content(mediaType = "application/json", schema = @Schema(implementation = User.class))
-            }
-        ),
-    })
-    @GetMapping("/demo/user/{id}")
-    public ResponseEntity<?> getUserInfoById(@Parameter(description = "用户Id") @PathVariable("id") String id) {
+  @Operation(summary = "getUserInfoById")
+  @ApiResponses(value =
+      {
+          @ApiResponse
+              (
+                  responseCode = "200", description = "根据Id获取用户信息",
+                  content =
+                      {
+                          @Content(mediaType = "application/json", schema = @Schema(implementation = User.class))
+                      }
+              ),
+      })
+  @GetMapping("/demo/user/{id}")
+  public ResponseEntity<?> getUserInfoById(@Parameter(description = "用户Id") @PathVariable("id") String id) {
 
-        HashMap<String, String> map = new HashMap<>();
-        map.put("id", id);
-        map.put("name", "jack");
-        map.put("email", "jack@abc.com");
+    HashMap<String, String> map = new HashMap<>();
+    map.put("id", id);
+    map.put("name", "jack");
+    map.put("email", "jack@abc.com");
 
-        return new ResponseEntity<>(map, HttpStatus.OK);
-    }
+    return new ResponseEntity<>(map, HttpStatus.OK);
+  }
 
-    @Operation(summary = "registUserInfo")
-    @ApiResponses(value =
-    {
-        @ApiResponse
-        (
-            responseCode = "200", description = "用户注册",
-            content =
-            {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = User.class))
-            }
-        ),
-    })
-    @PostMapping("/demo/user")
-    public ResponseEntity<?> registUserInfo(@Parameter(schema = @Schema(implementation = User.class)) @RequestParam HashMap<String, String> map) {
-        return new ResponseEntity<>(map, HttpStatus.OK);
-    }
+  @Operation(summary = "registUserInfo")
+  @ApiResponses(value =
+      {
+          @ApiResponse
+              (
+                  responseCode = "200", description = "用户注册",
+                  content =
+                      {
+                          @Content(mediaType = "application/json", schema = @Schema(implementation = User.class))
+                      }
+              ),
+      })
+  @PostMapping("/demo/user")
+  public ResponseEntity<?> registUserInfo(@Parameter(schema = @Schema(implementation = User.class)) @RequestParam HashMap<String, String> map) {
+    return new ResponseEntity<>(map, HttpStatus.OK);
+  }
 
 
-    @GetMapping("/hello")
-    public String service() {
-        return "Hello World";
-    }
+  @GetMapping("/hello")
+  public String service() {
+    return "Hello World";
+  }
 }

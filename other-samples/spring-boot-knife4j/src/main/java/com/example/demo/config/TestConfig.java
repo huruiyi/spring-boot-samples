@@ -12,11 +12,11 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(SwaggerProperties.class)
 public class TestConfig {
 
-    @Autowired
-    SwaggerProperties swaggerProperties;
+  @Autowired
+  SwaggerProperties swaggerProperties;
 
-    @Bean
-    public String title(){
-        return swaggerProperties.getTitle();
-    }
+  @Bean
+  public String title() {
+    return swaggerProperties.getTitle();
+  }
 }

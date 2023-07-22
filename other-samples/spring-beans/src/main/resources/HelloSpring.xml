@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="helloworld" class="com.apress.prospring4.ch2.Hello1.HelloWorld">
-		<property name="message" value="Hello World!"></property>
-	</bean>
+  <bean class="com.apress.prospring4.ch2.Hello1.HelloWorld" id="helloworld">
+    <property name="message" value="Hello World!"></property>
+  </bean>
 
 </beans>

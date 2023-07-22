@@ -25,45 +25,45 @@ import java.util.Random;
 @Controller
 public class StockController {
 
-    @Autowired
-    private TaskScheduler taskScheduler;
+  @Autowired
+  private TaskScheduler taskScheduler;
 
-    @Autowired
-    private SimpMessagingTemplate simpMessagingTemplate;
+  @Autowired
+  private SimpMessagingTemplate simpMessagingTemplate;
 
-    private List<Stock> stocks = new ArrayList<>();
+  private List<Stock> stocks = new ArrayList<>();
 
-    public StockController() {
-        stocks.add(new Stock("VMW", 1.00));
-        stocks.add(new Stock("EMC", 1.00));
-        stocks.add(new Stock("GOOG", 1.00));
-        stocks.add(new Stock("IBM", 1.00));
+  public StockController() {
+    stocks.add(new Stock("VMW", 1.00));
+    stocks.add(new Stock("EMC", 1.00));
+    stocks.add(new Stock("GOOG", 1.00));
+    stocks.add(new Stock("IBM", 1.00));
+  }
+
+  @MessageMapping("/addStock")
+  public void addStock(final Stock stock) {
+    stocks.add(stock);
+    broadcastUpdatedPrices();
+  }
+
+  private void broadcastUpdatedPrices() {
+    for (Stock stock : stocks) {
+      stock.setPrice(updateStockPrice(stock.getPrice()));
+      stock.setDateTime(LocalDateTime.now());
     }
 
-    @MessageMapping("/addStock")
-    public void addStock(final Stock stock) {
-        stocks.add(stock);
-        broadcastUpdatedPrices();
-    }
+    // send stocks to all subscribers of /topic/price
+    simpMessagingTemplate.convertAndSend("/topic/price", stocks);
+  }
 
-    private void broadcastUpdatedPrices() {
-        for (Stock stock : stocks) {
-            stock.setPrice(updateStockPrice(stock.getPrice()));
-            stock.setDateTime(LocalDateTime.now());
-        }
+  private double updateStockPrice(final double oldPrice) {
+    double random = new Random().nextDouble() - 0.5;
+    return oldPrice + random;
+  }
 
-        // send stocks to all subscribers of /topic/price
-        simpMessagingTemplate.convertAndSend("/topic/price", stocks);
-    }
-
-    private double updateStockPrice(final double oldPrice) {
-        double random = new Random().nextDouble() - 0.5;
-        return oldPrice + random;
-    }
-
-    // call brodcast of stocks every  second
-    @PostConstruct
-    private void broadcastPeriodically() {
-        taskScheduler.scheduleAtFixedRate(this::broadcastUpdatedPrices, 2000);
-    }
+  // call brodcast of stocks every  second
+  @PostConstruct
+  private void broadcastPeriodically() {
+    taskScheduler.scheduleAtFixedRate(this::broadcastUpdatedPrices, 2000);
+  }
 }

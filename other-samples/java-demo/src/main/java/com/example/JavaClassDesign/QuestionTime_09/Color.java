@@ -4,24 +4,25 @@ package com.example.JavaClassDesign.QuestionTime_09;/*--------------------------
  * by SG Ganesh, Hari Kiran and Tushar Sharma
 ------------------------------------------------------------------------------*/
 
-class Color { 
-	int red, green, blue;
+class Color {
 
-	Color() { 
-		this(10, 10, 10); 
-	}  
+  int red, green, blue;
 
-	Color(int r, int g, int b) {
-		red = r; 
-		green = g;
-		blue = b; 
-	}
+  Color() {
+    this(10, 10, 10);
+  }
 
-	public String toString() { 
-		return "The color is: " + red + green + blue; 
-	}
+  Color(int r, int g, int b) {
+    red = r;
+    green = g;
+    blue = b;
+  }
 
-	public static void main(String [] args) {
-		System.out.println(new Color()); 
-	}
+  public static void main(String[] args) {
+    System.out.println(new Color());
+  }
+
+  public String toString() {
+    return "The color is: " + red + green + blue;
+  }
 }

@@ -8,10 +8,11 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration(proxyBeanMethods = false)
 public class ActuatorConfig {
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.requestMatcher(EndpointRequest.toAnyEndpoint()).authorizeRequests((requests) -> requests.anyRequest().hasRole("ADMIN"));
-        http.httpBasic();
-        return http.build();
-    }
+
+  @Bean
+  public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    http.requestMatcher(EndpointRequest.toAnyEndpoint()).authorizeRequests((requests) -> requests.anyRequest().hasRole("ADMIN"));
+    http.httpBasic();
+    return http.build();
+  }
 }

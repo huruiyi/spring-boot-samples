@@ -1,21 +1,22 @@
 package com.example.GenericType.OOPA;
 
 public class App {
-    public static void main(String[] args) {
-        BankAccount bankAccount = new BankAccount(1000);
 
-        System.out.println(bankAccount.getAccountBalance());
+  public static void main(String[] args) {
+    BankAccount bankAccount = new BankAccount(1000);
 
-        bankAccount.calculateInterest(5);
+    System.out.println(bankAccount.getAccountBalance());
 
-        System.out.println(bankAccount.getAccountBalance());
+    bankAccount.calculateInterest(5);
 
-        bankAccount.calculateInterest(5);
+    System.out.println(bankAccount.getAccountBalance());
 
-        System.out.println(bankAccount.getAccountBalance());
+    bankAccount.calculateInterest(5);
 
-        bankAccount.calculateInterest(5);
+    System.out.println(bankAccount.getAccountBalance());
 
-        System.out.println(bankAccount.getAccountBalance());
-    }
+    bankAccount.calculateInterest(5);
+
+    System.out.println(bankAccount.getAccountBalance());
+  }
 }

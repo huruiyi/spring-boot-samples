@@ -19,55 +19,55 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+  @Autowired
+  private UserService userService;
 
-    @RequestMapping("/")
-    @ResponseBody
-    String welcome() {
-        return "welcome my first spring boot project";
-    }
+  @RequestMapping("/")
+  @ResponseBody
+  String welcome() {
+    return "welcome my first spring boot project";
+  }
 
-    @RequestMapping("/notVerify")
-    @ResponseBody
-    String notVerify() {
-        return "username or password NOT correct";
-    }
+  @RequestMapping("/notVerify")
+  @ResponseBody
+  String notVerify() {
+    return "username or password NOT correct";
+  }
 
-    @RequestMapping("/loginPage")
-    String login(Model model) {
-        model.addAttribute("user", new User());
-        return "login";
-    }
+  @RequestMapping("/loginPage")
+  String login(Model model) {
+    model.addAttribute("user", new User());
+    return "login";
+  }
 
-    @RequestMapping("/register")
-    String register(Model model) {
-        model.addAttribute("user", new User());
-        return "register";
-    }
+  @RequestMapping("/register")
+  String register(Model model) {
+    model.addAttribute("user", new User());
+    return "register";
+  }
 
-    @RequestMapping(value = "/regist", method = RequestMethod.POST)
-    @ResponseBody
-    String registerUser(@RequestBody User user) {
-        return userService.registerUser(user);
-    }
+  @RequestMapping(value = "/regist", method = RequestMethod.POST)
+  @ResponseBody
+  String registerUser(@RequestBody User user) {
+    return userService.registerUser(user);
+  }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    @ResponseBody
-    boolean userLogin(@RequestBody User user, Model model) {
-        model.addAttribute("name", user.getName());
-        model.addAttribute("password", user.getPassword());
-        return userService.verifyUser(user);
+  @RequestMapping(value = "/login", method = RequestMethod.POST)
+  @ResponseBody
+  boolean userLogin(@RequestBody User user, Model model) {
+    model.addAttribute("name", user.getName());
+    model.addAttribute("password", user.getPassword());
+    return userService.verifyUser(user);
 
-    }
+  }
 
 
-    @RequestMapping(value = "/get", method = RequestMethod.POST)
-    @ResponseBody
-    List<User> get(@RequestBody User user, Model model) {
-        List<User> list = userService.findByEmail(user.getEmail());
-        return list;
+  @RequestMapping(value = "/get", method = RequestMethod.POST)
+  @ResponseBody
+  List<User> get(@RequestBody User user, Model model) {
+    List<User> list = userService.findByEmail(user.getEmail());
+    return list;
 
-    }
+  }
 
 }

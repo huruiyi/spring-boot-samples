@@ -7,27 +7,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Service("renderer")
 public class StandardOutMessageRenderer implements MessageRenderer {
-    private MessageProvider messageProvider;
 
-    @Override
-    public void render() {
-        if (messageProvider == null) {
-            throw new RuntimeException(
-            "You must set the property messageProvider of class:"
-            + StandardOutMessageRenderer.class.getName());
-        }
+  private MessageProvider messageProvider;
 
-        System.out.println(messageProvider.getMessage());
+  @Override
+  public void render() {
+    if (messageProvider == null) {
+      throw new RuntimeException(
+          "You must set the property messageProvider of class:"
+              + StandardOutMessageRenderer.class.getName());
     }
 
-    @Override
-    @Autowired
-    public void setMessageProvider(MessageProvider provider) {
-        this.messageProvider = provider;
-    }
+    System.out.println(messageProvider.getMessage());
+  }
 
-    @Override
-    public MessageProvider getMessageProvider() {
-        return this.messageProvider;
-    }
+  @Override
+  public MessageProvider getMessageProvider() {
+    return this.messageProvider;
+  }
+
+  @Override
+  @Autowired
+  public void setMessageProvider(MessageProvider provider) {
+    this.messageProvider = provider;
+  }
 }

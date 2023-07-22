@@ -8,12 +8,12 @@ import javax.persistence.*;
 @Table(name = "country") //映射的表名称
 public class Country {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    private String countryname;
+  private String countryname;
 
-    private String countrycode;
+  private String countrycode;
 
 }

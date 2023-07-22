@@ -24,154 +24,129 @@ package com.example.Xml_ch.ch11.JacksonDemo.v7;/*
 }
 */
 
-public class Person
-{
-   private String firstName;
-   private String lastName;
-   private int age;
+public class Person {
 
-   public static class Address
-   {
-      private String street, city, state;
-      private int zipcode;
+  private String firstName;
+  private String lastName;
+  private int age;
+  private Address address;
+  private PhoneNumber[] phoneNumbers;
 
-      public String getStreet()
-      {
-         return street;
-      }
+  public String getFirstName() {
+    return firstName;
+  }
 
-      public String getCity()
-      {
-         return city;
-      }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
 
-      public String getState()
-      {
-         return state;
-      }
+  public String getLastName() {
+    return lastName;
+  }
 
-      public int getZipcode()
-      {
-         return zipcode;
-      }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
 
-      public void setStreet(String street)
-      {
-         this.street = street;
-      }
+  public int getAge() {
+    return age;
+  }
 
-      public void setCity(String city)
-      {
-         this.city = city;
-      }
+  public void setAge(int age) {
+    this.age = age;
+  }
 
-      public void setState(String state)
-      {
-         this.state = state;
-      }
-   }
+  public Address getAddress() {
+    return address;
+  }
 
-   private Address address;
+  public void setAddress(Address address) {
+    this.address = address;
+  }
 
-   public static class PhoneNumber
-   {
-      private String type, number;
+  public PhoneNumber[] getPhoneNumbers() {
+    return phoneNumbers;
+  }
 
-      public String getType()
-      {
-         return type;
-      }
+  public void setPhoneNumbers(PhoneNumber[] phoneNumbers) {
+    this.phoneNumbers = phoneNumbers;
+  }
 
-      public String getNumber()
-      {
-         return number;
-      }
+  @Override
+  public String toString() {
+    StringBuffer sb = new StringBuffer();
+    sb.append("firstName = " + firstName + "\n");
+    sb.append("lastName = " + lastName + "\n");
+    sb.append("age = " + age + "\n");
+    sb.append("address\n");
+    sb.append("   street = " + address.getStreet() +
+        "\n");
+    sb.append("   city = " + address.getCity() + "\n");
+    sb.append("   state = " + address.getState() + "\n");
+    sb.append("   zipcode = " + address.getZipcode() +
+        "\n");
+    sb.append("phoneNumbers\n");
+    for (int i = 0; i < phoneNumbers.length; i++) {
+      sb.append("   type = " +
+          phoneNumbers[i].getType() + "\n");
+      sb.append("   number = " +
+          phoneNumbers[i].getNumber() + "\n");
+    }
+    return sb.toString();
+  }
 
-      public void setType(String type)
-      {
-         this.type = type;
-      }
+  public static class Address {
 
-      public void setNumber(String number)
-      {
-         this.number = number;
-      }
-   }
+    private String street, city, state;
+    private int zipcode;
 
-   private PhoneNumber[] phoneNumbers;
+    public String getStreet() {
+      return street;
+    }
 
-   public String getFirstName()
-   {
-      return firstName;
-   }
+    public void setStreet(String street) {
+      this.street = street;
+    }
 
-   public String getLastName()
-   {
-      return lastName;
-   }
+    public String getCity() {
+      return city;
+    }
 
-   public int getAge()
-   {
-      return age;
-   }
+    public void setCity(String city) {
+      this.city = city;
+    }
 
-   public Address getAddress()
-   {
-      return address;
-   }
+    public String getState() {
+      return state;
+    }
 
-   public PhoneNumber[] getPhoneNumbers()
-   {
-      return phoneNumbers;
-   }
+    public void setState(String state) {
+      this.state = state;
+    }
 
-   public void setFirstName(String firstName)
-   {
-      this.firstName = firstName;
-   }
+    public int getZipcode() {
+      return zipcode;
+    }
+  }
 
-   public void setLastName(String lastName)
-   {
-      this.lastName = lastName;
-   }
+  public static class PhoneNumber {
 
-   public void setAge(int age)
-   {
-      this.age = age;
-   }
+    private String type, number;
 
-   public void setAddress(Address address)
-   {
-      this.address = address;
-   }
+    public String getType() {
+      return type;
+    }
 
-   public void setPhoneNumbers(PhoneNumber[] phoneNumbers)
-   {
-      this.phoneNumbers = phoneNumbers;
-   }
+    public void setType(String type) {
+      this.type = type;
+    }
 
-   @Override
-   public String toString()
-   {
-      StringBuffer sb = new StringBuffer();
-      sb.append("firstName = " + firstName + "\n");
-      sb.append("lastName = " + lastName + "\n");
-      sb.append("age = " + age + "\n");
-      sb.append("address\n");
-      sb.append("   street = " + address.getStreet() + 
-                "\n");
-      sb.append("   city = " + address.getCity() + "\n");
-      sb.append("   state = " + address.getState() + "\n");
-      sb.append("   zipcode = " + address.getZipcode() + 
-                "\n");
-      sb.append("phoneNumbers\n");
-      for (int i = 0; i < phoneNumbers.length; i++)
-      {
-         sb.append("   type = " + 
-                   phoneNumbers[i].getType() + "\n");
-         sb.append("   number = " + 
-                   phoneNumbers[i].getNumber() + "\n");
-      }
-      return sb.toString();
-   }
+    public String getNumber() {
+      return number;
+    }
+
+    public void setNumber(String number) {
+      this.number = number;
+    }
+  }
 }

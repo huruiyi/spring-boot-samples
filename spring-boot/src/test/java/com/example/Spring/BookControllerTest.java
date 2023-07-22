@@ -33,79 +33,77 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class BookControllerTest {
 
-    @Autowired
-    private MockMvc mockMvc;
+  @Autowired
+  private MockMvc mockMvc;
 
-    //@MockBean //成员变量值不能共享
-    @Autowired
-    private BookService bookService;
+  //@MockBean //成员变量值不能共享
+  @Autowired
+  private BookService bookService;
+  @MockBean
+  private BookService mockBookService;
 
-    @Test
-    public void findAl() {
-        bookService.create(new Book("9780061120084", "To Kill a Mockingbird", "Harper Lee"));
-        bookService.create(new Book("9780451524935", "1984", "George Orwell"));
-        bookService.create(new Book("9780618260300", "The Hobbit", "J.R.R. Tolkien"));
+  @Test
+  public void findAl() {
+    bookService.create(new Book("9780061120084", "To Kill a Mockingbird", "Harper Lee"));
+    bookService.create(new Book("9780451524935", "1984", "George Orwell"));
+    bookService.create(new Book("9780618260300", "The Hobbit", "J.R.R. Tolkien"));
 
-        Iterable<Book> books = bookService.findAll();
-        books.forEach(item -> {
-            System.out.println(item.getIsbn());
-        });
-    }
+    Iterable<Book> books = bookService.findAll();
+    books.forEach(item -> {
+      System.out.println(item.getIsbn());
+    });
+  }
 
-    @Test
-    public void testHelloWorldController() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/books/hello"))
-                .andExpect(status().isOk())
-                .andExpect(content().string("Hello World, from Spring Boot 2!"))
-                .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN));
-    }
+  @Test
+  public void testHelloWorldController() throws Exception {
+    mockMvc.perform(MockMvcRequestBuilders.get("/books/hello"))
+        .andExpect(status().isOk())
+        .andExpect(content().string("Hello World, from Spring Boot 2!"))
+        .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN));
+  }
 
+  @Test
+  public void shouldReturnListOfBooks() throws Exception {
 
-    @MockBean
-    private BookService mockBookService;
+    List<Book> books = Arrays.asList(
+        new Book("123", "Spring 5 Recipes", "Marten Deinum", "Josh Long"),
+        new Book("321", "Pro Spring MVC", "Marten Deinum", "Colin Yates"));
 
-    @Test
-    public void shouldReturnListOfBooks() throws Exception {
+    when(mockBookService.findAll()).thenReturn(books);
 
-        List<Book> books = Arrays.asList(
-                new Book("123", "Spring 5 Recipes", "Marten Deinum", "Josh Long"),
-                new Book("321", "Pro Spring MVC", "Marten Deinum", "Colin Yates"));
+    mockMvc.perform(get("/books"))
+        .andExpect(status().isOk())
+        .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(2)))
+        .andExpect(MockMvcResultMatchers.jsonPath("$[*].isbn", Matchers.containsInAnyOrder("123", "321")))
+        .andExpect(MockMvcResultMatchers.jsonPath("$[*].title", Matchers.containsInAnyOrder("Spring 5 Recipes", "Pro Spring MVC")));
+  }
 
-        when(mockBookService.findAll()).thenReturn(books);
+  @Test
+  public void shouldReturn404WhenBookNotFound() throws Exception {
+    when(mockBookService.find(anyString())).thenReturn(Optional.empty());
+    mockMvc.perform(get("/books/123")).andExpect(status().isNotFound());
+  }
 
-        mockMvc.perform(get("/books"))
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(2)))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[*].isbn", Matchers.containsInAnyOrder("123", "321")))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[*].title", Matchers.containsInAnyOrder("Spring 5 Recipes", "Pro Spring MVC")));
-    }
+  @Test
+  public void shouldReturnBookWhenFound() throws Exception {
 
-    @Test
-    public void shouldReturn404WhenBookNotFound() throws Exception {
-        when(mockBookService.find(anyString())).thenReturn(Optional.empty());
-        mockMvc.perform(get("/books/123")).andExpect(status().isNotFound());
-    }
+    when(mockBookService.find(anyString())).thenReturn(
+        Optional.of(new Book("123", "Spring 5 Recipes", "Marten Deinum", "Josh Long")));
 
-    @Test
-    public void shouldReturnBookWhenFound() throws Exception {
+    mockMvc.perform(get("/books/123"))
+        .andExpect(status().isOk())
+        .andExpect(MockMvcResultMatchers.jsonPath("$.isbn", Matchers.equalTo("123")))
+        .andExpect(MockMvcResultMatchers.jsonPath("$.title", Matchers.equalTo("Spring 5 Recipes")));
+  }
 
-        when(mockBookService.find(anyString())).thenReturn(
-                Optional.of(new Book("123", "Spring 5 Recipes", "Marten Deinum", "Josh Long")));
-
-        mockMvc.perform(get("/books/123"))
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.isbn", Matchers.equalTo("123")))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.title", Matchers.equalTo("Spring 5 Recipes")));
-    }
-
-    @Test
-    public void shouldAddBook() throws Exception {
-        when(mockBookService.create(any(Book.class))).thenReturn(new Book("123456789", "Test Book Stored", "T. Author"));
-        mockMvc.perform(post("/books")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{ \"isbn\" : \"123456789\"}, \"title\" : \"Test Book\", \"authors\" : [\"T. Author\"]"))
-                .andExpect(status().isCreated())
-                .andExpect(header().string("Location", "http://localhost/books/123456789"));
-    }
+  @Test
+  public void shouldAddBook() throws Exception {
+    when(mockBookService.create(any(Book.class))).thenReturn(new Book("123456789", "Test Book Stored", "T. Author"));
+    mockMvc.perform(post("/books")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content("{ \"isbn\" : \"123456789\"}, \"title\" : \"Test Book\", \"authors\" : [\"T. Author\"]"))
+        .andExpect(status().isCreated())
+        .andExpect(header().string("Location", "http://localhost/books/123456789"));
+  }
 
 }

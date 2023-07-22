@@ -14,17 +14,19 @@ import com.example.Thread.jcip.annotations.*;
 
 @ThreadSafe
 public class PersonSet {
-    @GuardedBy("this")
-    private final Set<Person> mySet = new HashSet<Person>();
 
-    public synchronized void addPerson(Person p) {
-        mySet.add(p);
-    }
+  @GuardedBy("this")
+  private final Set<Person> mySet = new HashSet<Person>();
 
-    public synchronized boolean containsPerson(Person p) {
-        return mySet.contains(p);
-    }
+  public synchronized void addPerson(Person p) {
+    mySet.add(p);
+  }
 
-    interface Person {
-    }
+  public synchronized boolean containsPerson(Person p) {
+    return mySet.contains(p);
+  }
+
+  interface Person {
+
+  }
 }

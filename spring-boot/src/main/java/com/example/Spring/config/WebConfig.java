@@ -15,18 +15,18 @@ import java.net.UnknownHostException;
 @EnableScheduling
 public class WebConfig implements ApplicationListener<WebServerInitializedEvent> {
 
-    protected final Logger logger = LoggerFactory.getLogger(this.getClass());
+  protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 
-    @Override
-    public void onApplicationEvent(WebServerInitializedEvent event) {
-        try {
-            InetAddress inetAddress = Inet4Address.getLocalHost();
-            int port = event.getWebServer().getPort();
-            logger.info("项目启动成功！地址端口(start port): http://" + inetAddress.getHostAddress() + ":" + port);
+  @Override
+  public void onApplicationEvent(WebServerInitializedEvent event) {
+    try {
+      InetAddress inetAddress = Inet4Address.getLocalHost();
+      int port = event.getWebServer().getPort();
+      logger.info("项目启动成功！地址端口(start port): http://" + inetAddress.getHostAddress() + ":" + port);
 
-        } catch (UnknownHostException e) {
-            throw new RuntimeException(e);
-        }
+    } catch (UnknownHostException e) {
+      throw new RuntimeException(e);
     }
+  }
 }

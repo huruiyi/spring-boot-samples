@@ -12,28 +12,28 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration("/spring-redis-cluster.xml")
 public class TestRedisClusterTemplate {
 
-    @Autowired
-    private RedisTemplate redisTemplate;
+  @Autowired
+  private RedisTemplate redisTemplate;
 
-    @Test
-    public void test() {
-        System.out.println(redisTemplate);
-    }
+  @Test
+  public void test() {
+    System.out.println(redisTemplate);
+  }
 
-    @Test
-    public void test01() {
-        ValueOperations operations = redisTemplate.opsForValue();
-        String key = "age";
-        //存入key-value
-        operations.set("age", "12");
-        //根据key取出Value
-        Object age = operations.get("age");
-        System.out.println("age:" + age);
-        //追加
-        operations.append("age", "30");
-        //获得并修改
-        operations.getAndSet("age", "40");
-        Object age1 = operations.get("age");
-        System.out.println("修改后：" + age1);
-    }
+  @Test
+  public void test01() {
+    ValueOperations operations = redisTemplate.opsForValue();
+    String key = "age";
+    //存入key-value
+    operations.set("age", "12");
+    //根据key取出Value
+    Object age = operations.get("age");
+    System.out.println("age:" + age);
+    //追加
+    operations.append("age", "30");
+    //获得并修改
+    operations.getAndSet("age", "40");
+    Object age1 = operations.get("age");
+    System.out.println("修改后：" + age1);
+  }
 }

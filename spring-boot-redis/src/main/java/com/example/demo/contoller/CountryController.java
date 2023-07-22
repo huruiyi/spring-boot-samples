@@ -13,29 +13,29 @@ import java.util.List;
 @RequestMapping("/countries")
 public class CountryController {
 
-    private final CountryService countryService;
+  private final CountryService countryService;
 
-    public CountryController(CountryService countryService) {
-        this.countryService = countryService;
-    }
+  public CountryController(CountryService countryService) {
+    this.countryService = countryService;
+  }
 
-    @PostMapping
-    public ResponseEntity<Country> save(@RequestBody Country request) throws RuntimeException {
-        return new ResponseEntity<>(countryService.save(request), HttpStatus.OK);
-    }
+  @PostMapping
+  public ResponseEntity<Country> save(@RequestBody Country request) throws RuntimeException {
+    return new ResponseEntity<>(countryService.save(request), HttpStatus.OK);
+  }
 
-    @GetMapping
-    public ResponseEntity<List<Country>> findAllCountries() throws RuntimeException {
-        return new ResponseEntity<>(countryService.findAll(), HttpStatus.OK);
-    }
+  @GetMapping
+  public ResponseEntity<List<Country>> findAllCountries() throws RuntimeException {
+    return new ResponseEntity<>(countryService.findAll(), HttpStatus.OK);
+  }
 
-    @GetMapping(value = "/findById")
-    public ResponseEntity<Country> findById(@RequestParam Integer id) throws RuntimeException {
-        return new ResponseEntity<>(countryService.findById(id), HttpStatus.OK);
-    }
+  @GetMapping(value = "/findById")
+  public ResponseEntity<Country> findById(@RequestParam Integer id) throws RuntimeException {
+    return new ResponseEntity<>(countryService.findById(id), HttpStatus.OK);
+  }
 
-    @GetMapping(value = "/deleteById")
-    public ResponseEntity<List<Country>> deleteById(@RequestParam Integer id) throws RuntimeException {
-        return new ResponseEntity<>(countryService.delete(id), HttpStatus.OK);
-    }
+  @GetMapping(value = "/deleteById")
+  public ResponseEntity<List<Country>> deleteById(@RequestParam Integer id) throws RuntimeException {
+    return new ResponseEntity<>(countryService.delete(id), HttpStatus.OK);
+  }
 }

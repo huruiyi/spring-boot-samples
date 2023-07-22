@@ -17,36 +17,37 @@ import javax.annotation.Resource;
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
-    @Resource
-    AppConfig appConfig;
+  @Resource
+  AppConfig appConfig;
 
 
-    @Resource
-    AuthenticationManager authenticationManager;
+  @Resource
+  AuthenticationManager authenticationManager;
 
-    @Resource
-    AccountUserDetailsService userDetailsService;
+  @Resource
+  AccountUserDetailsService userDetailsService;
 
-    @Override
-    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.jdbc(appConfig.dataSource());
-    }
+  @Override
+  public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+    clients.jdbc(appConfig.dataSource());
+  }
 
-    @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
-        endpoints.tokenStore(appConfig.tokenStore()).authenticationManager(authenticationManager).userDetailsService(userDetailsService).allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
-        endpoints.reuseRefreshTokens(true);
+  @Override
+  public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
+    endpoints.tokenStore(appConfig.tokenStore()).authenticationManager(authenticationManager).userDetailsService(userDetailsService)
+        .allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
+    endpoints.reuseRefreshTokens(true);
 
-    }
+  }
 
-    /**
-     * Note：允许表单认证
-     *
-     * @param oauthServer
-     */
-    @Override
-    public void configure(AuthorizationServerSecurityConfigurer oauthServer) {
-        oauthServer.allowFormAuthenticationForClients();
-    }
+  /**
+   * Note：允许表单认证
+   *
+   * @param oauthServer
+   */
+  @Override
+  public void configure(AuthorizationServerSecurityConfigurer oauthServer) {
+    oauthServer.allowFormAuthenticationForClients();
+  }
 
 }

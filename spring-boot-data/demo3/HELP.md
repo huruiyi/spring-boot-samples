@@ -1,15 +1,21 @@
 # Getting Started
 
 ### 1: 前提
+
 ```
 目前，nacos-config-spring-boot-starter最高版本0.2.10,只支持到spring-boot:2.3.7.RELEASE
 ```
+
 ### 2：nacos配置
+
 `Data ID`
+
 ```
 mysql.properties
 ```
+
 `配置内容`
+
 ```
 server.port=9009
 

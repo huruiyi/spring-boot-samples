@@ -8,14 +8,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class MessagePrinter {
 
-    final private MessageService service;
+  final private MessageService service;
 
-    @Autowired
-    public MessagePrinter(MessageService service) {
-        this.service = service;
-    }
+  @Autowired
+  public MessagePrinter(MessageService service) {
+    this.service = service;
+  }
 
-    public void printMessage() {
-        System.out.println(this.service.getMessage());
-    }
+  public void printMessage() {
+    System.out.println(this.service.getMessage());
+  }
 }

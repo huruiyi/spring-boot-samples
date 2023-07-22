@@ -5,20 +5,22 @@ package com.example.JavaClassDesign.Listing_21;/*-------------------------------
 ------------------------------------------------------------------------------*/
 
 public class Logger {
-    private Logger() {
-        // private constructor
-    }
 
-    public static class LoggerHolder {
-        public static Logger logger = new Logger();
-    }
+  private Logger() {
+    // private constructor
+  }
 
-    public static Logger getInstance() {
-        return LoggerHolder.logger;
-    }
+  public static Logger getInstance() {
+    return LoggerHolder.logger;
+  }
 
-    public void log(String s) {
-        // log implementation
-        System.err.println(s);
-    }
+  public void log(String s) {
+    // log implementation
+    System.err.println(s);
+  }
+
+  public static class LoggerHolder {
+
+    public static Logger logger = new Logger();
+  }
 }

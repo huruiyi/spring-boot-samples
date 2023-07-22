@@ -7,19 +7,20 @@ package com.example.Exceptions_Assertions.QuestionTime_03;
 ------------------------------------------------------------------------------*/
 
 class ExceptionTest {
-    public static void foo() {
+
+  public static void foo() {
      /*   try {
             throw new ArrayIndexOutOfBoundsException();
         } catch (ArrayIndexOutOfBoundsException oob) {
             throw new Exception(oob);
         }*/
-    }
+  }
 
-    public static void main(String[] args) {
-        try {
-            foo();
-        } catch (Exception re) {
-            System.out.println(re.getCause());
-        }
+  public static void main(String[] args) {
+    try {
+      foo();
+    } catch (Exception re) {
+      System.out.println(re.getCause());
     }
+  }
 }

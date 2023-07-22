@@ -5,20 +5,21 @@ package com.example.JavaClassDesign.QuestionTime_06;/*--------------------------
 ------------------------------------------------------------------------------*/
 
 class Test {
-    public void print(Integer i) {
-        System.out.println("Integer");
-    }
 
-    public void print(int i) {
-        System.out.println("int");
-    }
+  public static void main(String args[]) {
+    Test test = new Test();
+    test.print(10);
+  }
 
-    public void print(long i) {
-        System.out.println("long");
-    }
+  public void print(Integer i) {
+    System.out.println("Integer");
+  }
 
-    public static void main(String args[]) {
-        Test test = new Test();
-        test.print(10);
-    }
+  public void print(int i) {
+    System.out.println("int");
+  }
+
+  public void print(long i) {
+    System.out.println("long");
+  }
 }

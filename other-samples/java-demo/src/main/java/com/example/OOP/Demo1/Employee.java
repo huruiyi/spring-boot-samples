@@ -3,17 +3,18 @@ package com.example.OOP.Demo1;
 import java.util.Date;
 
 public class Employee extends Person {
-    Employee() {
-        this.dateOfEmployment = new Date();
-    }
 
-    Employee(Date date) {
-        this.dateOfEmployment = date;
-    }
+  final Date dateOfEmployment;
 
-    Date getDateOfEmployment() {
-        return dateOfEmployment;
-    }
+  Employee() {
+    this.dateOfEmployment = new Date();
+  }
 
-    final Date dateOfEmployment;
+  Employee(Date date) {
+    this.dateOfEmployment = date;
+  }
+
+  Date getDateOfEmployment() {
+    return dateOfEmployment;
+  }
 }

@@ -11,19 +11,19 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration("classpath:applicationContextC.xml")
 public class SpringDemoC {
 
-    @Resource(name = "orderDao")
-    private OrderDao orderDao;
+  @Resource(name = "orderDao")
+  private OrderDao orderDao;
 
-    @Test
-    public void demo1() {
-        System.out.println("*******************************************************************");
-        orderDao.save();
-        System.out.println("*******************************************************************");
-        orderDao.delete();
-        System.out.println("*******************************************************************");
-        orderDao.update();
-        System.out.println("*******************************************************************");
-        orderDao.find();
-        System.out.println("*******************************************************************");
-    }
+  @Test
+  public void demo1() {
+    System.out.println("*******************************************************************");
+    orderDao.save();
+    System.out.println("*******************************************************************");
+    orderDao.delete();
+    System.out.println("*******************************************************************");
+    orderDao.update();
+    System.out.println("*******************************************************************");
+    orderDao.find();
+    System.out.println("*******************************************************************");
+  }
 }

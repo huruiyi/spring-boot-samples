@@ -10,5 +10,6 @@ import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface FruitName {
-	String value() default "";
+
+  String value() default "";
 }

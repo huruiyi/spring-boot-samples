@@ -1,13 +1,14 @@
 package com.example.GenericType;
 
-public  class BoxExt<T extends Employee> {
-    T element;
+public class BoxExt<T extends Employee> {
 
-    void setElement(T valueOfElement) {
-        this.element = valueOfElement;
-    }
+  T element;
 
-    T getElement() {
-        return this.element;
-    }
+  T getElement() {
+    return this.element;
+  }
+
+  void setElement(T valueOfElement) {
+    this.element = valueOfElement;
+  }
 }

@@ -19,41 +19,41 @@ import java.util.Collections;
 @Slf4j
 public class MessageController {
 
-    @Resource
-    AsyncService asyncService;
+  @Resource
+  AsyncService asyncService;
 
-    @Autowired
-    private JavaMailSender javaMailSender;
+  @Autowired
+  private JavaMailSender javaMailSender;
 
-    @Autowired
-    private SpringTemplateEngine templateEngine;
+  @Autowired
+  private SpringTemplateEngine templateEngine;
 
-    @GetMapping("/send1")
-    public void send1() {
-        javaMailSender.send((msg) ->
-        {
-            MimeMessageHelper helper = new MimeMessageHelper(msg);
-            helper.setTo("38761770@qq.com");
-            helper.setFrom("807776962@qq.com");
-            helper.setSubject("Status message-send1");
-            helper.setText("All is well.");
-        });
-    }
+  @GetMapping("/send1")
+  public void send1() {
+    javaMailSender.send((msg) ->
+    {
+      MimeMessageHelper helper = new MimeMessageHelper(msg);
+      helper.setTo("38761770@qq.com");
+      helper.setFrom("807776962@qq.com");
+      helper.setSubject("Status message-send1");
+      helper.setText("All is well.");
+    });
+  }
 
 
-    @GetMapping("/send2")
-    public void send2() {
-        javaMailSender.send((msg) -> {
-            MimeMessageHelper helper = new MimeMessageHelper(msg);
-            helper.setTo("38761770@qq.com");
-            helper.setFrom("807776962@qq.com");
-            helper.setSubject("Status message-send2");
+  @GetMapping("/send2")
+  public void send2() {
+    javaMailSender.send((msg) -> {
+      MimeMessageHelper helper = new MimeMessageHelper(msg);
+      helper.setTo("38761770@qq.com");
+      helper.setFrom("807776962@qq.com");
+      helper.setSubject("Status message-send2");
 
-            Context context = new Context(LocaleContextHolder.getLocale(), Collections.singletonMap("msg", "All is well!"));
-            String body = templateEngine.process("email.html", context);
-            helper.setText(body, true);
-        });
-    }
+      Context context = new Context(LocaleContextHolder.getLocale(), Collections.singletonMap("msg", "All is well!"));
+      String body = templateEngine.process("email.html", context);
+      helper.setText(body, true);
+    });
+  }
 
 
 }

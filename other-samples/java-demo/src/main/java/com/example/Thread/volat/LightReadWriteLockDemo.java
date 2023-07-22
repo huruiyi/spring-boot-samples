@@ -5,13 +5,13 @@ package com.example.Thread.volat;
  */
 public class LightReadWriteLockDemo {
 
-	private volatile int value;
+  private volatile int value;
 
-	public int getValue() {
-		return value;
-	}
+  public int getValue() {
+    return value;
+  }
 
-	public synchronized int increment(int num) {
-		return value -= num;
-	}
+  public synchronized int increment(int num) {
+    return value -= num;
+  }
 }

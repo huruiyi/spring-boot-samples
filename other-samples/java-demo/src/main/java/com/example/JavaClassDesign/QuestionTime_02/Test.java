@@ -5,14 +5,16 @@ package com.example.JavaClassDesign.QuestionTime_02;/*--------------------------
 ------------------------------------------------------------------------------*/
 
 class Base {
-    public void print() {
-        System.out.println("Base:print");
-    }
+
+  public void print() {
+    System.out.println("Base:print");
+  }
 }
 
 abstract class Test extends Base { // #1
-    public static void main(String[] args) {
-        Base obj = new Base();
-        obj.print(); // #2
-    }
+
+  public static void main(String[] args) {
+    Base obj = new Base();
+    obj.print(); // #2
+  }
 }

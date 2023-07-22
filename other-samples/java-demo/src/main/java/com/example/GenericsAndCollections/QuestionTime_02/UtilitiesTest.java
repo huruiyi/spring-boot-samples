@@ -8,10 +8,11 @@ package com.example.GenericsAndCollections.QuestionTime_02;
 import java.util.*;
 
 class UtilitiesTest {
-    public static void main(String[] args) {
-        List<Integer> intList = new LinkedList<>();
-        List<Double> dblList = new LinkedList<>();
-        System.out.println("First type: " + intList.getClass());
-        System.out.println("Second type:" + dblList.getClass());
-    }
+
+  public static void main(String[] args) {
+    List<Integer> intList = new LinkedList<>();
+    List<Double> dblList = new LinkedList<>();
+    System.out.println("First type: " + intList.getClass());
+    System.out.println("Second type:" + dblList.getClass());
+  }
 }

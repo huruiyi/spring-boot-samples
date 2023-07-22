@@ -8,11 +8,12 @@ package com.example.Thread.jcip;
  * @author Brian Goetz and Tim Peierls
  */
 class UnsafeStates {
-    private String[] states = new String[]{
-        "AK", "AL" /*...*/
-    };
 
-    public String[] getStates() {
-        return states;
-    }
+  private String[] states = new String[]{
+      "AK", "AL" /*...*/
+  };
+
+  public String[] getStates() {
+    return states;
+  }
 }

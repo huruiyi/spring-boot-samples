@@ -9,13 +9,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class SpringDemo5 {
 
-	@Test
-	public void demo1() {
-		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext5.xml");
+  @Test
+  public void demo1() {
+    ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext5.xml");
 
-		CollectionBean collectionBean = (CollectionBean) context.getBean("collectionBean");
-		System.out.println(collectionBean);
+    CollectionBean collectionBean = (CollectionBean) context.getBean("collectionBean");
+    System.out.println(collectionBean);
 
-		((ClassPathXmlApplicationContext) context).close();
-	}
+    ((ClassPathXmlApplicationContext) context).close();
+  }
 }

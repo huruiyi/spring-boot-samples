@@ -14,8 +14,9 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @SpringBootApplication
 @EnableAsync
 public class ChatRoomApp {
-    public static void main(String[] args) {
-        SpringApplication.run(ChatRoomApp.class, args);
-    }
+
+  public static void main(String[] args) {
+    SpringApplication.run(ChatRoomApp.class, args);
+  }
 
 }

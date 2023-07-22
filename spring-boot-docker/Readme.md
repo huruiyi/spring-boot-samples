@@ -19,14 +19,11 @@ ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urando
 docker build -t huruiyi/spring-boot-hello-world:v1 .
 ```
 
-
-
 ### 3：推送镜像
+
 ```shell
 docker push huruiyi/spring-boot-hello-world:v1
 ```
-
-
 
 ### 4：拉取镜像
 

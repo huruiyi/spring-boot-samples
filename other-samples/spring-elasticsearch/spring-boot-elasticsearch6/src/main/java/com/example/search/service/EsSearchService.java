@@ -5,28 +5,29 @@ import com.example.search.mapping.ProductDocument;
 import java.util.List;
 
 public interface EsSearchService extends BaseSearchService<ProductDocument> {
-    /**
-     * 保存
-     */
-    void save(ProductDocument... productDocuments);
 
-    /**
-     * 删除
-     */
-    void delete(String id);
+  /**
+   * 保存
+   */
+  void save(ProductDocument... productDocuments);
 
-    /**
-     * 清空索引
-     */
-    void deleteAll();
+  /**
+   * 删除
+   */
+  void delete(String id);
 
-    /**
-     * 根据ID查询
-     */
-    ProductDocument getById(String id);
+  /**
+   * 清空索引
+   */
+  void deleteAll();
 
-    /**
-     * 查询全部
-     */
-    List<ProductDocument> getAll();
+  /**
+   * 根据ID查询
+   */
+  ProductDocument getById(String id);
+
+  /**
+   * 查询全部
+   */
+  List<ProductDocument> getAll();
 }

@@ -12,14 +12,15 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
  * TextMessage.getPayload(): content of the received websocket message
  */
 public class EchoHandler extends TextWebSocketHandler {
-    private static final Logger log = LoggerFactory.getLogger(EchoHandler.class);
 
-    @Override
-    protected void handleTextMessage(final WebSocketSession session, final TextMessage message) throws Exception {
-        log.info("Received Message: {}", message.getPayload());
-        log.info("Sending Message: {}", message.getPayload());
+  private static final Logger log = LoggerFactory.getLogger(EchoHandler.class);
 
-        // simply echos received message
-        session.sendMessage(new TextMessage(message.getPayload()));
-    }
+  @Override
+  protected void handleTextMessage(final WebSocketSession session, final TextMessage message) throws Exception {
+    log.info("Received Message: {}", message.getPayload());
+    log.info("Sending Message: {}", message.getPayload());
+
+    // simply echos received message
+    session.sendMessage(new TextMessage(message.getPayload()));
+  }
 }

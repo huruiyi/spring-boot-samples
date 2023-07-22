@@ -9,19 +9,20 @@ package com.example.Exceptions_Assertions.QuestionTime_10;
 import java.io.*;
 
 class ExceptionTest {
-    public static void thrower() throws Exception {
-        try {
-            throw new IOException();
-        } finally {
-            throw new FileNotFoundException();
-        }
-    }
 
-    public static void main(String[] args) {
-        try {
-            thrower();
-        } catch (Throwable throwable) {
-            System.out.println(throwable);
-        }
+  public static void thrower() throws Exception {
+    try {
+      throw new IOException();
+    } finally {
+      throw new FileNotFoundException();
     }
+  }
+
+  public static void main(String[] args) {
+    try {
+      thrower();
+    } catch (Throwable throwable) {
+      System.out.println(throwable);
+    }
+  }
 }

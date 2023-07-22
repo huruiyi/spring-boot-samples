@@ -34,109 +34,109 @@ import java.time.Duration;
 @EnableRedisRepositories
 public class RedisConfigV1 extends CachingConfigurerSupport {
 
-    @Value("${spring.redis.database}")
-    private int database;
+  @Value("${spring.redis.database}")
+  private int database;
 
-    @Value("${spring.redis.host}")
-    private String host;
+  @Value("${spring.redis.host}")
+  private String host;
 
-    @Value("${spring.redis.password}")
-    private String password;
+  @Value("${spring.redis.password}")
+  private String password;
 
-    @Value("${spring.redis.port}")
-    private int port;
+  @Value("${spring.redis.port}")
+  private int port;
 
-    @Value("${spring.redis.timeout}")
-    private long timeout;
+  @Value("${spring.redis.timeout}")
+  private long timeout;
 
-    @Value("${spring.redis.lettuce.shutdown-timeout}")
-    private long shutDownTimeout;
+  @Value("${spring.redis.lettuce.shutdown-timeout}")
+  private long shutDownTimeout;
 
-    @Value("${spring.redis.lettuce.pool.max-idle}")
-    private int maxIdle;
+  @Value("${spring.redis.lettuce.pool.max-idle}")
+  private int maxIdle;
 
-    @Value("${spring.redis.lettuce.pool.min-idle}")
-    private int minIdle;
+  @Value("${spring.redis.lettuce.pool.min-idle}")
+  private int minIdle;
 
-    @Value("${spring.redis.lettuce.pool.max-active}")
-    private int maxActive;
+  @Value("${spring.redis.lettuce.pool.max-active}")
+  private int maxActive;
 
-    @Value("${spring.redis.lettuce.pool.max-wait}")
-    private long maxWait;
+  @Value("${spring.redis.lettuce.pool.max-wait}")
+  private long maxWait;
 
 //    @Bean
 //    public RedisConnectionFactory lettuceConnectionFactory() {
 //        return new LettuceConnectionFactory();
 //    }
 
-    @Bean
-    public LettuceConnectionFactory lettuceConnectionFactory() {
-        GenericObjectPoolConfig genericObjectPoolConfig = new GenericObjectPoolConfig();
-        genericObjectPoolConfig.setMaxIdle(maxIdle);
-        genericObjectPoolConfig.setMinIdle(minIdle);
-        genericObjectPoolConfig.setMaxTotal(maxActive);
-        genericObjectPoolConfig.setMaxWaitMillis(maxWait);
-        genericObjectPoolConfig.setTimeBetweenEvictionRunsMillis(100);
-        RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
-        redisStandaloneConfiguration.setDatabase(database);
-        redisStandaloneConfiguration.setHostName(host);
-        redisStandaloneConfiguration.setPort(port);
-        redisStandaloneConfiguration.setPassword(RedisPassword.of(password));
-        LettuceClientConfiguration clientConfig = LettucePoolingClientConfiguration.builder()
-                .commandTimeout(Duration.ofMillis(timeout))
-                .shutdownTimeout(Duration.ofMillis(shutDownTimeout))
-                .poolConfig(genericObjectPoolConfig)
-                .build();
+  @Bean
+  public LettuceConnectionFactory lettuceConnectionFactory() {
+    GenericObjectPoolConfig genericObjectPoolConfig = new GenericObjectPoolConfig();
+    genericObjectPoolConfig.setMaxIdle(maxIdle);
+    genericObjectPoolConfig.setMinIdle(minIdle);
+    genericObjectPoolConfig.setMaxTotal(maxActive);
+    genericObjectPoolConfig.setMaxWaitMillis(maxWait);
+    genericObjectPoolConfig.setTimeBetweenEvictionRunsMillis(100);
+    RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
+    redisStandaloneConfiguration.setDatabase(database);
+    redisStandaloneConfiguration.setHostName(host);
+    redisStandaloneConfiguration.setPort(port);
+    redisStandaloneConfiguration.setPassword(RedisPassword.of(password));
+    LettuceClientConfiguration clientConfig = LettucePoolingClientConfiguration.builder()
+        .commandTimeout(Duration.ofMillis(timeout))
+        .shutdownTimeout(Duration.ofMillis(shutDownTimeout))
+        .poolConfig(genericObjectPoolConfig)
+        .build();
 
-        LettuceConnectionFactory factory = new LettuceConnectionFactory(redisStandaloneConfiguration, clientConfig);
-        return factory;
-    }
+    LettuceConnectionFactory factory = new LettuceConnectionFactory(redisStandaloneConfiguration, clientConfig);
+    return factory;
+  }
 
-    @Primary
-    @Bean
-    public RedisConnectionFactory redisConnectionFactory() {
-        //Jedis 4.0 移除了 JedisShardInfo，可使用 new LettuceConnectionFactory()
-        //JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
+  @Primary
+  @Bean
+  public RedisConnectionFactory redisConnectionFactory() {
+    //Jedis 4.0 移除了 JedisShardInfo，可使用 new LettuceConnectionFactory()
+    //JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
 
-        return lettuceConnectionFactory();
-    }
+    return lettuceConnectionFactory();
+  }
 
-    @Bean
-    public RedisSerializer redisSerializer() {
-        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
+  @Bean
+  public RedisSerializer redisSerializer() {
+    Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
 
-        ObjectMapper om = new ObjectMapper();
-        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-        //om.activateDefaultTyping(om.getPolymorphicTypeValidator(), ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);
-        om.activateDefaultTyping(om.getPolymorphicTypeValidator(), ObjectMapper.DefaultTyping.NON_FINAL);
-        jackson2JsonRedisSerializer.setObjectMapper(om);
+    ObjectMapper om = new ObjectMapper();
+    om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+    //om.activateDefaultTyping(om.getPolymorphicTypeValidator(), ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);
+    om.activateDefaultTyping(om.getPolymorphicTypeValidator(), ObjectMapper.DefaultTyping.NON_FINAL);
+    jackson2JsonRedisSerializer.setObjectMapper(om);
 
-        return jackson2JsonRedisSerializer;
-    }
+    return jackson2JsonRedisSerializer;
+  }
 
-    @Primary
-    @Bean(name = "redisTemplate")
-    public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory cf, RedisSerializer redisSerializer) {
-        RedisTemplate<String, String> redisTemplate = new RedisTemplate<>();
-        redisTemplate.setConnectionFactory(cf);
+  @Primary
+  @Bean(name = "redisTemplate")
+  public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory cf, RedisSerializer redisSerializer) {
+    RedisTemplate<String, String> redisTemplate = new RedisTemplate<>();
+    redisTemplate.setConnectionFactory(cf);
 
-        StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
-        redisTemplate.setKeySerializer(stringRedisSerializer);
-        redisTemplate.setHashKeySerializer(stringRedisSerializer);
+    StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
+    redisTemplate.setKeySerializer(stringRedisSerializer);
+    redisTemplate.setHashKeySerializer(stringRedisSerializer);
 
-        redisTemplate.setValueSerializer(redisSerializer);
-        redisTemplate.setHashValueSerializer(redisSerializer);
+    redisTemplate.setValueSerializer(redisSerializer);
+    redisTemplate.setHashValueSerializer(redisSerializer);
 
-        return redisTemplate;
-    }
+    return redisTemplate;
+  }
 
-    @Bean
-    public ListOperations<String, String> listOperations() {
-        return redisTemplate(lettuceConnectionFactory(), redisSerializer()).opsForList();
-    }
+  @Bean
+  public ListOperations<String, String> listOperations() {
+    return redisTemplate(lettuceConnectionFactory(), redisSerializer()).opsForList();
+  }
 
-    @Bean
-    public ValueOperations<String, String> valueOperations() {
-        return redisTemplate(lettuceConnectionFactory(), redisSerializer()).opsForValue();
-    }
+  @Bean
+  public ValueOperations<String, String> valueOperations() {
+    return redisTemplate(lettuceConnectionFactory(), redisSerializer()).opsForValue();
+  }
 }

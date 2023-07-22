@@ -7,35 +7,36 @@ import com.example.Thread.jcip.annotations.*;
 
 /**
  * UnsafeCountingFactorizer
- *
+ * <p>
  * Servlet that counts requests without the necessary synchronization
  *
  * @author Brian Goetz and Tim Peierls
  */
 @NotThreadSafe
 public class UnsafeCountingFactorizer extends GenericServlet implements Servlet {
-    private long count = 0;
 
-    public long getCount() {
-        return count;
-    }
+  private long count = 0;
 
-    public void service(ServletRequest req, ServletResponse resp) {
-        BigInteger i = extractFromRequest(req);
-        BigInteger[] factors = factor(i);
-        ++count;
-        encodeIntoResponse(resp, factors);
-    }
+  public long getCount() {
+    return count;
+  }
 
-    void encodeIntoResponse(ServletResponse res, BigInteger[] factors) {
-    }
+  public void service(ServletRequest req, ServletResponse resp) {
+    BigInteger i = extractFromRequest(req);
+    BigInteger[] factors = factor(i);
+    ++count;
+    encodeIntoResponse(resp, factors);
+  }
 
-    BigInteger extractFromRequest(ServletRequest req) {
-        return new BigInteger("7");
-    }
+  void encodeIntoResponse(ServletResponse res, BigInteger[] factors) {
+  }
 
-    BigInteger[] factor(BigInteger i) {
-        // Doesn't really factor
-        return new BigInteger[] { i };
-    }
+  BigInteger extractFromRequest(ServletRequest req) {
+    return new BigInteger("7");
+  }
+
+  BigInteger[] factor(BigInteger i) {
+    // Doesn't really factor
+    return new BigInteger[]{i};
+  }
 }

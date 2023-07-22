@@ -11,21 +11,21 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 public class Employee {
 
-    @Id
-    private String id;
-    private Integer registration;
-    private String name;
+  @Id
+  private String id;
+  private Integer registration;
+  private String name;
 
-    public Employee(String id, Integer registration, String name) {
-        super();
-        this.id = id;
-        this.registration = registration;
-        this.name = name;
-    }
+  public Employee(String id, Integer registration, String name) {
+    super();
+    this.id = id;
+    this.registration = registration;
+    this.name = name;
+  }
 
-    public Employee(String name) {
-        super();
-        this.name = name;
-    }
+  public Employee(String name) {
+    super();
+    this.name = name;
+  }
 
 }

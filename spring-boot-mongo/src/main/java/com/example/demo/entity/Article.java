@@ -12,14 +12,14 @@ import java.io.Serializable;
 @Document(collection = "article_collection")
 public class Article implements Serializable {
 
-    @Id
-    private String id;
+  @Id
+  private String id;
 
-    private String title;
+  private String title;
 
-    private String description;
+  private String description;
 
-    private String by;
+  private String by;
 
-    private String url;
+  private String url;
 }

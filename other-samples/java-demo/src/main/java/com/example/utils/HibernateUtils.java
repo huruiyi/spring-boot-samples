@@ -20,21 +20,21 @@ public class HibernateUtils {
 //		return sf.openSession();
 //	}
 
-	public static Session openSession() {
-		return new Configuration().configure().buildSessionFactory().openSession();
-	}
-	
-	public static Session openSession(String cfgxml) {
-		return new Configuration().configure(cfgxml).buildSessionFactory().openSession();
-	}
-	
-	public static Session  getCurrentSession() {
-		//Session不需要手动关闭, 线程,事务结束后自动关闭
-		return new Configuration().configure().buildSessionFactory().getCurrentSession();
-	}
-	
-	public static Session  getCurrentSession(String cfgxml) {
-		//Session不需要手动关闭, 线程,事务结束后自动关闭
-		return new Configuration().configure(cfgxml).buildSessionFactory().getCurrentSession();
-	}
+  public static Session openSession() {
+    return new Configuration().configure().buildSessionFactory().openSession();
+  }
+
+  public static Session openSession(String cfgxml) {
+    return new Configuration().configure(cfgxml).buildSessionFactory().openSession();
+  }
+
+  public static Session getCurrentSession() {
+    //Session不需要手动关闭, 线程,事务结束后自动关闭
+    return new Configuration().configure().buildSessionFactory().getCurrentSession();
+  }
+
+  public static Session getCurrentSession(String cfgxml) {
+    //Session不需要手动关闭, 线程,事务结束后自动关闭
+    return new Configuration().configure(cfgxml).buildSessionFactory().getCurrentSession();
+  }
 }

@@ -14,9 +14,9 @@ import java.util.List;
 @RepositoryRestResource
 public interface PersonRepository extends MongoRepository<Person, String> {
 
-    Person findByName(String name);
+  Person findByName(String name);
 
-    @Query("{'age': ?0}")
-    List<Person> withQueryFindByAge(Integer age);
+  @Query("{'age': ?0}")
+  List<Person> withQueryFindByAge(Integer age);
 
 }

@@ -1,48 +1,49 @@
 package com.example.Model;
 
 public class Teacher implements Comparable {
-    Integer Id;
-    String Name;
-    Integer Age;
+
+  Integer Id;
+  String Name;
+  Integer Age;
 
 
-    public Teacher(Integer id, String name, int age) {
-        Id = id;
-        Name = name;
-        Age = age;
-    }
+  public Teacher(Integer id, String name, int age) {
+    Id = id;
+    Name = name;
+    Age = age;
+  }
 
-    public Integer getId() {
-        return Id;
-    }
+  public Integer getId() {
+    return Id;
+  }
 
-    public String getName() {
-        return Name;
-    }
+  public void setId(Integer id) {
+    Id = id;
+  }
 
-    public Integer getAge() {
-        return Age;
-    }
+  public String getName() {
+    return Name;
+  }
 
-    public void setId(Integer id) {
-        Id = id;
-    }
+  public void setName(String name) {
+    Name = name;
+  }
 
-    public void setName(String name) {
-        Name = name;
-    }
+  public Integer getAge() {
+    return Age;
+  }
 
-    public void setAge(Integer age) {
-        Age = age;
-    }
+  public void setAge(Integer age) {
+    Age = age;
+  }
 
-    @Override
-    public String toString() {
-        return "Person{" + "Id=" + Id + ", Name='" + Name + ", Age=" + Age + '}';
-    }
+  @Override
+  public String toString() {
+    return "Person{" + "Id=" + Id + ", Name='" + Name + ", Age=" + Age + '}';
+  }
 
-    public int compareTo(Object o) {
-        Teacher teacher = ( Teacher ) o;
-        return this.getName().compareTo(teacher.getName());
-    }
+  public int compareTo(Object o) {
+    Teacher teacher = (Teacher) o;
+    return this.getName().compareTo(teacher.getName());
+  }
 }

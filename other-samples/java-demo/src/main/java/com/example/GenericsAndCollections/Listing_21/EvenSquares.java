@@ -7,10 +7,11 @@ package com.example.GenericsAndCollections.Listing_21;/*------------------------
 import java.util.stream.IntStream;
 
 class EvenSquares {
-    public static void main(String []args) {
-        IntStream.rangeClosed(0, 10)
-                 .map(i -> i * i)
-                 .filter(i -> (i % 2) == 0)
-                 .forEach(System.out::println);
-    }
+
+  public static void main(String[] args) {
+    IntStream.rangeClosed(0, 10)
+        .map(i -> i * i)
+        .filter(i -> (i % 2) == 0)
+        .forEach(System.out::println);
+  }
 }

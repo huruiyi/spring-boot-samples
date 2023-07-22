@@ -3,49 +3,52 @@ package com.example.OOP;
 
 public class BottleDemo {
 
-    static class Bottle {
-        private double waterAmount;
+  public static void main(String[] args) {
+    Bottle[] bottle = new Bottle[3]; // NULL
 
-        double getWaterAmount() {
-            return waterAmount;
-        }
+    bottle[0] = new Bottle(10);
+    bottle[1] = new Bottle(5);
+    bottle[2] = new Bottle(1);
 
-        Bottle(double waterAmount) {
-            this.waterAmount = waterAmount;
-        }
+    bottle[0].transferWater(155, bottle[1]);
 
-        void fill(double amount) {
-            this.waterAmount += amount;
-        }
+    System.out.println(bottle[0].getWaterAmount());
+    System.out.println(bottle[1].getWaterAmount());
+  }
 
-        boolean pour(double amount) {
-            if (this.waterAmount > amount)
-                this.waterAmount -= amount;
-            else
-                return false;
+  static class Bottle {
 
-            return true;
-        }
+    private double waterAmount;
 
-        void transferWater(double amount, Bottle transferToBottle) {
-            if (this.pour(amount)) {
-                transferToBottle.fill(amount);
-            } else
-                System.out.println("Tere is not enough water to transfer");
-
-        }
+    Bottle(double waterAmount) {
+      this.waterAmount = waterAmount;
     }
 
-    public static void main(String[] args) {
-        Bottle[] bottle = new Bottle[3]; // NULL
-
-        bottle[0] = new Bottle(10);
-        bottle[1] = new Bottle(5);
-        bottle[2] = new Bottle(1);
-
-        bottle[0].transferWater(155, bottle[1]);
-
-        System.out.println(bottle[0].getWaterAmount());
-        System.out.println(bottle[1].getWaterAmount());
+    double getWaterAmount() {
+      return waterAmount;
     }
+
+    void fill(double amount) {
+      this.waterAmount += amount;
+    }
+
+    boolean pour(double amount) {
+      if (this.waterAmount > amount) {
+        this.waterAmount -= amount;
+      } else {
+        return false;
+      }
+
+      return true;
+    }
+
+    void transferWater(double amount, Bottle transferToBottle) {
+      if (this.pour(amount)) {
+        transferToBottle.fill(amount);
+      } else {
+        System.out.println("Tere is not enough water to transfer");
+      }
+
+    }
+  }
 }

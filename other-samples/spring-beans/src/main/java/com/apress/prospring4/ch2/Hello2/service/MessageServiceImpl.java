@@ -4,9 +4,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MessageServiceImpl implements MessageService {
-	
-	public String getMessage() {
-		return "Hello World，世界你好!";
-	}
+
+  public String getMessage() {
+    return "Hello World，世界你好!";
+  }
 
 }

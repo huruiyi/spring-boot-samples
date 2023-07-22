@@ -9,15 +9,15 @@ import java.util.List;
  */
 public interface PersonService {
 
-    Person savePersonWithRollBack(Person person);
+  Person savePersonWithRollBack(Person person);
 
-    Person savePersonWithoutRollBack(Person person) ;
+  Person savePersonWithoutRollBack(Person person);
 
-    Person save(Person person);
+  Person save(Person person);
 
-    Person findByName(String name);
+  Person findByName(String name);
 
-    List<Person> findAll();
+  List<Person> findAll();
 
-    List<Person> withQueryFindByAge(Integer age);
+  List<Person> withQueryFindByAge(Integer age);
 }

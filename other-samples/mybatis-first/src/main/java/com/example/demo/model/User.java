@@ -2,86 +2,87 @@ package com.example.demo.model;
 
 
 public class User {
-    private Integer id;
 
-    private String userName;
+  private Integer id;
 
-    private Byte sex;
+  private String userName;
 
-    private String mobile;
+  private Byte sex;
 
-    private String email;
+  private String mobile;
 
-    private String note;
+  private String email;
 
-    private Integer positionId;
+  private String note;
 
-    public Integer getId() {
-        return id;
-    }
+  private Integer positionId;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+  public Integer getId() {
+    return id;
+  }
 
-    public String getUserName() {
-        return userName;
-    }
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+  public String getUserName() {
+    return userName;
+  }
 
-    public Byte getSex() {
-        return sex;
-    }
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
 
-    public void setSex(Byte sex) {
-        this.sex = sex;
-    }
+  public Byte getSex() {
+    return sex;
+  }
 
-    public String getMobile() {
-        return mobile;
-    }
+  public void setSex(Byte sex) {
+    this.sex = sex;
+  }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
+  public String getMobile() {
+    return mobile;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public void setMobile(String mobile) {
+    this.mobile = mobile;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public String getNote() {
-        return note;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-    public void setNote(String note) {
-        this.note = note;
-    }
+  public String getNote() {
+    return note;
+  }
 
-    public Integer getPositionId() {
-        return positionId;
-    }
+  public void setNote(String note) {
+    this.note = note;
+  }
 
-    public void setPositionId(Integer positionId) {
-        this.positionId = positionId;
-    }
+  public Integer getPositionId() {
+    return positionId;
+  }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", userName='" + userName + '\'' +
-                ", sex=" + sex +
-                ", mobile='" + mobile + '\'' +
-                ", email='" + email + '\'' +
-                ", note='" + note + '\'' +
-                ", positionId=" + positionId +
-                '}';
-    }
+  public void setPositionId(Integer positionId) {
+    this.positionId = positionId;
+  }
+
+  @Override
+  public String toString() {
+    return "User{" +
+        "id=" + id +
+        ", userName='" + userName + '\'' +
+        ", sex=" + sex +
+        ", mobile='" + mobile + '\'' +
+        ", email='" + email + '\'' +
+        ", note='" + note + '\'' +
+        ", positionId=" + positionId +
+        '}';
+  }
 }

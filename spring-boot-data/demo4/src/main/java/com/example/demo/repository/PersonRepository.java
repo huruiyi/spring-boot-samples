@@ -12,10 +12,10 @@ import java.util.List;
 @RepositoryRestResource(path = "person")
 public interface PersonRepository extends JpaRepository<Person, Long> {
 
-    List<Person> findByAddress(String address);
+  List<Person> findByAddress(String address);
 
-    Person findByNameAndAddress(String name, String address);
+  Person findByNameAndAddress(String name, String address);
 
-    @RestResource(path = "nameStartsWith", rel = "nameStartsWith")
-    Person findByNameStartsWith(@Param("name") String name);
+  @RestResource(path = "nameStartsWith", rel = "nameStartsWith")
+  Person findByNameStartsWith(@Param("name") String name);
 }

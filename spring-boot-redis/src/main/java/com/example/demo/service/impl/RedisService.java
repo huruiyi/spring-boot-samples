@@ -13,23 +13,24 @@ import java.util.List;
 
 @Service
 public class RedisService implements IRedisService {
-    @Resource(name = "redisTemplate")
-    private ListOperations<String, String> messageList;
 
-    @Resource(name = "redisTemplate")
-    private RedisOperations<String, String> latestMessageExpiration;
+  @Resource(name = "redisTemplate")
+  private ListOperations<String, String> messageList;
 
-    @Override
-    public void addMessage(String user, String message) {
-        messageList.leftPush(user, message);
+  @Resource(name = "redisTemplate")
+  private RedisOperations<String, String> latestMessageExpiration;
 
-        ZonedDateTime zonedDateTime = ZonedDateTime.now();
-        Date date = Date.from(zonedDateTime.plus(20, ChronoUnit.SECONDS).toInstant());
-        latestMessageExpiration.expireAt(user, date);
-    }
+  @Override
+  public void addMessage(String user, String message) {
+    messageList.leftPush(user, message);
 
-    @Override
-    public List<String> listMessages(String user) {
-        return messageList.range(user, 0, -1);
-    }
+    ZonedDateTime zonedDateTime = ZonedDateTime.now();
+    Date date = Date.from(zonedDateTime.plus(20, ChronoUnit.SECONDS).toInstant());
+    latestMessageExpiration.expireAt(user, date);
+  }
+
+  @Override
+  public List<String> listMessages(String user) {
+    return messageList.range(user, 0, -1);
+  }
 }

@@ -5,26 +5,27 @@ package com.example.JavaClassDesign.Listing_25;/*-------------------------------
 ------------------------------------------------------------------------------*/
 
 public class Counter {
-    private static int count;
 
-    static {
-        // code in this static block will be executed when
-        // the JVM loads the class into memory
-        count = 1;
-    }
+  private static int count;
 
-    public Counter() {
-        count++;
-    }
+  static {
+    // code in this static block will be executed when
+    // the JVM loads the class into memory
+    count = 1;
+  }
 
-    public static void printCount() {
-        System.out.println("Number of instances created so far is: " + count);
-    }
+  public Counter() {
+    count++;
+  }
 
-    public static void main(String[] args) {
-        Counter anInstance = new Counter();
-        Counter.printCount();
-        Counter anotherInstance = new Counter();
-        Counter.printCount();
-    }
+  public static void printCount() {
+    System.out.println("Number of instances created so far is: " + count);
+  }
+
+  public static void main(String[] args) {
+    Counter anInstance = new Counter();
+    Counter.printCount();
+    Counter anotherInstance = new Counter();
+    Counter.printCount();
+  }
 }

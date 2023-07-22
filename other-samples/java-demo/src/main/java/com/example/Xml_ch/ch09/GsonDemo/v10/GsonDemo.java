@@ -8,36 +8,35 @@ import com.google.gson.annotations.Until;
 
 import static java.lang.System.*;
 
-public class GsonDemo
-{
-   @Since(1.0)
-   @Until(2.5)
-   static class SomeClass
-   {
-      @Since(1.1)
-      @Until(1.5)
-      int field;
-   }
+public class GsonDemo {
 
-   public static void main(String[] args)
-   {
-      SomeClass sc = new SomeClass();
-      sc.field = 1;
-      GsonBuilder gsonb = new GsonBuilder();
-      gsonb.setVersion(0.9);
-      Gson gson = gsonb.create();
-      out.printf("%s%n%n", gson.toJson(sc));
-      gsonb.setVersion(1.0);
-      gson = gsonb.create();
-      out.printf("%s%n%n", gson.toJson(sc));
-      gsonb.setVersion(1.1);
-      gson = gsonb.create();
-      out.printf("%s%n%n", gson.toJson(sc));
-      gsonb.setVersion(1.5);
-      gson = gsonb.create();
-      out.printf("%s%n%n", gson.toJson(sc));
-      gsonb.setVersion(2.5);
-      gson = gsonb.create();
-      out.printf("%s%n", gson.toJson(sc));
-   }
+  public static void main(String[] args) {
+    SomeClass sc = new SomeClass();
+    sc.field = 1;
+    GsonBuilder gsonb = new GsonBuilder();
+    gsonb.setVersion(0.9);
+    Gson gson = gsonb.create();
+    out.printf("%s%n%n", gson.toJson(sc));
+    gsonb.setVersion(1.0);
+    gson = gsonb.create();
+    out.printf("%s%n%n", gson.toJson(sc));
+    gsonb.setVersion(1.1);
+    gson = gsonb.create();
+    out.printf("%s%n%n", gson.toJson(sc));
+    gsonb.setVersion(1.5);
+    gson = gsonb.create();
+    out.printf("%s%n%n", gson.toJson(sc));
+    gsonb.setVersion(2.5);
+    gson = gsonb.create();
+    out.printf("%s%n", gson.toJson(sc));
+  }
+
+  @Since(1.0)
+  @Until(2.5)
+  static class SomeClass {
+
+    @Since(1.1)
+    @Until(1.5)
+    int field;
+  }
 }

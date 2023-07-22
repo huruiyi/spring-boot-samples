@@ -1,15 +1,15 @@
 package com.example.demo.enums;
 
 public enum Token {
-    SUCCESS,
-    FAILED;
+  SUCCESS,
+  FAILED;
 
-    public boolean isSuccess() {
-        return this.equals(SUCCESS);
-    }
+  public boolean isSuccess() {
+    return this.equals(SUCCESS);
+  }
 
-    public boolean isFailed() {
-        return this.equals(FAILED);
-    }
+  public boolean isFailed() {
+    return this.equals(FAILED);
+  }
 }
 

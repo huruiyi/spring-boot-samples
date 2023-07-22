@@ -4,8 +4,8 @@ import com.example.util.ConsumerUtil;
 
 public class ConsumerMain {
 
-    public static void main(String[] args) {
-        ConsumerUtil.consumer ();
-    }
+  public static void main(String[] args) {
+    ConsumerUtil.consumer();
+  }
 
 }

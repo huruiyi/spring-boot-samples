@@ -1,7 +1,7 @@
 var creditCardText =
-"{ \"number\": \"1234567890123456\", " +
-"\"expiry\": \"04/20\", \"type\": " +
-"\"visa\" }";
+    "{ \"number\": \"1234567890123456\", " +
+    "\"expiry\": \"04/20\", \"type\": " +
+    "\"visa\" }";
 var creditCard = JSON.parse(creditCardText);
 print(creditCard.number);
 print(creditCard.expiry);

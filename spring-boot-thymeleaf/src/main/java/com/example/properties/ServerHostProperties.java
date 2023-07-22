@@ -6,61 +6,63 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties("serverhost")
 public class ServerHostProperties {
-	private InetAddress inetAddressA;
-	private InetAddress inetAddressB;
-	private InetAddress inetAddressC;
 
-	public static class InetAddress {
-		private String ip;
-		private int length;
-		private int port;
+  private InetAddress inetAddressA;
+  private InetAddress inetAddressB;
+  private InetAddress inetAddressC;
 
-		public String getIp() {
-			return ip;
-		}
+  public InetAddress getInetAddressA() {
+    return inetAddressA;
+  }
 
-		public void setIp(String ip) {
-			this.ip = ip;
-		}
+  public void setInetAddressA(InetAddress inetAddressA) {
+    this.inetAddressA = inetAddressA;
+  }
 
-		public int getLength() {
-			return length;
-		}
+  public InetAddress getInetAddressB() {
+    return inetAddressB;
+  }
 
-		public void setLength(int length) {
-			this.length = length;
-		}
+  public void setInetAddressB(InetAddress inetAddressB) {
+    this.inetAddressB = inetAddressB;
+  }
 
-		public int getPort() {
-			return port;
-		}
+  public InetAddress getInetAddressC() {
+    return inetAddressC;
+  }
 
-		public void setPort(int port) {
-			this.port = port;
-		}
-	}
+  public void setInetAddressC(InetAddress inetAddressC) {
+    this.inetAddressC = inetAddressC;
+  }
 
-	public InetAddress getInetAddressA() {
-		return inetAddressA;
-	}
+  public static class InetAddress {
 
-	public void setInetAddressA(InetAddress inetAddressA) {
-		this.inetAddressA = inetAddressA;
-	}
+    private String ip;
+    private int length;
+    private int port;
 
-	public InetAddress getInetAddressB() {
-		return inetAddressB;
-	}
+    public String getIp() {
+      return ip;
+    }
 
-	public void setInetAddressB(InetAddress inetAddressB) {
-		this.inetAddressB = inetAddressB;
-	}
+    public void setIp(String ip) {
+      this.ip = ip;
+    }
 
-	public InetAddress getInetAddressC() {
-		return inetAddressC;
-	}
+    public int getLength() {
+      return length;
+    }
 
-	public void setInetAddressC(InetAddress inetAddressC) {
-		this.inetAddressC = inetAddressC;
-	}
+    public void setLength(int length) {
+      this.length = length;
+    }
+
+    public int getPort() {
+      return port;
+    }
+
+    public void setPort(int port) {
+      this.port = port;
+    }
+  }
 }

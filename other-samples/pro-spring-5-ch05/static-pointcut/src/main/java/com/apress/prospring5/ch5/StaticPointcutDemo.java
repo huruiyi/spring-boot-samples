@@ -9,31 +9,32 @@ import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 
 public class StaticPointcutDemo {
-    public static void main(String... args) {
 
-        Pointcut pc = new SimpleStaticPointcut();
-        Advice advice = new SimpleAdvice();
-        Advisor advisor = new DefaultPointcutAdvisor(pc, advice);
+  public static void main(String... args) {
 
-        System.out.println("*************************************************************");
+    Pointcut pc = new SimpleStaticPointcut();
+    Advice advice = new SimpleAdvice();
+    Advisor advisor = new DefaultPointcutAdvisor(pc, advice);
 
-        ProxyFactory pf = new ProxyFactory();
-        pf.addAdvisor(advisor);
+    System.out.println("*************************************************************");
 
-        GoodGuitarist johnMayer = new GoodGuitarist();
-        pf.setTarget(johnMayer);
+    ProxyFactory pf = new ProxyFactory();
+    pf.addAdvisor(advisor);
 
-        Singer proxyOne = (Singer) pf.getProxy();
-        proxyOne.sing();
+    GoodGuitarist johnMayer = new GoodGuitarist();
+    pf.setTarget(johnMayer);
 
-        System.out.println("*************************************************************");
+    Singer proxyOne = (Singer) pf.getProxy();
+    proxyOne.sing();
 
-        pf = new ProxyFactory();
-        pf.addAdvisor(advisor);
+    System.out.println("*************************************************************");
 
-        GreatGuitarist ericClapton = new GreatGuitarist();
-        pf.setTarget(ericClapton);
-        Singer proxyTwo = (Singer) pf.getProxy();
-        proxyTwo.sing();
-    }
+    pf = new ProxyFactory();
+    pf.addAdvisor(advisor);
+
+    GreatGuitarist ericClapton = new GreatGuitarist();
+    pf.setTarget(ericClapton);
+    Singer proxyTwo = (Singer) pf.getProxy();
+    proxyTwo.sing();
+  }
 }

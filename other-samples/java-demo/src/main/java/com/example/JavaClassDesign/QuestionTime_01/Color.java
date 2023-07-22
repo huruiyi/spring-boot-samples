@@ -5,20 +5,21 @@ package com.example.JavaClassDesign.QuestionTime_01;/*--------------------------
 ------------------------------------------------------------------------------*/
 
 class Color {
-    int red, green, blue;
 
-    void Color() {
-        red = 10;
-        green = 10;
-        blue = 10;
-    }
+  int red, green, blue;
 
-    void printColor() {
-        System.out.println("red: " + red + " green: " + green + " blue: " + blue);
-    }
+  public static void main(String[] args) {
+    Color color = new Color();
+    color.printColor();
+  }
 
-    public static void main(String[] args) {
-        Color color = new Color();
-        color.printColor();
-    }
+  void Color() {
+    red = 10;
+    green = 10;
+    blue = 10;
+  }
+
+  void printColor() {
+    System.out.println("red: " + red + " green: " + green + " blue: " + blue);
+  }
 }

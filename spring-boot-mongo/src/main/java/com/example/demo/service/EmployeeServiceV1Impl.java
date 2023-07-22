@@ -17,40 +17,40 @@ import java.util.Optional;
 @Service("v1")
 public class EmployeeServiceV1Impl implements EmployeeService {
 
-    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+  private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
-    @Autowired
-    private EmployeeRepository employeeRepository;
+  @Autowired
+  private EmployeeRepository employeeRepository;
 
-    @Override
-    public Iterable<Employee> findAll() {
-        log.debug("v1.findAll()",EmployeeServiceV1Impl.class);
-        return employeeRepository.findAll();
-    }
+  @Override
+  public Iterable<Employee> findAll() {
+    log.debug("v1.findAll()", EmployeeServiceV1Impl.class);
+    return employeeRepository.findAll();
+  }
 
-    @Override
-    public Employee save(Employee employee) throws JsonProcessingException {
-        log.debug("v1.save(Employee employee)：", OBJECT_MAPPER.writeValueAsString(employee));
-        return employeeRepository.save(employee);
-    }
+  @Override
+  public Employee save(Employee employee) throws JsonProcessingException {
+    log.debug("v1.save(Employee employee)：", OBJECT_MAPPER.writeValueAsString(employee));
+    return employeeRepository.save(employee);
+  }
 
-    @Override
-    public Optional<Employee> findByID(String id) {
-        log.debug("v1.findByID(String id)",EmployeeServiceV1Impl.class);
-        return employeeRepository.findById(id);
-    }
+  @Override
+  public Optional<Employee> findByID(String id) {
+    log.debug("v1.findByID(String id)", EmployeeServiceV1Impl.class);
+    return employeeRepository.findById(id);
+  }
 
-    @Override
-    public void remove(String id) {
-        log.debug("v1.remove(String id)",EmployeeServiceV1Impl.class);
-        Employee st = new Employee();
-        st.setId(id);
-        employeeRepository.delete(st);
-    }
+  @Override
+  public void remove(String id) {
+    log.debug("v1.remove(String id)", EmployeeServiceV1Impl.class);
+    Employee st = new Employee();
+    st.setId(id);
+    employeeRepository.delete(st);
+  }
 
-    @Override
-    public void remove(Iterable<Employee> list) {
-        log.debug("v1.remove(List<Employee> list)",EmployeeServiceV1Impl.class);
-        employeeRepository.deleteAll(list);
-    }
+  @Override
+  public void remove(Iterable<Employee> list) {
+    log.debug("v1.remove(List<Employee> list)", EmployeeServiceV1Impl.class);
+    employeeRepository.deleteAll(list);
+  }
 }

@@ -6,43 +6,44 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "spring.task.pool")
 public class TaskThreadPoolConfig {
-    private int corePoolSize;
 
-    private int maxPoolSize;
+  private int corePoolSize;
 
-    private int keepAliveSeconds;
+  private int maxPoolSize;
 
-    private int queueCapacity;
+  private int keepAliveSeconds;
 
-    public int getCorePoolSize() {
-        return corePoolSize;
-    }
+  private int queueCapacity;
 
-    public void setCorePoolSize(int corePoolSize) {
-        this.corePoolSize = corePoolSize;
-    }
+  public int getCorePoolSize() {
+    return corePoolSize;
+  }
 
-    public int getMaxPoolSize() {
-        return maxPoolSize;
-    }
+  public void setCorePoolSize(int corePoolSize) {
+    this.corePoolSize = corePoolSize;
+  }
 
-    public void setMaxPoolSize(int maxPoolSize) {
-        this.maxPoolSize = maxPoolSize;
-    }
+  public int getMaxPoolSize() {
+    return maxPoolSize;
+  }
 
-    public int getKeepAliveSeconds() {
-        return keepAliveSeconds;
-    }
+  public void setMaxPoolSize(int maxPoolSize) {
+    this.maxPoolSize = maxPoolSize;
+  }
 
-    public void setKeepAliveSeconds(int keepAliveSeconds) {
-        this.keepAliveSeconds = keepAliveSeconds;
-    }
+  public int getKeepAliveSeconds() {
+    return keepAliveSeconds;
+  }
 
-    public int getQueueCapacity() {
-        return queueCapacity;
-    }
+  public void setKeepAliveSeconds(int keepAliveSeconds) {
+    this.keepAliveSeconds = keepAliveSeconds;
+  }
 
-    public void setQueueCapacity(int queueCapacity) {
-        this.queueCapacity = queueCapacity;
-    }
+  public int getQueueCapacity() {
+    return queueCapacity;
+  }
+
+  public void setQueueCapacity(int queueCapacity) {
+    this.queueCapacity = queueCapacity;
+  }
 }

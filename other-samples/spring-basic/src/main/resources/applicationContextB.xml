@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="
+<beans xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.springframework.org/schema/beans" xsi:schemaLocation="
         http://www.springframework.org/schema/beans 
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop 
         http://www.springframework.org/schema/aop/spring-aop.xsd">
-    <!-- bean definitions here -->
+  <!-- bean definitions here -->
 
-    <!-- 要增强的对象 -->
-    <bean id="productDao" class="com.example.Spring.demoB.ProductDaoImpl"></bean>
+  <!-- 要增强的对象 -->
+  <aop:config>
+    <!-- 表达式配置哪些类的哪些方法需要增强 -->
+    <aop:aspect ref="myAspect">
+      <aop:after method="after" pointcut-ref="pointcut_find"/>
 
-    <!-- 将切面类交给Spring管理 -->
-    <bean id="myAspect" class="com.example.Spring.demoB.MyAspectXml"></bean>
+      <aop:after-returning method="writeLog" pointcut-ref="pointcut_delete" returning="result"/>
+      <!-- 之前前后通知 -->
+      <aop:after-throwing method="afterThrowing" pointcut-ref="pointcut_find" throwing="errorMessage"/>
+      <!-- 异常后执行 -->
+      <aop:around method="arround" pointcut-ref="pointcut_update"/>
+      <aop:before method="checkPri" pointcut-ref="pointcut_save"/>
+    </aop:aspect>
+    <aop:pointcut expression="execution(* com.example.Spring.demoB.ProductDaoImpl.delete(..))"
+      id="pointcut_delete"/>
+    <aop:pointcut expression="execution(* com.example.Spring.demoB.ProductDaoImpl.update(..))"
+      id="pointcut_update"/>
+    <aop:pointcut expression="execution(* com.example.Spring.demoB.ProductDaoImpl.find(..))" id="pointcut_find"/>
+    <!--配置切面 -->
+    <aop:pointcut expression="execution(* com.example.Spring.demoB.ProductDaoImpl.save(..))" id="pointcut_save"/>
+  </aop:config>
 
-    <!-- 通过AOP的配置完成对目标类产生代理 -->
-    <aop:config>
-        <!-- 表达式配置哪些类的哪些方法需要增强 -->
-        <aop:pointcut expression="execution(* com.example.Spring.demoB.ProductDaoImpl.save(..))" id="pointcut_save"/>
-        <aop:pointcut expression="execution(* com.example.Spring.demoB.ProductDaoImpl.delete(..))"
-                      id="pointcut_delete"/>
-        <aop:pointcut expression="execution(* com.example.Spring.demoB.ProductDaoImpl.update(..))"
-                      id="pointcut_update"/>
-        <aop:pointcut expression="execution(* com.example.Spring.demoB.ProductDaoImpl.find(..))" id="pointcut_find"/>
-        <!--配置切面 -->
-        <aop:aspect ref="myAspect">
-            <aop:before method="checkPri" pointcut-ref="pointcut_save"/>
+  <!-- 将切面类交给Spring管理 -->
+  <bean class="com.example.Spring.demoB.MyAspectXml" id="myAspect"></bean>
 
-            <aop:after-returning method="writeLog" pointcut-ref="pointcut_delete" returning="result"/>
-            <!-- 之前前后通知 -->
-            <aop:around method="arround" pointcut-ref="pointcut_update"/>
-            <!-- 异常后执行 -->
-            <aop:after-throwing method="afterThrowing" pointcut-ref="pointcut_find" throwing="errorMessage"/>
-            <aop:after method="after" pointcut-ref="pointcut_find"/>
-        </aop:aspect>
-    </aop:config>
+  <!-- 通过AOP的配置完成对目标类产生代理 -->
+  <bean class="com.example.Spring.demoB.ProductDaoImpl" id="productDao"></bean>
 </beans>

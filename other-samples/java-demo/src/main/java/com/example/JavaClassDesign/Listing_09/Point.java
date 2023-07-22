@@ -5,16 +5,17 @@ package com.example.JavaClassDesign.Listing_09;/*-------------------------------
 ------------------------------------------------------------------------------*/
 
 class Point {
-    private int xPos, yPos;
 
-    public Point(int x, int y) {
-        xPos = x;
-        yPos = y;
-    }
+  private int xPos, yPos;
 
-    public static void main(String[] args) {
-        // Passing a Point object to println
-        // automatically invokes the toString method
-        System.out.println(new Point(10, 20));
-    }
+  public Point(int x, int y) {
+    xPos = x;
+    yPos = y;
+  }
+
+  public static void main(String[] args) {
+    // Passing a Point object to println
+    // automatically invokes the toString method
+    System.out.println(new Point(10, 20));
+  }
 }

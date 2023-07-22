@@ -1,45 +1,47 @@
 package com.example.Thread;
 
 public class _02SimpkeOper {
-	private long count = 0;
 
-	public long getCount() {
-		return count;
-	}
+  private long count = 0;
 
-	public void setCount(long count) {
-		this.count = count;
-	}
+  public static void main(String[] args) throws InterruptedException {
+    _02SimpkeOper simpkeOper = new _02SimpkeOper();
 
-	// synchronized 保证数据同步
-	public synchronized void incementCount() {
-		count++;
-	}
+    Count count1 = new Count(simpkeOper);
+    Count count2 = new Count(simpkeOper);
+    count1.start();
+    count2.start();
+    Thread.sleep(50);
 
-	private static class Count extends Thread {
-		private _02SimpkeOper simpkeOper;
+    System.out.println(simpkeOper.count);
+  }
 
-		public Count(_02SimpkeOper simpkeOper) {
-			this.simpkeOper = simpkeOper;
-		}
+  public long getCount() {
+    return count;
+  }
 
-		@Override
-		public void run() {
-			for (int i = 0; i < 100000; i++) {
-				simpkeOper.incementCount();
-			}
-		}
-	}
+  public void setCount(long count) {
+    this.count = count;
+  }
 
-	public static void main(String[] args) throws InterruptedException {
-		_02SimpkeOper simpkeOper = new _02SimpkeOper();
+  // synchronized 保证数据同步
+  public synchronized void incementCount() {
+    count++;
+  }
 
-		Count count1 = new Count(simpkeOper);
-		Count count2 = new Count(simpkeOper);
-		count1.start();
-		count2.start();
-		Thread.sleep(50);
+  private static class Count extends Thread {
 
-		System.out.println(simpkeOper.count);
-	}
+    private _02SimpkeOper simpkeOper;
+
+    public Count(_02SimpkeOper simpkeOper) {
+      this.simpkeOper = simpkeOper;
+    }
+
+    @Override
+    public void run() {
+      for (int i = 0; i < 100000; i++) {
+        simpkeOper.incementCount();
+      }
+    }
+  }
 }

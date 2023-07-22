@@ -11,17 +11,17 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/session")
 public class SessionController {
 
-    @Value("${server.port}")
-    private String port;
+  @Value("${server.port}")
+  private String port;
 
-    @GetMapping("/set")
-    public String set(HttpSession session) {
-        session.setAttribute("user", "javaboy");
-        return String.valueOf(port);
-    }
+  @GetMapping("/set")
+  public String set(HttpSession session) {
+    session.setAttribute("user", "javaboy");
+    return String.valueOf(port);
+  }
 
-    @GetMapping("/get")
-    public String get(HttpSession session) {
-        return session.getAttribute("user") + ":" + port;
-    }
+  @GetMapping("/get")
+  public String get(HttpSession session) {
+    return session.getAttribute("user") + ":" + port;
+  }
 }

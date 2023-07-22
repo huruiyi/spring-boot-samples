@@ -6,9 +6,9 @@ import java.util.Optional;
 
 public interface BookService {
 
-    Iterable<Book> findAll();
+  Iterable<Book> findAll();
 
-    Book create(Book book);
+  Book create(Book book);
 
-    Optional<Book> find(String isbn);
+  Optional<Book> find(String isbn);
 }

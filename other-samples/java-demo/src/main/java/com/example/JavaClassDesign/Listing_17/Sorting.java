@@ -7,16 +7,17 @@ package com.example.JavaClassDesign.Listing_17;/*-------------------------------
 import java.awt.List;
 
 public class Sorting {
-    public List sort(List list) {
-        // sort implementation
-        return list;
-    }
+
+  public List sort(List list) {
+    // sort implementation
+    return list;
+  }
 }
 
 class DynamicDataSet extends Sorting {
-    // DynamicDataSet implementation
+  // DynamicDataSet implementation
 }
 
 class SnapshotDataSet extends Sorting {
-    // SnapshotDataSet implementation
+  // SnapshotDataSet implementation
 }

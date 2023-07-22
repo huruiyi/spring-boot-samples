@@ -1,110 +1,110 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<title>MongoDB File Server</title>
-	<link rel="icon" th:href="@{/favicon.ico}">
-	
-	<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
-	<link th:href="@{/css/font-awesome.min.css}" rel="stylesheet">
-	<link th:href="@{/css/font-awesome.css}" rel="stylesheet"/>
-	
-	<link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet"/>
-	<link th:href="@{/bootstrap/css/bootstrap-theme.css}" rel="stylesheet"/>
-	<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
-	
-	
-	<link th:href="@{/fileinput/css/fileinput.css}" rel="stylesheet"/>
-	<script th:src="@{/fileinput/js/fileinput.js}"></script>
-	<!--https://plugins.krajee.com/file-basic-usage-demo-->
-	<script>
-		$(document).ready(function () {
-			$(".file-input").fileinput({
-				language: "zh",
-				dropZoneEnabled: false,
-				showUpload: false, //不显示上传按钮
-				showPreview: false, //不显示预览按钮
-				showRemove: false //不显示删除按钮
-			});
-		})
-		
-		function deleteImg(obj) {
-			
-			console.log(obj.id);
-			$.ajax({
-				url: "/" + obj.id,
-				type: 'delete',
-				success: function (result) {
-					// 删除成功时,取出页面的该行元素
-					const parentNode = obj.parentNode;
-					const grandNode = parentNode.parentNode;
-					grandNode.removeChild(parentNode);
-					console.log("删除成功!");
-				},
-				error: function () {
-					console.log("删除失败!");
-				}
-			});
-			
-		}
-	</script>
-	<style>
-		.file-input {
-			margin-right: 20px;
-		}
-	</style>
+  <meta charset="UTF-8">
+  <title>MongoDB File Server</title>
+  <link rel="icon" th:href="@{/favicon.ico}">
+
+  <script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+  <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+  <link rel="stylesheet" th:href="@{/css/font-awesome.css}"/>
+
+  <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.css}"/>
+  <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap-theme.css}"/>
+  <script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+
+
+  <link rel="stylesheet" th:href="@{/fileinput/css/fileinput.css}"/>
+  <script th:src="@{/fileinput/js/fileinput.js}"></script>
+  <!--https://plugins.krajee.com/file-basic-usage-demo-->
+  <script>
+    $(document).ready(function () {
+      $(".file-input").fileinput({
+        language: "zh",
+        dropZoneEnabled: false,
+        showUpload: false, //不显示上传按钮
+        showPreview: false, //不显示预览按钮
+        showRemove: false //不显示删除按钮
+      });
+    })
+
+    function deleteImg(obj) {
+
+      console.log(obj.id);
+      $.ajax({
+        url: "/" + obj.id,
+        type: 'delete',
+        success: function (result) {
+          // 删除成功时,取出页面的该行元素
+          const parentNode = obj.parentNode;
+          const grandNode = parentNode.parentNode;
+          grandNode.removeChild(parentNode);
+          console.log("删除成功!");
+        },
+        error: function () {
+          console.log("删除失败!");
+        }
+      });
+
+    }
+  </script>
+  <style>
+    .file-input {
+      margin-right: 20px;
+    }
+  </style>
 </head>
 <body>
 
 
 <div class="container">
-	<form method="POST" enctype="multipart/form-data" action="/">
-		<table style="margin: 10px auto;">
-			<tr>
-				<td style="text-align: left">
-					<input class="file-input" type="file" name="file"/>
-				</td>
-				<td>
-					<input class="btn btn-primary" type="submit" value="Upload"/>
-				</td>
-			</tr>
-		</table>
-	</form>
+  <form action="/" enctype="multipart/form-data" method="POST">
+    <table style="margin: 10px auto;">
+      <tr>
+        <td style="text-align: left">
+          <input class="file-input" name="file" type="file"/>
+        </td>
+        <td>
+          <input class="btn btn-primary" type="submit" value="Upload"/>
+        </td>
+      </tr>
+    </table>
+  </form>
 </div>
 
 <div>
-	<table class="table table-responsive table-bordered">
-		<thead>
-		<tr style="text-align: center">
-			<td>名称</td>
-			<td>编号</td>
-			<td>文件类型</td>
-			<td>文件大小</td>
-			<td>上传日期</td>
-			<td>md5</td>
-			<td>操作</td>
-		</tr>
-		</thead>
-		<tbody>
-		<tr th:if="${files.size()} eq 0">
-			<td colspan="3">没有文件信息！！</td>
-		</tr>
-		<tr th:each="file : ${files}" style="text-align: center">
-			<td><a th:href="'files/'+${file.id}" th:text="${file.name}"/></td>
-			<td th:text="${file.id}"></td>
-			<td th:text="${file.contentType}"></td>
-			<td th:text="${file.size}"></td>
-			<td th:text="${file.uploadDate}"></td>
-			<td th:text="${file.md5}"></td>
-			<td onclick="deleteImg(this)" th:id="${file.id}" style="text-align:center;"><i class="fa fa-trash-o"></i>
-			</td>
-		</tr>
-		</tbody>
-	</table>
+  <table class="table table-responsive table-bordered">
+    <thead>
+    <tr style="text-align: center">
+      <td>名称</td>
+      <td>编号</td>
+      <td>文件类型</td>
+      <td>文件大小</td>
+      <td>上传日期</td>
+      <td>md5</td>
+      <td>操作</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${files.size()} eq 0">
+      <td colspan="3">没有文件信息！！</td>
+    </tr>
+    <tr style="text-align: center" th:each="file : ${files}">
+      <td><a th:href="'files/'+${file.id}" th:text="${file.name}"/></td>
+      <td th:text="${file.id}"></td>
+      <td th:text="${file.contentType}"></td>
+      <td th:text="${file.size}"></td>
+      <td th:text="${file.uploadDate}"></td>
+      <td th:text="${file.md5}"></td>
+      <td onclick="deleteImg(this)" style="text-align:center;" th:id="${file.id}"><i class="fa fa-trash-o"></i>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </div>
 
 <div data-th-fragment="footer" style="text-align: center">
-	Powered by <a href="https://fairy.vip">fairy.vip</a>
+  Powered by <a href="https://fairy.vip">fairy.vip</a>
 </div>
 </body>
 </html>

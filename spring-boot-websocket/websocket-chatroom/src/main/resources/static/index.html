@@ -1,77 +1,77 @@
 <html>
 <head>
-    <title>Chat WebSocket</title>
-    <script src="../js/sockjs.min.js"></script>
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
-    <script type="text/javascript">
-        var stompClient = null;
+  <title>Chat WebSocket</title>
+  <script src="../js/sockjs.min.js"></script>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+  <script type="text/javascript">
+    var stompClient = null;
 
-        function setConnected(connected) {
-            document.getElementById('connect').disabled = connected;
-            document.getElementById('disconnect').disabled = !connected;
-            document.getElementById('conversationDiv').style.visibility
-                = connected ? 'visible' : 'hidden';
-            document.getElementById('response').innerHTML = '';
-        }
+    function setConnected(connected) {
+      document.getElementById('connect').disabled = connected;
+      document.getElementById('disconnect').disabled = !connected;
+      document.getElementById('conversationDiv').style.visibility
+          = connected ? 'visible' : 'hidden';
+      document.getElementById('response').innerHTML = '';
+    }
 
-        function connect() {
-            var socket = new SockJS('http://localhost:8080/chatroom');
-            stompClient = Stomp.over(socket);
-            stompClient.connect({}, function (frame) {
-                setConnected(true);
-                console.log('Connected: ' + frame);
-                stompClient.subscribe('/topic/messages', function (message) {
-                    showmessage(JSON.parse(message.body));
-                });
-            });
-        }
+    function connect() {
+      var socket = new SockJS('http://localhost:8080/chatroom');
+      stompClient = Stomp.over(socket);
+      stompClient.connect({}, function (frame) {
+        setConnected(true);
+        console.log('Connected: ' + frame);
+        stompClient.subscribe('/topic/messages', function (message) {
+          showmessage(JSON.parse(message.body));
+        });
+      });
+    }
 
-        function disconnect() {
-            if (stompClient != null) {
-                stompClient.disconnect();
-            }
-            setConnected(false);
-            console.log("Disconnected");
-        }
+    function disconnect() {
+      if (stompClient != null) {
+        stompClient.disconnect();
+      }
+      setConnected(false);
+      console.log("Disconnected");
+    }
 
-        function sendMessage() {
-            var from = document.getElementById('from').value;
-            var text = document.getElementById('text').value;
-            stompClient.send("/app/chat", {},
-                JSON.stringify({'from': from, 'text': text}));
-        }
+    function sendMessage() {
+      var from = document.getElementById('from').value;
+      var text = document.getElementById('text').value;
+      stompClient.send("/app/chat", {},
+          JSON.stringify({'from': from, 'text': text}));
+    }
 
-        function showmessage(message) {
-            var response = document.getElementById('response');
-            var p = document.createElement('p');
-            p.style.wordWrap = 'break-word';
-            p.appendChild(document.createTextNode(message.from + ": "
-                + message.text));
-            response.appendChild(p);
-        }
+    function showmessage(message) {
+      var response = document.getElementById('response');
+      var p = document.createElement('p');
+      p.style.wordWrap = 'break-word';
+      p.appendChild(document.createTextNode(message.from + ": "
+          + message.text));
+      response.appendChild(p);
+    }
 
 
-    </script>
+  </script>
 </head>
 <body onload="disconnect()">
 <div>
-    <div>
-        <input type="text" id="from" placeholder="Choose a nickname"/>
-    </div>
-    <br/>
-    <div>
-        <button id="connect" onclick="connect();">Connect</button>
-        <button id="disconnect" disabled="disabled" onclick="disconnect();">
-            Disconnect
-        </button>
-    </div>
-    <br/>
-    <div id="conversationDiv">
-        <input type="text" id="text" placeholder="Write a message..."/>
-        <button id="sendMessage" onclick="sendMessage();">Send</button>
-        <p id="response"></p>
-    </div>
+  <div>
+    <input id="from" placeholder="Choose a nickname" type="text"/>
+  </div>
+  <br/>
+  <div>
+    <button id="connect" onclick="connect();">Connect</button>
+    <button disabled="disabled" id="disconnect" onclick="disconnect();">
+      Disconnect
+    </button>
+  </div>
+  <br/>
+  <div id="conversationDiv">
+    <input id="text" placeholder="Write a message..." type="text"/>
+    <button id="sendMessage" onclick="sendMessage();">Send</button>
+    <p id="response"></p>
+  </div>
 </div>
 
 </body>

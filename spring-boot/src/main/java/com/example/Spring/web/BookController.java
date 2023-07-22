@@ -13,35 +13,35 @@ import java.net.URI;
 @RequestMapping("/book")
 public class BookController {
 
-    @Autowired
-    private BookService bookService;
+  @Autowired
+  private BookService bookService;
 
 
-    @GetMapping
-    public Iterable<Book> all() {
-        return bookService.findAll();
-    }
+  @GetMapping
+  public Iterable<Book> all() {
+    return bookService.findAll();
+  }
 
-    @GetMapping("/{isbn}")
-    public ResponseEntity<Book> get(@PathVariable("isbn") String isbn) {
-        return bookService.find(isbn).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
-    }
+  @GetMapping("/{isbn}")
+  public ResponseEntity<Book> get(@PathVariable("isbn") String isbn) {
+    return bookService.find(isbn).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+  }
 
-    /*
+  /*
+*
+  {
+  "isbn":"4325464573243",
+  "title":"Document Info",
+  "authors":[
+    "authors1","authors2","authors3"
+    ]
+  }
   *
-    {
-    "isbn":"4325464573243",
-    "title":"Document Info",
-    "authors":[
-      "authors1","authors2","authors3"
-      ]
-    }
-    *
-    * */
-    @PostMapping
-    public ResponseEntity<Book> create(@RequestBody Book book, UriComponentsBuilder uriBuilder) {
-        Book created = bookService.create(book);
-        URI newBookUri = uriBuilder.path("/books/{isbn}").build(created.getIsbn());
-        return ResponseEntity.created(newBookUri).body(created);
-    }
+  * */
+  @PostMapping
+  public ResponseEntity<Book> create(@RequestBody Book book, UriComponentsBuilder uriBuilder) {
+    Book created = bookService.create(book);
+    URI newBookUri = uriBuilder.path("/books/{isbn}").build(created.getIsbn());
+    return ResponseEntity.created(newBookUri).body(created);
+  }
 }

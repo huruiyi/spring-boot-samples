@@ -7,8 +7,9 @@ package com.example.Java_Stream.Listing_04;/*-----------------------------------
 import java.util.Optional;
 
 public class OptionalStream {
-    public static void main(String []args) {
-Optional<String> string = Optional.of("  abracadabra  ");
-    	string.map(String::trim).ifPresent(System.out::println);
-    }
+
+  public static void main(String[] args) {
+    Optional<String> string = Optional.of("  abracadabra  ");
+    string.map(String::trim).ifPresent(System.out::println);
+  }
 }

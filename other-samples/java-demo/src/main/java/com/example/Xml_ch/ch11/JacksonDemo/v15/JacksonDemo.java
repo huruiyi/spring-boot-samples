@@ -15,47 +15,49 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import static java.lang.System.*;
 
 public class JacksonDemo {
-    public static void main(String[] args) throws Exception {
-        String jsonContent =
-                "{" +
-                        "   \"id\": 820787," +
-                        "   \"firstName\": \"Pierre\"," +
-                        "   \"lastName\": \"Francois\"" +
-                        "}";
-        ObjectMapper mapper = new ObjectMapper();
-        PropContainer pc =
-                mapper.readValue(jsonContent, PropContainer.class);
-        Iterator<Map.Entry<String, Object>> iter =
-                pc.iterator();
-        while (iter.hasNext()) {
-            Map.Entry<String, Object> entry = iter.next();
-            out.printf("Key: %s, Value: %s%n", entry.getKey(),
-                    entry.getValue());
-        }
-        mapper.writeValue(new File("pierre.json"), pc);
+
+  public static void main(String[] args) throws Exception {
+    String jsonContent =
+        "{" +
+            "   \"id\": 820787," +
+            "   \"firstName\": \"Pierre\"," +
+            "   \"lastName\": \"Francois\"" +
+            "}";
+    ObjectMapper mapper = new ObjectMapper();
+    PropContainer pc =
+        mapper.readValue(jsonContent, PropContainer.class);
+    Iterator<Map.Entry<String, Object>> iter =
+        pc.iterator();
+    while (iter.hasNext()) {
+      Map.Entry<String, Object> entry = iter.next();
+      out.printf("Key: %s, Value: %s%n", entry.getKey(),
+          entry.getValue());
     }
+    mapper.writeValue(new File("pierre.json"), pc);
+  }
 }
 
 class PropContainer {
-    public String lastName;
 
-    private Map<String, Object> properties;
+  public String lastName;
 
-    PropContainer() {
-        properties = new HashMap<>();
-    }
+  private Map<String, Object> properties;
 
-    @JsonAnySetter
-    void addProperty(String fieldName, Object value) {
-        properties.put(fieldName, value);
-    }
+  PropContainer() {
+    properties = new HashMap<>();
+  }
 
-    Iterator<Map.Entry<String, Object>> iterator() {
-        return properties.entrySet().iterator();
-    }
+  @JsonAnySetter
+  void addProperty(String fieldName, Object value) {
+    properties.put(fieldName, value);
+  }
 
-    @JsonAnyGetter
-    public Map<String, Object> properties() {
-        return properties;
-    }
+  Iterator<Map.Entry<String, Object>> iterator() {
+    return properties.entrySet().iterator();
+  }
+
+  @JsonAnyGetter
+  public Map<String, Object> properties() {
+    return properties;
+  }
 }

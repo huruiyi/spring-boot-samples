@@ -11,9 +11,9 @@ server-host:
     length: 180
     port: 2000
   inetAddressC:
-      ip: 192.168.0.16
-      length: 288
-      port: 2000
+    ip: 192.168.0.16
+    length: 288
+    port: 2000
 
 udp:
   server:

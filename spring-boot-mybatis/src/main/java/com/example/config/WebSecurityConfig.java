@@ -15,34 +15,34 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
 
-        http
-                .authorizeRequests()
-                .antMatchers("/", "/index", "/static/**").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll()
-                .and()
-                .logout()
-                .permitAll();
-    }
+    http
+        .authorizeRequests()
+        .antMatchers("/", "/index", "/static/**").permitAll()
+        .anyRequest().authenticated()
+        .and()
+        .formLogin()
+        .loginPage("/login")
+        .permitAll()
+        .and()
+        .logout()
+        .permitAll();
+  }
 
-    @Bean
-    @Override
-    public UserDetailsService userDetailsService() {
-        UserDetails user =
-                //User.withDefaultPasswordEncoder()
-                User.withUsername("admin")
-                        .password("{bcrypt}$2a$10$o/Md1h0E4qZEuYYEY6wmuuvoj13RQQAsuZCD21HNAvT1CYEn1b3Ou")
-                        .roles("USER")
-                        .build();
+  @Bean
+  @Override
+  public UserDetailsService userDetailsService() {
+    UserDetails user =
+        //User.withDefaultPasswordEncoder()
+        User.withUsername("admin")
+            .password("{bcrypt}$2a$10$o/Md1h0E4qZEuYYEY6wmuuvoj13RQQAsuZCD21HNAvT1CYEn1b3Ou")
+            .roles("USER")
+            .build();
 
-        return new InMemoryUserDetailsManager(user);
-    }
+    return new InMemoryUserDetailsManager(user);
+  }
 
 
 }

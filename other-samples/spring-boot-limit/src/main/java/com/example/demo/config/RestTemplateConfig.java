@@ -7,17 +7,16 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * RestTemplate客户端连接池配置
- *
  */
 @Configuration
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 public class RestTemplateConfig {
 
 
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
+  @Bean
+  public RestTemplate restTemplate() {
+    return new RestTemplate();
+  }
 
 }
 

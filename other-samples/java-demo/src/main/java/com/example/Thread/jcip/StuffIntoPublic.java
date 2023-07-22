@@ -8,9 +8,10 @@ package com.example.Thread.jcip;
  * @author Brian Goetz and Tim Peierls
  */
 public class StuffIntoPublic {
-    public Holder holder;
 
-    public void initialize() {
-        holder = new Holder(42);
-    }
+  public Holder holder;
+
+  public void initialize() {
+    holder = new Holder(42);
+  }
 }

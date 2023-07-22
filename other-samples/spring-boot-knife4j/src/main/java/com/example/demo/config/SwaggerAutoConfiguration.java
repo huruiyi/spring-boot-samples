@@ -16,24 +16,24 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerAutoConfiguration implements BeanFactoryAware {
 
-    private BeanFactory beanFactory;
+  private BeanFactory beanFactory;
 
-    @Bean(value = "defaultApi2")
-    public Docket defaultApi2() {
-        Docket docket = new Docket(DocumentationType.SWAGGER_2).apiInfo(new ApiInfoBuilder()
-                        .title("swagger-bootstrap-ui-demo RESTful APIs")
-                        .description("# swagger-bootstrap-ui-demo RESTful APIs")
-                        .termsOfServiceUrl("http://www.xx.com/").contact("xx@qq.com")
-                        .version("1.0").build())
-                //分组名称
-                .groupName("2.X版本").select()
-                //这里指定Controller扫描包路径
-                .apis(RequestHandlerSelectors.basePackage("com.example.demo.api")).paths(PathSelectors.any()).build();
-        return docket;
-    }
+  @Bean(value = "defaultApi2")
+  public Docket defaultApi2() {
+    Docket docket = new Docket(DocumentationType.SWAGGER_2).apiInfo(new ApiInfoBuilder()
+            .title("swagger-bootstrap-ui-demo RESTful APIs")
+            .description("# swagger-bootstrap-ui-demo RESTful APIs")
+            .termsOfServiceUrl("http://www.xx.com/").contact("xx@qq.com")
+            .version("1.0").build())
+        //分组名称
+        .groupName("2.X版本").select()
+        //这里指定Controller扫描包路径
+        .apis(RequestHandlerSelectors.basePackage("com.example.demo.api")).paths(PathSelectors.any()).build();
+    return docket;
+  }
 
-    @Override
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        this.beanFactory = beanFactory;
-    }
+  @Override
+  public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+    this.beanFactory = beanFactory;
+  }
 }

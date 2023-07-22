@@ -9,11 +9,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Application {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("_Aspect2.xml");
-        Tiger tiger = context.getBean(Tiger.class);
-        tiger.walk();
-    }
+    ApplicationContext context = new ClassPathXmlApplicationContext("_Aspect2.xml");
+    Tiger tiger = context.getBean(Tiger.class);
+    tiger.walk();
+  }
 
 }

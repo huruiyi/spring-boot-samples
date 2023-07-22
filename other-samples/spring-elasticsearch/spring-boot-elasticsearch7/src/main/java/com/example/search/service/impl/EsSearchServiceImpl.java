@@ -15,40 +15,40 @@ import org.springframework.stereotype.Service;
 @Service
 public class EsSearchServiceImpl extends BaseSearchServiceImpl<ProductDocument> implements EsSearchService {
 
-	@Resource
-	private ElasticsearchRestTemplate elasticsearchRestTemplate;
+  @Resource
+  private ElasticsearchRestTemplate elasticsearchRestTemplate;
 
-	@Resource
-	private ProductDocumentRepository productDocumentRepository;
+  @Resource
+  private ProductDocumentRepository productDocumentRepository;
 
-	@Override
-	public void save(ProductDocument... productDocuments) {
-		elasticsearchRestTemplate.putMapping(ProductDocument.class);
-		if (productDocuments.length > 0) {
-			productDocumentRepository.saveAll(Arrays.asList(productDocuments));
-		}
-	}
+  @Override
+  public void save(ProductDocument... productDocuments) {
+    elasticsearchRestTemplate.putMapping(ProductDocument.class);
+    if (productDocuments.length > 0) {
+      productDocumentRepository.saveAll(Arrays.asList(productDocuments));
+    }
+  }
 
-	@Override
-	public void delete(String id) {
-		productDocumentRepository.deleteById(id);
-	}
+  @Override
+  public void delete(String id) {
+    productDocumentRepository.deleteById(id);
+  }
 
-	@Override
-	public void deleteAll() {
-		productDocumentRepository.deleteAll();
-	}
+  @Override
+  public void deleteAll() {
+    productDocumentRepository.deleteAll();
+  }
 
-	@Override
-	public ProductDocument getById(String id) {
-		return productDocumentRepository.findById(id).get();
-	}
+  @Override
+  public ProductDocument getById(String id) {
+    return productDocumentRepository.findById(id).get();
+  }
 
-	@Override
-	public List<ProductDocument> getAll() {
-		List<ProductDocument> list = new ArrayList<>();
-		productDocumentRepository.findAll().forEach(list::add);
-		return list;
-	}
+  @Override
+  public List<ProductDocument> getAll() {
+    List<ProductDocument> list = new ArrayList<>();
+    productDocumentRepository.findAll().forEach(list::add);
+    return list;
+  }
 
 }

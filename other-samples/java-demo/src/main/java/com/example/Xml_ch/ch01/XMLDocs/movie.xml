@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <movie>
-   <name>Le Fabuleux Destin d'Amélie Poulain</name>
-   <language>français</language>
+  <language>français</language>
+  <name>Le Fabuleux Destin d'Amélie Poulain</name>
 </movie>

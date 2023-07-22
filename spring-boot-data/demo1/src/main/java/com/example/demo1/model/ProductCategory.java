@@ -8,10 +8,10 @@ import org.springframework.data.annotation.Id;
 @ToString
 public class ProductCategory {
 
-    @Id
-    private String id;
-    private String name;
-    private String title;
-    private String description;
-    private String imgUrl;
+  @Id
+  private String id;
+  private String name;
+  private String title;
+  private String description;
+  private String imgUrl;
 }

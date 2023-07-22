@@ -15,28 +15,28 @@ import java.util.Map;
 //@Component
 public class MyServer2 implements ApplicationContextAware {
 
-    public static void main(String[] args) {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("SpringAnnotation.xml");
-        Map<String, Object> beans = ctx.getBeansWithAnnotation(RpcService.class);
-        for (Object obj : beans.values()) {
-            HelloService hello = (HelloService) obj;
-            String hello2 = hello.hello("mmmm");
-            System.out.println(hello2);
-        }
+  public static void main(String[] args) {
+    ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("SpringAnnotation.xml");
+    Map<String, Object> beans = ctx.getBeansWithAnnotation(RpcService.class);
+    for (Object obj : beans.values()) {
+      HelloService hello = (HelloService) obj;
+      String hello2 = hello.hello("mmmm");
+      System.out.println(hello2);
     }
+  }
 
 
-    public void setApplicationContext(ApplicationContext ctx) throws BeansException {
-        Map<String, Object> serviceBeanMap = ctx.getBeansWithAnnotation(RpcService.class);
-        for (Object serviceBean : serviceBeanMap.values()) {
-            try {
-                Method method = serviceBean.getClass().getMethod("hello", String.class);
-                Object invoke = method.invoke(serviceBean, "bbb");
-                System.out.println(invoke);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+  public void setApplicationContext(ApplicationContext ctx) throws BeansException {
+    Map<String, Object> serviceBeanMap = ctx.getBeansWithAnnotation(RpcService.class);
+    for (Object serviceBean : serviceBeanMap.values()) {
+      try {
+        Method method = serviceBean.getClass().getMethod("hello", String.class);
+        Object invoke = method.invoke(serviceBean, "bbb");
+        System.out.println(invoke);
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
     }
+  }
 
 }

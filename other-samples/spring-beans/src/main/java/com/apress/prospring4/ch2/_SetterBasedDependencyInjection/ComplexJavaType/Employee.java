@@ -2,14 +2,14 @@ package com.apress.prospring4.ch2._SetterBasedDependencyInjection.ComplexJavaTyp
 
 public class Employee {
 
-	String employeeName;
+  String employeeName;
 
-	public String getEmployeeName() {
-		return employeeName;
-	}
+  public String getEmployeeName() {
+    return employeeName;
+  }
 
-	public void setEmployeeName(String employeeName) {
-		this.employeeName = employeeName;
-	}
+  public void setEmployeeName(String employeeName) {
+    this.employeeName = employeeName;
+  }
 
 }

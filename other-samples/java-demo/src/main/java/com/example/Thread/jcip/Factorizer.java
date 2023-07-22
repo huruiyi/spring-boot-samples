@@ -14,35 +14,36 @@ import com.example.Thread.jcip.annotations.ThreadSafe;
  */
 @ThreadSafe
 public class Factorizer extends GenericServlet implements Servlet {
-    private final Computable<BigInteger, BigInteger[]> c =
-            new Computable<BigInteger, BigInteger[]>() {
-                public BigInteger[] compute(BigInteger arg) {
-                    return factor(arg);
-                }
-            };
-    private final Computable<BigInteger, BigInteger[]> cache = new Memoizer<BigInteger, BigInteger[]>(c);
 
-    public void service(ServletRequest req, ServletResponse resp) {
-        try {
-            BigInteger i = extractFromRequest(req);
-            encodeIntoResponse(resp, cache.compute(i));
-        } catch (InterruptedException e) {
-            encodeError(resp, "factorization interrupted");
+  private final Computable<BigInteger, BigInteger[]> c =
+      new Computable<BigInteger, BigInteger[]>() {
+        public BigInteger[] compute(BigInteger arg) {
+          return factor(arg);
         }
-    }
+      };
+  private final Computable<BigInteger, BigInteger[]> cache = new Memoizer<BigInteger, BigInteger[]>(c);
 
-    void encodeIntoResponse(ServletResponse resp, BigInteger[] factors) {
+  public void service(ServletRequest req, ServletResponse resp) {
+    try {
+      BigInteger i = extractFromRequest(req);
+      encodeIntoResponse(resp, cache.compute(i));
+    } catch (InterruptedException e) {
+      encodeError(resp, "factorization interrupted");
     }
+  }
 
-    void encodeError(ServletResponse resp, String errorString) {
-    }
+  void encodeIntoResponse(ServletResponse resp, BigInteger[] factors) {
+  }
 
-    BigInteger extractFromRequest(ServletRequest req) {
-        return new BigInteger("7");
-    }
+  void encodeError(ServletResponse resp, String errorString) {
+  }
 
-    BigInteger[] factor(BigInteger i) {
-        // Doesn't really factor
-        return new BigInteger[]{i};
-    }
+  BigInteger extractFromRequest(ServletRequest req) {
+    return new BigInteger("7");
+  }
+
+  BigInteger[] factor(BigInteger i) {
+    // Doesn't really factor
+    return new BigInteger[]{i};
+  }
 }

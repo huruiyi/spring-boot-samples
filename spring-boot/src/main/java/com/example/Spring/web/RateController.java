@@ -16,27 +16,27 @@ import java.time.Instant;
 //@Slf4j
 public class RateController {
 
-    private static final Logger log = org.slf4j.LoggerFactory.getLogger(RateController.class);
+  private static final Logger log = org.slf4j.LoggerFactory.getLogger(RateController.class);
 
-    private RateLimiter rateLimiter = RateLimiter.create(10);
+  private RateLimiter rateLimiter = RateLimiter.create(10);
 
-    @ResponseBody
-    @RequestMapping(value = "/limit")
-    private String guavaLimit() {
-        if (rateLimiter.tryAcquire()) {
-            System.out.println(Instant.now());
-            return "Acquire 。。。";
-        } else {
-            System.out.println("false:" + Instant.now());
-            return "Hello World";
-        }
+  @ResponseBody
+  @RequestMapping(value = "/limit")
+  private String guavaLimit() {
+    if (rateLimiter.tryAcquire()) {
+      System.out.println(Instant.now());
+      return "Acquire 。。。";
+    } else {
+      System.out.println("false:" + Instant.now());
+      return "Hello World";
     }
+  }
 
-    @GetMapping(value = "/testLimit")
-    @RequestLimit
-    public String testLimit() {
-        log.info("开始测试限流");
-        return "success";
-    }
+  @GetMapping(value = "/testLimit")
+  @RequestLimit
+  public String testLimit() {
+    log.info("开始测试限流");
+    return "success";
+  }
 
 }

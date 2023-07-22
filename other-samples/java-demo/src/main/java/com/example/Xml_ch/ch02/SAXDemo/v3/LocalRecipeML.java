@@ -9,28 +9,25 @@ import org.xml.sax.SAXException;
 
 import static java.lang.System.*;
 
-public class LocalRecipeML implements EntityResolver
-{
-   private Map<String, String> mappings = new HashMap<>();
+public class LocalRecipeML implements EntityResolver {
 
-   LocalRecipeML()
-   {
-      mappings.put("-//FormatData//DTD RecipeML 0.5//EN", 
-                   "recipeml.dtd");
-   }
+  private Map<String, String> mappings = new HashMap<>();
 
-   @Override
-   public InputSource resolveEntity(String publicId, 
-                                    String systemId)
-   {
-      if (mappings.containsKey(publicId))
-      {
-         out.println("obtaining cached recipeml.dtd");
-         systemId = mappings.get(publicId);
-         InputSource localSource = 
-            new InputSource(systemId);
-         return localSource;
-      }
-      return null;
-   }
+  LocalRecipeML() {
+    mappings.put("-//FormatData//DTD RecipeML 0.5//EN",
+        "recipeml.dtd");
+  }
+
+  @Override
+  public InputSource resolveEntity(String publicId,
+      String systemId) {
+    if (mappings.containsKey(publicId)) {
+      out.println("obtaining cached recipeml.dtd");
+      systemId = mappings.get(publicId);
+      InputSource localSource =
+          new InputSource(systemId);
+      return localSource;
+    }
+    return null;
+  }
 }

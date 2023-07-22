@@ -11,19 +11,19 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("file")
 public class FileController {
 
-    @PutMapping("user")
-    @ApiOperation(value = "上传文件")
-    @ApiImplicitParam(name = "user", value = "用户实体类", dataType = "User")
-    public String addUser(@RequestBody User user) {
-        return "Hello World";
-    }
+  @PutMapping("user")
+  @ApiOperation(value = "上传文件")
+  @ApiImplicitParam(name = "user", value = "用户实体类", dataType = "User")
+  public String addUser(@RequestBody User user) {
+    return "Hello World";
+  }
 
-    @PostMapping("user")
-    @ApiOperation(value = "查询文件")
-    @ApiImplicitParam(name = "user", value = "用户实体类", dataType = "User")
-    public String updateUser(@RequestBody User user) {
-        return "Hello World";
-    }
+  @PostMapping("user")
+  @ApiOperation(value = "查询文件")
+  @ApiImplicitParam(name = "user", value = "用户实体类", dataType = "User")
+  public String updateUser(@RequestBody User user) {
+    return "Hello World";
+  }
 
 
 }

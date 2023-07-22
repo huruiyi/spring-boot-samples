@@ -15,56 +15,56 @@ import java.util.Date;
 @Mapping(mappingPath = "esmapping/productIndex.json") // 解决IK分词不能使用问题
 public class ProductDocument implements Serializable {
 
-    @Id
-    private String id;
+  @Id
+  private String id;
 
-    @Field(analyzer = "ik_max_word", searchAnalyzer = "ik_max_word")
-    private String productName;
+  @Field(analyzer = "ik_max_word", searchAnalyzer = "ik_max_word")
+  private String productName;
 
-    @Field(analyzer = "ik_max_word", searchAnalyzer = "ik_max_word")
-    private String productDesc;
+  @Field(analyzer = "ik_max_word", searchAnalyzer = "ik_max_word")
+  private String productDesc;
 
-    private Date createTime;
+  private Date createTime;
 
-    private Date updateTime;
+  private Date updateTime;
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public void setId(String id) {
+    this.id = id;
+  }
 
-    public String getProductName() {
-        return productName;
-    }
+  public String getProductName() {
+    return productName;
+  }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
+  public void setProductName(String productName) {
+    this.productName = productName;
+  }
 
-    public String getProductDesc() {
-        return productDesc;
-    }
+  public String getProductDesc() {
+    return productDesc;
+  }
 
-    public void setProductDesc(String productDesc) {
-        this.productDesc = productDesc;
-    }
+  public void setProductDesc(String productDesc) {
+    this.productDesc = productDesc;
+  }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
+  public Date getCreateTime() {
+    return createTime;
+  }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
+  public void setCreateTime(Date createTime) {
+    this.createTime = createTime;
+  }
 
-    public Date getUpdateTime() {
-        return updateTime;
-    }
+  public Date getUpdateTime() {
+    return updateTime;
+  }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
+  public void setUpdateTime(Date updateTime) {
+    this.updateTime = updateTime;
+  }
 }

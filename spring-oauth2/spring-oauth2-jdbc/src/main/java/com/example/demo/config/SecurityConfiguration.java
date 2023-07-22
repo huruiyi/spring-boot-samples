@@ -11,25 +11,25 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    /**
-     * 这一步的配置是必不可少的，否则SpringBoot会自动配置一个AuthenticationManager,覆盖掉内存中的用户
-     *
-     * @return
-     * @throws Exception
-     */
-    @Bean
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        AuthenticationManager manager = super.authenticationManagerBean();
-        return manager;
-    }
+  /**
+   * 这一步的配置是必不可少的，否则SpringBoot会自动配置一个AuthenticationManager,覆盖掉内存中的用户
+   *
+   * @return
+   * @throws Exception
+   */
+  @Bean
+  @Override
+  public AuthenticationManager authenticationManagerBean() throws Exception {
+    AuthenticationManager manager = super.authenticationManagerBean();
+    return manager;
+  }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-                .requestMatchers().anyRequest()
-                .and()
-                .authorizeRequests()
-                .antMatchers("/oauth/**").permitAll();
-    }
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
+    http
+        .requestMatchers().anyRequest()
+        .and()
+        .authorizeRequests()
+        .antMatchers("/oauth/**").permitAll();
+  }
 }

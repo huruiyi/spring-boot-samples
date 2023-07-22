@@ -14,38 +14,38 @@ import javax.sql.DataSource;
 @Configuration
 public class AppConfig {
 
-    @Value("${spring.datasource.url}")
-    private String datasourceUrl;
+  @Value("${spring.datasource.url}")
+  private String datasourceUrl;
 
-    @Value("${spring.database.driverClassName}")
-    private String dbDriverClassName;
+  @Value("${spring.database.driverClassName}")
+  private String dbDriverClassName;
 
-    @Value("${spring.datasource.username}")
-    private String dbUsername;
+  @Value("${spring.datasource.username}")
+  private String dbUsername;
 
-    @Value("${spring.datasource.password}")
-    private String dbPassword;
+  @Value("${spring.datasource.password}")
+  private String dbPassword;
 
-    @Bean
-    public DataSource dataSource() {
-        final DriverManagerDataSource dataSource = new DriverManagerDataSource();
+  @Bean
+  public DataSource dataSource() {
+    final DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
-        dataSource.setDriverClassName(dbDriverClassName);
-        dataSource.setUrl(datasourceUrl);
-        dataSource.setUsername(dbUsername);
-        dataSource.setPassword(dbPassword);
+    dataSource.setDriverClassName(dbDriverClassName);
+    dataSource.setUrl(datasourceUrl);
+    dataSource.setUsername(dbUsername);
+    dataSource.setPassword(dbPassword);
 
-        return dataSource;
-    }
+    return dataSource;
+  }
 
-    @Bean
-    public TokenStore tokenStore() {
-        return new JdbcTokenStore(dataSource());
-    }
+  @Bean
+  public TokenStore tokenStore() {
+    return new JdbcTokenStore(dataSource());
+  }
 
-    @Bean
-    PasswordEncoder passwordEncoder() {
-        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-    }
+  @Bean
+  PasswordEncoder passwordEncoder() {
+    return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+  }
 
 }

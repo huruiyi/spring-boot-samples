@@ -10,34 +10,32 @@ import java.util.Properties;
 
 public class ProducerUtil {
 
-    private static final String TOPIC = "topic-demo";
-    private static Properties properties = null;
-    private static final String BROKERLISTS = "localhost:9092";
+  private static final String TOPIC = "topic-demo";
+  private static final String BROKERLISTS = "localhost:9092";
+  public static KeyedMessage<String, String> message = null;
+  private static Properties properties = null;
+  private static Producer<String, String> producer = null;
 
-    private static Producer<String, String> producer = null;
+  static {
+    properties = new Properties();
+    properties.put("serializer.class", "kafka.serializer.StringEncoder");
+    properties.put("metadata.broker.list", BROKERLISTS);
 
-    public static KeyedMessage<String, String> message = null;
+    ProducerConfig config = new ProducerConfig(properties);
+    producer = new kafka.javaapi.producer.Producer<String, String>(config);
+  }
 
-    static {
-        properties = new Properties();
-        properties.put("serializer.class", "kafka.serializer.StringEncoder");
-        properties.put("metadata.broker.list", BROKERLISTS);
+  public static void producer(Object msg) {
+    message = new KeyedMessage<String, String>(TOPIC, "message : " + msg);
+    producer.send(message);
+    System.out.println("send message : " + msg);
+  }
 
-        ProducerConfig config = new ProducerConfig(properties);
-        producer = new kafka.javaapi.producer.Producer<String, String>(config);
+  public static void main(String[] args) throws InterruptedException {
+    while (true) {
+      Thread.sleep(1000);
+      producer("main 生产消息:" + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
     }
-
-    public static void producer(Object msg) {
-        message = new KeyedMessage<String, String>(TOPIC, "message : " + msg);
-        producer.send(message);
-        System.out.println("send message : " + msg);
-    }
-
-    public static void main(String[] args) throws InterruptedException {
-        while (true) {
-            Thread.sleep(1000);
-            producer("main 生产消息:" + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
-        }
-    }
+  }
 
 }

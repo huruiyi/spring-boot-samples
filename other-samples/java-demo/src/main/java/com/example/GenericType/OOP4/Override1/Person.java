@@ -2,17 +2,17 @@ package com.example.GenericType.OOP4.Override1;
 
 
 abstract class Person {
-    Person() {
 
-    }
+  String name;
+  String surname;
 
-    Person(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
-    }
+  Person() {
 
-    String name;
-    String surname;
+  }
+  Person(String name, String surname) {
+    this.name = name;
+    this.surname = surname;
+  }
 
-    abstract void getDescription();
+  abstract void getDescription();
 }

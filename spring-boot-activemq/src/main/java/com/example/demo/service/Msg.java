@@ -10,9 +10,9 @@ import java.util.Date;
 
 public class Msg implements MessageCreator {
 
-    @Override
-    public Message createMessage(Session session) throws JMSException {
-        return session.createTextMessage(new Date() + " 测试消息");
-    }
+  @Override
+  public Message createMessage(Session session) throws JMSException {
+    return session.createTextMessage(new Date() + " 测试消息");
+  }
 
 }

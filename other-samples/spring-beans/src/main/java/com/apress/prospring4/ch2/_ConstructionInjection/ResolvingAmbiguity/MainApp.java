@@ -5,13 +5,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApp {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("InjectionResolvingAmbiguity.xml");
+    ApplicationContext context = new ClassPathXmlApplicationContext("InjectionResolvingAmbiguity.xml");
 
-        EmployeeService employeeService = (EmployeeService) context.getBean("employeeServiceBean");
-        System.out.println(employeeService);
+    EmployeeService employeeService = (EmployeeService) context.getBean("employeeServiceBean");
+    System.out.println(employeeService);
 
-    }
+  }
 
 }

@@ -4,12 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>spring-boot-websocket</artifactId>+
+        <artifactId>spring-boot-websocket</artifactId>
         <groupId>com.example</groupId>
         <version>0.0.1</version>
     </parent>
 
-    <groupId>com.example</groupId>
     <artifactId>websocket-chatroom</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>websocket-chatroom</name>

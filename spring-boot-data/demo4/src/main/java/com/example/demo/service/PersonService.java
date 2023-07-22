@@ -13,21 +13,21 @@ import java.util.List;
  */
 public interface PersonService {
 
-    Person savePersonWithRollBack(Person person);
+  Person savePersonWithRollBack(Person person);
 
-    Person savePersonWithoutRollBack(Person person);
+  Person savePersonWithoutRollBack(Person person);
 
-    List<Person> findAll();
+  List<Person> findAll();
 
-    List<Person> findAll(Sort sort);
+  List<Person> findAll(Sort sort);
 
-    Page<Person> findAll(PageRequest pageRequest);
-
-
-    List<Person> findByAddress(String address);
+  Page<Person> findAll(PageRequest pageRequest);
 
 
-    Person findByNameAndAddress(String name, String address);
+  List<Person> findByAddress(String address);
 
-    Person findByNameStartsWith( String name);
+
+  Person findByNameAndAddress(String name, String address);
+
+  Person findByNameStartsWith(String name);
 }

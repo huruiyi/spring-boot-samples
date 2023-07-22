@@ -14,14 +14,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @Component
 public class MyServer3 {
 
-    @Autowired
-    HelloService helloService;
+  @Autowired
+  HelloService helloService;
 
-    @Test
-    public void helloTest1() {
-        System.out.println("开始junit测试……");
-        String hello = helloService.hello("ooooooo");
-        System.out.println(hello);
-    }
+  @Test
+  public void helloTest1() {
+    System.out.println("开始junit测试……");
+    String hello = helloService.hello("ooooooo");
+    System.out.println(hello);
+  }
 
 }

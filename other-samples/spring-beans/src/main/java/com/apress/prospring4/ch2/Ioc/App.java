@@ -7,11 +7,11 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan
 public class App {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        ApplicationContext context = new AnnotationConfigApplicationContext(App.class);
-        MessagePrinter printer = context.getBean(MessagePrinter.class);
-        printer.printMessage();
-    }
+    ApplicationContext context = new AnnotationConfigApplicationContext(App.class);
+    MessagePrinter printer = context.getBean(MessagePrinter.class);
+    printer.printMessage();
+  }
 
 }

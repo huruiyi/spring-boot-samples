@@ -7,53 +7,48 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import static java.lang.System.*;
 
-public class JacksonDemo
-{
-   public static void main(String[] args) throws Exception
-   {
-      String jsonContent =
-      "{" +
-      "   \"make\": \"Ford\"," +
-      "   \"model\": \"F150\"," +
-      "   \"year\": 2008" +
-      "}";
-      ObjectMapper mapper = new ObjectMapper();
-      Vehicle vehicle = mapper.readValue(jsonContent, 
-                                         Vehicle.class);
-      out.printf("Make %s, Model %s, Year %d%n", 
-                 vehicle.getMake(), vehicle.getModel(), 
-                 vehicle.getYear());
-   }
+public class JacksonDemo {
+
+  public static void main(String[] args) throws Exception {
+    String jsonContent =
+        "{" +
+            "   \"make\": \"Ford\"," +
+            "   \"model\": \"F150\"," +
+            "   \"year\": 2008" +
+            "}";
+    ObjectMapper mapper = new ObjectMapper();
+    Vehicle vehicle = mapper.readValue(jsonContent,
+        Vehicle.class);
+    out.printf("Make %s, Model %s, Year %d%n",
+        vehicle.getMake(), vehicle.getModel(),
+        vehicle.getYear());
+  }
 }
 
-class Vehicle
-{
-   private String make, model;
+class Vehicle {
 
-   private int year;
+  private String make, model;
 
-   @JsonCreator
-   Vehicle(@JsonProperty("make") String make, 
-           @JsonProperty("model") String model, 
-           @JsonProperty("year") int year)
-   {
-      this.make = make;
-      this.model = model;
-      this.year = year;
-   }
+  private int year;
 
-   String getMake()
-   {
-      return make;
-   }
+  @JsonCreator
+  Vehicle(@JsonProperty("make") String make,
+      @JsonProperty("model") String model,
+      @JsonProperty("year") int year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+  }
 
-   String getModel()
-   {
-      return model;
-   }
+  String getMake() {
+    return make;
+  }
 
-   int getYear()
-   {
-      return year;
-   }
+  String getModel() {
+    return model;
+  }
+
+  int getYear() {
+    return year;
+  }
 }

@@ -9,7 +9,6 @@
         <version>0.0.1</version>
     </parent>
 
-    <groupId>com.example</groupId>
     <artifactId>websocket-stomp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>websocket-stomp</name>

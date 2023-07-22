@@ -5,13 +5,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApp {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("AutowiringByConstructor.xml");
+    ApplicationContext context = new ClassPathXmlApplicationContext("AutowiringByConstructor.xml");
 
-        EmployeeService employeeService = (EmployeeService) context.getBean("employeeServiceBean");
-        System.out.println(employeeService.getEmployee());
+    EmployeeService employeeService = (EmployeeService) context.getBean("employeeServiceBean");
+    System.out.println(employeeService.getEmployee());
 
-    }
+  }
 
 }

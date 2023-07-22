@@ -5,21 +5,22 @@ package com.example.AdvancedClassDesign.Listing_05;/*---------------------------
 ------------------------------------------------------------------------------*/
 
 class StatusReporter {
-    static Shape.Color getDescriptiveColor(final Shape.Color color) {
 
-        // note the use of anonymous inner classes here 
-        // -- specifically, there is no name for the class and we construct 
-        // and use the class "on the fly" in the return statement! 
+  static Shape.Color getDescriptiveColor(final Shape.Color color) {
 
-        return new Shape.Color() {
-            public String toString() {
-                return "You selected a color with RGB values" + color;
-            }
-        };
-    }
+    // note the use of anonymous inner classes here
+    // -- specifically, there is no name for the class and we construct
+    // and use the class "on the fly" in the return statement!
 
-    public static void main(String[] args) {
-        Shape.Color descriptiveColor = StatusReporter.getDescriptiveColor(new Shape.Color(0, 0, 0));
-        System.out.println(descriptiveColor);
-    }
+    return new Shape.Color() {
+      public String toString() {
+        return "You selected a color with RGB values" + color;
+      }
+    };
+  }
+
+  public static void main(String[] args) {
+    Shape.Color descriptiveColor = StatusReporter.getDescriptiveColor(new Shape.Color(0, 0, 0));
+    System.out.println(descriptiveColor);
+  }
 }

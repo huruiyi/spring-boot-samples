@@ -17,38 +17,39 @@ import com.example.Thread.jcip.annotations.*;
  */
 @ThreadSafe
 public class PrimeGenerator implements Runnable {
-    private static ExecutorService exec = Executors.newCachedThreadPool();
 
-    @GuardedBy("this")
-    private final List<BigInteger> primes = new ArrayList<BigInteger>();
-    private volatile boolean cancelled;
+  private static ExecutorService exec = Executors.newCachedThreadPool();
 
-    public void run() {
-        BigInteger p = BigInteger.ONE;
-        while (!cancelled) {
-            p = p.nextProbablePrime();
-            synchronized (this) {
-                primes.add(p);
-            }
-        }
+  @GuardedBy("this")
+  private final List<BigInteger> primes = new ArrayList<BigInteger>();
+  private volatile boolean cancelled;
+
+  static List<BigInteger> aSecondOfPrimes() throws InterruptedException {
+    PrimeGenerator generator = new PrimeGenerator();
+    exec.execute(generator);
+    try {
+      SECONDS.sleep(1);
+    } finally {
+      generator.cancel();
     }
+    return generator.get();
+  }
 
-    public void cancel() {
-        cancelled = true;
+  public void run() {
+    BigInteger p = BigInteger.ONE;
+    while (!cancelled) {
+      p = p.nextProbablePrime();
+      synchronized (this) {
+        primes.add(p);
+      }
     }
+  }
 
-    public synchronized List<BigInteger> get() {
-        return new ArrayList<BigInteger>(primes);
-    }
+  public void cancel() {
+    cancelled = true;
+  }
 
-    static List<BigInteger> aSecondOfPrimes() throws InterruptedException {
-        PrimeGenerator generator = new PrimeGenerator();
-        exec.execute(generator);
-        try {
-            SECONDS.sleep(1);
-        } finally {
-            generator.cancel();
-        }
-        return generator.get();
-    }
+  public synchronized List<BigInteger> get() {
+    return new ArrayList<BigInteger>(primes);
+  }
 }

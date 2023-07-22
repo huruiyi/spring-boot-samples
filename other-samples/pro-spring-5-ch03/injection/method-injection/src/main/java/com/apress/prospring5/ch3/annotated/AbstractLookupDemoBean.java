@@ -5,13 +5,14 @@ import org.springframework.stereotype.Component;
 
 @Component("abstractLookupBean")
 public class AbstractLookupDemoBean implements DemoBean {
-    @Lookup("singer")
-    public Singer getMySinger() {
-        return null; // This implementation will be overridden by dynamically generated subclass
-    }
 
-    @Override
-    public void doSomething() {
-        getMySinger().sing();
-    }
+  @Lookup("singer")
+  public Singer getMySinger() {
+    return null; // This implementation will be overridden by dynamically generated subclass
+  }
+
+  @Override
+  public void doSomething() {
+    getMySinger().sing();
+  }
 }

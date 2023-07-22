@@ -5,10 +5,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Application {
 
-    public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("_Aspect3.xml");
-        Tiger tiger = context.getBean(Tiger.class);
-        tiger.walk();
-    }
+  public static void main(String[] args) {
+    ApplicationContext context = new ClassPathXmlApplicationContext("_Aspect3.xml");
+    Tiger tiger = context.getBean(Tiger.class);
+    tiger.walk();
+  }
 
 }

@@ -4,13 +4,13 @@ import com.apress.prospring4.ch2.customScope.service.MessageService;
 
 public class MessagePrinter {
 
-    final private MessageService service;
+  final private MessageService service;
 
-    public MessagePrinter(MessageService service) {
-        this.service = service;
-    }
+  public MessagePrinter(MessageService service) {
+    this.service = service;
+  }
 
-    public void printMessage() {
-        System.out.println(this.service.getMessage());
-    }
+  public void printMessage() {
+    System.out.println(this.service.getMessage());
+  }
 }

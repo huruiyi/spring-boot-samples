@@ -14,15 +14,15 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan
 public class AppConfig {
 
-	@Bean
-	public static CustomScopeConfigurer customScopeConfigurer() {
-		CustomScopeConfigurer customScopeConfigurer = new CustomScopeConfigurer();
+  @Bean
+  public static CustomScopeConfigurer customScopeConfigurer() {
+    CustomScopeConfigurer customScopeConfigurer = new CustomScopeConfigurer();
 
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("threadScope", new ThreadScope());
+    Map<String, Object> map = new HashMap<String, Object>();
+    map.put("threadScope", new ThreadScope());
 
-		// 配置scope
-		customScopeConfigurer.setScopes(map);
-		return customScopeConfigurer;
-	}
+    // 配置scope
+    customScopeConfigurer.setScopes(map);
+    return customScopeConfigurer;
+  }
 }

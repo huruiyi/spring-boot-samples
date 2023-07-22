@@ -6,27 +6,28 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Demo1 {
-	public static void main(String[] args) {
-		Apple apple = new Apple();
-		System.out.println(apple.toString());
 
-		List<Field> fields = Arrays.asList(apple.getClass().getDeclaredFields());
-		for (Field field : fields) {
-			Annotation[] declaredAnnotations = field.getDeclaredAnnotations();
-			for (Annotation annotation : declaredAnnotations) {
+  public static void main(String[] args) {
+    Apple apple = new Apple();
+    System.out.println(apple.toString());
 
-				if (FruitName.class == annotation.annotationType()) {
-					FruitName fruitName = (FruitName) annotation;
-					System.out.println(fruitName.value());
-				}
+    List<Field> fields = Arrays.asList(apple.getClass().getDeclaredFields());
+    for (Field field : fields) {
+      Annotation[] declaredAnnotations = field.getDeclaredAnnotations();
+      for (Annotation annotation : declaredAnnotations) {
 
-				if (FruitColor.class == annotation.annotationType()) {
-					FruitColor fruitColor = (FruitColor) annotation;
-					System.out.println(fruitColor.fruitColor());
-				}
+        if (FruitName.class == annotation.annotationType()) {
+          FruitName fruitName = (FruitName) annotation;
+          System.out.println(fruitName.value());
+        }
 
-				System.out.println(annotation);
-			}
-		}
-	}
+        if (FruitColor.class == annotation.annotationType()) {
+          FruitColor fruitColor = (FruitColor) annotation;
+          System.out.println(fruitColor.fruitColor());
+        }
+
+        System.out.println(annotation);
+      }
+    }
+  }
 }

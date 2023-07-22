@@ -10,13 +10,15 @@ import com.example.Thread.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 @ThreadSafe
-        public class EagerInitialization {
-    private static Resource resource = new Resource();
+public class EagerInitialization {
 
-    public static Resource getResource() {
-        return resource;
-    }
+  private static Resource resource = new Resource();
 
-    static class Resource {
-    }
+  public static Resource getResource() {
+    return resource;
+  }
+
+  static class Resource {
+
+  }
 }

@@ -9,10 +9,11 @@ import java.nio.file.*;
 import java.io.IOException;
 
 class PathExists2 {
-    public static void main(String[] args) throws IOException {
-        Path aFilePath = Paths.get("D:\\directory\\file.txt");
-        System.out.println(aFilePath.isAbsolute());
-    }
+
+  public static void main(String[] args) throws IOException {
+    Path aFilePath = Paths.get("D:\\directory\\file.txt");
+    System.out.println(aFilePath.isAbsolute());
+  }
 }
 
 

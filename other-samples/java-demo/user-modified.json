@@ -1,1 +1,9 @@
-{"userImage":"Rm9vYmFyIQ==","gender":"MALE","name":{"last":"ka","first":"ba"},"verified":false}
+{
+  "userImage": "Rm9vYmFyIQ==",
+  "gender": "MALE",
+  "name": {
+    "last": "ka",
+    "first": "ba"
+  },
+  "verified": false
+}

@@ -7,13 +7,13 @@ import org.springframework.shell.standard.ShellMethod;
 @ShellComponent
 public class MathCommands {
 
-    @ShellMethod("Add two integers together.")
-    public int add(int a, int b) {
-        return a + b;
-    }
+  @ShellMethod("Add two integers together.")
+  public int add(int a, int b) {
+    return a + b;
+  }
 
-    @ShellMethod("Display stuff.")
-    public String echo(int a, int b, int c) {
-        return String.format("You said a=%d, b=%d, c=%d", a, b, c);
-    }
+  @ShellMethod("Display stuff.")
+  public String echo(int a, int b, int c) {
+    return String.format("You said a=%d, b=%d, c=%d", a, b, c);
+  }
 }

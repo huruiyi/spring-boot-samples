@@ -6,11 +6,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class PersonService {
 
-    public Person getUserInfo() {
-        Person user = new Person();
-        user.setFirstName("San");
-        user.setLastName("Zhang");
-        user.setAge(18);
-        return user;
-    }
+  public Person getUserInfo() {
+    Person user = new Person();
+    user.setFirstName("San");
+    user.setLastName("Zhang");
+    user.setAge(18);
+    return user;
+  }
 }

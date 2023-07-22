@@ -9,7 +9,8 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
-    @Query(value = "select t from User t where t.name = ?1")
-    List<User> findByName(String name);
+
+  @Query(value = "select t from User t where t.name = ?1")
+  List<User> findByName(String name);
 }
 

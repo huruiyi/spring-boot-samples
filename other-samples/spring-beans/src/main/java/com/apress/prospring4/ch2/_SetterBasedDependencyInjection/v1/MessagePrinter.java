@@ -4,13 +4,13 @@ import com.apress.prospring4.ch2._SetterBasedDependencyInjection.v1.service.Mess
 
 public class MessagePrinter {
 
-    final private MessageService service;
+  final private MessageService service;
 
-    public MessagePrinter(MessageService service) {
-        this.service = service;
-    }
+  public MessagePrinter(MessageService service) {
+    this.service = service;
+  }
 
-    public void printMessage() {
-        System.out.println(this.service.getMessage());
-    }
+  public void printMessage() {
+    System.out.println(this.service.getMessage());
+  }
 }

@@ -4,21 +4,22 @@ import java.util.ArrayList;
 
 
 public class GenericType3 {
-    public static void main(String[] args) {
-        String name = "Arek"; //raw type
-        String name2 = "Wiola"; //raw type
 
-        ArrayList<String> n = new ArrayList<>();
+  public static void main(String[] args) {
+    String name = "Arek"; //raw type
+    String name2 = "Wiola"; //raw type
 
-        n.add(name);
-        n.add(name2);
+    ArrayList<String> n = new ArrayList<>();
 
-        String firstName = n.get(0);
-        System.out.println(firstName);
+    n.add(name);
+    n.add(name2);
 
-        Box<String> box = new Box<>();
-        Box<Employee> box2 = new Box<>();
-    }
+    String firstName = n.get(0);
+    System.out.println(firstName);
+
+    Box<String> box = new Box<>();
+    Box<Employee> box2 = new Box<>();
+  }
 }
 
 

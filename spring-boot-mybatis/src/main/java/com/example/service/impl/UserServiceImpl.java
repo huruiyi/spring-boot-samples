@@ -11,22 +11,22 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserMapper userMapper;
+  @Autowired
+  private UserMapper userMapper;
 
-    @Override
-    public List<User> findAll() {
-        return userMapper.selectAllUsers();
-    }
+  @Override
+  public List<User> findAll() {
+    return userMapper.selectAllUsers();
+  }
 
-    @Override
-    public Boolean add(User user) {
-        return userMapper.insertUser(user) > 0;
-    }
+  @Override
+  public Boolean add(User user) {
+    return userMapper.insertUser(user) > 0;
+  }
 
-    @Override
-    public User selectById(Integer id) {
-        return userMapper.selectByPrimaryKey(id);
-    }
+  @Override
+  public User selectById(Integer id) {
+    return userMapper.selectByPrimaryKey(id);
+  }
 
 }

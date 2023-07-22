@@ -5,68 +5,69 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ShopList {
-    private String name;
-    private int count;
-    private double price;
 
-    private List<Item> items = new ArrayList<Item>();
+  private String name;
+  private int count;
+  private double price;
 
-    private Item onlyOne;
+  private List<Item> items = new ArrayList<Item>();
 
-    private String[] allGood;
+  private Item onlyOne;
 
-    public String[] getAllGood() {
-        return allGood;
-    }
+  private String[] allGood;
 
-    public void setAllGood(String[] allGood) {
-        this.allGood = allGood;
-    }
+  public String[] getAllGood() {
+    return allGood;
+  }
 
-    public Item getOnlyOne() {
-        return onlyOne;
-    }
+  public void setAllGood(String[] allGood) {
+    this.allGood = allGood;
+  }
 
-    public void setOnlyOne(Item onlyOne) {
-        this.onlyOne = onlyOne;
-    }
+  public Item getOnlyOne() {
+    return onlyOne;
+  }
 
-    public List<Item> getItems() {
-        return items;
-    }
+  public void setOnlyOne(Item onlyOne) {
+    this.onlyOne = onlyOne;
+  }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
+  public List<Item> getItems() {
+    return items;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setItems(List<Item> items) {
+    this.items = items;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public int getCount() {
-        return count;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setCount(int count) {
-        this.count = count;
-    }
+  public int getCount() {
+    return count;
+  }
 
-    public double getPrice() {
-        return price;
-    }
+  public void setCount(int count) {
+    this.count = count;
+  }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+  public double getPrice() {
+    return price;
+  }
 
-    @Override
-    public String toString() {
-        return "ShopList [name=" + name + ", count=" + count + ", price="
-                + price + ", items=" + items + ", onlyOne="
-                + onlyOne + ", allGood=" + Arrays.toString(allGood) + "]";
-    }
+  public void setPrice(double price) {
+    this.price = price;
+  }
+
+  @Override
+  public String toString() {
+    return "ShopList [name=" + name + ", count=" + count + ", price="
+        + price + ", items=" + items + ", onlyOne="
+        + onlyOne + ", allGood=" + Arrays.toString(allGood) + "]";
+  }
 }

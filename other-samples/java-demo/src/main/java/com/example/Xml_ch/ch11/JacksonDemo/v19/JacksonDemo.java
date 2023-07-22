@@ -18,72 +18,66 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import static java.lang.System.*;
 
-public class JacksonDemo
-{
-   public static void main(String[] args) throws Exception
-   {
-      String jsonContent =
-      "{" +
-      "   \"color\": \"black\"" +
-      "}";
-
-      Canvas canvas = 
-         new ObjectMapper().readerFor(Canvas.class)
-                           .readValue(jsonContent);
-      out.printf("Color = %s%n", canvas.color);
-      new ObjectMapper().writeValue(new File("color.json"), 
-                                    canvas);
-   }
+enum Color {
+  BLACK, UNKNOWN
 }
 
-enum Color
-{
-   BLACK, UNKNOWN
+public class JacksonDemo {
+
+  public static void main(String[] args) throws Exception {
+    String jsonContent =
+        "{" +
+            "   \"color\": \"black\"" +
+            "}";
+
+    Canvas canvas =
+        new ObjectMapper().readerFor(Canvas.class)
+            .readValue(jsonContent);
+    out.printf("Color = %s%n", canvas.color);
+    new ObjectMapper().writeValue(new File("color.json"),
+        canvas);
+  }
 }
 
-class Canvas
-{
-   @JsonDeserialize(using = ColorDeserializer.class)
-   @JsonSerialize(using = ColorSerializer.class)
-   public Color color;
+class Canvas {
+
+  @JsonDeserialize(using = ColorDeserializer.class)
+  @JsonSerialize(using = ColorSerializer.class)
+  public Color color;
 }
 
-class ColorDeserializer extends JsonDeserializer<Color>
-{
-   @Override
-   public Color deserialize(JsonParser jsonParser,
-                            DeserializationContext 
-                            deserializationContext)
-      throws IOException, JsonProcessingException
-   {
-      switch (jsonParser.getText().toLowerCase())
-      {
-         case "black":
-            return Color.BLACK;
+class ColorDeserializer extends JsonDeserializer<Color> {
 
-         default:
-            return Color.UNKNOWN;
-      }
-   }
+  @Override
+  public Color deserialize(JsonParser jsonParser,
+      DeserializationContext
+          deserializationContext)
+      throws IOException, JsonProcessingException {
+    switch (jsonParser.getText().toLowerCase()) {
+      case "black":
+        return Color.BLACK;
+
+      default:
+        return Color.UNKNOWN;
+    }
+  }
 }
 
-class ColorSerializer extends JsonSerializer<Color>
-{
-   @Override
-   public void serialize(Color color, 
-                         JsonGenerator jsonGenerator,
-                         SerializerProvider 
-                         serializerProvider)
-      throws IOException, JsonProcessingException
-   {
-      switch (color)
-      {
-         case BLACK:
-            jsonGenerator.writeString("black");
-            break;
+class ColorSerializer extends JsonSerializer<Color> {
 
-         default:
-            jsonGenerator.writeString("unknown");
-      }
-   }
+  @Override
+  public void serialize(Color color,
+      JsonGenerator jsonGenerator,
+      SerializerProvider
+          serializerProvider)
+      throws IOException, JsonProcessingException {
+    switch (color) {
+      case BLACK:
+        jsonGenerator.writeString("black");
+        break;
+
+      default:
+        jsonGenerator.writeString("unknown");
+    }
+  }
 }

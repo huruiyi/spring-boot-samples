@@ -7,13 +7,14 @@ import java.util.List;
 import java.util.Optional;
 
 public interface EmployeeService {
-    Iterable<Employee> findAll();
 
-    Employee save(Employee employee) throws JsonProcessingException;
+  Iterable<Employee> findAll();
 
-    Optional<Employee> findByID(String id);
+  Employee save(Employee employee) throws JsonProcessingException;
 
-    void remove(String id);
+  Optional<Employee> findByID(String id);
 
-    void remove(Iterable<Employee> list);
+  void remove(String id);
+
+  void remove(Iterable<Employee> list);
 }

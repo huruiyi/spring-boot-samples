@@ -2,39 +2,41 @@ package com.example.GenericType.OOPA;
 
 
 class BankAccount {
-    public BankAccount(double accountBalance) {
-        this.accountBalance = accountBalance;
+
+  private double accountBalance;
+
+  public BankAccount(double accountBalance) {
+    this.accountBalance = accountBalance;
+  }
+
+  public double getAccountBalance() {
+    return accountBalance;
+  }
+
+  public void calculateInterest(final double interestRate) {
+
+    class Interest {
+
+      private double interestRate;
+
+      public Interest() {
+        this.interestRate = interestRate;
+      }
+
+      public double getInterestRate() {
+        return interestRate;
+      }
+
+      public void changeAccountBalance() {
+        double interest = (accountBalance * interestRate) / 100;
+        accountBalance += interest;
+      }
     }
 
-    public double getAccountBalance() {
-        return accountBalance;
-    }
+    Interest interest = new Interest();
 
-    public void calculateInterest(final double interestRate) {
+    interest.changeAccountBalance();
 
-        class Interest {
-            public Interest() {
-                this.interestRate = interestRate;
-            }
-
-            public double getInterestRate() {
-                return interestRate;
-            }
-
-            public void changeAccountBalance() {
-                double interest = (accountBalance * interestRate) / 100;
-                accountBalance += interest;
-            }
-
-            private double interestRate;
-        }
-
-        Interest interest = new Interest();
-
-        interest.changeAccountBalance();
-
-    }
-
-    private double accountBalance;
+  }
 
 }

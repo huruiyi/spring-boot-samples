@@ -13,17 +13,18 @@ import com.example.Thread.jcip.annotations.*;
  */
 @ThreadSafe
 public class SafeStates {
-    private final Map<String, String> states;
 
-    public SafeStates() {
-        states = new HashMap<String, String>();
-        states.put("alaska", "AK");
-        states.put("alabama", "AL");
-        /*...*/
-        states.put("wyoming", "WY");
-    }
+  private final Map<String, String> states;
 
-    public String getAbbreviation(String s) {
-        return states.get(s);
-    }
+  public SafeStates() {
+    states = new HashMap<String, String>();
+    states.put("alaska", "AK");
+    states.put("alabama", "AL");
+    /*...*/
+    states.put("wyoming", "WY");
+  }
+
+  public String getAbbreviation(String s) {
+    return states.get(s);
+  }
 }

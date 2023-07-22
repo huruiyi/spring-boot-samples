@@ -6,105 +6,105 @@ import javax.persistence.*;
 @Table(name = "User")
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Integer id;
 
-    @Column(nullable = false)
-    private String name;
+  @Column(nullable = false)
+  private String name;
 
-    @Column(nullable = false)
-    private String password;
-
-
-    private String sex;
-
-    private String email;
-
-    private String telPhone;
-
-    private String pSign;
-
-    private boolean disabled;
-
-    public User() {
-    }
-
-    public User(Integer id, String name, String password, boolean disabled) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        this.disabled = disabled;
-    }
+  @Column(nullable = false)
+  private String password;
 
 
-    public Integer getId() {
-        return id;
-    }
+  private String sex;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+  private String email;
 
-    public String getName() {
-        return name;
-    }
+  private String telPhone;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  private String pSign;
 
-    public String getPassword() {
-        return password;
-    }
+  private boolean disabled;
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+  public User() {
+  }
+
+  public User(Integer id, String name, String password, boolean disabled) {
+    this.id = id;
+    this.name = name;
+    this.password = password;
+    this.disabled = disabled;
+  }
 
 
-    public boolean isDisabled() {
-        return disabled;
-    }
+  public Integer getId() {
+    return id;
+  }
 
-    public void setDisabled(boolean disabled) {
-        this.disabled = disabled;
-    }
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
-    public String getSex() {
-        return sex;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public String getPassword() {
+    return password;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public void setPassword(String password) {
+    this.password = password;
+  }
 
-    public String getTelPhone() {
-        return telPhone;
-    }
 
-    public void setTelPhone(String telPhone) {
-        this.telPhone = telPhone;
-    }
+  public boolean isDisabled() {
+    return disabled;
+  }
 
-    public String getpSign() {
-        return pSign;
-    }
+  public void setDisabled(boolean disabled) {
+    this.disabled = disabled;
+  }
 
-    public void setpSign(String pSign) {
-        this.pSign = pSign;
-    }
+  public String getSex() {
+    return sex;
+  }
 
-    @Override
-    public String toString() {
-        return "User{" + "id=" + id + ", name='" + name + '\'' + ", password='" + password + '\'' + ", disabled=" + disabled + '}';
-    }
+  public void setSex(String sex) {
+    this.sex = sex;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public String getTelPhone() {
+    return telPhone;
+  }
+
+  public void setTelPhone(String telPhone) {
+    this.telPhone = telPhone;
+  }
+
+  public String getpSign() {
+    return pSign;
+  }
+
+  public void setpSign(String pSign) {
+    this.pSign = pSign;
+  }
+
+  @Override
+  public String toString() {
+    return "User{" + "id=" + id + ", name='" + name + '\'' + ", password='" + password + '\'' + ", disabled=" + disabled + '}';
+  }
 }
