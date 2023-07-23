@@ -59,6 +59,7 @@
         <module>spring-boot-mongo</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-mybatisplus</module>
+        <module>spring-boot-mybatisplus-v2</module>
         <module>spring-boot-openapi</module>
         <module>spring-boot-redis</module>
         <module>spring-boot-shell</module>
