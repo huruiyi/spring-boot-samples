@@ -1,8 +1,7 @@
 package com.example.Spring;
 
-import org.junit.Test;
-
 import java.util.Properties;
+import org.junit.Test;
 
 public class Demo {
 

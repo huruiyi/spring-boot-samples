@@ -1,13 +1,11 @@
 package com.example.Spring;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import com.example.Spring.model.Book;
 import com.example.Spring.service.impl.BookServiceImpl;
-import org.aspectj.lang.annotation.Before;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class BookServiceImplTest {
 

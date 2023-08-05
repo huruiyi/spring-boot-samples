@@ -91,7 +91,21 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>4.4.0</version>
+        </dependency>
+        <dependency>
+            <artifactId>fastjson2</artifactId>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <version>2.0.21.android</version>
+        </dependency>
+        <dependency>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <groupId>org.bouncycastle</groupId>
+            <version>1.70</version>
         </dependency>
     </dependencies>
 

@@ -1,28 +1,29 @@
-package com.example.NoSql;
+package com.example;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.bson.Document;
-import org.bson.conversions.Bson;
-import org.bson.types.ObjectId;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
-import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.result.DeleteResult;
+import java.util.ArrayList;
+import java.util.List;
+import org.bson.Document;
+import org.bson.conversions.Bson;
+import org.bson.types.ObjectId;
 
 //http://mongodb.github.io/mongo-java-driver/
 
 public class Mongos {
 
-  private static MongoClient mongoClient;
+  private static final MongoClient mongoClient;
 
   static {
-    mongoClient = new MongoClient("localhost", 27017);
+    mongoClient = MongoClients.create("mongodb://localhost:27017");
   }
 
   public static void main(String[] args) {
@@ -35,9 +36,8 @@ public class Mongos {
       // mongoDatabase.createCollection("test");
       MongoCollection<Document> collection = mongoDatabase.getCollection("fbilion");
       FindIterable<Document> findIterable = collection.find();
-      MongoCursor<Document> mongoCursor = findIterable.iterator();
-      while (mongoCursor.hasNext()) {
-        System.out.println(mongoCursor.next());
+      for (Document document : findIterable) {
+        System.out.println(document);
       }
     } catch (Exception e) {
       System.err.println(e.getClass().getName() + ": " + e.getMessage());
@@ -51,7 +51,7 @@ public class Mongos {
       Document document = new Document();
       document.append("name", "xiaoxuexue");
       document.append("age", 100001);
-      List<Document> documents = new ArrayList<Document>();
+      List<Document> documents = new ArrayList<>();
       documents.add(document);
       collection.insertMany(documents);
     } catch (Exception e) {
@@ -86,7 +86,7 @@ public class Mongos {
       // collection.deleteMany(Filters.gt("age", 90000));
 
       DeleteResult deleteOne = collection.deleteOne(Filters.gt("age", 89980));
-      System.out.println(collection.count() + "  " + deleteOne.getDeletedCount());
+      System.out.println(collection.countDocuments() + "  " + deleteOne.getDeletedCount());
     } catch (Exception e) {
       System.err.println(e.getClass().getName() + ": " + e.getMessage());
     }

@@ -1,29 +1,31 @@
-package com.example.NoSql;
-
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.args.ListPosition;
+package com.example;
 
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.args.ListPosition;
 
-public class Redis {
+public class RedisTest {
 
-  private static Jedis jedis;
+  private static final Logger log = LoggerFactory.getLogger(RedisTest.class);
+
+  private static final Jedis jedis;
 
   static {
-    jedis = new Jedis("192.168.146.128");
-    //jedis.auth("807776962");
+    jedis = new Jedis("127.0.0.1",6379);
   }
 
   public static void main(String[] args) {
-    Redis_Set_Get();
+    Redis_Lsit1();
   }
 
   public static void Redis_Set_Get() {
-    System.out.println("服务正在运行: " + jedis.ping());
+    log.info("服务正在运行: " + jedis.ping());
     jedis.set("name", "jredis");
-    System.out.println("jredis value:" + jedis.get("name"));
+    log.info("jredis value:" + jedis.get("name"));
   }
 
   public static void Redis_Keys() {
@@ -32,9 +34,7 @@ public class Redis {
       System.out.println(key);
     }
     System.out.println("****************************");
-    Iterator<String> it = keys.iterator();
-    while (it.hasNext()) {
-      String key = it.next();
+    for (String key : keys) {
       System.out.println(key);
     }
   }
@@ -125,4 +125,5 @@ public class Redis {
     }
     System.out.print("ok");
   }
+
 }
