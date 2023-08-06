@@ -21,7 +21,7 @@
         <module>other-samples/java-demo</module>
         <module>other-samples/kafka-demo</module>
         <module>other-samples/mybatis-first</module>
-
+        <module>other-samples/nosql-demo</module>
         <module>other-samples/pro-spring-5-ch02</module>
 
         <module>other-samples/pro-spring-5-ch03/dependency-pull</module>
@@ -70,6 +70,5 @@
         <module>spring-boot-websocket</module>
         <module>spring-boot-dubbo</module>
         <module>spring-boot-openapi</module>
-      <module>other-samples/nosql-demo</module>
     </modules>
 </project>
