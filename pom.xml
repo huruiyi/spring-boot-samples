@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <groupId>com.example</groupId>
-    <artifactId>spring-boot-samples</artifactId>
-    <version>0.0.1</version>
+  <groupId>com.example</groupId>
+  <artifactId>spring-boot-samples</artifactId>
+  <version>0.0.1</version>
 
-    <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>pom</packaging>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.9</version>
-        <relativePath/>
-    </parent>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.7.9</version>
+    <relativePath/>
+  </parent>
 
-    <modules>
-        <module>other-samples/hibernate-demo</module>
-        <module>other-samples/java-demo</module>
-        <module>other-samples/kafka-demo</module>
-        <module>other-samples/mybatis-first</module>
-        <module>other-samples/nosql-demo</module>
-        <module>other-samples/pro-spring-5-ch02</module>
+  <modules>
+    <module>other-samples/hibernate-demo</module>
+    <module>other-samples/java-demo</module>
+    <module>other-samples/kafka-demo</module>
+    <module>other-samples/mybatis-first</module>
+    <module>other-samples/nosql-demo</module>
+    <module>other-samples/pro-spring-5-ch02</module>
 
-        <module>other-samples/pro-spring-5-ch03/dependency-pull</module>
-        <module>other-samples/pro-spring-5-ch03/injection/constructor-injection</module>
-        <module>other-samples/pro-spring-5-ch03/injection/setter-injection</module>
-        <module>other-samples/pro-spring-5-ch03/injection/method-injection</module>
-        <module>other-samples/pro-spring-5-ch03/injection/injection</module>
-        <module>other-samples/pro-spring-5-ch03/injection/field-injection</module>
+    <module>other-samples/pro-spring-5-ch03/dependency-pull</module>
+    <module>other-samples/pro-spring-5-ch03/injection/constructor-injection</module>
+    <module>other-samples/pro-spring-5-ch03/injection/setter-injection</module>
+    <module>other-samples/pro-spring-5-ch03/injection/method-injection</module>
+    <module>other-samples/pro-spring-5-ch03/injection/injection</module>
+    <module>other-samples/pro-spring-5-ch03/injection/field-injection</module>
 
-        <module>other-samples/pro-spring-5-ch05/security</module>
-        <module>other-samples/pro-spring-5-ch05/static-pointcut</module>
+    <module>other-samples/pro-spring-5-ch05/security</module>
+    <module>other-samples/pro-spring-5-ch05/static-pointcut</module>
 
-        <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch6</module>
-        <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch7</module>
+    <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch6</module>
+    <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch7</module>
 
-        <module>other-samples/spring-dubbo/dubbo-api</module>
-        <module>other-samples/spring-dubbo/dubbo-consumer</module>
-        <module>other-samples/spring-dubbo/dubbo-provider</module>
+    <module>other-samples/spring-dubbo/dubbo-api</module>
+    <module>other-samples/spring-dubbo/dubbo-consumer</module>
+    <module>other-samples/spring-dubbo/dubbo-provider</module>
 
-        <module>other-samples/workflow/holiday-request</module>
-        <module>other-samples/spring-boot-knife4j</module>
-        <module>other-samples/spring-boot-limit</module>
-        <module>other-samples/spring-boot-swagger-ui</module>
+    <module>other-samples/workflow/holiday-request</module>
+    <module>other-samples/spring-boot-knife4j</module>
+    <module>other-samples/spring-boot-limit</module>
+    <module>other-samples/spring-boot-swagger-ui</module>
 
-        <module>other-samples/spring-basic</module>
-        <module>other-samples/spring-beans</module>
+    <module>other-samples/spring-basic</module>
+    <module>other-samples/spring-beans</module>
 
-        <module>spring-boot</module>
-        <module>spring-boot-activemq</module>
-        <module>spring-boot-actuator</module>
-        <module>spring-boot-admin-client</module>
-        <module>spring-boot-admin-server</module>
-        <module>spring-boot-data</module>
-        <module>spring-boot-docker</module>
-        <module>spring-boot-mongo</module>
-        <module>spring-boot-mybatis</module>
-        <module>spring-boot-mybatisplus</module>
-        <module>spring-boot-mybatisplus-v2</module>
-        <module>spring-boot-openapi</module>
-        <module>spring-boot-redis</module>
-        <module>spring-boot-shell</module>
-        <module>spring-boot-thymeleaf</module>
-        <module>spring-multi-datasource</module>
-        <module>spring-boot-websocket</module>
-        <module>spring-oauth2</module>
-        <module>spring-boot-websocket</module>
-        <module>spring-boot-dubbo</module>
-        <module>spring-boot-openapi</module>
-    </modules>
+    <module>spring-boot</module>
+    <module>spring-boot-activemq</module>
+    <module>spring-boot-actuator</module>
+    <module>spring-boot-admin-client</module>
+    <module>spring-boot-admin-server</module>
+    <module>spring-boot-data</module>
+    <module>spring-boot-docker</module>
+    <module>spring-boot-mongo</module>
+    <module>spring-boot-mybatis</module>
+    <module>spring-boot-mybatisplus</module>
+    <module>spring-boot-mybatisplus-v2</module>
+    <module>spring-boot-openapi</module>
+    <module>spring-boot-redis</module>
+    <module>spring-boot-shell</module>
+    <module>spring-boot-thymeleaf</module>
+    <module>spring-multi-datasource</module>
+    <module>spring-boot-websocket</module>
+    <module>spring-oauth2</module>
+    <module>spring-boot-websocket</module>
+    <module>spring-boot-dubbo</module>
+    <module>spring-boot-openapi</module>
+  </modules>
 </project>
