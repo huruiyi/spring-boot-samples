@@ -1,5 +1,9 @@
-package com.example.Orm;
+package com.example.demo;
 
+import com.example.entities.Customer2;
+import com.example.entities.Customer3;
+import com.example.entities.Customer4;
+import com.example.entities.Customer5;
 import com.example.utils.HibernateUtils;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

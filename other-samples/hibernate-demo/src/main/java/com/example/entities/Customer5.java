@@ -1,4 +1,4 @@
-package com.example.Orm;
+package com.example.entities;
 
 /**
  * 客户管理的实体类
@@ -8,9 +8,9 @@ package com.example.Orm;
  * varchar(32) DEFAULT NULL COMMENT '客户级别', `cust_phone` varchar(64) DEFAULT NULL COMMENT '固定电话', `cust_mobile` varchar(16) DEFAULT NULL COMMENT
  * '移动电话', PRIMARY KEY (`cust_id`) ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
  */
-public class Customer4 {
+public class Customer5 {
 
-  private String cust_id;
+  private Long cust_id;
   private String cust_name;
   private String cust_source;
   private String cust_industry;
@@ -18,11 +18,11 @@ public class Customer4 {
   private String cust_phone;
   private String cust_mobile;
 
-  public String getCust_id() {
+  public Long getCust_id() {
     return cust_id;
   }
 
-  public void setCust_id(String cust_id) {
+  public void setCust_id(Long cust_id) {
     this.cust_id = cust_id;
   }
 

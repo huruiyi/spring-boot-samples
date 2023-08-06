@@ -4,11 +4,11 @@
   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
   <!-- 建立类与表的映射 -->
-  <class name="com.example.Orm.Customer2" table="cst_customer">
+  <class name="com.example.entities.Customer3" table="cst_customer">
     <!-- 建立类中的属性与表中的主键对应 -->
     <id column="cust_id" name="cust_id">
-      <!-- 自增长, 多线程报异常 -->
-      <generator class="increment"/>
+      <!-- 主键自增长 -->
+      <generator class="identity"/>
     </id>
     <!-- 建立类中的普通的属性和表的字段的对应 -->
     <property column="cust_name" length="32" name="cust_name"/>

@@ -1,16 +1,14 @@
-package com.example.Orm;
+package com.example.demo;
 
+import com.example.entities.Customer;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import org.junit.jupiter.api.Test;
 
 public class HibernateDemo1 {
 
-  @Test
-  // 保存客户的案例,1.8以上会报异常
-  public void demo1() {
+  public static void main(String[] args) {
     // 1.加载Hibernate的核心配置文件
     Configuration configuration = new Configuration().configure();
     // 手动加载映射
@@ -34,7 +32,6 @@ public class HibernateDemo1 {
     session.close();
 
     sessionFactory.close();
-
 
   }
 }

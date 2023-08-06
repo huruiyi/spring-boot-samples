@@ -18,6 +18,7 @@
     </parent>
 
     <modules>
+        <module>other-samples/hibernate-demo</module>
         <module>other-samples/java-demo</module>
         <module>other-samples/kafka-demo</module>
         <module>other-samples/mybatis-first</module>

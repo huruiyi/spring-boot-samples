@@ -1,13 +1,18 @@
-package com.example.Orm;
+package com.example.demo;
 
+import com.example.entities.Customer;
+import com.example.entities.Customer6;
 import com.example.utils.HibernateUtils;
-import org.hibernate.*;
+import java.io.Serializable;
+import java.util.List;
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.junit.jupiter.api.Test;
-
-import java.io.Serializable;
-import java.util.List;
 
 public class HibernateDemo4 {
 
