@@ -2,8 +2,8 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean class="com.example.Spring.service.impl.HelloWorldImpl" id="springHelloWorld"></bean>
-  <bean class="com.example.Spring.service.unclassified.HelloWorldService" id="helloWorldSpringService">
+  <bean class="com.example.service.impl.HelloWorldImpl" id="springHelloWorld"></bean>
+  <bean class="com.example.service.unclassified.HelloWorldService" id="helloWorldSpringService">
     <property name="helloWorld" ref="springHelloWorld"/>
   </bean>
 </beans>

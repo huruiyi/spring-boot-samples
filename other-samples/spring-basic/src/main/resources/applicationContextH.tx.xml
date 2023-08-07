@@ -15,11 +15,11 @@
   <!-- Service配置 -->
   <aop:config>
     <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut1"/>
-    <aop:pointcut expression="execution(* com.example.Spring.tx.demoH.AccountServiceImpl.*(..))" id="pointcut1"/>
+    <aop:pointcut expression="execution(* com.example.tx.demoH.AccountServiceImpl.*(..))" id="pointcut1"/>
   </aop:config>
 
   <!-- Dao配置 -->
-  <bean class="com.example.Spring.tx.demoH.AccountDaoImpl" id="accountDao">
+  <bean class="com.example.tx.demoH.AccountDaoImpl" id="accountDao">
     <!-- 直接指定数据源,SPRING自动创建JdbcTemplate, 无需自己配置 jdbcTemplate_c3p0 -->
     <property name="dataSource" ref="c3poDataSource"/>
   </bean>
@@ -49,7 +49,7 @@
   </bean>
 
   <!-- 配置事务管理器 -->
-  <bean class="com.example.Spring.tx.demoH.AccountServiceImpl" id="accountService">
+  <bean class="com.example.tx.demoH.AccountServiceImpl" id="accountService">
     <property name="accountDao" ref="accountDao"/>
   </bean>
 
