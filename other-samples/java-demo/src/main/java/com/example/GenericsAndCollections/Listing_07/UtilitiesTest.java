@@ -6,8 +6,8 @@ package com.example.GenericsAndCollections.Listing_07;/*------------------------
 
 // This program demonstrates generic methods
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 class Utilities {
 

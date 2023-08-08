@@ -6,7 +6,8 @@ package com.example.Exceptions_Assertions.QuestionTime_10;
  * by SG Ganesh, Hari Kiran and Tushar Sharma
 ------------------------------------------------------------------------------*/
 
-import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 class ExceptionTest {
 

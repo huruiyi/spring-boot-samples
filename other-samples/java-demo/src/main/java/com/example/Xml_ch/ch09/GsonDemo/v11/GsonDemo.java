@@ -1,6 +1,6 @@
 package com.example.Xml_ch.ch09.GsonDemo.v11;
 
-import java.lang.reflect.Type;
+import static java.lang.System.out;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -8,8 +8,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
-
-import static java.lang.System.*;
+import java.lang.reflect.Type;
 
 public class GsonDemo {
 

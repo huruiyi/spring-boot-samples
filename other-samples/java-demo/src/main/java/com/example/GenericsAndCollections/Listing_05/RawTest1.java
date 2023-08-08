@@ -5,9 +5,9 @@ package com.example.GenericsAndCollections.Listing_05;
  * by SG Ganesh, Hari Kiran and Tushar Sharma
 ------------------------------------------------------------------------------*/
 
-import java.util.List;
-import java.util.LinkedList;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 class RawTest1 {
 

@@ -1,15 +1,12 @@
 package com.example.Xml_ch.ch11.JacksonDemo.v13;
 
-import java.util.ArrayList;
-import java.util.List;
+import static java.lang.System.out;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-
 import com.fasterxml.jackson.core.JsonGenerator;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import static java.lang.System.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JacksonDemo {
 

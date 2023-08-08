@@ -1,18 +1,15 @@
 package com.example.Xml_ch.ch11.JacksonDemo.v5;
 
-import java.io.File;
+import static java.lang.System.out;
 
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
-import static java.lang.System.*;
+import java.io.File;
 
 public class JacksonDemo {
 

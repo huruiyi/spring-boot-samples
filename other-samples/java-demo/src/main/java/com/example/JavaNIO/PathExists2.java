@@ -5,8 +5,9 @@ package com.example.JavaNIO;
  * by SG Ganesh, Hari Kiran and Tushar Sharma
 ------------------------------------------------------------------------------*/
 
-import java.nio.file.*;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 class PathExists2 {
 

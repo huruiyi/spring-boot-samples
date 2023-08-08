@@ -1,11 +1,11 @@
 package com.example.Xml_ch.ch12.JSONPDemo.v5;
 
+import static java.lang.System.out;
+
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonPointer;
-
-import static java.lang.System.*;
 
 /*
    JsonPointer Demonstration:

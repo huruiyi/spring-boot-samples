@@ -1,7 +1,6 @@
 package com.example.Unfiled;
 
 
-import com.example.Model.CusResult;
 import com.example.Model.Greeting;
 import com.example.Model.Quote;
 import org.junit.jupiter.api.DisplayName;

@@ -1,11 +1,10 @@
 package com.example.Xml_ch.ch11.JacksonDemo.v10;
 
+import static java.lang.System.out;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import static java.lang.System.*;
 
 public class JacksonDemo {
 

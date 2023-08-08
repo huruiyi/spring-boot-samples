@@ -1,7 +1,5 @@
 package com.example.Inheritance.monsters;
 
-import com.example.Inheritance.monsters.Monster;
-
 /**
  * @author Arek
  */

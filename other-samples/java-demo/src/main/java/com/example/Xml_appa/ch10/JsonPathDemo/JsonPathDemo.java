@@ -1,8 +1,8 @@
 package com.example.Xml_appa.ch10.JsonPathDemo;
 
-import com.jayway.jsonpath.JsonPath;
+import static java.lang.System.out;
 
-import static java.lang.System.*;
+import com.jayway.jsonpath.JsonPath;
 
 public class JsonPathDemo {
 

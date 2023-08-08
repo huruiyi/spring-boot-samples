@@ -1,10 +1,9 @@
 package com.example.DataSourcePool;
 
+import com.example.utils.JdbcUtils;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.LinkedList;
-
-import com.example.utils.JdbcUtils;
 
 /**
  * @author levue 自定义数据池

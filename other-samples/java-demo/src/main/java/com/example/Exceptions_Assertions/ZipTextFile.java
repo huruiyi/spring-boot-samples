@@ -1,8 +1,9 @@
 package com.example.Exceptions_Assertions;
 
-import java.util.*;
-import java.util.zip.*;
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 // class ZipTextFile takes the name of a text file as input and creates a zip file 
 // after compressing that text file. 

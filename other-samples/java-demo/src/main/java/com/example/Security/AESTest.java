@@ -1,16 +1,15 @@
 package com.example.Security;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
-
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.spec.SecretKeySpec;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.security.SecureRandom;
 import java.util.Arrays;
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.spec.SecretKeySpec;
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
 
 public class AESTest {
 

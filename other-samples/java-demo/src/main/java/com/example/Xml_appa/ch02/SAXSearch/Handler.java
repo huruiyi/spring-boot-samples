@@ -1,11 +1,10 @@
 package com.example.Xml_appa.ch02.SAXSearch;
 
+import static java.lang.System.out;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
-
 import org.xml.sax.ext.DefaultHandler2;
-
-import static java.lang.System.*;
 
 public class Handler extends DefaultHandler2 {
 

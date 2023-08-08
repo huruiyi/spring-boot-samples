@@ -1,14 +1,11 @@
 package com.example.Xml_ch.ch11.JacksonDemo.v20;
 
-import java.io.File;
+import static java.lang.System.out;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.
-    JsonIgnoreProperties;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import static java.lang.System.*;
+import java.io.File;
 
 public class JacksonDemo {
 

@@ -6,7 +6,8 @@ package com.example.JavaClassDesign.Listing_15;/*-------------------------------
 
 // This program shows the importance of overriding equals() and hashCode() methods
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 class Circle {
 

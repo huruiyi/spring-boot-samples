@@ -1,13 +1,12 @@
 package com.example.Xml_ch.ch11.JacksonDemo.v11;
 
+import static java.lang.System.out;
+
 import com.fasterxml.jackson.annotation.JacksonInject;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import com.fasterxml.jackson.databind.InjectableValues;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import static java.lang.System.*;
 
 public class JacksonDemo {
 

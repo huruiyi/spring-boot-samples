@@ -4,7 +4,9 @@ package com.example.GenericsAndCollections.QuestionTime_08;/*-------------------
  * by SG Ganesh, Hari Kiran and Tushar Sharma
 ------------------------------------------------------------------------------*/
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Deque;
 
 class DequeTest {
 

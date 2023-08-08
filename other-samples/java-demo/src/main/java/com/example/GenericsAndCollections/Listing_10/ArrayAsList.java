@@ -5,8 +5,8 @@ package com.example.GenericsAndCollections.Listing_10;
  * by SG Ganesh, Hari Kiran and Tushar Sharma
 ------------------------------------------------------------------------------*/
 
-import java.util.List;
 import java.util.Arrays;
+import java.util.List;
 
 class ArrayAsList {
 

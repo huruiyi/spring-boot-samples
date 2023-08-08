@@ -1,7 +1,7 @@
 package com.example.Exceptions_Assertions.Listing_7_17;
 
-import java.util.Scanner;
 import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 // class for testing the custom exception InvalidInputException 
 class CustomExceptionTest {

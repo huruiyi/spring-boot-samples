@@ -1,15 +1,13 @@
 package com.example.Xml_ch.ch12.JSONPDemo.v11;
 
-import java.util.ArrayList;
+import static java.lang.System.out;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.json.Json;
 import javax.json.JsonObject;
-
-import static java.lang.System.*;
 
 public class JSONPDemo {
 

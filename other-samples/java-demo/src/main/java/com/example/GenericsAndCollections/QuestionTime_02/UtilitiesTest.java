@@ -5,7 +5,8 @@ package com.example.GenericsAndCollections.QuestionTime_02;
  * by SG Ganesh, Hari Kiran and Tushar Sharma
 ------------------------------------------------------------------------------*/
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
 
 class UtilitiesTest {
 

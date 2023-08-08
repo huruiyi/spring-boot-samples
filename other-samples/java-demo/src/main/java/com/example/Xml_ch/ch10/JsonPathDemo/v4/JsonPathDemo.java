@@ -1,12 +1,11 @@
 package com.example.Xml_ch.ch10.JsonPathDemo.v4;
 
-import java.util.List;
-import java.util.Map;
+import static java.lang.System.out;
 
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.Predicate;
-
-import static java.lang.System.*;
+import java.util.List;
+import java.util.Map;
 
 public class JsonPathDemo {
 

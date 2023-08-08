@@ -1,19 +1,15 @@
 package com.example.Xml_ch.ch09.GsonDemo.v14;
 
-import java.io.IOException;
-
-import java.util.ArrayList;
-import java.util.List;
+import static java.lang.System.out;
 
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
-
 import com.google.gson.annotations.JsonAdapter;
-
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-
-import static java.lang.System.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GsonDemo {
 

@@ -1,10 +1,5 @@
 package com.example.Security.java2s;
 
-import sun.security.x509.CertificateIssuerName;
-import sun.security.x509.X500Name;
-import sun.security.x509.X509CertImpl;
-import sun.security.x509.X509CertInfo;
-
 import java.io.Console;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -15,6 +10,10 @@ import java.security.PrivateKey;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.Arrays;
+import sun.security.x509.CertificateIssuerName;
+import sun.security.x509.X500Name;
+import sun.security.x509.X509CertImpl;
+import sun.security.x509.X509CertInfo;
 
 public class _08 {
 

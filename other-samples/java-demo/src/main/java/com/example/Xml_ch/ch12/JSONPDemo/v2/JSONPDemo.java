@@ -1,19 +1,18 @@
 package com.example.Xml_ch.ch12.JSONPDemo.v2;
 
+import static java.lang.System.out;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringReader;
-
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 import javax.json.JsonWriter;
-
-import static java.lang.System.*;
 
 public class JSONPDemo {
 

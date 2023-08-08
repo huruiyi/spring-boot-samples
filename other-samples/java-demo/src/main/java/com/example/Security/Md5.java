@@ -1,12 +1,11 @@
 package com.example.Security;
 
 import com.mchange.lang.ByteUtils;
-import org.apache.commons.codec.digest.DigestUtils;
-
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import org.apache.commons.codec.digest.DigestUtils;
 
 public class Md5 {
 

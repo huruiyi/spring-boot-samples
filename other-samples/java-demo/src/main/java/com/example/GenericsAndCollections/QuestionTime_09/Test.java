@@ -5,8 +5,6 @@ package com.example.GenericsAndCollections.QuestionTime_09;
  * by SG Ganesh, Hari Kiran and Tushar Sharma
 ------------------------------------------------------------------------------*/
 
-import java.io.*;
-
 class LastError<T> {
 
   private T lastError;

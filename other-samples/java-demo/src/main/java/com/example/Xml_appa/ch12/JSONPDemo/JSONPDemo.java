@@ -1,14 +1,14 @@
 package com.example.Xml_appa.ch12.JSONPDemo;
 
+import static java.lang.System.err;
+import static java.lang.System.out;
+
 import java.io.FileReader;
 import java.io.IOException;
-
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonPointer;
 import javax.json.JsonReader;
-
-import static java.lang.System.*;
 
 public class JSONPDemo {
 

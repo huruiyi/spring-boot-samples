@@ -1,12 +1,10 @@
 package com.example.Xml_ch.ch11.JacksonDemo.v16;
 
-import java.io.File;
+import static java.lang.System.out;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import static java.lang.System.*;
+import java.io.File;
 
 public class JacksonDemo {
 

@@ -1,19 +1,12 @@
 package com.example.Xml_ch.ch11.JacksonDemo.v12;
 
-import java.io.IOException;
-
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
-
-import com.fasterxml.jackson.databind.annotation.
-    JsonDeserialize;
-
-import com.fasterxml.jackson.databind.
-    DeserializationContext;
+import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import static java.lang.System.*;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import java.io.IOException;
 
 enum Color {
   BLACK, UNKNOWN

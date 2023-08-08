@@ -1,12 +1,11 @@
 package com.example.Xml_ch.ch11.JacksonDemo.v3;
 
-import java.io.File;
+import static java.lang.System.out;
 
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
-
-import static java.lang.System.*;
+import java.io.File;
 
 public class JacksonDemo {
 

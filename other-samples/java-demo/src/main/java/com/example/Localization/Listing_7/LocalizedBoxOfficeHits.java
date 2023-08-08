@@ -6,8 +6,8 @@ package com.example.Localization.Listing_7;
  * by SG Ganesh, Hari Kiran and Tushar Sharma
 ------------------------------------------------------------------------------*/
 
-import java.util.ResourceBundle;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class LocalizedBoxOfficeHits {
 

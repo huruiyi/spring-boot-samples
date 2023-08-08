@@ -6,8 +6,8 @@ package com.example.Localization.Listing_1;
  * by SG Ganesh, Hari Kiran and Tushar Sharma
 ------------------------------------------------------------------------------*/
 
-import java.util.Locale;
 import java.util.Arrays;
+import java.util.Locale;
 
 class AvailableLocales {
 

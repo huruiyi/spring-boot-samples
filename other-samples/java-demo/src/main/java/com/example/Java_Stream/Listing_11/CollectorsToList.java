@@ -4,9 +4,9 @@ package com.example.Java_Stream.Listing_11;/*-----------------------------------
  * by SG Ganesh, Hari Kiran and Tushar Sharma
 ------------------------------------------------------------------------------*/
 
-import java.util.stream.Collectors;
-import java.util.regex.Pattern;
 import java.util.List;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class CollectorsToList {
 

@@ -1,11 +1,10 @@
 package com.example.Xml_ch.ch09.GsonDemo.v8;
 
+import static java.lang.System.out;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import com.google.gson.annotations.Expose;
-
-import static java.lang.System.*;
 
 public class GsonDemo {
 

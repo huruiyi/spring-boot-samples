@@ -1,10 +1,9 @@
 package com.example.Xml_ch.ch10.JsonPathDemo.v2;
 
-import java.util.List;
+import static java.lang.System.out;
 
 import com.jayway.jsonpath.JsonPath;
-
-import static java.lang.System.*;
+import java.util.List;
 
 public class JsonPathDemo {
 

@@ -1,9 +1,8 @@
 package com.example.Xml_ch.ch09.GsonDemo.v6;
 
+import com.google.gson.Gson;
 import java.io.FileWriter;
 import java.io.IOException;
-
-import com.google.gson.Gson;
 
 public class GsonDemo {
 

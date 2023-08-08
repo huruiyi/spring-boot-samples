@@ -1,17 +1,15 @@
 package com.example.Xml_appa.ch02.SAXSearch;
 
+import static java.lang.System.err;
+
 import java.io.FileReader;
 import java.io.IOException;
-
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
-
-import static java.lang.System.*;
 
 public class SAXSearch {
 

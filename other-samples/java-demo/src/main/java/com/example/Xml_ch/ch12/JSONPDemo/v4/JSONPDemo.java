@@ -1,13 +1,11 @@
 package com.example.Xml_ch.ch12.JSONPDemo.v4;
 
+import static java.lang.System.out;
+
 import java.io.FileWriter;
 import java.io.IOException;
-
 import javax.json.Json;
-
 import javax.json.stream.JsonGenerator;
-
-import static java.lang.System.*;
 
 public class JSONPDemo {
 

@@ -1,15 +1,14 @@
 package com.example.Xml_ch.ch11.JacksonDemo.v23;
 
-import java.io.IOException;
+import static java.lang.System.getProperty;
+import static java.lang.System.out;
 
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.PrettyPrinter;
-
 import com.fasterxml.jackson.core.util.Instantiatable;
-
-import static java.lang.System.*;
+import java.io.IOException;
 
 public class JacksonDemo {
 

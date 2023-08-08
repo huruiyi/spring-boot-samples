@@ -1,12 +1,11 @@
 package com.example.Unfiled;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import org.junit.jupiter.api.Test;
 
 public class Test_Lists {
 

@@ -1,12 +1,11 @@
 package com.example.Xml_ch.ch12.JSONPDemo.v7;
 
-import java.io.StringReader;
+import static java.lang.System.out;
 
+import java.io.StringReader;
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
-
-import static java.lang.System.*;
 
 /*
    JsonPatch Demonstration:

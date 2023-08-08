@@ -1,15 +1,13 @@
 package com.example.Unfiled;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import javax.swing.*;
 import java.math.BigDecimal;
 import java.util.Enumeration;
 import java.util.Properties;
 import java.util.Scanner;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import javax.swing.JOptionPane;
+import org.junit.jupiter.api.Test;
 
 // Eclipse 快捷键
 // Ctrl + F11 			 	运行

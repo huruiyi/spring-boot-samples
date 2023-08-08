@@ -1,6 +1,11 @@
 package com.example.Security.java2s;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.security.Key;
 import java.security.KeyStore;
 import java.security.cert.Certificate;

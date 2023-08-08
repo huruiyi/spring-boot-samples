@@ -4,9 +4,9 @@ package com.example.GenericsAndCollections.Listing_19;/*------------------------
  * by SG Ganesh, Hari Kiran and Tushar Sharma
 ------------------------------------------------------------------------------*/
 
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.stream.Stream;
-import java.lang.reflect.Method;
 
 class StreamPipelineComponents {
 
