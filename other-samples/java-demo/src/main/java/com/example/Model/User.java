@@ -2,7 +2,6 @@ package com.example.Model;
 
 
 import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.Date;
 
 public class User {

@@ -1,8 +1,7 @@
 package com.example.Thread.jcip;
 
-import java.util.concurrent.locks.*;
-
-import com.example.Thread.jcip.annotations.*;
+import com.example.Thread.jcip.annotations.ThreadSafe;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 /**
  * OneShotLatch

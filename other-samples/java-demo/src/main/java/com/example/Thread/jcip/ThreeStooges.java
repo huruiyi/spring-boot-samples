@@ -1,8 +1,10 @@
 package com.example.Thread.jcip;
 
-import java.util.*;
-
-import com.example.Thread.jcip.annotations.*;
+import com.example.Thread.jcip.annotations.Immutable;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.Vector;
 
 /**
  * ThreeStooges

@@ -1,10 +1,10 @@
 package com.example.Thread.jcip;
 
+import com.example.Thread.jcip.annotations.GuardedBy;
 import java.io.PrintWriter;
 import java.io.Writer;
-import java.util.concurrent.*;
-
-import com.example.Thread.jcip.annotations.*;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 
 /**

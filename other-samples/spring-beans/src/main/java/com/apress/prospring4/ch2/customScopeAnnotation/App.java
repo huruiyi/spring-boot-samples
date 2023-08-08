@@ -1,11 +1,10 @@
 package com.apress.prospring4.ch2.customScopeAnnotation;
 
 import com.apress.prospring4.ch2.customScopeAnnotation.service.MessageService;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App {
 

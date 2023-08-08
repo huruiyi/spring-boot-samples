@@ -5,7 +5,6 @@ package com.example.Lambda.QuestionTime_08;/*-----------------------------------
 ------------------------------------------------------------------------------*/
 
 import com.rabbitmq.client.UnblockedCallback;
-
 import java.util.function.ObjIntConsumer;
 
 class ConsumerUse {

@@ -1,7 +1,6 @@
 package com.example.Xml_ch.ch05.XPathSearch.v3;
 
 import javax.xml.namespace.QName;
-
 import javax.xml.xpath.XPathFunction;
 import javax.xml.xpath.XPathFunctionResolver;
 

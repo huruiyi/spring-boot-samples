@@ -7,9 +7,9 @@ package com.example.JDBC.Listing_3;
 ------------------------------------------------------------------------------*/
 
 import java.sql.Connection;
-import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 // Program to illustrate how to query a database 
 class DbQuery {

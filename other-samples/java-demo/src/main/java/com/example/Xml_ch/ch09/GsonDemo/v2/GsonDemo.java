@@ -1,8 +1,8 @@
 package com.example.Xml_ch.ch09.GsonDemo.v2;
 
-import com.google.gson.Gson;
+import static java.lang.System.out;
 
-import static java.lang.System.*;
+import com.google.gson.Gson;
 
 public class GsonDemo {
 

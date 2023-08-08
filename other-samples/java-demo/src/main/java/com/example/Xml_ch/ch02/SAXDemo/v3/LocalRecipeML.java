@@ -1,13 +1,11 @@
 package com.example.Xml_ch.ch02.SAXDemo.v3;
 
+import static java.lang.System.out;
+
 import java.util.HashMap;
 import java.util.Map;
-
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-
-import static java.lang.System.*;
 
 public class LocalRecipeML implements EntityResolver {
 

@@ -1,9 +1,8 @@
 package com.example.Thread.jcip;
 
-import java.util.concurrent.*;
-
 import com.example.Thread.jcip.annotations.GuardedBy;
 import com.example.Thread.jcip.annotations.ThreadSafe;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * ValueLatch

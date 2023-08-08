@@ -1,10 +1,12 @@
 package com.example.Thread.jcip;
 
-import java.util.*;
-import java.util.concurrent.*;
+import com.example.Thread.jcip.annotations.ThreadSafe;
 import java.awt.Point;
-
-import com.example.Thread.jcip.annotations.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * DelegatingVehicleTracker

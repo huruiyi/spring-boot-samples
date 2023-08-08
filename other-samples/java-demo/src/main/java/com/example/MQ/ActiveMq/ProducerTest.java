@@ -1,10 +1,16 @@
 package com.example.MQ.ActiveMq;
 
+import javax.jms.Connection;
+import javax.jms.ConnectionFactory;
+import javax.jms.JMSException;
+import javax.jms.MessageProducer;
+import javax.jms.Queue;
+import javax.jms.Session;
+import javax.jms.TextMessage;
+import javax.jms.Topic;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQTextMessage;
 import org.junit.jupiter.api.Test;
-
-import javax.jms.*;
 
 public class ProducerTest {
 

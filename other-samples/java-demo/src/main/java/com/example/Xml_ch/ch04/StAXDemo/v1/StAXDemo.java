@@ -1,14 +1,14 @@
 package com.example.Xml_ch.ch04.StAXDemo.v1;
 
+import static java.lang.System.err;
+import static java.lang.System.out;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-
 import javax.xml.stream.FactoryConfigurationError;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
-
-import static java.lang.System.*;
 
 public class StAXDemo {
 

@@ -1,15 +1,14 @@
 package com.apress.prospring4.ch2.db;
 
+import java.util.List;
+import java.util.Map;
+import javax.sql.DataSource;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
-
-import javax.sql.DataSource;
-import java.util.List;
-import java.util.Map;
 
 public class SingerJobResults {
 

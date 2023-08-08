@@ -63,7 +63,6 @@
     <module>spring-boot-mybatisplus-v2</module>
     <module>spring-boot-openapi</module>
     <module>spring-boot-redis</module>
-    <module>spring-boot-shell</module>
     <module>spring-boot-thymeleaf</module>
     <module>spring-multi-datasource</module>
     <module>spring-boot-websocket</module>

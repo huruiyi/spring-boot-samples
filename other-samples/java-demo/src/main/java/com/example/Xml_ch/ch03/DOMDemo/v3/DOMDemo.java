@@ -1,18 +1,17 @@
 package com.example.Xml_ch.ch03.DOMDemo.v3;
 
+import static java.lang.System.err;
+import static java.lang.System.out;
+
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
 import org.w3c.dom.bootstrap.DOMImplementationRegistry;
-
 import org.w3c.dom.ls.DOMImplementationLS;
 import org.w3c.dom.ls.LSParser;
-
-import static java.lang.System.*;
 
 public class DOMDemo {
 

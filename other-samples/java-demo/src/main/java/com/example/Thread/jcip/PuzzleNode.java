@@ -1,8 +1,8 @@
 package com.example.Thread.jcip;
 
-import java.util.*;
-
 import com.example.Thread.jcip.annotations.Immutable;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * PuzzleNode

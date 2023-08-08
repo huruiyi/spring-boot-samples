@@ -1,7 +1,9 @@
 package com.example.Thread.jcip;
 
-import java.util.*;
-import java.util.concurrent.locks.*;
+import java.util.Map;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * ReadWriteMap

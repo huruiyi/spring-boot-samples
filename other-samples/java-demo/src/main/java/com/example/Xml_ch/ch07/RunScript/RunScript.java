@@ -1,13 +1,12 @@
 package com.example.Xml_ch.ch07.RunScript;
 
+import static java.lang.System.err;
+
 import java.io.FileReader;
 import java.io.IOException;
-
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
-
-import static java.lang.System.*;
 
 public class RunScript {
 

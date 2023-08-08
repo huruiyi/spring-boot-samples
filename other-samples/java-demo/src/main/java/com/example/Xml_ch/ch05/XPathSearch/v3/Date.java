@@ -2,13 +2,9 @@ package com.example.Xml_ch.ch05.XPathSearch.v3;
 
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
-
 import java.util.List;
-
 import javax.xml.xpath.XPathFunction;
 import javax.xml.xpath.XPathFunctionException;
-
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class Date implements XPathFunction {

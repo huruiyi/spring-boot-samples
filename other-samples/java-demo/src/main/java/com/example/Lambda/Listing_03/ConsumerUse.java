@@ -5,8 +5,8 @@ package com.example.Lambda.Listing_03;
  * by SG Ganesh, Hari Kiran and Tushar Sharma
 ------------------------------------------------------------------------------*/
 
-import java.util.stream.Stream;
 import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 class ConsumerUse {
 

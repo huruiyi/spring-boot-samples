@@ -7,9 +7,9 @@ package com.example.JDBC.Listing_7;
 ------------------------------------------------------------------------------*/
 
 import java.sql.Connection;
-import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 // To illustrate how to insert a row in a resultset and in the database 
 class DbInsert {

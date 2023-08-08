@@ -7,8 +7,8 @@ package com.example.JDBC.Listing_9;
 ------------------------------------------------------------------------------*/
 
 import java.sql.Connection;
-import java.sql.Statement;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 class DbCreateTable {
 

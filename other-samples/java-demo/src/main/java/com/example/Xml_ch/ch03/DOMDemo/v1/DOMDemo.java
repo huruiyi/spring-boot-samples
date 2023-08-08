@@ -1,22 +1,20 @@
 package com.example.Xml_ch.ch03.DOMDemo.v1;
 
-import java.io.IOException;
+import static java.lang.System.err;
+import static java.lang.System.out;
 
+import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.FactoryConfigurationError;
 import javax.xml.parsers.ParserConfigurationException;
-
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
 import org.xml.sax.SAXException;
-
-import static java.lang.System.*;
 
 public class DOMDemo {
 

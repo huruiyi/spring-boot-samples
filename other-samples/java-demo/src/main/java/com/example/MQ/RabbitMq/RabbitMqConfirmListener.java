@@ -1,7 +1,6 @@
 package com.example.MQ.RabbitMq;
 
 import com.rabbitmq.client.ConfirmListener;
-
 import java.io.IOException;
 
 public class RabbitMqConfirmListener implements ConfirmListener {

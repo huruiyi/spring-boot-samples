@@ -1,14 +1,13 @@
 package com.example.Xml_ch.ch04.StAXDemo.v3;
 
+import static java.lang.System.err;
+
 import java.io.FileWriter;
 import java.io.IOException;
-
 import javax.xml.stream.FactoryConfigurationError;
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
-
-import static java.lang.System.*;
 
 public class StAXDemo {
 

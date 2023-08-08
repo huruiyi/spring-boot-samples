@@ -1,23 +1,20 @@
 package com.example.Xml_ch.ch05.DOMSearch;
 
-import java.io.IOException;
+import static java.lang.System.err;
+import static java.lang.System.out;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.FactoryConfigurationError;
 import javax.xml.parsers.ParserConfigurationException;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
 import org.xml.sax.SAXException;
-
-import static java.lang.System.*;
 
 public class DOMSearch {
 

@@ -1,9 +1,10 @@
 package com.example.Thread.jcip;
 
-import java.util.*;
-
 import com.example.Thread.jcip.annotations.ThreadSafe;
-import com.example.Thread.jcip.annotations.*;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 /**
  * ImprovedList

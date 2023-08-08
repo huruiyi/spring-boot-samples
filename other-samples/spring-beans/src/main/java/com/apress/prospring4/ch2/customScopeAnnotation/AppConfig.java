@@ -1,9 +1,8 @@
 package com.apress.prospring4.ch2.customScopeAnnotation;
 
+import com.apress.prospring4.ch2.customScope.ThreadScope;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.apress.prospring4.ch2.customScope.ThreadScope;
 import org.springframework.beans.factory.config.CustomScopeConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

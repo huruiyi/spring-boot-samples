@@ -1,13 +1,12 @@
 package com.example.Xml_ch.ch02.SAXDemo.v3;
 
+import static java.lang.System.out;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXParseException;
-
 import org.xml.sax.ext.DefaultHandler2;
-
-import static java.lang.System.*;
 
 public class Handler extends DefaultHandler2 {
 

@@ -2,8 +2,8 @@ package com.example.Thread.jcip;
 
 import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * VisualComponent

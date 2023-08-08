@@ -2,13 +2,12 @@ package com.apress.prospring4.ch2.SpringAnnotation.test;
 
 import com.apress.prospring4.ch2.SpringAnnotation.annotation.RpcService;
 import com.apress.prospring4.ch2.SpringAnnotation.service.HelloService;
+import java.lang.reflect.Method;
+import java.util.Map;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.lang.reflect.Method;
-import java.util.Map;
 
 //@RunWith(SpringJUnit4ClassRunner.class)
 //@ContextConfiguration(locations = "classpath:spring2.xml")

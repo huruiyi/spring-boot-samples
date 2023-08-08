@@ -1,6 +1,7 @@
 package com.example.Thread.jcip;
 
-import java.util.concurrent.*;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
 
 /**
  * CellularAutomata

@@ -1,6 +1,6 @@
 package com.example.Thread.jcip;
 
-import java.util.concurrent.*;
+import java.util.concurrent.BlockingQueue;
 
 /**
  * TaskRunnable

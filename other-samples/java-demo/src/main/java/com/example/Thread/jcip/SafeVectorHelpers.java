@@ -1,6 +1,6 @@
 package com.example.Thread.jcip;
 
-import java.util.*;
+import java.util.Vector;
 
 /**
  * SafeVectorHelpers

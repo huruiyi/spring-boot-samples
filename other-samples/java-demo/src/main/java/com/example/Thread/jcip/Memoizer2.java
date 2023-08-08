@@ -1,7 +1,7 @@
 package com.example.Thread.jcip;
 
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Memoizer2

@@ -1,7 +1,13 @@
 package com.example.Thread.jcip;
 
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.Collection;
+import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * TransformingSequential

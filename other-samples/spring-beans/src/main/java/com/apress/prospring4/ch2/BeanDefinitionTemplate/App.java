@@ -1,9 +1,8 @@
 package com.apress.prospring4.ch2.BeanDefinitionTemplate;
 
+import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.util.List;
 
 public class App {
 

@@ -1,14 +1,13 @@
 package com.example.Xml_ch.ch04.Copy;
 
+import static java.lang.System.err;
+
 import java.io.FileReader;
 import java.io.FileWriter;
-
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLEventWriter;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLOutputFactory;
-
-import static java.lang.System.*;
 
 public class Copy {
 

@@ -1,6 +1,6 @@
 package com.example.Thread.jcip;
 
-import java.util.concurrent.atomic.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * XorShift

@@ -5,8 +5,8 @@ package com.example.Lambda.Listing_02;
  * by SG Ganesh, Hari Kiran and Tushar Sharma
 ------------------------------------------------------------------------------*/
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class RemoveIfMethod {
 

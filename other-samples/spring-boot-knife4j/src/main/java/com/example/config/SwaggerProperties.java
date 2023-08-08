@@ -43,7 +43,7 @@ public class SwaggerProperties {
     private List<String> excludePath = new ArrayList<>();//在basePath基础上需要排除的url
 
     public String getGroup() {
-      if (group == null || "".equals(group)) {
+      if (group == null || group.isEmpty()) {
         return title;
       }
       return group;

@@ -1,9 +1,10 @@
 package com.example.Thread.jcip;
 
-import java.util.concurrent.*;
-
 import static com.example.Thread.jcip.LaunderThrowable.launderThrowable;
 import static java.util.concurrent.Executors.newScheduledThreadPool;
+
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  * TimedRun2

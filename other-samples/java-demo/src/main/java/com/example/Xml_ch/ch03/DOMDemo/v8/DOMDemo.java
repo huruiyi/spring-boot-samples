@@ -1,21 +1,18 @@
 package com.example.Xml_ch.ch03.DOMDemo.v8;
 
+import static java.lang.System.err;
+import static java.lang.System.out;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-
-import org.w3c.dom.Document;
 import org.w3c.dom.DOMImplementation;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-
 import org.w3c.dom.bootstrap.DOMImplementationRegistry;
-
 import org.w3c.dom.ls.DOMImplementationLS;
 import org.w3c.dom.ls.LSSerializer;
-
 import org.w3c.dom.ranges.DocumentRange;
 import org.w3c.dom.ranges.Range;
-
-import static java.lang.System.*;
 
 public class DOMDemo {
 

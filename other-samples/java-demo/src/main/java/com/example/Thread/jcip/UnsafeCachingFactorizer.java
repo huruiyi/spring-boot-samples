@@ -1,10 +1,12 @@
 package com.example.Thread.jcip;
 
+import com.example.Thread.jcip.annotations.NotThreadSafe;
 import java.math.BigInteger;
-import java.util.concurrent.atomic.*;
-import javax.servlet.*;
-
-import com.example.Thread.jcip.annotations.*;
+import java.util.concurrent.atomic.AtomicReference;
+import javax.servlet.GenericServlet;
+import javax.servlet.Servlet;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 
 /**
  * UnsafeCachingFactorizer

@@ -20,7 +20,7 @@ public class SwaggerAutoConfiguration implements BeanFactoryAware {
 
   @Bean(value = "defaultApi2")
   public Docket defaultApi2() {
-    Docket docket = new Docket(DocumentationType.SWAGGER_2).apiInfo(new ApiInfoBuilder()
+    return new Docket(DocumentationType.SWAGGER_2).apiInfo(new ApiInfoBuilder()
             .title("swagger-bootstrap-ui-demo RESTful APIs")
             .description("# swagger-bootstrap-ui-demo RESTful APIs")
             .termsOfServiceUrl("http://www.xx.com/").contact("xx@qq.com")
@@ -28,8 +28,7 @@ public class SwaggerAutoConfiguration implements BeanFactoryAware {
         //分组名称
         .groupName("2.X版本").select()
         //这里指定Controller扫描包路径
-        .apis(RequestHandlerSelectors.basePackage("com.example.demo.api")).paths(PathSelectors.any()).build();
-    return docket;
+        .apis(RequestHandlerSelectors.basePackage("com.example.api")).paths(PathSelectors.any()).build();
   }
 
   @Override

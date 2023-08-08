@@ -1,6 +1,7 @@
 package com.example.Thread.jcip;
 
-import com.example.Thread.jcip.annotations.*;
+import com.example.Thread.jcip.annotations.GuardedBy;
+import com.example.Thread.jcip.annotations.ThreadSafe;
 
 /**
  * SafePoint

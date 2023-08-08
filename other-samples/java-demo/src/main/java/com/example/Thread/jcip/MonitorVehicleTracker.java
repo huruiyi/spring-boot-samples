@@ -1,8 +1,10 @@
 package com.example.Thread.jcip;
 
-import java.util.*;
-
-import com.example.Thread.jcip.annotations.*;
+import com.example.Thread.jcip.annotations.GuardedBy;
+import com.example.Thread.jcip.annotations.ThreadSafe;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * MonitorVehicleTracker

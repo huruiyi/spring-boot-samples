@@ -4,8 +4,8 @@ package com.example.Lambda.Listing_06;/*----------------------------------------
  * by SG Ganesh, Hari Kiran and Tushar Sharma
 ------------------------------------------------------------------------------*/
 
-import java.util.stream.Stream;
 import java.util.Random;
+import java.util.stream.Stream;
 
 class GenerateBooleans {
 

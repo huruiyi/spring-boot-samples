@@ -1,9 +1,12 @@
 package com.example.Mysql;
 
 import com.example.utils.JdbcUtils;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import org.junit.jupiter.api.Test;
-
-import java.sql.*;
 
 public class MySqlTest {
 

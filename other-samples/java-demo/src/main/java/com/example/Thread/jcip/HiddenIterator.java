@@ -1,8 +1,9 @@
 package com.example.Thread.jcip;
 
-import java.util.*;
-
-import com.example.Thread.jcip.annotations.*;
+import com.example.Thread.jcip.annotations.GuardedBy;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 
 /**
  * HiddenIterator

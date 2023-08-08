@@ -1,8 +1,8 @@
 package com.example.Thread.jcip;
 
-import java.util.*;
-
-import com.example.Thread.jcip.annotations.*;
+import com.example.Thread.jcip.annotations.ThreadSafe;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * SafeStates

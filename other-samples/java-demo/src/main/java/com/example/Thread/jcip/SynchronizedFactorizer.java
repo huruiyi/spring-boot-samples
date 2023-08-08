@@ -1,10 +1,12 @@
 package com.example.Thread.jcip;
 
-import java.math.BigInteger;
-import javax.servlet.*;
-
 import com.example.Thread.jcip.annotations.GuardedBy;
 import com.example.Thread.jcip.annotations.ThreadSafe;
+import java.math.BigInteger;
+import javax.servlet.GenericServlet;
+import javax.servlet.Servlet;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 
 /**
  * SynchronizedFactorizer

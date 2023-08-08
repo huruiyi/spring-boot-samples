@@ -2,7 +2,6 @@ package com.example.MQ.RabbitMq;
 
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.ReturnListener;
-
 import java.io.IOException;
 
 public class RabbitMqReturnListener implements ReturnListener {

@@ -3,7 +3,6 @@ package com.apress.prospring4.ch2._Aspect1;
 
 import com.apress.prospring4.ch2._Aspect1.service.Animal;
 import com.apress.prospring4.ch2._Aspect1.service.impl.FemaleAnimal;
-
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.DeclareParents;
 import org.springframework.stereotype.Component;

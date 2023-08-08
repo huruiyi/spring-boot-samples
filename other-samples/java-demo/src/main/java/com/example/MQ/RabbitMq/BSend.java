@@ -1,10 +1,13 @@
 package com.example.MQ.RabbitMq;
 
-import com.rabbitmq.client.*;
-import org.apache.commons.lang3.SerializationUtils;
-
+import com.rabbitmq.client.AMQP;
+import com.rabbitmq.client.BuiltinExchangeType;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.commons.lang3.SerializationUtils;
 
 public class BSend {
 

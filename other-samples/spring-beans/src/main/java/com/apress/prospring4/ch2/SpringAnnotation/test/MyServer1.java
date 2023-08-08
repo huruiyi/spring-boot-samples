@@ -1,14 +1,13 @@
 package com.apress.prospring4.ch2.SpringAnnotation.test;
 
 import com.apress.prospring4.ch2.SpringAnnotation.annotation.RpcService;
+import java.lang.reflect.Method;
+import java.util.Map;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
-
-import java.lang.reflect.Method;
-import java.util.Map;
 
 @Component
 // ApplicationContextAware会为Component组件调用setApplicationContext方法； 测试Myserver3时注释

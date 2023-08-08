@@ -1,21 +1,18 @@
 package com.example.Xml_ch.ch04.StAXDemo.v4;
 
+import static java.lang.System.err;
+
 import java.io.FileWriter;
 import java.io.IOException;
-
 import java.util.Iterator;
-
 import javax.xml.stream.FactoryConfigurationError;
 import javax.xml.stream.XMLEventFactory;
 import javax.xml.stream.XMLEventWriter;
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
-
 import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.Namespace;
 import javax.xml.stream.events.XMLEvent;
-
-import static java.lang.System.*;
 
 public class StAXDemo {
 

@@ -1,9 +1,8 @@
 package com.example.Thread;
 
+import com.sun.management.ThreadMXBean;
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadInfo;
-
-import com.sun.management.ThreadMXBean;
 
 public class _01StartThread {
 

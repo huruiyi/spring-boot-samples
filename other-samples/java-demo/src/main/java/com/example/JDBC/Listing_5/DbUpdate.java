@@ -7,9 +7,9 @@ package com.example.JDBC.Listing_5;
 ------------------------------------------------------------------------------*/
 
 import java.sql.Connection;
-import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 // To illustrate how we can update a database 
 class DbUpdate {

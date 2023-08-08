@@ -1,14 +1,13 @@
 package com.example.Xml_ch.ch03.DOMDemo.v6;
 
+import static java.lang.System.err;
+import static java.lang.System.out;
+
 import org.w3c.dom.Document;
-
 import org.w3c.dom.bootstrap.DOMImplementationRegistry;
-
 import org.w3c.dom.ls.DOMImplementationLS;
 import org.w3c.dom.ls.LSParser;
 import org.w3c.dom.ls.LSSerializer;
-
-import static java.lang.System.*;
 
 public class DOMDemo {
 

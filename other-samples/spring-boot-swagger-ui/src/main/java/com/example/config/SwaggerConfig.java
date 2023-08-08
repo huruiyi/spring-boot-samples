@@ -1,10 +1,8 @@
 package com.example.config;
 
-
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -31,7 +29,7 @@ public class SwaggerConfig {
         .groupName("用户接口")
         .apiInfo(apiInfo())
         .select()
-        .apis(RequestHandlerSelectors.basePackage("com.example.demo.web.user"))
+        .apis(RequestHandlerSelectors.basePackage("com.example.web.user"))
         .paths(PathSelectors.any())
         .build();
   }
@@ -55,10 +53,8 @@ public class SwaggerConfig {
    */
   @Bean
   public Docket createRestApi() {
-
-    /**添加head参数start*/
     ParameterBuilder tokenPar = new ParameterBuilder();
-    List<Parameter> pars = new ArrayList<Parameter>();
+    List<Parameter> pars = new ArrayList<>();
     tokenPar.name("authorization").description("令牌").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
     pars.add(tokenPar.build());
     //添加head参数end
@@ -66,7 +62,7 @@ public class SwaggerConfig {
         .groupName("文件接口")
         .select()
         .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class)) //有该注解的生成doc
-        .apis(RequestHandlerSelectors.basePackage("com.example.demo.web.file"))   // 自行修改为自己的包路径
+        .apis(RequestHandlerSelectors.basePackage("com.example.web.file"))   // 自行修改为自己的包路径
         .paths(PathSelectors.any())
         .build()
         .globalOperationParameters(pars) //set Header

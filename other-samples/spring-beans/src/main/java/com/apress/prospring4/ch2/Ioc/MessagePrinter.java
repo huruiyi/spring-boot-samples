@@ -1,7 +1,6 @@
 package com.apress.prospring4.ch2.Ioc;
 
 import com.apress.prospring4.ch2.Ioc.service.MessageService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
