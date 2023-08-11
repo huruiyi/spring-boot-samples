@@ -1,8 +1,7 @@
 package com.example.component;
 
-import org.springframework.stereotype.Component;
-
 import javax.annotation.PostConstruct;
+import org.springframework.stereotype.Component;
 
 @Component
 public class HelloWorldComponent {

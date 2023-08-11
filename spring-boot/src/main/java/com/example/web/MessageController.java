@@ -1,6 +1,8 @@
 package com.example.web;
 
 import com.example.component.AsyncService;
+import java.util.Collections;
+import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -10,9 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
-
-import javax.annotation.Resource;
-import java.util.Collections;
 
 @RestController
 @Slf4j

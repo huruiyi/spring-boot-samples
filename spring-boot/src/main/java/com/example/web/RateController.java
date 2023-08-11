@@ -2,13 +2,12 @@ package com.example.web;
 
 import com.example.annotation.RequestLimit;
 import com.google.common.util.concurrent.RateLimiter;
+import java.time.Instant;
 import org.slf4j.Logger;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.time.Instant;
 
 @RestController
 @RequestMapping("/rate")

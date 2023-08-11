@@ -1,14 +1,13 @@
 package com.example.component;
 
+import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicInteger;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Component;
-
-import java.util.concurrent.Future;
-import java.util.concurrent.atomic.AtomicInteger;
 
 
 @Slf4j

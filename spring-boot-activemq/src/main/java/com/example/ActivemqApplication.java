@@ -11,8 +11,7 @@ import org.springframework.jms.core.JmsTemplate;
 @SpringBootApplication
 public class ActivemqApplication implements CommandLineRunner {
 
-  final
-  JmsTemplate jmsTemplate;
+  final JmsTemplate jmsTemplate;
 
   public ActivemqApplication(JmsTemplate jmsTemplate) {
     this.jmsTemplate = jmsTemplate;

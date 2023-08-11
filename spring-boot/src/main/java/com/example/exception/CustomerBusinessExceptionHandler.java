@@ -1,12 +1,11 @@
 package com.example.exception;
 
+import java.util.HashMap;
+import java.util.Map;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.NoHandlerFoundException;
-
-import java.util.HashMap;
-import java.util.Map;
 
 
 @ControllerAdvice

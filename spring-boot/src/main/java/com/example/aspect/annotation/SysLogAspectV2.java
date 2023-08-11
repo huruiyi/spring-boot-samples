@@ -1,6 +1,8 @@
 package com.example.aspect.annotation;
 
 import com.example.annotation.ParamsAnnotation;
+import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -9,9 +11,6 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.lang.reflect.Method;
-import java.lang.reflect.Parameter;
 
 @Aspect
 @Component

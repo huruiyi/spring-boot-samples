@@ -2,6 +2,7 @@ package com.example;
 
 import com.example.model.Book;
 import com.example.service.BookService;
+import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
@@ -15,8 +16,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.thymeleaf.spring5.SpringTemplateEngine;
-
-import java.util.Arrays;
 
 @Slf4j
 @SpringBootApplication
