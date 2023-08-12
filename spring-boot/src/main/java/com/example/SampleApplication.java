@@ -1,7 +1,13 @@
 package com.example;
 
 import com.example.model.Book;
+import com.example.service.BinarySearchImpl;
 import com.example.service.BookService;
+import com.example.service.game.GameRunnerV1;
+import com.example.service.game.GameRunnerV2;
+import com.example.service.game.service.GamingConsole;
+import com.example.service.game.service.impl.MarioGame;
+import com.example.web.WebController;
 import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationRunner;
@@ -24,6 +30,22 @@ public class SampleApplication extends SpringBootServletInitializer implements W
   public static void main(String[] args) {
     ConfigurableApplicationContext context = SpringApplication.run(SampleApplication.class, args);
     printBeans(context);
+
+    BinarySearchImpl binarySearch = context.getBean(BinarySearchImpl.class);
+    log.info(String.valueOf(binarySearch.binarySearch(new int[]{12, 4, 6}, 3)));
+
+    WebController controller = context.getBean(WebController.class);
+    log.info(String.valueOf(controller.returnValueFromBusinessService()));
+
+    GamingConsole game2 = new MarioGame();
+    GameRunnerV1 gameRunnerV1 = new GameRunnerV1(game2);
+    gameRunnerV1.run();
+
+    GameRunnerV2 gameRunnerV2 = context.getBean(GameRunnerV2.class);
+    gameRunnerV2.run();
+
+    GameRunnerV1 runnerV1 = context.getBean(GameRunnerV1.class);
+    runnerV1.run();
   }
 
   private static void printBeans(ConfigurableApplicationContext context) {

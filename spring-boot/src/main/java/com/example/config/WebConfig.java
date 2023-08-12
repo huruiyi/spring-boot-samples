@@ -1,6 +1,5 @@
 package com.example.config;
 
-import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import org.slf4j.Logger;
@@ -20,7 +19,7 @@ public class WebConfig implements ApplicationListener<WebServerInitializedEvent>
   @Override
   public void onApplicationEvent(WebServerInitializedEvent event) {
     try {
-      InetAddress inetAddress = Inet4Address.getLocalHost();
+      InetAddress inetAddress = InetAddress.getLocalHost();
       int port = event.getWebServer().getPort();
       logger.info("项目启动成功！地址端口(start port): http://" + inetAddress.getHostAddress() + ":" + port);
 

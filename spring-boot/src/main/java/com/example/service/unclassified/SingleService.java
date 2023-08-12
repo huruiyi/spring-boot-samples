@@ -18,7 +18,6 @@ public class SingleService implements ApplicationContextAware {
   }
 
   public String[] getBeans() {
-    String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
-    return beanDefinitionNames;
+    return applicationContext.getBeanDefinitionNames();
   }
 }
