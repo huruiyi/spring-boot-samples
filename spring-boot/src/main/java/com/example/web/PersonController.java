@@ -1,9 +1,11 @@
 package com.example.web;
 
 import com.example.model.Person;
+import com.example.service.unclassified.CurrencyServiceConfiguration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/person")
 public class PersonController {
 
-  private List<Person> persons = new ArrayList<>();
+  private final List<Person> persons = new ArrayList<>();
+
+  @Autowired
+  private CurrencyServiceConfiguration configuration;
 
   @GetMapping
   public List<Person> findAll() {
@@ -46,6 +51,11 @@ public class PersonController {
   public void update(@RequestBody Person p) {
     Person person = persons.stream().filter(it -> it.getId().equals(p.getId())).findFirst().get();
     persons.set(persons.indexOf(person), p);
+  }
+
+  @RequestMapping("/currency-configuration")
+  public String currencyService() {
+    return configuration.toString();
   }
 
 }

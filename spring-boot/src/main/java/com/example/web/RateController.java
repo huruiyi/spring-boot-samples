@@ -3,29 +3,27 @@ package com.example.web;
 import com.example.annotation.RequestLimit;
 import com.google.common.util.concurrent.RateLimiter;
 import java.time.Instant;
-import org.slf4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
 @RequestMapping("/rate")
-//@Slf4j
 public class RateController {
-
-  private static final Logger log = org.slf4j.LoggerFactory.getLogger(RateController.class);
 
   private RateLimiter rateLimiter = RateLimiter.create(10);
 
   @ResponseBody
   @RequestMapping(value = "/limit")
-  private String guavaLimit() {
+  private String limit() {
     if (rateLimiter.tryAcquire()) {
-      System.out.println(Instant.now());
+      log.info("true:" + Instant.now());
       return "Acquire 。。。";
     } else {
-      System.out.println("false:" + Instant.now());
+      log.info("false:" + Instant.now());
       return "Hello World";
     }
   }

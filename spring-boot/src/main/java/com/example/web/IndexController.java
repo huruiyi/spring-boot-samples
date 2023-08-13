@@ -2,6 +2,8 @@ package com.example.web;
 
 import com.example.annotation.ParamsAnnotation;
 import com.example.annotation.SysLog;
+import com.example.model.Course;
+import com.example.service.BusinessService;
 import com.example.service.unclassified.SingleService;
 import com.example.utils.ExcelUtils;
 import java.io.IOException;
@@ -9,8 +11,10 @@ import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,15 +37,20 @@ public class IndexController {
 
   //1：构造函数注入
   final SingleService singleService1;
+
   //2:属性注入
   @Autowired
   private SingleService singleService2;
+
   @Value("${spring.profiles.active}")
   private String env;
 
   public IndexController(SingleService singleService) {
     this.singleService1 = singleService;
   }
+
+  @Autowired
+  private BusinessService businessService;
 
   @SysLog
   @RequestMapping(value = "/")
@@ -63,7 +72,6 @@ public class IndexController {
     return res1 + "<br/> " + res2;
   }
 
-
   @RequestMapping("/testMap")
   @ResponseBody
   public Map<String, String> test() {
@@ -78,22 +86,19 @@ public class IndexController {
     return "测试自定义注解,用户：" + name + "，年龄：" + age;
   }
 
-  @ResponseBody
-  @RequestMapping("/p1/p2")
-  public Map<String, String> p1p2() {
+  @RequestMapping("/p1")
+  public Map<String, String> p1() {
     Map<String, String> map = new HashMap<>();
     map.put("key1", "value1");
     return map;
   }
 
-  @ResponseBody
   @RequestMapping(value = "/env")
   public String env() {
     return "Hello," + env;
   }
 
 
-  @ResponseBody
   @RequestMapping("/session")
   public String sessionTrack(HttpServletRequest request) {
     HttpSession session = request.getSession();
@@ -101,11 +106,11 @@ public class IndexController {
     return "hello world";
   }
 
-
   @RequestMapping(value = "/exportExcel")
   public void test(HttpServletResponse response) throws UnsupportedEncodingException {
     Map<String, String> params = new HashMap<>();
     params.put("userId", "1");
+    log.info(params.toString());
 
     XSSFWorkbook xssfWorkbook = ExcelUtils.getOutputStream();
     try {
@@ -118,14 +123,14 @@ public class IndexController {
       xssfWorkbook.write(output);
       output.close();
     } catch (IOException e) {
-      e.printStackTrace();
+      log.error(e.getMessage());
     } finally {
       try {
         if (xssfWorkbook != null) {
           xssfWorkbook.close();
         }
       } catch (IOException e) {
-        e.printStackTrace();
+        log.error(e.getMessage());
       }
     }
   }
@@ -141,5 +146,25 @@ public class IndexController {
   public String[] bean() {
     return singleService1.getBeans();
   }
+
+  public long returnValueFromBusinessService() {
+    return businessService.calculateSum();
+  }
+
+  @GetMapping("/sum")
+  public long displaySum() {
+    return businessService.calculateSum();
+  }
+
+  @RequestMapping("/courses")
+  public List<Course> retrieveAllCourses() {
+    return Arrays.asList(
+        new Course(1, "Learn AWS", "in28 minutes"),
+        new Course(2, "Learn DevOps", "in2 8minutes"),
+        new Course(3, "Learn Azure", "in28 minutes"),
+        new Course(4, "Learn GCP", "in28 minutes")
+    );
+  }
+
 
 }

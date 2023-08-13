@@ -5,8 +5,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import lombok.Data;
 
+
+@Data
 public class Book {
+
+  private long id;
+  private String name;
+  private String author;
 
   private String isbn;
   private String title;
@@ -15,18 +22,17 @@ public class Book {
   public Book() {
   }
 
+  public Book(long id, String name, String author) {
+    super();
+    this.id = id;
+    this.name = name;
+    this.author = author;
+  }
+
   public Book(String isbn, String title, String... authors) {
     this.isbn = isbn;
     this.title = title;
     this.authors.addAll(Arrays.asList(authors));
-  }
-
-  public String getIsbn() {
-    return isbn;
-  }
-
-  public String getTitle() {
-    return title;
   }
 
   public void setTitle(String title) {
@@ -41,10 +47,8 @@ public class Book {
     this.authors = authors;
   }
 
-
   @Override
   public boolean equals(Object o) {
-
     if (this == o) {
       return true;
     }
@@ -62,7 +66,13 @@ public class Book {
 
   @Override
   public String toString() {
-    return String.format("Book [isbn=%s, title=%s, authors=%s]",
-        this.isbn, this.title, this.authors);
+    return "Book{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        ", author='" + author + '\'' +
+        ", isbn='" + isbn + '\'' +
+        ", title='" + title + '\'' +
+        ", authors=" + authors +
+        '}';
   }
 }

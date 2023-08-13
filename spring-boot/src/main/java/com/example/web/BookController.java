@@ -2,7 +2,11 @@ package com.example.web;
 
 import com.example.model.Book;
 import com.example.service.BookService;
+import java.lang.reflect.Array;
 import java.net.URI;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,10 +24,14 @@ public class BookController {
   @Autowired
   private BookService bookService;
 
-
   @GetMapping
   public Iterable<Book> all() {
     return bookService.findAll();
+  }
+
+  @GetMapping("/books")
+  public List<Book> getAllBooks() {
+    return Collections.singletonList(new Book(1L, "Mastering Spring 5.2", "Ranga Karanam"));
   }
 
   @GetMapping("/{isbn}")

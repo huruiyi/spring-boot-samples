@@ -7,7 +7,7 @@ import com.example.service.game.GameRunnerV1;
 import com.example.service.game.GameRunnerV2;
 import com.example.service.game.service.GamingConsole;
 import com.example.service.game.service.impl.MarioGame;
-import com.example.web.WebController;
+import com.example.web.IndexController;
 import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationRunner;
@@ -34,7 +34,7 @@ public class SampleApplication extends SpringBootServletInitializer implements W
     BinarySearchImpl binarySearch = context.getBean(BinarySearchImpl.class);
     log.info(String.valueOf(binarySearch.binarySearch(new int[]{12, 4, 6}, 3)));
 
-    WebController controller = context.getBean(WebController.class);
+    IndexController controller = context.getBean(IndexController.class);
     log.info(String.valueOf(controller.returnValueFromBusinessService()));
 
     GamingConsole game2 = new MarioGame();
@@ -53,10 +53,6 @@ public class SampleApplication extends SpringBootServletInitializer implements W
 
     String[] names = context.getBeanDefinitionNames();
     Arrays.sort(names);
-    for (String name : names) {
-      log.info(name);
-    }
-
     Arrays.asList(names).forEach(log::info);
   }
 
