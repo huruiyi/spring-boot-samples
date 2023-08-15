@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class BusinessException extends RuntimeException {
 
   //自定义错误码
-  private Integer code;
+  public HttpStatusCode statusCode;
 
   //自定义构造器，必须输入错误码及内容
-  public BusinessException(int code, String msg) {
+  public BusinessException(HttpStatusCode code, String msg) {
     super(msg);
-    this.code = code;
+    this.statusCode = code;
   }
 
-  public Integer getCode() {
-    return code;
+  public HttpStatusCode getCode() {
+    return statusCode;
   }
 
-  public void setCode(Integer code) {
-    this.code = code;
+  public void setCode(HttpStatusCode code) {
+    this.statusCode = code;
   }
 }

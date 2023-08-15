@@ -5,8 +5,19 @@ public class Person {
   private Long id;
   private String firstName;
   private String lastName;
-  private int age;
+  private Integer age;
   private Gender gender;
+
+  public Person() {
+  }
+
+  public Person(Long id, String firstName, String lastName, int age, Gender gender) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.gender = gender;
+  }
 
   public Long getId() {
     return id;
@@ -32,11 +43,11 @@ public class Person {
     this.lastName = lastName;
   }
 
-  public int getAge() {
+  public Integer getAge() {
     return age;
   }
 
-  public void setAge(int age) {
+  public void setAge(Integer age) {
     this.age = age;
   }
 

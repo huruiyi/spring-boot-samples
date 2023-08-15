@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @ToString
 @Component
 @ConfigurationProperties(prefix = "currency-service")
-public class CurrencyServiceConfiguration {
+public class CurrencyService {
   private String url;
   private String username;
   private String key;

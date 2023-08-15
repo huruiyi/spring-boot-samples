@@ -1,4 +1,4 @@
-package com.example.component;
+package com.example.service.unclassified;
 
 import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class AsyncService {
+public class AsyncServiceV1 {
 
   public static volatile AtomicInteger i = new AtomicInteger(0);
   protected final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -30,7 +30,7 @@ public class AsyncService {
     }
     System.out.println("thread name is" + Thread.currentThread().getName() + "    sum=" + sum);
     logger.info("Task" + i + " started.");
-    return new AsyncResult<Long>(sum);
+    return new AsyncResult<>(sum);
   }
 
   @Async("myTaskAsyncPool")

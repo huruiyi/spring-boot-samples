@@ -14,7 +14,7 @@ public class CustomerBusinessExceptionHandler {
   @ResponseBody
   @ExceptionHandler(BusinessException.class)
   public Map<String, Object> businessExceptionHandler(BusinessException e) {
-    Map<String, Object> map = new HashMap<String, Object>();
+    Map<String, Object> map = new HashMap<>();
     map.put("code", e.getCode());
     map.put("message", e.getMessage());
     return map;
@@ -24,7 +24,7 @@ public class CustomerBusinessExceptionHandler {
   @ResponseBody
   @ExceptionHandler({ArithmeticException.class})
   public Map<String, Object> fix(Exception e) {
-    Map<String, Object> map = new HashMap<String, Object>();
+    Map<String, Object> map = new HashMap<>();
     map.put("message", "自定义异常信息：" + e.getMessage());
     return map;
   }

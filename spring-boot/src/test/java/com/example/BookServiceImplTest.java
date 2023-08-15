@@ -7,7 +7,7 @@ import com.example.service.impl.BookServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class BookServiceImplTest {
+class BookServiceImplTest {
 
   private BookServiceImpl service;
 
@@ -17,12 +17,12 @@ public class BookServiceImplTest {
   }
 
   @Test
-  public void shouldReturnEmptyOptionalWhenNotFound() {
+  void shouldReturnEmptyOptionalWhenNotFound() {
     assertThat(service.find("1234")).isEmpty();
   }
 
   @Test
-  public void shouldFindAfterCreation() {
+  void shouldFindAfterCreation() {
     assertThat(service.findAll()).isEmpty();
 
     Book book = new Book("1234", "Spring 5 Recipes", "Marten Deinum", "Josh Long");
@@ -31,7 +31,7 @@ public class BookServiceImplTest {
   }
 
   @Test
-  public void shouldReturnAllBooksAfterCreation() {
+  void shouldReturnAllBooksAfterCreation() {
     assertThat(service.findAll()).isEmpty();
 
     Book book1 = new Book("1234", "Spring 5 Recipes", "Marten Deinum", "Josh Long");

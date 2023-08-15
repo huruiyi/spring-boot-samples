@@ -1,5 +1,6 @@
 package com.example.service.unclassified;
 
+import com.example.model.Gender;
 import com.example.model.Person;
 import org.springframework.stereotype.Service;
 
@@ -7,10 +8,6 @@ import org.springframework.stereotype.Service;
 public class PersonService {
 
   public Person getUserInfo() {
-    Person user = new Person();
-    user.setFirstName("San");
-    user.setLastName("Zhang");
-    user.setAge(18);
-    return user;
+    return new Person(1L, "ruiyi", "hu", 30, Gender.MALE);
   }
 }

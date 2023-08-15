@@ -1,6 +1,6 @@
 package com.example.web;
 
-import com.example.component.AsyncService;
+import com.example.service.unclassified.AsyncServiceV1;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
@@ -25,7 +25,7 @@ public class AsyncController {
   protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
   @Autowired
-  private AsyncService asyncService;
+  private AsyncServiceV1 asyncService;
 
   @RequestMapping("/test1")
   @ResponseBody

@@ -1,6 +1,7 @@
 package com.example.web;
 
 import com.example.exception.BusinessException;
+import com.example.exception.HttpStatusCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +21,10 @@ public class ExceptionController {
   @RequestMapping("/test1")
   public String test1(@RequestParam("i") int i) {
     if (i == 0) {
-      throw new BusinessException(600, "自定义业务错误");
+      throw new BusinessException(HttpStatusCode.INTERNAL_SERVER_ERROR, "除零异常");
     }
     return "success";
   }
-
 
   /**
    * <a href="http://localhost:9102/test2?i=0">...</a>

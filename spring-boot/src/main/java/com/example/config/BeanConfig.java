@@ -1,5 +1,6 @@
 package com.example.config;
 
+import com.example.model.Gender;
 import com.example.model.Person;
 import com.example.service.unclassified.SingleService;
 import org.springframework.context.annotation.Bean;
@@ -17,11 +18,7 @@ public class BeanConfig {
 
   @Bean("configPerson")
   public Person person() {
-    Person user = new Person();
-    user.setFirstName("San");
-    user.setLastName("Zhang");
-    user.setAge(18);
-    return user;
+    return new Person(1L, "ruiyi", "hu", 30, Gender.MALE);
   }
 
   @Bean

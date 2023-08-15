@@ -1,6 +1,6 @@
 package com.example.web;
 
-import com.example.component.AsyncService;
+import com.example.service.unclassified.AsyncServiceV1;
 import java.util.Collections;
 import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +18,7 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 public class MessageController {
 
   @Resource
-  AsyncService asyncService;
+  AsyncServiceV1 asyncService;
 
   @Autowired
   private JavaMailSender javaMailSender;

@@ -2,9 +2,7 @@ package com.example.web;
 
 import com.example.model.Book;
 import com.example.service.BookService;
-import java.lang.reflect.Array;
 import java.net.URI;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
