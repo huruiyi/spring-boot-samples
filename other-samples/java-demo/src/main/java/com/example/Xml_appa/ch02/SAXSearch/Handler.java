@@ -28,8 +28,7 @@ public class Handler extends DefaultHandler2 {
   }
 
   @Override
-  public void endElement(String uri, String localName,
-      String qName) {
+  public void endElement(String uri, String localName, String qName) {
     if (!localName.equals("book")) {
       return;
     }
@@ -50,9 +49,7 @@ public class Handler extends DefaultHandler2 {
   }
 
   @Override
-  public void startElement(String uri, String localName,
-      String qName,
-      Attributes attributes) {
+  public void startElement(String uri, String localName, String qName, Attributes attributes) {
     if (localName.equals("title")) {
       isTitle = true;
       return;
