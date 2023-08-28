@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>授权</title>
+  <link type="text/css" rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
+  <script>
+
+    function submitForm(obj, flag) {
+      let name = obj.getAttribute('name');
+
+      const form = document.querySelector("#grantForm");
+      const hiddenInput = document.createElement("input");
+      hiddenInput.name = name;
+      hiddenInput.type = "hidden"
+      hiddenInput.value = flag;
+      form.append(hiddenInput)
+
+      form.submit()
+    }
+  </script>
+
+  <style>
+    .radioItem {
+      display: inline-block;
+      width: 35%;
+      text-align: center;
+    }
+
+    .scopeLabel {
+      display: inline-block;
+      width: 20%;
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+<div class="ui centered card" style="">
+  <div class="ui cards">
+    <div class="card">
+      <div class="content">
+        <div class="header">
+          OAuth2授权
+        </div>
+        <div class="description">
+          授权后表明你已同意 <a href="#boot" style="color: #E9686B">服务协议</a>
+        </div>
+      </div>
+      <div class="extra content">
+        <div class="description">
+          <h3 th:text="${clientId}+' 请求授权，该应用将获取你的以下信息:'"></h3>
+        </div>
+        <p>&nbsp;&nbsp;1：获取用户信息<br>&nbsp;&nbsp;2：获取用户联系人信息</p>
+        <form id="grantForm" method="post" action="/oauth/authorize">
+          <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+          <input type="hidden" name="user_oauth_approval" value="true">
+          <div th:each="item:${scopes}">
+            <label class="scopeLabel" th:text="'scope:'+${item}"></label>
+            <div class="ui two buttons">
+              <div th:name="'scope.'+${item}" class="ui basic green button" onclick="submitForm(this,true)">Approve</div>
+              <div th:name="'scope.'+${item}" class="ui basic red button" onclick="submitForm(this,false)">Decline</div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ui cards">
+    <div class="card">
+      <div class="content">
+        <h3 th:text="${clientId}+' 请求授权，该应用将获取你的以下信息'"></h3>
+        <p>A,B,C,D</p>
+        授权后表明你已同意 <a href="#boot" style="color: #E9686B">服务协议</a>
+      </div>
+
+      <div class="extra content">
+        <form method="post" action="/oauth/authorize">
+          <input type="hidden" name="user_oauth_approval" value="true">
+          <div th:each="item:${scopes}">
+            <label class="scopeLabel" th:text="'scope:'+${item}"></label>
+            <div class="radioItem">
+              <input type="radio" th:id="'scope1.'+${item}" th:name="'scope.'+${item}" value="true" checked>
+              <label th:for="'scope1.'+${item}">同意</label>
+            </div>
+            <div class="radioItem">
+              <input type="radio" th:id="'scope2.'+${item}" th:name="'scope.'+${item}" value="false">
+              <label th:for="'scope2.'+${item}"> 拒绝</label>
+            </div>
+          </div>
+          <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+          <input name="authorize" class="ui fluid basic large submit pink button" value="同意/授权" type="submit">
+        </form>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+</body>
+</html>
