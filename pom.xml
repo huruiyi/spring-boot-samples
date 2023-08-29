@@ -66,7 +66,7 @@
     <module>spring-boot-thymeleaf</module>
     <module>spring-multi-datasource</module>
     <module>spring-boot-websocket</module>
-    <module>spring-oauth2</module>
+    <module>spring-boot-oauth2</module>
     <module>spring-boot-websocket</module>
     <module>spring-boot-dubbo</module>
     <module>spring-boot-openapi</module>

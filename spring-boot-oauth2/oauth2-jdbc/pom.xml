@@ -5,14 +5,14 @@
 
 	<parent>
 		<groupId>com.example.demo</groupId>
-		<artifactId>spring-oauth2</artifactId>
+		<artifactId>spring-boot-oauth2</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<groupId>com.example</groupId>
-	<artifactId>spring-oauth2-jdbc</artifactId>
+	<artifactId>oauth2-jdbc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-oauth2-jdbc</name>
+	<name>oauth2-jdbc</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
