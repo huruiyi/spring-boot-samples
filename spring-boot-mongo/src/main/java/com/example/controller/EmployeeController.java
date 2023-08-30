@@ -26,7 +26,8 @@ public class EmployeeController {
 
   private EmployeeService service2;
 
-  public EmployeeController(@Qualifier("v1") EmployeeService service1,
+  public EmployeeController(
+      @Qualifier("v1") EmployeeService service1,
       @Qualifier("v2") EmployeeService service2) {
     this.service1 = service1;
     this.service2 = service2;
@@ -49,7 +50,6 @@ public class EmployeeController {
     for (int i = 0; i < 10; i++) {
       service1.save(new Employee("V2-" + (UUID.randomUUID().toString().substring(1, 10) + "-" + i).replace("-", ""), 96, "胡大哥"));
     }
-
     return service1.findAll();
   }
 

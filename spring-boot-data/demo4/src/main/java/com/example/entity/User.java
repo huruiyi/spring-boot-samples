@@ -20,7 +20,6 @@ public class User {
   // select next_val as id_val from hibernate_sequence for update
   // update hibernate_sequence set next_val= ? where next_val=?
   // @GeneratedValue(strategy = GenerationType.AUTO)
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;

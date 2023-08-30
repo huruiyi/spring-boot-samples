@@ -26,9 +26,6 @@ public class MessageController {
   /**
    * http://localhost:8090/message/list?type=1&currentPage=1
    *
-   * @param type
-   * @param currentPage
-   * @return
    */
   @GetMapping("list")
   public PageData<Message> list(int type, int currentPage) {

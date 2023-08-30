@@ -16,11 +16,7 @@ public class UserService {
   }
 
   public boolean verifyUser(User user) {
-    if (userRepository.findByNameAndPassword(user.getName(), user.getPassword()).isEmpty()) {
-      return false;
-    } else {
-      return true;
-    }
+    return !userRepository.findByNameAndPassword(user.getName(), user.getPassword()).isEmpty();
   }
 
   public boolean findByEmail(User user) {
@@ -28,8 +24,7 @@ public class UserService {
   }
 
   public List<User> findByEmail(String email) {
-    List<User> list = userRepository.findByEmail(email);
-    return list;
+    return userRepository.findByEmail(email);
   }
 
   public String registerUser(User user) {

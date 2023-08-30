@@ -44,10 +44,6 @@ public class FileController {
 
   /**
    * 分页查询文件
-   *
-   * @param pageIndex
-   * @param pageSize
-   * @return
    */
   @GetMapping("files/{pageIndex}/{pageSize}")
   @ResponseBody
@@ -57,17 +53,11 @@ public class FileController {
 
   /**
    * 获取文件片信息
-   *
-   * @param id
-   * @return
-   * @throws UnsupportedEncodingException
    */
   @GetMapping("files/{id}")
   @ResponseBody
   public ResponseEntity<Object> serveFile(@PathVariable String id) throws UnsupportedEncodingException {
-
     Optional<File> file = fileService.getFileById(id);
-
     if (file.isPresent()) {
       return ResponseEntity.ok()
           .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; fileName=" + new String(file.get().getName().getBytes("utf-8"), "ISO-8859-1"))
@@ -83,9 +73,6 @@ public class FileController {
 
   /**
    * 在线显示文件
-   *
-   * @param id
-   * @return
    */
   @GetMapping("/view/{id}")
   @ResponseBody
@@ -107,34 +94,24 @@ public class FileController {
 
   /**
    * 上传
-   *
-   * @param file
-   * @param redirectAttributes
-   * @return
    */
   @PostMapping("/")
   public String handleFileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
-
     try {
       File f = new File(file.getOriginalFilename(), file.getContentType(), file.getSize(), new Binary(file.getBytes()));
       f.setMd5(MongoUtils.getMD5(file.getInputStream()));
       fileService.saveFile(f);
     } catch (IOException | NoSuchAlgorithmException ex) {
-      ex.printStackTrace();
       redirectAttributes.addFlashAttribute("message", "Your " + file.getOriginalFilename() + " is wrong!");
       return "redirect:/";
     }
 
     redirectAttributes.addFlashAttribute("message", "You successfully uploaded " + file.getOriginalFilename() + "!");
-
     return "redirect:/";
   }
 
   /**
    * 上传接口
-   *
-   * @param file
-   * @return
    */
   @PostMapping("/upload")
   @ResponseBody
@@ -148,7 +125,6 @@ public class FileController {
       return ResponseEntity.status(HttpStatus.OK).body(path);
 
     } catch (IOException | NoSuchAlgorithmException ex) {
-      ex.printStackTrace();
       return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
     }
 
@@ -163,7 +139,6 @@ public class FileController {
   @DeleteMapping("/{id}")
   @ResponseBody
   public ResponseEntity<String> deleteFile(@PathVariable String id) {
-
     try {
       fileService.removeFile(id);
       return ResponseEntity.status(HttpStatus.OK).body("DELETE Success!");
