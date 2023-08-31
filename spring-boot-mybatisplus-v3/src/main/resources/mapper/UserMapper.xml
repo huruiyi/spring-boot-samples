@@ -2,10 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.mapper.UserMapper">
     <insert id="saveBatchByNative">
-        INSERT INTO `USER`(`NAME`,`PASSWORD`) VALUES
-        <foreach collection="list" separator="," item="item">
-            (#{item.name},#{item.password})
-        </foreach>
+      INSERT INTO `USER`(`NAME`,`PASSWORD`) VALUES
+      <foreach collection="list" separator="," item="item">
+        (#{item.name},#{item.password})
+      </foreach>
+    </insert>
+    <insert id="saveBatchCustom">
+      INSERT INTO `USER`(`NAME`,`PASSWORD`,`CREATETIME`)
+      values
+      <foreach collection="list" item="item" separator=",">
+        (#{item.name},#{item.password},#{item.createTime})
+      </foreach>
     </insert>
 
 </mapper>

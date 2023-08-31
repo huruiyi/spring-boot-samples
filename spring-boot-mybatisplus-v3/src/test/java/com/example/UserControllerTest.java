@@ -13,21 +13,20 @@ import org.springframework.boot.test.context.SpringBootTest;
 class UserControllerTest {
 
   // 最大循环次数
-  private static final int MAXCOUNT = 100000;
+  private static final int MAX_COUNT = 1000000;
 
   @Autowired
   private UserServiceImpl userService;
 
 
   /**
-   * 执行时间：71685
-   * 循环单次插入
+   * 执行时间：71685 循环单次插入
    */
   @Test
   void save() {
     Assertions.assertDoesNotThrow(() -> {
       long time = System.currentTimeMillis(); // 统计开始时间
-      for (int i = 0; i < MAXCOUNT; i++) {
+      for (int i = 0; i < MAX_COUNT; i++) {
         User user = new User();
         user.setName("test:" + i);
         user.setPassword("123456");
@@ -40,15 +39,14 @@ class UserControllerTest {
 
 
   /**
-   * 执行时间：9432
-   * MP 批量插入
+   * 执行时间：9432 MP 批量插入
    */
   @Test
   void saveBatch() {
     Assertions.assertDoesNotThrow(() -> {
       long time = System.currentTimeMillis(); // 统计开始时间
       List<User> list = new ArrayList<>();
-      for (int i = 0; i < MAXCOUNT; i++) {
+      for (int i = 0; i < MAX_COUNT; i++) {
         User user = new User();
         user.setName("test:" + i);
         user.setPassword("123456");
@@ -62,15 +60,14 @@ class UserControllerTest {
   }
 
   /**
-   * 执行时间：928
-   * 原生自己拼接 SQL，批量插入
+   * 执行时间：928 原生自己拼接 SQL，批量插入
    */
   @Test
   void saveBatchByNative() {
     Assertions.assertDoesNotThrow(() -> {
       long time = System.currentTimeMillis(); // 统计开始时间
       List<User> list = new ArrayList<>();
-      for (int i = 0; i < MAXCOUNT; i++) {
+      for (int i = 0; i < MAX_COUNT; i++) {
         User user = new User();
         user.setName("test:" + i);
         user.setPassword("123456");
@@ -81,7 +78,6 @@ class UserControllerTest {
       long etime = System.currentTimeMillis(); // 统计结束时间
       System.out.println("执行时间：" + (etime - time));
     });
-
   }
 
 
