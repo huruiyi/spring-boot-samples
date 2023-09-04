@@ -18,7 +18,7 @@ import org.springframework.util.StopWatch;
 
 @Slf4j
 @SpringBootTest
-public class BatchInsertDataTest {
+class BatchInsertDataTest {
 
   private static final int MAX_COUNT = 10000;
 
@@ -28,7 +28,7 @@ public class BatchInsertDataTest {
   private UserService userService;
 
   @BeforeEach
-  public void atest1() {
+  public void deleteTest() {
     Wrapper<User> query = new QueryWrapper<User>();
     userMapper.delete(query);
     log.info("清空数据表");
@@ -38,7 +38,7 @@ public class BatchInsertDataTest {
    * 543
    */
   @Test
-  public void mybatisForeach() {
+  void mybatisForeach() {
     StopWatch sw = new StopWatch("testBatchInsert2");
     sw.start();
     List<User> list = getUsers();
@@ -51,7 +51,7 @@ public class BatchInsertDataTest {
    * 1960
    */
   @Test
-  public void mybatisPlusBatchSave() {
+  void mybatisPlusBatchSave() {
     StopWatch sw = new StopWatch("mybatisPlusBatchSave");
     sw.start();
     List<User> list = getUsers();
