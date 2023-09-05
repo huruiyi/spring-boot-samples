@@ -3,9 +3,6 @@ package com.apress.prospring5.ch3.annotated;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by iuliana.cosmina on 2/15/17.
- */
 @Component
 public class Inspiration {
 
@@ -22,4 +19,5 @@ public class Inspiration {
   public void setLyric(String lyric) {
     this.lyric = lyric;
   }
+
 }

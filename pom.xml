@@ -32,8 +32,7 @@
     <module>other-samples/pro-spring-5-ch03/injection/injection</module>
     <module>other-samples/pro-spring-5-ch03/injection/field-injection</module>
 
-    <module>other-samples/pro-spring-5-ch05/security</module>
-    <module>other-samples/pro-spring-5-ch05/static-pointcut</module>
+    <module>other-samples/pro-spring-5-ch05</module>
 
     <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch6</module>
     <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch7</module>
@@ -75,6 +74,6 @@
     <module>spring-boot-openapi</module>
     <module>spring-boot-websocket</module>
     <module>spring-multi-datasource</module>
-    <module>other-samples/pro-spring-5-ch05/ch05-all</module>
+    <module>other-samples/pro-spring-5-ch05/pro-spring-5-ch05</module>
   </modules>
 </project>

@@ -7,9 +7,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static org.junit.Assert.assertNotNull;
 
-/**
- * Created by iuliana.cosmina on 1/28/17.
- */
 public class TestHelloWorldSpringDI {
 
   @Test
@@ -18,4 +15,5 @@ public class TestHelloWorldSpringDI {
     MessageRenderer mr = ctx.getBean("renderer", MessageRenderer.class);
     assertNotNull(mr);
   }
+
 }

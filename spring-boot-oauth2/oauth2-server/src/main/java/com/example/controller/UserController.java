@@ -6,9 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- * Created by macro on 2019/9/30.
- */
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -19,7 +16,7 @@ public class UserController {
   }
 
   /**
-   * http://localhost:9401/user/getCurrentUser?access_token=fJ29Voj_gJwGRjsif_hULcRrOzE
+   * <a href="http://localhost:9401/user/getCurrentUser?access_token=fJ29Voj_gJwGRjsif_hULcRrOzE">...</a>
    */
   @ResponseBody
   @GetMapping("/getCurrentUser")
