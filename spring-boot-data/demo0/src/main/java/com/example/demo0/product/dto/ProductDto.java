@@ -2,15 +2,12 @@ package com.example.demo0.product.dto;
 
 import com.example.demo0.product.entity.Product;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 
 public class ProductDto implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  // ========================================================================
-  // fields =================================================================
   private Long id;
   private String name;
   private String coverImage;
@@ -38,8 +35,7 @@ public class ProductDto implements Serializable {
         .add("name", getName());
   }
 
-  // ========================================================================
-  // setter/getter ==========================================================
+
   public Long getId() {
     return id;
   }

@@ -16,10 +16,13 @@ import java.util.List;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-  @Autowired
-  protected ProductRepository productRepository;
-  @Autowired
-  protected ProductCommentRepository productCommentRepository;
+  protected final ProductRepository productRepository;
+  protected final ProductCommentRepository productCommentRepository;
+
+  public ProductServiceImpl(ProductRepository productRepository, ProductCommentRepository productCommentRepository) {
+    this.productRepository = productRepository;
+    this.productCommentRepository = productCommentRepository;
+  }
 
   @Override
   public Page<Product> getPage(Pageable pageable) {

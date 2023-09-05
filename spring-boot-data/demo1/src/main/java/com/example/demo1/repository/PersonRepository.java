@@ -1,11 +1,10 @@
 package com.example.demo1.repository;
 
 import com.example.demo1.model.Person;
+import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
-
-import java.util.List;
 
 /**
  * @author yangyueming

@@ -6,14 +6,16 @@ import com.example.model.User;
 import com.example.service.CountryService;
 import com.example.service.UserService;
 import com.github.pagehelper.PageHelper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import javax.xml.crypto.Data;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/user")
@@ -24,24 +26,21 @@ public class UserController {
    */
   @Autowired
   private UserService userService1;
-
   @Autowired
   private CountryService countryService;
 
 
   private UserService userService2;
-
   /**
-   * 构造函数注入
-   *
-   * @param userService
+   * set注入
    */
   @Autowired
   public void setUserService(UserService userService) {
     this.userService2 = userService;
   }
 
-  @RequestMapping("/")
+  @ResponseBody
+  @RequestMapping("/hello")
   public String index() {
     return "Greetings from Spring Boot!";
   }
@@ -70,15 +69,17 @@ public class UserController {
     return userService1.findAll();
   }
 
-  @RequestMapping(value = "/addUser")
+  @RequestMapping(value = "/add")
   public void addUser() {
     User user = new User();
     user.setEmail("110@qq.com");
     user.setSex(SexEnum.FEMALE);
     user.setUserName("hello");
-    user.setLoginTime(new Date());
-    user.setNote("测试...");
+    user.setLoginTime(LocalDateTime.now());
+    user.setNote("mybatis 入门测试案例！");
+    user.setMobile("13612345678");
     user.setPositionId(110112);
+
     List<String> hobbies = new ArrayList<>();
     hobbies.add("play computer games");
     hobbies.add("listen to music");
@@ -88,17 +89,15 @@ public class UserController {
     System.out.println(ret);
   }
 
-  @RequestMapping(value = "/getUser")
-  public User user(@RequestParam(value = "id", required = true) Integer id) {
+  @RequestMapping(value = "/{id}")
+  public User user(@PathVariable Integer id) {
     User user = userService1.selectById(id);
     System.out.println(user.toString());
     return user;
   }
 
-
   @RequestMapping(value = "/getCountry")
-  public Country country(@RequestParam(value = "id", required = true) Integer id) {
-    Country country = countryService.getById(id);
-    return country;
+  public Country country(@RequestParam(value = "id") Integer id) {
+    return countryService.getById(id);
   }
 }

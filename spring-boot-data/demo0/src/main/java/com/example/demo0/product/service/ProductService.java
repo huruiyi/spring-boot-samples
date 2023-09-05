@@ -2,10 +2,9 @@ package com.example.demo0.product.service;
 
 import com.example.demo0.product.entity.Product;
 import com.example.demo0.product.entity.ProductComment;
+import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-
-import java.util.List;
 
 public interface ProductService {
 
@@ -21,23 +20,17 @@ public interface ProductService {
    * 加载指定的商品配置
    *
    * @param id 商品配置ID
-   * @return
    */
   Product load(Long id);
 
   /**
    * 加载指定商品的评论列表
-   *
-   * @param productId
-   * @return
    */
   List<ProductComment> findAllByProduct(Long productId);
 
 
   /**
    * 加载所有商品
-   *
-   * @return
    */
   List<Product> findAll();
 

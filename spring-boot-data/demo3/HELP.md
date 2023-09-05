@@ -23,8 +23,8 @@ logging.level.org.springframework=info
 ################### DataSource Configuration ##########################
 # spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-spring.datasource.username=test
-spring.datasource.password=test
+spring.datasource.username=root
+spring.datasource.password=root
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 #spring.datasource.initialize=true
 ################### Hibernate Configuration ##########################

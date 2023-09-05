@@ -2,15 +2,15 @@ package com.example.demo1.web;
 
 import com.example.demo1.model.Location;
 import com.example.demo1.model.Person;
-import com.example.demo1.repository.PersonRepository;
 import com.example.demo1.service.PersonService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PersonController {
@@ -21,7 +21,7 @@ public class PersonController {
 
 
   /**
-   * http://localhost:8080/save
+   * <a href="http://localhost:8080/save">...</a>
    */
   @GetMapping("/save")
   public Person save() {
@@ -41,7 +41,7 @@ public class PersonController {
   }
 
   /**
-   * http://localhost:8080/findByName?name=wyf
+   * <a href="http://localhost:8080/findByName?name=wyf">...</a>
    */
   @GetMapping("/findByName")
   public Person findByName(@RequestParam String name) {
@@ -49,7 +49,7 @@ public class PersonController {
   }
 
   /**
-   * http://localhost:8080/findAll
+   * <a href="http://localhost:8080/findAll">...</a>
    */
   @GetMapping("/findAll")
   public List<Person> findAll() {
@@ -57,7 +57,7 @@ public class PersonController {
   }
 
   /**
-   * http://localhost:8080/findByAge?age=32
+   * <a href="http://localhost:8080/findByAge?age=32">...</a>
    */
   @RequestMapping("/findByAge")
   public List<Person> findByAge(Integer age) {

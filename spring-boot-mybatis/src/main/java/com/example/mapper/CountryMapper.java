@@ -1,11 +1,9 @@
 package com.example.mapper;
 
 import com.example.model.Country;
-import com.example.model.User;
+import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-
-import java.util.List;
 
 @Mapper
 public interface CountryMapper {

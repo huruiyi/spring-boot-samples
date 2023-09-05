@@ -10,8 +10,6 @@ public class ProductCommentDto implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  // ========================================================================
-  // fields =================================================================
   private Long id;
   private ProductDto product;
   private String content;
@@ -38,8 +36,6 @@ public class ProductCommentDto implements Serializable {
         .add("productId", getProduct());
   }
 
-  // ========================================================================
-  // setter/getter ==========================================================
   public Long getId() {
     return id;
   }

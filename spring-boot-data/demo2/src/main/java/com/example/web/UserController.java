@@ -81,7 +81,7 @@ public class UserController {
         userInfo.setSex(user.getSex());
         userInfo.setEmail(user.getEmail());
         userInfo.setTelPhone(user.getTelPhone());
-        userInfo.setpSign(user.getpSign());
+        userInfo.setPersonalSign(user.getPersonalSign());
         userRepository.save(userInfo);
         res.setFlag(true);
         res.setMessage("修改成功");
@@ -101,13 +101,13 @@ public class UserController {
     return this.userService.getAllUsers();
   }
 
-  @RequestMapping(value = "/adduser", method = RequestMethod.POST,
+  @RequestMapping(value = "/add", method = RequestMethod.POST,
       consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
   public User addUser(@RequestBody User user) {
     return this.userService.addUser(user);
   }
 
-  @RequestMapping(value = "/updateuser", method = RequestMethod.PUT,
+  @RequestMapping(value = "/updater", method = RequestMethod.PUT,
       consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
   public User updateUser(@RequestBody User user) {
     return this.userService.updateUser(user);

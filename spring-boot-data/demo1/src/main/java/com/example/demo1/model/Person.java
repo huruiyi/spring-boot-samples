@@ -1,15 +1,11 @@
 package com.example.demo1.model;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
-/**
- * @author yangyueming
- */
 @Document
 @Data
 public class Person {

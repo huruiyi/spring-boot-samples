@@ -1,11 +1,9 @@
 package com.example.converter;
 
 import com.example.enums.SexEnum;
-
 import javax.persistence.AttributeConverter;
 
-public class SexConverter
-    implements AttributeConverter<SexEnum, Integer> {
+public class SexConverter implements AttributeConverter<SexEnum, Integer> {
 
   // 将枚举转换为数据库列
   @Override
@@ -18,4 +16,5 @@ public class SexConverter
   public SexEnum convertToEntityAttribute(Integer id) {
     return SexEnum.getEnumById(id);
   }
+
 }

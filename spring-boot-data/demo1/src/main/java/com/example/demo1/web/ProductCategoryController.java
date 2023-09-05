@@ -1,23 +1,20 @@
 package com.example.demo1.web;
 
-import com.example.demo1.model.Product;
 import com.example.demo1.model.ProductCategory;
 import com.example.demo1.repository.ProductCategoryRepository;
-import com.example.demo1.repository.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/ProductCategory")
 public class ProductCategoryController {
 
+  private final ProductCategoryRepository productCategoryRepository;
 
-  @Autowired
-  private ProductCategoryRepository productCategoryRepository;
+  public ProductCategoryController(ProductCategoryRepository productCategoryRepository) {
+    this.productCategoryRepository = productCategoryRepository;
+  }
 
 
   @RequestMapping(value = "/createCategory")

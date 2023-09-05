@@ -2,19 +2,19 @@ package com.example.demo1.web;
 
 import com.example.demo1.model.Product;
 import com.example.demo1.repository.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/Product")
 public class ProductController {
 
+  private final ProductRepository productRepository;
 
-  @Autowired
-  private ProductRepository productRepository;
+  public ProductController(ProductRepository productRepository) {
+    this.productRepository = productRepository;
+  }
 
 
   private Product createProject() {

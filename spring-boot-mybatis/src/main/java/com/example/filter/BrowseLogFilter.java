@@ -1,21 +1,25 @@
 package com.example.filter;
 
+import java.io.IOException;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.servlet.*;
-import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
-
+@Slf4j
 public class BrowseLogFilter implements Filter {
-
-  private Logger logger = LoggerFactory.getLogger(getClass());
 
 
   @Override
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
     String path = ((HttpServletRequest) request).getRequestURI();
-    logger.debug("Path=" + path);
+    log.debug("Path=" + path);
     System.out.println("\n****************************");
     System.out.println("Path:" + path);
     System.out.println("****************************");

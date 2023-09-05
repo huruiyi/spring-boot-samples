@@ -15,27 +15,16 @@ public class ProductComment implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  // ========================================================================
-  // fields =================================================================
   @Id
   @GeneratedValue
-  /** 商品评论数据库主键 */
   private Long id;
-  /**
-   * 所示商品的Id
-   */
+
   private Long productId;
-  /**
-   * 评论作者的Id
-   */
+
   private Long authorId;
-  /**
-   * 评论的具体内容
-   */
+
   private String content;
-  /**
-   * 评论创建时间
-   */
+
   private Date created;
 
   @Override
@@ -47,8 +36,6 @@ public class ProductComment implements Serializable {
         .add("content", getContent()).toString();
   }
 
-  // ========================================================================
-  // setter/getter ==========================================================
   public Long getId() {
     return id;
   }

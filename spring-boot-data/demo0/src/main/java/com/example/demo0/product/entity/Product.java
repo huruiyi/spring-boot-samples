@@ -14,23 +14,14 @@ public class Product implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  // ========================================================================
-  // fields =================================================================
   @Id
   @GeneratedValue
-  /** 商品数据库主键 */
   private Long id;
-  /**
-   * 商品名称
-   */
+
   private String name;
-  /**
-   * 商品封面图片
-   */
+
   private String coverImage;
-  /**
-   * 商品价格(分)
-   */
+
   private int price;
 
   @Override
@@ -40,8 +31,6 @@ public class Product implements Serializable {
         .add("name", getName()).toString();
   }
 
-  // ========================================================================
-  // setter/getter ==========================================================
   public Long getId() {
     return id;
   }

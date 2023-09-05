@@ -2,7 +2,7 @@ package com.example.controller;
 
 import com.example.entity.User;
 import com.example.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,25 +11,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
-
 
 @Controller
 @EnableAutoConfiguration
 @RequestMapping("/user")
 public class UserController {
 
-  @Autowired
-  private UserService userService;
+  private final UserService userService;
 
-  @RequestMapping("/")
+  public UserController(UserService userService) {
+    this.userService = userService;
+  }
+
   @ResponseBody
+  @RequestMapping({"/", ""})
   String welcome() {
     return "welcome my first spring boot project";
   }
 
-  @RequestMapping("/notVerify")
   @ResponseBody
+  @RequestMapping("/notVerify")
   String notVerify() {
     return "username or password NOT correct";
   }
@@ -46,27 +47,24 @@ public class UserController {
     return "register";
   }
 
-  @RequestMapping(value = "/regist", method = RequestMethod.POST)
   @ResponseBody
+  @RequestMapping(value = "/register", method = RequestMethod.POST)
   String registerUser(@RequestBody User user) {
     return userService.registerUser(user);
   }
 
-  @RequestMapping(value = "/login", method = RequestMethod.POST)
   @ResponseBody
+  @RequestMapping(value = "/login", method = RequestMethod.POST)
   boolean userLogin(@RequestBody User user, Model model) {
     model.addAttribute("name", user.getName());
     model.addAttribute("password", user.getPassword());
     return userService.verifyUser(user);
-
   }
 
-
-  @RequestMapping(value = "/get", method = RequestMethod.POST)
   @ResponseBody
+  @RequestMapping(value = "/get", method = RequestMethod.POST)
   List<User> get(@RequestBody User user, Model model) {
-    List<User> list = userService.findByEmail(user.getEmail());
-    return list;
+    return userService.findByEmail(user.getEmail());
 
   }
 

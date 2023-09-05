@@ -4,13 +4,11 @@ import com.example.demo1.model.Product;
 import com.example.demo1.model.ProductCategory;
 import com.example.demo1.repository.ProductCategoryRepository;
 import com.example.demo1.repository.ProductRepository;
-
+import javax.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
 
 @Component
 public class InitializationComponent {

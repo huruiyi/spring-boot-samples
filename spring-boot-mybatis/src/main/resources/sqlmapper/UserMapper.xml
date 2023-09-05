@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.mapper.UserMapper">
   <insert id="insertUser" parameterType="com.example.model.User">
-    insert into t_user
+    insert into mybatis_user
       (user_name, mobile, login_time, email, hobbies, sex, position_id, note)
       value
       ( #{userName},
@@ -25,12 +25,12 @@
     <result column="note" jdbcType="VARCHAR" property="note"/>
     <result column="sex" jdbcType="INTEGER" property="sex" typeHandler="com.example.typeHandler.SexTypeHandler"/>
     <result column="hobbies" property="hobbies" typeHandler="com.example.typeHandler.ListTypeHandler"/>
-    <result column="login_time" property="loginTime" typeHandler="com.example.typeHandler.TimeOnlyTypeHandler"/>
+    <result column="login_time" property="loginTime" typeHandler="org.apache.ibatis.type.LocalDateTimeTypeHandler"/>
   </resultMap>
 
   <select id="selectAllUsers" resultMap="UserResultMap">
     select id, user_name, sex, mobile, email, note, position_id
-    from t_user
+    from mybatis_user
   </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="UserResultMap">
@@ -40,10 +40,10 @@
            mobile,
            email,
            note,
-           position_id positionId,
+           position_id,
            hobbies,
            login_time
-    from t_user
+    from mybatis_user
     where id = #{id}
   </select>
 </mapper>
