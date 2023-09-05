@@ -74,6 +74,7 @@
     <module>spring-boot-openapi</module>
     <module>spring-boot-websocket</module>
     <module>spring-multi-datasource</module>
-    <module>other-samples/pro-spring-5-ch05/pro-spring-5-ch05</module>
+    <module>other-samples/pro-spring-5-ch05</module>
+    <module>other-samples/pro-spring-5-ch14</module>
   </modules>
 </project>

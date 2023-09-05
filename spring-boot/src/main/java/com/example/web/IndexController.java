@@ -59,10 +59,14 @@ public class IndexController {
   }
 
   @RequestMapping("/sayHi")
-  public Map<String, String> hello(String name) {
+  public Map<String, String> sayHi(String name) {
     Map<String, String> map = new HashMap<>();
     map.put("name", name);
     return map;
+  }
+  @RequestMapping("/sayHello")
+  public String sayHello(String name) {
+    return "hello " + name;
   }
 
   @GetMapping("/service")
