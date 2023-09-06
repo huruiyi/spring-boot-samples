@@ -1,6 +1,16 @@
 package org.flowable.holidayrequest;
 
-import org.flowable.engine.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import org.flowable.common.engine.impl.AbstractEngineConfiguration;
+import org.flowable.engine.HistoryService;
+import org.flowable.engine.ProcessEngine;
+import org.flowable.engine.ProcessEngineConfiguration;
+import org.flowable.engine.RepositoryService;
+import org.flowable.engine.RuntimeService;
+import org.flowable.engine.TaskService;
 import org.flowable.engine.history.HistoricActivityInstance;
 import org.flowable.engine.impl.cfg.StandaloneProcessEngineConfiguration;
 import org.flowable.engine.repository.Deployment;
@@ -8,18 +18,12 @@ import org.flowable.engine.repository.ProcessDefinition;
 import org.flowable.engine.runtime.ProcessInstance;
 import org.flowable.task.api.Task;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-
 public class App {
 
-
-  final static ProcessEngineConfiguration cfg;
-  final static ProcessEngine processEngine;
-  final static RepositoryService repositoryService;
-  final static RuntimeService runtimeService;
+  static final ProcessEngineConfiguration cfg;
+  static final ProcessEngine processEngine;
+  static final RepositoryService repositoryService;
+  static final RuntimeService runtimeService;
 
   static {
 
@@ -28,7 +32,7 @@ public class App {
         .setJdbcUsername("root")
         .setJdbcPassword("root")
         .setJdbcDriver("com.mysql.cj.jdbc.Driver")
-        .setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_TRUE);
+        .setDatabaseSchemaUpdate(AbstractEngineConfiguration.DB_SCHEMA_UPDATE_TRUE);
     processEngine = cfg.buildProcessEngine();
     repositoryService = processEngine.getRepositoryService();
     runtimeService = processEngine.getRuntimeService();
@@ -49,7 +53,7 @@ public class App {
 
     System.out.println("Found process definition : " + processDefinition.getName());
 
-    Map<String, Object> variables = new HashMap<String, Object>();
+    Map<String, Object> variables = new HashMap<>();
 
     Scanner scanner = new Scanner(System.in);
 
@@ -84,11 +88,9 @@ public class App {
     System.out.println(processVariables.get("employee") + " wants " + processVariables.get("nrOfHolidays") + " of holidays. Do you approve this?");
 
     boolean approved = scanner.nextLine().toLowerCase().equals("y");
-    variables = new HashMap<String, Object>();
+    variables = new HashMap<>();
     variables.put("approved", approved);
     taskService.complete(task.getId(), variables);
-
-
   }
 
   public static void getHistory() {
