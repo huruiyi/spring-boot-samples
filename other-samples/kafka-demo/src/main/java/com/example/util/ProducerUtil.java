@@ -1,41 +1,31 @@
 package com.example.util;
 
+import java.util.Properties;
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Properties;
-
 public class ProducerUtil {
 
   private static final String TOPIC = "topic-demo";
-  private static final String BROKERLISTS = "localhost:9092";
+  private static final String BROKER_LISTS = "localhost:9092";
   public static KeyedMessage<String, String> message = null;
-  private static Properties properties = null;
-  private static Producer<String, String> producer = null;
+  private static final Producer<String, String> producer;
 
   static {
-    properties = new Properties();
+    Properties properties = new Properties();
     properties.put("serializer.class", "kafka.serializer.StringEncoder");
-    properties.put("metadata.broker.list", BROKERLISTS);
+    properties.put("metadata.broker.list", BROKER_LISTS);
 
     ProducerConfig config = new ProducerConfig(properties);
-    producer = new kafka.javaapi.producer.Producer<String, String>(config);
+    producer = new kafka.javaapi.producer.Producer<>(config);
   }
 
   public static void producer(Object msg) {
-    message = new KeyedMessage<String, String>(TOPIC, "message : " + msg);
+    message = new KeyedMessage<>(TOPIC, "message : " + msg);
     producer.send(message);
     System.out.println("send message : " + msg);
   }
 
-  public static void main(String[] args) throws InterruptedException {
-    while (true) {
-      Thread.sleep(1000);
-      producer("main 生产消息:" + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
-    }
-  }
 
 }

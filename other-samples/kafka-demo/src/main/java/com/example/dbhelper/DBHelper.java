@@ -1,15 +1,11 @@
 package com.example.dbhelper;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.UUID;
 
-/**
- * @author nibudon
- */
 public class DBHelper {
 
   private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -35,7 +31,6 @@ public class DBHelper {
    *
    * @param sql    需要执行的sql语句
    * @param values 为占位符提供的参数
-   * @return
    */
   public static int insert(String sql, Object... values) {
     int result = 0;
@@ -64,7 +59,6 @@ public class DBHelper {
 
   /**
    * @param values 要被预编译的sql语句所有占位符的值，为可变参数
-   * @throws SQLException
    */
   public static void setParameter(Object... values) throws SQLException {
     if (values == null || values.length <= 0) {
