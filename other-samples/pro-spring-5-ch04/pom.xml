@@ -3,10 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example</groupId>
-  <artifactId>pro-spring-5-ch05</artifactId>
+  <artifactId>pro-spring-5-ch04</artifactId>
   <version>0.0.1</version>
   <packaging>jar</packaging>
-  <name>pro-spring-5-ch05</name>
+  <name>pro-spring-5-ch04</name>
 
   <properties>
     <maven.compiler.source>8</maven.compiler.source>
@@ -37,9 +37,14 @@
       <version>5.3.29</version>
     </dependency>
     <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>1.2.11</version>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>8.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.28</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
