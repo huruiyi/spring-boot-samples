@@ -32,7 +32,9 @@
     <module>other-samples/pro-spring-5-ch03/injection/injection</module>
     <module>other-samples/pro-spring-5-ch03/injection/field-injection</module>
 
+    <module>other-samples/pro-spring-5-ch04</module>
     <module>other-samples/pro-spring-5-ch05</module>
+    <module>other-samples/pro-spring-5-ch14</module>
 
     <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch6</module>
     <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch7</module>
