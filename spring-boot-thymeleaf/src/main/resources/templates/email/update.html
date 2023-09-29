@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+  <title></title>
+  <style>
+    table, tr, td {
+      border-collapse: collapse;
+      border: 1px solid rgb(128, 128, 128);
+    }
+
+    td {
+      text-align: center;
+      padding: 5px 10px;
+    }
+
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+<p>hi OFFADM:</p>
+<p>Please update below user profile for below users as below highlight.Tks.</p>
+<table>
+  <tr>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>DisplayName</td>
+    <td>SAMAccountName</td>
+    <td>Office</td>
+    <td>Email Address</td>
+  </tr>
+  <tr th:each="user:${users}">
+    <td th:class="${user.getChanged().firstName}?'highlight':''" th:text="${user.getFirstName()}"></td>
+    <td th:class="${user.getChanged().lastName}?'highlight':''" th:text="${user.getLastName()}"></td>
+    <td th:class="${user.getChanged().displayName}?'highlight':''" th:text="${user.getDisplayName()}"></td>
+    <td th:text="${user.getSamAccountName()}"></td>
+    <td th:class="${user.getChanged().office}?'highlight':''" th:text="${user.getOffice()}"></td>
+    <td th:class="${user.getChanged().email}?'highlight':''" th:text="${user.getEmail()}"></td>
+  </tr>
+</table>
+
+</body>
+</html>

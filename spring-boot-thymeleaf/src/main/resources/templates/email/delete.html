@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+  <title></title>
+  <style>
+    table, tr, td {
+      border-collapse: collapse;
+      border: 1px solid rgb(128, 128, 128);
+    }
+
+    td {
+      text-align: center;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+<p>hi OFFADM：</p>
+<p>Please help remove below users,tks</p>
+<table>
+  <tr>
+    <td>SAMAccountName</td>
+    <td>DisplayName</td>
+    <td>Office</td>
+    <td>Email</td>
+  </tr>
+  <tr th:each="user:${users}">
+    <td th:text="${user.getSamAccountName()}"></td>
+    <td th:text="${user.getDisplayName()}"></td>
+    <td th:text="${user.getOffice()}"></td>
+    <td th:text="${user.getEmail()}"></td>
+  </tr>
+</table>
+
+</body>
+</html>

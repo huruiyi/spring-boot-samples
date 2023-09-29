@@ -42,7 +42,7 @@ public class StudentV1Controller {
   }
 
   @RequestMapping("/sayHi")
-  public String helloWorld(Model model) throws Exception {
+  public String helloWorld(Model model) {
     model.addAttribute("mav", "HelloWorldController ,Spring Boot!");
     //视图(view)的位置和名称，视图位于example文件夹下，视图文件为hello.html。
     return "example/hello";
@@ -71,7 +71,7 @@ public class StudentV1Controller {
 
   @RequestMapping("/showServerHost")
   public String serverHost(Model model) {
-    List<ServerHostProperties.InetAddress> inetAddresses = new ArrayList<ServerHostProperties.InetAddress>();
+    List<ServerHostProperties.InetAddress> inetAddresses = new ArrayList<>();
     inetAddresses.add(serverHostProperties.getInetAddressA());
     inetAddresses.add(serverHostProperties.getInetAddressB());
     inetAddresses.add(serverHostProperties.getInetAddressC());
