@@ -10,6 +10,10 @@ public class DestructiveBeanWithJSR250 {
   private File file;
   private String filePath;
 
+  public void setFilePath(String filePath) {
+    this.filePath = filePath;
+  }
+
   @PostConstruct
   public void afterPropertiesSet() throws Exception {
     System.out.println("Initializing Bean");
@@ -27,15 +31,14 @@ public class DestructiveBeanWithJSR250 {
   @PreDestroy
   public void destroy() {
     System.out.println("Destroying Bean");
+
     if (!file.delete()) {
       System.err.println("ERROR: failed to delete file.");
     }
+
     System.out.println("File exists: " + file.exists());
   }
 
-  public void setFilePath(String filePath) {
-    this.filePath = filePath;
-  }
 
   public static void main(String... args) throws Exception {
     GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
@@ -43,6 +46,7 @@ public class DestructiveBeanWithJSR250 {
     ctx.refresh();
 
     DestructiveBeanWithJSR250 bean = (DestructiveBeanWithJSR250) ctx.getBean("destructiveBean");
+    System.out.println(bean.filePath);
 
     System.out.println("Calling destroy()");
     ctx.close();

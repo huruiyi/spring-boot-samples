@@ -49,7 +49,7 @@ import java.nio.ByteBuffer;
  * </pre>
  * 
  * 51 * 52 * In the CharacterEncoder and CharacterDecoder classes, one complete
- * 53 * chunk of data is referred to as a <i>buffer</i>. Encoded buffers 54 *
+ * 53 * chunk of data is referred to as a <num>buffer</num>. Encoded buffers 54 *
  * are all text, and decoded buffers (sometimes just referred to as 55 *
  * buffers) are binary octets. 56 * 57 * To create a custom encoder, you must,
  * at a minimum, overide three 58 * abstract methods in this class. 59 *
@@ -177,8 +177,8 @@ public abstract class CharacterEncoder
 	}
 
 	/**
-	 * 173 * Encode the buffer in <i>aBuffer</i> and write the encoded 174 *
-	 * result to the OutputStream <i>aStream</i>. 175
+	 * 173 * Encode the buffer in <num>aBuffer</num> and write the encoded 174 *
+	 * result to the OutputStream <num>aStream</num>. 175
 	 */
 	public void encode(byte aBuffer[], OutputStream aStream) throws IOException
 	{
@@ -260,8 +260,8 @@ public abstract class CharacterEncoder
 	}
 
 	/**
-	 * 248 * Encode the <i>aBuffer</i> ByteBuffer and write the encoded 249 *
-	 * result to the OutputStream <i>aStream</i>. 250 *
+	 * 248 * Encode the <num>aBuffer</num> ByteBuffer and write the encoded 249 *
+	 * result to the OutputStream <num>aStream</num>. 250 *
 	 * <P>
 	 * 251 * The ByteBuffer's position will be advanced to ByteBuffer's limit.
 	 * 252
@@ -330,8 +330,8 @@ public abstract class CharacterEncoder
 	}
 
 	/**
-	 * 306 * Encode the buffer in <i>aBuffer</i> and write the encoded 307 *
-	 * result to the OutputStream <i>aStream</i>. 308
+	 * 306 * Encode the buffer in <num>aBuffer</num> and write the encoded 307 *
+	 * result to the OutputStream <num>aStream</num>. 308
 	 */
 	public void encodeBuffer(byte aBuffer[], OutputStream aStream)
 			throws IOException
@@ -360,8 +360,8 @@ public abstract class CharacterEncoder
 	}
 
 	/**
-	 * 332 * Encode the <i>aBuffer</i> ByteBuffer and write the encoded 333 *
-	 * result to the OutputStream <i>aStream</i>. 334 *
+	 * 332 * Encode the <num>aBuffer</num> ByteBuffer and write the encoded 333 *
+	 * result to the OutputStream <num>aStream</num>. 334 *
 	 * <P>
 	 * 335 * The ByteBuffer's position will be advanced to ByteBuffer's limit.
 	 * 336

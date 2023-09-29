@@ -18,12 +18,12 @@ public class RedisController {
 
   private final RedisService redisService;
 
-  private final RedisTemplate redisTemplate;
+  private final RedisTemplate<String, String> redisTemplate;
 
   private final StringRedisTemplate stringRedisTemplate;
 
 
-  public RedisController(RedisService redisService, RedisTemplate redisTemplate, StringRedisTemplate stringRedisTemplate) {
+  public RedisController(RedisService redisService, RedisTemplate<String, String> redisTemplate, StringRedisTemplate stringRedisTemplate) {
     this.redisService = redisService;
     this.redisTemplate = redisTemplate;
     this.stringRedisTemplate = stringRedisTemplate;
@@ -38,7 +38,7 @@ public class RedisController {
 
   @RequestMapping("/setList")
   public String setList(String key) {
-    List<String> listValue = new ArrayList<String>();
+    List<String> listValue = new ArrayList<>();
     listValue.add("user01");
     listValue.add("user02");
     redisService.setObject(key, listValue);

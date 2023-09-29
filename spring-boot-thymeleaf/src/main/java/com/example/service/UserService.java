@@ -22,7 +22,7 @@ public class UserService {
   }
 
   public List<User> findAllUsers() {
-    List<User> users = new ArrayList<User>();
+    List<User> users = new ArrayList<>();
 
     User user = new User();
     user.setId(1);

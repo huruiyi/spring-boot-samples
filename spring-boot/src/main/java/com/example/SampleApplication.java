@@ -32,7 +32,7 @@ public class SampleApplication extends SpringBootServletInitializer implements W
     printBeans(context);
 
     BinarySearchImpl binarySearch = context.getBean(BinarySearchImpl.class);
-    log.info(String.valueOf(binarySearch.binarySearch(new int[]{12, 4, 6}, 3)));
+    log.info(String.valueOf(binarySearch.binarySearch(new int[]{12, 4, 6})));
 
     IndexController controller = context.getBean(IndexController.class);
     log.info(String.valueOf(controller.returnValueFromBusinessService()));

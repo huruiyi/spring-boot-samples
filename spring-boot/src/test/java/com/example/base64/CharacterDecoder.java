@@ -52,7 +52,7 @@ import java.nio.ByteBuffer;
  * distinct prefix of suffix, however all have some fixed relationship 54 *
  * between the text in an 'atom' and the binary data itself. 55 * 56 * In the
  * CharacterEncoder and CharacterDecoder classes, one complete 57 * chunk of
- * data is referred to as a <i>buffer</i>. Encoded buffers 58 * are all text,
+ * data is referred to as a <num>buffer</num>. Encoded buffers 58 * are all text,
  * and decoded buffers (sometimes just referred to as 59 * buffers) are binary
  * octets. 60 * 61 * To create a custom decoder, you must, at a minimum, overide
  * three 62 * abstract methods in this class. 63 *
@@ -124,7 +124,7 @@ public abstract class CharacterDecoder
 
 	/**
 	 * 121 * This method does an actual decode. It takes the decoded bytes and
-	 * 122 * writes them to the OutputStream. The integer <i>l</i> tells the 123
+	 * 122 * writes them to the OutputStream. The integer <num>l</num> tells the 123
 	 * * method how many bytes are required. This is always <= bytesPerAtom().
 	 * 124
 	 */

@@ -1,4 +1,4 @@
-package com.example.boot_web;
+package com.example.test;
 
 import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;

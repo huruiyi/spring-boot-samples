@@ -2,7 +2,6 @@ package com.example.web;
 
 import java.util.Collections;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -15,17 +14,19 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 @Slf4j
 public class MessageController {
 
-  @Autowired
-  private JavaMailSender javaMailSender;
+  private final JavaMailSender javaMailSender;
 
-  @Autowired
-  private SpringTemplateEngine templateEngine;
+  private final SpringTemplateEngine templateEngine;
+
+  public MessageController(JavaMailSender javaMailSender, SpringTemplateEngine templateEngine) {
+    this.javaMailSender = javaMailSender;
+    this.templateEngine = templateEngine;
+  }
 
   @GetMapping("/send1")
   public void send1() {
-    javaMailSender.send((msg) ->
-    {
-      MimeMessageHelper helper = new MimeMessageHelper(msg);
+    javaMailSender.send(mimeMessage -> {
+      MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
       helper.setTo("38761770@qq.com");
       helper.setFrom("807776962@qq.com");
       helper.setSubject("Status message-send1");
@@ -36,8 +37,8 @@ public class MessageController {
 
   @GetMapping("/send2")
   public void send2() {
-    javaMailSender.send((msg) -> {
-      MimeMessageHelper helper = new MimeMessageHelper(msg);
+    javaMailSender.send(mimeMessage -> {
+      MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
       helper.setTo("38761770@qq.com");
       helper.setFrom("807776962@qq.com");
       helper.setSubject("Status message-send2");
