@@ -8,10 +8,10 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 @Slf4j
 @SpringBootApplication
-public class SBatchDemoApplication {
+public class BatchDemoApplication {
 
   public static void main(String[] args) throws IOException {
-    ConfigurableApplicationContext ctx = SpringApplication.run(SBatchDemoApplication.class, args);
+    ConfigurableApplicationContext ctx = SpringApplication.run(BatchDemoApplication.class, args);
     assert (ctx != null);
     log.info("Application started...");
     int read = System.in.read();

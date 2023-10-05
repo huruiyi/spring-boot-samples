@@ -78,7 +78,7 @@ class BatchInsertDataTest {
     User user;
     for (int i = 0; i < MAX_COUNT; i++) {
       user = new User();
-      user.setName("test" + i);
+      user.setName("用户" + i);
       user.setPassword("p" + i);
       user.setCreateTime(LocalDateTime.now());
       list.add(user);

@@ -1,5 +1,8 @@
-package com.example.batch;
+package com.example.batch.config;
 
+import com.example.batch.JobExecutionStatsListener;
+import com.example.batch.model.Singer;
+import com.example.batch.SingerItemProcessor;
 import javax.sql.DataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.Job;

@@ -1,5 +1,6 @@
 package com.example.batch;
 
+import com.example.batch.model.Singer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.JobExecution;

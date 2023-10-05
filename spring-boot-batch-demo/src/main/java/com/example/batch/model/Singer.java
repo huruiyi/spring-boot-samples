@@ -1,4 +1,4 @@
-package com.example.batch;
+package com.example.batch.model;
 
 import lombok.Data;
 
