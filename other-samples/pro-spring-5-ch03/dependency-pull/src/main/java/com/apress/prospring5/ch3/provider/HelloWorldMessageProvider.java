@@ -1,6 +1,5 @@
 package com.apress.prospring5.ch3.provider;
 
-import com.apress.prospring5.ch3.provider.MessageProvider;
 
 public class HelloWorldMessageProvider implements MessageProvider {
 

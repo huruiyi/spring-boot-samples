@@ -44,8 +44,8 @@ import java.io.PushbackInputStream;
    44    *
    45    *      mydata = base64.decodeBuffer(bufferString);
    46    * </pre>
-   47    * This will decode the String in <i>bufferString</i> and give you an array
-   48    * of bytes in the array <i>myData</i>.
+   47    * This will decode the String in <num>bufferString</num> and give you an array
+   48    * of bytes in the array <num>myData</num>.
    49    *
    50    * On errors, this class throws a CEFormatException with the following detail
    51    * strings:

@@ -17,6 +17,7 @@ public class DestructiveBeanConfigDemo {
       destructiveBean.setFilePath(System.getProperty("java.io.tmpdir") + System.getProperty("file.separator") + "test.txt");
       return destructiveBean;
     }
+
   }
 
   public static void main(String... args) {

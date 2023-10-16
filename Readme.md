@@ -2,7 +2,6 @@
 `BasicAsyncRequestProducer，HttpAsyncRequestConsumer`
 
 # TreeSet特点
-
     TreeSet是用来排序的, 可以指定一个顺序, 对象存入之后会按照指定的顺序排列
     使用方式
        
@@ -38,11 +37,9 @@
 ## spring-boot-thin
 
 ```xml
-
 <dependency>
   <groupId>org.springframework.boot.experimental</groupId>
   <artifactId>spring-boot-thin-layout</artifactId>
-  <version>1.0.28.RELEASE</version>
 </dependency>
 ```
 

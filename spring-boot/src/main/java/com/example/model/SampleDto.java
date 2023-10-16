@@ -6,8 +6,10 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
+@ToString
 public class SampleDto {
 
   /**
