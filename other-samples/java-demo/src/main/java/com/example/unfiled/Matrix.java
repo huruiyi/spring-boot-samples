@@ -12,7 +12,7 @@ class Cell {
   private Line bottomLine;
   private Line leftLine;
   private Line rightLine;
-  private Cell rightCell;//
+  private Cell rightCell;
   private Cell bottomCell;
   private boolean visited;//是否被访问，缺省为false
 
@@ -22,11 +22,9 @@ class Cell {
     if (x == 0) {
       leftLine = new Line();
     }
-    ;
     if (y == 0) {
       topLine = new Line();
     }
-    ;
     rightLine = new Line();
     bottomLine = new Line();
   }
