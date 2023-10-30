@@ -6,13 +6,17 @@ class Line {
 
 class Cell {
 
-  private int x;
-  private int y;
+  private final int x;
+  private final int y;
   private Line topLine;
-  private Line bottomLine;
+  private final Line bottomLine;
   private Line leftLine;
-  private Line rightLine;
+  private final Line rightLine;
+
+  @lombok.Getter
   private Cell rightCell;
+
+  @lombok.Getter
   private Cell bottomCell;
   private boolean visited;//是否被访问，缺省为false
 
@@ -33,6 +37,7 @@ class Cell {
     if (visited) {//判断是否被访问过
       return;
     }
+
     String strTemp = String.format("Cell[%d][%d] ", y + 1, x + 1);
 
     if (leftLine != null) {
@@ -51,16 +56,8 @@ class Cell {
     visited = true;//访问过的线标识为true
   }
 
-  public Cell getRightCell() {
-    return rightCell;
-  }
-
   public void setRightCell(Cell rightCell) {
     this.rightCell = rightCell;
-  }
-
-  public Cell getBottomCell() {
-    return bottomCell;
   }
 
   public void setBottomCell(Cell bottomCell) {
@@ -90,7 +87,7 @@ class Matrix {
     }
   }
 
-  public static void main(String[] Args) {
+  public static void main(String[] args) {
     Matrix matrix = new Matrix(3, 4);
     matrix.visit();
   }

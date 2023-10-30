@@ -49,7 +49,7 @@ class DemoTests {
 
   @Test
   void verifierToken() {
-    String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCIsIm5hbWUiOiJodXJ1aXlpIiwiZXhwIjoxNjkwNjAxNDExLCJpYXQiOjE2OTA1OTQyMTEsImFnZSI6IjMxIn0.ljet-ufGsrwpg20CBLSYhsykqtor7m5PB_hc0gKLkxk";
+    String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoMCIsImlhdCI6MTY5ODY0OTk2MSwiZXhwIjoxNjk4NjU3MTYxLCJuYW1lIjoiaHVydWl5aSIsImFnZSI6IjMxIn0.pk0WByGu6kHBfOtpzUcK1EX065lj2Av5HwKXcd_Rnhw";
     try {
       Algorithm algorithm = Algorithm.HMAC256("secret");
       JWTVerifier verifier = JWT.require(algorithm).withIssuer("auth0").build();
@@ -83,7 +83,7 @@ class DemoTests {
 
   @Test
   void decodeToken() {
-    String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCIsIm5hbWUiOiJ3dXl1d2VpIiwiZXhwIjoxNjkwNTA5MzIxLCJpYXQiOjE2OTA1MDIxMjF9.UFQd58u_TyMwrWIT8VuLbtQyl7fC5p7OJjscxOsesGk";
+    String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoMCIsImlhdCI6MTY5ODY0OTk2MSwiZXhwIjoxNjk4NjU3MTYxLCJuYW1lIjoiaHVydWl5aSIsImFnZSI6IjMxIn0.pk0WByGu6kHBfOtpzUcK1EX065lj2Av5HwKXcd_Rnhw";
 
     DecodedJWT jwt = JWT.decode(token);
 
