@@ -6,17 +6,17 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @Slf4j
-@Controller
+@RestController
 @RequestMapping("/async")
 public class AsyncController {
 
+  private final Long TASK_COUNT = 100L;
   private final AsyncServiceV1 asyncService;
 
   public AsyncController(AsyncServiceV1 asyncService) {
@@ -24,7 +24,6 @@ public class AsyncController {
   }
 
   @RequestMapping("/test1")
-  @ResponseBody
   public String asyncTaskV1() throws InterruptedException, ExecutionException {
     asyncService.reset();
     Future<Long> future = asyncService.doTask1(1);
@@ -39,39 +38,37 @@ public class AsyncController {
   }
 
   @RequestMapping("/test2")
-  public @ResponseBody
-  String asyncTaskV2() throws InterruptedException {
+  public String asyncTaskV2() throws InterruptedException {
     asyncService.reset();
-    for (int i = 0; i < 5000; i++) {
-      asyncService.doTask1(1);
+    for (int i = 0; i < TASK_COUNT; i++) {
+      asyncService.doTask1(i);
     }
     log.info("All tasks finished.");
     return "test2 ok";
   }
 
-  @GetMapping("test")
-  public void test1() throws InterruptedException {
+  @GetMapping("/test3")
+  public void test3() throws InterruptedException {
     asyncService.reset();
-    for (int i = 0; i < 230; i++) {
+    for (int i = 0; i < TASK_COUNT; i++) {
       log.info("第{}个任务加入队列", i + 1);
       asyncService.doTask3();
     }
     log.info("已全部加入队列");
   }
 
-  @GetMapping("test2")
-  public void test2() throws ExecutionException, InterruptedException {
+  @GetMapping("/test4")
+  public void test4() throws ExecutionException, InterruptedException {
     asyncService.reset();
-    for (int i = 0; i < 230; i++) {
+    for (int i = 0; i < TASK_COUNT; i++) {
       log.info("第{}个任务加入队列", i + 1);
       Future<String> future = asyncService.doTask4();
-      log.info("test2 result {}", future.get());
+      log.info("test4 result {}", future.get());
     }
     log.info("已全部加入队列");
   }
 
   @RequestMapping("/send")
-  @ResponseBody
   public String index() throws InterruptedException {
     log.info("before @Async");
     asyncService.asyncSendMail();

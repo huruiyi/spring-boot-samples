@@ -1,5 +1,6 @@
 package com.example.exception;
 
+import com.example.enums.HttpStatusCode;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 

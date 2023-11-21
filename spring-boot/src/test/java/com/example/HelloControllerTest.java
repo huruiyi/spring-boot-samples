@@ -39,7 +39,7 @@ public class HelloControllerTest {
   @Test
   public void hello() throws Exception {
     String contentType = (new MediaType("application", "json", StandardCharsets.UTF_8)).toString();
-    MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/sayHello")
+    MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/demo/sayHello")
             .contentType(contentType)
             .param("name", "World")
             .accept(contentType))

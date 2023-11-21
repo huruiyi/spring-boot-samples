@@ -1,5 +1,5 @@
 package com.example.service;
 
 public interface SortAlgorithm {
-    public int[] sort(int[] numbers);
+    int[] sort(int[] numbers);
 }

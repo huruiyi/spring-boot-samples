@@ -1,5 +1,7 @@
 package com.example.model;
 
+import com.example.enums.Gender;
+
 public class Person {
 
   private Long id;

@@ -1,4 +1,4 @@
-package com.example.exception;
+package com.example.enums;
 
 public enum ResultEnum {
   UNKONW_ERROR(-1, "未知错误"),

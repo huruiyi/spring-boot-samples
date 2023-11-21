@@ -1,13 +1,13 @@
 package com.example;
 
 import com.example.model.Book;
-import com.example.service.BinarySearchImpl;
+import com.example.service.impl.BinarySearchImpl;
 import com.example.service.BookService;
 import com.example.service.game.GameRunnerV1;
 import com.example.service.game.GameRunnerV2;
 import com.example.service.game.service.GamingConsole;
 import com.example.service.game.service.impl.MarioGame;
-import com.example.web.IndexController;
+import com.example.web.DemoController;
 import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationRunner;
@@ -34,7 +34,7 @@ public class SampleApplication extends SpringBootServletInitializer implements W
     BinarySearchImpl binarySearch = context.getBean(BinarySearchImpl.class);
     log.info(String.valueOf(binarySearch.binarySearch(new int[]{12, 4, 6})));
 
-    IndexController controller = context.getBean(IndexController.class);
+    DemoController controller = context.getBean(DemoController.class);
     log.info(String.valueOf(controller.returnValueFromBusinessService()));
 
     GamingConsole game2 = new MarioGame();

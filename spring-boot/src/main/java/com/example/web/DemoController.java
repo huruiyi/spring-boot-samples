@@ -1,9 +1,8 @@
 package com.example.web;
 
 import com.example.annotation.ParamsAnnotation;
-import com.example.annotation.SysLog;
 import com.example.model.Course;
-import com.example.service.BusinessService;
+import com.example.service.impl.BusinessService;
 import com.example.service.unclassified.SingleService;
 import com.example.utils.ExcelUtils;
 import java.io.IOException;
@@ -27,13 +26,13 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
+@RequestMapping("/demo")
 @EnableAspectJAutoProxy
-public class IndexController {
+public class DemoController {
 
   //1：构造函数注入
   final SingleService singleService1;
@@ -45,18 +44,13 @@ public class IndexController {
   @Value("${spring.profiles.active}")
   private String env;
 
-  public IndexController(SingleService singleService) {
+  public DemoController(SingleService singleService) {
     this.singleService1 = singleService;
   }
 
   @Autowired
   private BusinessService businessService;
 
-  @SysLog
-  @RequestMapping(value = "/")
-  public String index() {
-    return "Hello World";
-  }
 
   @RequestMapping("/sayHi")
   public Map<String, String> sayHi(String name) {
@@ -77,7 +71,6 @@ public class IndexController {
   }
 
   @RequestMapping("/testMap")
-  @ResponseBody
   public Map<String, String> test() {
     Map<String, String> map = new HashMap<>();
     map.put("key1", "value1");
@@ -139,14 +132,12 @@ public class IndexController {
     }
   }
 
-  @ResponseBody
   @RequestMapping(value = "/devtools")
   public String dev() {
     return "Hello World v2.1.1";
   }
 
   @RequestMapping(value = "/beans")
-  @ResponseBody
   public String[] bean() {
     return singleService1.getBeans();
   }

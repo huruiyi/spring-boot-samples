@@ -1,6 +1,6 @@
 package com.example.config;
 
-import com.example.model.Gender;
+import com.example.enums.Gender;
 import com.example.model.Person;
 import com.example.service.unclassified.SingleService;
 import org.springframework.context.annotation.Bean;

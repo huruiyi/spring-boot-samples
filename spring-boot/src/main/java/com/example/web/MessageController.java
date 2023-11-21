@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
-@RestController
 @Slf4j
+@RestController
 public class MessageController {
 
   private final JavaMailSender javaMailSender;

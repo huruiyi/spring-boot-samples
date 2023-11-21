@@ -15,7 +15,7 @@ public class SessionController {
 
   @GetMapping("/set")
   public String set(HttpSession session) {
-    session.setAttribute("user", "javaboy");
+    session.setAttribute("user", "fairy");
     return String.valueOf(port);
   }
 
