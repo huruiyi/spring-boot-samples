@@ -43,8 +43,7 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 
     @Bean
     public TokenStore tokenStore() {
-      RedisTokenStore redis = new RedisTokenStore(connectionFactory);
-      return redis;
+      return new RedisTokenStore(connectionFactory);
     }
 
     @Override
