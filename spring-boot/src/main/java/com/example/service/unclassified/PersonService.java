@@ -1,6 +1,6 @@
 package com.example.service.unclassified;
 
-import com.example.model.Gender;
+import com.example.enums.Gender;
 import com.example.model.Person;
 import org.springframework.stereotype.Service;
 

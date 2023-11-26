@@ -1,7 +1,7 @@
 package com.example.web;
 
 import com.example.exception.BusinessException;
-import com.example.exception.HttpStatusCode;
+import com.example.enums.HttpStatusCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -39,7 +39,7 @@ public class BookControllerTest {
   private BookService mockBookService;
 
   @Test
-  public void findAl() {
+  void findAl() {
     bookService.create(new Book("9780061120084", "To Kill a Mockingbird", "Harper Lee"));
     bookService.create(new Book("9780451524935", "1984", "George Orwell"));
     bookService.create(new Book("9780618260300", "The Hobbit", "J.R.R. Tolkien"));
@@ -51,7 +51,7 @@ public class BookControllerTest {
   }
 
   @Test
-  public void testHelloWorldController() throws Exception {
+  void testHelloWorldController() throws Exception {
     mockMvc.perform(MockMvcRequestBuilders.get("/books/hello"))
         .andExpect(status().isOk())
         .andExpect(content().string("Hello World, from Spring Boot 2!"))

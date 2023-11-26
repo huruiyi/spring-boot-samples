@@ -1,7 +1,7 @@
 package com.example.config;
 
 import com.example.exception.BusinessException;
-import com.example.exception.HttpStatusCode;
+import com.example.enums.HttpStatusCode;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import lombok.extern.slf4j.Slf4j;

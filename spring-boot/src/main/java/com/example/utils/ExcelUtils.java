@@ -14,11 +14,6 @@ import org.springframework.core.io.DefaultResourceLoader;
 
 public class ExcelUtils {
 
-  /**
-   * Excel 测试获取文件流
-   *
-   * @return
-   */
   public static XSSFWorkbook getOutputStream() {
 
     XSSFWorkbook workbook = new XSSFWorkbook();

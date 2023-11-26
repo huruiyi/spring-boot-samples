@@ -1,6 +1,6 @@
 package com.example.web;
 
-import com.example.model.Gender;
+import com.example.enums.Gender;
 import com.example.model.Person;
 import java.util.ArrayList;
 import java.util.List;
