@@ -1,6 +1,0 @@
-<!ELEMENT recipe (title, ingredients, instructions)>
-  <!ELEMENT title (#PCDATA)>
-  <!ELEMENT ingredients (ingredient+)>
-  <!ELEMENT ingredient (#PCDATA)>
-  <!ELEMENT instructions (#PCDATA)>
-  <!ATTLIST ingredient qty CDATA "1">
