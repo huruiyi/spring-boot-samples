@@ -7,27 +7,25 @@ import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
-public class XpathDemo {
+public class Test {
 
-    private static final Logger log = LoggerFactory.getLogger(Dom4jTest.class);
+    private static final Logger log = LoggerFactory.getLogger(Test.class);
 
-    public static void main(String[] args) throws DocumentException, ParserConfigurationException, IOException, SAXException {
+    public static void main(String[] args) throws DocumentException {
         String dir = System.getProperty("user.dir");
         log.info(dir);
 
-        String path = XpathDemo.class.getClassLoader().getResource("xml/web.xml").getPath();//注意getResource("")里面是空字符串
+        String path = Objects.requireNonNull(Test.class.getClassLoader().getResource("xml/web.xml")).getPath();
         log.info(path);
         Document document = new SAXReader().read(path);
 
         List<Node> nodes = document.selectNodes("/web-app/servlet/servlet-name");
         for (Node node : nodes) {
-            log.info(node.getName() + "  " + node.getText());
+            log.info("name:{},text:{}", node.getName(), node.getText());
         }
 
         Element ele = (Element) document.selectSingleNode("//servlet/servlet-name");
@@ -36,10 +34,9 @@ public class XpathDemo {
         log.info("*****************************************************");
         List<Element> list = document.getRootElement().elements();
         for (Element element : list) {
-            log.info(element.elementText("servlet-name"));
-
-            log.info(element.elementText("url-pattern"));
-            log.info(element.elementText("servlet-class"));
+            log.info("servlet-name:{}", element.elementText("servlet-name"));
+            log.info("url-pattern:{}", element.elementText("url-pattern"));
+            log.info("servlet-class:{}", element.elementText("servlet-class"));
         }
 
         String value = document.getRootElement().attributeValue("version");
@@ -51,7 +48,7 @@ public class XpathDemo {
 
         String classText = servletClass.getText();
         String urlText = urlPattern.getText();
-        log.info(urlText + "-----------" + classText);
+        log.info("urlText:{},classText:{}", urlText, classText);
     }
 
 }

@@ -1,9 +1,11 @@
 package com.example.json;
 
-import com.example.xml.ch.xpath.XpathDemo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Test;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.util.ResourceUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,10 +13,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.util.ResourceUtils;
 
 public class Jackson_Test {
 

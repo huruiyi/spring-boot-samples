@@ -1,6 +1,6 @@
 package com.example.xml.appa.ch02.DumpUserInfo;
 
-import com.example.xml.ch.xpath.XpathDemo;
+import com.example.xml.ch.xpath.Test;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
@@ -8,7 +8,6 @@ import org.xml.sax.XMLReader;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -24,7 +23,7 @@ public class DumpUserInfo {
             XMLReader xmlReader = sp.getXMLReader();
             Handler handler = new Handler();
             xmlReader.setContentHandler(handler);
-            String path = XpathDemo.class.getClassLoader().getResource("xml/tomcat-users.xml").getPath();//注意getResource("")里面是空字符串
+            String path = Test.class.getClassLoader().getResource("xml/tomcat-users.xml").getPath();//注意getResource("")里面是空字符串
             FileReader fr = new FileReader(path);
             xmlReader.parse(new InputSource(fr));
         } catch (IOException ioe) {
