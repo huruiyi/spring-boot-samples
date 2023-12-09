@@ -29,9 +29,11 @@ public class Person {
         this.name = name;
         this.age = age;
     }
-public void showInfo() {
+
+    public void showInfo() {
         System.out.println("我叫" + name + "，今年" + age + "岁");
     }
+
     public void sayHi() {
         System.out.println("Hello World");
     }
@@ -43,7 +45,8 @@ public void showInfo() {
     public void print(int i) {
         System.out.println("我在写数字： " + i);
     }
-    public int add(int a, int b)    {
+
+    public int add(int a, int b) {
         return a + b;
     }
 }

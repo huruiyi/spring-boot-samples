@@ -1,14 +1,15 @@
 package com.example.thread.jcip;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
-
 import com.example.thread.jcip.annotations.GuardedBy;
 import com.example.thread.jcip.annotations.ThreadSafe;
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 /**
  * PrimeGenerator
@@ -20,38 +21,38 @@ import java.util.concurrent.Executors;
 @ThreadSafe
 public class PrimeGenerator implements Runnable {
 
-  private static ExecutorService exec = Executors.newCachedThreadPool();
+    private static ExecutorService exec = Executors.newCachedThreadPool();
 
-  @GuardedBy("this")
-  private final List<BigInteger> primes = new ArrayList<BigInteger>();
-  private volatile boolean cancelled;
+    @GuardedBy("this")
+    private final List<BigInteger> primes = new ArrayList<BigInteger>();
+    private volatile boolean cancelled;
 
-  static List<BigInteger> aSecondOfPrimes() throws InterruptedException {
-    PrimeGenerator generator = new PrimeGenerator();
-    exec.execute(generator);
-    try {
-      SECONDS.sleep(1);
-    } finally {
-      generator.cancel();
+    static List<BigInteger> aSecondOfPrimes() throws InterruptedException {
+        PrimeGenerator generator = new PrimeGenerator();
+        exec.execute(generator);
+        try {
+            SECONDS.sleep(1);
+        } finally {
+            generator.cancel();
+        }
+        return generator.get();
     }
-    return generator.get();
-  }
 
-  public void run() {
-    BigInteger p = BigInteger.ONE;
-    while (!cancelled) {
-      p = p.nextProbablePrime();
-      synchronized (this) {
-        primes.add(p);
-      }
+    public void run() {
+        BigInteger p = BigInteger.ONE;
+        while (!cancelled) {
+            p = p.nextProbablePrime();
+            synchronized (this) {
+                primes.add(p);
+            }
+        }
     }
-  }
 
-  public void cancel() {
-    cancelled = true;
-  }
+    public void cancel() {
+        cancelled = true;
+    }
 
-  public synchronized List<BigInteger> get() {
-    return new ArrayList<BigInteger>(primes);
-  }
+    public synchronized List<BigInteger> get() {
+        return new ArrayList<BigInteger>(primes);
+    }
 }

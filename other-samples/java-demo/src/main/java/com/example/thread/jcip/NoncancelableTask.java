@@ -11,25 +11,25 @@ import java.util.concurrent.BlockingQueue;
  */
 public class NoncancelableTask {
 
-  public Task getNextTask(BlockingQueue<Task> queue) {
-    boolean interrupted = false;
-    try {
-      while (true) {
+    public Task getNextTask(BlockingQueue<Task> queue) {
+        boolean interrupted = false;
         try {
-          return queue.take();
-        } catch (InterruptedException e) {
-          interrupted = true;
-          // fall through and retry
+            while (true) {
+                try {
+                    return queue.take();
+                } catch (InterruptedException e) {
+                    interrupted = true;
+                    // fall through and retry
+                }
+            }
+        } finally {
+            if (interrupted) {
+                Thread.currentThread().interrupt();
+            }
         }
-      }
-    } finally {
-      if (interrupted) {
-        Thread.currentThread().interrupt();
-      }
     }
-  }
 
-  interface Task {
+    interface Task {
 
-  }
+    }
 }

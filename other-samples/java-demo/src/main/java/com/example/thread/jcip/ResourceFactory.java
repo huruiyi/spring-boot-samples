@@ -12,16 +12,16 @@ import com.example.thread.jcip.annotations.ThreadSafe;
 @ThreadSafe
 public class ResourceFactory {
 
-  public static Resource getResource() {
-    return ResourceHolder.resource;
-  }
+    public static Resource getResource() {
+        return ResourceHolder.resource;
+    }
 
-  private static class ResourceHolder {
+    private static class ResourceHolder {
 
-    public static Resource resource = new Resource();
-  }
+        public static Resource resource = new Resource();
+    }
 
-  static class Resource {
+    static class Resource {
 
-  }
+    }
 }

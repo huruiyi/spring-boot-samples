@@ -12,16 +12,16 @@ import com.example.thread.jcip.annotations.ThreadSafe;
 @ThreadSafe
 public class SafeLazyInitialization {
 
-  private static Resource resource;
+    private static Resource resource;
 
-  public synchronized static Resource getInstance() {
-    if (resource == null) {
-      resource = new Resource();
+    public synchronized static Resource getInstance() {
+        if (resource == null) {
+            resource = new Resource();
+        }
+        return resource;
     }
-    return resource;
-  }
 
-  static class Resource {
+    static class Resource {
 
-  }
+    }
 }

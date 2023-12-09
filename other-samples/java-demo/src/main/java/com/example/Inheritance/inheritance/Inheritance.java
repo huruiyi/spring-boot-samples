@@ -5,14 +5,14 @@ import com.example.Inheritance.monsters.Skeleton;
 
 public class Inheritance {
 
-  public static void main(String[] args) {
-    Monster m = new Skeleton();
+    public static void main(String[] args) {
+        Monster m = new Skeleton();
 
 
-  }
+    }
 
-  static void whatever(Monster monster) {
+    static void whatever(Monster monster) {
 
-  }
+    }
 
 }

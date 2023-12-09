@@ -1,29 +1,29 @@
 var person =
     {
-      "firstName": "John",
-      "lastName": "Smith",
-      "isAlive": true,
-      "age": 25,
-      "address":
-          {
-            "streetAddress": "21 2nd Street",
-            "city": "New York",
-            "state": "NY",
-            "postalCode": "10021-3100"
-          },
-      "phoneNumbers":
-          [
+        "firstName": "John",
+        "lastName": "Smith",
+        "isAlive": true,
+        "age": 25,
+        "address":
             {
-              "type": "home",
-              "number": "212 555-1234"
+                "streetAddress": "21 2nd Street",
+                "city": "New York",
+                "state": "NY",
+                "postalCode": "10021-3100"
             },
-            {
-              "type": "office",
-              "number": "646 555-4567"
-            }
-          ],
-      "children": [],
-      "spouse": null
+        "phoneNumbers":
+            [
+                {
+                    "type": "home",
+                    "number": "212 555-1234"
+                },
+                {
+                    "type": "office",
+                    "number": "646 555-4567"
+                }
+            ],
+        "children": [],
+        "spouse": null
     };
 print(person.firstName);
 print(person.lastName);

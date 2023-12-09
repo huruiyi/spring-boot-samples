@@ -6,15 +6,15 @@ import javax.xml.xpath.XPathFunctionResolver;
 
 public class DateResolver implements XPathFunctionResolver {
 
-  private static final QName name =
-      new QName("http://www.javajeff.ca/", "date", "tt");
+    private static final QName name =
+            new QName("http://www.javajeff.ca/", "date", "tt");
 
-  @Override
-  public XPathFunction resolveFunction(QName name,
-      int arity) {
-    if (name.equals(this.name) && arity == 1) {
-      return new Date();
+    @Override
+    public XPathFunction resolveFunction(QName name,
+                                         int arity) {
+        if (name.equals(this.name) && arity == 1) {
+            return new Date();
+        }
+        return null;
     }
-    return null;
-  }
 }

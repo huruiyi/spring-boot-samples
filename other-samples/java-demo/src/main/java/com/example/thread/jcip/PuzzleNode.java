@@ -1,6 +1,7 @@
 package com.example.thread.jcip;
 
 import com.example.thread.jcip.annotations.Immutable;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -14,21 +15,21 @@ import java.util.List;
 @Immutable
 public class PuzzleNode<P, M> {
 
-  final P pos;
-  final M move;
-  final PuzzleNode<P, M> prev;
+    final P pos;
+    final M move;
+    final PuzzleNode<P, M> prev;
 
-  public PuzzleNode(P pos, M move, PuzzleNode<P, M> prev) {
-    this.pos = pos;
-    this.move = move;
-    this.prev = prev;
-  }
-
-  List<M> asMoveList() {
-    List<M> solution = new LinkedList<M>();
-    for (PuzzleNode<P, M> n = this; n.move != null; n = n.prev) {
-      solution.add(0, n.move);
+    public PuzzleNode(P pos, M move, PuzzleNode<P, M> prev) {
+        this.pos = pos;
+        this.move = move;
+        this.prev = prev;
     }
-    return solution;
-  }
+
+    List<M> asMoveList() {
+        List<M> solution = new LinkedList<M>();
+        for (PuzzleNode<P, M> n = this; n.move != null; n = n.prev) {
+            solution.add(0, n.move);
+        }
+        return solution;
+    }
 }

@@ -2,13 +2,13 @@ package com.example.generictype;
 
 public class Box<T> {
 
-  T element;
+    T element;
 
-  T getElement() {
-    return this.element;
-  }
+    T getElement() {
+        return this.element;
+    }
 
-  void setElement(T valueOfElement) {
-    this.element = valueOfElement;
-  }
+    void setElement(T valueOfElement) {
+        this.element = valueOfElement;
+    }
 }

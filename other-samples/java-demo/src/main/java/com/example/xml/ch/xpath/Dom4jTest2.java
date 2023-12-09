@@ -8,7 +8,10 @@ import org.dom4j.io.SAXReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.List;
 
 public class Dom4jTest2 {
@@ -57,7 +60,7 @@ public class Dom4jTest2 {
     }
 
     static void writeXml() throws DocumentException, IOException {
-         String path = Test.class.getClassLoader().getResource("xml/students_change.xml").getPath();
+        String path = Test.class.getClassLoader().getResource("xml/students_change.xml").getPath();
         log.info("path:{}", path);
 
         SAXReader reader = new SAXReader();
@@ -81,9 +84,10 @@ public class Dom4jTest2 {
         writer.close();
         fos.close();
     }
+
     public static void main(String[] args) throws DocumentException, IOException {
-       readXml();
-       writeXml();
+        readXml();
+        writeXml();
     }
 
 

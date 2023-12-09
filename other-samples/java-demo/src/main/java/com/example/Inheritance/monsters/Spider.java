@@ -5,13 +5,13 @@ package com.example.Inheritance.monsters;
  */
 public class Spider extends Monster {
 
-  void whatever() {
-    this.getHitPoints();
-    this.setHitPoints(60);
-  }
+    void whatever() {
+        this.getHitPoints();
+        this.setHitPoints(60);
+    }
 
-  @Override
-  protected void description() {
-    System.out.println("Spider...........");
-  }
+    @Override
+    protected void description() {
+        System.out.println("Spider...........");
+    }
 }

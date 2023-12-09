@@ -2,6 +2,7 @@ package com.example.thread.jcip;
 
 import com.example.thread.jcip.annotations.NotThreadSafe;
 import com.example.thread.jcip.annotations.ThreadSafe;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -17,29 +18,29 @@ import java.util.List;
 @NotThreadSafe
 class BadListHelper<E> {
 
-  public List<E> list = Collections.synchronizedList(new ArrayList<E>());
+    public List<E> list = Collections.synchronizedList(new ArrayList<E>());
 
-  public synchronized boolean putIfAbsent(E x) {
-    boolean absent = !list.contains(x);
-    if (absent) {
-      list.add(x);
+    public synchronized boolean putIfAbsent(E x) {
+        boolean absent = !list.contains(x);
+        if (absent) {
+            list.add(x);
+        }
+        return absent;
     }
-    return absent;
-  }
 }
 
 @ThreadSafe
 class GoodListHelper<E> {
 
-  public List<E> list = Collections.synchronizedList(new ArrayList<E>());
+    public List<E> list = Collections.synchronizedList(new ArrayList<E>());
 
-  public boolean putIfAbsent(E x) {
-    synchronized (list) {
-      boolean absent = !list.contains(x);
-      if (absent) {
-        list.add(x);
-      }
-      return absent;
+    public boolean putIfAbsent(E x) {
+        synchronized (list) {
+            boolean absent = !list.contains(x);
+            if (absent) {
+                list.add(x);
+            }
+            return absent;
+        }
     }
-  }
 }

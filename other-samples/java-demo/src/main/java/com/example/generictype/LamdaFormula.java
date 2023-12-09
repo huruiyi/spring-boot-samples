@@ -3,35 +3,35 @@ package com.example.generictype;
 
 public class LamdaFormula {
 
-  interface Formula {
+    interface Formula {
 
-    double calculate(int a);
+        double calculate(int a);
 
-    default double sqrt(int a) {
-      return Math.sqrt(a);
-    }
-  }
-
-  class A implements Formula {
-
-    @Override
-    public double calculate(int a) {
-      throw new UnsupportedOperationException("Not supported yet.");
+        default double sqrt(int a) {
+            return Math.sqrt(a);
+        }
     }
 
-  }
+    class A implements Formula {
 
-  public static void main(String[] args) {
-    Formula f = (int a) -> {
-      return 5;
-    };
+        @Override
+        public double calculate(int a) {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
 
-    double calculate = f.calculate(36);
-    System.out.println(calculate);
+    }
 
-    double sqrt = f.sqrt(49);
-    System.out.println(sqrt);
-  }
+    public static void main(String[] args) {
+        Formula f = (int a) -> {
+            return 5;
+        };
+
+        double calculate = f.calculate(36);
+        System.out.println(calculate);
+
+        double sqrt = f.sqrt(49);
+        System.out.println(sqrt);
+    }
 }
 
 

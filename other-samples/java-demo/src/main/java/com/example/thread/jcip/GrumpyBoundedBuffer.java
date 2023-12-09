@@ -12,45 +12,45 @@ import com.example.thread.jcip.annotations.ThreadSafe;
 @ThreadSafe
 public class GrumpyBoundedBuffer<V> extends BaseBoundedBuffer<V> {
 
-  public GrumpyBoundedBuffer() {
-    this(100);
-  }
-
-  public GrumpyBoundedBuffer(int size) {
-    super(size);
-  }
-
-  public synchronized void put(V v) throws BufferFullException {
-    if (isFull()) {
-      throw new BufferFullException();
+    public GrumpyBoundedBuffer() {
+        this(100);
     }
-    doPut(v);
-  }
 
-  public synchronized V take() throws BufferEmptyException {
-    if (isEmpty()) {
-      throw new BufferEmptyException();
+    public GrumpyBoundedBuffer(int size) {
+        super(size);
     }
-    return doTake();
-  }
+
+    public synchronized void put(V v) throws BufferFullException {
+        if (isFull()) {
+            throw new BufferFullException();
+        }
+        doPut(v);
+    }
+
+    public synchronized V take() throws BufferEmptyException {
+        if (isEmpty()) {
+            throw new BufferEmptyException();
+        }
+        return doTake();
+    }
 }
 
 class ExampleUsage {
 
-  int SLEEP_GRANULARITY = 50;
-  private GrumpyBoundedBuffer<String> buffer;
+    int SLEEP_GRANULARITY = 50;
+    private GrumpyBoundedBuffer<String> buffer;
 
-  void useBuffer() throws InterruptedException {
-    while (true) {
-      try {
-        String item = buffer.take();
-        // use item
-        break;
-      } catch (BufferEmptyException e) {
-        Thread.sleep(SLEEP_GRANULARITY);
-      }
+    void useBuffer() throws InterruptedException {
+        while (true) {
+            try {
+                String item = buffer.take();
+                // use item
+                break;
+            } catch (BufferEmptyException e) {
+                Thread.sleep(SLEEP_GRANULARITY);
+            }
+        }
     }
-  }
 }
 
 class BufferFullException extends RuntimeException {

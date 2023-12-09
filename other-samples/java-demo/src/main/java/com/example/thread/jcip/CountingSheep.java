@@ -9,17 +9,17 @@ package com.example.thread.jcip;
  */
 public class CountingSheep {
 
-  volatile boolean asleep;
+    volatile boolean asleep;
 
-  void tryToSleep() {
-    while (!asleep) {
-      countSomeSheep();
+    void tryToSleep() {
+        while (!asleep) {
+            countSomeSheep();
+        }
     }
-  }
 
-  void countSomeSheep() {
-    // One, two, three...
-  }
+    void countSomeSheep() {
+        // One, two, three...
+    }
 }
 
 

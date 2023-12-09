@@ -9,15 +9,15 @@ package com.example.thread.jcip;
  */
 public class Holder {
 
-  private int n;
+    private int n;
 
-  public Holder(int n) {
-    this.n = n;
-  }
-
-  public void assertSanity() {
-    if (n != n) {
-      throw new AssertionError("This statement is false.");
+    public Holder(int n) {
+        this.n = n;
     }
-  }
+
+    public void assertSanity() {
+        if (n != n) {
+            throw new AssertionError("This statement is false.");
+        }
+    }
 }

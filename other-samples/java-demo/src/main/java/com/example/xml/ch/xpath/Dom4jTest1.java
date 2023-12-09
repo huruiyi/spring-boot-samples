@@ -1,16 +1,16 @@
 package com.example.xml.ch.xpath;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.Iterator;
-import java.util.List;
-
 import org.dom4j.*;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Iterator;
+import java.util.List;
 
 public class Dom4jTest1 {
     private static final Logger log = LoggerFactory.getLogger(Dom4jTest1.class);

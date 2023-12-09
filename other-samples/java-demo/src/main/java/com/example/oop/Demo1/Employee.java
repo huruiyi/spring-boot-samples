@@ -4,17 +4,17 @@ import java.util.Date;
 
 public class Employee extends Person {
 
-  final Date dateOfEmployment;
+    final Date dateOfEmployment;
 
-  Employee() {
-    this.dateOfEmployment = new Date();
-  }
+    Employee() {
+        this.dateOfEmployment = new Date();
+    }
 
-  Employee(Date date) {
-    this.dateOfEmployment = date;
-  }
+    Employee(Date date) {
+        this.dateOfEmployment = date;
+    }
 
-  Date getDateOfEmployment() {
-    return dateOfEmployment;
-  }
+    Date getDateOfEmployment() {
+        return dateOfEmployment;
+    }
 }

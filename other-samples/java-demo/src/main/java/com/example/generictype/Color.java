@@ -2,19 +2,19 @@ package com.example.generictype;
 
 public class Color {
 
-  String color;
+    String color;
 
-  Color(String color) {
-    this.color = color;
-  }
+    Color(String color) {
+        this.color = color;
+    }
 
-  String getColor() {
-    return this.color;
-  }
+    String getColor() {
+        return this.color;
+    }
 
-  @Override
-  public boolean equals(Object o) {
-    return (((Color) o).color).equals(this.color);
-  }
+    @Override
+    public boolean equals(Object o) {
+        return (((Color) o).color).equals(this.color);
+    }
 
 }
