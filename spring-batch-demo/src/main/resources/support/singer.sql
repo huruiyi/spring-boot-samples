@@ -1,11 +1,9 @@
-drop table  singer;
-create table singer
+create table if not exists singer
 (
-    singer_id  bigint auto_increment,
+    singer_id  bigint auto_increment
+        primary key,
     first_name varchar(20)  null,
     last_name  varchar(20)  null,
-    song       varchar(100) null,
-    constraint singer_pk
-        primary key (singer_id)
+    song       varchar(100) null
 );
 
