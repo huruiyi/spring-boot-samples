@@ -1,5 +1,6 @@
-package com.example.http;
+package com.example.http.download;
 
+import com.example.http.HttpUtils;
 import com.example.xml.ch.xpath.Test;
 
 import java.io.BufferedReader;
@@ -10,7 +11,7 @@ import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ZookeeperDownload {
+public class Zookeeper {
 
     public static void main(String[] args) throws IOException {
         List<String> versions = getUrl();

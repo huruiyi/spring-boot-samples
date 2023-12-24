@@ -73,3 +73,19 @@ spring-boot-redis
 ```
 redis的应用，以及缓存的使用
 ```
+
+## CSDN博主
+  - https://blog.csdn.net/gzu_01
+  - https://stalin.blog.csdn.net/
+
+
+## howtodoinjava
+- Github Source:[lokeshgupta1981/Spring-Boot-Examples](https://github.com/lokeshgupta1981/Spring-Boot-Examples/tree/master)
+- [10 Life Lessons I have Learned in the Last Few Years](https://howtodoinjava.com/resources/10-life-lessons-i-have-learned-in-last-few-years/)
+- [Spring Batch MultiResourceItemReader Example](https://howtodoinjava.com/spring-batch/multiresourceitemreader-read-multiple-csv-files-example/)
+- [Log Request and Response with Spring RestTemplate](https://howtodoinjava.com/spring-boot2/resttemplate/clienthttprequestinterceptor/)
+- [Masking Sensitive Data with Logback](https://howtodoinjava.com/logback/masking-sensitive-data/)
+- [Log4j2 JSON Configuration Example (howtodoinjava.com)](https://howtodoinjava.com/log4j2/log4j2-json-configuration-example/)
+- [Log4j2 - Maven and Gradle Configuration (howtodoinjava.com)](https://howtodoinjava.com/log4j2/maven-gradle-config/)
+- [Setting Up TestNG in Eclipse (howtodoinjava.com)](https://howtodoinjava.com/testng/testng-tutorial-with-eclipse/)
+- [How to Setup CI/CD Jenkins Pipeline for a Spring Boot Application (howtodoinjava.com)](https://howtodoinjava.com/devops/setup-jenkins-pipeline-for-spring-boot-app/)
