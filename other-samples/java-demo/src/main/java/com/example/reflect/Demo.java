@@ -172,7 +172,9 @@ public class Demo {
         System.out.println(result);
     }
 
-    static void Demo9_FiledsValue()
+
+    @org.junit.jupiter.api.Test
+    void Demo9_FiledsValue()
             throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
         Person p = new Person("zhangsan", 12);
         Class<?> c = p.getClass();
