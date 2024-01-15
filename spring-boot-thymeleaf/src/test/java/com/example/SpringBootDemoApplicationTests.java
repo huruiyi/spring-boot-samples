@@ -175,6 +175,7 @@ class SpringBootDemoApplicationTests {
 
     Context context = new Context(LocaleContextHolder.getLocale());
     context.setVariable("users", userInfoList);
+    context.setVariable("address", "add");
 
     String body = templateEngine.process("email/delete.html", context);
 
