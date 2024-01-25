@@ -2,8 +2,8 @@ package com.example;
 
 import com.example.bean.UserMailChangedDTO;
 import com.example.bean.UserMailDTO;
+import com.example.utils.Html2Pdf;
 import com.lowagie.text.DocumentException;
-import com.lowagie.text.pdf.BaseFont;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -22,7 +22,6 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
-import org.xhtmlrenderer.layout.SharedContext;
 import org.xhtmlrenderer.pdf.ITextFontResolver;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
@@ -95,7 +94,6 @@ class SpringBootDemoApplicationTests {
     });
   }
 
-
   @Test
   void deleteUserTest() {
     System.out.println(javaMailSender.toString());
@@ -120,47 +118,22 @@ class SpringBootDemoApplicationTests {
     });
   }
 
-
   @Test
-  void sendMailWithPdf() {
+  void sendMailWithPdf() throws FileNotFoundException {
     Context context = new Context(LocaleContextHolder.getLocale());
     String htmlBody = templateEngine.process("pdf/style.html", context);
     System.out.println(htmlBody);
 
     File dest = Paths.get("htmlBody.pdf").toFile();
 
-    try (OutputStream os = new FileOutputStream(dest)) {
-      ITextRenderer renderer = new ITextRenderer();
-      ITextFontResolver fontResolver = renderer.getFontResolver();
-      // 必须添加能支持中文的字体，否则html内容有中文会不显示，同时body标签要设置font-family: SimSun
-
-      renderer.setDocumentFromString(htmlBody);
-      renderer.layout();
-      renderer.createPDF(os);
-    } catch (Exception exception) {
-
-    }
-  }
-
-
-  String FONT = "src/main/resources/fonts/微软雅黑Bbold.ttf";
-
-  void htmlToPDF(OutputStream outputStream, String htmlStr) throws IOException, DocumentException {
-
+    OutputStream os = new FileOutputStream(dest);
     ITextRenderer renderer = new ITextRenderer();
-    SharedContext sharedContext = renderer.getSharedContext();
-    // 打印
-    sharedContext.setPrint(true);
-    // 互动
-    sharedContext.setInteractive(false);
-    // 设置中文字体
     ITextFontResolver fontResolver = renderer.getFontResolver();
-    fontResolver.addFont(FONT, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+    // 必须添加能支持中文的字体，否则html内容有中文会不显示，同时body标签要设置font-family: SimSun
 
-    renderer.setDocumentFromString(htmlStr);
+    renderer.setDocumentFromString(htmlBody);
     renderer.layout();
-    renderer.createPDF(outputStream);
-    renderer.finishPDF();
+    renderer.createPDF(os);
   }
 
   @Test
@@ -179,8 +152,8 @@ class SpringBootDemoApplicationTests {
 
     String body = templateEngine.process("email/delete.html", context);
 
-    FileOutputStream outputStream = new FileOutputStream("pdf-style.pdf");
-    htmlToPDF(outputStream, body);
+    FileOutputStream outputStream = new FileOutputStream("pdf-style-1.pdf");
+    Html2Pdf.generator(outputStream, body);
 
     outputStream.close();
   }
