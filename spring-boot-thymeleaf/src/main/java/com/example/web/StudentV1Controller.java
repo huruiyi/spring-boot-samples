@@ -1,22 +1,31 @@
 package com.example.web;
 
+import com.example.bean.Person;
+import com.example.properties.ServerHostProperties;
+import com.lowagie.text.pdf.BaseFont;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import com.example.bean.Person;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.thymeleaf.context.Context;
 import org.thymeleaf.context.WebContext;
-
-import com.example.properties.ServerHostProperties;
+import org.thymeleaf.spring5.SpringTemplateEngine;
+import org.xhtmlrenderer.pdf.ITextFontResolver;
+import org.xhtmlrenderer.pdf.ITextRenderer;
 
 /*
  * 在controller上加注解@Controller 和@RestController都可以在前端调通接口，但是二者的区别在于，
@@ -24,13 +33,37 @@ import com.example.properties.ServerHostProperties;
 因为当使用@Controller 注解时，spring默认方法返回的是view对象（页面）。
 而加上@ResponseBody，则方法返回的就是具体对象了。
 @RestController的作用就相当于@Controller+@ResponseBody的结合体
- * 
+ *
  */
 
 //template might not exist or might not be accessible by any of the configured Template Resolvers
 @Controller
 @RequestMapping(value = "/v1")
 public class StudentV1Controller {
+
+  @Autowired
+  private SpringTemplateEngine templateEngine;
+
+  @ResponseBody
+  @RequestMapping(value = "/path")
+  public String showPath() throws IOException {
+    Context context = new Context(LocaleContextHolder.getLocale());
+    String htmlBody = templateEngine.process("pdf/style.html", context);
+    System.out.println(htmlBody);
+
+    File dest = Paths.get("20240223.pdf").toFile();
+
+    OutputStream os = new FileOutputStream(dest);
+    ITextRenderer renderer = new ITextRenderer();
+    ITextFontResolver fontResolver = renderer.getFontResolver();
+    final ClassPathResource resource = new ClassPathResource("fonts/arial.ttf");
+    fontResolver.addFont(resource.getURL().toString(), BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+
+    renderer.setDocumentFromString(htmlBody);
+    renderer.layout();
+    renderer.createPDF(os);
+    return "ok";
+  }
 
   @Autowired
   private ServerHostProperties serverHostProperties;

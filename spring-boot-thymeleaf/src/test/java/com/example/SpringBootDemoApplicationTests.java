@@ -4,8 +4,8 @@ import com.example.bean.UserMailChangedDTO;
 import com.example.bean.UserMailDTO;
 import com.example.utils.Html2Pdf;
 import com.lowagie.text.DocumentException;
+import com.lowagie.text.pdf.BaseFont;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -18,6 +18,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.thymeleaf.context.Context;
@@ -119,17 +120,19 @@ class SpringBootDemoApplicationTests {
   }
 
   @Test
-  void sendMailWithPdf() throws FileNotFoundException {
+  void sendMailWithPdf() throws IOException {
     Context context = new Context(LocaleContextHolder.getLocale());
     String htmlBody = templateEngine.process("pdf/style.html", context);
     System.out.println(htmlBody);
 
-    File dest = Paths.get("htmlBody.pdf").toFile();
+    File dest = Paths.get("xxx.pdf").toFile();
 
     OutputStream os = new FileOutputStream(dest);
     ITextRenderer renderer = new ITextRenderer();
+
     ITextFontResolver fontResolver = renderer.getFontResolver();
-    // 必须添加能支持中文的字体，否则html内容有中文会不显示，同时body标签要设置font-family: SimSun
+    final ClassPathResource resource = new ClassPathResource("fonts/arial.ttf");
+    fontResolver.addFont(resource.getURL().toString(), BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
 
     renderer.setDocumentFromString(htmlBody);
     renderer.layout();
