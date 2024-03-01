@@ -1,9 +1,9 @@
 package com.example.net;
 
-import javax.swing.*;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import javax.swing.JFrame;
 
 public class UDPServerDemo extends JFrame {
 

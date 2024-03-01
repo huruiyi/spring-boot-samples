@@ -1,11 +1,10 @@
 package com.example.xml.ch.ch11.JacksonDemo.v22;
 
+import static java.lang.System.out;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.File;
-
-import static java.lang.System.out;
 
 public class JacksonDemo {
 

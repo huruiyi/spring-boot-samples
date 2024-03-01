@@ -1,7 +1,6 @@
 package com.example.thread.jcip;
 
 import com.example.thread.jcip.annotations.GuardedBy;
-
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;

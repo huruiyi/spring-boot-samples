@@ -1,7 +1,6 @@
 package com.example.thread.jcip;
 
 import com.example.thread.jcip.annotations.GuardedBy;
-
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;

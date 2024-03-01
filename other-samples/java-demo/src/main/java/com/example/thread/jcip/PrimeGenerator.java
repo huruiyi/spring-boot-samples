@@ -1,15 +1,14 @@
 package com.example.thread.jcip;
 
+import static java.util.concurrent.TimeUnit.SECONDS;
+
 import com.example.thread.jcip.annotations.GuardedBy;
 import com.example.thread.jcip.annotations.ThreadSafe;
-
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import static java.util.concurrent.TimeUnit.SECONDS;
 
 /**
  * PrimeGenerator

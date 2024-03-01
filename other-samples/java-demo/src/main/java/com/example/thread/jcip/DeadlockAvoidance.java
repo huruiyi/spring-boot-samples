@@ -1,10 +1,10 @@
 package com.example.thread.jcip;
 
+import static java.util.concurrent.TimeUnit.NANOSECONDS;
+
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
-
-import static java.util.concurrent.TimeUnit.NANOSECONDS;
 
 /**
  * DeadlockAvoidance

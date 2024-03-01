@@ -1,11 +1,11 @@
 package com.example.xml.ch.ch12.JSONPDemo.v12;
 
+import static java.lang.System.out;
+
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.stream.JsonCollectors;
-
-import static java.lang.System.out;
 
 public class JSONPDemo {
 

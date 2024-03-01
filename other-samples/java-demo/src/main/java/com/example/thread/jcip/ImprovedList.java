@@ -1,7 +1,6 @@
 package com.example.thread.jcip;
 
 import com.example.thread.jcip.annotations.ThreadSafe;
-
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;

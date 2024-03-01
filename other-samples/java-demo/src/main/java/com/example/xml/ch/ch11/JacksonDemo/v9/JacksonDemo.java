@@ -1,13 +1,12 @@
 package com.example.xml.ch.ch11.JacksonDemo.v9;
 
+import static java.lang.System.out;
+
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-
-import static java.lang.System.out;
 
 public class JacksonDemo {
 

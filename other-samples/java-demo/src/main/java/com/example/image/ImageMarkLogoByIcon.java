@@ -1,12 +1,15 @@
 package com.example.image;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
+import java.awt.AlphaComposite;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 /*
  * 图片增加水印功能

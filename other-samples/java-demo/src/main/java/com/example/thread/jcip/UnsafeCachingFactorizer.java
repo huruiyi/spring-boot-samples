@@ -1,7 +1,6 @@
 package com.example.thread.jcip;
 
 import com.example.thread.jcip.annotations.NotThreadSafe;
-
 import java.math.BigInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.servlet.GenericServlet;

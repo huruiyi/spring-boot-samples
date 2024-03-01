@@ -1,12 +1,11 @@
 package com.example.xml.appa.ch09.GsonDemo;
 
+import static java.lang.System.out;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
-
 import java.lang.reflect.Modifier;
-
-import static java.lang.System.out;
 
 public class GsonDemo {
 

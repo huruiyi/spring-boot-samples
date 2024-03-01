@@ -1,11 +1,10 @@
 package com.example.collection;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Scanner;
+import org.junit.jupiter.api.Test;
 
 public class Array {
 

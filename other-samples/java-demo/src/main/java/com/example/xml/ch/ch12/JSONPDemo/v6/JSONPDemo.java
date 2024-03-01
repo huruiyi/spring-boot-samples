@@ -1,9 +1,9 @@
 package com.example.xml.ch.ch12.JSONPDemo.v6;
 
-import javax.json.Json;
-
 import static java.lang.System.err;
 import static java.lang.System.out;
+
+import javax.json.Json;
 
 public class JSONPDemo {
 

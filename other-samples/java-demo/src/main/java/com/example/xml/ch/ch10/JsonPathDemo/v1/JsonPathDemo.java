@@ -1,11 +1,10 @@
 package com.example.xml.ch.ch10.JsonPathDemo.v1;
 
-import com.jayway.jsonpath.JsonPath;
+import static java.lang.System.out;
 
+import com.jayway.jsonpath.JsonPath;
 import java.util.HashMap;
 import java.util.List;
-
-import static java.lang.System.out;
 
 public class JsonPathDemo {
 

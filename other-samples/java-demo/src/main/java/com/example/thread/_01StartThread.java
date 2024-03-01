@@ -1,7 +1,6 @@
 package com.example.thread;
 
 import com.sun.management.ThreadMXBean;
-
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadInfo;
 

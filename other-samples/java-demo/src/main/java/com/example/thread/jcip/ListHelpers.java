@@ -2,7 +2,6 @@ package com.example.thread.jcip;
 
 import com.example.thread.jcip.annotations.NotThreadSafe;
 import com.example.thread.jcip.annotations.ThreadSafe;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

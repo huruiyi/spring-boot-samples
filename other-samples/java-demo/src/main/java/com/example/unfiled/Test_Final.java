@@ -1,8 +1,7 @@
 package com.example.unfiled;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Scanner;
+import org.junit.jupiter.api.Test;
 
 public class Test_Final {
 

@@ -1,11 +1,11 @@
 package com.example.xml.ch.ch12.JSONPDemo.v3;
 
-import javax.json.Json;
-import javax.json.stream.JsonParser;
-import java.io.StringReader;
-
 import static java.lang.System.out;
 import static javax.json.stream.JsonParser.Event;
+
+import java.io.StringReader;
+import javax.json.Json;
+import javax.json.stream.JsonParser;
 
 public class JSONPDemo {
 

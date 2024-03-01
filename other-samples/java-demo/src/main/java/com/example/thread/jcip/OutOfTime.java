@@ -1,9 +1,9 @@
 package com.example.thread.jcip;
 
+import static java.util.concurrent.TimeUnit.SECONDS;
+
 import java.util.Timer;
 import java.util.TimerTask;
-
-import static java.util.concurrent.TimeUnit.SECONDS;
 
 /**
  * OutOfTime

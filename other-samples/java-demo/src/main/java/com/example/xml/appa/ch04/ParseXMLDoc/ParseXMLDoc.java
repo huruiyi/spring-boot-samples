@@ -1,13 +1,13 @@
 package com.example.xml.appa.ch04.ParseXMLDoc;
 
+import static java.lang.System.err;
+import static java.lang.System.out;
+
+import java.io.FileReader;
+import java.io.IOException;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
-import java.io.FileReader;
-import java.io.IOException;
-
-import static java.lang.System.err;
-import static java.lang.System.out;
 
 public class ParseXMLDoc {
 

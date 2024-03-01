@@ -1,10 +1,10 @@
 package com.example.thread.jcip;
 
+import static java.util.concurrent.TimeUnit.NANOSECONDS;
+
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-
-import static java.util.concurrent.TimeUnit.NANOSECONDS;
 
 /**
  * TimedLocking

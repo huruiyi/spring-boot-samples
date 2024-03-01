@@ -1,13 +1,12 @@
 package com.example.xml.ch.ch11.JacksonDemo.v6;
 
+import static java.lang.System.out;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.File;
 import java.util.List;
 import java.util.Map;
-
-import static java.lang.System.out;
 
 public class JacksonDemo {
 

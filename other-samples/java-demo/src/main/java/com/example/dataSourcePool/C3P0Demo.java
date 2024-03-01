@@ -1,7 +1,6 @@
 package com.example.dataSourcePool;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-
 import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

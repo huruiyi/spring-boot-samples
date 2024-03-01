@@ -2,7 +2,6 @@ package com.example.thread.jcip;
 
 import com.example.thread.jcip.annotations.GuardedBy;
 import com.example.thread.jcip.annotations.ThreadSafe;
-
 import java.util.HashSet;
 import java.util.Set;
 

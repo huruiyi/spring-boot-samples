@@ -1,12 +1,12 @@
 package com.example.xml.ch.ch12.JSONPDemo.v13;
 
-import javax.json.Json;
-import javax.json.stream.JsonParser;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-
 import static java.lang.System.err;
 import static java.lang.System.out;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import javax.json.Json;
+import javax.json.stream.JsonParser;
 
 public class JSONPDemo {
 

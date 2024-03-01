@@ -1,9 +1,9 @@
 package com.example.xml.appa.ch02.DumpUserInfo;
 
+import static java.lang.System.out;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
-
-import static java.lang.System.out;
 
 public class Handler extends DefaultHandler {
     @Override

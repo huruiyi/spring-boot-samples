@@ -6,21 +6,21 @@ import java.util.Enumeration;
 
 public class _01 {
 
-    //1.	Exporting a Certificate to a File
-    public static void main(String[] argv) throws Exception {
-        FileInputStream is = new FileInputStream("yourfile" + ".keystore");
-        KeyStore keystore = KeyStore.getInstance(KeyStore.getDefaultType());
-        String password = "my-keystore-password";
-        keystore.load(is, password.toCharArray());
+  //1.	Exporting a Certificate to a File
+  public static void main(String[] argv) throws Exception {
+    FileInputStream is = new FileInputStream("yourfile" + ".keystore");
+    KeyStore keystore = KeyStore.getInstance(KeyStore.getDefaultType());
+    String password = "my-keystore-password";
+    keystore.load(is, password.toCharArray());
 
-        Enumeration e = keystore.aliases();
-        for (; e.hasMoreElements(); ) {
-            String alias = (String) e.nextElement();
+    Enumeration e = keystore.aliases();
+    for (; e.hasMoreElements(); ) {
+      String alias = (String) e.nextElement();
 
-            boolean b = keystore.isKeyEntry(alias);
+      boolean b = keystore.isKeyEntry(alias);
 
-            b = keystore.isCertificateEntry(alias);
-        }
-        is.close();
+      b = keystore.isCertificateEntry(alias);
     }
+    is.close();
+  }
 }

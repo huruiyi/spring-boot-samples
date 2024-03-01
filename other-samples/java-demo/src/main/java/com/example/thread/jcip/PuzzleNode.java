@@ -1,7 +1,6 @@
 package com.example.thread.jcip;
 
 import com.example.thread.jcip.annotations.Immutable;
-
 import java.util.LinkedList;
 import java.util.List;
 

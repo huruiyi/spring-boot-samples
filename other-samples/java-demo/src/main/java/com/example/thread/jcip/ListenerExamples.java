@@ -1,13 +1,14 @@
 package com.example.thread.jcip;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 
 /**
  * ListenerExamples

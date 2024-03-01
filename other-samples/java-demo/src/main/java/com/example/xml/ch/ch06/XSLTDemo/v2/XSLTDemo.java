@@ -1,21 +1,27 @@
 package com.example.xml.ch.ch06.XSLTDemo.v2;
 
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
+import static java.lang.System.err;
+import static java.lang.System.out;
 
+import java.io.FileReader;
+import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.FactoryConfigurationError;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.*;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Result;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-import java.io.FileReader;
-import java.io.IOException;
-
-import static java.lang.System.err;
-import static java.lang.System.out;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 public class XSLTDemo {
 

@@ -1,10 +1,15 @@
 package com.example.mq.active;
 
+import java.util.concurrent.atomic.AtomicInteger;
+import javax.jms.Connection;
+import javax.jms.ConnectionFactory;
+import javax.jms.JMSException;
+import javax.jms.MessageConsumer;
+import javax.jms.Queue;
+import javax.jms.Session;
+import javax.jms.TextMessage;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
-
-import javax.jms.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class ActiveMqConsumer {
 

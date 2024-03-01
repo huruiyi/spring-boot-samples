@@ -1,7 +1,7 @@
 package com.example.xml.ch.ch05.XPathSearch.v2;
 
-import javax.xml.namespace.NamespaceContext;
 import java.util.Iterator;
+import javax.xml.namespace.NamespaceContext;
 
 public class NSContext implements NamespaceContext {
 

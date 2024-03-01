@@ -2,7 +2,6 @@ package com.example.thread.jcip;
 
 import com.example.thread.jcip.DynamicOrderDeadlock.Account;
 import com.example.thread.jcip.DynamicOrderDeadlock.DollarAmount;
-
 import java.util.Random;
 
 /**

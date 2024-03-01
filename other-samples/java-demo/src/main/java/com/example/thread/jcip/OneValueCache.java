@@ -1,7 +1,6 @@
 package com.example.thread.jcip;
 
 import com.example.thread.jcip.annotations.Immutable;
-
 import java.math.BigInteger;
 import java.util.Arrays;
 

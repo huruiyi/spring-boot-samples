@@ -1,7 +1,6 @@
 package com.example.model;
 
 import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.Date;
 
 public class Person implements Comparable<Person> {

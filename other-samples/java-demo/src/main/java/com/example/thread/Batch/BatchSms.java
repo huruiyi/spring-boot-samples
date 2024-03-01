@@ -1,7 +1,6 @@
 package com.example.thread.Batch;
 
 import com.example.thread.Batch.entity.UserEntity;
-
 import java.util.ArrayList;
 import java.util.List;
 

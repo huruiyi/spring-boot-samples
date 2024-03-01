@@ -2,7 +2,6 @@ package com.example.thread.jcip;
 
 import com.example.thread.jcip.annotations.Immutable;
 import com.example.thread.jcip.annotations.ThreadSafe;
-
 import java.util.concurrent.atomic.AtomicReference;
 
 /**

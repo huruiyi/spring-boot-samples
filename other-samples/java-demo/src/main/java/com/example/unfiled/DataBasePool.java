@@ -1,9 +1,8 @@
 package com.example.unfiled;
 
 import com.example.dataSourcePool.MyDbPool;
-import org.junit.jupiter.api.Test;
-
 import java.sql.Connection;
+import org.junit.jupiter.api.Test;
 
 public class DataBasePool {
 

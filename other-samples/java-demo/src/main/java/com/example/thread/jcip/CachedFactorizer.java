@@ -2,12 +2,11 @@ package com.example.thread.jcip;
 
 import com.example.thread.jcip.annotations.GuardedBy;
 import com.example.thread.jcip.annotations.ThreadSafe;
-
+import java.math.BigInteger;
 import javax.servlet.GenericServlet;
 import javax.servlet.Servlet;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import java.math.BigInteger;
 
 /**
  * CachedFactorizer

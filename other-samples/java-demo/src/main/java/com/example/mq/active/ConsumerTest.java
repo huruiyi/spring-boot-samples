@@ -1,10 +1,15 @@
 package com.example.mq.active;
 
+import java.io.IOException;
+import javax.jms.Connection;
+import javax.jms.ConnectionFactory;
+import javax.jms.JMSException;
+import javax.jms.MessageConsumer;
+import javax.jms.Queue;
+import javax.jms.Session;
+import javax.jms.Topic;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.junit.jupiter.api.Test;
-
-import javax.jms.*;
-import java.io.IOException;
 
 public class ConsumerTest {
 

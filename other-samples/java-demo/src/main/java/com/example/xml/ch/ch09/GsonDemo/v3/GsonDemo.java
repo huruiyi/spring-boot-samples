@@ -1,10 +1,10 @@
 package com.example.xml.ch.ch09.GsonDemo.v3;
 
+import static java.lang.System.out;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
-
-import static java.lang.System.out;
 
 class Address {
 

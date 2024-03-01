@@ -1,12 +1,11 @@
 package com.example.xml.ch.ch10.JsonPathDemo.v3;
 
+import static java.lang.System.out;
+
 import com.jayway.jsonpath.Criteria;
 import com.jayway.jsonpath.Filter;
 import com.jayway.jsonpath.JsonPath;
-
 import java.util.List;
-
-import static java.lang.System.out;
 
 public class JsonPathDemo {
 

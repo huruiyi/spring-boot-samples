@@ -1,8 +1,11 @@
 package com.example.unfiled;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 import org.junit.jupiter.api.Test;
-
-import java.util.*;
 
 public class Test_Lists {
 

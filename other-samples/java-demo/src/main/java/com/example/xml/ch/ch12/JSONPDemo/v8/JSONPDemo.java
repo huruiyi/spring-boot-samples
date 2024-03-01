@@ -1,9 +1,9 @@
 package com.example.xml.ch.ch12.JSONPDemo.v8;
 
+import static java.lang.System.out;
+
 import javax.json.Json;
 import javax.json.JsonObject;
-
-import static java.lang.System.out;
 
 public class JSONPDemo {
 
