@@ -5,5 +5,5 @@ package com.example.demo1;
  */
 public interface UserDAO {
 
-  public void save();
+  void save();
 }

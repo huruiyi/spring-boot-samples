@@ -10,7 +10,6 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  */
 public class SpringDemo1 {
 
-
   @Test
   /**
    * 传统方式的调用
@@ -27,11 +26,11 @@ public class SpringDemo1 {
    */
   public void demo2() {
     // 创建Spring的工厂
-    ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext1.xml");
+    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext1.xml");
     UserDAO userDAO = (UserDAO) context.getBean("userDAO");
     userDAO.save();
 
-    ((ClassPathXmlApplicationContext) context).close();
+    context.close();
   }
 
   @Test
@@ -39,10 +38,10 @@ public class SpringDemo1 {
    * 加载磁盘上的配置文件
    */
   public void demo3() {
-    ApplicationContext context = new FileSystemXmlApplicationContext("C:\\applicationContext.xml");
+    FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext("C:\\applicationContext.xml");
     UserDAO userDAO = (UserDAO) context.getBean("userDAO");
     userDAO.save();
 
-    ((ClassPathXmlApplicationContext) context).close();
+    context.close();
   }
 }

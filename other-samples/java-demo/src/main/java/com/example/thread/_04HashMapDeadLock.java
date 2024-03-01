@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 class DeadThread extends Thread {
 
     static AtomicInteger at = new AtomicInteger();
-    HashMap<Integer, Integer> map = new HashMap<Integer, Integer>(2);
+    HashMap<Integer, Integer> map = new HashMap<>(2);
 
     public void run() {
         while (at.get() < 100000) {

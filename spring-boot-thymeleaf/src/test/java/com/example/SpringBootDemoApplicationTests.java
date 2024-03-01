@@ -120,12 +120,12 @@ class SpringBootDemoApplicationTests {
   }
 
   @Test
-  void sendMailWithPdf() throws IOException {
+  void generatePdfWithCssStyle1() throws IOException {
     Context context = new Context(LocaleContextHolder.getLocale());
     String htmlBody = templateEngine.process("pdf/style.html", context);
     System.out.println(htmlBody);
 
-    File dest = Paths.get("xxx.pdf").toFile();
+    File dest = Paths.get("css-1.pdf").toFile();
 
     OutputStream os = new FileOutputStream(dest);
     ITextRenderer renderer = new ITextRenderer();
@@ -140,7 +140,7 @@ class SpringBootDemoApplicationTests {
   }
 
   @Test
-  void Test() throws IOException, DocumentException {
+  void generatePdfWithCssStyle2() throws IOException, DocumentException {
     List<UserMailDTO> userInfoList = new ArrayList<>();
     UserMailDTO userInfo;
     for (int i = 1; i < 10; i++) {
@@ -151,11 +151,11 @@ class SpringBootDemoApplicationTests {
 
     Context context = new Context(LocaleContextHolder.getLocale());
     context.setVariable("users", userInfoList);
-    context.setVariable("address", "add");
+    context.setVariable("address", "shanghai pudong");
 
     String body = templateEngine.process("email/delete.html", context);
 
-    FileOutputStream outputStream = new FileOutputStream("pdf-style-1.pdf");
+    FileOutputStream outputStream = new FileOutputStream("css-2.pdf");
     Html2Pdf.generator(outputStream, body);
 
     outputStream.close();
