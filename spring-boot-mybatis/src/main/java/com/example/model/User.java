@@ -13,10 +13,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import lombok.Data;
-import lombok.ToString;
+
+import lombok.*;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "mybatis_user")
 @ToString
 public class User {

@@ -15,10 +15,8 @@
   <!-- 动态日志级别 -->
   <appender class="ch.qos.logback.core.ConsoleAppender" name="console">
     <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-
       <!-- 设置日志输出格式 -->
       <!-- <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger - %msg%n</pattern>-->
-
       <pattern>
         %highlight(%date{yy-MM-dd HH:mm:ss.SSS}) %cyan([%thread]) %yellow(%-5level) %green(%logger{36}).%gray(%M)-%boldMagenta(%line) - %blue(%msg%n)
       </pattern>

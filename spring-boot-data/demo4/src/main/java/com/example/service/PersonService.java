@@ -22,9 +22,7 @@ public interface PersonService {
 
   Page<Person> findAll(PageRequest pageRequest);
 
-
   List<Person> findByAddress(String address);
-
 
   Person findByNameAndAddress(String name, String address);
 
