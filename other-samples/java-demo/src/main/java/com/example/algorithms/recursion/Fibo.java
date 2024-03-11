@@ -2,5 +2,5 @@ package com.example.algorithms.recursion;
 
 public interface Fibo {
 
-    long fib(long index);
+  long fib(long index);
 }

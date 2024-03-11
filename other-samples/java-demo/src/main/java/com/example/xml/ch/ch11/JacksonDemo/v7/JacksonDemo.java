@@ -7,11 +7,11 @@ import java.io.File;
 
 public class JacksonDemo {
 
-    public static void main(String[] args) throws Exception {
-        ObjectMapper mapper = new ObjectMapper();
-        Person person =
-                mapper.readValue(new File("person.json"),
-                        Person.class);
-        out.println(person);
-    }
+  public static void main(String[] args) throws Exception {
+    ObjectMapper mapper = new ObjectMapper();
+    Person person =
+        mapper.readValue(new File("person.json"),
+            Person.class);
+    out.println(person);
+  }
 }

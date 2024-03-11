@@ -3,14 +3,14 @@ package com.example.oop.Decorator;
 public class Benz implements Car {
 
 
-    @Override
-    public void Run() {
-        System.out.println("Benz Run");
-    }
+  @Override
+  public void Run() {
+    System.out.println("Benz Run");
+  }
 
-    @Override
-    public void Stop() {
-        System.out.println("Benz Stop");
-    }
+  @Override
+  public void Stop() {
+    System.out.println("Benz Stop");
+  }
 
 }

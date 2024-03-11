@@ -12,20 +12,20 @@ import com.example.thread.jcip.annotations.NotThreadSafe;
 @NotThreadSafe
 public class DoubleCheckedLocking {
 
-    private static Resource resource;
+  private static Resource resource;
 
-    public static Resource getInstance() {
+  public static Resource getInstance() {
+    if (resource == null) {
+      synchronized (DoubleCheckedLocking.class) {
         if (resource == null) {
-            synchronized (DoubleCheckedLocking.class) {
-                if (resource == null) {
-                    resource = new Resource();
-                }
-            }
+          resource = new Resource();
         }
-        return resource;
+      }
     }
+    return resource;
+  }
 
-    static class Resource {
+  static class Resource {
 
-    }
+  }
 }

@@ -5,17 +5,17 @@ package com.example.oop.AbstractInterface.appAbstract;
  */
 public abstract class DbOperate {
 
-    private String connectionString = "";
+  private String connectionString = "";
 
-    public void openConnection() {
-        System.out.println("openConnection....");
-    }
+  public void openConnection() {
+    System.out.println("openConnection....");
+  }
 
-    public abstract void delete();
+  public abstract void delete();
 
-    public abstract void update();
+  public abstract void update();
 
-    public void closeConnection() {
-        System.out.println("closeConnection....");
-    }
+  public void closeConnection() {
+    System.out.println("closeConnection....");
+  }
 }

@@ -10,21 +10,21 @@ import javax.script.ScriptException;
 
 public class RunScript {
 
-    public static void main(String[] args) {
-        if (args.length != 1) {
-            err.println("usage: java RunScript script");
-            return;
-        }
-        ScriptEngineManager manager =
-                new ScriptEngineManager();
-        ScriptEngine engine =
-                manager.getEngineByName("nashorn");
-        try {
-            engine.eval(new FileReader(args[0]));
-        } catch (ScriptException se) {
-            err.println(se.getMessage());
-        } catch (IOException ioe) {
-            err.println(ioe.getMessage());
-        }
+  public static void main(String[] args) {
+    if (args.length != 1) {
+      err.println("usage: java RunScript script");
+      return;
     }
+    ScriptEngineManager manager =
+        new ScriptEngineManager();
+    ScriptEngine engine =
+        manager.getEngineByName("nashorn");
+    try {
+      engine.eval(new FileReader(args[0]));
+    } catch (ScriptException se) {
+      err.println(se.getMessage());
+    } catch (IOException ioe) {
+      err.println(ioe.getMessage());
+    }
+  }
 }

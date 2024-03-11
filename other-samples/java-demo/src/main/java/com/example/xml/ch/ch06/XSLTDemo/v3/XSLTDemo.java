@@ -23,63 +23,63 @@ import org.w3c.dom.Text;
 
 public class XSLTDemo {
 
-    final static String KEY_INDENT =
-            "{http://xml.apache.org/xslt}indent-amount";
+  final static String KEY_INDENT =
+      "{http://xml.apache.org/xslt}indent-amount";
 
-    public static void main(String[] args) {
-        System.
-                setProperty("javax.xml.transform.TransformerFactory",
-                        "net.sf.saxon.TransformerFactoryImpl");
-        try {
-            DocumentBuilderFactory dbf =
-                    DocumentBuilderFactory.newInstance();
-            DocumentBuilder db = dbf.newDocumentBuilder();
-            Document doc = db.newDocument();
-            doc.setXmlStandalone(true);
-            // Create the root element.
-            Element root = doc.createElement("movie");
-            doc.appendChild(root);
-            // Create name child element and add it to the
-            // root.
-            Element name = doc.createElement("name");
-            root.appendChild(name);
-            // Add a text element to the name element.
-            Text text = doc.createTextNode("Le Fabuleux " +
-                    "Destin d'Am�lie " +
-                    "Poulain");
-            name.appendChild(text);
-            // Create language child element and add it to the
-            // root.
-            Element language = doc.createElement("language");
-            root.appendChild(language);
-            // Add a text element to the language element.
-            text = doc.createTextNode("fran�ais");
-            language.appendChild(text);
-            // Use a transformer to output this tree with
-            // ISO-8859-1 encoding to the standard output
-            // stream.
-            TransformerFactory tf =
-                    TransformerFactory.newInstance();
-            Transformer t = tf.newTransformer();
-            System.out.println(t);
-            t.setOutputProperty(OutputKeys.METHOD, "xml");
-            t.setOutputProperty(OutputKeys.ENCODING,
-                    "ISO-8859-1");
-            t.setOutputProperty(OutputKeys.INDENT, "yes");
-            t.setOutputProperty(KEY_INDENT, "3");
-            Source source = new DOMSource(doc);
-            Result result = new StreamResult(out);
-            t.transform(source, result);
-        } catch (FactoryConfigurationError fce) {
-            err.printf("FCE: %s%n", fce.toString());
-        } catch (ParserConfigurationException pce) {
-            err.printf("PCE: %s%n", pce.toString());
-        } catch (TransformerConfigurationException tce) {
-            err.printf("TCE: %s%n", tce.toString());
-        } catch (TransformerException te) {
-            err.printf("TE: %s%n", te.toString());
-        } catch (TransformerFactoryConfigurationError tfce) {
-            err.printf("TFCE: %s%n", tfce.toString());
-        }
+  public static void main(String[] args) {
+    System.
+        setProperty("javax.xml.transform.TransformerFactory",
+            "net.sf.saxon.TransformerFactoryImpl");
+    try {
+      DocumentBuilderFactory dbf =
+          DocumentBuilderFactory.newInstance();
+      DocumentBuilder db = dbf.newDocumentBuilder();
+      Document doc = db.newDocument();
+      doc.setXmlStandalone(true);
+      // Create the root element.
+      Element root = doc.createElement("movie");
+      doc.appendChild(root);
+      // Create name child element and add it to the
+      // root.
+      Element name = doc.createElement("name");
+      root.appendChild(name);
+      // Add a text element to the name element.
+      Text text = doc.createTextNode("Le Fabuleux " +
+          "Destin d'Am�lie " +
+          "Poulain");
+      name.appendChild(text);
+      // Create language child element and add it to the
+      // root.
+      Element language = doc.createElement("language");
+      root.appendChild(language);
+      // Add a text element to the language element.
+      text = doc.createTextNode("fran�ais");
+      language.appendChild(text);
+      // Use a transformer to output this tree with
+      // ISO-8859-1 encoding to the standard output
+      // stream.
+      TransformerFactory tf =
+          TransformerFactory.newInstance();
+      Transformer t = tf.newTransformer();
+      System.out.println(t);
+      t.setOutputProperty(OutputKeys.METHOD, "xml");
+      t.setOutputProperty(OutputKeys.ENCODING,
+          "ISO-8859-1");
+      t.setOutputProperty(OutputKeys.INDENT, "yes");
+      t.setOutputProperty(KEY_INDENT, "3");
+      Source source = new DOMSource(doc);
+      Result result = new StreamResult(out);
+      t.transform(source, result);
+    } catch (FactoryConfigurationError fce) {
+      err.printf("FCE: %s%n", fce.toString());
+    } catch (ParserConfigurationException pce) {
+      err.printf("PCE: %s%n", pce.toString());
+    } catch (TransformerConfigurationException tce) {
+      err.printf("TCE: %s%n", tce.toString());
+    } catch (TransformerException te) {
+      err.printf("TE: %s%n", te.toString());
+    } catch (TransformerFactoryConfigurationError tfce) {
+      err.printf("TFCE: %s%n", tfce.toString());
     }
+  }
 }

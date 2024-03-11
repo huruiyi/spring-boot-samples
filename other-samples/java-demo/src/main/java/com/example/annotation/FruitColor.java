@@ -11,10 +11,10 @@ import java.lang.annotation.Target;
 @Documented
 public @interface FruitColor {
 
-    Color fruitColor() default Color.GREEN;
+  Color fruitColor() default Color.GREEN;
 
-    public enum Color {
-        BULE, RED, GREEN
-    }
+  public enum Color {
+    BULE, RED, GREEN
+  }
 
 }

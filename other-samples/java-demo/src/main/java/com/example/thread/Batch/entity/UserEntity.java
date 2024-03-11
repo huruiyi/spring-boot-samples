@@ -2,38 +2,38 @@ package com.example.thread.Batch.entity;
 
 public class UserEntity {
 
-    private String userId;
-    private String userName;
+  private String userId;
+  private String userName;
 
-    public UserEntity(String userId, String userName) {
-        super();
-        this.userId = userId;
-        this.userName = userName;
-    }
+  public UserEntity(String userId, String userName) {
+    super();
+    this.userId = userId;
+    this.userName = userName;
+  }
 
-    public String getUserId() {
+  public String getUserId() {
 
-        return userId;
-    }
+    return userId;
+  }
 
-    public void setUserId(String userId) {
+  public void setUserId(String userId) {
 
-        this.userId = userId;
-    }
+    this.userId = userId;
+  }
 
-    public String getUserName() {
+  public String getUserName() {
 
-        return userName;
-    }
+    return userName;
+  }
 
-    public void setUserName(String userName) {
+  public void setUserName(String userName) {
 
-        this.userName = userName;
-    }
+    this.userName = userName;
+  }
 
-    @Override
-    public String toString() {
-        return "UserEntity [userId=" + userId + ", userName=" + userName + "]";
-    }
+  @Override
+  public String toString() {
+    return "UserEntity [userId=" + userId + ", userName=" + userName + "]";
+  }
 
 }

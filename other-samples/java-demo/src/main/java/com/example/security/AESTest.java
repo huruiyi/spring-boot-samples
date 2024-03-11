@@ -17,13 +17,9 @@ import sun.misc.BASE64Encoder;
 
 public class AESTest {
 
-  private String encodeResult;
-
-  private String decodeResult;
-
-
   private static final Logger log = LoggerFactory.getLogger(AESTest.class);
-
+  private String encodeResult;
+  private String decodeResult;
 
   public static void main(String[] args) throws IOException {
     log.info("请输入待编码字符串(以回车键结束)："); //此处存在一个乱码问题，在文本文档中的编码是GBK而它的编码是UTF-8，cmd不识别！
@@ -36,20 +32,6 @@ public class AESTest {
     e.setDecodeResult(e.getEncodeResult());
     log.info("解码后结果：{}", e.getDecodeResult());
   }
-
-
-  @Test
-  void TestEncryptDecrypt() throws Exception {
-    String content = "我爱你,祖国";
-    log.info("加密前：{}", content);
-    String key = "123456";
-    log.info("加密密钥和解密密钥{}", key);
-    String encrypt = aesEncrypt(content, key);
-    log.info("加密后：{}", encrypt);
-    String decrypt = aesDecrypt(encrypt, key);
-    log.info("解密后：{}", decrypt);
-  }
-
 
   /**
    * AES加密为base 64 code
@@ -124,6 +106,18 @@ public class AESTest {
    */
   public static byte[] base64Decode(String base64Code) throws Exception {
     return new BASE64Decoder().decodeBuffer(base64Code);
+  }
+
+  @Test
+  void TestEncryptDecrypt() throws Exception {
+    String content = "我爱你,祖国";
+    log.info("加密前：{}", content);
+    String key = "123456";
+    log.info("加密密钥和解密密钥{}", key);
+    String encrypt = aesEncrypt(content, key);
+    log.info("加密后：{}", encrypt);
+    String decrypt = aesDecrypt(encrypt, key);
+    log.info("解密后：{}", decrypt);
   }
 
   public String getEncodeResult() {

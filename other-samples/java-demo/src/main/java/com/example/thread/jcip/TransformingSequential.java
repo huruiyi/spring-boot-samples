@@ -18,65 +18,65 @@ import java.util.concurrent.TimeUnit;
  */
 public abstract class TransformingSequential {
 
-    void processSequentially(List<Element> elements) {
-        for (Element e : elements) {
-            process(e);
+  void processSequentially(List<Element> elements) {
+    for (Element e : elements) {
+      process(e);
+    }
+  }
+
+  void processInParallel(Executor exec, List<Element> elements) {
+    for (final Element e : elements) {
+      exec.execute(new Runnable() {
+        public void run() {
+          process(e);
         }
+      });
     }
+  }
 
-    void processInParallel(Executor exec, List<Element> elements) {
-        for (final Element e : elements) {
-            exec.execute(new Runnable() {
-                public void run() {
-                    process(e);
-                }
-            });
+  public abstract void process(Element e);
+
+
+  public <T> void sequentialRecursive(List<Node<T>> nodes,
+      Collection<T> results) {
+    for (Node<T> n : nodes) {
+      results.add(n.compute());
+      sequentialRecursive(n.getChildren(), results);
+    }
+  }
+
+  public <T> void parallelRecursive(final Executor exec,
+      List<Node<T>> nodes,
+      final Collection<T> results) {
+    for (final Node<T> n : nodes) {
+      exec.execute(new Runnable() {
+        public void run() {
+          results.add(n.compute());
         }
+      });
+      parallelRecursive(exec, n.getChildren(), results);
     }
+  }
 
-    public abstract void process(Element e);
+  public <T> Collection<T> getParallelResults(List<Node<T>> nodes)
+      throws InterruptedException {
+    ExecutorService exec = Executors.newCachedThreadPool();
+    Queue<T> resultQueue = new ConcurrentLinkedQueue<T>();
+    parallelRecursive(exec, nodes, resultQueue);
+    exec.shutdown();
+    exec.awaitTermination(Long.MAX_VALUE, TimeUnit.SECONDS);
+    return resultQueue;
+  }
 
+  interface Element {
 
-    public <T> void sequentialRecursive(List<Node<T>> nodes,
-                                        Collection<T> results) {
-        for (Node<T> n : nodes) {
-            results.add(n.compute());
-            sequentialRecursive(n.getChildren(), results);
-        }
-    }
+  }
 
-    public <T> void parallelRecursive(final Executor exec,
-                                      List<Node<T>> nodes,
-                                      final Collection<T> results) {
-        for (final Node<T> n : nodes) {
-            exec.execute(new Runnable() {
-                public void run() {
-                    results.add(n.compute());
-                }
-            });
-            parallelRecursive(exec, n.getChildren(), results);
-        }
-    }
+  interface Node<T> {
 
-    public <T> Collection<T> getParallelResults(List<Node<T>> nodes)
-            throws InterruptedException {
-        ExecutorService exec = Executors.newCachedThreadPool();
-        Queue<T> resultQueue = new ConcurrentLinkedQueue<T>();
-        parallelRecursive(exec, nodes, resultQueue);
-        exec.shutdown();
-        exec.awaitTermination(Long.MAX_VALUE, TimeUnit.SECONDS);
-        return resultQueue;
-    }
+    T compute();
 
-    interface Element {
-
-    }
-
-    interface Node<T> {
-
-        T compute();
-
-        List<Node<T>> getChildren();
-    }
+    List<Node<T>> getChildren();
+  }
 }
 

@@ -3,49 +3,49 @@ package com.example.generictype;
 
 public class GenericType1 {
 
-    public static <T extends Color> int countItemOccurences(T[] s, T itemToCount) {
-        int count = 0;
+  public static <T extends Color> int countItemOccurences(T[] s, T itemToCount) {
+    int count = 0;
 
-        for (T item : s) {
-            if (item.equals(itemToCount)) {
-                count++;
-            }
-        }
-
-        return count;
+    for (T item : s) {
+      if (item.equals(itemToCount)) {
+        count++;
+      }
     }
 
-    public static void main(String[] args) {
-        String[] s = new String[3];
+    return count;
+  }
 
-        s[0] = "aaa";
-        s[1] = "test";
-        s[2] = "aaa";
+  public static void main(String[] args) {
+    String[] s = new String[3];
 
-        //  int cstrings = countItemOccurences(s, "test");
+    s[0] = "aaa";
+    s[1] = "test";
+    s[2] = "aaa";
 
-        //System.out.println(cstrings);
+    //  int cstrings = countItemOccurences(s, "test");
 
-        Color[] c = new Color[4];
+    //System.out.println(cstrings);
 
-        c[0] = new Color("red");
-        c[1] = new Color("green");
-        c[2] = new Color("red");
-        c[3] = new Color("red");
+    Color[] c = new Color[4];
 
-        int ccolors = countItemOccurences(c, new Color("red"));
+    c[0] = new Color("red");
+    c[1] = new Color("green");
+    c[2] = new Color("red");
+    c[3] = new Color("red");
 
-        System.out.println(ccolors);
+    int ccolors = countItemOccurences(c, new Color("red"));
 
-        Integer[] i = new Integer[4];
+    System.out.println(ccolors);
 
-        i[0] = 5;
-        i[1] = 256;
-        i[2] = 5;
-        i[3] = 5;
+    Integer[] i = new Integer[4];
+
+    i[0] = 5;
+    i[1] = 256;
+    i[2] = 5;
+    i[3] = 5;
 
 
-    }
+  }
 }
 
 

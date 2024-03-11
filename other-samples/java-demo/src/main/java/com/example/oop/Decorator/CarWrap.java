@@ -2,21 +2,21 @@ package com.example.oop.Decorator;
 
 public class CarWrap implements Car {
 
-    public Car car;
+  public Car car;
 
-    public CarWrap(Car car) {
-        this.car = car;
-    }
+  public CarWrap(Car car) {
+    this.car = car;
+  }
 
-    @Override
-    public void Run() {
-        System.out.println("Speed up");
-        car.Run();
-    }
+  @Override
+  public void Run() {
+    System.out.println("Speed up");
+    car.Run();
+  }
 
-    @Override
-    public void Stop() {
-        car.Stop();
-    }
+  @Override
+  public void Stop() {
+    car.Stop();
+  }
 
 }

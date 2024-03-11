@@ -2,7 +2,7 @@ package com.example.oop.Decorator;
 
 public interface Car {
 
-    void Run();
+  void Run();
 
-    void Stop();
+  void Stop();
 }

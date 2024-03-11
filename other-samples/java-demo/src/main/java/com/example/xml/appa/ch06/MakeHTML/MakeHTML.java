@@ -25,35 +25,35 @@ import org.xml.sax.SAXException;
 
 public class MakeHTML {
 
-    public static void main(String[] args) {
-        try {
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            DocumentBuilder db = dbf.newDocumentBuilder();
-            Document doc = db.parse("com/example/xml/appa/ch06/MakeHTML/books.xml");
-            TransformerFactory tf = TransformerFactory.newInstance();
-            StreamSource ssStyleSheet;
-            FileReader fr = new FileReader("books.xsl");
-            ssStyleSheet = new StreamSource(fr);
-            Transformer t = tf.newTransformer(ssStyleSheet);
-            t.setOutputProperty(OutputKeys.METHOD, "html");
-            t.setOutputProperty(OutputKeys.INDENT, "yes");
-            Source source = new DOMSource(doc);
-            Result result = new StreamResult(out);
-            t.transform(source, result);
-        } catch (IOException ioe) {
-            err.printf("IOE: %s%n", ioe.toString());
-        } catch (FactoryConfigurationError fce) {
-            err.printf("FCE: %s%n", fce.toString());
-        } catch (ParserConfigurationException pce) {
-            err.printf("PCE: %s%n", pce.toString());
-        } catch (SAXException saxe) {
-            err.printf("SAXE: %s%n", saxe.toString());
-        } catch (TransformerConfigurationException tce) {
-            err.printf("TCE: %s%n", tce.toString());
-        } catch (TransformerException te) {
-            err.printf("TE: %s%n", te.toString());
-        } catch (TransformerFactoryConfigurationError tfce) {
-            err.printf("TFCE: %s%n", tfce.toString());
-        }
+  public static void main(String[] args) {
+    try {
+      DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+      DocumentBuilder db = dbf.newDocumentBuilder();
+      Document doc = db.parse("com/example/xml/appa/ch06/MakeHTML/books.xml");
+      TransformerFactory tf = TransformerFactory.newInstance();
+      StreamSource ssStyleSheet;
+      FileReader fr = new FileReader("books.xsl");
+      ssStyleSheet = new StreamSource(fr);
+      Transformer t = tf.newTransformer(ssStyleSheet);
+      t.setOutputProperty(OutputKeys.METHOD, "html");
+      t.setOutputProperty(OutputKeys.INDENT, "yes");
+      Source source = new DOMSource(doc);
+      Result result = new StreamResult(out);
+      t.transform(source, result);
+    } catch (IOException ioe) {
+      err.printf("IOE: %s%n", ioe.toString());
+    } catch (FactoryConfigurationError fce) {
+      err.printf("FCE: %s%n", fce.toString());
+    } catch (ParserConfigurationException pce) {
+      err.printf("PCE: %s%n", pce.toString());
+    } catch (SAXException saxe) {
+      err.printf("SAXE: %s%n", saxe.toString());
+    } catch (TransformerConfigurationException tce) {
+      err.printf("TCE: %s%n", tce.toString());
+    } catch (TransformerException te) {
+      err.printf("TE: %s%n", te.toString());
+    } catch (TransformerFactoryConfigurationError tfce) {
+      err.printf("TFCE: %s%n", tfce.toString());
     }
+  }
 }

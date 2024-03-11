@@ -15,9 +15,9 @@ import java.util.concurrent.TimeUnit;
 
 interface CancellableTask<T> extends Callable<T> {
 
-    void cancel();
+  void cancel();
 
-    RunnableFuture<T> newTask();
+  RunnableFuture<T> newTask();
 }
 
 /**
@@ -30,62 +30,62 @@ interface CancellableTask<T> extends Callable<T> {
 
 public abstract class SocketUsingTask<T> implements CancellableTask<T> {
 
-    @GuardedBy("this")
-    private Socket socket;
+  @GuardedBy("this")
+  private Socket socket;
 
-    protected synchronized void setSocket(Socket s) {
-        socket = s;
+  protected synchronized void setSocket(Socket s) {
+    socket = s;
+  }
+
+  public synchronized void cancel() {
+    try {
+      if (socket != null) {
+        socket.close();
+      }
+    } catch (IOException ignored) {
     }
+  }
 
-    public synchronized void cancel() {
+  public RunnableFuture<T> newTask() {
+    return new FutureTask<T>(this) {
+      public boolean cancel(boolean mayInterruptIfRunning) {
         try {
-            if (socket != null) {
-                socket.close();
-            }
-        } catch (IOException ignored) {
+          SocketUsingTask.this.cancel();
+        } finally {
+          return super.cancel(mayInterruptIfRunning);
         }
-    }
-
-    public RunnableFuture<T> newTask() {
-        return new FutureTask<T>(this) {
-            public boolean cancel(boolean mayInterruptIfRunning) {
-                try {
-                    SocketUsingTask.this.cancel();
-                } finally {
-                    return super.cancel(mayInterruptIfRunning);
-                }
-            }
-        };
-    }
+      }
+    };
+  }
 }
 
 @ThreadSafe
 class CancellingExecutor extends ThreadPoolExecutor {
 
-    public CancellingExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue) {
-        super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue);
-    }
+  public CancellingExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue) {
+    super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue);
+  }
 
-    public CancellingExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue,
-                              ThreadFactory threadFactory) {
-        super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory);
-    }
+  public CancellingExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue,
+      ThreadFactory threadFactory) {
+    super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory);
+  }
 
-    public CancellingExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue,
-                              RejectedExecutionHandler handler) {
-        super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, handler);
-    }
+  public CancellingExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue,
+      RejectedExecutionHandler handler) {
+    super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, handler);
+  }
 
-    public CancellingExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue,
-                              ThreadFactory threadFactory, RejectedExecutionHandler handler) {
-        super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory, handler);
-    }
+  public CancellingExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue,
+      ThreadFactory threadFactory, RejectedExecutionHandler handler) {
+    super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory, handler);
+  }
 
-    protected <T> RunnableFuture<T> newTaskFor(Callable<T> callable) {
-        if (callable instanceof CancellableTask) {
-            return ((CancellableTask<T>) callable).newTask();
-        } else {
-            return super.newTaskFor(callable);
-        }
+  protected <T> RunnableFuture<T> newTaskFor(Callable<T> callable) {
+    if (callable instanceof CancellableTask) {
+      return ((CancellableTask<T>) callable).newTask();
+    } else {
+      return super.newTaskFor(callable);
     }
+  }
 }

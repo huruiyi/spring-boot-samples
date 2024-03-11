@@ -4,34 +4,33 @@ import org.junit.jupiter.api.Test;
 
 public class App5 {
 
-    class Point {
+  @Test
+  void Test() {
+    Point p1 = new Point(10, 20);
+    Point p2 = new Point(4, 25);
 
-        int x;
-        int y;
+    System.out.println(p1.x);
+    System.out.println(p1.y);
 
-        Point() {
-            System.out.println("This is default constructor");
-            x = 100;
-            y = 100;
-        }
+    System.out.println(p2.x);
+    System.out.println(p2.y);
+  }
 
-        Point(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
+  class Point {
+
+    int x;
+    int y;
+
+    Point() {
+      System.out.println("This is default constructor");
+      x = 100;
+      y = 100;
     }
 
-
-    @Test
-    void Test() {
-        Point p1 = new Point(10, 20);
-        Point p2 = new Point(4, 25);
-
-        System.out.println(p1.x);
-        System.out.println(p1.y);
-
-        System.out.println(p2.x);
-        System.out.println(p2.y);
+    Point(int x, int y) {
+      this.x = x;
+      this.y = y;
     }
+  }
 
 }

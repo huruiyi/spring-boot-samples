@@ -17,42 +17,42 @@ import org.w3c.dom.Element;
 
 public class Test_XML {
 
-    @Test
-    public void Test1() throws ParserConfigurationException, TransformerException {
-        // 创建解析器工厂
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder db = factory.newDocumentBuilder();
-        Document document = db.newDocument();
-        document.setXmlStandalone(true);
-        Element bookstore = document.createElement("claimReportInfo");
+  @Test
+  public void Test1() throws ParserConfigurationException, TransformerException {
+    // 创建解析器工厂
+    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+    DocumentBuilder db = factory.newDocumentBuilder();
+    Document document = db.newDocument();
+    document.setXmlStandalone(true);
+    Element bookstore = document.createElement("claimReportInfo");
 
-        Element book = document.createElement("policyNo");
-        book.setTextContent("AHYXAGD24118E0004516");
-        bookstore.appendChild(book);
+    Element book = document.createElement("policyNo");
+    book.setTextContent("AHYXAGD24118E0004516");
+    bookstore.appendChild(book);
 
-        document.appendChild(bookstore);
+    document.appendChild(bookstore);
 
-        TransformerFactory tff = TransformerFactory.newInstance();
-        Transformer tf = tff.newTransformer();
+    TransformerFactory tff = TransformerFactory.newInstance();
+    Transformer tf = tff.newTransformer();
 
-        StringWriter writer = new StringWriter();
+    StringWriter writer = new StringWriter();
 
-        tf.transform(new DOMSource(document), new StreamResult(writer));
-        System.out.println(writer);
-        //tf.transform(new DOMSource(document), new StreamResult(new File("book1---huhu.xml")));
-        //System.out.println("生成book1.xml成功");
-    }
+    tf.transform(new DOMSource(document), new StreamResult(writer));
+    System.out.println(writer);
+    //tf.transform(new DOMSource(document), new StreamResult(new File("book1---huhu.xml")));
+    //System.out.println("生成book1.xml成功");
+  }
 
-    @Test
-    public void Test2() throws DocumentException {
-        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
-                "<claimReportInfoResponse>\n" +
-                "  <registerNo>DHYXHYE24119000005</registerNo>" +
-                "  <comments>报案成功</comments>" +
-                "</claimReportInfoResponse>";
+  @Test
+  public void Test2() throws DocumentException {
+    String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
+        "<claimReportInfoResponse>\n" +
+        "  <registerNo>DHYXHYE24119000005</registerNo>" +
+        "  <comments>报案成功</comments>" +
+        "</claimReportInfoResponse>";
 
-        org.dom4j.Document doc = DocumentHelper.parseText(xml);
-        String registerNo = doc.getRootElement().elementText("registerNo");
-        System.out.println(registerNo);
-    }
+    org.dom4j.Document doc = DocumentHelper.parseText(xml);
+    String registerNo = doc.getRootElement().elementText("registerNo");
+    System.out.println(registerNo);
+  }
 }

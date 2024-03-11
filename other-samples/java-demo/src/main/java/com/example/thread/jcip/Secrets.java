@@ -5,11 +5,11 @@ import java.util.Set;
 
 class Secrets {
 
-    public static Set<Secret> knownSecrets;
+  public static Set<Secret> knownSecrets;
 
-    public void initialize() {
-        knownSecrets = new HashSet<Secret>();
-    }
+  public void initialize() {
+    knownSecrets = new HashSet<Secret>();
+  }
 }
 
 

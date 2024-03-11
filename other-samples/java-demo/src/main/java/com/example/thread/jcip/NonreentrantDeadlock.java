@@ -10,14 +10,14 @@ package com.example.thread.jcip;
 
 class Widget {
 
-    public synchronized void doSomething() {
-    }
+  public synchronized void doSomething() {
+  }
 }
 
 class LoggingWidget extends Widget {
 
-    public synchronized void doSomething() {
-        System.out.println(toString() + ": calling doSomething");
-        super.doSomething();
-    }
+  public synchronized void doSomething() {
+    System.out.println(toString() + ": calling doSomething");
+    super.doSomething();
+  }
 }
