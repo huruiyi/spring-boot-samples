@@ -2,14 +2,15 @@ package com.example.service.impl;
 
 import com.example.model.User;
 import com.example.service.JdbcTmplUserService;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Service;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.List;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Service;
 
 @Service
 public class JdbcTmplUserServiceImpl implements JdbcTmplUserService {
