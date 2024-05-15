@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @MapperScan(basePackages = "com.example.pro.mapper", sqlSessionFactoryRef = "dataSource_Pro_SqlSessionFactory")
-public class DataSourePro {
+public class DataSourcePro {
 
 
   @Bean("dataSource_Pro")
@@ -39,8 +39,7 @@ public class DataSourePro {
   }
 
   @Bean(name = "dataSource_Pro_SqlSessionTemplate")
-  public SqlSessionTemplate testSqlSessionTemplate(@Qualifier("dataSource_Pro_SqlSessionFactory") SqlSessionFactory sqlSessionFactory)
-      throws Exception {
+  public SqlSessionTemplate testSqlSessionTemplate(@Qualifier("dataSource_Pro_SqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
     return new SqlSessionTemplate(sqlSessionFactory);
   }
 }

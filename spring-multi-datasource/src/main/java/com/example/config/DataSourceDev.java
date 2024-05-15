@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @MapperScan(basePackages = "com.example.dev.mapper", sqlSessionFactoryRef = "dataSource_Dev_SqlSessionFactory")
-public class DataSoureDev {
+public class DataSourceDev {
 
 
   @Bean("dataSource_Dev")
