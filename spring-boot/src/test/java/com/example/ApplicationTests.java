@@ -1,10 +1,9 @@
 package com.example;
 
-import com.example.model.CusResult;
 import com.example.model.Person;
-import com.example.service.HelloWorld;
-import com.example.service.unclassified.HelloWorldService;
-import com.example.service.unclassified.PersonService;
+import com.example.service.SimpleService;
+import com.example.service.impl.HelloWorldService;
+import com.example.service.impl.PersonService;
 import java.util.Properties;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -27,7 +26,7 @@ class ApplicationTests {
     context = new ClassPathXmlApplicationContext("beans.xml");
 
     HelloWorldService springService = (HelloWorldService) context.getBean("helloWorldSpringService");
-    HelloWorld helloWorld = springService.getHelloWorld();
+    SimpleService helloWorld = springService.getHelloWorld();
     helloWorld.sayHello();
     Assertions.assertNotNull(helloWorld);
   }
@@ -35,8 +34,8 @@ class ApplicationTests {
   @Test
   void Test2() {
     RestTemplate restTemplate = new RestTemplate();
-    for (int i = 0; i < 5; i++) {
-      CusResult result = restTemplate.getForObject("http://localhost:9102/limit3", CusResult.class);
+    for (int i = 0; i < 10; i++) {
+      String result = restTemplate.getForObject("http://localhost:9000/rate/testLimit", String.class);
       System.out.println(result);
     }
   }
@@ -54,7 +53,7 @@ class ApplicationTests {
     Assertions.assertEquals(30, person.getAge());
   }
 
-  @org.junit.Test
+  @Test
   public void getEmailTest() {
     Properties properties = System.getProperties();
     Assertions.assertNotNull(properties);

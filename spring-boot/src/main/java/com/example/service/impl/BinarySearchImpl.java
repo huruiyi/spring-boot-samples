@@ -1,6 +1,6 @@
 package com.example.service.impl;
 
-import com.example.service.SortAlgorithm;
+import com.example.service.algorithm.SortAlgorithm;
 import org.springframework.stereotype.Component;
 
 @Component

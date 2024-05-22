@@ -1,6 +1,6 @@
 package com.example.web;
 
-import com.example.service.unclassified.AsyncServiceV1;
+import com.example.service.impl.AsyncServiceV1;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;

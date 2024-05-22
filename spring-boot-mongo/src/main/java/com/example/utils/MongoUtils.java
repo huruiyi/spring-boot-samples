@@ -16,7 +16,7 @@ public class MongoUtils {
    * 获取该输入流的MD5值
    */
   public static String getMD5(InputStream is) throws NoSuchAlgorithmException, IOException {
-    StringBuffer md5 = new StringBuffer();
+    StringBuilder md5 = new StringBuilder();
     MessageDigest md = MessageDigest.getInstance("MD5");
     byte[] dataBytes = new byte[1024];
 

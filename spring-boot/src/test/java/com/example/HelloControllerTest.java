@@ -6,14 +6,13 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -24,14 +23,13 @@ import org.springframework.web.context.WebApplicationContext;
 
 @Slf4j
 @SpringBootTest
-@RunWith(SpringRunner.class)
 public class HelloControllerTest {
 
   @Autowired
   private WebApplicationContext webApplicationContext;
   private MockMvc mockMvc;
 
-  @Before
+  @BeforeEach
   public void setUp() throws Exception {
     mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
   }
@@ -49,15 +47,15 @@ public class HelloControllerTest {
         .andReturn();
 
     int status = mvcResult.getResponse().getStatus();
-    Assert.assertEquals(200, status);
+    Assertions.assertEquals(200, status);
 
     String content = mvcResult.getResponse().getContentAsString();
-    Assert.assertEquals("hello World", content);
+    Assertions.assertEquals("hello World", content);
   }
 
 
   @Test
-  public void scTest() {
+  public void scriptEngineTest() {
     ScriptEngineManager mgr = new ScriptEngineManager();
     ScriptEngine jsEngine = mgr.getEngineByName("JavaScript");
     try {
@@ -74,7 +72,7 @@ public class HelloControllerTest {
       String engineName = factory.getEngineName();
       String languageName = factory.getLanguageName();
       String version = factory.getLanguageVersion();
-      log.info("Engine name: " + engineName + "，Language: " + languageName + "，Version: " + version);
+      log.info("Engine name: {}，Language: {}，Version: {}", engineName, languageName, version);
     });
   }
 

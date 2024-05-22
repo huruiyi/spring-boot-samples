@@ -3,7 +3,7 @@ package com.example.web;
 import com.example.annotation.ParamsAnnotation;
 import com.example.model.Course;
 import com.example.service.impl.BusinessService;
-import com.example.service.unclassified.SingleService;
+import com.example.service.impl.SingleService;
 import com.example.utils.ExcelUtils;
 import java.io.IOException;
 import java.io.OutputStream;

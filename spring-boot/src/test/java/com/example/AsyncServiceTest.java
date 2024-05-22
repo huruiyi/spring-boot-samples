@@ -1,6 +1,6 @@
 package com.example;
 
-import com.example.service.unclassified.AsyncServiceV2;
+import com.example.service.impl.AsyncServiceV2;
 import java.util.concurrent.Future;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;

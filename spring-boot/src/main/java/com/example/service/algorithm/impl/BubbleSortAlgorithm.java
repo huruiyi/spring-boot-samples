@@ -1,6 +1,6 @@
-package com.example.service.impl;
+package com.example.service.algorithm.impl;
 
-import com.example.service.SortAlgorithm;
+import com.example.service.algorithm.SortAlgorithm;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 

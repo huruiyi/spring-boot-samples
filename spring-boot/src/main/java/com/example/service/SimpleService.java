@@ -1,6 +1,6 @@
 package com.example.service;
 
-public interface HelloWorld {
+public interface SimpleService {
 
   void sayHello();
 }
