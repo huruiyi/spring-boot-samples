@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
-@TableName("user")
+@TableName("sys_user")
 public class SystemUser {
   private Integer id;
   private String username;
