@@ -61,7 +61,6 @@ public class RedisController {
     // 减一操作,这个命令RedisTemplate不支持，所以笔者先获取底层的连接再操作
     // Jedis jedis = (Jedis) stringRedisTemplate.getConnectionFactory().getConnection().getNativeConnection();
     // jedis.decr("int");
-
     Map<String, Object> map = new HashMap<String, Object>();
     map.put("success", true);
     return map;

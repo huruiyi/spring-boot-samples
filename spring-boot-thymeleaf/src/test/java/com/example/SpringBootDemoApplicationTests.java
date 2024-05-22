@@ -59,7 +59,7 @@ class SpringBootDemoApplicationTests {
     javaMailSender.send((msg) -> {
       MimeMessageHelper helper = new MimeMessageHelper(msg);
       helper.setTo("38761770@qq.com,1226603@qq.com".split(","));
-      helper.setFrom("807776962@qq.com");
+      helper.setFrom("postmaster@fairy.vip");
       helper.setSubject("Create User");
 
       Context context = new Context();

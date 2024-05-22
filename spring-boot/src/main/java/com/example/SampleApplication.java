@@ -49,7 +49,7 @@ public class SampleApplication extends SpringBootServletInitializer implements W
   }
 
   private static void printBeans(ConfigurableApplicationContext context) {
-    log.info("# Beans: " + context.getBeanDefinitionCount());
+    log.info("# Beans: {}", context.getBeanDefinitionCount());
 
     String[] names = context.getBeanDefinitionNames();
     Arrays.sort(names);
