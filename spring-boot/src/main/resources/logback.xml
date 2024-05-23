@@ -6,7 +6,7 @@
 <!-- debug 当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 -->
 <configuration debug="false" scan="true" scanPeriod="60 seconds">
   <!-- DEBUG级别日志 appender -->
-  <property name="log_dir" value="spring-boot/logs/"/>
+  <property name="log_dir" value="./spring-boot/logs/"/>
   <property name="maxHistory" value="30"/>
   <appender class="ch.qos.logback.core.ConsoleAppender" name="console">
     <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
