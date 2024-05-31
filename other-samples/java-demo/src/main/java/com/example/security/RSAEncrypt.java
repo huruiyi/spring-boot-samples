@@ -1,10 +1,15 @@
 package com.example.security;
 
+import java.nio.charset.StandardCharsets;
 import java.security.KeyFactory;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.security.SecureRandom;
+import java.security.Signature;
+import java.security.SignatureException;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.PKCS8EncodedKeySpec;
@@ -16,7 +21,10 @@ import org.apache.commons.codec.binary.Base64;
 
 public class RSAEncrypt {
 
-  private static Map<Integer, String> keyMap = new HashMap<Integer, String>();  //用于封装随机产生的公钥与私钥
+  private static final Map<Integer, String> keyMap = new HashMap<>();  //用于封装随机产生的公钥与私钥
+
+  static RSAPrivateKey privateKey;
+  static RSAPublicKey publicKey;
 
   public static void main(String[] args) throws Exception {
     //生成公钥和私钥
@@ -31,6 +39,36 @@ public class RSAEncrypt {
 
     String messageDe = decrypt(messageEn, keyMap.get(1));
     System.out.println("还原后的字符串为:" + messageDe);
+
+    String originalData = "hello world,世界你好！！";
+    String signDataStr = signData(originalData, privateKey);
+    boolean data = verifySignature(originalData, signDataStr, publicKey);
+    System.out.println(data);
+  }
+
+
+  public static String signData(String data, PrivateKey privateKey) throws SignatureException {
+    try {
+      Signature signature = Signature.getInstance("SHA256withRSA");
+      signature.initSign(privateKey);
+      signature.update(data.getBytes(StandardCharsets.UTF_8));
+      byte[] signedData = signature.sign();
+      return java.util.Base64.getEncoder().encodeToString(signedData);
+    } catch (Exception e) {
+      throw new SignatureException("Failed to sign data", e);
+    }
+  }
+
+  public static boolean verifySignature(String originalData, String signature, PublicKey publicKey) throws SignatureException {
+    try {
+      Signature sig = Signature.getInstance("SHA256withRSA");
+      sig.initVerify(publicKey);
+      sig.update(originalData.getBytes(StandardCharsets.UTF_8));
+      byte[] signatureBytes = java.util.Base64.getDecoder().decode(signature);
+      return sig.verify(signatureBytes);
+    } catch (Exception e) {
+      throw new SignatureException("Failed to verify signature", e);
+    }
   }
 
   /**
@@ -45,8 +83,8 @@ public class RSAEncrypt {
     keyPairGen.initialize(1024, new SecureRandom());
     // 生成一个密钥对，保存在keyPair中
     KeyPair keyPair = keyPairGen.generateKeyPair();
-    RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate();   // 得到私钥
-    RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();  // 得到公钥
+    privateKey = (RSAPrivateKey) keyPair.getPrivate();   // 得到私钥
+    publicKey = (RSAPublicKey) keyPair.getPublic();  // 得到公钥
     String publicKeyString = new String(Base64.encodeBase64(publicKey.getEncoded()));
     // 得到私钥字符串
     String privateKeyString = new String(Base64.encodeBase64((privateKey.getEncoded())));
@@ -70,7 +108,7 @@ public class RSAEncrypt {
     //RSA加密
     Cipher cipher = Cipher.getInstance("RSA");
     cipher.init(Cipher.ENCRYPT_MODE, pubKey);
-    return Base64.encodeBase64String(cipher.doFinal(str.getBytes("UTF-8")));
+    return Base64.encodeBase64String(cipher.doFinal(str.getBytes(StandardCharsets.UTF_8)));
   }
 
   /**
@@ -83,7 +121,7 @@ public class RSAEncrypt {
    */
   public static String decrypt(String str, String privateKey) throws Exception {
     //64位解码加密后的字符串
-    byte[] inputByte = Base64.decodeBase64(str.getBytes("UTF-8"));
+    byte[] inputByte = Base64.decodeBase64(str.getBytes(StandardCharsets.UTF_8));
     //base64编码的私钥
     byte[] decoded = Base64.decodeBase64(privateKey);
     RSAPrivateKey priKey = (RSAPrivateKey) KeyFactory.getInstance("RSA").generatePrivate(new PKCS8EncodedKeySpec(decoded));
