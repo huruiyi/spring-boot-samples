@@ -18,42 +18,7 @@
   </parent>
 
   <modules>
-    <module>other-samples/hibernate-demo</module>
-    <module>other-samples/java-demo</module>
-    <module>other-samples/kafka-demo</module>
-    <module>other-samples/mybatis-first</module>
-    <module>other-samples/nosql-demo</module>
-    <module>other-samples/pro-spring-5-ch02</module>
-
-    <module>other-samples/pro-spring-5-ch03/dependency-pull</module>
-    <module>other-samples/pro-spring-5-ch03/injection/constructor-injection</module>
-    <module>other-samples/pro-spring-5-ch03/injection/setter-injection</module>
-    <module>other-samples/pro-spring-5-ch03/injection/method-injection</module>
-    <module>other-samples/pro-spring-5-ch03/injection/injection</module>
-    <module>other-samples/pro-spring-5-ch03/injection/field-injection</module>
-
-    <module>other-samples/pro-spring-5-ch04</module>
-    <module>other-samples/pro-spring-5-ch05</module>
-    <module>other-samples/pro-spring-5-ch14</module>
-
-
-    <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch6</module>
-    <module>other-samples/spring-elasticsearch/spring-boot-elasticsearch7</module>
-
-    <module>other-samples/spring-dubbo/dubbo-api</module>
-    <module>other-samples/spring-dubbo/dubbo-consumer</module>
-    <module>other-samples/spring-dubbo/dubbo-provider</module>
-
-    <module>other-samples/workflow/holiday-request</module>
-    <module>other-samples/spring-boot-knife4j</module>
-    <module>other-samples/spring-boot-limit</module>
-    <module>other-samples/spring-boot-swagger-ui</module>
-
-    <module>other-samples/spring-basic</module>
-    <module>other-samples/spring-beans</module>
-
-    <module>spring-batch-demo</module>
-    <module>spring-boot-batch-demo</module>
+    <module>spring-boot-batch</module>
 
     <module>spring-boot</module>
     <module>spring-boot-activemq</module>
