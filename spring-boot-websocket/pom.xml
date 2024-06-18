@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>pom</packaging>
 
-    <parent>
-        <artifactId>spring-boot-samples</artifactId>
-        <groupId>com.example</groupId>
-        <version>0.0.1</version>
-    </parent>
-
+  <parent>
+    <artifactId>spring-boot-samples</artifactId>
     <groupId>com.example</groupId>
-    <name>spring-boot-websocket</name>
-    <artifactId>spring-boot-websocket</artifactId>+
     <version>0.0.1</version>
+  </parent>
 
-    <packaging>pom</packaging>
-    <modules>
-        <module>websocket-basic</module>
-        <module>websocket-chatroom</module>
-        <module>websocket-sock-js</module>
-        <module>websocket-stomp</module>
-    </modules>
+  <name>spring-boot-websocket</name>
+  <artifactId>spring-boot-websocket</artifactId>
+  <groupId>com.example</groupId>
+  <version>0.0.1</version>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-websocket</artifactId>
-        </dependency>
-    </dependencies>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-websocket</artifactId>
+    </dependency>
+  </dependencies>
+
+
+  <modules>
+    <module>websocket-basic</module>
+    <module>websocket-chatroom</module>
+    <module>websocket-sock-js</module>
+    <module>websocket-stomp</module>
+  </modules>
+
 
 </project>
