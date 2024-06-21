@@ -61,6 +61,14 @@ set character_set_server = utf8mb4
 |                gbk                |                  GBK                   |
 |               ascii               |                US-ASCII                |
 
+|     排序规则|                   说明      |
+| :----------------: | :---------------------------------------: |
+| utf8_general_ci    | 不区分大小写的比较                          |
+| utf8_unicode_ci    | 区分大小写的比较                          |
+| utf8mb4_general_ci | 不区分大小写的比较，支持 Emoji 等特殊字符 |
+| utf8mb4_unicode_ci | 区分大小写的比较，支持 Emoji 等特殊字符   |
+
+———————————————————————————————————————————————————————————————————————
 ## spring-boot-thin
 ```xml
 <dependency>
