@@ -7,16 +7,16 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootMongoApplication implements CommandLineRunner {
+public class MongoApplication implements CommandLineRunner {
 
   private final UserRepository userRepository;
 
-  public SpringBootMongoApplication(UserRepository userRepository) {
+  public MongoApplication(UserRepository userRepository) {
     this.userRepository = userRepository;
   }
 
   public static void main(String[] args) {
-    SpringApplication.run(SpringBootMongoApplication.class, args);
+    SpringApplication.run(MongoApplication.class, args);
   }
 
   @Override

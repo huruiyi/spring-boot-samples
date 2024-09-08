@@ -2,6 +2,8 @@ package com.example.web;
 
 import com.example.annotation.ParamsAnnotation;
 import com.example.model.Course;
+import com.example.model.Customer;
+import com.example.model.Order;
 import com.example.service.impl.BusinessService;
 import com.example.service.impl.SingleService;
 import com.example.utils.ExcelUtils;
@@ -58,6 +60,7 @@ public class DemoController {
     map.put("name", name);
     return map;
   }
+
   @RequestMapping("/sayHello")
   public String sayHello(String name) {
     return "hello " + name;
@@ -153,12 +156,18 @@ public class DemoController {
 
   @RequestMapping("/courses")
   public List<Course> retrieveAllCourses() {
-    return Arrays.asList(
-        new Course(1, "Learn AWS", "in28 minutes"),
-        new Course(2, "Learn DevOps", "in2 8minutes"),
-        new Course(3, "Learn Azure", "in28 minutes"),
-        new Course(4, "Learn GCP", "in28 minutes")
-    );
+    return Arrays.asList(new Course(1, "Learn AWS", "in28 minutes"), new Course(2, "Learn DevOps", "in2 8minutes"),
+        new Course(3, "Learn Azure", "in28 minutes"), new Course(4, "Learn GCP", "in28 minutes"));
+  }
+
+  @RequestMapping("/orders")
+  public Order getOrders() {
+    return Order.builder()
+        .id(1)
+        .customer(Customer.builder().id(1).lastName("ruiyi").firstName("hu").build())
+        .orderDate(new Date())
+        .productName("Acme Portal")
+        .quantity(100).build();
   }
 
 
