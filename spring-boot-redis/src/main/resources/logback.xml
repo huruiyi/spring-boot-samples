@@ -18,7 +18,11 @@
     </encoder>
   </appender>
   <!-- 定义日志文件 输出位置 -->
-  <!-- <property name="log_dir" value="C:/test" />-->
+  <property name="log_dir" value="./logs"/>
+
+  <!-- TRACE级别日志 appender -->
+  <property name="maxHistory" value="30"/>
+
   <appender class="ch.qos.logback.core.rolling.RollingFileAppender" name="ERROR">
     <!-- 过滤器，只记录WARN级别的日志 -->
     <!-- 果日志级别等于配置级别，过滤器会根据onMath 和 onMismatch接收或拒绝日志。 -->
@@ -123,8 +127,6 @@
   <!-- DEBUG级别日志 appender -->
   <property name="log_dir" value="spring-boot/logs/"/>
 
-  <!-- TRACE级别日志 appender -->
-  <property name="maxHistory" value="30"/>
 
   <!-- root级别 DEBUG -->
   <root>

@@ -3,6 +3,7 @@ package com.example.web;
 import com.example.annotation.ParamsAnnotation;
 import com.example.model.Course;
 import com.example.model.Customer;
+import com.example.model.Greeting;
 import com.example.model.Order;
 import com.example.service.impl.BusinessService;
 import com.example.service.impl.SingleService;
@@ -53,12 +54,16 @@ public class DemoController {
   @Autowired
   private BusinessService businessService;
 
-
   @RequestMapping("/sayHi")
   public Map<String, String> sayHi(String name) {
     Map<String, String> map = new HashMap<>();
     map.put("name", name);
     return map;
+  }
+
+  @RequestMapping("/greeting")
+  public Greeting greeting() {
+    return Greeting.builder().id(10000).content("Hello World!!!").build();
   }
 
   @RequestMapping("/sayHello")

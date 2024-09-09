@@ -28,6 +28,7 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
+import redis.clients.jedis.ShardedJedisPoolConfig;
 
 @EnableCaching
 @Configuration
@@ -71,25 +72,21 @@ public class RedisConfigV1 extends CachingConfigurerSupport {
 
   @Bean
   public LettuceConnectionFactory lettuceConnectionFactory() {
-    GenericObjectPoolConfig genericObjectPoolConfig = new GenericObjectPoolConfig();
+    ShardedJedisPoolConfig genericObjectPoolConfig = new ShardedJedisPoolConfig();
     genericObjectPoolConfig.setMaxIdle(maxIdle);
     genericObjectPoolConfig.setMinIdle(minIdle);
     genericObjectPoolConfig.setMaxTotal(maxActive);
-    genericObjectPoolConfig.setMaxWaitMillis(maxWait);
-    genericObjectPoolConfig.setTimeBetweenEvictionRunsMillis(100);
+    genericObjectPoolConfig.setMaxWait(Duration.ofMillis(maxWait));
+    genericObjectPoolConfig.setTimeBetweenEvictionRuns(Duration.ofMillis(100));
     RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
     redisStandaloneConfiguration.setDatabase(database);
     redisStandaloneConfiguration.setHostName(host);
     redisStandaloneConfiguration.setPort(port);
     redisStandaloneConfiguration.setPassword(RedisPassword.of(password));
-    LettuceClientConfiguration clientConfig = LettucePoolingClientConfiguration.builder()
-        .commandTimeout(Duration.ofMillis(timeout))
-        .shutdownTimeout(Duration.ofMillis(shutDownTimeout))
-        .poolConfig(genericObjectPoolConfig)
-        .build();
+    LettuceClientConfiguration clientConfig = LettucePoolingClientConfiguration.builder().commandTimeout(Duration.ofMillis(timeout))
+        .shutdownTimeout(Duration.ofMillis(shutDownTimeout)).poolConfig(genericObjectPoolConfig).build();
 
-    LettuceConnectionFactory factory = new LettuceConnectionFactory(redisStandaloneConfiguration, clientConfig);
-    return factory;
+    return new LettuceConnectionFactory(redisStandaloneConfiguration, clientConfig);
   }
 
   @Primary
@@ -102,8 +99,8 @@ public class RedisConfigV1 extends CachingConfigurerSupport {
   }
 
   @Bean
-  public RedisSerializer redisSerializer() {
-    Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
+  public RedisSerializer<Object> redisSerializer() {
+    Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<Object>(Object.class);
 
     ObjectMapper om = new ObjectMapper();
     om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
@@ -112,6 +109,31 @@ public class RedisConfigV1 extends CachingConfigurerSupport {
     jackson2JsonRedisSerializer.setObjectMapper(om);
 
     return jackson2JsonRedisSerializer;
+  }
+
+
+  @Bean
+  public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory cf) {
+    RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+    redisTemplate.setConnectionFactory(cf);
+
+    Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
+    ObjectMapper om = new ObjectMapper();
+    om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+    om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
+    jackson2JsonRedisSerializer.setObjectMapper(om);
+    RedisSerializer<String> stringSerializer = new StringRedisSerializer();
+    // key采用String的序列化方式
+    redisTemplate.setKeySerializer(stringSerializer);
+    // hash的key也采用String的序列化方式
+    redisTemplate.setHashKeySerializer(stringSerializer);
+    // value序列化方式采用jackson
+    redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
+    // hash的value序列化方式采用jackson
+    redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);
+    redisTemplate.setDefaultSerializer(jackson2JsonRedisSerializer);
+
+    return redisTemplate;
   }
 
   @Primary

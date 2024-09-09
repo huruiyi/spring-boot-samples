@@ -2,6 +2,7 @@ package com.example.contoller;
 
 import com.example.entity.Country;
 import com.example.service.IRedisService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -14,6 +15,7 @@ import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/redis")
 public class RedisController {
@@ -26,6 +28,7 @@ public class RedisController {
 //    @Resource(name = "listOperationsV1/V2")
 //    //@Resource(name = "redisTemplate")
 //    private ListOperations<String, String> listOps;
+
   @Resource
   ValueOperations<String, String> valueOperations;
   @Resource
@@ -47,17 +50,16 @@ public class RedisController {
     listOps.leftPush(userId, url.toExternalForm());
   }
 
-
   @GetMapping
   @RequestMapping("/str")
   public String getSet() {
 
     ValueOperations<String, String> opsForValue = stringRedisTemplate.opsForValue();
     opsForValue.set("name", "your da ye");
-    System.out.println(opsForValue.get("name"));
+    log.info("name:{}", opsForValue.get("name"));
 
     valueOperations.set("name", "my da ye");
-    System.out.println(valueOperations.get("name"));
+    log.info("name:{}", opsForValue.get("name"));
 
     Country country = new Country();
     country.setId(1);
@@ -70,8 +72,7 @@ public class RedisController {
     System.out.println(o);
 
     template.opsForValue().set(KEY_REQUEST_TIME, LocalDateTime.now().toString());
-    String now = template.opsForValue().get(KEY_REQUEST_TIME);
-    return now;
+    return template.opsForValue().get(KEY_REQUEST_TIME);
   }
 
   @GetMapping
@@ -85,14 +86,14 @@ public class RedisController {
     listOps.leftPush(KEY_NUMS, "n7");
 
     List<String> numbersLeftPop = listOps.leftPop(KEY_NUMS, 3);
-    numbersLeftPop.forEach(number -> {
-      System.out.println(number);
-    });
+    if (numbersLeftPop != null) {
+      numbersLeftPop.forEach(System.out::println);
+    }
 
     List<String> numbersRightPop = listOps.rightPop(KEY_NUMS, 3);
-    numbersRightPop.forEach(number -> {
-      System.out.println(number);
-    });
+    if (numbersRightPop != null) {
+      numbersRightPop.forEach(System.out::println);
+    }
 
     String numbers = listOps.rightPop(KEY_NUMS);
     System.out.println(numbers);
@@ -104,8 +105,7 @@ public class RedisController {
   @RequestMapping(value = "/message", method = RequestMethod.GET)
   @ResponseBody
   public List<String> greeting(String user) {
-    List<String> messages = redisService.listMessages(user);
-    return messages;
+    return redisService.listMessages(user);
   }
 
   @RequestMapping(value = "/message", method = RequestMethod.POST)

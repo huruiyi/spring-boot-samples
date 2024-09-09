@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.model.Greeting;
 import com.example.model.Person;
 import com.example.service.SimpleService;
 import com.example.service.impl.HelloWorldService;
@@ -32,12 +33,19 @@ class ApplicationTests {
   }
 
   @Test
-  void Test2() {
+  void test1() {
     RestTemplate restTemplate = new RestTemplate();
     for (int i = 0; i < 10; i++) {
       String result = restTemplate.getForObject("http://localhost:9000/rate/testLimit", String.class);
       System.out.println(result);
     }
+  }
+
+  @Test
+  public void test2() {
+    RestTemplate restTemplate = new RestTemplate();
+    Greeting greeting = restTemplate.getForObject("http://localhost:8086/greeting", Greeting.class);
+    System.out.println(greeting.toString());
   }
 
   @Test
