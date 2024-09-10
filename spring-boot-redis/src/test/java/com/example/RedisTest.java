@@ -3,6 +3,7 @@ package com.example;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,7 @@ public class RedisTest {
   }
 
   @Test
-  void test2() {
+  void testLuaString() {
     redisTemplate.opsForValue().set("name", "bala bala");
 
     String LUA_SCRIPT = "return redis.call('get', KEYS[1])";
@@ -65,8 +66,18 @@ public class RedisTest {
   }
 
   @Test
-  void test3() {
-    boolean b = checkAndSet("ha ha", "ha-ha");
+  void testLuaBool() {
+    boolean b = checkAndSet("ha-ha", "ha-ha-2");
     System.out.println(b);
   }
+
+  @Test
+  void testLuaList() {
+    objectRedisTemplate.opsForList().leftPushAll("users", "u1", "u2", "张三", "李四");
+
+    RedisScript<List> script = RedisScript.of(new DefaultResourceLoader().getResource("people.lua"), List.class);
+    List list = objectRedisTemplate.execute(script, Collections.singletonList("users"), Collections.emptyList());
+    list.forEach(item -> log.info("users:{}", item.toString()));
+  }
+
 }

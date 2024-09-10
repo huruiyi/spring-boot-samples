@@ -1,6 +1,5 @@
 package com.example.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -12,7 +11,7 @@ public class RedisConfigV2 {
 
   private RedisTemplate redisTemplate;
 
-  @Autowired(required = false)
+//  @Autowired(required = false)
   public void setRedisTemplate(RedisTemplate redisTemplate) {
     //默认的JdkSerializationRedisSerializer 导key乱码
     //private boolean enableDefaultSerializer = true;
