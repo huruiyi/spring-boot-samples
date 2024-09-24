@@ -69,7 +69,7 @@ public class SampleApplication extends SpringBootServletInitializer implements W
   //war包: 先是启动Servlet服务器,服务器启动Springboot应用(springBootServletInitizer),然后启动IOC容器
   @Override
   public void customize(ConfigurableServletWebServerFactory server) {
-    server.setPort(9000);
+    server.setPort(8090);
   }
 
   @Bean

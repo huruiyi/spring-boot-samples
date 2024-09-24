@@ -3,7 +3,7 @@ package com.example.web;
 import com.example.model.Book;
 import com.example.service.BookService;
 import java.net.URI;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,14 +22,16 @@ public class BookController {
   @Autowired
   private BookService bookService;
 
-  @GetMapping
+  @GetMapping("/")
   public Iterable<Book> all() {
     return bookService.findAll();
   }
 
-  @GetMapping("/books")
+  @GetMapping("/list")
   public List<Book> getAllBooks() {
-    return Collections.singletonList(new Book(1L, "Mastering Spring 5.2", "Ranga Karanam"));
+    return Arrays.asList(
+        new Book(1000L, "Mastering Spring 5.2", "Ranga Karanam"),
+        new Book(2000L, "Mastering Spring 6.2", "Ranga Karanam"));
   }
 
   @GetMapping("/{isbn}")
@@ -38,15 +40,13 @@ public class BookController {
   }
 
   /*
-*
-  {
-  "isbn":"4325464573243",
-  "title":"Document Info",
-  "authors":[
-    "authors1","authors2","authors3"
-    ]
-  }
-  *
+      {
+      "isbn":"4325464573243",
+      "title":"Document Info",
+      "authors":[
+        "authors1","authors2","authors3"
+        ]
+      }
   * */
   @PostMapping
   public ResponseEntity<Book> create(@RequestBody Book book, UriComponentsBuilder uriBuilder) {
