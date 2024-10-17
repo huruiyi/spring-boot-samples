@@ -8,6 +8,9 @@ import com.example.model.Order;
 import com.example.service.impl.BusinessService;
 import com.example.service.impl.SingleService;
 import com.example.utils.ExcelUtils;
+import com.example.utils.VerifyCodeUtils;
+import com.example.utils.vcode.Captcha;
+import com.example.utils.vcode.GifCaptcha;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
@@ -18,6 +21,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -167,13 +171,44 @@ public class DemoController {
 
   @RequestMapping("/orders")
   public Order getOrders() {
-    return Order.builder()
-        .id(1)
-        .customer(Customer.builder().id(1).lastName("ruiyi").firstName("hu").build())
-        .orderDate(new Date())
-        .productName("Acme Portal")
-        .quantity(100).build();
+    return Order.builder().id(1).customer(Customer.builder().id(1).lastName("ruiyi").firstName("hu").build()).orderDate(new Date())
+        .productName("Acme Portal").quantity(100).build();
   }
 
+  @RequestMapping("/vStaticCodeImage")
+  public void createCertCodeImageAction(HttpServletRequest request, HttpServletResponse response) {
+    response.setHeader("Pragma", "No-cache");
+    response.setHeader("Cache-Control", "no-store");
+    response.setDateHeader("Expires", 0);
+    response.setContentType("image/jpeg");
+    String verifyCode = VerifyCodeUtils.generateVerifyCode(4);
+    HttpSession session = request.getSession(true);
+    session.setAttribute("v-code", verifyCode.toLowerCase());
+    int w = 108, h = 34;
+    try {
+      VerifyCodeUtils.outputImage(w, h, response.getOutputStream(), verifyCode);
+    } catch (IOException e) {
+      log.warn(e.getMessage());
+    }
+
+  }
+
+  @RequestMapping("/dStaticCodeImage")
+  public void code2(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    response.setHeader("Pragma", "No-cache");
+    response.setHeader("Cache-Control", "no-cache");
+    response.setDateHeader("Expires", 0);
+    response.setContentType("image/gif");
+    Captcha captcha = new GifCaptcha(108, 34, 4);
+    //输出
+    ServletOutputStream out = response.getOutputStream();
+    captcha.out(out);
+    out.flush();
+    //存入Shiro会话session
+    log.debug(captcha.text().toLowerCase());
+    //存入会话session
+    HttpSession session = request.getSession(true);
+    session.setAttribute("v-code", captcha.text().toLowerCase());
+  }
 
 }

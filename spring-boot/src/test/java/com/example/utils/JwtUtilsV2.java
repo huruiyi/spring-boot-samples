@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class JwtUtilsV2 {
 
-  private static String SIGNATURE = "token!@#$%^7890";
+  private static final String SIGNATURE = "token!@#$%^7890";
 
   /**
    * 生成token
