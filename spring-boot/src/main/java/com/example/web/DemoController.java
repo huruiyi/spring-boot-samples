@@ -175,7 +175,7 @@ public class DemoController {
         .productName("Acme Portal").quantity(100).build();
   }
 
-  @RequestMapping("/vStaticCodeImage")
+  @RequestMapping("/sVCode")
   public void createCertCodeImageAction(HttpServletRequest request, HttpServletResponse response) {
     response.setHeader("Pragma", "No-cache");
     response.setHeader("Cache-Control", "no-store");
@@ -193,7 +193,7 @@ public class DemoController {
 
   }
 
-  @RequestMapping("/dStaticCodeImage")
+  @RequestMapping("/dVCode")
   public void code2(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setHeader("Pragma", "No-cache");
     response.setHeader("Cache-Control", "no-cache");
@@ -210,5 +210,6 @@ public class DemoController {
     HttpSession session = request.getSession(true);
     session.setAttribute("v-code", captcha.text().toLowerCase());
   }
+
 
 }

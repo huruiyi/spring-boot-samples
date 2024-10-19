@@ -10,6 +10,7 @@ import com.example.service.impl.BinarySearchImpl;
 import com.example.web.DemoController;
 import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,6 +27,8 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 @Slf4j
 @SpringBootApplication
 public class SampleApplication extends SpringBootServletInitializer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+
+
 
   public static void main(String[] args) {
     ConfigurableApplicationContext context = SpringApplication.run(SampleApplication.class, args);
@@ -100,4 +103,5 @@ public class SampleApplication extends SpringBootServletInitializer implements W
   public ApplicationRunner startupMailSender2(SpringTemplateEngine templateEngine) {
     return null;
   }
+
 }

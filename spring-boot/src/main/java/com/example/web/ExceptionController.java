@@ -50,4 +50,5 @@ public class ExceptionController {
   public String test32() {
     return "hello world";
   }
+
 }

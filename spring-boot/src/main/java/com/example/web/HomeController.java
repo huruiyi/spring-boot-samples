@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/")
 public class HomeController {
+
   @SysLog
   @GetMapping
   public String index() {

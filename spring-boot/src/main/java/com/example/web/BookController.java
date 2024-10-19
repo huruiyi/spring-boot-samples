@@ -54,4 +54,5 @@ public class BookController {
     URI newBookUri = uriBuilder.path("/books/{isbn}").build(created.getIsbn());
     return ResponseEntity.created(newBookUri).body(created);
   }
+
 }
