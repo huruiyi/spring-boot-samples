@@ -23,7 +23,7 @@ public class OracleGenerator {
 
   public static void main(String[] args) {
     //需要生产的表
-    String[] tables = new String[]{"EPAN_ENTERPRISE"};
+    String[] tables = new String[]{"ENTERPRISE"};
     System.out.println("总表数：" + tables.length);
 
     OracleGenerator s = new OracleGenerator();

@@ -1,10 +1,35 @@
 package com.example.demo;
 
+import com.example.demo.mapper.SystemUsersMapper;
+import com.example.demo.model.SystemUser;
+import com.example.demo.service.SystemUserService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
+@SpringBootTest
 class DemoApplicationTests {
+
+  @Autowired
+  private PasswordEncoder passwordEncoder;
+
+  @Autowired
+  SystemUsersMapper systemUsersMapper;
+
+  @Test
+  void testPwd() {
+    System.out.printf(passwordEncoder.encode("123456"));
+  }
+
+  @Test
+  public void testAdd() {
+    SystemUser user = new SystemUser();
+    user.setUsername("admin").setPassword(passwordEncoder.encode("123456"));
+    systemUsersMapper.insert(user);
+  }
 
   @Test
   void test() {

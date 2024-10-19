@@ -15,10 +15,10 @@
   <version>0.0.1</version>
 
   <modules>
-    <module>demo0</module>
-    <module>demo1</module>
-    <module>demo2</module>
-    <module>demo3</module>
-    <module>demo4</module>
+    <module>spring-boot-data-mongodb</module>
+    <module>spring-boot-data-mysql-v1</module>
+    <module>spring-boot-data-mysql-v2</module>
+    <module>spring-boot-data-mysql-v3</module>
+    <module>spring-boot-data-nacos-datasource</module>
   </modules>
 </project>

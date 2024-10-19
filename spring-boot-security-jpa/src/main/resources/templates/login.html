@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-	<meta charset="UTF-8">
-	<title>Login</title>
-	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-</head>
-<body>
-<h1>Login Page</h1>
-<form action="#" th:action="@{/auth/login}" th:object="${user}" method="post">
-	<label>username</label>
-	<input name="username" value="admin" />
-	<br />
-	<label>password</label>
-	<input name="password" value="123456" />
-	<br />
-	<input type="submit" />
-	<button onclick="login()">login</button>
-</form>
-</body>
-<script>
-	function login() {
-		
-		console.log("func .... ");
-		$.post({
-			url: "/auth/login",
-			data: {
-				username: "admin", password: "123456"
-			},
-			success: function (e) {
-				alert("success!")
-			},
-			error: function (e) {
-				alert("error!")
-			}
-		});
-		console.log("func .... end");
-		return false;
-	}
-</script>
+	<head>
+		<meta charset="UTF-8">
+		<title>Login</title>
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Login Page</h1>
+		<form action="#" th:action="@{/auth/login}" th:object="${user}" method="post">
+			<label>username</label>
+			<input name="username" value="admin" />
+			<br />
+			<label>password</label>
+			<input name="password" value="123456" />
+			<br />
+			<input type="submit" />
+			<button onclick="login()">login</button>
+		</form>
+	</body>
+	<script>
+		function login() {
+			$.post({
+				url: "/auth/login",
+				data: {
+					username: "admin", password: "123456"
+				},
+				success: function (e) {
+					alert("success!")
+				},
+				error: function (e) {
+					alert("error!")
+				}
+			});
+			console.log("func .... end");
+			return false;
+		}
+	</script>
 </html>
