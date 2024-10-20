@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>jsencrypt-rsa</title>
+		<script src="/js/jquery-3.3.1.min.js"></script>
+		<script src="http://passport.cnblogs.com/scripts/jsencrypt.min.js"></script>
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<script type="text/javascript">
+			$(function () {
+				$("#btn").click(function () {
+					let inputData = $('#data').val();
+					let encrypt = new JSEncrypt();
+					encrypt.setPublicKey("MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDXQHkn4dX3oUppqr2Vj7pBEDoe5Y+wJuTFqVImFU7xyDHCzwVY40q8/2OCmoMnrnjORL6Yh7UZl9GQ/FOvJHAnXrClU2mMRDzhTG9tw4mvsfDk/EHpJ+oCDUmlSqp1rG78mc89rjXqoaRzSsdqYB9bnpBHVjG8r1gmcRqKvCpuvQIDAQAB");
+					let data = encrypt.encrypt(inputData);
+					$("#encrypt").val(data);
+					
+					$.ajax({
+						type: "GET",
+						url: "/rsaDecrypt",
+						data: {
+							data: data
+						},
+						success: function (result) {
+							console.log(result);
+							$("#decrypt").val(result);
+						}
+					})
+				})
+			});
+		
+		</script>
+	</head>
+	<body>
+		<div class="form-inline">
+			<label class="input-label"> 要加密的字符串：</label>
+			<input type="text" id="data" value="" class="form-control" style="width: 300px"/>
+		</div>
+		
+		<div class="form-inline">
+			<label class="input-label">前端加密后：</label>
+			<textarea id="encrypt"></textarea>
+		</div>
+		
+		<div class="form-inline">
+			<label class="input-label">后端解密后：</label>
+			<textarea id="decrypt"></textarea>
+		</div>
+		
+		<div>
+			<button class="btn btn-primary" id=btn>发送</button>
+		</div>
+	</body>
+	<style type="text/css">
+		/* 基本文本区域样式 */
+		textarea {
+			background-color: rgba(241, 241, 241, .98);
+			width: 300px; /* 宽度 */
+			height: 150px; /* 高度 */
+			padding: 10px; /* 内边距 */
+			font-size: 16px; /* 字体大小 */
+			line-height: 1.5; /* 行高 */
+			border: 1px solid #ccc; /* 边框 */
+			border-radius: 4px; /* 圆角 */
+			background-color: #f9f9f9; /* 背景色 */
+			color: #333; /* 文字颜色 */
+			outline: none; /* 移除默认轮廓 */
+			resize: vertical; /* 仅允许垂直调整大小 */
+			transition: border-color 0.3s ease; /* 平滑过渡效果 */
+		}
+		
+		/* 当文本区域获得焦点时 */
+		textarea:focus {
+			border-color: #007BFF; /* 改变边框颜色 */
+			box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* 添加阴影效果 */
+		}
+		
+		/* 禁用状态下的文本区域 */
+		textarea:disabled {
+			background-color: #e9ecef; /* 更改背景色 */
+			color: #868e96; /* 更改文字颜色 */
+			cursor: not-allowed; /* 更改鼠标指针 */
+		}
+		
+		/* 占位符文本样式 */
+		textarea::placeholder {
+			color: #aaa; /* 设置占位符文字颜色 */
+		}
+		
+		.input-label {
+			width: 150px;
+			text-align: right;
+			display: inline-block;
+		}
+	</style>
+</html>
