@@ -125,8 +125,7 @@ public class RsaUtils {
     RSAPrivateKey rsaPrivateKey = (RSAPrivateKey) keyPair.getPrivate();
     String publicKeyString = Base64.encodeBase64String(rsaPublicKey.getEncoded());
     String privateKeyString = Base64.encodeBase64String(rsaPrivateKey.getEncoded());
-    RSAKeyPair rsaKeyPair = new RSAKeyPair(publicKeyString, privateKeyString);
-    return rsaKeyPair;
+    return new RSAKeyPair(publicKeyString, privateKeyString);
   }
 
 

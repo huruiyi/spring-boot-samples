@@ -1,5 +1,6 @@
 package com.example.demo.utils;
 
+import java.nio.charset.StandardCharsets;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import org.apache.commons.codec.binary.Base64;
@@ -19,7 +20,7 @@ public class AesUtils {
       //初始化密码器，第一个参数为加密(ENCRYPT_MODE)或者解密(DECRYPT_MODE)操作，第二个参数为生成的AES密钥
       cipher.init(Cipher.ENCRYPT_MODE, skey);
       //获取加密内容的字节数组(设置为utf-8)不然内容中如果有中文和英文混合中文就会解密为乱码
-      byte[] byte_content = content.getBytes("utf-8");
+      byte[] byte_content = content.getBytes(StandardCharsets.UTF_8);
       //密码器加密数据
       byte[] encode_content = cipher.doFinal(byte_content);
       //将加密后的数据转换为字符串返回
@@ -45,7 +46,7 @@ public class AesUtils {
       //密码器解密数据
       byte[] byte_content = cipher.doFinal(encode_content);
       //将解密后的数据转换为字符串返回
-      return new String(byte_content, "utf-8");
+      return new String(byte_content, StandardCharsets.UTF_8);
     } catch (Exception e) {
       e.printStackTrace();
       return null;
