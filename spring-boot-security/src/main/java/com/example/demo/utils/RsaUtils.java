@@ -19,13 +19,22 @@ import java.security.spec.X509EncodedKeySpec;
 
 public class RsaUtils {
 
+  public static void main(String[] args) throws Exception {
+    RSAKeyPair rsaKeyPair = generateKeyPair();
+    test1(rsaKeyPair, "Hello World,世界你好！！！");
+  }
+
   /**
    * 公钥加密私钥解密
    */
   private static void test1(RSAKeyPair keyPair, String source) throws Exception {
     System.out.println("***************** 公钥加密私钥解密开始 *****************");
-    String text1 = encryptByPublicKey(keyPair.getPublicKey(), source);
-    String text2 = decryptByPrivateKey(keyPair.getPrivateKey(), text1);
+    String publicKey = keyPair.getPublicKey();
+    String privateKey = keyPair.getPrivateKey();
+    System.out.println("公钥：" + publicKey);
+    System.out.println("私钥：" + privateKey);
+    String text1 = encryptByPublicKey(publicKey, source);
+    String text2 = decryptByPrivateKey(privateKey, text1);
     System.out.println("加密前：" + source);
     System.out.println("加密后：" + text1);
     System.out.println("解密后：" + text2);
@@ -39,8 +48,6 @@ public class RsaUtils {
 
   /**
    * 私钥加密公钥解密
-   *
-   * @throws Exception
    */
   private static void test2(RSAKeyPair keyPair, String source) throws Exception {
     System.out.println("***************** 私钥加密公钥解密开始 *****************");
@@ -60,10 +67,6 @@ public class RsaUtils {
   /**
    * 公钥解密
    *
-   * @param publicKeyText
-   * @param text
-   * @return
-   * @throws Exception
    */
   public static String decryptByPublicKey(String publicKeyText, String text) throws Exception {
     X509EncodedKeySpec x509EncodedKeySpec = new X509EncodedKeySpec(Base64.decodeBase64(publicKeyText));
@@ -134,8 +137,8 @@ public class RsaUtils {
    */
   public static class RSAKeyPair {
 
-    private String publicKey;
-    private String privateKey;
+    private final String publicKey;
+    private final String privateKey;
 
     public RSAKeyPair(String publicKey, String privateKey) {
       this.publicKey = publicKey;

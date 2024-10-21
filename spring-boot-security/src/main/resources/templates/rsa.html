@@ -11,7 +11,7 @@
 				$("#btn").click(function () {
 					let inputData = $('#data').val();
 					let encrypt = new JSEncrypt();
-					encrypt.setPublicKey("MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDXQHkn4dX3oUppqr2Vj7pBEDoe5Y+wJuTFqVImFU7xyDHCzwVY40q8/2OCmoMnrnjORL6Yh7UZl9GQ/FOvJHAnXrClU2mMRDzhTG9tw4mvsfDk/EHpJ+oCDUmlSqp1rG78mc89rjXqoaRzSsdqYB9bnpBHVjG8r1gmcRqKvCpuvQIDAQAB");
+					encrypt.setPublicKey("MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCBKp4+JG8mP/yfjkPPYwZknyg2rwgyQi5k5o+opUAHjEpgsL6pq3DpgRYr/3Q+H36d/kkkAbxChpBmCNZZYFtcMupbsYGopzeADb2lk6R68LH8wy63jJrMcnvfwKuBsUT7n0LhI+IpaDq1Mnbdl6XUdMFMBCCqNE7qaZFIxoDOSQIDAQAB");
 					let data = encrypt.encrypt(inputData);
 					$("#encrypt").val(data);
 					
@@ -31,10 +31,10 @@
 		
 		</script>
 	</head>
-	<body>
+	<body class="container">
 		<div class="form-inline">
 			<label class="input-label"> 要加密的字符串：</label>
-			<input type="text" id="data" value="" class="form-control" style="width: 300px"/>
+			<input type="text" id="data" value="" class="form-control" style="width: 500px"/>
 		</div>
 		
 		<div class="form-inline">
@@ -54,19 +54,18 @@
 	<style type="text/css">
 		/* 基本文本区域样式 */
 		textarea {
-			background-color: rgba(241, 241, 241, .98);
-			width: 300px; /* 宽度 */
+			width: 500px; /* 宽度 */
 			height: 150px; /* 高度 */
 			padding: 10px; /* 内边距 */
 			font-size: 16px; /* 字体大小 */
 			line-height: 1.5; /* 行高 */
 			border: 1px solid #ccc; /* 边框 */
 			border-radius: 4px; /* 圆角 */
-			background-color: #f9f9f9; /* 背景色 */
 			color: #333; /* 文字颜色 */
 			outline: none; /* 移除默认轮廓 */
-			resize: vertical; /* 仅允许垂直调整大小 */
 			transition: border-color 0.3s ease; /* 平滑过渡效果 */
+			resize: none;
+			margin-top: 5px;
 		}
 		
 		/* 当文本区域获得焦点时 */
