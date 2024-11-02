@@ -10,9 +10,7 @@ import java.security.spec.X509EncodedKeySpec;
 
 /**
  * @author : sean
- * @version V1.0
  * @Project: jsencrypt
- * @Package utils
  * @date Date : 2021年09月23日 21:36
  * @Description: RSA加解密工具类，实现公钥加密私钥解密和私钥解密公钥解密
  */
@@ -66,7 +64,6 @@ public class RsaUtils {
 
   /**
    * 公钥解密
-   *
    */
   public static String decryptByPublicKey(String publicKeyText, String text) throws Exception {
     X509EncodedKeySpec x509EncodedKeySpec = new X509EncodedKeySpec(Base64.decodeBase64(publicKeyText));
@@ -131,28 +128,5 @@ public class RsaUtils {
     return new RSAKeyPair(publicKeyString, privateKeyString);
   }
 
-
-  /**
-   * RSA密钥对对象
-   */
-  public static class RSAKeyPair {
-
-    private final String publicKey;
-    private final String privateKey;
-
-    public RSAKeyPair(String publicKey, String privateKey) {
-      this.publicKey = publicKey;
-      this.privateKey = privateKey;
-    }
-
-    public String getPublicKey() {
-      return publicKey;
-    }
-
-    public String getPrivateKey() {
-      return privateKey;
-    }
-
-  }
 
 }

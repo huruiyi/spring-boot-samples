@@ -41,8 +41,12 @@
 
     <module>spring-boot-openapi</module>
     <module>spring-boot-redis</module>
+    <module>spring-boot-security</module>
     <module>spring-boot-security-jpa</module>
     <module>spring-boot-security-mybatis-plus</module>
+
+    <module>spring-boot-self-starter-test</module>
+
     <module>spring-boot-thymeleaf</module>
     <module>spring-boot-oauth2</module>
     <module>spring-boot-websocket</module>
@@ -51,4 +55,18 @@
     <module>spring-multi-datasource</module>
 
   </modules>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <!--  指定jdk版本，和指定编码  -->
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+          <encoding>utf-8</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

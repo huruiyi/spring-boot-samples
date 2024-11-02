@@ -3,7 +3,7 @@ package com.example.demo.controller;
 import cn.hutool.core.util.RandomUtil;
 import com.example.demo.utils.AesUtils;
 import com.example.demo.utils.RsaUtils;
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,7 +40,7 @@ public class DemoController {
 
 
   @RequestMapping(value = "/login", method = RequestMethod.POST)
-  public  @ResponseBody Object login(HttpServletRequest request) {
+  public @ResponseBody Object login(HttpServletRequest request) {
     String encryptedPassword = request.getParameter("password");
     String key = request.getParameter("key");
     return AesUtils.decrypt(encryptedPassword, key);
