@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import vip.fairy.service.MD5Service;
 
 @Configuration
+//@EnableAutoConfiguration
 public class MD5AutoConfiguration {
 
   @Bean

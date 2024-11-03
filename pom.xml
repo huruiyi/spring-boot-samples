@@ -53,8 +53,8 @@
     <module>spring-boot-openapi</module>
     <module>spring-boot-websocket</module>
     <module>spring-multi-datasource</module>
-
   </modules>
+
   <build>
     <plugins>
       <plugin>
@@ -69,4 +69,5 @@
       </plugin>
     </plugins>
   </build>
+
 </project>
