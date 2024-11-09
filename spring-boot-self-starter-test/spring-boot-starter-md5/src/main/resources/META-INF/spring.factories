@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-vip.fairy.config.MD5AutoConfiguration,\
-vip.fairy.config.LogAutoConfigure

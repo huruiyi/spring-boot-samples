@@ -17,8 +17,8 @@
   </properties>
 
   <modules>
-    <module>spring-boot-starter-md5</module>
-    <module>spring-boot-starter-md5-test</module>
+    <module>spring-boot-starter-fairy</module>
+    <module>spring-boot-starter-fairy-test</module>
   </modules>
 
 </project>
