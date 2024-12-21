@@ -8,16 +8,16 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ProcessEngineConfig implements EngineConfigurationConfigurer<SpringAppEngineConfiguration> {
 
-    private DatasourceConfigurator datasourceConfigurator;
+  private DatasourceConfigurator datasourceConfigurator;
 
-    @Autowired
-    public void setDatasourceConfigurator(DatasourceConfigurator datasourceConfigurator) {
-        this.datasourceConfigurator = datasourceConfigurator;
-    }
+  @Autowired
+  public void setDatasourceConfigurator(DatasourceConfigurator datasourceConfigurator) {
+    this.datasourceConfigurator = datasourceConfigurator;
+  }
 
-    @Override
-    public void configure(SpringAppEngineConfiguration engineConfiguration) {
-        engineConfiguration.addConfigurator(datasourceConfigurator);
-    }
+  @Override
+  public void configure(SpringAppEngineConfiguration engineConfiguration) {
+    engineConfiguration.addConfigurator(datasourceConfigurator);
+  }
 
 }
