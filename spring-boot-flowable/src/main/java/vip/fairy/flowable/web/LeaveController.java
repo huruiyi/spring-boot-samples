@@ -1,5 +1,7 @@
 package vip.fairy.flowable.web;
 
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,14 +10,20 @@ import java.util.Objects;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.flowable.bpmn.model.BpmnModel;
-import org.flowable.engine.*;
+import org.flowable.engine.ProcessEngine;
+import org.flowable.engine.ProcessEngineConfiguration;
+import org.flowable.engine.RepositoryService;
+import org.flowable.engine.RuntimeService;
+import org.flowable.engine.TaskService;
 import org.flowable.engine.runtime.Execution;
 import org.flowable.engine.runtime.ProcessInstance;
 import org.flowable.image.ProcessDiagramGenerator;
 import org.flowable.task.api.Task;
-import org.springframework.web.bind.annotation.*;
-import java.io.InputStream;
-import java.io.OutputStream;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import vip.fairy.flowable.model.Result;
 import vip.fairy.flowable.model.TaskVO;
 import vip.fairy.flowable.service.FairyTaskService;
@@ -27,16 +35,16 @@ import vip.fairy.flowable.service.FairyTaskService;
 public class LeaveController {
 
   private final RuntimeService runtimeService;
-
   private final TaskService taskService;
-
   private final RepositoryService repositoryService;
-
   private final ProcessEngine processEngine;
+  private final FairyTaskService fairyTaskService;
 
-  private FairyTaskService fairyTaskService;
-
-  public LeaveController(RuntimeService runtimeService, TaskService taskService, RepositoryService repositoryService, ProcessEngine processEngine,
+  public LeaveController(
+      RuntimeService runtimeService,
+      TaskService taskService,
+      RepositoryService repositoryService,
+      ProcessEngine processEngine,
       FairyTaskService fairyTaskService) {
     this.runtimeService = runtimeService;
     this.taskService = taskService;
@@ -183,12 +191,13 @@ public class LeaveController {
   /**
    * 生成流程图
    *
-   * @param taskId 流程ID
+   * @param processInstanceId 流程ID
    */
-  @GetMapping("processDiagram/{taskId}")
-  public void genProcessDiagram(HttpServletResponse httpServletResponse, @PathVariable("taskId") String taskId) throws Exception {
-    ProcessInstance pi = runtimeService.createProcessInstanceQuery().processInstanceId(taskId).singleResult();
-
+  @GetMapping("processDiagram/{processInstanceId}")
+  public void genProcessDiagram(
+      HttpServletResponse httpServletResponse,
+      @PathVariable("processInstanceId") String processInstanceId) throws Exception {
+    ProcessInstance pi = runtimeService.createProcessInstanceQuery().processInstanceId(processInstanceId).singleResult();
     //流程走完的不显示图
     if (pi == null) {
       return;
@@ -210,7 +219,8 @@ public class LeaveController {
     BpmnModel bpmnModel = repositoryService.getBpmnModel(pi.getProcessDefinitionId());
     ProcessEngineConfiguration engconf = processEngine.getProcessEngineConfiguration();
     ProcessDiagramGenerator diagramGenerator = engconf.getProcessDiagramGenerator();
-    InputStream in = diagramGenerator.generateDiagram(bpmnModel, "png", activityIds, flows, engconf.getActivityFontName(), engconf.getLabelFontName(),
+    InputStream in = diagramGenerator.generateDiagram(bpmnModel, "png", activityIds,
+        flows, engconf.getActivityFontName(), engconf.getLabelFontName(),
         engconf.getAnnotationFontName(), engconf.getClassLoader(), 1.0, true);
     OutputStream out = null;
     byte[] buf = new byte[1024];
