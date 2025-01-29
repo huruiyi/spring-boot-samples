@@ -7,9 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 
   /**
-   * https://www.cnblogs.com/seanRay/p/15336332.html
-   *
-   * @param args
+   * <a href="https://www.cnblogs.com/seanRay/p/15336332.html">RSA与AES加密与解密</a>
    */
   public static void main(String[] args) {
     SpringApplication.run(DemoApplication.class, args);

@@ -23,4 +23,5 @@ public class DemoController {
   public String publishObject(@RequestBody String obj) {
     return kafkaProducer.sendMessage(obj);
   }
+
 }

@@ -2,14 +2,6 @@ package com.example;
 
 import com.example.bean.UserMailChangedDTO;
 import com.example.bean.UserMailDTO;
-import com.example.utils.Html2Pdf;
-import com.lowagie.text.DocumentException;
-import com.lowagie.text.pdf.BaseFont;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -17,14 +9,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.i18n.LocaleContextHolder;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
-import org.xhtmlrenderer.pdf.ITextFontResolver;
-import org.xhtmlrenderer.pdf.ITextRenderer;
 
 @SpringBootTest
 class SpringBootDemoApplicationTests {
@@ -119,46 +107,5 @@ class SpringBootDemoApplicationTests {
     });
   }
 
-  @Test
-  void generatePdfWithCssStyle1() throws IOException {
-    Context context = new Context(LocaleContextHolder.getLocale());
-    String htmlBody = templateEngine.process("pdf/style.html", context);
-    System.out.println(htmlBody);
-
-    File dest = Paths.get("css-1.pdf").toFile();
-
-    OutputStream os = new FileOutputStream(dest);
-    ITextRenderer renderer = new ITextRenderer();
-
-    ITextFontResolver fontResolver = renderer.getFontResolver();
-    final ClassPathResource resource = new ClassPathResource("fonts/arial.ttf");
-    fontResolver.addFont(resource.getURL().toString(), BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-
-    renderer.setDocumentFromString(htmlBody);
-    renderer.layout();
-    renderer.createPDF(os);
-  }
-
-  @Test
-  void generatePdfWithCssStyle2() throws IOException, DocumentException {
-    List<UserMailDTO> userInfoList = new ArrayList<>();
-    UserMailDTO userInfo;
-    for (int i = 1; i < 10; i++) {
-      userInfo = new UserMailDTO("li", "ac@qq.com", "dn", "oc");
-      userInfo.setSamAccountName(userInfo.getSamAccountName() + "-" + i);
-      userInfoList.add(userInfo);
-    }
-
-    Context context = new Context(LocaleContextHolder.getLocale());
-    context.setVariable("users", userInfoList);
-    context.setVariable("address", "shanghai pudong");
-
-    String body = templateEngine.process("email/delete.html", context);
-
-    FileOutputStream outputStream = new FileOutputStream("css-2.pdf");
-    Html2Pdf.generator(outputStream, body);
-
-    outputStream.close();
-  }
 
 }

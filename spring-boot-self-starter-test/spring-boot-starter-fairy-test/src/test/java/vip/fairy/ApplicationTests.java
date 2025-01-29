@@ -10,7 +10,7 @@ import vip.fairy.service.MD5Service;
 class ApplicationTests {
 
   @Autowired
-  MD5Service md5Service ;
+  MD5Service md5Service;
 
   @Autowired
   HelloService helloService;

@@ -11,4 +11,5 @@ public class KafkaConsumer {
   public void listen(Message<String> msg) {
     System.out.println(msg.getPayload());
   }
+
 }
