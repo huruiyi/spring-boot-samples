@@ -8,14 +8,13 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-public class AppConfig {
+public class WebConfig {
 
   // password 方案一：明文存储，用于测试，不能用于生产
   @Bean
   PasswordEncoder noOpPasswordEncoder() {
     return NoOpPasswordEncoder.getInstance();
   }
-
 
   // password 方案二：用 BCrypt 对密码编码
   @Bean
@@ -28,6 +27,5 @@ public class AppConfig {
   PasswordEncoder passwordEncoder() {
     return PasswordEncoderFactories.createDelegatingPasswordEncoder();
   }
-
 
 }

@@ -49,22 +49,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
   }
 
   /**
-   * springboot2.0 删除了原来的 plainTextPasswordEncoder
-   * https://docs.spring.io/spring-security/site/docs/5.0.4.RELEASE/reference/htmlsingle/#10.3.2 DelegatingPasswordEncoder
-   */
-
-
-  /**
-   * 这一步的配置是必不可少的，否则SpringBoot会自动配置一个AuthenticationManager,覆盖掉内存中的用户
-   *
-   * @return
-   * @throws Exception
+   * 这一步的配置是必不可少的，否则SpringBoot会自动配置一个AuthenticationManager,覆盖掉内存中的用户 springboot2.0 删除了原来的 plainTextPasswordEncoder
+   * <a href="https://docs.spring.io/spring-security/site/docs/5.0.4.RELEASE/reference/htmlsingle/#10.3.2">DelegatingPasswordEncoder</a>
    */
   @Bean
   @Override
   public AuthenticationManager authenticationManagerBean() throws Exception {
-    AuthenticationManager manager = super.authenticationManagerBean();
-    return manager;
+    return super.authenticationManagerBean();
   }
 
   @Override
@@ -75,4 +66,5 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         .authorizeRequests()
         .antMatchers("/oauth/**").permitAll();
   }
+
 }
