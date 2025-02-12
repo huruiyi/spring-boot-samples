@@ -38,6 +38,7 @@
     <module>spring-boot-redis</module>
     <module>spring-boot-security</module>
     <module>spring-boot-security-jpa</module>
+    <module>spring-boot-security-ldap-jwt</module>
     <module>spring-boot-security-mybatis-plus</module>
 
     <module>spring-boot-self-starter-test</module>
