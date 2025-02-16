@@ -26,7 +26,8 @@
     <module>spring-boot-data</module>
     <module>spring-boot-docker</module>
     <module>spring-boot-dubbo</module>
-    <module>spring-boot-flowable</module>
+    <module>spring-boot-flowable-pro</module>
+    <module>spring-boot-flowable-simple</module>
     <module>spring-boot-kafka</module>
     <module>spring-boot-mongo</module>
 

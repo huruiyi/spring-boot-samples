@@ -3,6 +3,7 @@ package vip.fairy.flowable.web;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,9 +30,9 @@ import vip.fairy.flowable.model.TaskVO;
 import vip.fairy.flowable.service.FairyTaskService;
 
 
+@Slf4j
 @RestController
 @RequestMapping("/leave")
-@Slf4j
 public class LeaveController {
 
   private final RuntimeService runtimeService;
@@ -194,8 +195,7 @@ public class LeaveController {
    * @param processInstanceId 流程ID
    */
   @GetMapping("processDiagram/{processInstanceId}")
-  public void genProcessDiagram(
-      HttpServletResponse httpServletResponse,
+  public void genProcessDiagram(HttpServletResponse httpServletResponse,
       @PathVariable("processInstanceId") String processInstanceId) throws Exception {
     ProcessInstance pi = runtimeService.createProcessInstanceQuery().processInstanceId(processInstanceId).singleResult();
     //流程走完的不显示图
@@ -209,7 +209,6 @@ public class LeaveController {
 
     //得到正在执行的Activity的Id
     List<String> activityIds = new ArrayList<>();
-    List<String> flows = new ArrayList<>();
     for (Execution exe : executions) {
       List<String> ids = runtimeService.getActiveActivityIds(exe.getId());
       activityIds.addAll(ids);
@@ -217,16 +216,17 @@ public class LeaveController {
 
     //获取流程图
     BpmnModel bpmnModel = repositoryService.getBpmnModel(pi.getProcessDefinitionId());
-    ProcessEngineConfiguration engconf = processEngine.getProcessEngineConfiguration();
-    ProcessDiagramGenerator diagramGenerator = engconf.getProcessDiagramGenerator();
-    InputStream in = diagramGenerator.generateDiagram(bpmnModel, "png", activityIds,
-        flows, engconf.getActivityFontName(), engconf.getLabelFontName(),
-        engconf.getAnnotationFontName(), engconf.getClassLoader(), 1.0, true);
+    ProcessEngineConfiguration conf = processEngine.getProcessEngineConfiguration();
+    ProcessDiagramGenerator diagramGenerator = conf.getProcessDiagramGenerator();
+    String activityFontName = conf.getActivityFontName();
+    String labelFontName = conf.getLabelFontName();
+    String annotationFontName = conf.getAnnotationFontName();
+    InputStream in = diagramGenerator.generateDiagram(bpmnModel, "png", activityIds, Collections.emptyList(),
+        activityFontName, labelFontName, annotationFontName, conf.getClassLoader(), 1.0, true);
     OutputStream out = null;
     byte[] buf = new byte[1024];
     int legth = 0;
     try {
-      //此处设置resp的header诸多文章都没写，但是我不写出不来流程图，诸位可去掉试试
       httpServletResponse.setHeader("Content-Type", "image/png;charset=utf-8");
       out = httpServletResponse.getOutputStream();
       while ((legth = in.read(buf)) != -1) {

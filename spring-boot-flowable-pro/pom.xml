@@ -10,10 +10,10 @@
   </parent>
 
   <groupId>vip.fairy</groupId>
-  <artifactId>spring-boot-flowable</artifactId>
+  <artifactId>spring-boot-flowable-pro</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>spring-boot-flowable</name>
-  <description>spring-boot-flowable</description>
+  <name>spring-boot-flowable-pro</name>
+  <description>spring-boot-flowable-pro</description>
 
   <dependencies>
     <dependency>
