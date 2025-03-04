@@ -46,6 +46,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         .accessTokenValiditySeconds(3000)
         .refreshTokenValiditySeconds(3000)
         .authorizedGrantTypes("authorization_code", "password", "client_credentials", "implicit", "sms_code");
-
   }
+
 }
