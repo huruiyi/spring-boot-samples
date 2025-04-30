@@ -1,12 +1,17 @@
 package com.example;
 
 
+import static org.hamcrest.Matchers.containsString;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import java.nio.charset.StandardCharsets;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import lombok.extern.slf4j.Slf4j;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,12 +35,22 @@ public class HelloControllerTest {
   private MockMvc mockMvc;
 
   @BeforeEach
-  public void setUp() throws Exception {
+  public void setUp() {
     mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
   }
 
   @Test
-  public void hello() throws Exception {
+  public void hello1() throws Exception {
+    this.mockMvc.perform(
+            get("/demo/sayHello")
+                .param("name", "world")
+        ).andDo(print())
+        .andExpect(status().isOk())
+        .andExpect(content().string(containsString("hello world")));
+  }
+
+  @Test
+  public void hello2() throws Exception {
     String contentType = (new MediaType("application", "json", StandardCharsets.UTF_8)).toString();
     MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/demo/sayHello")
             .contentType(contentType)

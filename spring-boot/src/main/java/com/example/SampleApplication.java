@@ -28,8 +28,6 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 @SpringBootApplication
 public class SampleApplication extends SpringBootServletInitializer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 
-
-
   public static void main(String[] args) {
     ConfigurableApplicationContext context = SpringApplication.run(SampleApplication.class, args);
     printBeans(context);
