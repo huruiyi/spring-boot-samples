@@ -139,6 +139,6 @@
     <appender-ref ref="WARN"/>
     <appender-ref ref="DEBUG"/>
     <appender-ref ref="TRACE"/>
-    <level value="debug"/>
+    <level value="INFO"/>
   </root>
 </configuration>

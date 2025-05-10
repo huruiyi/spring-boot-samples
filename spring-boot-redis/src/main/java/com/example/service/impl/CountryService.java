@@ -3,13 +3,12 @@ package com.example.service.impl;
 import com.example.entity.Country;
 import com.example.repository.CountryRepository;
 import com.example.service.ICountryService;
+import java.util.List;
+import javax.annotation.Resource;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
-import java.util.List;
 
 @Service
 public class CountryService implements ICountryService {
@@ -24,7 +23,9 @@ public class CountryService implements ICountryService {
     return countryRepository.save(country);
   }
 
-  public List<Country> findAll() {
+  @CacheEvict(value = REDIS_CACHE_VALUE, key = "#id")
+  public List<Country> delete(Integer id) {
+    countryRepository.deleteById(id);
     return countryRepository.findAll();
   }
 
@@ -33,9 +34,8 @@ public class CountryService implements ICountryService {
     return countryRepository.findFirstById(id);
   }
 
-  @CacheEvict(value = REDIS_CACHE_VALUE, key = "#id")
-  public List<Country> delete(Integer id) {
-    countryRepository.deleteById(id);
+  public List<Country> findAll() {
     return countryRepository.findAll();
   }
+
 }

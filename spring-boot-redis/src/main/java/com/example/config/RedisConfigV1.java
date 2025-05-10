@@ -3,6 +3,7 @@ package com.example.config;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.time.Duration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
@@ -19,11 +20,10 @@ import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-
-import java.time.Duration;
 import redis.clients.jedis.ShardedJedisPoolConfig;
 
 @EnableCaching
@@ -97,19 +97,6 @@ public class RedisConfigV1 extends CachingConfigurerSupport {
     return lettuceConnectionFactory();
   }
 
-  @Bean
-  public RedisSerializer<Object> redisSerializer() {
-    Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<Object>(Object.class);
-
-    ObjectMapper om = new ObjectMapper();
-    om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-    //om.activateDefaultTyping(om.getPolymorphicTypeValidator(), ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);
-    om.activateDefaultTyping(om.getPolymorphicTypeValidator(), ObjectMapper.DefaultTyping.NON_FINAL);
-    jackson2JsonRedisSerializer.setObjectMapper(om);
-
-    return jackson2JsonRedisSerializer;
-  }
-
 
   @Bean
   public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory cf) {
@@ -119,7 +106,9 @@ public class RedisConfigV1 extends CachingConfigurerSupport {
     Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
     ObjectMapper om = new ObjectMapper();
     om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-    om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
+    //om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL); //deprecated
+    om.activateDefaultTyping(om.getPolymorphicTypeValidator(), ObjectMapper.DefaultTyping.NON_FINAL);
+
     jackson2JsonRedisSerializer.setObjectMapper(om);
     RedisSerializer<String> stringSerializer = new StringRedisSerializer();
     // key采用String的序列化方式
@@ -146,9 +135,25 @@ public class RedisConfigV1 extends CachingConfigurerSupport {
     redisTemplate.setHashKeySerializer(stringRedisSerializer);
 
     redisTemplate.setValueSerializer(redisSerializer);
+    //redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
     redisTemplate.setHashValueSerializer(redisSerializer);
 
     return redisTemplate;
+  }
+
+  /**
+   * 参考：{@link GenericJackson2JsonRedisSerializer}
+   */
+  @Bean
+  public RedisSerializer<Object> redisSerializer() {
+    Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<Object>(Object.class);
+
+    ObjectMapper om = new ObjectMapper();
+    om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+    om.activateDefaultTyping(om.getPolymorphicTypeValidator(), ObjectMapper.DefaultTyping.NON_FINAL);
+    jackson2JsonRedisSerializer.setObjectMapper(om);
+
+    return jackson2JsonRedisSerializer;
   }
 
   @Bean
@@ -160,4 +165,5 @@ public class RedisConfigV1 extends CachingConfigurerSupport {
   public ValueOperations<String, String> valueOperations() {
     return redisTemplate(lettuceConnectionFactory(), redisSerializer()).opsForValue();
   }
+
 }

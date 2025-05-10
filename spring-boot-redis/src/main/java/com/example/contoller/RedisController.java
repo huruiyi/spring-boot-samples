@@ -2,18 +2,22 @@ package com.example.contoller;
 
 import com.example.entity.Country;
 import com.example.service.IRedisService;
+import java.io.Serializable;
+import java.net.URL;
+import java.time.LocalDateTime;
+import java.util.List;
+import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
-import java.net.URL;
-import java.time.LocalDateTime;
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
@@ -31,20 +35,29 @@ public class RedisController {
 
   @Resource
   ValueOperations<String, String> valueOperations;
+
   @Resource
   RedisTemplate<Object, Object> redisTemplate;
+
   @Autowired
   private IRedisService redisService;
+
   // inject the actual template
   @Autowired
   private RedisTemplate<String, String> template;
+
   // inject the template as ListOperations
   @Autowired
   private ListOperations<String, String> listOps;
+
   @Autowired
   private ListOperations<String, String> ListOperations;
+
   @Resource
   private StringRedisTemplate stringRedisTemplate;
+
+  @Autowired
+  private RedisTemplate<String, Serializable> redisCacheTemplate;
 
   public void addLink(String userId, URL url) {
     listOps.leftPush(userId, url.toExternalForm());
@@ -101,17 +114,18 @@ public class RedisController {
     return "Hello World";
   }
 
-
-  @RequestMapping(value = "/message", method = RequestMethod.GET)
   @ResponseBody
+  @RequestMapping(value = "/message", method = RequestMethod.GET)
   public List<String> greeting(String user) {
     return redisService.listMessages(user);
   }
 
-  @RequestMapping(value = "/message", method = RequestMethod.POST)
+
   @ResponseBody
+  @RequestMapping(value = "/message", method = RequestMethod.POST)
   public String saveGreeting(String user, String message) {
     redisService.addMessage(user, message);
     return "OK";
   }
+
 }
