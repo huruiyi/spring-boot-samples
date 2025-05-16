@@ -29,6 +29,8 @@
     <module>spring-boot-flowable-pro</module>
     <module>spring-boot-flowable-simple</module>
     <module>spring-boot-kafka</module>
+    <module>spring-boot-kafka-mysql-order</module>
+    <module>spring-boot-kafka-ordering</module>
     <module>spring-boot-mongo</module>
 
     <module>spring-boot-mybatis</module>
