@@ -20,10 +20,10 @@ public class RateController {
   @RequestMapping(value = "/limit")
   private String limit() {
     if (rateLimiter.tryAcquire()) {
-      log.info("true:" + Instant.now());
+      log.info("true:{}", Instant.now());
       return "Acquire 。。。";
     } else {
-      log.info("false:" + Instant.now());
+      log.info("false:{}", Instant.now());
       return "Hello World";
     }
   }
