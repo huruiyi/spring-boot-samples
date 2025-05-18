@@ -1,0 +1,32 @@
+##列出所有主题
+kafka-topics.bat --zookeeper localhost:2181/kafka-one --list
+
+##列出所有主题的详细信息
+kafka-topics.bat --zookeeper localhost:2181/kafka-one --describe
+
+##列出某个主题的详细信息
+kafka-topics.bat --zookeeper localhost:2181/kafka-one --describe --topic
+
+##创建主题 主题名 my-topic，1副本，8分区
+kafka-topics.bat --zookeeper localhost:2181/kafka-one --create --replication-factor 1 --partitions 8 --topic my-topic
+
+##增加分区，注意：分区无法被删除
+kafka-topics.bat --zookeeper localhost:2181/kafka-one --alter --topic my-topic --partitions 16
+
+##删除主题,配置文件中delete.topic.enable=false时，并未真正删除
+kafka-topics.bat --zookeeper localhost:2181/kafka-one --delete --topic my-topic
+
+##列出消费者群组（仅Linux）
+kafka-topics.sh --new-consumer --bootstrap-server localhost:9092/kafka-one --list
+
+##列出消费者群组详细信息（仅Linux）
+kafka-topics.sh --new-consumer --bootstrap-server localhost:9092/kafka-one --describe --group 群组名 
+
+##启动一个生产者
+kafka-console-producer.bat --broker-list localhost:9092 --topic kafka-spring-topic
+
+##启动一个消费者
+kafka-console-consumer.bat --zookeeper localhost:2181/kafka-one --from-beginning --topic kafka-spring-topic 
+
+##查看某主题的某消费者群组消费偏移量
+kafka-consumer-offset-checker.bat --zookeeper localhost:2181/kafka-one --topic kafka-spring-topic-b --group spring-kafka-group-ack

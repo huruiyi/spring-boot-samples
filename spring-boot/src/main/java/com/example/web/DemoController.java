@@ -31,8 +31,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
@@ -211,5 +214,16 @@ public class DemoController {
     session.setAttribute("v-code", captcha.text().toLowerCase());
   }
 
+  @ResponseBody
+  @RequestMapping(value = "/user/{userId}/roles/{roleId}", method = RequestMethod.GET)
+  public String getLogin(@PathVariable("userId") String userId, @PathVariable("roleId") String roleId) {
+    return "User Id : " + userId + " Role Id : " + roleId;
+  }
+
+  @ResponseBody
+  @RequestMapping(value = "/javabeat/{regexp1:[a-z-]+}", method = RequestMethod.GET)
+  public String getRegExp(@PathVariable("regexp1") String regexp1) {
+    return "URI Part : " + regexp1;
+  }
 
 }
