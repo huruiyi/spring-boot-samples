@@ -20,5 +20,6 @@
     <module>spring-boot-data-mysql-v2</module>
     <module>spring-boot-data-mysql-v3</module>
     <module>spring-boot-data-nacos-datasource</module>
+    <module>spring-boot-data-redis-stock-lock</module>
   </modules>
 </project>
