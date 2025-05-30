@@ -4,11 +4,11 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadPoolExecutor;
-import javax.annotation.Nonnull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.lang.NonNull;
 import org.springframework.scheduling.annotation.AsyncConfigurer;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
@@ -46,8 +46,8 @@ public class AsyncPoolConfig implements AsyncConfigurer {
   static class AsyncExceptionHandler implements AsyncUncaughtExceptionHandler {
 
     @Override
-    public void handleUncaughtException(Throwable throwable, Method method,@Nonnull Object... objects ) {
-      log.info("错误信息：{}，方法：{}，参数：{}", throwable.getMessage(), method.toString(), Arrays.toString(objects));
+    public void handleUncaughtException(Throwable throwable, Method method, @NonNull Object... params) {
+      log.info("错误信息：{}，方法：{}，参数：{}", throwable.getMessage(), method.toString(), Arrays.toString(params));
     }
   }
 

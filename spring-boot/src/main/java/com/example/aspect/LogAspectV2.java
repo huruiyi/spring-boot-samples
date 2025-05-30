@@ -24,7 +24,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 @Slf4j
 public class LogAspectV2 {
 
-  @Pointcut("execution(public * com.example.Spring.web.*.*(..))")
+  @Pointcut("execution(public * com.example.web.*.*(..))")
   public void webLog() {
   }
 
@@ -34,16 +34,16 @@ public class LogAspectV2 {
     ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
     HttpServletRequest request = attributes.getRequest();
     // 记录下请求内容
-    log.info("URL : " + request.getRequestURL().toString());
-    log.info("HTTP_METHOD : " + request.getMethod());
-    log.info("IP : " + request.getRemoteAddr());
-    log.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
-    log.info("ARGS : " + Arrays.toString(joinPoint.getArgs()));
+    log.info("URL : {}", request.getRequestURL().toString());
+    log.info("HTTP_METHOD : {}", request.getMethod());
+    log.info("IP : {}", request.getRemoteAddr());
+    log.info("CLASS_METHOD : {}.{}", joinPoint.getSignature().getDeclaringTypeName(), joinPoint.getSignature().getName());
+    log.info("ARGS : {}", Arrays.toString(joinPoint.getArgs()));
   }
 
   @AfterReturning(returning = "ret", pointcut = "webLog()")
   public void doAfterReturning(Object ret) {
-    log.info("方法的返回值 : " + ret);
+    log.info("方法的返回值 : {}", ret);
   }
 
   //后置异常通知
@@ -64,11 +64,11 @@ public class LogAspectV2 {
     log.info("方法环绕start.....");
     try {
       Object o = pjp.proceed();
-      log.info("方法环绕proceed，结果是 :" + o);
+      log.info("方法环绕proceed，结果是 :{}", o);
       return o;
     } catch (Throwable e) {
       e.printStackTrace();
       return null;
     }
   }
-}  
+}

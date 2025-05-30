@@ -42,12 +42,12 @@ public class LogAspectV1 {
     }
     HttpServletRequest request = attributes.getRequest();
     logger.info("\r\n");
-    logger.info("URL : " + request.getRequestURL().toString());
-    logger.info("HTTP方法 : " + request.getMethod());
-    logger.info("IP地址 : " + request.getRemoteAddr());
-    logger.info("类的方法 : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
-    logger.info("参数 : " + Arrays.toString(joinPoint.getArgs()));
-    logger.info("参数 : " + request.getQueryString());
+    logger.info("URL : {}", request.getRequestURL().toString());
+    logger.info("HTTP方法 : {}", request.getMethod());
+    logger.info("IP地址 : {}", request.getRemoteAddr());
+    logger.info("类的方法 : {}.{}", joinPoint.getSignature().getDeclaringTypeName(), joinPoint.getSignature().getName());
+    logger.info("参数 : {}", Arrays.toString(joinPoint.getArgs()));
+    logger.info("参数 : {}", request.getQueryString());
     logger.info("\r\n");
   }
 
@@ -55,8 +55,8 @@ public class LogAspectV1 {
   public void doAfterReturning(Object retObject) throws Throwable {
     // 处理完请求，返回内容
     logger.info("\r\n");
-    logger.info("应答值 : " + retObject);
-    logger.info("费时: " + (System.currentTimeMillis() - startTime.get()));
+    logger.info("应答值 : {}", retObject);
+    logger.info("费时: {}", System.currentTimeMillis() - startTime.get());
     logger.info("\r\n");
   }
 
