@@ -48,6 +48,7 @@
 
     <module>spring-boot-oauth2</module>
     <module>spring-boot-openapi</module>
+    <module>spring-boot-prometheus</module>
     <module>spring-boot-thymeleaf</module>
     <module>spring-boot-websocket</module>
     <module>spring-multi-datasource</module>

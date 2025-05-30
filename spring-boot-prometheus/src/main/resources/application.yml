@@ -1,0 +1,14 @@
+# 启用所有 Actuator 端点（生产环境建议按需启用）
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    prometheus:
+      enabled: true  # 启用 Prometheus 端点
+  metrics:
+    export:
+      prometheus:
+        enabled: true  # 启用 Prometheus 指标导出
+        step: 10s      # 指标刷新间隔（默认 1 分钟）
