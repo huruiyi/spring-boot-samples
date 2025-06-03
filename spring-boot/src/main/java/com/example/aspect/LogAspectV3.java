@@ -21,7 +21,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 @Slf4j
 public class LogAspectV3 {
 
-  @Pointcut("execution(public * com.example.Spring.web.*.*(..))")
+  @Pointcut("execution(public * com.example.web.*.*(..))")
   public void webLog() {
   }
 

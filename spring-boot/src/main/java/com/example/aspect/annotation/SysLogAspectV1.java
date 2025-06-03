@@ -27,10 +27,9 @@ public class SysLogAspectV1 {
     long beginTime = System.currentTimeMillis();
     //执行方法
     Object result = point.proceed();
-    Thread.sleep(3000);
     //执行时长(毫秒)
     long time = System.currentTimeMillis() - beginTime;
-    log.info("方法环绕proceed，结果是 :" + result + "，耗时：" + time);
+    log.info("方法环绕proceed，结果是 :{}，耗时：{}", result, time);
 
     return result;
   }

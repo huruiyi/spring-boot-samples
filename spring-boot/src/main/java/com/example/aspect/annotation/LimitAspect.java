@@ -3,6 +3,7 @@ package com.example.aspect.annotation;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.util.concurrent.RateLimiter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -55,7 +56,7 @@ public class LimitAspect {
     //类方法
     log.info("class_method={}", joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
 
-    Boolean flag = rateLimiter.tryAcquire();
+    boolean flag = rateLimiter.tryAcquire();
     Object obj = null;
     if (flag) {
       obj = joinPoint.proceed();
@@ -64,7 +65,7 @@ public class LimitAspect {
       log.info(message);
       response.setContentType("application/json;charset=UTF-8");
       try (ServletOutputStream outputStream = response.getOutputStream()) {
-        outputStream.write(message.getBytes("utf-8"));
+        outputStream.write(message.getBytes(StandardCharsets.UTF_8));
       } catch (IOException e) {
         e.printStackTrace();
       }

@@ -36,9 +36,9 @@ public class SysLogAspectV2 {
       Parameter parameter = parameters[i];
       RequestParam requestParam = parameter.getAnnotation(RequestParam.class);
       if (requestParam != null) {
-        log.info("参数名：" + requestParam.name() + "，默认值：" + requestParam.defaultValue());
+        log.info("参数名：{}，默认值：{}", requestParam.name(), requestParam.defaultValue());
       }
-      log.info(parameter.getName() + " = " + args[i]);
+      log.info("{} = {}", parameter.getName(), args[i]);
     }
     ParamsAnnotation annotation = method.getAnnotation(ParamsAnnotation.class);
     System.out.print("打印TestAnnotation 参数：" + annotation.value());
