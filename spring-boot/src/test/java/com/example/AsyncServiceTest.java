@@ -15,7 +15,7 @@ class AsyncServiceTest {
   private AsyncServiceV2 asyncServiceV2;
 
   @Test
-  void testAsync1() throws Exception {
+  void testAsync1() {
     asyncServiceV2.async1();
     log.info("测试 testAsync1");
   }

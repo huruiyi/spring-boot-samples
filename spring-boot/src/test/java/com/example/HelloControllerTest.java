@@ -42,7 +42,7 @@ public class HelloControllerTest {
   @Test
   public void hello1() throws Exception {
     this.mockMvc.perform(
-            get("/demo/sayHello")
+            get("/sayHello")
                 .param("name", "world")
         ).andDo(print())
         .andExpect(status().isOk())
@@ -52,7 +52,7 @@ public class HelloControllerTest {
   @Test
   public void hello2() throws Exception {
     String contentType = (new MediaType("application", "json", StandardCharsets.UTF_8)).toString();
-    MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/demo/sayHello")
+    MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/sayHello")
             .contentType(contentType)
             .param("name", "World")
             .accept(contentType))

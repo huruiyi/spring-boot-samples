@@ -10,6 +10,7 @@ import com.example.service.impl.BinarySearchImpl;
 import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -27,6 +28,15 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 @Slf4j
 @SpringBootApplication
 public class SampleApplication extends SpringBootServletInitializer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+
+  @Value("${currency-service.url}")
+  private String url;
+
+  @Value("${currency-service.username}")
+  private String username;
+
+  @Value("${currency-service.key}")
+  private String key;
 
   @Autowired
   private Environment environment;

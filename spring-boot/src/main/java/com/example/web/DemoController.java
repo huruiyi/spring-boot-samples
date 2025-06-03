@@ -73,10 +73,6 @@ public class DemoController {
     return Greeting.builder().id(10000).content("Hello World!!!").build();
   }
 
-  @RequestMapping("/sayHello")
-  public String sayHello(String name) {
-    return "hello " + name;
-  }
 
   @GetMapping("/service")
   public String book() {
@@ -124,26 +120,21 @@ public class DemoController {
     params.put("userId", "1");
     log.info(params.toString());
 
-    XSSFWorkbook xssfWorkbook = ExcelUtils.getOutputStream();
-    try {
-      SimpleDateFormat sd = new SimpleDateFormat("yyyyMMddhhmmss");
-      String fileName = sd.format(new Date()) + "预付款明细.xlsx";
-      OutputStream output = response.getOutputStream();
-      response.reset();
-      response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName, "UTF-8"));
-      response.setContentType("application/msexcel");
-      xssfWorkbook.write(output);
-      output.close();
-    } catch (IOException e) {
-      log.error(e.getMessage());
-    } finally {
+    try (XSSFWorkbook xssfWorkbook = ExcelUtils.getOutputStream()) {
       try {
-        if (xssfWorkbook != null) {
-          xssfWorkbook.close();
-        }
+        SimpleDateFormat sd = new SimpleDateFormat("yyyyMMddhhmmss");
+        String fileName = sd.format(new Date()) + "预付款明细.xlsx";
+        OutputStream output = response.getOutputStream();
+        response.reset();
+        response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName, "UTF-8"));
+        response.setContentType("application/msexcel");
+        xssfWorkbook.write(output);
+        output.close();
       } catch (IOException e) {
         log.error(e.getMessage());
       }
+    } catch (IOException e) {
+      log.error(e.getMessage());
     }
   }
 

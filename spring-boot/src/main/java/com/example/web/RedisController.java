@@ -32,7 +32,7 @@ public class RedisController {
 
   @RequestMapping("/setObject")
   public String setString(String key, String value) {
-    redisService.setObject(key, value, 30l);
+    redisService.setObject(key, value, 30L);
     return "success";
   }
 
@@ -81,7 +81,7 @@ public class RedisController {
 
     stringRedisTemplate.opsForHash().putAll("hash", hash);
     stringRedisTemplate.opsForHash().put("hash", "field3", "value3");
-    BoundHashOperations hashOps = stringRedisTemplate.boundHashOps("hash");
+    BoundHashOperations<String, Object, Object> hashOps = stringRedisTemplate.boundHashOps("hash");
     hashOps.delete("field1", "field2");
     hashOps.put("filed4", "value5");
     return "ok";
