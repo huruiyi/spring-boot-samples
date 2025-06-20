@@ -15,9 +15,9 @@ public class FlowableApplication implements CommandLineRunner {
   }
 
   /**
-   * <a href="http://localhost:18080/druid/login.html">druid</a>
-   * <a href="http://localhost:18080/idm/#/login">6.8.1</a>
-   * <a href="http://localhost:18080/modeler/index.html#/processes"></a>
+   * <a href="http://localhost:18080/druid">druid</a>
+   * <a href="http://localhost:18080/idm">6.8.1</a>
+   * <a href="http://localhost:18080/modeler"></a>
    */
   public static void main(String[] args) {
     SpringApplication.run(FlowableApplication.class, args);
