@@ -25,7 +25,6 @@ public class DatasourceConfigurator implements EngineConfigurator {
   @Value("${flowable.datasource.password}")
   private String password;
 
-
   @Override
   public void beforeInit(AbstractEngineConfiguration engineConfiguration) {
     DataSource dataSource = DataSourceBuilder.create()

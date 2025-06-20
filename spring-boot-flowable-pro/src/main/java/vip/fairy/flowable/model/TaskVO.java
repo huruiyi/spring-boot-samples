@@ -1,9 +1,5 @@
 package vip.fairy.flowable.model;
 
-/**
- * @ 审批列表查询结果
- */
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

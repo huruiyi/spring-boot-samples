@@ -28,4 +28,5 @@ public class FairyTaskService {
           .build();
     }).collect(Collectors.toList());
   }
+
 }
