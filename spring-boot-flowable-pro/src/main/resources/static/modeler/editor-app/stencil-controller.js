@@ -18,16 +18,16 @@ angular.module('flowableModeler')
                                       function ($rootScope, $scope, $http, $modal, $timeout, $window, editorManager) {
 
         // Property window toggle state
-        $scope.propertyWindowState = {'collapsed': false};
+        $scope.propertyWindowState = {'collapsed': true};
 
         // Add reference to global header-config
         $scope.headerConfig = FLOWABLE.HEADER_CONFIG;
 
         $scope.propertyWindowState.toggle = function () {
-            $scope.propertyWindowState.collapsed = !$scope.propertyWindowState.collapsed;
-            $timeout(function () {
-                $window.dispatchEvent(new Event("resize"));
-            }, 100);
+          $scope.propertyWindowState.collapsed = !$scope.propertyWindowState.collapsed;
+          $timeout(function () {
+            //$window.dispatchEvent(new Event("resize"));
+          }, 100);
         };
 
         // Code that is dependent on an initialised Editor is wrapped in a promise for the editor

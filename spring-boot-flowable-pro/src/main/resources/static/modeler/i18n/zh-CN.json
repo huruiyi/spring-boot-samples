@@ -200,6 +200,12 @@
           "DESCRIPTION" : "用户任务的优先级"
         }
       },
+      "TASKIDVARIABLENAMEPACKAGE": {
+        "TASKIDVARIABLENAME": {
+          "TITLE": "变量ID",
+          "DESCRIPTION": "If set, the id of the task will be stored in this variable"
+        }
+      },
       "SERVICETASKCLASSPACKAGE" : {
         "SERVICETASKCLASS" : {
           "TITLE" : "类",
@@ -674,6 +680,12 @@
           "DESCRIPTION" : "定义消息的名字。"
         }
       },
+      "MESSAGEEXPRESSIONPACKAGE": {
+        "MESSAGEEXPRESSION": {
+          "TITLE": "消息表达式",
+          "DESCRIPTION": "基于表达式在运行时解析消息事件。"
+        }
+      },
       "SIGNALREFPACKAGE" : {
         "SIGNALREF" : {
           "TITLE" : "信号引用",
@@ -686,10 +698,30 @@
           "DESCRIPTION" : "定义活动参考。"
         }
       },
+      "SIGNALEXPRESSIONPACKAGE": {
+        "SIGNALEXPRESSION": {
+          "TITLE": "信号表达式",
+          "DESCRIPTION": "基于表达式在运行时解析信号事件。"
+        }
+      },
       "ERRORREFPACKAGE" : {
         "ERRORREF" : {
           "TITLE" : "错误引用",
           "DESCRIPTION" : "定义错误名称"
+        }
+      },
+      "ERRORVARIABLEPACKAGE": {
+        "ERRORVARIABLENAME": {
+          "TITLE": "错误变量名",
+          "DESCRIPTION": "Stores the bpmn error code to a variable with the given name."
+        },
+        "ERRORVARIABLETRANSIENT": {
+          "TITLE": "错误变量瞬态",
+          "DESCRIPTION": "Flag defines whether the defined error variable will be stored transiently."
+        },
+        "ERRORVARIABLELOCALSCOPE": {
+          "TITLE": "错误变量局部作用域",
+          "DESCRIPTION": "Flag defines whether defined error variable will be stored to a local scope."
         }
       },
       "ESCALATIONREFPACKAGE" : {
@@ -723,9 +755,13 @@
         }
       },
       "MULTIINSTANCE_TYPEPACKAGE" : {
-        "MULTIINSTANCE_TYPE" : {
-          "TITLE" : "多实例类型",
-          "DESCRIPTION" : "重复的活动执行（并行或顺序）可以通过不同的循环类型显示。"
+        "MULTIINSTANCE_TYPE": {
+          "TITLE": "多实例类型",
+          "DESCRIPTION": "重复的活动执行（并行或顺序）可以通过不同的循环类型显示。"
+        },
+        "VARIABLE_AGGREGATIONS": {
+          "TITLE": "变量聚合 (多实例)",
+          "DESCRIPTION": "Variable aggregation definition for when the multi instance completes."
         }
       },
       "MULTIINSTANCE_CARDINALITYPACKAGE" : {
@@ -970,7 +1006,10 @@
         "TITLE" : "注册开始事件",
         "DESCRIPTION" : "注册开始事件"
       },
-
+      "STARTVARIABLELISTENEREVENT": {
+        "TITLE": "变量监听事件",
+        "DESCRIPTION": "当配置的变量值发生变化时触发的启动事件"
+      },
       "USERTASK" : {
         "TITLE" : "用户任务",
         "DESCRIPTION" : "分配给特定人的任务"
@@ -1100,6 +1139,10 @@
         "TITLE" : "边界注册事件",
         "DESCRIPTION" : "边界注册事件"
       },
+      "BOUNDARYVARIABLELISTENEREVENT": {
+        "TITLE": "边界变量监听事件",
+        "DESCRIPTION": "当配置的变量值发生变化时触发的边界事件监听器"
+      },
       "BOUNDARYCOMPENSATIONEVENT" : {
         "TITLE" : "边界补偿事件",
         "DESCRIPTION" : "边界补偿事件"
@@ -1119,6 +1162,14 @@
       "CATCHCONDITIONALEVENT" : {
         "TITLE" : "中间条件捕获事件",
         "DESCRIPTION" : "带有条件触发器的中间捕获事件"
+      },
+      "CATCHEVENTREGISTRYEVENT": {
+        "TITLE": "中间事件注册捕获事件",
+        "DESCRIPTION": "等待从事件注册表接收事件的中间捕获事件"
+      },
+      "CATCHVARIABLELISTENEREVENT": {
+        "TITLE": "中间变量监听捕获事件",
+        "DESCRIPTION": "等待在配置变量发生变更时接收事件的中间捕获事件"
       },
       "THROWNONEEVENT" : {
         "TITLE" : "中间无抛出事件",
@@ -1297,6 +1348,12 @@
         "PRIORITYDEFINITION": {
           "TITLE": "优先级",
           "DESCRIPTION": "用户任务的优先级。"
+        }
+      },
+      "TASKIDVARIABLENAMEPACKAGE": {
+        "TASKIDVARIABLENAME": {
+          "TITLE": "变量ID",
+          "DESCRIPTION": "If set, the id of the task will be stored in this variable"
         }
       },
       "SERVICETASKCLASSPACKAGE": {
@@ -2707,6 +2764,7 @@
   "PROPERTY.DUEDATE.TASK-DUE-DATE-OPTIONS.EXPRESSION" : "表达式定义",
   "PROPERTY.DUEDATE.TASK-DUE-DATE-OPTIONS.STATIC" : "任务创建后的固定持续时间",
   "PROPERTY.DUEDATE.TASK-DUE-DATE-OPTIONS.FIELD" : "基于字段",
+  "PROPERTY.VARIABLE.AGGREGATIONS.EMPTY" : "空值",
 
   "MODEL.SAVE.TITLE" : "保存模型",
   "MODEL.VALIDATE.TITLE" : "验证结果",

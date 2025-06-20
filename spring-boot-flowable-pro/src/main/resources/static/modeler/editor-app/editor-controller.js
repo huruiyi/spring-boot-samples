@@ -124,22 +124,22 @@ angular.module('flowableModeler')
      */
     if (!$rootScope.editorInitialized) {
     
-        var paletteHelpWrapper = jQuery('#paletteHelpWrapper');
-		var paletteSectionFooter = jQuery('#paletteSectionFooter');
-		var paletteSectionOpen = jQuery('#paletteSectionOpen');
-		var contentCanvasWrapper = jQuery('#contentCanvasWrapper');
+      var paletteHelpWrapper = jQuery('#paletteHelpWrapper');
+      var paletteSectionFooter = jQuery('#paletteSectionFooter');
+      var paletteSectionOpen = jQuery('#paletteSectionOpen');
+      var contentCanvasWrapper = jQuery('#contentCanvasWrapper');
 
-		paletteSectionFooter.on('click', function() {
-			paletteHelpWrapper.addClass('close');
-			contentCanvasWrapper.addClass('collapsedCanvasWrapper');
-			paletteSectionOpen.removeClass('hidden');
-		});
+      paletteSectionFooter.on('click', function() {
+        paletteHelpWrapper.addClass('close');
+        contentCanvasWrapper.addClass('collapsedCanvasWrapper');
+        paletteSectionOpen.removeClass('hidden');
+      });
 
-		paletteSectionOpen.on('click', function () {
-			paletteHelpWrapper.removeClass('close');
-			contentCanvasWrapper.removeClass('collapsedCanvasWrapper');
-			paletteSectionOpen.addClass('hidden');
-		});
+      paletteSectionOpen.on('click', function () {
+        paletteHelpWrapper.removeClass('close');
+        contentCanvasWrapper.removeClass('collapsedCanvasWrapper');
+        paletteSectionOpen.addClass('hidden');
+      });
 
         /**
          * A 'safer' apply that avoids concurrent updates (which $apply allows).

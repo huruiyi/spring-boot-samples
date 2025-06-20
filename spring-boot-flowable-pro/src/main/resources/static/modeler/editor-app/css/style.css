@@ -231,9 +231,10 @@ div.canvas-wrapper {
 }
 
 div.propertySection {
-    height: 300px;
+    height: 800px;
     background-color: #e8edf1;
     margin-bottom: 0px;
+    overflow: auto;
 }
 
 .selected-item-title {
@@ -267,7 +268,7 @@ div.propertySection {
 
 .selected-item-body .property-row {
     float: left;
-    width: 50%;
+    width: 100%;
     border: 0;
     margin: 0;
     padding: 0;
@@ -282,7 +283,6 @@ div.propertySection {
 .selected-item-body {
     padding: 0;
     overflow: auto;
-    height: 280px;
 }
 
 .selected-item-body > div {
@@ -1207,4 +1207,10 @@ hot-table .column-header.label {
 
 .current-process {
     border: 1px solid green;
+}
+
+
+.no-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
