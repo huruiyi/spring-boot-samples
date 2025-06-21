@@ -29,7 +29,9 @@
       "NEW-FORM": "新表单",
       "CREATE-FORM": "创建表单",
       "NEW-DECISION-TABLE": "新决策表",
-      "CREATE-DECISION-TABLE": "创建决策表"
+      "CREATE-DECISION-TABLE": "创建决策表",
+      "NEW-DECISION-SERVICE": "新建决策服务",
+      "CREATE-DECISION-SERVICE": "创建决策服务"
     },
     "MESSAGE": {
       "SELECT-GROUP-HELP": "使用 &uparrow; 和 &downarrow; 选择并按回车确认",
@@ -224,19 +226,29 @@
           "DESCRIPTION" : "通过代理表达式定义任务服务逻辑"
         }
       },
+        "SERVICETASKFAILEDJOBRETRYTIMECYCLEPACKAGE" : {
+          "SERVICETASKFAILEDJOBRETRYTIMECYCLE" : {
+            "TITLE" : "失败重试时间周期",
+            "DESCRIPTION" : "服务任务逻辑异常重试时间周期"
+          }
+        },
       "SERVICETASKFIELDSPACKAGE" : {
         "SERVICETASKFIELDS" : {
           "TITLE" : "类中的字段",
           "DESCRIPTION" : "字段扩展"
         }
       },
+      "SERVICETASKEXCEPTIONSPACKAGE": {
+        "SERVICETASKEXCEPTIONS": {
+          "TITLE": "异常",
+          "DESCRIPTION": "Mapped Exceptions"
+        }
+      },
       "SERVICETASKRESULTVARIABLEPACKAGE" : {
         "SERVICETASKRESULTVARIABLE" : {
           "TITLE" : "结果变量名",
           "DESCRIPTION" : "流程变量存储服务任务的执行结果"
-        }
-      },
-      "SERVICETASKRESULTVARIABLEPACKAGE" : {
+        },
         "SERVICETASKUSELOCALSCOPEFORRESULTVARIABLE" : {
           "TITLE" : "对结果变量使用局部作用域",
           "DESCRIPTION" : "标记需要将使用的结果变量保存为局部变量"
@@ -250,8 +262,8 @@
       },
       "SERVICETASKSTORERESULTVARIABLETRANSIENTPACKAGE" : {
         "SERVICETASKSTORERESULTVARIABLETRANSIENT" : {
-          "TITLE" : "使結果變量瞬變",
-          "DESCRIPTION" : "指示存储結果變量变量瞬态的标志"
+          "TITLE" : "暂时存储结果变量",
+          "DESCRIPTION" : "指示存储结果变量变量瞬态的标志"
         }
       },
       "SCRIPTFORMATPACKAGE" : {
@@ -408,12 +420,20 @@
         "MAILTASKTEXT" : {
           "TITLE" : "正文",
           "DESCRIPTION" : "Email中的内容, 案例一需要发送纯文件的邮件. 可使用Html格式的邮件进行发送，若邮件的接收的客户端不支持这种格式，客户端可转为纯文本的邮件"
+        },
+        "MAILTASKTEXTVAR": {
+          "TITLE": "TextVar",
+          "DESCRIPTION": "一个流程变量的名称，用于保存电子邮件内容的文本，以便在需要发送纯文本邮件时使用。可以与 HTML 结合使用，以便于不支持富文本内容的电子邮件客户端使用。客户端将退回到这种仅包含文本的替代方案。"
         }
       },
-      "MAILTASKHTMLPACKAGE" : {
-        "MAILTASKHTML" : {
-          "TITLE" : "Html",
-          "DESCRIPTION" : "HTML中的一片段作为邮件的内容."
+      "MAILTASKHTMLPACKAGE": {
+        "MAILTASKHTML": {
+          "TITLE": "Html",
+          "DESCRIPTION": "HTML中的一片段作为邮件的内容."
+        },
+        "MAILTASKHTMLVAR": {
+          "TITLE": "HtmlVar",
+          "DESCRIPTION": "一个流程变量的名称，该变量保存作为电子邮件内容的 HTML。"
         }
       },
       "MAILTASKCHARSETPACKAGE" : {
@@ -917,9 +937,15 @@
           "DESCRIPTION" : "设置决策表引用"
         }
       },
+      "DECISIONTASKDECISIONSERVICEREFERENCEPACKAGE": {
+        "DECISIONTASKDECISIONSERVICEREFERENCE": {
+          "TITLE": "决策服务引用",
+          "DESCRIPTION": "Set the decision service reference"
+        }
+      },
       "DECISIONTASKTHROWERRORONNOHITSPACKAGE" : {
         "DECISIONTASKTHROWERRORONNOHITS" : {
-          "TITLE" : "如果未命中任何规则，则引发错误",
+          "TITLE" : "未命中规则->错误",
           "DESCRIPTION" : "如果未命中决策表的规则，因而找不到结果，则应引发错误。"
         }
       },
@@ -2180,7 +2206,48 @@
       "USE-AS-NEW-UNRESOLVED-MODEL": "模型 '{{name}}' 内部id {{id}}, 被 {{createdBy}}创建"
     }
   },
-
+  "DECISION-SERVICE": {
+      "NAME": "决策服务名称",
+      "KEY": "决策服务key",
+      "DESCRIPTION": "描述",
+      "ACTION": {
+        "DETAILS": "详情",
+        "EDIT": "修改",
+        "SHARE": "分享决策服务",
+        "DELETE": "删除决策服务",
+        "ADD-COMMENT": "+ 添加评论",
+        "CREATE-CONFIRM": "创建确认",
+        "OPEN-IN-EDITOR": "编辑决策服务",
+        "EXPORT": "导出决策服务",
+        "DELETE-CONFIRM": "删除决策服务",
+        "USE-AS-NEW-VERSION": "作为新版本使用",
+        "FAVORITE": "喜欢这个决策服务",
+        "DUPLICATE": "复制决策服务",
+        "DUPLICATE-CONFIRM": "复制决策服务确认"
+      },
+      "DETAILS": {
+        "HISTORY-TITLE": "历史",
+        "COMMENTS-TITLE": "备注",
+        "LAST-UPDATED-BY": "Last updated by {{lastUpdatedBy}} - {{lastUpdated | dateformat}}",
+        "CREATED-BY": "Created by {{createdBy}}"
+      },
+      "POPUP": {
+        "CREATE-TITLE": "创建新的决策服务",
+        "CREATE-DESCRIPTION": "您需要为新的决策服务指定一个名称，并且您可能希望同时添加一个描述。",
+        "DUPLICATE-TITLE": "复制决策服务",
+        "DUPLICATE-DESCRIPTION": "您需要为新的决策服务指定一个名称，并且您可能希望同时添加一个描述。",
+        "DELETE-TITLE": "删除决策服务",
+        "DELETE-DESCRIPTION": "你确定要删除决策服务 \"{{name}}\"?",
+        "IMPORT-DESCRIPTION": "请浏览或拖拽扩展名为 .dmn 或 .dmn.xml 的 DMN XML 定义",
+        "IMPORT-TITLE": "导入 DMN 决策服务模型",
+        "IMPORT": {
+          "DROPZONE": "拖拽 .dmn 或 .dmn.xml DMN XML 文件",
+          "CANCEL-UPLOAD": "取消上传",
+          "ERROR": "处理DML XML文件异常",
+          "NO-DROP": "拖拽不支持"
+        }
+      }
+    },
   "DECISION-TABLE": {
     "NAME": "决策表 名称",
     "KEY": "决策表 key",
@@ -2601,6 +2668,14 @@
   "PROPERTY.FIELDS.STRING.PLACEHOLDER" : "输入一个字符串",
   "PROPERTY.FIELDS.IMPLEMENTATION" : "实现",
 
+  "PROPERTY.EXCEPTIONS" : "{{length}} 异常",
+  "PROPERTY.EXCEPTIONS.EMPTY" : "未选择异常",
+  "PROPERTY.EXCEPTIONS.CODE" : "代码",
+  "PROPERTY.EXCEPTIONS.CODE.PLACEHOLDER" : "输入代码",
+  "PROPERTY.EXCEPTIONS.CLASS" : "类",
+  "PROPERTY.EXCEPTIONS.CLASS.PLACEHOLDER" : "输入类名",
+  "PROPERTY.EXCEPTIONS.CHILDREN" : "包含子异常",
+
   "PROPERTY.DATAPROPERTIES.VALUES" : "{{length}} 数据对象",
   "PROPERTY.DATAPROPERTIES.EMPTY" : "没有配置数据对象",
   "PROPERTY.DATAPROPERTIES.ID" : "Id",
@@ -2764,7 +2839,45 @@
   "PROPERTY.DUEDATE.TASK-DUE-DATE-OPTIONS.EXPRESSION" : "表达式定义",
   "PROPERTY.DUEDATE.TASK-DUE-DATE-OPTIONS.STATIC" : "任务创建后的固定持续时间",
   "PROPERTY.DUEDATE.TASK-DUE-DATE-OPTIONS.FIELD" : "基于字段",
-  "PROPERTY.VARIABLE.AGGREGATIONS.EMPTY" : "空值",
+
+  "PROPERTY.EVENTINPARAMETERS.VALUE": "{{length}} event in parameter items",
+  "PROPERTY.EVENTINPARAMETERS.EMPTY": "未配置输入参数",
+  "PROPERTY.EVENTINPARAMETERS.EVENTNAME": "Event property name",
+  "PROPERTY.EVENTINPARAMETERS.EVENTNAME.PLACEHOLDER": "Enter an event property name",
+  "PROPERTY.EVENTINPARAMETERS.EVENTTYPE": "Type",
+  "PROPERTY.EVENTINPARAMETERS.VARIABLENAME": "Variable name",
+  "PROPERTY.EVENTINPARAMETERS.VARIABLENAME.PLACEHOLDER": "Enter a variable name",
+  "PROPERTY.EVENTINPARAMETERS.NOSELECTION": "No parameter selected",
+
+  "PROPERTY.EVENTOUTPARAMETERS.VALUE": "{{length}} event out parameter items",
+  "PROPERTY.EVENTOUTPARAMETERS.EMPTY": "未配置输出参数",
+  "PROPERTY.EVENTOUTPARAMETERS.EVENTNAME": "Event property name",
+  "PROPERTY.EVENTOUTPARAMETERS.EVENTNAME.PLACEHOLDER": "Enter an event property name",
+  "PROPERTY.EVENTOUTPARAMETERS.EVENTTYPE": "Type",
+  "PROPERTY.EVENTOUTPARAMETERS.VARIABLENAME": "Variable name",
+  "PROPERTY.EVENTOUTPARAMETERS.VARIABLENAME.PLACEHOLDER": "Enter a variable name",
+  "PROPERTY.EVENTOUTPARAMETERS.NOSELECTION": "No parameter selected",
+
+  "PROPERTY.EVENTCORRELATIONPARAMETERS.VALUE": "{{length}} correlation parameters",
+  "PROPERTY.EVENTCORRELATIONPARAMETERS.EMPTY": "未配置关联参数",
+  "PROPERTY.EVENTCORRELATIONPARAMETERS.NAME": "名称",
+  "PROPERTY.EVENTCORRELATIONPARAMETERS.NAME.PLACEHOLDER": "输入名称",
+  "PROPERTY.EVENTCORRELATIONPARAMETERS.TYPE": "类型",
+  "PROPERTY.EVENTCORRELATIONPARAMETERS.NOSELECTION": "No parameter selected",
+  "PROPERTY.EVENTCORRELATIONPARAMETERS.VALUEPROP": "Value",
+  "PROPERTY.EVENTCORRELATIONPARAMETERS.VALUEPROP.PLACEHOLDER": "Enter a value / expression",
+
+  "PROPERTY.VARIABLE.AGGREGATIONS.CLASS": "类",
+  "PROPERTY.VARIABLE.AGGREGATIONS.CLASS.PLACEHOLDER": "输入类名",
+  "PROPERTY.VARIABLE.AGGREGATIONS.CREATEOVERVIEW": "Create target overview variable",
+  "PROPERTY.VARIABLE.AGGREGATIONS.DEFINITIONS.UNSELECTED": "未选择变量",
+  "PROPERTY.VARIABLE.AGGREGATIONS.DELEGATEEXPRESSION": "Delegate expression",
+  "PROPERTY.VARIABLE.AGGREGATIONS.DELEGATEEXPRESSION.PLACEHOLDER": "输入Delegate Expression",
+  "PROPERTY.VARIABLE.AGGREGATIONS.EMPTY": "空值",
+  "PROPERTY.VARIABLE.AGGREGATIONS.STOREASTRANSIENT": "Store target variable transiently",
+  "PROPERTY.VARIABLE.AGGREGATIONS.UNSELECTED": "No variable aggregations selected",
+  "PROPERTY.VARIABLE.AGGREGATIONS.VALUE": "{{length}} variable aggregations",
+
 
   "MODEL.SAVE.TITLE" : "保存模型",
   "MODEL.VALIDATE.TITLE" : "验证结果",
@@ -2803,6 +2916,12 @@
   "PROPERTY.DECISIONTABLEREFERENCE.ERROR.FORM" : "加载决策表出现错误. 稍后再试一次",
   "PROPERTY.DECISIONTABLEREFERENCE.DECISIONTABLE.LOADING" : "加载决策表...",
   "PROPERTY.DECISIONTABLEREFERENCE.DECISIONTABLE.EMPTY" : "此文件夹不包含任何决策表",
+
+  "PROPERTY.DECISIONSERVICEREFERENCE.EMPTY": "没有选择引用",
+  "PROPERTY.DECISIONSERVICEREFERENCE.TITLE": "决策表引用",
+  "PROPERTY.DECISIONSERVICEREFERENCE.ERROR.FORM": "加载决策表出现错误. 稍后再试一次",
+  "PROPERTY.DECISIONSERVICEREFERENCE.DECISIONSERVICE.LOADING": "加载决策表...",
+  "PROPERTY.DECISIONSERVICEREFERENCE.DECISIONSERVICE.EMPTY": "此文件夹不包含任何决策表",
 
   "PROPERTY.CASEREFERENCE.EMPTY" : "没有选择引用",
   "PROPERTY.CASEREFERENCE.TITLE" : "案例型引用",

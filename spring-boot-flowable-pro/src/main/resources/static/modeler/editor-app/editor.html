@@ -15,23 +15,23 @@
 					<div ng-switch-when="separator" ng-class="item.cssClass"></div>
 				</button>
 			</div>
-		
+
 		</div>
-	
+
 	</div>
 	<div class="full">
 		<div class="row row-no-gutter">
-			<div id="paletteHelpWrapper" class="col-xs-2">
+			<div id="paletteHelpWrapper">
 				<div class="stencils" id="paletteSection">
 					<div ng-if="stencilItemGroups.length > 1">
 						<div ng-repeat="group in stencilItemGroups">
-							
+
 							<ul ng-if="group.visible && group.items" class="stencil-group" ng-class="{collapsed: !group.expanded, 'first': $first}">
 								<li ng-include="'editor-app/partials/stencil-item-template.html?version=6'"></li>
 							</ul>
-							
+
 							<div ng-if="!group.items" ng-include="'editor-app/partials/root-stencil-item-template.html?version=6'"></div>
-						
+
 						</div>
 					</div>
 					<div ng-if="stencilItemGroups.length == 1">
