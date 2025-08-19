@@ -27,4 +27,6 @@ public class FlowableApplication implements CommandLineRunner {
   public void run(String... args) throws Exception {
     entityManager.createQuery("select Id, Name, CountryCode, District, Population from City ").getHints();
   }
+
+
 }

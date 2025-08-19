@@ -11,9 +11,10 @@ import com.example.utils.ExcelUtils;
 import com.example.utils.VerifyCodeUtils;
 import com.example.utils.vcode.Captcha;
 import com.example.utils.vcode.GifCaptcha;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -26,10 +27,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.compress.utils.IOUtils;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.core.io.DefaultResourceLoader;
+import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -115,7 +119,7 @@ public class DemoController {
   }
 
   @RequestMapping(value = "/exportExcel")
-  public void test(HttpServletResponse response) throws UnsupportedEncodingException {
+  public void test(HttpServletResponse response) {
     Map<String, String> params = new HashMap<>();
     params.put("userId", "1");
     log.info(params.toString());
@@ -146,10 +150,6 @@ public class DemoController {
   @RequestMapping(value = "/beans")
   public String[] bean() {
     return singleService1.getBeans();
-  }
-
-  public long returnValueFromBusinessService() {
-    return businessService.calculateSum();
   }
 
   @GetMapping("/sum")
@@ -215,6 +215,26 @@ public class DemoController {
   @RequestMapping(value = "/javabeat/{regexp1:[a-z-]+}", method = RequestMethod.GET)
   public String getRegExp(@PathVariable("regexp1") String regexp1) {
     return "URI Part : " + regexp1;
+  }
+
+  @RequestMapping("/help")
+  public void inHelpPage(HttpServletResponse response) throws IOException {
+    response.reset();
+    response.setContentType("application/pdf");
+    response.setHeader("Content-disposition", "filename=help.pdf");
+    Resource resource = new DefaultResourceLoader().getResource("classpath:pdf/java.pdf");//通过这个来加载,当项目打包成jar也可以
+    File file = resource.getFile();
+    try {
+      if (file.exists()) {
+        FileInputStream in = new FileInputStream(file);
+        IOUtils.copy(in, response.getOutputStream());
+        in.close();
+      } else {
+        log.debug("{} 文件不存在!", file);
+      }
+    } catch (IOException e) {
+      log.debug("预览异常 {} ", e.getMessage());
+    }
   }
 
 }
