@@ -206,7 +206,6 @@ angular.module('flowableModeler')
       });
 
       // Hook in resizing of main panels when window resizes
-      // TODO: perhaps move to a separate JS-file?
       jQuery(window).resize(function () {
         var offset = jQuery("#editor-header").offset();
         var propSectionHeight = jQuery('#propertySection').height();

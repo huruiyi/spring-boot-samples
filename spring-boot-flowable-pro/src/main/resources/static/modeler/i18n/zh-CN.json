@@ -84,19 +84,19 @@
       },
       "PROCESS_AUTHORPACKAGE" : {
         "PROCESS_AUTHOR" : {
-          "TITLE" : "流程作者",
+          "TITLE" : "作者",
           "DESCRIPTION" : "流程定义的作者."
         }
       },
       "PROCESS_VERSIONPACKAGE" : {
         "PROCESS_VERSION" : {
-          "TITLE" : "流程版本字符串（仅备注）",
+          "TITLE" : "版本",
           "DESCRIPTION" : "文档的目的为版本标识"
         }
       },
       "PROCESS_HISTORYLEVELPACKAGE" : {
         "PROCESS_HISTORYLEVEL" : {
-          "TITLE" : "为此流程定义设置特定的历史级别",
+          "TITLE" : "历史级别",
           "DESCRIPTION" : "为此流程定义设置特定的历史级别"
         }
       },
@@ -592,6 +592,12 @@
           "DESCRIPTION" : "当前租户搜索失败时，在默认租户中按键查找定义。"
         }
       },
+      "CALLACTIVITYIDVARIABLENAMEPACKAGE": {
+        "CALLACTIVITYIDVARIABLENAME": {
+          "TITLE": "ID variable",
+          "DESCRIPTION": "If set, the instance id of the started instance will be stored in this variable"
+        }
+      },
       "CALLACTIVITYPROCESSINSTANCENAMEPACKAGE" : {
         "CALLACTIVITYPROCESSINSTANCENAME" : {
           "TITLE" : "流程实例名称",
@@ -911,6 +917,16 @@
         "KEYDETECTIONJSONPOINTER" : {
           "TITLE" : "事件key json 指针",
           "DESCRIPTION" : "事件key json 指针"
+        }
+      },
+      "VARIABLELISTENERPACKAGE": {
+        "VARIABLENAME": {
+          "TITLE": "变量名",
+          "DESCRIPTION": "Defines the variable that will be watched for value changes"
+        },
+        "VARIABLECHANGETYPE": {
+          "TITLE": "变量变化类型",
+          "DESCRIPTION": "Configures for which change type the variable listener will be triggered"
         }
       },
       "ISTRANSACTIONPACKAGE" : {
