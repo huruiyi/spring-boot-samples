@@ -23,7 +23,7 @@ public class RsaUtils {
 
   public static void main(String[] args) throws Exception {
     RSAKeyPair rsaKeyPair = generateKeyPair();
-    test1(rsaKeyPair, "Hello World,世界你好！！！");
+    test2(rsaKeyPair, "Hello World,世界你好！！！");
   }
 
   /**

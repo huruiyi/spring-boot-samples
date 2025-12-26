@@ -71,7 +71,10 @@
 					<i class="glyphicon glyphicon-chevron-right"></i>
 				</div>
 				<div id="canvasHelpWrapper" class="col-xs-9 no-padding">
-					<div class="canvas-wrapper" id="canvasSection" ng-model="droppedElement" data-drop="true" data-jqyoui-options jqyoui-droppable="{onDrop:'dropCallback',onOver: 'overCallback', onOut: 'outCallback'}">
+					<div class="canvas-wrapper" id="canvasSection"
+					     ng-model="droppedElement" data-drop="true"
+					     data-jqyoui-options
+					     jqyoui-droppable="{onDrop:'dropCallback',onOver: 'overCallback', onOut: 'outCallback'}">
 						<div class="canvas-message" id="model-modified-date"></div>
 						<div class="Oryx_button" id="delete-button" title="{{'BUTTON.ACTION.DELETE.TOOLTIP' | translate}}" ng-click="deleteShape()" style="display:none">
 							<img src="editor-app/images/delete.png" />
@@ -82,14 +85,17 @@
 						<div class="Oryx_button" id="edit-button" style="display:none" ng-click="editShape()">
 							<img src="editor-app/images/pencil.png" />
 						</div>
-						<div class="Oryx_button" ng-repeat="item in quickMenuItems" id="{{item.id}}" title="{{item.description | translate}}" ng-click="quickAddItem(item.id)" ng-model="draggedElement" data-drag="true" jqyoui-draggable="{onStart:'startDragCallbackQuickMenu', onDrag:'dragCallbackQuickMenu'}"
+						<div class="Oryx_button" ng-repeat="item in quickMenuItems" id="{{item.id}}"
+						     title="{{item.description | translate}}" ng-click="quickAddItem(item.id)"
+						     ng-model="draggedElement" data-drag="true"
+						     jqyoui-draggable="{onStart:'startDragCallbackQuickMenu', onDrag:'dragCallbackQuickMenu'}"
 						     data-jqyoui-options="{revert: 'invalid', helper: 'clone', opacity : 0.5}" style="display:none">
 							<img ng-src="editor-app/stencilsets/{{getStencilSetName()}}/icons/{{item.icon}}" />
 						</div>
 					</div>
 				</div>
-				<div id="propertiesHelpWrapper" class="col-xs-3 no-padding">
-					<div class="propertySection" id="propertySection" ng-class="{collapsed: propertyWindowState.collapsed}">
+				<div id="propertiesHelpWrapper" class="col-xs-3 no-padding" style="border: 1px solid rebeccapurple">
+					<div class="propertySection" id="propertySection">
 						<div class="selected-item-section">
 							<div class="clearfix">
 								<div class="pull-right" ng-if="selectedItem.auditData.createDate">
@@ -101,14 +107,13 @@
 									{{selectedItem.auditData.author}}
 								</div>
 								<div class="selected-item-title">
-									<a ng-click="propertyWindowState.toggle()">
-										<i class="glyphicon" ng-class="{'glyphicon-chevron-right': propertyWindowState.collapsed, 'glyphicon-chevron-down': !propertyWindowState.collapsed}"></i>
+									<a>
 										<span ng-show="selectedItem.title != undefined && selectedItem.title != null && selectedItem.title.length > 0">{{selectedItem.title}}</span>
 										<span ng-show="!selectedItem || selectedItem.title == undefined || selectedItem.title == null || selectedItem.title.length == 0">{{modelData.name}}</span>
 									</a>
 								</div>
 							</div>
-							<div class="selected-item-body">
+							<div class="selected-item-body" >
 								<div>
 									<div class="property-row" ng-repeat="property in selectedItem.properties" ng-click="propertyClicked($index)" ng-class="{'clear' : $index%2 == 0}">
 										<span class="title" ng-if="!property.hidden" title="{{ property.description | translate}}">{{ property.title | translate }}&nbsp;:</span>
