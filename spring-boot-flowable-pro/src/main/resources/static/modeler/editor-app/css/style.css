@@ -243,6 +243,7 @@ div.propertySection {
     padding: 3px 0 3px 3px;
     border-bottom: 1px solid #a4acb9;
     cursor: pointer;
+    color: white;
 }
 
 .selected-item-title a {

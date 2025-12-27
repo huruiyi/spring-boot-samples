@@ -3,19 +3,28 @@
 		<div class="btn-group">
 			<div class="btn-group pull-left" ng-show="!secondaryItems.length">
 				<div class="btn-toolbar pull-right" ng-controller="ToolbarController">
-					<button title="{{item.title | translate}}" ng-repeat="item in secondaryItems" ng-switch on="item.type" class="btn btn-inverse" ng-class="{'separator': item.type == 'separator'}" ng-disabled="item.type == 'separator'" ng-click="toolbarSecondaryButtonClicked($index)" id="{{item.id}}">
-						<i ng-switch-when="button" ng-class="item.cssClass" class="toolbar-button" data-toggle="tooltip" title="{{item.title | translate}}"></i>
-						<div ng-switch-when="separator" ng-class="item.cssClass"></div>
+					<button title="{{itemB1.title | translate}}" 
+					        ng-repeat="itemB1 in secondaryItems" ng-switch on="itemB1.type" 
+					        class="btn btn-inverse" ng-class="{'separator': itemB1.type == 'separator'}" 
+					        ng-disabled="itemB1.type == 'separator'" 
+					        ng-click="toolbarSecondaryButtonClicked($index)" id="{{itemB1.id}}">
+						<i ng-switch-when="button" ng-class="itemB1.cssClass" class="toolbar-button" 
+						   data-toggle="tooltip" title="{{itemB1.title | translate}}"></i>
+						<div ng-switch-when="separator" ng-class="itemB1.cssClass"></div>
 					</button>
 				</div>
 			</div>
 			<div class="btn-toolbar pull-left" ng-controller="ToolbarController" ng-cloak>
-				<button id="{{item.id}}" title="{{item.title | translate}}" ng-repeat="item in items" ng-switch on="item.type" class="btn btn-inverse" ng-class="{'separator': item.type == 'separator'}" ng-disabled="item.type == 'separator' || item.enabled == false" ng-click="toolbarButtonClicked($index)">
-					<i ng-switch-when="button" ng-class="item.cssClass" class="toolbar-button" data-toggle="tooltip" title="{{item.title | translate}}"></i>
-					<div ng-switch-when="separator" ng-class="item.cssClass"></div>
+				<button id="{{itemB2.id}}" title="{{itemB2.title | translate}}"
+				        ng-repeat="itemB2 in items" ng-switch on="itemB2.type"
+				        class="btn btn-inverse" ng-class="{'separator': itemB2.type == 'separator'}"
+				        ng-disabled="itemB2.type == 'separator' || itemB2.enabled == false"
+				        ng-click="toolbarButtonClicked($index)">
+					<i ng-switch-when="button" ng-class="itemB2.cssClass" class="toolbar-button"
+					   data-toggle="tooltip" title="{{itemB2.title | translate}}"></i>
+					<div ng-switch-when="separator" ng-class="itemB2.cssClass"></div>
 				</button>
 			</div>
-
 		</div>
 
 	</div>
@@ -25,22 +34,22 @@
 				<div class="stencils" id="paletteSection">
 					<div ng-if="stencilItemGroups.length > 1">
 						<div ng-repeat="group in stencilItemGroups">
-
 							<ul ng-if="group.visible && group.items" class="stencil-group" ng-class="{collapsed: !group.expanded, 'first': $first}">
 								<li ng-include="'editor-app/partials/stencil-item-template.html?version=6'"></li>
 							</ul>
-
 							<div ng-if="!group.items" ng-include="'editor-app/partials/root-stencil-item-template.html?version=6'"></div>
-
 						</div>
 					</div>
 					<div ng-if="stencilItemGroups.length == 1">
 						<ul class="stencil-group">
-							<li ng-repeat="item in stencilItemGroups[0].paletteItems" class="stencil-item" id="{{item.id}}" title="{{item.description | translate}}" ng-model="draggedElement" data-drag="true" jqyoui-draggable="{onStart:'startDragCallback', onDrag:'dragCallback'}"
+							<li ng-repeat="itemA in stencilItemGroups[0].paletteItems" class="stencil-item"
+							    id="{{itemA.id}}" title="{{itemA.description | translate}}"
+							    ng-model="draggedElement" data-drag="true"
+							    jqyoui-draggable="{onStart:'startDragCallback', onDrag:'dragCallback'}"
 							    data-jqyoui-options="{revert: 'invalid', helper: 'clone', opacity : 0.5}">
-								<img ng-if="!item.customIcon" ng-src="editor-app/stencilsets/{{getStencilSetName()}}/icons/{{item.icon}}" width="16px;" height="16px;" />
-								<img ng-if="item.customIcon" ng-src="{{getImageUrl(item.icon)}}" width="16px;" height="16px;" />
-								{{item.name | translate}}
+								<img ng-if="!itemA.customIcon" ng-src="editor-app/stencilsets/{{getStencilSetName()}}/icons/{{itemA.icon}}" width="16px;" height="16px;" />
+								<img ng-if="itemA.customIcon" ng-src="{{getImageUrl(itemA.icon)}}" width="16px;" height="16px;" />
+								{{itemA.name | translate}}
 							</li>
 						</ul>
 					</div>
@@ -50,7 +59,7 @@
 						{{'GENERAL.OTHERS.PROCESS_NAVIGATOR' | translate}}
 					</div>
 					<div class="process-treeview-body" ng-show="isEditorReady">
-						<div class="process-treeview-process-title" title="{{treeview.id}}" ng-class="{'current-process': treeview.current}">
+						<div class="process-treeview-process-title" title="{{treeview.id}}" ng-class="{'current-process': treeview.current}" style="color: blue;font-size: 16px">
 							{{'GENERAL.OTHERS.PROCESS' | translate}}: {{treeview.name}}
 							<img ng-show="!treeview.current" ng-src="editor-app/images/pencil.png" class="pull-right" ng-click="edit(treeview.id)" />
 						</div>
@@ -82,14 +91,17 @@
 						<div class="Oryx_button" id="edit-button" style="display:none" ng-click="editShape()">
 							<img src="editor-app/images/pencil.png" />
 						</div>
-						<div class="Oryx_button" ng-repeat="item in quickMenuItems" id="{{item.id}}" title="{{item.description | translate}}" ng-click="quickAddItem(item.id)" ng-model="draggedElement" data-drag="true" jqyoui-draggable="{onStart:'startDragCallbackQuickMenu', onDrag:'dragCallbackQuickMenu'}"
+						<div class="Oryx_button" ng-repeat="itemArr in quickMenuItems"
+						     id="{{itemArr.id}}" title="{{itemArr.description | translate}}"
+						     ng-click="quickAddItem(itemArr.id)"
+						     ng-model="draggedElement" data-drag="true" jqyoui-draggable="{onStart:'startDragCallbackQuickMenu', onDrag:'dragCallbackQuickMenu'}"
 						     data-jqyoui-options="{revert: 'invalid', helper: 'clone', opacity : 0.5}" style="display:none">
-							<img ng-src="editor-app/stencilsets/{{getStencilSetName()}}/icons/{{item.icon}}" />
+							<img ng-src="editor-app/stencilsets/{{getStencilSetName()}}/icons/{{itemArr.icon}}" />
 						</div>
 					</div>
 				</div>
 				<div id="propertiesHelpWrapper" class="col-xs-3 no-padding">
-					<div class="propertySection" id="propertySection" ng-class="{collapsed: propertyWindowState.collapsed}">
+					<div class="propertySection" id="propertySection" >
 						<div class="selected-item-section">
 							<div class="clearfix">
 								<div class="pull-right" ng-if="selectedItem.auditData.createDate">
@@ -100,8 +112,8 @@
 									<strong>{{'ELEMENT.AUTHOR' | translate}}:</strong>
 									{{selectedItem.auditData.author}}
 								</div>
-								<div class="selected-item-title">
-									<a ng-click="propertyWindowState.toggle()">
+								<div class="selected-item-title" >
+									<a style="color: white;font-size: 16px;background-color: #2980b9">
 										<i class="glyphicon" ng-class="{'glyphicon-chevron-right': propertyWindowState.collapsed, 'glyphicon-chevron-right': !propertyWindowState.collapsed}"></i>
 										<span ng-show="selectedItem.title != undefined && selectedItem.title != null && selectedItem.title.length > 0">{{selectedItem.title}}</span>
 										<span ng-show="!selectedItem || selectedItem.title == undefined || selectedItem.title == null || selectedItem.title.length == 0">{{modelData.name}}</span>

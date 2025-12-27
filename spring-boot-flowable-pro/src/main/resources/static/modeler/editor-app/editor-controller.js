@@ -121,6 +121,18 @@ angular.module('flowableModeler')
       var paletteSectionFooter = jQuery('#paletteSectionFooter');
       var paletteSectionOpen = jQuery('#paletteSectionOpen');
       var contentCanvasWrapper = jQuery('#contentCanvasWrapper');
+		  var propertiesHelpWrapper = jQuery('#propertiesHelpWrapper');
+		  var canvasHelpWrapper = jQuery('#canvasHelpWrapper');
+
+      // propertiesHelpWrapper.on('click', function () {
+      //   if (propertiesHelpWrapper.hasClass('col-xs-3')) {
+      //     propertiesHelpWrapper.removeClass('col-xs-3')
+      //     canvasHelpWrapper.removeClass('col-xs-9')
+      //    // canvasHelpWrapper.addClass('col-xs-12')
+      //   } else {
+      //     propertiesHelpWrapper.addClass('col-xs-3')
+      //   }
+      // })
 
       paletteSectionFooter.on('click', function () {
         paletteHelpWrapper.addClass('close');
@@ -188,12 +200,32 @@ angular.module('flowableModeler')
 
         FLOWABLE.eventBus.editor = $rootScope.editor;
 
-        var eventMappings = [{oryxType: ORYX.CONFIG.EVENT_SELECTION_CHANGED, flowableType: FLOWABLE.eventBus.EVENT_TYPE_SELECTION_CHANGE},
-          {oryxType: ORYX.CONFIG.EVENT_DBLCLICK, flowableType: FLOWABLE.eventBus.EVENT_TYPE_DOUBLE_CLICK},
-          {oryxType: ORYX.CONFIG.EVENT_MOUSEOUT, flowableType: FLOWABLE.eventBus.EVENT_TYPE_MOUSE_OUT},
-          {oryxType: ORYX.CONFIG.EVENT_MOUSEOVER, flowableType: FLOWABLE.eventBus.EVENT_TYPE_MOUSE_OVER},
-          {oryxType: ORYX.CONFIG.EVENT_EDITOR_INIT_COMPLETED, flowableType: FLOWABLE.eventBus.EVENT_TYPE_EDITOR_READY},
-          {oryxType: ORYX.CONFIG.EVENT_PROPERTY_CHANGED, flowableType: FLOWABLE.eventBus.EVENT_TYPE_PROPERTY_VALUE_CHANGED}];
+        var eventMappings = [
+          {
+            oryxType: ORYX.CONFIG.EVENT_SELECTION_CHANGED,
+            flowableType: FLOWABLE.eventBus.EVENT_TYPE_SELECTION_CHANGE
+          },
+          {
+            oryxType: ORYX.CONFIG.EVENT_DBLCLICK,
+            flowableType: FLOWABLE.eventBus.EVENT_TYPE_DOUBLE_CLICK
+          },
+          {
+            oryxType: ORYX.CONFIG.EVENT_MOUSEOUT,
+            flowableType: FLOWABLE.eventBus.EVENT_TYPE_MOUSE_OUT
+          },
+          {
+            oryxType: ORYX.CONFIG.EVENT_MOUSEOVER,
+            flowableType: FLOWABLE.eventBus.EVENT_TYPE_MOUSE_OVER
+          },
+          {
+            oryxType: ORYX.CONFIG.EVENT_EDITOR_INIT_COMPLETED,
+            flowableType: FLOWABLE.eventBus.EVENT_TYPE_EDITOR_READY
+          },
+          {
+            oryxType: ORYX.CONFIG.EVENT_PROPERTY_CHANGED,
+            flowableType: FLOWABLE.eventBus.EVENT_TYPE_PROPERTY_VALUE_CHANGED
+          }
+        ];
 
         eventMappings.forEach(function (eventMapping) {
           editorManager.registerOnEvent(eventMapping.oryxType, function (event) {
@@ -239,13 +271,10 @@ angular.module('flowableModeler')
             $scope.subSelectionElements = undefined;
           }
         }
-        console.log('totalAvailable:' + totalAvailable)
         canvas.height(totalAvailable);
         var footerHeight = jQuery('#paletteSectionFooter').height();
         var treeViewHeight = jQuery('#process-treeview-wrapper').height();
         jQuery('#paletteSection').height(totalAvailable - treeViewHeight - footerHeight);
-
-        // Update positions of the resize-markers, according to the canvas
 
         var actualCanvas = null;
         if (canvas && canvas[0].children[1]) {
