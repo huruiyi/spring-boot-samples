@@ -94,7 +94,7 @@
       },
       "PROCESS_HISTORYLEVELPACKAGE" : {
         "PROCESS_HISTORYLEVEL" : {
-          "TITLE" : "为此流程定义设置特定的历史级别",
+          "TITLE" : "历史级别",
           "DESCRIPTION" : "为此流程定义设置特定的历史级别"
         }
       },
