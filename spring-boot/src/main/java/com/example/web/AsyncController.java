@@ -1,11 +1,15 @@
 package com.example.web;
 
+import com.example.event.CustomSpringEvent;
 import com.example.service.impl.AsyncServiceV1;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.event.EventListener;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.transaction.event.TransactionalEventListener;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -76,4 +80,26 @@ public class AsyncController {
     return "send ok";
   }
 
+  //https://www.baeldung.com/spring-events
+  @Async
+  @EventListener
+  public void handleAsyncEvent(CustomSpringEvent event) {
+    System.out.println("Handle event asynchronously: " + event.getMessage());
+  }
+
+  @Async("nonDefaultExecutor")
+  void handleAsyncEventNon(CustomSpringEvent event) {
+    System.out.println("Handle event asynchronously: " + event.getMessage());
+  }
+
+  @TransactionalEventListener
+  public void handleCustom(CustomSpringEvent event) {
+    System.out.println("Handling event only when a transaction successfully completes.");
+  }
+
+  @Async
+  @TransactionalEventListener
+  void handleCustomAsync(CustomSpringEvent event) {
+    System.out.println("Handling event only when a transaction successfully completes.");
+  }
 }
