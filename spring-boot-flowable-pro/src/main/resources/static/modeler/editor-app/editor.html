@@ -79,7 +79,11 @@
 				<div id="paletteSectionOpen" class="hidden">
 					<i class="glyphicon glyphicon-chevron-right"></i>
 				</div>
+				<div id="propertiesSectionOpen" class="hidden">
+					<i class="glyphicon glyphicon-chevron-left"></i>
+				</div>
 				<div id="canvasHelpWrapper" class="col-xs-9 no-padding">
+
 					<div class="canvas-wrapper" id="canvasSection" ng-model="droppedElement" data-drop="true" data-jqyoui-options jqyoui-droppable="{onDrop:'dropCallback',onOver: 'overCallback', onOut: 'outCallback'}">
 						<div class="canvas-message" id="model-modified-date"></div>
 						<div class="Oryx_button" id="delete-button" title="{{'BUTTON.ACTION.DELETE.TOOLTIP' | translate}}" ng-click="deleteShape()" style="display:none">
@@ -114,11 +118,11 @@
 								</div>
 								<div class="selected-item-title" >
 									<a style="color: white;font-size: 16px;background-color: #2980b9">
-										<i class="glyphicon" ng-class="{'glyphicon-chevron-right': propertyWindowState.collapsed, 'glyphicon-chevron-right': !propertyWindowState.collapsed}"></i>
 										<span ng-show="selectedItem.title != undefined && selectedItem.title != null && selectedItem.title.length > 0">{{selectedItem.title}}</span>
 										<span ng-show="!selectedItem || selectedItem.title == undefined || selectedItem.title == null || selectedItem.title.length == 0">{{modelData.name}}</span>
 									</a>
 								</div>
+
 							</div>
 							<div class="selected-item-body">
 								<div>
@@ -137,8 +141,12 @@
 							</div>
 						</div>
 					</div>
+					<div id="propertiesSectionFooter">
+						<i class="glyphicon glyphicon-chevron-right"></i>
+					</div>
 				</div>
 			</div>
+
 		</div>
 	</div>
 </div>

@@ -121,8 +121,11 @@ angular.module('flowableModeler')
       var paletteSectionFooter = jQuery('#paletteSectionFooter');
       var paletteSectionOpen = jQuery('#paletteSectionOpen');
       var contentCanvasWrapper = jQuery('#contentCanvasWrapper');
-		  var propertiesHelpWrapper = jQuery('#propertiesHelpWrapper');
-		  var canvasHelpWrapper = jQuery('#canvasHelpWrapper');
+      var propertiesHelpWrapper = jQuery('#propertiesHelpWrapper');
+      var propertiesSectionFooter = jQuery('#propertiesSectionFooter');
+      var propertiesSectionOpen = jQuery('#propertiesSectionOpen');
+      var canvasHelpWrapper = jQuery('#canvasHelpWrapper');
+
 
       // propertiesHelpWrapper.on('click', function () {
       //   if (propertiesHelpWrapper.hasClass('col-xs-3')) {
@@ -145,6 +148,19 @@ angular.module('flowableModeler')
         contentCanvasWrapper.removeClass('collapsedCanvasWrapper');
         paletteSectionOpen.addClass('hidden');
       });
+
+      propertiesSectionFooter.on('click', function () {
+        propertiesHelpWrapper.addClass('collapsed');
+        canvasHelpWrapper.removeClass('col-xs-9').addClass('col-xs-12');
+        propertiesSectionOpen.removeClass('hidden');
+      });
+
+      propertiesSectionOpen.on('click', function () {
+        propertiesHelpWrapper.removeClass('collapsed');
+        canvasHelpWrapper.removeClass('col-xs-12').addClass('col-xs-9');
+        propertiesSectionOpen.addClass('hidden');
+      });
+
 
       /**
        * A 'safer' apply that avoids concurrent updates (which $apply allows).
@@ -246,7 +262,9 @@ angular.module('flowableModeler')
         var mainHeader = jQuery('#main-header');
         var totalAvailable = jQuery(window).height() - offset.top - mainHeader.height();
 
-        jQuery('#propertySection').height(totalAvailable)
+        var propertiesFooterHeight = jQuery('#propertiesSectionFooter').height() || 0;
+        jQuery('#propertySection').height(totalAvailable - propertiesFooterHeight);
+
 
         //jQuery('.ORYX_Editor').height(totalAvailable)
 

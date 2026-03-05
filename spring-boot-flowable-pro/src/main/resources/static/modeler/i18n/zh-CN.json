@@ -929,7 +929,14 @@
           "DESCRIPTION": "Configures for which change type the variable listener will be triggered"
         }
       },
+      "EXTERNALWORKERJOBPACKAGE": {
+        "TOPIC": {
+          "TITLE": "作业主题",
+          "DESCRIPTION": "外部工作者用于查询作业的主题"
+        }
+      },
       "ISTRANSACTIONPACKAGE" : {
+
         "ISTRANSACTION" : {
           "TITLE" : "是事务子流程",
           "DESCRIPTION" : "标识此子流程是否为事务类型的标志。"

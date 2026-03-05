@@ -240,16 +240,19 @@ div.propertySection {
 .selected-item-title {
     font-size: 15px;
     font-weight: bold;
-    padding: 3px 0 3px 3px;
+    padding: 3px 0;
     border-bottom: 1px solid #a4acb9;
     cursor: pointer;
     color: white;
+    text-align: center;
 }
 
 .selected-item-title a {
     display: block;
     color: #1a1a1a;
+    text-align: center;
 }
+
 
 .selected-item-title .glyphicon {
     line-height: 25px;
@@ -270,11 +273,18 @@ div.propertySection {
 .selected-item-body .property-row {
     float: left;
     width: 100%;
-    border: 0;
+    border: 1px solid #c7cacd;
+    border-left: none;
+    border-right: none;
     margin: 0;
     padding: 0;
     font-size: 13px;
     overflow: hidden;
+    background-color: #f7f9fb;
+}
+
+.selected-item-body .property-row:nth-child(even) {
+    background-color: #eef3f7;
 }
 
 .selected-item-body .property-row:hover {
@@ -288,22 +298,27 @@ div.propertySection {
 
 .selected-item-body > div {
     overflow: hidden;
-    margin: 5px 20px;
+    margin: 0 10px 10px;
+    border: 1px solid #c7cacd;
+    border-top: none;
+    background-color: #f7f9fb;
 }
 
 .property-row > span {
     display: block;
     float: left;
-    margin: 2px 2%;
-    padding: 0;
-    min-height: 25px;
+    margin: 0;
+    padding: 6px 10px;
+    min-height: 28px;
 }
 
 .property-row span.value {
     cursor: pointer;
-    width: 46%;
-    padding: 0;
+    width: 55%;
+    padding: 6px 10px;
     margin: 0;
+    border-left: 1px solid #c7cacd;
+    background-color: transparent;
 }
 
 .property-row span.value:hover {
@@ -313,14 +328,24 @@ div.propertySection {
 .property-row span.title {
     font-size: 13px;
     font-weight: bold;
-    width: 46%;
+    width: 45%;
+    background-color: #f3f6f8;
+    color: #2c3e50;
+    text-align: left;
+    border-right: 1px solid #c7cacd;
 }
 
 .property-row span.title-removed {
     font-size: 13px;
     font-weight: normal;
-    width: 46%;
+    width: 45%;
+    background-color: #f3f6f8;
+    color: #5f6b77;
+    text-align: right;
+    border-right: 1px solid #c7cacd;
 }
+
+
 
 .propertySection.collapsed {
     max-height: 32px;
@@ -1163,8 +1188,54 @@ hot-table .column-header.label {
     padding-left: 0px !important;
 }
 
+/** collapse properties **/
+#propertiesSectionFooter {
+    height: 50px;
+    text-align: center;
+    background-color: #e8edf1;
+    border-top: 1px solid #a4acb9;
+    border-left: 1px solid #a4acb9;
+    cursor: pointer;
+    bottom: 0;
+}
+
+#propertiesSectionFooter i {
+    line-height: 50px !important;
+}
+
+#propertiesSectionOpen {
+    width: 30px;
+    height: 50px;
+    background-color: #e8edf1;
+    text-align: center;
+    bottom: 1px;
+    position: fixed;
+    z-index: 101;
+    border-top: 1px solid #a4acb9;
+    border-left: 1px solid #a4acb9;
+    cursor: pointer;
+    right: 0;
+}
+
+#propertiesSectionOpen i {
+    line-height: 50px !important;
+}
+
+#propertiesHelpWrapper.collapsed {
+    width: 0px !important;
+    overflow: hidden;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+#propertiesHelpWrapper.collapsed #propertySection,
+#propertiesHelpWrapper.collapsed #propertiesSectionFooter {
+    display: none;
+}
+
 /**Process navigator */
 #process-treeview-wrapper {
+
     height: 200px;
     background: #f3f3f3;
     border-right: 1px solid #bbbbbb;
