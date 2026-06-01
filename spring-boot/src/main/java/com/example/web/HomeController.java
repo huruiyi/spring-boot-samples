@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
@@ -36,17 +38,25 @@ public class HomeController {
   private final JavaMailSender javaMailSender;
   private final SpringTemplateEngine templateEngine;
   private final CurrencyService currencyService;
+  private final Environment environment;
 
-  public HomeController(JavaMailSender javaMailSender, SpringTemplateEngine templateEngine, CurrencyService currencyService) {
+  public HomeController(JavaMailSender javaMailSender, SpringTemplateEngine templateEngine,
+      CurrencyService currencyService, Environment environment) {
     this.javaMailSender = javaMailSender;
     this.templateEngine = templateEngine;
     this.currencyService = currencyService;
+    this.environment = environment;
   }
 
   @SysLog
   @GetMapping("/")
-  public String index() {
-    return "<p style='color:red;text-align:center;margin-top:20%;'>Hello World！世界你好！！</p>";
+  public ModelAndView index() {
+    ModelAndView mav = new ModelAndView("index");
+    mav.addObject("controllerCount", 8);
+    mav.addObject("endpointCount", "40+");
+    mav.addObject("port", port);
+    mav.addObject("activeProfile", String.join(", ", environment.getActiveProfiles()));
+    return mav;
   }
 
   @RequestMapping("/sayHello")

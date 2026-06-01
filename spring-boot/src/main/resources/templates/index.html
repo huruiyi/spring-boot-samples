@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring Boot 测试导航页</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #f0f2f5; color: #333; line-height: 1.6; }
+    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 2rem 1rem; text-align: center; }
+    .header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .header p { opacity: 0.85; font-size: 0.95rem; }
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+    .summary { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
+    .summary-card { flex: 1; min-width: 160px; background: #fff; border-radius: 8px; padding: 1.25rem; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    .summary-card .count { font-size: 2rem; font-weight: 700; color: #667eea; }
+    .summary-card .label { color: #888; font-size: 0.85rem; margin-top: 0.25rem; }
+    .section { background: #fff; border-radius: 8px; margin-bottom: 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); overflow: hidden; }
+    .section-header { background: #fafafa; padding: 1rem 1.5rem; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 0.75rem; cursor: pointer; user-select: none; }
+    .section-header:hover { background: #f5f5f5; }
+    .section-header .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+    .badge-get { background: #e6f7e9; color: #389e0d; }
+    .badge-post { background: #e6f0ff; color: #096dd9; }
+    .badge-put { background: #fff7e6; color: #d48806; }
+    .badge-delete { background: #ffe6e6; color: #cf1322; }
+    .section-title { font-size: 1.05rem; font-weight: 600; }
+    .section-path { color: #999; font-size: 0.85rem; margin-left: auto; }
+    .endpoint-list { display: none; }
+    .section.open .endpoint-list { display: block; }
+    .endpoint { display: flex; align-items: center; padding: 0.65rem 1.5rem; border-bottom: 1px solid #f5f5f5; transition: background 0.15s; gap: 0.75rem; }
+    .endpoint:last-child { border-bottom: none; }
+    .endpoint:hover { background: #fafafa; }
+    .endpoint .method { min-width: 52px; text-align: center; }
+    .endpoint .path { font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace; font-size: 0.9rem; flex: 1; word-break: break-all; }
+    .endpoint .desc { color: #888; font-size: 0.85rem; min-width: 120px; text-align: right; }
+    .endpoint a { color: #667eea; text-decoration: none; }
+    .endpoint a:hover { text-decoration: underline; }
+    .toggle-icon { transition: transform 0.2s; font-size: 0.8rem; color: #999; }
+    .section.open .toggle-icon { transform: rotate(90deg); }
+    .footer { text-align: center; padding: 2rem; color: #aaa; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🚀 Spring Boot 测试导航页</h1>
+  <p>快速访问所有 API 端点，方便开发与调试</p>
+</div>
+
+<div class="container">
+
+  <!-- 概览 -->
+  <div class="summary">
+    <div class="summary-card">
+      <div class="count" th:text="${controllerCount}">8</div>
+      <div class="label">控制器</div>
+    </div>
+    <div class="summary-card">
+      <div class="count" th:text="${endpointCount}">40+</div>
+      <div class="label">API 端点</div>
+    </div>
+    <div class="summary-card">
+      <div class="count" th:text="${port}">443</div>
+      <div class="label">服务端口</div>
+    </div>
+    <div class="summary-card">
+      <div class="count" th:text="${activeProfile}">dev</div>
+      <div class="label">当前环境</div>
+    </div>
+  </div>
+
+  <!-- HomeController -->
+  <div class="section open">
+    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="toggle-icon">▶</span>
+      <span class="section-title">HomeController</span>
+      <span class="section-path">/</span>
+    </div>
+    <div class="endpoint-list">
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/sayHello?name=fairy">/sayHello?name=</a></span><span class="desc">问好</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/send1">/send1</a></span><span class="desc">发送纯文本邮件</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/send2">/send2</a></span><span class="desc">发送HTML邮件</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/session-set">/session-set</a></span><span class="desc">设置Session</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/session-get">/session-get</a></span><span class="desc">获取Session</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-post">POST</span></span><span class="path">/date-set</span><span class="desc">日期序列化测试</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/date-get">/date-get</a></span><span class="desc">日期序列化测试</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/test1?i=1">/test1?i=</a></span><span class="desc">业务异常测试</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/test2?i=1">/test2?i=</a></span><span class="desc">算术异常测试</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/test3_1">/test3_1</a></span><span class="desc">ResponseStatus测试</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/test3_2">/test3_2</a></span><span class="desc">ResponseStatus测试</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/currency-configuration">/currency-configuration</a></span><span class="desc">货币配置信息</span></div>
+    </div>
+  </div>
+
+  <!-- DemoController -->
+  <div class="section">
+    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="toggle-icon">▶</span>
+      <span class="section-title">DemoController</span>
+      <span class="section-path">/demo</span>
+    </div>
+    <div class="endpoint-list">
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/sayHi">/demo/sayHi</a></span><span class="desc">打招呼</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/greeting?name=fairy">/demo/greeting?name=</a></span><span class="desc">问候</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/service">/demo/service</a></span><span class="desc">服务测试</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/testMap">/demo/testMap</a></span><span class="desc">Map返回测试</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/testAnnotation">/demo/testAnnotation</a></span><span class="desc">注解测试</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/p1">/demo/p1</a></span><span class="desc">参数测试</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/env">/demo/env</a></span><span class="desc">环境变量</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/session">/demo/session</a></span><span class="desc">Session测试</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/exportExcel">/demo/exportExcel</a></span><span class="desc">导出Excel</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/devtools">/demo/devtools</a></span><span class="desc">DevTools测试</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/beans">/demo/beans</a></span><span class="desc">查看Beans</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/sum">/demo/sum</a></span><span class="desc">求和</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/courses">/demo/courses</a></span><span class="desc">课程列表</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/orders">/demo/orders</a></span><span class="desc">订单列表</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/sVCode">/demo/sVCode</a></span><span class="desc">静态验证码</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/dVCode">/demo/dVCode</a></span><span class="desc">动态验证码</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/user/1/roles/admin">/demo/user/{userId}/roles/{roleId}</a></span><span class="desc">路径变量测试</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/javabeat/hello-world">/demo/javabeat/{regexp1}</a></span><span class="desc">正则路径测试</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/help">/demo/help</a></span><span class="desc">PDF下载</span></div>
+    </div>
+  </div>
+
+  <!-- BookController -->
+  <div class="section">
+    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="toggle-icon">▶</span>
+      <span class="section-title">BookController</span>
+      <span class="section-path">/book</span>
+    </div>
+    <div class="endpoint-list">
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/book/">/book/</a></span><span class="desc">首页</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/book/list">/book/list</a></span><span class="desc">书籍列表</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/book/978-123456">/book/{isbn}</a></span><span class="desc">按ISBN查询</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-post">POST</span></span><span class="path">/book</span><span class="desc">新增书籍</span></div>
+    </div>
+  </div>
+
+  <!-- PersonController -->
+  <div class="section">
+    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="toggle-icon">▶</span>
+      <span class="section-title">PersonController</span>
+      <span class="section-path">/person</span>
+    </div>
+    <div class="endpoint-list">
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/person">/person</a></span><span class="desc">列表</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/person/1">/person/{id}</a></span><span class="desc">按ID查询</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-post">POST</span></span><span class="path">/person</span><span class="desc">新增</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-delete">DELETE</span></span><span class="path">/person/{id}</span><span class="desc">删除</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-put">PUT</span></span><span class="path">/person</span><span class="desc">更新</span></div>
+    </div>
+  </div>
+
+  <!-- AsyncController -->
+  <div class="section">
+    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="toggle-icon">▶</span>
+      <span class="section-title">AsyncController</span>
+      <span class="section-path">/async</span>
+    </div>
+    <div class="endpoint-list">
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/async/test1">/async/test1</a></span><span class="desc">异步测试1</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/async/test2">/async/test2</a></span><span class="desc">异步测试2</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/async/test3">/async/test3</a></span><span class="desc">异步测试3</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/async/test4">/async/test4</a></span><span class="desc">异步测试4</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/async/send">/async/send</a></span><span class="desc">异步发送</span></div>
+    </div>
+  </div>
+
+  <!-- RateController -->
+  <div class="section">
+    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="toggle-icon">▶</span>
+      <span class="section-title">RateController</span>
+      <span class="section-path">/rate</span>
+    </div>
+    <div class="endpoint-list">
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/rate/limit">/rate/limit</a></span><span class="desc">限流测试</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/rate/testLimit">/rate/testLimit</a></span><span class="desc">限流注解测试</span></div>
+    </div>
+  </div>
+
+  <!-- RedisController -->
+  <div class="section">
+    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="toggle-icon">▶</span>
+      <span class="section-title">RedisController</span>
+      <span class="section-path">/redis</span>
+    </div>
+    <div class="endpoint-list">
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/redis/setString">/redis/setString</a></span><span class="desc">设置字符串</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/redis/getString">/redis/getString</a></span><span class="desc">获取字符串</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/redis/setObject">/redis/setObject</a></span><span class="desc">设置对象</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/redis/setList">/redis/setList</a></span><span class="desc">设置列表</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/redis/hash">/redis/hash</a></span><span class="desc">Hash操作</span></div>
+    </div>
+  </div>
+
+  <!-- UrlShortenerController -->
+  <div class="section">
+    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="toggle-icon">▶</span>
+      <span class="section-title">UrlShortenerController</span>
+      <span class="section-path">/rest/url</span>
+    </div>
+    <div class="endpoint-list">
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/rest/url/test123">/rest/url/{id}</a></span><span class="desc">获取短链接</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-post">POST</span></span><span class="path">/rest/url</span><span class="desc">创建短链接</span></div>
+    </div>
+  </div>
+
+  <!-- Actuator -->
+  <div class="section">
+    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="toggle-icon">▶</span>
+      <span class="section-title">Actuator 监控端点</span>
+      <span class="section-path">/actuator</span>
+    </div>
+    <div class="endpoint-list">
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/actuator">/actuator</a></span><span class="desc">端点列表</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/actuator/health">/actuator/health</a></span><span class="desc">健康检查</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/actuator/info">/actuator/info</a></span><span class="desc">应用信息</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/actuator/metrics">/actuator/metrics</a></span><span class="desc">指标</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/actuator/env">/actuator/env</a></span><span class="desc">环境变量</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/actuator/beans">/actuator/beans</a></span><span class="desc">Beans列表</span></div>
+      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/actuator/datetime">/actuator/datetime</a></span><span class="desc">自定义端点</span></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>Spring Boot Samples &copy; 2026 · 点击控制器标题展开/折叠 · POST/PUT/DELETE 接口请使用 Postman 等工具测试</p>
+</div>
+
+</body>
+</html>
