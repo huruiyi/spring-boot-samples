@@ -1,9 +1,10 @@
 package vip.fairy.flowable;
 
-import javax.persistence.EntityManager;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import javax.persistence.EntityManager;
 
 @SpringBootApplication
 public class FlowableApplication implements CommandLineRunner {
