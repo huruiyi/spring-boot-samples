@@ -94,13 +94,13 @@ server.ssl.key-password=your_key_password  # 如果与 keystore 密码相同，�
 -keystore keystore.p12 \
 -validity 365 \
 -dname "CN=localhost, OU=部门名称, O=组织名称, L=城市, ST=省份, C=CN" \
--ext "SAN=DNS:localhost,DNS:127.0.0.1,IP:192.168.1.100" \  # 支持多个域名/IP
+-ext "SAN=DNS:localhost,IP:127.0.0.1,IP:172.22.128.30" \  # 支持多个域名/IP（注意 127.0.0.1 必须用 IP: 前缀）
 -storepass your_keystore_password \
 -keypass your_key_password
 ```
 
 ```shell
-  keytool -genkeypair -alias fairy-vip-cert -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore keystore.p12 -validity 365 -dname "CN=192.168.0.110, OU=fairy-dev, O=fairy-vip, L=zhengzhou, ST=henan, C=CN" -ext "SAN=IP:192.168.0.110,DNS:localhost" -storepass 'fairy-vip-pass' -keypass 'fairy-vip-pass'
+  keytool -genkeypair -alias fairy-vip-cert -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore keystore.p12 -validity 365 -dname "CN=172.22.128.30, OU=fairy-dev, O=fairy-vip, L=zhengzhou, ST=henan, C=CN" -ext "SAN=DNS:localhost,IP:127.0.0.1,IP:172.22.128.30" -storepass 'fairy-vip-pass' -keypass 'fairy-vip-pass'
 ```
 
 ### **导入证书到系统信任存储**
