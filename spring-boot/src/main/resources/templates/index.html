@@ -1,239 +1,1013 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spring Boot 测试导航页</title>
+  <title>Spring Boot API 测试台</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #f0f2f5; color: #333; line-height: 1.6; }
-    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 2rem 1rem; text-align: center; }
-    .header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-    .header p { opacity: 0.85; font-size: 0.95rem; }
-    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
-    .summary { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
-    .summary-card { flex: 1; min-width: 160px; background: #fff; border-radius: 8px; padding: 1.25rem; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
-    .summary-card .count { font-size: 2rem; font-weight: 700; color: #667eea; }
-    .summary-card .label { color: #888; font-size: 0.85rem; margin-top: 0.25rem; }
-    .section { background: #fff; border-radius: 8px; margin-bottom: 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); overflow: hidden; }
-    .section-header { background: #fafafa; padding: 1rem 1.5rem; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 0.75rem; cursor: pointer; user-select: none; }
-    .section-header:hover { background: #f5f5f5; }
-    .section-header .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
-    .badge-get { background: #e6f7e9; color: #389e0d; }
-    .badge-post { background: #e6f0ff; color: #096dd9; }
-    .badge-put { background: #fff7e6; color: #d48806; }
-    .badge-delete { background: #ffe6e6; color: #cf1322; }
-    .section-title { font-size: 1.05rem; font-weight: 600; }
-    .section-path { color: #999; font-size: 0.85rem; margin-left: auto; }
-    .endpoint-list { display: none; }
-    .section.open .endpoint-list { display: block; }
-    .endpoint { display: flex; align-items: center; padding: 0.65rem 1.5rem; border-bottom: 1px solid #f5f5f5; transition: background 0.15s; gap: 0.75rem; }
-    .endpoint:last-child { border-bottom: none; }
-    .endpoint:hover { background: #fafafa; }
-    .endpoint .method { min-width: 52px; text-align: center; }
-    .endpoint .path { font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace; font-size: 0.9rem; flex: 1; word-break: break-all; }
-    .endpoint .desc { color: #888; font-size: 0.85rem; min-width: 120px; text-align: right; }
-    .endpoint a { color: #667eea; text-decoration: none; }
-    .endpoint a:hover { text-decoration: underline; }
-    .toggle-icon { transition: transform 0.2s; font-size: 0.8rem; color: #999; }
-    .section.open .toggle-icon { transform: rotate(90deg); }
-    .footer { text-align: center; padding: 2rem; color: #aaa; font-size: 0.85rem; }
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --panel-soft: #f9fbff;
+      --text: #172033;
+      --muted: #687489;
+      --line: #dfe5ef;
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --green: #15803d;
+      --green-bg: #eaf7ee;
+      --blue: #1d4ed8;
+      --blue-bg: #eaf1ff;
+      --amber: #b45309;
+      --amber-bg: #fff4df;
+      --red: #b91c1c;
+      --red-bg: #feecec;
+      --shadow: 0 10px 24px rgba(31, 41, 55, 0.07);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+          radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 28rem),
+          linear-gradient(180deg, #fafdff 0%, var(--bg) 46%, #eef3f9 100%);
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    .app-shell {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 14px clamp(14px, 3vw, 28px);
+      border-bottom: 1px solid rgba(223, 229, 239, 0.84);
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(16px);
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      color: #ffffff;
+      font-weight: 800;
+      background: linear-gradient(135deg, #2563eb, #14b8a6);
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.22);
+      flex: 0 0 auto;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(20px, 2vw, 26px);
+      letter-spacing: 0;
+      line-height: 1.15;
+    }
+
+    .brand p {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(92px, 1fr));
+      gap: 8px;
+    }
+
+    .metric {
+      min-height: 54px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: 0 8px 22px rgba(31, 41, 55, 0.04);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 17px;
+      line-height: 1.25;
+      color: var(--primary-dark);
+      word-break: break-word;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(650px, 740px) minmax(0, 1fr);
+      gap: 14px;
+      width: min(1480px, 100%);
+      margin: 0 auto;
+      padding: 14px clamp(14px, 3vw, 28px) 24px;
+      min-height: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .sidebar,
+    .tester,
+    .response-panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-height: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .side-header {
+      padding: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .search {
+      width: 100%;
+      height: 36px;
+      padding: 0 11px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--text);
+      background: #ffffff;
+      outline: none;
+    }
+
+    .search:focus,
+    .field:focus,
+    .body-editor:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      min-height: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .controller-list {
+      overflow-y: auto;
+      min-height: 0;
+      padding: 6px;
+      border-right: 1px solid var(--line);
+      background: #fbfcff;
+    }
+
+    .controller-button {
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 6px;
+      align-items: center;
+      min-height: 30px;
+      margin-bottom: 3px;
+      padding: 5px 6px;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      color: var(--muted);
+      text-align: left;
+      background: transparent;
+    }
+
+    .controller-button span:first-child {
+      overflow: hidden;
+      font-size: 13px;
+      font-weight: 700;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .controller-count {
+      min-width: 22px;
+      padding: 1px 5px;
+      border-radius: 999px;
+      color: var(--muted);
+      background: #eef2f8;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .controller-button:hover,
+    .controller-button.active {
+      color: var(--primary-dark);
+      border-color: #c9d7f5;
+      background: #eef4ff;
+    }
+
+    .endpoint-list {
+      overflow-y: auto;
+      min-height: 0;
+      padding: 6px;
+    }
+
+    .endpoint-item {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1fr);
+      gap: 7px;
+      align-items: start;
+      min-height: 52px;
+      margin: 0 0 4px;
+      padding: 7px;
+      text-align: left;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      color: var(--text);
+      background: transparent;
+    }
+
+    .endpoint-item:hover,
+    .endpoint-item.active {
+      border-color: #c9d7f5;
+      background: var(--panel-soft);
+    }
+
+    .method {
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      height: 22px;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 10px;
+    }
+
+    .method.GET {
+      color: var(--green);
+      background: var(--green-bg);
+    }
+
+    .method.POST {
+      color: var(--blue);
+      background: var(--blue-bg);
+    }
+
+    .method.PUT {
+      color: var(--amber);
+      background: var(--amber-bg);
+    }
+
+    .method.DELETE {
+      color: var(--red);
+      background: var(--red-bg);
+    }
+
+    .endpoint-title {
+      display: block;
+      font-weight: 700;
+      line-height: 1.25;
+      font-size: 12px;
+    }
+
+    .endpoint-path {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 11px;
+      word-break: break-all;
+    }
+
+    .main-column {
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      gap: 14px;
+      min-width: 0;
+      min-height: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .tester {
+      padding: 14px;
+    }
+
+    .request-line {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .method-select,
+    .url-input,
+    .send-button,
+    .copy-button {
+      height: 38px;
+      border-radius: 8px;
+    }
+
+    .method-select,
+    .url-input,
+    .field,
+    .body-editor {
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: #ffffff;
+      outline: none;
+    }
+
+    .method-select {
+      padding: 0 12px;
+      font-weight: 800;
+    }
+
+    .url-input {
+      width: 100%;
+      padding: 0 12px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 14px;
+    }
+
+    .send-button,
+    .copy-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 14px;
+      font-weight: 800;
+      color: #ffffff;
+      background: var(--primary);
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
+      white-space: nowrap;
+    }
+
+    .copy-button {
+      color: var(--primary-dark);
+      border: 1px solid #c9d7f5;
+      background: #eef4ff;
+      box-shadow: none;
+    }
+
+    .send-button:hover {
+      background: var(--primary-dark);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .form-field {
+      display: grid;
+      gap: 5px;
+    }
+
+    .form-field label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .field {
+      width: 100%;
+      height: 36px;
+      padding: 0 12px;
+      border-radius: 8px;
+    }
+
+    .body-group {
+      display: none;
+      gap: 8px;
+    }
+
+    .body-group.visible {
+      display: grid;
+    }
+
+    .body-group label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .body-editor {
+      width: 100%;
+      min-height: 132px;
+      resize: vertical;
+      padding: 13px;
+      border-radius: 8px;
+      line-height: 1.55;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 13px;
+    }
+
+    .helper {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .response-panel {
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .response-head {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      background: var(--panel-soft);
+    }
+
+    .response-title {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 92px;
+      height: 32px;
+      padding: 0 10px;
+      border-radius: 8px;
+      color: var(--muted);
+      background: #ffffff;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .status-pill.ok {
+      color: var(--green);
+      background: var(--green-bg);
+      border-color: #bce4c6;
+    }
+
+    .status-pill.error {
+      color: var(--red);
+      background: var(--red-bg);
+      border-color: #fac7c7;
+    }
+
+    .response-body {
+      min-height: 0;
+      max-height: none;
+      height: 100%;
+      margin: 0;
+      overflow: auto;
+      padding: 12px;
+      color: #d8e3f7;
+      background: #111827;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 13px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .preview {
+      display: none;
+      padding: 12px;
+      background: #111827;
+    }
+
+    .preview.visible {
+      display: block;
+    }
+
+    .preview img {
+      max-width: 100%;
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    .empty {
+      display: grid;
+      place-items: center;
+      min-height: 180px;
+      color: var(--muted);
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 1100px) {
+      .topbar,
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .sidebar {
+        min-height: auto;
+      }
+
+      .nav-grid {
+        grid-template-columns: 185px minmax(0, 1fr);
+      }
+
+      .endpoint-list,
+      .controller-list {
+        max-height: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar {
+        padding: 18px;
+      }
+
+      .workspace {
+        padding: 16px;
+      }
+
+      .brand {
+        align-items: flex-start;
+      }
+
+      .request-line,
+      .form-grid,
+      .response-head {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .controller-list {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .controller-button {
+        width: auto;
+        min-width: 126px;
+        margin-bottom: 0;
+      }
+
+      .send-button,
+      .copy-button,
+      .method-select,
+      .url-input {
+        width: 100%;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
+<div class="app-shell">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">SB</div>
+      <div>
+        <h1>Spring Boot API 测试台</h1>
+        <p>内置端点导航、参数编辑、JSON Body、响应预览，启动项目后即可测试。</p>
+      </div>
+    </div>
+    <section class="metrics" aria-label="应用概览">
+      <div class="metric">
+        <strong th:text="${controllerCount}">8</strong>
+        <span>分组</span>
+      </div>
+      <div class="metric">
+        <strong th:text="${endpointCount}">51</strong>
+        <span>端点</span>
+      </div>
+      <div class="metric">
+        <strong th:text="${port}">9102</strong>
+        <span>端口</span>
+      </div>
+      <div class="metric">
+        <strong th:text="${activeProfile}">dev</strong>
+        <span>环境</span>
+      </div>
+    </section>
+  </header>
 
-<div class="header">
-  <h1>🚀 Spring Boot 测试导航页</h1>
-  <p>快速访问所有 API 端点，方便开发与调试</p>
+  <main class="workspace">
+    <aside class="sidebar" aria-label="端点列表">
+      <div class="side-header">
+        <input id="search" class="search" type="search" placeholder="搜索接口、路径或说明">
+      </div>
+      <div class="nav-grid">
+        <div id="controllerList" class="controller-list" aria-label="控制器列表"></div>
+        <div id="endpointList" class="endpoint-list"></div>
+      </div>
+    </aside>
+
+    <section class="main-column">
+      <div class="tester">
+        <div class="request-line">
+          <select id="method" class="method-select" aria-label="请求方法">
+            <option>GET</option>
+            <option>POST</option>
+            <option>PUT</option>
+            <option>DELETE</option>
+          </select>
+          <input id="url" class="url-input" type="text" aria-label="请求地址">
+          <button id="send" class="send-button" type="button">发送请求</button>
+        </div>
+
+        <div id="paramGrid" class="form-grid"></div>
+
+        <div id="bodyGroup" class="body-group">
+          <label for="body">请求 Body</label>
+          <textarea id="body" class="body-editor" spellcheck="false"></textarea>
+        </div>
+
+        <p id="helper" class="helper"></p>
+      </div>
+
+      <div class="response-panel">
+        <div class="response-head">
+          <h2 class="response-title">响应结果</h2>
+          <span id="status" class="status-pill">未请求</span>
+          <button id="copy" class="copy-button" type="button">复制响应</button>
+        </div>
+        <pre id="response" class="response-body">选择左侧接口后点击“发送请求”，响应会显示在这里。</pre>
+        <div id="preview" class="preview"></div>
+      </div>
+    </section>
+  </main>
 </div>
 
-<div class="container">
+<script>
+  const endpoints = [
+    {group: "HomeController", method: "GET", path: "/sayHello", title: "问好", params: [{name: "name", value: "fairy"}]},
+    {group: "HomeController", method: "GET", path: "/session-set", title: "设置 Session"},
+    {group: "HomeController", method: "GET", path: "/session-get", title: "获取 Session"},
+    {group: "HomeMailController", method: "GET", path: "/send1", title: "发送纯文本邮件"},
+    {group: "HomeMailController", method: "GET", path: "/send2", title: "发送 HTML 邮件"},
+    {group: "HomeDateController", method: "POST", path: "/date-set", title: "日期序列化", contentType: "application/json", body: {
+      instant: "2019-10-24T05:08:25Z",
+      date: "2019-10-24T05:08:25.000+00:00",
+      localDate: "2019-10-24",
+      localDateTime: "2019-10-24T05:08:25"
+    }},
+    {group: "HomeDateController", method: "GET", path: "/date-get", title: "读取日期示例"},
+    {group: "HomeErrorController", method: "GET", path: "/test1", title: "业务异常测试", params: [{name: "i", value: "1"}]},
+    {group: "HomeErrorController", method: "GET", path: "/test2", title: "算术异常测试", params: [{name: "i", value: "1"}]},
+    {group: "HomeErrorController", method: "GET", path: "/test3_1", title: "ResponseStatus reason"},
+    {group: "HomeErrorController", method: "GET", path: "/test3_2", title: "ResponseStatus 正常返回"},
+    {group: "HomeController", method: "GET", path: "/currency-configuration", title: "货币配置"},
 
-  <!-- 概览 -->
-  <div class="summary">
-    <div class="summary-card">
-      <div class="count" th:text="${controllerCount}">8</div>
-      <div class="label">控制器</div>
-    </div>
-    <div class="summary-card">
-      <div class="count" th:text="${endpointCount}">40+</div>
-      <div class="label">API 端点</div>
-    </div>
-    <div class="summary-card">
-      <div class="count" th:text="${port}">443</div>
-      <div class="label">服务端口</div>
-    </div>
-    <div class="summary-card">
-      <div class="count" th:text="${activeProfile}">dev</div>
-      <div class="label">当前环境</div>
-    </div>
-  </div>
+    {group: "DemoController", method: "GET", path: "/demo/sayHi", title: "返回 Map", params: [{name: "name", value: "fairy"}]},
+    {group: "DemoController", method: "GET", path: "/demo/greeting", title: "Greeting 对象"},
+    {group: "DemoController", method: "GET", path: "/demo/service", title: "服务注入测试"},
+    {group: "DemoController", method: "GET", path: "/demo/testMap", title: "Map 返回"},
+    {group: "DemoController", method: "GET", path: "/demo/testAnnotation", title: "注解测试", params: [{name: "uName", value: "Li San"}, {name: "age", value: "18"}]},
+    {group: "DemoController", method: "GET", path: "/demo/p1", title: "参数测试"},
+    {group: "RuntimeController", method: "GET", path: "/demo/env", title: "环境变量"},
+    {group: "RuntimeController", method: "GET", path: "/demo/session", title: "Session 写入"},
+    {group: "RuntimeController", method: "GET", path: "/demo/devtools", title: "DevTools 测试"},
+    {group: "RuntimeController", method: "GET", path: "/demo/beans", title: "查看 Beans"},
+    {group: "RuntimeController", method: "GET", path: "/demo/sum", title: "求和"},
+    {group: "DataController", method: "GET", path: "/demo/courses", title: "课程列表"},
+    {group: "DataController", method: "GET", path: "/demo/orders", title: "订单示例"},
+    {group: "FileController", method: "GET", path: "/demo/sVCode", title: "静态验证码", preview: "image"},
+    {group: "FileController", method: "GET", path: "/demo/dVCode", title: "动态验证码", preview: "image"},
+    {group: "DataController", method: "GET", path: "/demo/user/1/roles/admin", title: "路径变量"},
+    {group: "DataController", method: "GET", path: "/demo/javabeat/hello-world", title: "正则路径"},
+    {group: "FileController", method: "GET", path: "/demo/help", title: "PDF 下载", download: true},
+    {group: "FileController", method: "GET", path: "/demo/exportExcel", title: "Excel 下载", download: true},
 
-  <!-- HomeController -->
-  <div class="section open">
-    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
-      <span class="toggle-icon">▶</span>
-      <span class="section-title">HomeController</span>
-      <span class="section-path">/</span>
-    </div>
-    <div class="endpoint-list">
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/sayHello?name=fairy">/sayHello?name=</a></span><span class="desc">问好</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/send1">/send1</a></span><span class="desc">发送纯文本邮件</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/send2">/send2</a></span><span class="desc">发送HTML邮件</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/session-set">/session-set</a></span><span class="desc">设置Session</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/session-get">/session-get</a></span><span class="desc">获取Session</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-post">POST</span></span><span class="path">/date-set</span><span class="desc">日期序列化测试</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/date-get">/date-get</a></span><span class="desc">日期序列化测试</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/test1?i=1">/test1?i=</a></span><span class="desc">业务异常测试</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/test2?i=1">/test2?i=</a></span><span class="desc">算术异常测试</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/test3_1">/test3_1</a></span><span class="desc">ResponseStatus测试</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/test3_2">/test3_2</a></span><span class="desc">ResponseStatus测试</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/currency-configuration">/currency-configuration</a></span><span class="desc">货币配置信息</span></div>
-    </div>
-  </div>
+    {group: "BookController", method: "GET", path: "/book/", title: "书籍首页"},
+    {group: "BookController", method: "GET", path: "/book/list", title: "书籍列表"},
+    {group: "BookController", method: "GET", path: "/book/978-123456", title: "按 ISBN 查询"},
+    {group: "BookController", method: "POST", path: "/book", title: "新增书籍", contentType: "application/json", body: {
+      isbn: "4325464573243",
+      title: "Document Info",
+      authors: ["authors1", "authors2", "authors3"]
+    }},
 
-  <!-- DemoController -->
-  <div class="section">
-    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
-      <span class="toggle-icon">▶</span>
-      <span class="section-title">DemoController</span>
-      <span class="section-path">/demo</span>
-    </div>
-    <div class="endpoint-list">
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/sayHi">/demo/sayHi</a></span><span class="desc">打招呼</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/greeting?name=fairy">/demo/greeting?name=</a></span><span class="desc">问候</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/service">/demo/service</a></span><span class="desc">服务测试</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/testMap">/demo/testMap</a></span><span class="desc">Map返回测试</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/testAnnotation">/demo/testAnnotation</a></span><span class="desc">注解测试</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/p1">/demo/p1</a></span><span class="desc">参数测试</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/env">/demo/env</a></span><span class="desc">环境变量</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/session">/demo/session</a></span><span class="desc">Session测试</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/exportExcel">/demo/exportExcel</a></span><span class="desc">导出Excel</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/devtools">/demo/devtools</a></span><span class="desc">DevTools测试</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/beans">/demo/beans</a></span><span class="desc">查看Beans</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/sum">/demo/sum</a></span><span class="desc">求和</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/courses">/demo/courses</a></span><span class="desc">课程列表</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/orders">/demo/orders</a></span><span class="desc">订单列表</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/sVCode">/demo/sVCode</a></span><span class="desc">静态验证码</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/dVCode">/demo/dVCode</a></span><span class="desc">动态验证码</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/user/1/roles/admin">/demo/user/{userId}/roles/{roleId}</a></span><span class="desc">路径变量测试</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/javabeat/hello-world">/demo/javabeat/{regexp1}</a></span><span class="desc">正则路径测试</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/demo/help">/demo/help</a></span><span class="desc">PDF下载</span></div>
-    </div>
-  </div>
+    {group: "PersonController", method: "GET", path: "/person", title: "人员列表"},
+    {group: "PersonController", method: "GET", path: "/person/1", title: "按 ID 查询人员"},
+    {group: "PersonController", method: "POST", path: "/person", title: "新增人员", contentType: "application/json", body: {
+      firstName: "Ada",
+      lastName: "Lovelace",
+      age: 28,
+      gender: "FEMALE"
+    }},
+    {group: "PersonController", method: "PUT", path: "/person", title: "更新人员", contentType: "application/json", body: {
+      id: 1,
+      firstName: "Grace",
+      lastName: "Hopper",
+      age: 35,
+      gender: "FEMALE"
+    }},
+    {group: "PersonController", method: "DELETE", path: "/person/4", title: "删除人员"},
 
-  <!-- BookController -->
-  <div class="section">
-    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
-      <span class="toggle-icon">▶</span>
-      <span class="section-title">BookController</span>
-      <span class="section-path">/book</span>
-    </div>
-    <div class="endpoint-list">
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/book/">/book/</a></span><span class="desc">首页</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/book/list">/book/list</a></span><span class="desc">书籍列表</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/book/978-123456">/book/{isbn}</a></span><span class="desc">按ISBN查询</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-post">POST</span></span><span class="path">/book</span><span class="desc">新增书籍</span></div>
-    </div>
-  </div>
+    {group: "AsyncController", method: "GET", path: "/async/test1", title: "异步测试 1"},
+    {group: "AsyncController", method: "GET", path: "/async/test2", title: "异步测试 2"},
+    {group: "AsyncController", method: "GET", path: "/async/test3", title: "异步队列 1"},
+    {group: "AsyncController", method: "GET", path: "/async/test4", title: "异步队列 2"},
+    {group: "AsyncController", method: "GET", path: "/async/send", title: "异步发送"},
 
-  <!-- PersonController -->
-  <div class="section">
-    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
-      <span class="toggle-icon">▶</span>
-      <span class="section-title">PersonController</span>
-      <span class="section-path">/person</span>
-    </div>
-    <div class="endpoint-list">
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/person">/person</a></span><span class="desc">列表</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/person/1">/person/{id}</a></span><span class="desc">按ID查询</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-post">POST</span></span><span class="path">/person</span><span class="desc">新增</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-delete">DELETE</span></span><span class="path">/person/{id}</span><span class="desc">删除</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-put">PUT</span></span><span class="path">/person</span><span class="desc">更新</span></div>
-    </div>
-  </div>
+    {group: "RateController", method: "GET", path: "/rate/limit", title: "限流测试"},
+    {group: "RateController", method: "GET", path: "/rate/testLimit", title: "限流注解测试"},
 
-  <!-- AsyncController -->
-  <div class="section">
-    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
-      <span class="toggle-icon">▶</span>
-      <span class="section-title">AsyncController</span>
-      <span class="section-path">/async</span>
-    </div>
-    <div class="endpoint-list">
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/async/test1">/async/test1</a></span><span class="desc">异步测试1</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/async/test2">/async/test2</a></span><span class="desc">异步测试2</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/async/test3">/async/test3</a></span><span class="desc">异步测试3</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/async/test4">/async/test4</a></span><span class="desc">异步测试4</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/async/send">/async/send</a></span><span class="desc">异步发送</span></div>
-    </div>
-  </div>
+    {group: "RedisController", method: "GET", path: "/redis/setString", title: "设置 Redis 字符串"},
+    {group: "RedisController", method: "GET", path: "/redis/getString", title: "读取 Redis 字符串", params: [{name: "key", value: "key1"}]},
+    {group: "RedisController", method: "GET", path: "/redis/setObject", title: "设置 Redis 对象", params: [{name: "key", value: "demo:key"}, {name: "value", value: "hello"}]},
+    {group: "RedisController", method: "GET", path: "/redis/setList", title: "设置 Redis 列表", params: [{name: "key", value: "demo:list"}]},
+    {group: "RedisController", method: "GET", path: "/redis/hash", title: "Hash 操作"},
 
-  <!-- RateController -->
-  <div class="section">
-    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
-      <span class="toggle-icon">▶</span>
-      <span class="section-title">RateController</span>
-      <span class="section-path">/rate</span>
-    </div>
-    <div class="endpoint-list">
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/rate/limit">/rate/limit</a></span><span class="desc">限流测试</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/rate/testLimit">/rate/testLimit</a></span><span class="desc">限流注解测试</span></div>
-    </div>
-  </div>
+    {group: "UrlShortenerController", method: "GET", path: "/rest/url/test123", title: "获取短链接"},
+    {group: "UrlShortenerController", method: "POST", path: "/rest/url", title: "创建短链接", contentType: "text/plain", body: "https://spring.io/projects/spring-boot"},
 
-  <!-- RedisController -->
-  <div class="section">
-    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
-      <span class="toggle-icon">▶</span>
-      <span class="section-title">RedisController</span>
-      <span class="section-path">/redis</span>
-    </div>
-    <div class="endpoint-list">
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/redis/setString">/redis/setString</a></span><span class="desc">设置字符串</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/redis/getString">/redis/getString</a></span><span class="desc">获取字符串</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/redis/setObject">/redis/setObject</a></span><span class="desc">设置对象</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/redis/setList">/redis/setList</a></span><span class="desc">设置列表</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/redis/hash">/redis/hash</a></span><span class="desc">Hash操作</span></div>
-    </div>
-  </div>
+    {group: "Actuator", method: "GET", path: "/actuator", title: "端点列表"},
+    {group: "Actuator", method: "GET", path: "/actuator/health", title: "健康检查"},
+    {group: "Actuator", method: "GET", path: "/actuator/info", title: "应用信息"},
+    {group: "Actuator", method: "GET", path: "/actuator/metrics", title: "指标"},
+    {group: "Actuator", method: "GET", path: "/actuator/env", title: "环境变量"},
+    {group: "Actuator", method: "GET", path: "/actuator/beans", title: "Beans 列表"},
+    {group: "Actuator", method: "GET", path: "/actuator/datetime", title: "自定义日期端点"}
+  ];
 
-  <!-- UrlShortenerController -->
-  <div class="section">
-    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
-      <span class="toggle-icon">▶</span>
-      <span class="section-title">UrlShortenerController</span>
-      <span class="section-path">/rest/url</span>
-    </div>
-    <div class="endpoint-list">
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/rest/url/test123">/rest/url/{id}</a></span><span class="desc">获取短链接</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-post">POST</span></span><span class="path">/rest/url</span><span class="desc">创建短链接</span></div>
-    </div>
-  </div>
+  const state = {
+    selected: endpoints[0],
+    filter: "全部",
+    responseText: ""
+  };
 
-  <!-- Actuator -->
-  <div class="section">
-    <div class="section-header" onclick="this.parentElement.classList.toggle('open')">
-      <span class="toggle-icon">▶</span>
-      <span class="section-title">Actuator 监控端点</span>
-      <span class="section-path">/actuator</span>
-    </div>
-    <div class="endpoint-list">
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/actuator">/actuator</a></span><span class="desc">端点列表</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/actuator/health">/actuator/health</a></span><span class="desc">健康检查</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/actuator/info">/actuator/info</a></span><span class="desc">应用信息</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/actuator/metrics">/actuator/metrics</a></span><span class="desc">指标</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/actuator/env">/actuator/env</a></span><span class="desc">环境变量</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/actuator/beans">/actuator/beans</a></span><span class="desc">Beans列表</span></div>
-      <div class="endpoint"><span class="method"><span class="badge badge-get">GET</span></span><span class="path"><a href="/actuator/datetime">/actuator/datetime</a></span><span class="desc">自定义端点</span></div>
-    </div>
-  </div>
+  const endpointList = document.querySelector("#endpointList");
+  const controllerList = document.querySelector("#controllerList");
+  const search = document.querySelector("#search");
+  const method = document.querySelector("#method");
+  const url = document.querySelector("#url");
+  const send = document.querySelector("#send");
+  const paramGrid = document.querySelector("#paramGrid");
+  const bodyGroup = document.querySelector("#bodyGroup");
+  const body = document.querySelector("#body");
+  const helper = document.querySelector("#helper");
+  const status = document.querySelector("#status");
+  const response = document.querySelector("#response");
+  const preview = document.querySelector("#preview");
+  const copy = document.querySelector("#copy");
 
-</div>
+  function groups() {
+    return ["全部", ...Array.from(new Set(endpoints.map((item) => item.group)))];
+  }
 
-<div class="footer">
-  <p>Spring Boot Samples &copy; 2026 · 点击控制器标题展开/折叠 · POST/PUT/DELETE 接口请使用 Postman 等工具测试</p>
-</div>
+  function groupCount(group) {
+    if (group === "全部") {
+      return endpoints.length;
+    }
+    return endpoints.filter((item) => item.group === group).length;
+  }
 
+  function methodClass(value) {
+    return `method ${value}`;
+  }
+
+  function renderControllers() {
+    controllerList.innerHTML = groups().map((group) => (
+        `<button class="controller-button ${state.filter === group ? "active" : ""}" data-filter="${group}" type="button">
+          <span>${group}</span>
+          <span class="controller-count">${groupCount(group)}</span>
+        </button>`
+    )).join("");
+  }
+
+  function filteredEndpoints() {
+    const keyword = search.value.trim().toLowerCase();
+    return endpoints.filter((item) => {
+      const inGroup = state.filter === "全部" || item.group === state.filter;
+      const text = `${item.group} ${item.method} ${item.path} ${item.title}`.toLowerCase();
+      return inGroup && (!keyword || text.includes(keyword));
+    });
+  }
+
+  function renderList() {
+    const items = filteredEndpoints();
+    if (!items.length) {
+      endpointList.innerHTML = '<div class="empty">没有匹配的接口</div>';
+      return;
+    }
+
+    endpointList.innerHTML = items.map((item) => `
+      <button class="endpoint-item ${item === state.selected ? "active" : ""}" data-path="${item.path}" data-method="${item.method}" type="button">
+        <span class="${methodClass(item.method)}">${item.method}</span>
+        <span>
+          <span class="endpoint-title">${item.title}</span>
+          <span class="endpoint-path">${item.path}</span>
+        </span>
+      </button>
+    `).join("");
+  }
+
+  function formatBody(value) {
+    if (value === undefined || value === null) {
+      return "";
+    }
+    return typeof value === "string" ? value : JSON.stringify(value, null, 2);
+  }
+
+  function selectEndpoint(item) {
+    state.selected = item;
+    method.value = item.method;
+    url.value = item.path;
+    body.value = formatBody(item.body);
+    bodyGroup.classList.toggle("visible", ["POST", "PUT", "PATCH"].includes(item.method));
+    renderParams(item);
+    helper.textContent = `${item.group} · ${item.title}${item.download ? " · 该接口会返回文件流" : ""}`;
+    renderList();
+  }
+
+  function renderParams(item) {
+    const params = item.params || [];
+    if (!params.length) {
+      paramGrid.innerHTML = "";
+      return;
+    }
+
+    paramGrid.innerHTML = params.map((param) => `
+      <div class="form-field">
+        <label for="param-${param.name}">${param.name}</label>
+        <input id="param-${param.name}" class="field" data-param="${param.name}" value="${param.value || ""}">
+      </div>
+    `).join("");
+  }
+
+  function buildUrl() {
+    const raw = url.value.trim() || "/";
+    const target = new URL(raw, window.location.origin);
+    document.querySelectorAll("[data-param]").forEach((input) => {
+      if (input.value !== "") {
+        target.searchParams.set(input.dataset.param, input.value);
+      }
+    });
+    return target;
+  }
+
+  async function sendRequest() {
+    const target = buildUrl();
+    const selectedMethod = method.value;
+    const options = {
+      method: selectedMethod,
+      headers: {}
+    };
+
+    if (!["GET", "HEAD"].includes(selectedMethod) && body.value.trim()) {
+      options.body = body.value;
+      options.headers["Content-Type"] = state.selected.contentType || "application/json";
+    }
+
+    const started = performance.now();
+    status.className = "status-pill";
+    status.textContent = "请求中";
+    preview.classList.remove("visible");
+    preview.innerHTML = "";
+    response.textContent = "正在请求 " + target.pathname + target.search;
+
+    try {
+      const result = await fetch(target, options);
+      const elapsed = Math.round(performance.now() - started);
+      status.className = `status-pill ${result.ok ? "ok" : "error"}`;
+      status.textContent = `${result.status} · ${elapsed}ms`;
+
+      const contentType = result.headers.get("content-type") || "";
+      if (contentType.startsWith("image/")) {
+        const blob = await result.blob();
+        const objectUrl = URL.createObjectURL(blob);
+        state.responseText = `[image] ${contentType}, ${blob.size} bytes`;
+        response.textContent = state.responseText;
+        preview.innerHTML = `<img src="${objectUrl}" alt="接口返回图片">`;
+        preview.classList.add("visible");
+        return;
+      }
+
+      if (contentType.includes("application/octet-stream") || contentType.includes("application/pdf") || contentType.includes("application/msexcel")) {
+        const blob = await result.blob();
+        const objectUrl = URL.createObjectURL(blob);
+        state.responseText = `[file] ${contentType || "unknown"}, ${blob.size} bytes`;
+        response.textContent = state.responseText + "\n文件已生成，可在新标签页中打开或下载。";
+        preview.innerHTML = `<a class="copy-button" href="${objectUrl}" target="_blank" rel="noreferrer">打开文件</a>`;
+        preview.classList.add("visible");
+        return;
+      }
+
+      const text = await result.text();
+      state.responseText = prettyPrint(text, contentType);
+      response.textContent = state.responseText || "(空响应)";
+    } catch (error) {
+      status.className = "status-pill error";
+      status.textContent = "请求失败";
+      state.responseText = error.message;
+      response.textContent = error.stack || error.message;
+    }
+  }
+
+  function prettyPrint(text, contentType) {
+    if (!text) {
+      return "";
+    }
+    if (contentType.includes("json") || /^[\[{]/.test(text.trim())) {
+      try {
+        return JSON.stringify(JSON.parse(text), null, 2);
+      } catch (error) {
+        return text;
+      }
+    }
+    return text.replace(/<br\s*\/?>/gi, "\n");
+  }
+
+  controllerList.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-filter]");
+    if (!button) {
+      return;
+    }
+    state.filter = button.dataset.filter;
+    renderControllers();
+    renderList();
+  });
+
+  endpointList.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-path]");
+    if (!button) {
+      return;
+    }
+    const item = endpoints.find((entry) => entry.path === button.dataset.path && entry.method === button.dataset.method);
+    if (item) {
+      selectEndpoint(item);
+    }
+  });
+
+  search.addEventListener("input", renderList);
+  send.addEventListener("click", sendRequest);
+  copy.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(state.responseText || response.textContent);
+    copy.textContent = "已复制";
+    window.setTimeout(() => copy.textContent = "复制响应", 1200);
+  });
+
+  renderControllers();
+  selectEndpoint(state.selected);
+</script>
 </body>
 </html>

@@ -49,8 +49,10 @@ public class WebConfig implements ApplicationListener<WebServerInitializedEvent>
       @Override
       protected void doFilterInternal(@NotNull HttpServletRequest request, @NotNull HttpServletResponse response, @NotNull FilterChain filterChain)
           throws ServletException, IOException {
-        if (!request.isSecure()) {
-          String httpsUrl = "https://" + request.getServerName() + ":443" + request.getRequestURI();
+        boolean sslEnabled = env.getProperty("server.ssl.enabled", Boolean.class, env.getProperty("server.ssl.key-store") != null);
+        if (sslEnabled && !request.isSecure()) {
+          String queryString = request.getQueryString() == null ? "" : "?" + request.getQueryString();
+          String httpsUrl = "https://" + request.getServerName() + ":443" + request.getRequestURI() + queryString;
           response.sendRedirect(httpsUrl);
           return;
         }
@@ -64,7 +66,7 @@ public class WebConfig implements ApplicationListener<WebServerInitializedEvent>
     try {
       InetAddress inetAddress = InetAddress.getLocalHost();
       int port = event.getWebServer().getPort();
-      log.info("项目启动成功！地址端口(start port): https://{}:{}", inetAddress.getHostAddress(), port);
+      log.info("项目启动成功！地址端口(start port): {}://{}:{}", getProtocol(), inetAddress.getHostAddress(), port);
 
       printApplicationStartupInfo();
     } catch (UnknownHostException e) {
@@ -79,9 +81,7 @@ public class WebConfig implements ApplicationListener<WebServerInitializedEvent>
 
     // 获取应用访问地址
     String protocol = "http";
-    if (env.getProperty("server.ssl.key-store") != null) {
-      protocol = "https";
-    }
+    protocol = getProtocol();
     //不准确， 获取的端口号可能不是启动端口（以onApplicationEvent中的为主）
     String serverPort = env.getProperty("server.port", "8090");
     String contextPath = env.getProperty("server.servlet.context-path", "");
@@ -105,6 +105,11 @@ public class WebConfig implements ApplicationListener<WebServerInitializedEvent>
     System.out.println("  Local: \t" + protocol + "://localhost:" + serverPort + contextPath);
     System.out.println("  External: \t" + protocol + "://" + hostAddress + ":" + serverPort + contextPath);
     System.out.println("----------------------------------------------------------\n");
+  }
+
+  private String getProtocol() {
+    boolean sslEnabled = env.getProperty("server.ssl.enabled", Boolean.class, env.getProperty("server.ssl.key-store") != null);
+    return sslEnabled ? "https" : "http";
   }
 
   @Bean
