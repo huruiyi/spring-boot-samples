@@ -1,5 +1,7 @@
 <!-- Logback configuration. See http://logback.qos.ch/manual/index.html -->
 <configuration scan="true" scanPeriod="10 seconds">
+  <property name="APP_NAME" value="spring-boot"/>
+  <property name="LOG_PATH" value="${user.home}/spring-boot/${APP_NAME}/logs"></property>
 
   <appender class="ch.qos.logback.core.ConsoleAppender" name="STDOUT">
     <encoder>
@@ -40,9 +42,6 @@
   </appender>
 
   <include resource="org/springframework/boot/logging/logback/base.xml"/>
-
-  <property name="LOG_PATH" value="./spring-boot/logs"></property>
-
 
   <root level="INFO">
     <!--        <appender-ref ref="STDOUT"/>-->

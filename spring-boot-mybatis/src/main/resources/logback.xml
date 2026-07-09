@@ -10,7 +10,8 @@
   <property name="maxHistory" value="30"/>
 
   <!-- DEBUG级别日志 appender -->
-  <property name="log_dir" value="spring-boot-mybatis/logs/"/>
+  <property name="app_name" value="spring-boot-mybatis"/>
+  <property name="log_dir" value="${user.home}/spring-boot/${app_name}/logs"/>
 
   <!-- 动态日志级别 -->
   <appender class="ch.qos.logback.core.ConsoleAppender" name="console">

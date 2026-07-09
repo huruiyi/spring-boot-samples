@@ -11,10 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
+@RequestMapping("/error")
 public class ErrorController {
 
   /**
-   * <a href="http://localhost:9102/test1?i=0">...</a>
+   * <a href="http://localhost:9102/error/test1?i=0">...</a>
    * <p>
    * { "code": 600, "message": "自定义业务错误" }
    */
@@ -27,7 +28,7 @@ public class ErrorController {
   }
 
   /**
-   * <a href="http://localhost:9102/test2?i=0">...</a>
+   * <a href="http://localhost:9102/error/test2?i=0">...</a>
    * <p>
    * { "message": "自定义异常信息：/ by zero" }
    */

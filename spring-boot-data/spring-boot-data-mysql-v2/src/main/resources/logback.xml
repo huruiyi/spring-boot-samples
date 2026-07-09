@@ -23,6 +23,8 @@
   <!--<property name="LOG_PATH" value="D:\\JavaWebLogs" />-->
   <!--设置系统日志目录-->
   <!--<property name="APPDIR" value="SpringBootDemo" />-->
+  <property name="APP_NAME" value="spring-boot-data-mysql-v2"/>
+  <property name="LOG_PATH" value="${user.home}/spring-boot/${APP_NAME}/logs"/>
 
   <!-- 日志记录器，日期滚动记录 -->
   <appender class="ch.qos.logback.core.rolling.RollingFileAppender" name="FILEERROR">
