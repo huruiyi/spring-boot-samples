@@ -4,11 +4,11 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>spring-boot-mybatisplus-v3</artifactId>
+  <artifactId>spring-boot-mybatisplus-crud</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>spring-boot-mybatisplus-v3</name>
-  <description>Demo project for Spring Boot</description>
+  <name>spring-boot-mybatisplus-crud</name>
+  <description>MyBatis-Plus 入门 CRUD Demo</description>
 
   <parent>
     <groupId>com.example</groupId>
