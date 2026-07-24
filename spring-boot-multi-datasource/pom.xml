@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>spring-boot-samples</artifactId>
+        <version>0.0.1</version>
+    </parent>
+
+    <artifactId>spring-boot-multi-datasource</artifactId>
+    <version>0.0.1</version>
+    <packaging>pom</packaging>
+    <name>spring-boot-multi-datasource</name>
+    <description>Spring Boot 多数据源示例集合</description>
+
+    <modules>
+        <module>spring-boot-multi-datasource-dynamic</module>
+        <module>spring-boot-multi-datasource-jdbc</module>
+        <module>spring-boot-multi-datasource-jpa</module>
+        <module>spring-boot-multi-datasource-jta</module>
+        <module>spring-boot-multi-datasource-routing</module>
+        <module>spring-boot-multi-datasource-seata</module>
+        <module>spring-boot-multi-datasource-sharding</module>
+        <module>spring-boot-multi-datasource-mybatis</module>
+    </modules>
+</project>

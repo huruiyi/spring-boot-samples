@@ -51,14 +51,7 @@
     <module>spring-boot-prometheus</module>
     <module>spring-boot-thymeleaf</module>
     <module>spring-boot-websocket</module>
-    <module>spring-multi-datasource</module>
-    <module>spring-boot-multi-datasource-routing</module>
-    <module>spring-boot-multi-datasource-jdbc</module>
-    <module>spring-boot-multi-datasource-dynamic</module>
-    <module>spring-boot-multi-datasource-sharding</module>
-    <module>spring-boot-multi-datasource-jta</module>
-    <module>spring-boot-multi-datasource-seata</module>
-    <module>spring-boot-multi-datasource-jpa</module>
+    <module>spring-boot-multi-datasource</module>
   </modules>
 
   <build>
