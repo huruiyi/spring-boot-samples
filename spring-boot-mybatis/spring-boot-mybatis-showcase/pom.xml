@@ -9,8 +9,8 @@
     <version>0.0.1</version>
   </parent>
 
-  <name>spring-boot-mybatis-pagehelper</name>
-  <artifactId>spring-boot-mybatis-pagehelper</artifactId>
+  <name>spring-boot-mybatis-showcase</name>
+  <artifactId>spring-boot-mybatis-showcase</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
   <dependencies>

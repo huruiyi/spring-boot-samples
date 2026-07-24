@@ -17,7 +17,7 @@
     <description>Spring Boot MyBatis / MyBatis-Plus 示例集合</description>
 
     <modules>
-        <module>spring-boot-mybatis-pagehelper</module>
+        <module>spring-boot-mybatis-showcase</module>
         <module>spring-boot-mybatisplus-generator</module>
         <module>spring-boot-mybatisplus-generator-velocity</module>
         <module>spring-boot-mybatisplus-crud</module>
