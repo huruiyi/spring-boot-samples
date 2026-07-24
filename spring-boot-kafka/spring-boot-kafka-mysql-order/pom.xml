@@ -4,9 +4,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.example</groupId>
-    <artifactId>spring-boot-samples</artifactId>
+    <groupId>vip.fairy</groupId>
+    <artifactId>spring-boot-kafka</artifactId>
     <version>0.0.1</version>
+    <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>spring-boot-kafka-mysql-order</artifactId>

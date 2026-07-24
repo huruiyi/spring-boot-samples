@@ -31,6 +31,8 @@
   <modules>
     <module>kafka-consumer</module>
     <module>kafka-provider</module>
+    <module>spring-boot-kafka-mysql-order</module>
+    <module>spring-boot-kafka-ordering</module>
   </modules>
 
 </project>
