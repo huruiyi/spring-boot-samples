@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" th:href="@{/static/bootstrap/css/bootstrap.css}"/>
+</head>
+<body class="container">
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<h1>Click <a th:href="@{/hello}">here</a> to see a greeting.</h1>
+</body>
+</html>
