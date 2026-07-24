@@ -1,0 +1,13 @@
+server:
+  port: 8086
+
+spring:
+  jta:
+    atomikos:
+      properties:
+        log-base-dir: ./atomikos-logs
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

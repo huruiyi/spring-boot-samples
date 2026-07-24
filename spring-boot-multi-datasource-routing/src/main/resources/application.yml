@@ -1,0 +1,24 @@
+server:
+  port: 8082
+
+# 主库（写）
+app:
+  datasource:
+    master:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/db_master?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+      username: root
+      password: root
+    # 从库（读）
+    slave:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/db_slave?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+      username: root
+      password: root
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.routing.model
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

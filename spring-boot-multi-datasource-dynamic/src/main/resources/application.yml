@@ -1,0 +1,26 @@
+server:
+  port: 8084
+
+spring:
+  datasource:
+    dynamic:
+      primary: master                  # 默认数据源
+      strict: false                    # true=找不到数据源抛异常，false=使用默认
+      datasource:
+        master:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://127.0.0.1:3306/db_master?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+          username: root
+          password: root
+        slave:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://127.0.0.1:3306/db_slave?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+          username: root
+          password: root
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.example.dynamic.model
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

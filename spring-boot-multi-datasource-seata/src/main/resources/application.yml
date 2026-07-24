@@ -1,0 +1,39 @@
+server:
+  port: 8087
+
+spring:
+  datasource:
+    dynamic:
+      primary: order
+      datasource:
+        order:   # 订单库
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://127.0.0.1:3306/db_order?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+          username: root
+          password: root
+        user:    # 用户库
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://127.0.0.1:3306/db_user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+          username: root
+          password: root
+
+# Seata 配置
+seata:
+  enabled: true
+  tx-service-group: my_test_tx_group      # 事务分组（需与 seata-server 配置一致）
+  service:
+    vgroup-mapping:
+      my_test_tx_group: default           # 事务分组 → 集群名映射
+    grouplist:
+      default: 127.0.0.1:8091             # Seata Server 地址
+  registry:
+    type: file                            # 注册中心：file / nacos / eureka
+  config:
+    type: file                            # 配置中心：file / nacos
+  data-source-proxy-mode: AT              # AT 模式（自动代理数据源）
+
+mybatis-plus:
+  type-aliases-package: com.example.seata
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
