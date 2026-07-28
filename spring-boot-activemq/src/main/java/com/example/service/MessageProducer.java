@@ -12,9 +12,11 @@ public class MessageProducer {
     private static final Logger log = LoggerFactory.getLogger(MessageProducer.class);
 
     private final JmsTemplate jmsTemplate;
+    private final MessageLogService messageLogService;
 
-    public MessageProducer(JmsTemplate jmsTemplate) {
+    public MessageProducer(JmsTemplate jmsTemplate, MessageLogService messageLogService) {
         this.jmsTemplate = jmsTemplate;
+        this.messageLogService = messageLogService;
     }
 
     /**
@@ -23,6 +25,7 @@ public class MessageProducer {
     public void sendToQueue(String destination, TodoMessage message) {
         jmsTemplate.convertAndSend(destination, message);
         log.info("Sent to queue [{}]: {}", destination, message);
+        messageLogService.logSent(destination, "QUEUE", message.toString());
     }
 
     /**
@@ -33,6 +36,7 @@ public class MessageProducer {
         jmsTemplate.convertAndSend(destination, message);
         jmsTemplate.setPubSubDomain(false);
         log.info("Sent to topic [{}]: {}", destination, message);
+        messageLogService.logSent(destination, "TOPIC", message.toString());
     }
 
     /**
@@ -41,6 +45,7 @@ public class MessageProducer {
     public void sendText(String destination, String text) {
         jmsTemplate.convertAndSend(destination, text);
         log.info("Sent text to [{}]: {}", destination, text);
+        messageLogService.logSent(destination, "QUEUE", text);
     }
 
     /**
@@ -51,5 +56,6 @@ public class MessageProducer {
         jmsTemplate.convertAndSend(destination, text);
         jmsTemplate.setPubSubDomain(false);
         log.info("Sent text to topic [{}]: {}", destination, text);
+        messageLogService.logSent(destination, "TOPIC", text);
     }
 }
