@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>应用启动通知</title>
+</head>
+<body style="margin:0;padding:0;background:#f0f4f8;font-family:'Segoe UI',Tahoma,Arial,sans-serif;color:#1a2332;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f0f4f8;padding:32px 12px;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(15,40,70,0.08);">
+        <tr>
+          <td style="background:linear-gradient(135deg,#0f766e,#115e59);padding:28px 32px;">
+            <div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#99f6e4;margin-bottom:8px;">Startup Notification</div>
+            <div style="font-size:24px;font-weight:700;color:#ffffff;" th:text="${appName}">application</div>
+            <div style="margin-top:10px;font-size:14px;color:#ccfbf1;">应用已成功启动</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:28px 32px 8px;">
+            <p style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#334155;">
+              这是一封<strong>启动通知</strong>邮件（详细版），汇总了本次启动的关键运行信息。
+            </p>
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;font-size:14px;">
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#64748b;width:36%;">启动时间</td>
+                <td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#0f172a;font-weight:600;" th:text="${startTime}">-</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#64748b;">进程 ID</td>
+                <td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#0f172a;font-weight:600;" th:text="${pid}">-</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#64748b;">Active Profiles</td>
+                <td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#0f172a;font-weight:600;" th:text="${profiles}">default</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#64748b;">Bean 数量</td>
+                <td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#0f172a;font-weight:600;" th:text="${beanCount}">0</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#64748b;">Java 版本</td>
+                <td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#0f172a;font-weight:600;" th:text="${javaVersion}">-</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#64748b;">主机地址</td>
+                <td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#0f172a;font-weight:600;" th:text="${hostAddress}">localhost</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#64748b;">Local URL</td>
+                <td style="padding:10px 0;border-bottom:1px solid #e2e8f0;">
+                  <a th:href="${localUrl}" th:text="${localUrl}" style="color:#0f766e;text-decoration:none;font-weight:600;">-</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;color:#64748b;">External URL</td>
+                <td style="padding:10px 0;">
+                  <a th:href="${externalUrl}" th:text="${externalUrl}" style="color:#0f766e;text-decoration:none;font-weight:600;">-</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:8px 32px 28px;">
+            <div style="margin-top:12px;padding:14px 16px;background:#f0fdfa;border-left:4px solid #0f766e;border-radius:6px;font-size:13px;color:#115e59;line-height:1.5;">
+              提示：日常联调请使用 <code>/mail/send1</code>、<code>/mail/send2</code>，勿与启动通知混淆。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="background:#f8fafc;padding:16px 32px;font-size:12px;color:#94a3b8;text-align:center;">
+            Spring Boot Sample · 自动启动通知
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "properties": [
+    {
+      "name": "management.endpoint.datetime.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Whether to enable the datetime actuator endpoint.",
+      "defaultValue": true
+    }
+  ]
+}

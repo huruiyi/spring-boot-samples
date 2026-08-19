@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>邮件联调测试</title>
+</head>
+<body style="margin:0;padding:0;background:#faf7f2;font-family:'Segoe UI',Tahoma,Arial,sans-serif;color:#292524;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#faf7f2;padding:32px 12px;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="560" cellspacing="0" cellpadding="0" style="max-width:560px;width:100%;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(68,40,20,0.08);">
+        <tr>
+          <td style="background:#c2410c;padding:22px 28px;">
+            <div style="display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,0.2);color:#fff7ed;font-size:12px;letter-spacing:0.5px;">
+              日常测试 · 非启动通知
+            </div>
+            <div style="margin-top:12px;font-size:22px;font-weight:700;color:#ffffff;">HTML 邮件联调</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:28px;">
+            <p style="margin:0 0 14px;font-size:15px;line-height:1.7;color:#44403c;" th:text="${msg}">
+              测试内容
+            </p>
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:14px;border-collapse:collapse;">
+              <tr>
+                <td style="padding:8px 0;color:#78716c;width:30%;">发送时间</td>
+                <td style="padding:8px 0;font-weight:600;color:#1c1917;" th:text="${sentAt}">-</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 0;color:#78716c;">接口</td>
+                <td style="padding:8px 0;font-weight:600;color:#1c1917;" th:text="${endpoint}">/mail/send2</td>
+              </tr>
+            </table>
+            <div style="margin-top:20px;padding:12px 14px;background:#fff7ed;border-radius:8px;font-size:13px;color:#9a3412;line-height:1.5;">
+              本邮件由 <strong>MailController</strong> 手动触发，用于验证 SMTP / 模板渲染，与启动时的 ApplicationRunner 通知无关。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="background:#f5f5f4;padding:14px 28px;font-size:12px;color:#a8a29e;text-align:center;">
+            Spring Boot Sample · MailController 测试
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
