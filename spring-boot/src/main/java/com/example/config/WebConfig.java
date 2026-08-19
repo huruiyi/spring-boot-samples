@@ -2,14 +2,13 @@ package com.example.config;
 
 import com.example.enums.HttpStatusCode;
 import com.example.exception.BusinessException;
+import com.example.utils.PathUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint;
 import org.springframework.boot.web.context.WebServerInitializedEvent;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.ApplicationEventMulticaster;
@@ -22,9 +21,9 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.filter.OncePerRequestFilter;
+import org.springframework.lang.NonNull;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
-import org.wildfly.common.annotation.NotNull;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -47,11 +46,11 @@ import java.util.Map;
 @EnableScheduling
 public class WebConfig implements ApplicationListener<WebServerInitializedEvent> {
 
-  @Autowired
-  private Environment env;
+  private final Environment env;
 
-  @Autowired
-  private ConfigurableApplicationContext context;
+  public WebConfig(Environment env) {
+    this.env = env;
+  }
 
   /**
    * 强制 HTTPS 重定向配置
@@ -60,12 +59,14 @@ public class WebConfig implements ApplicationListener<WebServerInitializedEvent>
   public OncePerRequestFilter httpsRedirectFilter() {
     return new OncePerRequestFilter() {
       @Override
-      protected void doFilterInternal(@NotNull HttpServletRequest request, @NotNull HttpServletResponse response, @NotNull FilterChain filterChain)
+      protected void doFilterInternal(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response,
+                                      @NonNull FilterChain filterChain)
           throws ServletException, IOException {
         boolean sslEnabled = env.getProperty("server.ssl.enabled", Boolean.class, env.getProperty("server.ssl.key-store") != null);
         if (sslEnabled && !request.isSecure()) {
           String queryString = request.getQueryString() == null ? "" : "?" + request.getQueryString();
-          String httpsUrl = "https://" + request.getServerName() + ":443" + request.getRequestURI() + queryString;
+          String httpsUrl = PathUtils.baseUrl("https", request.getServerName(), 443)
+              + request.getRequestURI() + queryString;
           response.sendRedirect(httpsUrl);
           return;
         }
@@ -115,8 +116,8 @@ public class WebConfig implements ApplicationListener<WebServerInitializedEvent>
     System.out.println("应用 '" + env.getProperty("spring.application.name", "application") + "' 已启动!");
     System.out.println("进程 ID: " + pid);
     System.out.println("访问URL:");
-    System.out.println("  Local: \t" + protocol + "://localhost:" + serverPort + contextPath);
-    System.out.println("  External: \t" + protocol + "://" + hostAddress + ":" + serverPort + contextPath);
+    System.out.println("  Local: \t" + PathUtils.baseUrl(protocol, "localhost", Integer.parseInt(serverPort)) + contextPath);
+    System.out.println("  External: \t" + PathUtils.baseUrl(protocol, hostAddress, Integer.parseInt(serverPort)) + contextPath);
     System.out.println("----------------------------------------------------------\n");
   }
 
@@ -232,8 +233,8 @@ public class WebConfig implements ApplicationListener<WebServerInitializedEvent>
     info.put("beanCount", beanNames.length);
     info.put("javaVersion", System.getProperty("java.version"));
     info.put("hostAddress", hostAddress);
-    info.put("localUrl", protocol + "://localhost:" + serverPort + contextPath);
-    info.put("externalUrl", protocol + "://" + hostAddress + ":" + serverPort + contextPath);
+    info.put("localUrl", PathUtils.baseUrl(protocol, "localhost", Integer.parseInt(serverPort)) + contextPath);
+    info.put("externalUrl", PathUtils.baseUrl(protocol, hostAddress, Integer.parseInt(serverPort)) + contextPath);
     return info;
   }
 

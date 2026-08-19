@@ -782,8 +782,9 @@
     {group: "RedisController", method: "GET", path: "/redis/setList", title: "设置 Redis 列表", params: [{name: "key", value: "demo:list"}]},
     {group: "RedisController", method: "GET", path: "/redis/hash", title: "Hash 操作"},
 
-    {group: "UrlShortenerController", method: "GET", path: "/rest/url/test123", title: "获取短链接"},
-    {group: "UrlShortenerController", method: "POST", path: "/rest/url", title: "创建短链接", contentType: "text/plain", body: "https://spring.io/projects/spring-boot"},
+    {group: "UrlShortenerController", method: "POST", path: "/rest/url", title: "1.创建短链接", contentType: "text/plain", body: "https://spring.io/projects/spring-boot"},
+    {group: "UrlShortenerController", method: "GET", path: "/rest/url/{code}", title: "2.查询短链接(不跳转)", params: [{name: "code", value: ""}]},
+    {group: "UrlShortenerController", method: "GET", path: "/s/{code}", title: "3.访问短链接(302跳转)", params: [{name: "code", value: ""}]},
 
     {group: "Actuator", method: "GET", path: "/actuator", title: "端点列表"},
     {group: "Actuator", method: "GET", path: "/actuator/health", title: "健康检查"},
@@ -791,7 +792,8 @@
     {group: "Actuator", method: "GET", path: "/actuator/metrics", title: "指标"},
     {group: "Actuator", method: "GET", path: "/actuator/env", title: "环境变量"},
     {group: "Actuator", method: "GET", path: "/actuator/beans", title: "Beans 列表"},
-    {group: "Actuator", method: "GET", path: "/actuator/datetime", title: "自定义日期端点"}
+    {group: "Actuator", method: "GET", path: "/actuator/datetime", title: "自定义日期端点·查询"},
+    {group: "Actuator", method: "POST", path: "/actuator/datetime", title: "自定义日期端点·改格式", contentType: "application/json", body: {"format": "yyyy年MM月dd日 HH:mm:ss"}},
   ];
 
   const state = {
@@ -900,10 +902,18 @@
   }
 
   function buildUrl() {
-    const raw = url.value.trim() || "/";
-    const target = new URL(raw, window.location.origin);
+    let path = url.value.trim() || "/";
+    const pathParams = new Set();
     document.querySelectorAll("[data-param]").forEach((input) => {
-      if (input.value !== "") {
+      const token = "{" + input.dataset.param + "}";
+      if (path.includes(token) && input.value !== "") {
+        path = path.split(token).join(encodeURIComponent(input.value));
+        pathParams.add(input.dataset.param);
+      }
+    });
+    const target = new URL(path, window.location.origin);
+    document.querySelectorAll("[data-param]").forEach((input) => {
+      if (input.value !== "" && !pathParams.has(input.dataset.param)) {
         target.searchParams.set(input.dataset.param, input.value);
       }
     });
