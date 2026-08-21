@@ -722,8 +722,10 @@
     {group: "DemoController", method: "GET", path: "/demo/greeting", title: "Greeting 对象"},
     {group: "DemoController", method: "GET", path: "/demo/service", title: "服务注入测试"},
     {group: "DemoController", method: "GET", path: "/demo/testMap", title: "Map 返回"},
-    {group: "DemoController", method: "GET", path: "/demo/testAnnotation", title: "注解测试", params: [{name: "uName", value: "Li San"}, {name: "age", value: "18"}]},
+    {group: "DemoController", method: "GET", path: "/demo/testAnnotation", title: "注解测试", params: [{name: "name", value: "Li San"}, {name: "age", value: "18"}]},
     {group: "DemoController", method: "GET", path: "/demo/p1", title: "参数测试"},
+    {group: "DemoController", method: "POST", path: "/randomNumberGenerator/from/{from}/to/{to}", title: "随机数生成", contentType: "text/plain", body: "Test", params: [{name: "from", value: "1"}, {name: "to", value: "10"}, {name: "defaultResp", value: "false"}]},
+    {group: "DemoController", method: "POST", path: "/randomNumberGenerator/from/{from}/to/{to}", title: "随机数生成·默认响应", contentType: "text/plain", body: "Test", params: [{name: "from", value: "1"}, {name: "to", value: "10"}, {name: "defaultResp", value: "true"}]},
  
     {group: "RuntimeController", method: "GET", path: "/runtime/env", title: "环境变量"},
     {group: "RuntimeController", method: "GET", path: "/runtime/session", title: "Session 写入"},
@@ -858,7 +860,7 @@
     }
 
     endpointList.innerHTML = items.map((item) => `
-      <button class="endpoint-item ${item === state.selected ? "active" : ""}" data-path="${item.path}" data-method="${item.method}" type="button">
+      <button class="endpoint-item ${item === state.selected ? "active" : ""}" data-path="${item.path}" data-method="${item.method}" data-title="${item.title}" type="button">
         <span class="${methodClass(item.method)}">${item.method}</span>
         <span>
           <span class="endpoint-title">${item.title}</span>
@@ -1007,7 +1009,10 @@
     if (!button) {
       return;
     }
-    const item = endpoints.find((entry) => entry.path === button.dataset.path && entry.method === button.dataset.method);
+    const item = endpoints.find((entry) =>
+        entry.path === button.dataset.path
+        && entry.method === button.dataset.method
+        && entry.title === button.dataset.title);
     if (item) {
       selectEndpoint(item);
     }
