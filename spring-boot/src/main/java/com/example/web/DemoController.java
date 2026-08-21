@@ -3,24 +3,39 @@ package com.example.web;
 import com.example.annotation.ParamsAnnotation;
 import com.example.model.Greeting;
 import com.example.service.impl.SingleService;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ThreadLocalRandom;
-
+import com.example.utils.SecureClientIpResolver;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
+import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
+
+@Slf4j
 @RestController
 @EnableAspectJAutoProxy
 public class DemoController {
+
+  /**
+   * 可信代理 CIDR（负载均衡 / 反向代理）。生产环境请替换为真实代理网段，不要包含公网客户端网段。
+   */
+  private static final List<String> TRUSTED_PROXY_CIDRS = Arrays.asList(
+      "127.0.0.1/32",
+      "::1/128"
+  );
+
+  private final SecureClientIpResolver clientIpResolver =
+      new SecureClientIpResolver(TRUSTED_PROXY_CIDRS);
+
+  @PostConstruct
+  public void logSomething() {
+    log.debug("Sample Debug Message");
+    log.trace("Sample Trace Message");
+  }
 
   //1：构造函数注入
   final SingleService singleService1;
@@ -88,4 +103,20 @@ public class DemoController {
     int max = Math.max(from, to);
     return String.valueOf(ThreadLocalRandom.current().nextInt(min, max + 1));
   }
+
+  @GetMapping("/secure-real-ip")
+  public String getSecureRealIp(HttpServletRequest request) {
+    return "Secure real IP: " + clientIpResolver.resolve(request);
+  }
+
+  @GetMapping("/request-info")
+  public Map<String, String> getRequestInfo(HttpServletRequest request) {
+    Map<String, String> info = new LinkedHashMap<>();
+    info.put("remoteAddr", request.getRemoteAddr());
+    info.put("xForwardedFor", request.getHeader("X-Forwarded-For"));
+    info.put("xRealIP", request.getHeader("X-Real-IP"));
+    info.put("secureRealIP", clientIpResolver.resolve(request));
+    return info;
+  }
+
 }
