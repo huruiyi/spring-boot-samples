@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example</groupId>
@@ -15,6 +15,11 @@
     <version>2.7.18</version>
   </parent>
 
+  <properties>
+    <!-- JDK 23 需要 1.18.36+ 的 Lombok，且需显式声明注解处理器 -->
+    <lombok.version>1.18.42</lombok.version>
+  </properties>
+
   <modules>
     <module>spring-boot</module>
     <module>spring-boot-activemq</module>
@@ -22,23 +27,17 @@
     <module>spring-boot-admin-client</module>
     <module>spring-boot-admin-server</module>
     <module>spring-boot-batch</module>
-
     <module>spring-boot-data</module>
     <module>spring-boot-docker</module>
     <module>spring-boot-dubbo</module>
     <module>spring-boot-flowable-pro</module>
     <module>spring-boot-flowable-simple</module>
     <module>spring-boot-kafka</module>
-
     <module>spring-boot-mongo</module>
-
     <module>spring-boot-mybatis</module>
-
     <module>spring-boot-redis</module>
     <module>spring-boot-security</module>
-
     <module>spring-boot-self-starter-test</module>
-
     <module>spring-boot-oauth2</module>
     <module>spring-boot-openapi</module>
     <module>spring-boot-prometheus</module>
@@ -56,6 +55,13 @@
           <source>${java.version}</source>
           <target>${java.version}</target>
           <encoding>utf-8</encoding>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+            </path>
+          </annotationProcessorPaths>
         </configuration>
       </plugin>
       <plugin>

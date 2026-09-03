@@ -1,92 +1,275 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WebSocket Tester</title>
-  <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    let ping;
-    let websocket;
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    :root {
+      --bg: #0b1120;
+      --card: #141d33;
+      --card-2: #0d1425;
+      --border: #26334f;
+      --text: #e6ecf7;
+      --muted: #93a4c3;
+      --accent: #6366f1;
+      --accent-2: #8b5cf6;
+      --accent-soft: rgba(99, 102, 241, .16);
+      --ok: #34d399;
+      --err: #f87171;
+      --term-bg: #0a101d;
+      --radius: 14px;
+      --mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "JetBrains Mono", monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      min-height: 100vh;
+      background:
+        radial-gradient(1100px 520px at 15% -10%, var(--accent-soft), transparent 60%),
+        radial-gradient(900px 460px at 95% -5%, rgba(56, 189, 248, .10), transparent 55%),
+        var(--bg);
+    }
+    .app { max-width: 1020px; margin: 0 auto; padding: 28px 20px 56px; }
 
-    jQuery(function ($) {
+    .app-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 22px; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 13px; }
+    .brand-mark { width: 44px; height: 44px; border-radius: 13px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 21px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 8px 22px rgba(99, 102, 241, .35); }
+    .brand h1 { font-size: 19px; font-weight: 700; margin: 0; letter-spacing: .2px; }
+    .brand p { margin: 3px 0 0; font-size: 12.5px; color: var(--muted); }
+    .pill { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); font-family: var(--mono); font-size: 12px; color: var(--muted); }
+    .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: #64748b; }
+    .pill.on { color: var(--ok); border-color: rgba(52, 211, 153, .45); background: rgba(52, 211, 153, .08); }
+    .pill.on .dot { background: var(--ok); box-shadow: 0 0 10px var(--ok); animation: pulse 1.5s infinite; }
+    @keyframes pulse { 50% { opacity: .4; } }
 
-      function writePing(message) {
-        $('#pingOutput').append(message + '\n');
-      }
+    .layout { display: grid; grid-template-columns: 320px 1fr; gap: 16px; align-items: start; }
+    .controls { display: grid; gap: 16px; }
 
-      function writeStatus(message) {
-        $("#statusOutput").val($("#statusOutput").val() + message + '\n');
-      }
+    .card { background: linear-gradient(180deg, rgba(255, 255, 255, .025), rgba(255, 255, 255, 0) 40%), var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 14px 34px rgba(2, 6, 23, .38); }
+    .card.pad { padding: 18px; }
+    .card h2 { font-size: 11.5px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+    label.f { display: block; margin: 0 0 7px 3px; font-size: 12px; color: var(--muted); }
+    input[type="text"], input:not([type]) {
+      width: 100%; padding: 10px 12px; font-size: 14px; font-family: var(--sans); color: var(--text);
+      background: var(--card-2); border: 1px solid var(--border); border-radius: 10px; outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    input.mono { font-family: var(--mono); font-size: 13px; }
+    input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
 
-      function writeMessage(message) {
-        $('#messageOutput').append(message + '\n')
-      }
+    button { border: none; border-radius: 10px; padding: 10px 16px; font-size: 14px; font-weight: 600; font-family: var(--sans); color: #fff; background: var(--accent); cursor: pointer; transition: filter .15s, transform .06s, opacity .15s; }
+    button:hover:not(:disabled) { filter: brightness(1.13); }
+    button:active:not(:disabled) { transform: translateY(1px); }
+    button:disabled { opacity: .42; cursor: not-allowed; }
+    button.danger { background: transparent; border: 1px solid rgba(248, 113, 113, .45); color: var(--err); }
+    button.danger:hover:not(:disabled) { filter: none; background: rgba(248, 113, 113, .09); border-color: rgba(248, 113, 113, .7); }
+    .btn-row { display: flex; gap: 10px; margin-top: 14px; }
+    .btn-row > button { flex: 1; }
 
-      $('#connect').click(function doConnect() {
-        websocket = new WebSocket($("#target").val());
-        websocket.onopen = function (evt) {
-          writeStatus("CONNECTED");
-          var ping = setInterval(function () {
-            if (websocket != "undefined") {
-              websocket.send("ping");
-            }
-          }, 3000);
-        };
-        websocket.onclose = function (evt) {
-          writeStatus("DISCONNECTED");
-        };
-        websocket.onmessage = function (evt) {
-          if (evt.data === "ping") {
-            writePing(evt.data);
-          } else {
-            writeMessage('ECHO: ' + evt.data);
-          }
-        };
-        websocket.onerror = function (evt) {
-          onError(writeStatus('ERROR:' + evt.data))
-        };
-      });
+    .term-grid { display: grid; gap: 16px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .term-card { overflow: hidden; }
+    .term-head { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-bottom: 1px solid var(--border); font-size: 11px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; color: var(--muted); background: rgba(255, 255, 255, .015); }
+    .tag { font-family: var(--mono); font-size: 10px; letter-spacing: .5px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); text-transform: none; }
+    .tag.green { color: var(--ok); border-color: rgba(52, 211, 153, .35); }
+    pre.term { margin: 0; padding: 12px 14px; overflow: auto; font-family: var(--mono); font-size: 12.5px; line-height: 1.6; white-space: pre-wrap; word-break: break-all; background: var(--term-bg); }
+    #messageOutput { height: 224px; color: #86efac; }
+    #statusOutput { height: 132px; color: #fbbf24; }
+    #pingOutput { height: 132px; color: #a5b4fc; }
 
-      $('#disconnect')
-      .click(function () {
-        if (typeof websocket != 'undefined') {
-          websocket.close();
-          websocket = undefined;
-        } else {
-          alert("Not connected.");
-        }
-      });
+    .tip p { margin: 0; font-size: 13px; line-height: 1.65; color: var(--muted); }
+    .mono { font-family: var(--mono); font-size: .95em; color: #a5b4fc; }
+    .hint { margin-top: 20px; text-align: center; font-family: var(--mono); font-size: 11.5px; color: #55658a; }
 
-      $('#send').click(function () {
-        if (typeof websocket != 'undefined') {
-          websocket.send($('#message').val());
-        } else {
-          alert("Not connected.");
-        }
-      });
-    });
+    ::-webkit-scrollbar { width: 9px; height: 9px; }
+    ::-webkit-scrollbar-thumb { background: #2a3a5e; border-radius: 8px; }
+    ::-webkit-scrollbar-thumb:hover { background: #35497a; }
+    ::-webkit-scrollbar-track { background: transparent; }
 
-
-  </script>
+    @media (max-width: 880px) {
+      .layout, .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
-<h2>WebSocket Tester</h2>
-Target:
+<div class="app">
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-mark">⚡</div>
+      <div>
+        <h1>WebSocket Tester</h1>
+        <p>Native WebSocket · echo server demo</p>
+      </div>
+    </div>
+    <div class="pill" id="connPill"><span class="dot"></span><span id="connLabel">Disconnected</span></div>
+  </header>
 
-<input id="target" size="40" value="ws://localhost:8080/echoHandler"/>
-<br/>
-<button id="connect">Connect</button>
-<button id="disconnect">Disconnect</button>
-<br/>
-<br/>Message:
-<input id="message" value=""/>
-<button id="send">Send</button>
-<br/>
-<p>Status output:</p>
-<pre><textarea cols="50" id="statusOutput" rows="10"></textarea></pre>
-<p>Message output:</p>
-<pre><textarea cols="50" id="messageOutput" rows="10"></textarea></pre>
-<p>Ping output:</p>
-<pre><textarea cols="50" id="pingOutput" rows="10"></textarea></pre>
+  <main class="layout">
+    <aside class="controls">
+      <section class="card pad">
+        <h2>Connection</h2>
+        <label class="f" for="target">Endpoint</label>
+        <input id="target" class="mono" value="ws://localhost:8080/echoHandler" spellcheck="false" autocomplete="off">
+        <div class="btn-row">
+          <button id="connect">Connect</button>
+          <button id="disconnect" class="danger" disabled>Disconnect</button>
+        </div>
+      </section>
+
+      <section class="card pad">
+        <h2>Message</h2>
+        <label class="f" for="message">Payload</label>
+        <input id="message" placeholder="Type a message…" autocomplete="off">
+        <div class="btn-row">
+          <button id="send" disabled>Send</button>
+        </div>
+      </section>
+
+      <section class="card pad tip">
+        <h2>How it works</h2>
+        <p>Opens a native <span class="mono">WebSocket</span> to the endpoint above. The server echoes every message
+          back, and a <span class="mono">ping</span> frame is sent every 3&nbsp;s to keep the connection alive.</p>
+      </section>
+    </aside>
+
+    <section class="term-grid">
+      <div class="card term-card">
+        <div class="term-head"><span>Messages</span><span class="tag green">echo</span></div>
+        <pre id="messageOutput" class="term"></pre>
+      </div>
+      <div class="grid-2">
+        <div class="card term-card">
+          <div class="term-head"><span>Status</span></div>
+          <pre id="statusOutput" class="term"></pre>
+        </div>
+        <div class="card term-card">
+          <div class="term-head"><span>Ping</span><span class="tag">3s</span></div>
+          <pre id="pingOutput" class="term"></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="hint">spring-boot-samples · websocket-basic</footer>
+</div>
+
+<script type="text/javascript">
+  var socket = null;
+  var pingTimer = null;
+
+  jQuery(function ($) {
+
+    function ts() {
+      return new Date().toLocaleTimeString();
+    }
+
+    function appendLine(id, text) {
+      var el = document.getElementById(id);
+      el.appendChild(document.createTextNode(text));
+      el.scrollTop = el.scrollHeight;
+    }
+
+    function writePing(message) {
+      appendLine('pingOutput', '[' + ts() + '] ' + message + '\n');
+    }
+
+    function writeStatus(message) {
+      appendLine('statusOutput', '[' + ts() + '] ' + message + '\n');
+    }
+
+    function writeMessage(message) {
+      appendLine('messageOutput', message + '\n');
+    }
+
+    function setConnected(on) {
+      $('#connect').prop('disabled', on);
+      $('#disconnect').prop('disabled', !on);
+      $('#send').prop('disabled', !on);
+      $('#connPill').toggleClass('on', on);
+      $('#connLabel').text(on ? 'Connected' : 'Disconnected');
+    }
+
+    function startPing() {
+      pingTimer = setInterval(function () {
+        if (socket) {
+          socket.send('ping');
+        }
+      }, 3000);
+    }
+
+    function stopPing() {
+      clearInterval(pingTimer);
+      pingTimer = null;
+    }
+
+    $('#connect').click(function () {
+      if (socket) {
+        return;
+      }
+      var url = $('#target').val();
+      writeStatus('Connecting to ' + url + ' …');
+      socket = new WebSocket(url);
+
+      socket.onopen = function () {
+        writeStatus('CONNECTED');
+        setConnected(true);
+        startPing();
+      };
+
+      socket.onclose = function () {
+        writeStatus('DISCONNECTED');
+        stopPing();
+        socket = null;
+        setConnected(false);
+      };
+
+      socket.onmessage = function (evt) {
+        if (evt.data === 'ping') {
+          writePing(evt.data);
+        } else {
+          writeMessage('ECHO: ' + evt.data);
+        }
+      };
+
+      socket.onerror = function () {
+        writeStatus('ERROR: connection failed');
+      };
+    });
+
+    $('#disconnect').click(function () {
+      if (socket) {
+        stopPing();
+        socket.close();
+      } else {
+        writeStatus('Not connected.');
+      }
+    });
+
+    function send() {
+      if (socket && socket.readyState === WebSocket.OPEN) {
+        socket.send($('#message').val());
+      } else {
+        writeStatus('Not connected.');
+      }
+    }
+
+    $('#send').click(send);
+
+    $('#message').on('keydown', function (e) {
+      if (e.key === 'Enter') {
+        send();
+      }
+    });
+
+    setConnected(false);
+  });
+</script>
 </body>
 </html>

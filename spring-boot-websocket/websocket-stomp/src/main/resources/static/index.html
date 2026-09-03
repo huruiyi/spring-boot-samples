@@ -1,32 +1,153 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>WebSocket with SockJS Tester</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stock Ticker</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
   <script src="../js/sockjs.min.js"></script>
   <script src="../js/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.bootcdn.net/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+  <script src="../js/stomp.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    :root {
+      --bg: #0b1120;
+      --card: #141d33;
+      --card-2: #0d1425;
+      --border: #26334f;
+      --text: #e6ecf7;
+      --muted: #93a4c3;
+      --accent: #10b981;
+      --accent-2: #34d399;
+      --accent-soft: rgba(16, 185, 129, .14);
+      --ok: #34d399;
+      --err: #f87171;
+      --radius: 14px;
+      --mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "JetBrains Mono", monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      min-height: 100vh;
+      background:
+        radial-gradient(1100px 520px at 15% -10%, var(--accent-soft), transparent 60%),
+        radial-gradient(900px 460px at 95% -5%, rgba(56, 189, 248, .10), transparent 55%),
+        var(--bg);
+    }
+    .app { max-width: 1020px; margin: 0 auto; padding: 28px 20px 56px; }
+
+    .app-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 22px; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 13px; }
+    .brand-mark { width: 44px; height: 44px; border-radius: 13px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 21px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 8px 22px rgba(16, 185, 129, .3); }
+    .brand h1 { font-size: 19px; font-weight: 700; margin: 0; letter-spacing: .2px; }
+    .brand p { margin: 3px 0 0; font-size: 12.5px; color: var(--muted); }
+    .pill { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); font-family: var(--mono); font-size: 12px; color: var(--muted); }
+    .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: #64748b; }
+    .pill.on { color: var(--ok); border-color: rgba(52, 211, 153, .45); background: rgba(52, 211, 153, .08); }
+    .pill.on .dot { background: var(--ok); box-shadow: 0 0 10px var(--ok); animation: pulse 1.5s infinite; }
+    @keyframes pulse { 50% { opacity: .4; } }
+
+    .ticker-grid { display: grid; grid-template-columns: 1fr 300px; gap: 16px; align-items: start; }
+    .side { display: grid; gap: 16px; }
+
+    .card { background: linear-gradient(180deg, rgba(255, 255, 255, .025), rgba(255, 255, 255, 0) 40%), var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 14px 34px rgba(2, 6, 23, .38); }
+    .card.pad { padding: 18px; }
+    .card h2 { font-size: 11.5px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+    label.f { display: block; margin: 0 0 7px 3px; font-size: 12px; color: var(--muted); }
+    input[type="text"], input[type="number"], input:not([type]) {
+      width: 100%; padding: 10px 12px; font-size: 14px; font-family: var(--sans); color: var(--text);
+      background: var(--card-2); border: 1px solid var(--border); border-radius: 10px; outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    input.mono { font-family: var(--mono); font-size: 13px; }
+    input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+    input.invalid { border-color: var(--err); box-shadow: 0 0 0 3px rgba(248, 113, 113, .15); }
+
+    button { border: none; border-radius: 10px; padding: 10px 16px; font-size: 14px; font-weight: 600; font-family: var(--sans); color: #06281d; background: linear-gradient(135deg, var(--accent), var(--accent-2)); cursor: pointer; transition: filter .15s, transform .06s; }
+    button:hover { filter: brightness(1.08); }
+    button:active { transform: translateY(1px); }
+    .add-card button { width: 100%; margin-top: 14px; }
+    .field { margin-bottom: 12px; }
+
+    .table-card { overflow: hidden; }
+    table { width: 100%; border-collapse: collapse; }
+    thead th { padding: 12px 18px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); }
+    tbody td { padding: 13px 18px; border-bottom: 1px solid rgba(38, 51, 79, .55); font-size: 14px; }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: rgba(255, 255, 255, .02); }
+    td.price { font-family: var(--mono); font-weight: 700; }
+    td.price.up { color: var(--ok); animation: flash-up 1s ease-out; }
+    td.price.down { color: var(--err); animation: flash-down 1s ease-out; }
+    @keyframes flash-up { 0% { background: rgba(52, 211, 153, .18); } 100% { background: transparent; } }
+    @keyframes flash-down { 0% { background: rgba(248, 113, 113, .18); } 100% { background: transparent; } }
+    .code-chip { display: inline-block; padding: 3px 10px; border-radius: 6px; background: var(--accent-soft); color: #6ee7b7; font-family: var(--mono); font-size: 12.5px; font-weight: 700; letter-spacing: .5px; }
+    td.time { font-family: var(--mono); color: var(--muted); font-size: 12.5px; }
+    tr.empty td { text-align: center; color: #55658a; font-family: var(--mono); font-size: 12.5px; padding: 40px 0; }
+
+    .tip p { margin: 0; font-size: 13px; line-height: 1.65; color: var(--muted); }
+    .mono { font-family: var(--mono); font-size: .95em; color: #6ee7b7; }
+    .hint { margin-top: 20px; text-align: center; font-family: var(--mono); font-size: 11.5px; color: #55658a; }
+
+    ::-webkit-scrollbar { width: 9px; height: 9px; }
+    ::-webkit-scrollbar-thumb { background: #2a3a5e; border-radius: 8px; }
+    ::-webkit-scrollbar-thumb:hover { background: #35497a; }
+    ::-webkit-scrollbar-track { background: transparent; }
+
+    @media (max-width: 880px) {
+      .ticker-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 
   <script type="text/javascript">
     var stomp = null;
+    var prevPrices = {};
 
     $(document).ready(function () {
       var socket = new SockJS("http://localhost:8080/ws");
       stomp = Stomp.over(socket);
       stomp.connect({}, function (frame) {
+        setLive(true);
         console.log('Connected: ' + frame);
         stomp.subscribe('/topic/price', function (message) {
           displayStockPrice(JSON.parse(message.body));
         });
+      }, function () {
+        setLive(false);
       });
     });
 
+    function setLive(on) {
+      $('#connPill').toggleClass('on', on);
+      $('#connLabel').text(on ? 'Live' : 'Offline');
+    }
+
     function sendMessage() {
-      var code = $('.addStock .code').val();
-      var price = Number($('.addStock .price').val());
+      var codeInput = $('.addStock .code');
+      var priceInput = $('.addStock .price');
+      var code = codeInput.val().trim();
+      var price = Number(priceInput.val());
+
+      if (!code || isNaN(price) || price <= 0) {
+        markInvalid(codeInput, !code);
+        markInvalid(priceInput, !(price > 0));
+        return;
+      }
 
       var jsonstr = JSON.stringify({'code': code, 'price': price});
-
       stomp.send("/app/addStock", {}, jsonstr);
+
+      codeInput.val('');
+      priceInput.val('');
+      codeInput.focus();
+    }
+
+    function markInvalid(input, on) {
+      input.toggleClass('invalid', on);
+      if (on) {
+        setTimeout(function () { input.removeClass('invalid'); }, 1500);
+      }
     }
 
     function displayStockPrice(messageBody) {
@@ -34,39 +155,91 @@
 
       $('#price').empty();
 
+      var count = 0;
       for (var i in prices) {
+        count++;
         var price = prices[i];
+        var direction = '';
+        if (prevPrices[price.code] !== undefined && prevPrices[price.code] !== price.price) {
+          direction = price.price > prevPrices[price.code] ? 'up' : 'down';
+        }
+        prevPrices[price.code] = price.price;
 
         $('#price').append(
             $('<tr>').append(
-                $('<td>').html(price.code),
-                $('<td>').html(price.price.toFixed(2)),
-                $('<td>').html(price.dateTimeFormatted)
+                $('<td>').html($('<span class="code-chip">').text(price.code)),
+                $('<td class="price ' + direction + '">').text(price.price.toFixed(2)),
+                $('<td class="time">').text(price.dateTimeFormatted)
+            )
+        );
+      }
+
+      if (count === 0) {
+        $('#price').append(
+            $('<tr class="empty">').append(
+                $('<td colspan="3">').text('Waiting for stock data…')
             )
         );
       }
     }
-
-
   </script>
 </head>
 
 <body>
-<h1><b>Stock Ticker</b></h1>
-<table border="1">
-  <thead>
-  <tr>
-    <th>Code</th>
-    <th>Price</th>
-    <th>Time</th>
-  </tr>
-  </thead>
-  <tbody id="price"></tbody>
-</table>
-<p class="addStock">
-  Code: <input class="code"/><br/>
-  Price: <input class="price"/><br/>
-  <button class="addStockButton" onclick="sendMessage();">Add Stock</button>
-</p>
+<div class="app">
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-mark">📈</div>
+      <div>
+        <h1>Stock Ticker</h1>
+        <p>STOMP over SockJS · live price broadcast</p>
+      </div>
+    </div>
+    <div class="pill" id="connPill"><span class="dot"></span><span id="connLabel">Connecting…</span></div>
+  </header>
+
+  <main class="ticker-grid">
+    <section class="card table-card">
+      <table>
+        <thead>
+        <tr>
+          <th>Code</th>
+          <th>Price</th>
+          <th>Time</th>
+        </tr>
+        </thead>
+        <tbody id="price">
+        <tr class="empty">
+          <td colspan="3">Waiting for stock data…</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <aside class="side">
+      <form class="card pad addStock" onsubmit="sendMessage(); return false;">
+        <h2>Add Stock</h2>
+        <div class="field">
+          <label class="f">Stock code</label>
+          <input class="code mono" placeholder="e.g. AAPL" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="field">
+          <label class="f">Initial price</label>
+          <input class="price" type="number" step="0.01" min="0" placeholder="0.00">
+        </div>
+        <button type="submit" class="addStockButton">Add Stock</button>
+      </form>
+
+      <section class="card pad tip">
+        <h2>How it works</h2>
+        <p>The page subscribes to <span class="mono">/topic/price</span> on connect. New stocks are sent to
+          <span class="mono">/app/addStock</span> and the server broadcasts updated prices to every subscriber —
+          open this page in several tabs to watch them update together.</p>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="hint">spring-boot-samples · websocket-stomp</footer>
+</div>
 </body>
 </html>
