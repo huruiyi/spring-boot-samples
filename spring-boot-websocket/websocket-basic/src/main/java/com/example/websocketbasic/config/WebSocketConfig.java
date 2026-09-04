@@ -18,11 +18,17 @@ public class WebSocketConfig implements WebSocketConfigurer {
 
   @Override
   public void registerWebSocketHandlers(final WebSocketHandlerRegistry registry) {
-    registry.addHandler(echoHandler(), "/echoHandler");
+    registry.addHandler(echoHandler(), "/echoHandler")
+        .addInterceptors(usernameHandshakeInterceptor());
   }
 
   @Bean
   public EchoHandler echoHandler() {
     return new EchoHandler();
+  }
+
+  @Bean
+  public UsernameHandshakeInterceptor usernameHandshakeInterceptor() {
+    return new UsernameHandshakeInterceptor();
   }
 }

@@ -62,6 +62,7 @@
     }
     input.mono { font-family: var(--mono); font-size: 13px; }
     input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+    input:disabled { opacity: .55; }
 
     button { border: none; border-radius: 10px; padding: 10px 16px; font-size: 14px; font-weight: 600; font-family: var(--sans); color: #fff; background: var(--accent); cursor: pointer; transition: filter .15s, transform .06s, opacity .15s; }
     button:hover:not(:disabled) { filter: brightness(1.13); }
@@ -115,7 +116,9 @@
     <aside class="controls">
       <section class="card pad">
         <h2>Connection</h2>
-        <label class="f" for="target">Endpoint</label>
+        <label class="f" for="username">Username</label>
+        <input id="username" placeholder="Set a name before connecting" maxlength="20" autocomplete="nickname">
+        <label class="f" for="target" style="margin-top:12px">Endpoint</label>
         <input id="target" class="mono" value="ws://localhost:8080/echoHandler" spellcheck="false" autocomplete="off">
         <div class="btn-row">
           <button id="connect">Connect</button>
@@ -126,7 +129,7 @@
       <section class="card pad">
         <h2>Message</h2>
         <label class="f" for="message">Payload</label>
-        <input id="message" placeholder="Type a message…" autocomplete="off">
+        <input id="message" placeholder="Type a message…" autocomplete="off" disabled>
         <div class="btn-row">
           <button id="send" disabled>Send</button>
         </div>
@@ -134,8 +137,10 @@
 
       <section class="card pad tip">
         <h2>How it works</h2>
-        <p>Opens a native <span class="mono">WebSocket</span> to the endpoint above. The server echoes every message
-          back, and a <span class="mono">ping</span> frame is sent every 3&nbsp;s to keep the connection alive.</p>
+        <p>Set a username, then open a native <span class="mono">WebSocket</span>. A refresh always closes the socket
+          (the TCP connection cannot survive). Username is kept in <span class="mono">sessionStorage</span> and the
+          HTTP session (<span class="mono">JSESSIONID</span>); the page reconnects automatically. Disconnect clears
+          that restore flag. Sending without a username is rejected.</p>
       </section>
     </aside>
 
@@ -163,6 +168,12 @@
 <script type="text/javascript">
   var socket = null;
   var pingTimer = null;
+  var reconnectTimer = null;
+  var currentUsername = '';
+  var manualDisconnect = false;
+  var STORE_USER = 'websocket-basic.username';
+  var STORE_URL = 'websocket-basic.endpoint';
+  var STORE_AUTO = 'websocket-basic.autoConnect';
 
   jQuery(function ($) {
 
@@ -185,15 +196,42 @@
     }
 
     function writeMessage(message) {
-      appendLine('messageOutput', message + '\n');
+      appendLine('messageOutput', '[' + ts() + '] ' + message + '\n');
+    }
+
+    function hasUsername() {
+      return !!(currentUsername || $('#username').val().trim());
+    }
+
+    function saveClientSession(autoConnect) {
+      var name = ($('#username').val().trim() || currentUsername);
+      if (name) {
+        sessionStorage.setItem(STORE_USER, name);
+      }
+      sessionStorage.setItem(STORE_URL, $('#target').val());
+      sessionStorage.setItem(STORE_AUTO, autoConnect ? '1' : '0');
+    }
+
+    function loadClientSession() {
+      var user = sessionStorage.getItem(STORE_USER);
+      var url = sessionStorage.getItem(STORE_URL);
+      if (user) {
+        $('#username').val(user);
+      }
+      if (url) {
+        $('#target').val(url);
+      }
+      return sessionStorage.getItem(STORE_AUTO) === '1';
     }
 
     function setConnected(on) {
       $('#connect').prop('disabled', on);
       $('#disconnect').prop('disabled', !on);
-      $('#send').prop('disabled', !on);
+      $('#send').prop('disabled', !on || !hasUsername());
+      $('#message').prop('disabled', !on || !hasUsername());
+      $('#username').prop('disabled', on);
       $('#connPill').toggleClass('on', on);
-      $('#connLabel').text(on ? 'Connected' : 'Disconnected');
+      $('#connLabel').text(on ? ('Connected as ' + currentUsername) : 'Disconnected');
     }
 
     function startPing() {
@@ -209,16 +247,38 @@
       pingTimer = null;
     }
 
-    $('#connect').click(function () {
+    function scheduleReconnect() {
+      if (manualDisconnect || socket || sessionStorage.getItem(STORE_AUTO) !== '1') {
+        return;
+      }
+      clearTimeout(reconnectTimer);
+      reconnectTimer = setTimeout(function () {
+        writeStatus('Connection lost, reconnecting …');
+        $('#connect').click();
+      }, 1000);
+    }
+
+    function connect() {
       if (socket) {
         return;
       }
+      var username = $('#username').val().trim();
+      if (!username) {
+        writeStatus('Please set a username before connecting.');
+        $('#username').focus();
+        return;
+      }
+      currentUsername = username;
       var url = $('#target').val();
-      writeStatus('Connecting to ' + url + ' …');
+      var sep = url.indexOf('?') >= 0 ? '&' : '?';
+      url = url + sep + 'username=' + encodeURIComponent(username);
+      writeStatus('Connecting as "' + username + '" to ' + url + ' …');
       socket = new WebSocket(url);
 
       socket.onopen = function () {
-        writeStatus('CONNECTED');
+        manualDisconnect = false;
+        saveClientSession(true);
+        writeStatus('CONNECTED as ' + currentUsername);
         setConnected(true);
         startPing();
       };
@@ -228,22 +288,32 @@
         stopPing();
         socket = null;
         setConnected(false);
+        currentUsername = '';
+        if (!manualDisconnect) {
+          scheduleReconnect();
+        }
       };
 
       socket.onmessage = function (evt) {
         if (evt.data === 'ping') {
           writePing(evt.data);
         } else {
-          writeMessage('ECHO: ' + evt.data);
+          writeMessage(evt.data);
         }
       };
 
       socket.onerror = function () {
         writeStatus('ERROR: connection failed');
       };
-    });
+    }
+
+    $('#connect').click(connect);
 
     $('#disconnect').click(function () {
+      manualDisconnect = true;
+      saveClientSession(false);
+      clearTimeout(reconnectTimer);
+      $.ajax({ url: '/session', type: 'DELETE' });
       if (socket) {
         stopPing();
         socket.close();
@@ -253,8 +323,18 @@
     });
 
     function send() {
+      if (!hasUsername()) {
+        writeStatus('Please set a username before sending messages.');
+        $('#username').focus();
+        return;
+      }
       if (socket && socket.readyState === WebSocket.OPEN) {
-        socket.send($('#message').val());
+        var text = $('#message').val();
+        if (!text.trim()) {
+          return;
+        }
+        socket.send(text);
+        $('#message').val('').focus();
       } else {
         writeStatus('Not connected.');
       }
@@ -268,7 +348,38 @@
       }
     });
 
+    $('#username').on('keydown', function (e) {
+      if (e.key === 'Enter') {
+        connect();
+      }
+    });
+
     setConnected(false);
+
+    var shouldAuto = loadClientSession();
+
+    function restoreFromServer(done) {
+      $.getJSON('/session')
+        .done(function (data) {
+          if (data && data.username && !$('#username').val().trim()) {
+            $('#username').val(data.username);
+          }
+        })
+        .always(done);
+    }
+
+    function maybeReconnect() {
+      if (shouldAuto && $('#username').val().trim()) {
+        writeStatus('Page reloaded, restoring session as "' + $('#username').val().trim() + '" …');
+        connect();
+      }
+    }
+
+    if (shouldAuto && $('#username').val().trim()) {
+      maybeReconnect();
+    } else {
+      restoreFromServer(maybeReconnect);
+    }
   });
 </script>
 </body>
