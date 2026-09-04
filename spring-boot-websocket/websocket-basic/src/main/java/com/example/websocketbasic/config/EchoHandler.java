@@ -22,6 +22,7 @@ public class EchoHandler extends TextWebSocketHandler {
   static final String SEND_OFF = "__send:off";
   static final String RECV_ON = "__recv:on";
   static final String RECV_OFF = "__recv:off";
+  static final String ONLINE_PREFIX = "__online:";
 
   private static final Logger log = LoggerFactory.getLogger(EchoHandler.class);
 
@@ -42,6 +43,7 @@ public class EchoHandler extends TextWebSocketHandler {
     WebSocketSession safe = new ConcurrentWebSocketSessionDecorator(session, 5000, 512 * 1024);
     clients.put(session.getId(), new Client(safe));
     log.info("Connected: {} ({}) online={}", usernameOf(session), session.getId(), clients.size());
+    broadcastOnline();
   }
 
   @Override
@@ -99,6 +101,25 @@ public class EchoHandler extends TextWebSocketHandler {
   public void afterConnectionClosed(final WebSocketSession session, final CloseStatus status) {
     clients.remove(session.getId());
     log.info("Disconnected: {} ({}) {} online={}", usernameOf(session), session.getId(), status, clients.size());
+    broadcastOnline();
+  }
+
+  private void broadcastOnline() {
+    StringBuilder names = new StringBuilder();
+    for (Client c : clients.values()) {
+      String name = usernameOf(c.session);
+      if (name == null) {
+        continue;
+      }
+      if (names.length() > 0) {
+        names.append(',');
+      }
+      names.append(name);
+    }
+    String frame = ONLINE_PREFIX + clients.size() + '|' + names.toString();
+    for (Client c : clients.values()) {
+      sendTo(c.session, frame);
+    }
   }
 
   private void sendTo(final WebSocketSession session, final String text) {
