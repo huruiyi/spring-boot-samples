@@ -72,6 +72,14 @@
     button.danger:hover:not(:disabled) { filter: none; background: rgba(248, 113, 113, .09); border-color: rgba(248, 113, 113, .7); }
     .btn-row { display: flex; gap: 10px; margin-top: 14px; }
     .btn-row > button { flex: 1; }
+    .switch-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 14px; font-size: 13px; color: var(--muted); user-select: none; }
+    .switch { position: relative; display: inline-block; width: 44px; height: 22px; flex: none; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider { position: absolute; cursor: pointer; inset: 0; background: #2a3a5e; border-radius: 22px; transition: .2s; }
+    .slider:before { content: ''; position: absolute; height: 16px; width: 16px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: .2s; }
+    .switch input:checked + .slider { background: var(--ok); }
+    .switch input:checked + .slider:before { transform: translateX(22px); }
+    .tag.violet { color: #c4b5fd; border-color: rgba(139, 92, 246, .4); }
 
     .term-grid { display: grid; gap: 16px; }
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -106,7 +114,7 @@
       <div class="brand-mark">⚡</div>
       <div>
         <h1>WebSocket Tester</h1>
-        <p>Native WebSocket · echo server demo</p>
+        <p>Native WebSocket · echo / broadcast demo</p>
       </div>
     </div>
     <div class="pill" id="connPill"><span class="dot"></span><span id="connLabel">Disconnected</span></div>
@@ -133,20 +141,27 @@
         <div class="btn-row">
           <button id="send" disabled>Send</button>
         </div>
+        <label class="switch-row" for="broadcast">
+          <span>Broadcast to everyone <small style="opacity:.7">(server-wide)</small></span>
+          <span class="switch">
+            <input id="broadcast" type="checkbox" checked disabled>
+            <span class="slider"></span>
+          </span>
+        </label>
       </section>
 
       <section class="card pad tip">
         <h2>How it works</h2>
-        <p>Set a username, then open a native <span class="mono">WebSocket</span>. A refresh always closes the socket
-          (the TCP connection cannot survive). Username is kept in <span class="mono">sessionStorage</span> and the
-          HTTP session (<span class="mono">JSESSIONID</span>); the page reconnects automatically. Disconnect clears
-          that restore flag. Sending without a username is rejected.</p>
+        <p>Set a username, then open a native <span class="mono">WebSocket</span>. <b>Broadcast</b> is a
+          <em>server-wide</em> switch: flipping it on any window updates every connected client. On: every chat
+          goes to all sessions. Off: classic echo, only the sender sees it. Username survives refresh via
+          <span class="mono">sessionStorage</span> / HTTP session; the TCP socket does not.</p>
       </section>
     </aside>
 
     <section class="term-grid">
       <div class="card term-card">
-        <div class="term-head"><span>Messages</span><span class="tag green">echo</span></div>
+        <div class="term-head"><span>Messages</span><span class="tag green" id="modeTag">broadcast</span></div>
         <pre id="messageOutput" class="term"></pre>
       </div>
       <div class="grid-2">
@@ -174,6 +189,9 @@
   var STORE_USER = 'websocket-basic.username';
   var STORE_URL = 'websocket-basic.endpoint';
   var STORE_AUTO = 'websocket-basic.autoConnect';
+  var MODE_BROADCAST = '__mode:broadcast';
+  var MODE_ECHO = '__mode:echo';
+  var applyingServerMode = false;
 
   jQuery(function ($) {
 
@@ -224,12 +242,37 @@
       return sessionStorage.getItem(STORE_AUTO) === '1';
     }
 
+    function isBroadcast() {
+      return $('#broadcast').prop('checked');
+    }
+
+    function updateModeTag() {
+      var on = isBroadcast();
+      $('#modeTag').text(on ? 'broadcast' : 'echo')
+        .toggleClass('green', !on)
+        .toggleClass('violet', on);
+    }
+
+    function applyServerMode(broadcastOn) {
+      applyingServerMode = true;
+      $('#broadcast').prop('checked', broadcastOn);
+      updateModeTag();
+      applyingServerMode = false;
+    }
+
+    function requestGlobalMode() {
+      if (socket && socket.readyState === WebSocket.OPEN) {
+        socket.send(isBroadcast() ? MODE_BROADCAST : MODE_ECHO);
+      }
+    }
+
     function setConnected(on) {
       $('#connect').prop('disabled', on);
       $('#disconnect').prop('disabled', !on);
       $('#send').prop('disabled', !on || !hasUsername());
       $('#message').prop('disabled', !on || !hasUsername());
       $('#username').prop('disabled', on);
+      $('#broadcast').prop('disabled', !on);
       $('#connPill').toggleClass('on', on);
       $('#connLabel').text(on ? ('Connected as ' + currentUsername) : 'Disconnected');
     }
@@ -297,6 +340,10 @@
       socket.onmessage = function (evt) {
         if (evt.data === 'ping') {
           writePing(evt.data);
+        } else if (evt.data === MODE_BROADCAST || evt.data === MODE_ECHO) {
+          var on = evt.data === MODE_BROADCAST;
+          applyServerMode(on);
+          writeStatus(on ? 'Mode: broadcast (all clients)' : 'Mode: echo (sender only)');
         } else {
           writeMessage(evt.data);
         }
@@ -354,7 +401,15 @@
       }
     });
 
+    $('#broadcast').on('change', function () {
+      if (applyingServerMode) {
+        return;
+      }
+      requestGlobalMode();
+    });
+
     setConnected(false);
+    updateModeTag();
 
     var shouldAuto = loadClientSession();
 
