@@ -23,6 +23,7 @@ public class EchoHandler extends TextWebSocketHandler {
   static final String RECV_ON = "__recv:on";
   static final String RECV_OFF = "__recv:off";
   static final String ONLINE_PREFIX = "__online:";
+  static final String PM_PREFIX = "__pm:";
 
   private static final Logger log = LoggerFactory.getLogger(EchoHandler.class);
 
@@ -82,6 +83,18 @@ public class EchoHandler extends TextWebSocketHandler {
       return;
     }
 
+    if (payload.startsWith(PM_PREFIX)) {
+      int bar = payload.indexOf('|', PM_PREFIX.length());
+      if (bar < 0) {
+        sendTo(sender.session, "ERROR: invalid private message");
+        return;
+      }
+      String to = payload.substring(PM_PREFIX.length(), bar).trim();
+      String text = payload.substring(bar + 1);
+      whisper(sender, username, to, text);
+      return;
+    }
+
     String reply = username + ": " + payload;
     sendTo(sender.session, reply);
     if (!sender.sendBroadcast) {
@@ -102,6 +115,28 @@ public class EchoHandler extends TextWebSocketHandler {
     clients.remove(session.getId());
     log.info("Disconnected: {} ({}) {} online={}", usernameOf(session), session.getId(), status, clients.size());
     broadcastOnline();
+  }
+
+  private void whisper(final Client sender, final String from, final String to, final String text) {
+    if (to.isEmpty()) {
+      sendTo(sender.session, "ERROR: pick someone to message");
+      return;
+    }
+    String reply = "[PM " + from + " → " + to + "] " + from + ": " + text;
+    sendTo(sender.session, reply);
+    boolean found = false;
+    for (Client c : clients.values()) {
+      if (c == sender) {
+        continue;
+      }
+      if (to.equals(usernameOf(c.session))) {
+        sendTo(c.session, reply);
+        found = true;
+      }
+    }
+    if (!found) {
+      sendTo(sender.session, "ERROR: \"" + to + "\" is not online");
+    }
   }
 
   private void broadcastOnline() {

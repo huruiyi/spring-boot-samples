@@ -56,13 +56,15 @@
     .card.pad { padding: 18px; }
     .card h2 { font-size: 11.5px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
     label.f { display: block; margin: 0 0 7px 3px; font-size: 12px; color: var(--muted); }
-    input[type="text"], input:not([type]) {
+    input[type="text"], input:not([type]), select {
       width: 100%; padding: 10px 12px; font-size: 14px; font-family: var(--sans); color: var(--text);
       background: var(--card-2); border: 1px solid var(--border); border-radius: 10px; outline: none;
       transition: border-color .15s, box-shadow .15s;
     }
+    select { cursor: pointer; }
+    select:disabled { opacity: .55; }
     input.mono { font-family: var(--mono); font-size: 13px; }
-    input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+    input:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
     input:disabled { opacity: .55; }
 
     button { border: none; border-radius: 10px; padding: 10px 16px; font-size: 14px; font-weight: 600; font-family: var(--sans); color: #fff; background: var(--accent); cursor: pointer; transition: filter .15s, transform .06s, opacity .15s; }
@@ -141,7 +143,11 @@
 
       <section class="card pad">
         <h2>Message</h2>
-        <label class="f" for="message">Payload</label>
+        <label class="f" for="sendTo">To</label>
+        <select id="sendTo" disabled>
+          <option value="">Everyone</option>
+        </select>
+        <label class="f" for="message" style="margin-top:12px">Payload</label>
         <input id="message" placeholder="Type a message…" autocomplete="off" disabled>
         <div class="btn-row">
           <button id="send" disabled>Send</button>
@@ -166,7 +172,7 @@
         <h2>How it works</h2>
         <p>Set a username, then open a native <span class="mono">WebSocket</span>. Each window has two independent
           switches. <b>Send broadcasts</b> off = only you see what you typed. <b>Receive broadcasts</b> off = ignore
-          other people. The HTTP session (<span class="mono">JSESSIONID</span>) is shared in the same browser: switching
+          other people. <b>To</b> picks Everyone (broadcast) or a nickname (private, only that person and you). The HTTP session (<span class="mono">JSESSIONID</span>) is shared in the same browser: switching
           to another tab of this app auto-connects. Disconnect only stops this tab. Username also survives refresh via
           <span class="mono">sessionStorage</span>.</p>
       </section>
@@ -210,6 +216,7 @@
   var RECV_ON = '__recv:on';
   var RECV_OFF = '__recv:off';
   var ONLINE_PREFIX = '__online:';
+  var PM_PREFIX = '__pm:';
 
   jQuery(function ($) {
 
@@ -306,9 +313,40 @@
       syncRecvMode();
     }
 
+    function rebuildSendTo(usersCsv) {
+      var sel = document.getElementById('sendTo');
+      var keep = sel.value;
+      var me = ($('#username').val().trim() || currentUsername);
+      var names = [];
+      if (usersCsv) {
+        names = usersCsv.split(',');
+      }
+      sel.innerHTML = '';
+      sel.appendChild(new Option('Everyone', ''));
+      var i;
+      var seen = {};
+      for (i = 0; i < names.length; i++) {
+        var n = names[i];
+        if (!n || n === me || seen[n]) {
+          continue;
+        }
+        seen[n] = true;
+        sel.appendChild(new Option(n, n));
+      }
+      var stillThere = false;
+      for (i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].value === keep) {
+          stillThere = true;
+          break;
+        }
+      }
+      sel.value = stillThere ? keep : '';
+    }
+
     function setOnline(count, users) {
       $('#onlineCount').text(count == null ? '-' : count);
       $('#onlinePill').attr('title', users || '');
+      rebuildSendTo(count == null ? '' : users);
     }
 
     function setConnected(on) {
@@ -316,6 +354,7 @@
       $('#disconnect').prop('disabled', !on);
       $('#send').prop('disabled', !on || !hasUsername());
       $('#message').prop('disabled', !on || !hasUsername());
+      $('#sendTo').prop('disabled', !on || !hasUsername());
       $('#username').prop('disabled', on);
       $('#connPill').toggleClass('on', on);
       $('#connLabel').text(on ? ('Connected as ' + currentUsername) : 'Disconnected');
@@ -437,7 +476,12 @@
         if (!text.trim()) {
           return;
         }
-        socket.send(text);
+        var to = $('#sendTo').val();
+        if (to) {
+          socket.send(PM_PREFIX + to + '|' + text);
+        } else {
+          socket.send(text);
+        }
         $('#message').val('').focus();
       } else {
         writeStatus('Not connected.');
