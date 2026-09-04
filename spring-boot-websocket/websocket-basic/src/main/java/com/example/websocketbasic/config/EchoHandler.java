@@ -18,27 +18,35 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class EchoHandler extends TextWebSocketHandler {
 
-  static final String MODE_BROADCAST = "__mode:broadcast";
-  static final String MODE_ECHO = "__mode:echo";
+  static final String SEND_ON = "__send:on";
+  static final String SEND_OFF = "__send:off";
+  static final String RECV_ON = "__recv:on";
+  static final String RECV_OFF = "__recv:off";
 
   private static final Logger log = LoggerFactory.getLogger(EchoHandler.class);
 
-  /** 全局开关:true = 发给所有连接,false = 只回显给发送者 */
-  private volatile boolean broadcast = true;
+  private final Map<String, Client> clients = new ConcurrentHashMap<String, Client>();
 
-  private final Map<String, WebSocketSession> clients = new ConcurrentHashMap<String, WebSocketSession>();
+  private static final class Client {
+    final WebSocketSession session;
+    volatile boolean sendBroadcast = true;
+    volatile boolean receiveBroadcast = true;
+
+    Client(final WebSocketSession session) {
+      this.session = session;
+    }
+  }
 
   @Override
   public void afterConnectionEstablished(final WebSocketSession session) {
     WebSocketSession safe = new ConcurrentWebSocketSessionDecorator(session, 5000, 512 * 1024);
-    clients.put(session.getId(), safe);
+    clients.put(session.getId(), new Client(safe));
     log.info("Connected: {} ({}) online={}", usernameOf(session), session.getId(), clients.size());
-    sendTo(safe, currentModeFrame());
   }
 
   @Override
   protected void handleTextMessage(final WebSocketSession session, final TextMessage message) throws Exception {
-    WebSocketSession sender = clients.get(session.getId());
+    Client sender = clients.get(session.getId());
     if (sender == null) {
       return;
     }
@@ -48,30 +56,42 @@ public class EchoHandler extends TextWebSocketHandler {
     log.info("Received from {}: {}", username == null ? "(no username)" : username, payload);
 
     if ("ping".equals(payload)) {
-      sendTo(sender, payload);
+      sendTo(sender.session, payload);
       return;
     }
 
-    if (MODE_BROADCAST.equals(payload) || MODE_ECHO.equals(payload)) {
-      broadcast = MODE_BROADCAST.equals(payload);
-      log.info("Global mode -> {} (by {})", broadcast ? "broadcast" : "echo", username);
-      fanout(currentModeFrame());
+    if (SEND_ON.equals(payload) || SEND_OFF.equals(payload)) {
+      sender.sendBroadcast = SEND_ON.equals(payload);
+      sendTo(sender.session, payload);
+      log.info("{} sendBroadcast={}", username, sender.sendBroadcast);
+      return;
+    }
+
+    if (RECV_ON.equals(payload) || RECV_OFF.equals(payload)) {
+      sender.receiveBroadcast = RECV_ON.equals(payload);
+      sendTo(sender.session, payload);
+      log.info("{} receiveBroadcast={}", username, sender.receiveBroadcast);
       return;
     }
 
     if (username == null) {
       log.warn("Rejecting message from session {} — username is required", session.getId());
-      sendTo(sender, "ERROR: username is required before sending messages");
+      sendTo(sender.session, "ERROR: username is required before sending messages");
       return;
     }
 
     String reply = username + ": " + payload;
-    if (broadcast) {
-      log.info("Broadcasting Message: {}", reply);
-      fanout(reply);
-    } else {
-      log.info("Echoing Message: {}", reply);
-      sendTo(sender, reply);
+    sendTo(sender.session, reply);
+    if (!sender.sendBroadcast) {
+      log.info("Echo only (send off): {}", reply);
+      return;
+    }
+
+    log.info("Broadcasting Message: {}", reply);
+    for (Client c : clients.values()) {
+      if (c != sender && c.receiveBroadcast) {
+        sendTo(c.session, reply);
+      }
     }
   }
 
@@ -79,16 +99,6 @@ public class EchoHandler extends TextWebSocketHandler {
   public void afterConnectionClosed(final WebSocketSession session, final CloseStatus status) {
     clients.remove(session.getId());
     log.info("Disconnected: {} ({}) {} online={}", usernameOf(session), session.getId(), status, clients.size());
-  }
-
-  private String currentModeFrame() {
-    return broadcast ? MODE_BROADCAST : MODE_ECHO;
-  }
-
-  private void fanout(final String text) {
-    for (WebSocketSession session : clients.values()) {
-      sendTo(session, text);
-    }
   }
 
   private void sendTo(final WebSocketSession session, final String text) {
