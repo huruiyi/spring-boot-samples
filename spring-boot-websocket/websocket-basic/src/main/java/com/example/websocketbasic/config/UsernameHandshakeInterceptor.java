@@ -3,6 +3,7 @@ package com.example.websocketbasic.config;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.http.server.ServletServerHttpRequest;
+import org.springframework.lang.NonNull;
 import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.server.HandshakeInterceptor;
 
@@ -20,8 +21,11 @@ public class UsernameHandshakeInterceptor implements HandshakeInterceptor {
   public static final String ATTR_USERNAME = "username";
 
   @Override
-  public boolean beforeHandshake(final ServerHttpRequest request, final ServerHttpResponse response,
-      final WebSocketHandler wsHandler, final Map<String, Object> attributes) {
+  public boolean beforeHandshake(
+      @NonNull final ServerHttpRequest request,
+      @NonNull final ServerHttpResponse response,
+      @NonNull final WebSocketHandler wsHandler,
+      @NonNull final Map<String, Object> attributes) {
     if (!(request instanceof ServletServerHttpRequest)) {
       return false;
     }
@@ -45,8 +49,10 @@ public class UsernameHandshakeInterceptor implements HandshakeInterceptor {
   }
 
   @Override
-  public void afterHandshake(final ServerHttpRequest request, final ServerHttpResponse response,
-      final WebSocketHandler wsHandler, final Exception exception) {
+  public void afterHandshake(
+      @NonNull final ServerHttpRequest request,
+      @NonNull final ServerHttpResponse response,
+      @NonNull final WebSocketHandler wsHandler, final Exception exception) {
     // no-op
   }
 

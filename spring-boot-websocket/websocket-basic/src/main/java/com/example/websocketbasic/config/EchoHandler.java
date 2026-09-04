@@ -2,6 +2,7 @@ package com.example.websocketbasic.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.lang.NonNull;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
@@ -20,14 +21,14 @@ public class EchoHandler extends TextWebSocketHandler {
 
   static final String SEND_ON = "__send:on";
   static final String SEND_OFF = "__send:off";
-  static final String RECV_ON = "__recv:on";
-  static final String RECV_OFF = "__recv:off";
+  static final String RECEIVE_ON = "__receive:on";
+  static final String RECEIVE_OFF = "__receive:off";
   static final String ONLINE_PREFIX = "__online:";
   static final String PM_PREFIX = "__pm:";
 
   private static final Logger log = LoggerFactory.getLogger(EchoHandler.class);
 
-  private final Map<String, Client> clients = new ConcurrentHashMap<String, Client>();
+  private final Map<String, Client> clients = new ConcurrentHashMap<>();
 
   private static final class Client {
     final WebSocketSession session;
@@ -40,7 +41,7 @@ public class EchoHandler extends TextWebSocketHandler {
   }
 
   @Override
-  public void afterConnectionEstablished(final WebSocketSession session) {
+  public void afterConnectionEstablished(@NonNull final WebSocketSession session) {
     WebSocketSession safe = new ConcurrentWebSocketSessionDecorator(session, 5000, 512 * 1024);
     clients.put(session.getId(), new Client(safe));
     log.info("Connected: {} ({}) online={}", usernameOf(session), session.getId(), clients.size());
@@ -48,7 +49,7 @@ public class EchoHandler extends TextWebSocketHandler {
   }
 
   @Override
-  protected void handleTextMessage(final WebSocketSession session, final TextMessage message) throws Exception {
+  protected void handleTextMessage(final WebSocketSession session, @NonNull final TextMessage message) {
     Client sender = clients.get(session.getId());
     if (sender == null) {
       return;
@@ -58,23 +59,22 @@ public class EchoHandler extends TextWebSocketHandler {
     String username = usernameOf(session);
     log.info("Received from {}: {}", username == null ? "(no username)" : username, payload);
 
-    if ("ping".equals(payload)) {
-      sendTo(sender.session, payload);
-      return;
-    }
-
-    if (SEND_ON.equals(payload) || SEND_OFF.equals(payload)) {
-      sender.sendBroadcast = SEND_ON.equals(payload);
-      sendTo(sender.session, payload);
-      log.info("{} sendBroadcast={}", username, sender.sendBroadcast);
-      return;
-    }
-
-    if (RECV_ON.equals(payload) || RECV_OFF.equals(payload)) {
-      sender.receiveBroadcast = RECV_ON.equals(payload);
-      sendTo(sender.session, payload);
-      log.info("{} receiveBroadcast={}", username, sender.receiveBroadcast);
-      return;
+    switch (payload) {
+      case "ping":
+        sendTo(sender.session, payload);
+        return;
+      case SEND_ON:
+      case SEND_OFF:
+        sender.sendBroadcast = SEND_ON.equals(payload);
+        sendTo(sender.session, payload);
+        log.info("{} sendBroadcast={}", username, sender.sendBroadcast);
+        return;
+      case RECEIVE_ON:
+      case RECEIVE_OFF:
+        sender.receiveBroadcast = RECEIVE_ON.equals(payload);
+        sendTo(sender.session, payload);
+        log.info("{} receiveBroadcast={}", username, sender.receiveBroadcast);
+        return;
     }
 
     if (username == null) {
@@ -111,7 +111,7 @@ public class EchoHandler extends TextWebSocketHandler {
   }
 
   @Override
-  public void afterConnectionClosed(final WebSocketSession session, final CloseStatus status) {
+  public void afterConnectionClosed(final WebSocketSession session, @NonNull final CloseStatus status) {
     clients.remove(session.getId());
     log.info("Disconnected: {} ({}) {} online={}", usernameOf(session), session.getId(), status, clients.size());
     broadcastOnline();
@@ -151,7 +151,7 @@ public class EchoHandler extends TextWebSocketHandler {
       }
       names.append(name);
     }
-    String frame = ONLINE_PREFIX + clients.size() + '|' + names.toString();
+    String frame = ONLINE_PREFIX + clients.size() + '|' + names;
     for (Client c : clients.values()) {
       sendTo(c.session, frame);
     }

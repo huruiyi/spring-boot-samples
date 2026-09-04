@@ -18,8 +18,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
 
   @Override
   public void registerWebSocketHandlers(final WebSocketHandlerRegistry registry) {
-    registry.addHandler(echoHandler(), "/echoHandler")
-        .addInterceptors(usernameHandshakeInterceptor());
+    registry.addHandler(echoHandler(), "/echoHandler").addInterceptors(handshakeInterceptor());
   }
 
   @Bean
@@ -28,7 +27,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
   }
 
   @Bean
-  public UsernameHandshakeInterceptor usernameHandshakeInterceptor() {
+  public UsernameHandshakeInterceptor handshakeInterceptor() {
     return new UsernameHandshakeInterceptor();
   }
 }
