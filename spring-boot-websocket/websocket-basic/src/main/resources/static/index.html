@@ -166,8 +166,9 @@
         <h2>How it works</h2>
         <p>Set a username, then open a native <span class="mono">WebSocket</span>. Each window has two independent
           switches. <b>Send broadcasts</b> off = only you see what you typed. <b>Receive broadcasts</b> off = ignore
-          other people. Other windows are not changed. Username survives refresh via
-          <span class="mono">sessionStorage</span> / HTTP session; the TCP socket does not.</p>
+          other people. The HTTP session (<span class="mono">JSESSIONID</span>) is shared in the same browser: switching
+          to another tab of this app auto-connects. Disconnect only stops this tab. Username also survives refresh via
+          <span class="mono">sessionStorage</span>.</p>
       </section>
     </aside>
 
@@ -198,6 +199,7 @@
   var reconnectTimer = null;
   var currentUsername = '';
   var manualDisconnect = false;
+  var connecting = false;
   var STORE_USER = 'websocket-basic.username';
   var STORE_URL = 'websocket-basic.endpoint';
   var STORE_AUTO = 'websocket-basic.autoConnect';
@@ -347,7 +349,7 @@
     }
 
     function connect() {
-      if (socket) {
+      if (socket || connecting) {
         return;
       }
       var username = $('#username').val().trim();
@@ -356,6 +358,7 @@
         $('#username').focus();
         return;
       }
+      connecting = true;
       currentUsername = username;
       var url = $('#target').val();
       var sep = url.indexOf('?') >= 0 ? '&' : '?';
@@ -364,6 +367,7 @@
       socket = new WebSocket(url);
 
       socket.onopen = function () {
+        connecting = false;
         manualDisconnect = false;
         saveClientSession(true);
         writeStatus('CONNECTED as ' + currentUsername);
@@ -373,6 +377,7 @@
       };
 
       socket.onclose = function () {
+        connecting = false;
         writeStatus('DISCONNECTED');
         stopPing();
         socket = null;
@@ -413,7 +418,6 @@
       manualDisconnect = true;
       saveClientSession(false);
       clearTimeout(reconnectTimer);
-      $.ajax({ url: '/session', type: 'DELETE' });
       if (socket) {
         stopPing();
         socket.close();
@@ -459,31 +463,50 @@
 
     setConnected(false);
     updateModeTags();
+    loadClientSession();
 
-    var shouldAuto = loadClientSession();
-
-    function restoreFromServer(done) {
-      $.getJSON('/session')
-        .done(function (data) {
-          if (data && data.username && !$('#username').val().trim()) {
-            $('#username').val(data.username);
-          }
-        })
-        .always(done);
-    }
-
-    function maybeReconnect() {
-      if (shouldAuto && $('#username').val().trim()) {
-        writeStatus('Page reloaded, restoring session as "' + $('#username').val().trim() + '" …');
-        connect();
+    function tryAutoConnect(reason) {
+      if (document.visibilityState && document.visibilityState !== 'visible') {
+        return;
       }
+      if (socket || connecting || manualDisconnect) {
+        return;
+      }
+      if (sessionStorage.getItem(STORE_AUTO) === '0') {
+        return;
+      }
+      $.getJSON('/session').done(function (data) {
+        if (socket || connecting || manualDisconnect) {
+          return;
+        }
+        if (sessionStorage.getItem(STORE_AUTO) === '0') {
+          return;
+        }
+        var httpUser = data && data.username ? data.username : '';
+        if (httpUser && !$('#username').val().trim()) {
+          $('#username').val(httpUser);
+        }
+        var name = $('#username').val().trim();
+        if (!name) {
+          return;
+        }
+        var auto = sessionStorage.getItem(STORE_AUTO);
+        if (auto === '1' || httpUser) {
+          writeStatus(reason || ('Same session, auto-connecting as "' + name + '" …'));
+          connect();
+        }
+      });
     }
 
-    if (shouldAuto && $('#username').val().trim()) {
-      maybeReconnect();
-    } else {
-      restoreFromServer(maybeReconnect);
-    }
+    tryAutoConnect('Restoring session …');
+    $(document).on('visibilitychange', function () {
+      if (document.visibilityState === 'visible') {
+        tryAutoConnect('Tab became visible, auto-connecting …');
+      }
+    });
+    $(window).on('focus', function () {
+      tryAutoConnect('Tab focused, auto-connecting …');
+    });
   });
 </script>
 </body>
