@@ -124,6 +124,9 @@ public class EchoHandler extends TextWebSocketHandler {
     }
     String reply = "[PM " + from + " → " + to + "] " + from + ": " + text;
     sendTo(sender.session, reply);
+    if (to.equals(from)) {
+      return;
+    }
     boolean found = false;
     for (Client c : clients.values()) {
       if (c == sender) {

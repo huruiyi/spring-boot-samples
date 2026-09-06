@@ -15,6 +15,9 @@ var RECV_ON = '__receive:on';
 var RECV_OFF = '__receive:off';
 var ONLINE_PREFIX = '__online:';
 var PM_PREFIX = '__pm:';
+var STORE_THEME = 'websocket-basic.theme';
+var lastOnlineUsers = '';
+var selectedTarget = '';
 
 jQuery(function ($) {
 
@@ -22,22 +25,84 @@ jQuery(function ($) {
         return new Date().toLocaleTimeString();
     }
 
-    function appendLine(id, text) {
-        var el = document.getElementById(id);
-        el.appendChild(document.createTextNode(text));
-        el.scrollTop = el.scrollHeight;
-    }
-
     function writePing(message) {
-        appendLine('pingOutput', '[' + ts() + '] ' + message + '\n');
+        markHeartbeat(true);
+        console.log('[' + ts() + '] heartbeat ' + message);
     }
 
     function writeStatus(message) {
-        appendLine('statusOutput', '[' + ts() + '] ' + message + '\n');
+        console.log('[' + ts() + '] ' + message);
+    }
+
+    var AVATAR_COLORS = ['#6366f1', '#ec4899', '#f59e0b', '#10b981', '#06b6d4', '#8b5cf6', '#ef4444', '#84cc16'];
+
+    function colorFor(name) {
+        var sum = 0;
+        var i;
+        for (i = 0; i < name.length; i++) {
+            sum += name.charCodeAt(i);
+        }
+        return AVATAR_COLORS[sum % AVATAR_COLORS.length];
+    }
+
+    function markHeartbeat(ok) {
+        var el = $('#pingLive');
+        el.toggleClass('on', !!ok).toggleClass('off', !ok).toggleClass('warn', false);
+        $('#pingLabel').text(ok ? ('OK · ' + ts()) : 'Idle');
+    }
+
+    function markConnection(on) {
+        var el = $('#connLive');
+        el.toggleClass('on', !!on).toggleClass('off', !on);
+        $('#connLabel').text(on ? ('Connected as ' + currentUsername) : 'Disconnected');
+    }
+
+    function parseChatMessage(raw) {
+        var text = String(raw || '');
+        if (text.indexOf('ERROR:') === 0) {
+            return { kind: 'system', from: '', body: text };
+        }
+        var pm = text.match(/^\[PM .+?\] (.+?): ([\s\S]*)$/);
+        if (pm) {
+            return { kind: 'chat', from: pm[1], body: pm[2], whisper: true };
+        }
+        var chat = text.match(/^([^:]+): ([\s\S]*)$/);
+        if (chat) {
+            return { kind: 'chat', from: chat[1], body: chat[2], whisper: false };
+        }
+        return { kind: 'system', from: '', body: text };
     }
 
     function writeMessage(message) {
-        appendLine('messageOutput', '[' + ts() + '] ' + message + '\n');
+        var parsed = parseChatMessage(message);
+        var me = currentUsername || $('#username').val().trim();
+        var el = document.getElementById('messageOutput');
+        var wrap = document.createElement('div');
+
+        if (parsed.kind === 'system') {
+            wrap.className = 'msg system';
+        } else if (parsed.from && me && parsed.from === me) {
+            wrap.className = 'msg mine';
+        } else {
+            wrap.className = 'msg other';
+        }
+
+        var meta = document.createElement('div');
+        meta.className = 'meta';
+        if (parsed.kind === 'system') {
+            meta.textContent = ts();
+        } else {
+            meta.textContent = (parsed.whisper ? '[PM] ' : '') + parsed.from + ' · ' + ts();
+        }
+
+        var bubble = document.createElement('div');
+        bubble.className = 'bubble';
+        bubble.appendChild(document.createTextNode(parsed.kind === 'system' ? parsed.body : parsed.body));
+
+        wrap.appendChild(meta);
+        wrap.appendChild(bubble);
+        el.appendChild(wrap);
+        el.scrollTop = el.scrollHeight;
     }
 
     function hasUsername() {
@@ -111,40 +176,107 @@ jQuery(function ($) {
         syncRecvMode();
     }
 
-    function rebuildSendTo(usersCsv) {
-        var sel = document.getElementById('sendTo');
-        var keep = sel.value;
+    function appendOnlineItem(list, opts) {
+        var li = document.createElement('li');
+        var classes = 'online-item';
+        if (opts.channel) {
+            classes += ' channel';
+        }
+        if (opts.me) {
+            classes += ' me';
+        }
+        if (opts.active) {
+            classes += ' active';
+        }
+        li.className = classes;
+        li.setAttribute('data-name', opts.name);
+
+        var avatar = document.createElement('span');
+        avatar.className = 'online-avatar';
+        if (opts.channel) {
+            avatar.textContent = 'E';
+        } else {
+            avatar.style.background = colorFor(opts.name);
+            avatar.textContent = opts.name.charAt(0).toUpperCase();
+        }
+
+        var nameEl = document.createElement('span');
+        nameEl.className = 'online-name';
+        nameEl.appendChild(document.createTextNode(opts.label || opts.name));
+        if (opts.sub) {
+            var tip = document.createElement('small');
+            tip.textContent = opts.sub;
+            nameEl.appendChild(tip);
+        }
+
+        li.appendChild(avatar);
+        li.appendChild(nameEl);
+        list.appendChild(li);
+    }
+
+    function rebuildOnlineList(usersCsv) {
+        var list = document.getElementById('onlineList');
         var me = ($('#username').val().trim() || currentUsername);
         var names = [];
+        var seen = {};
+        var i;
         if (usersCsv) {
             names = usersCsv.split(',');
         }
-        sel.innerHTML = '';
-        sel.appendChild(new Option('Everyone', ''));
-        var i;
-        var seen = {};
+        if (selectedTarget) {
+            var stillOnline = false;
+            for (i = 0; i < names.length; i++) {
+                if (names[i] === selectedTarget) {
+                    stillOnline = true;
+                    break;
+                }
+            }
+            if (!stillOnline) {
+                selectedTarget = '';
+            }
+        }
+        list.innerHTML = '';
+        if (me && seen[me] !== true) {
+            for (i = 0; i < names.length; i++) {
+                if (names[i] === me) {
+                    seen[me] = true;
+                    appendOnlineItem(list, {
+                        name: me,
+                        me: true,
+                        sub: '本人',
+                        active: me === selectedTarget
+                    });
+                    break;
+                }
+            }
+        }
+        appendOnlineItem(list, {
+            name: '',
+            label: 'Everyone',
+            sub: 'world channel',
+            channel: true,
+            active: !selectedTarget
+        });
         for (i = 0; i < names.length; i++) {
             var n = names[i];
-            if (!n || n === me || seen[n]) {
+            if (!n || seen[n]) {
                 continue;
             }
             seen[n] = true;
-            sel.appendChild(new Option(n, n));
+            appendOnlineItem(list, {
+                name: n,
+                me: false,
+                active: n === selectedTarget
+            });
         }
-        var stillThere = false;
-        for (i = 0; i < sel.options.length; i++) {
-            if (sel.options[i].value === keep) {
-                stillThere = true;
-                break;
-            }
-        }
-        sel.value = stillThere ? keep : '';
     }
 
     function setOnline(count, users) {
-        $('#onlineCount').text(count == null ? '-' : count);
-        $('#onlinePill').attr('title', users || '');
-        rebuildSendTo(count == null ? '' : users);
+        var n = count == null ? 0 : count;
+        lastOnlineUsers = count == null ? '' : (users || '');
+        $('#onlineCountTag').text(n);
+        $('#onlineLive').text(count == null ? '-' : (n + (lastOnlineUsers ? ' · ' + lastOnlineUsers : '')));
+        rebuildOnlineList(lastOnlineUsers);
     }
 
     function setConnected(on) {
@@ -152,12 +284,12 @@ jQuery(function ($) {
         $('#disconnect').prop('disabled', !on);
         $('#send').prop('disabled', !on || !hasUsername());
         $('#message').prop('disabled', !on || !hasUsername());
-        $('#sendTo').prop('disabled', !on || !hasUsername());
         $('#username').prop('disabled', on);
-        $('#connPill').toggleClass('on', on);
-        $('#connLabel').text(on ? ('Connected as ' + currentUsername) : 'Disconnected');
+        markConnection(on);
         if (!on) {
+            selectedTarget = '';
             setOnline(null, '');
+            markHeartbeat(false);
         }
     }
 
@@ -274,9 +406,8 @@ jQuery(function ($) {
             if (!text.trim()) {
                 return;
             }
-            var to = $('#sendTo').val();
-            if (to) {
-                socket.send(PM_PREFIX + to + '|' + text);
+            if (selectedTarget) {
+                socket.send(PM_PREFIX + selectedTarget + '|' + text);
             } else {
                 socket.send(text);
             }
@@ -287,6 +418,16 @@ jQuery(function ($) {
     }
 
     $('#send').click(send);
+
+    $('#onlineList').on('click', '.online-item', function () {
+        if ($('#message').prop('disabled')) {
+            return;
+        }
+        selectedTarget = $(this).attr('data-name') || '';
+        $('.online-item').removeClass('active');
+        $(this).addClass('active');
+        $('#message').focus();
+    });
 
     $('#message').on('keydown', function (e) {
         if (e.key === 'Enter') {
@@ -300,9 +441,24 @@ jQuery(function ($) {
         }
     });
 
+    function currentTheme() {
+        return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    }
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem(STORE_THEME, theme);
+        $('#themeToggle').text(theme === 'light' ? 'Dark' : 'Light');
+    }
+
+    $('#themeToggle').on('click', function () {
+        applyTheme(currentTheme() === 'light' ? 'dark' : 'light');
+    });
+
     $('#sendBroadcast').on('change', syncSendMode);
     $('#recvBroadcast').on('change', syncRecvMode);
 
+    applyTheme(localStorage.getItem(STORE_THEME) || currentTheme());
     setConnected(false);
     updateModeTags();
     loadClientSession();
