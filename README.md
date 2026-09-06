@@ -72,11 +72,7 @@ Spring Boot 技术示例项目集合，涵盖了企业级开发中常用的技�
 
 ### Web 开发
 - [spring-boot-thymeleaf](spring-boot-thymeleaf/) - Thymeleaf 模板引擎
-- [spring-boot-websocket](spring-boot-websocket/) - WebSocket 实时通信
-  - [websocket-basic](spring-boot-websocket/websocket-basic/) - 基础 WebSocket
-  - [websocket-sock-js](spring-boot-websocket/websocket-sock-js/) - SockJS 支持
-  - [websocket-stomp](spring-boot-websocket/websocket-stomp/) - STOMP 协议
-  - [websocket-chatroom](spring-boot-websocket/websocket-chatroom/) - 聊天室示例
+- WebSocket 示例已迁至同级仓库 [`sse-vs-websocket/spring-boot-websocket`](../sse-vs-websocket/spring-boot-websocket/)（含 basic / SockJS / STOMP / 聊天室）
 - [spring-boot-openapi](spring-boot-openapi/) - OpenAPI/Swagger 文档
 
 ### 其他
